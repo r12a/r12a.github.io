@@ -1,11 +1,11 @@
 /* special rule for styling the matrix for glyph capture */
-/* should normally be commented out */
+/* should normally be commented out
 #chart td.ch {
-	/* font-family: 'Noto sans lao', dhyana, 'Saysetthi OT' !important;*/
+	font-family: 'Noto sans lao', dhyana, 'Saysetthi OT' !important;
 	font-size: 30px;
 	color: #777;
 	padding-left:10px;
-	}
+	} */
 
 
 
