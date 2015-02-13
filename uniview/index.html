@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="utf-8"/>
+
+
+<!--
+NEW STUFF
+
+- add spaces to picker function from old add single space
+
+-->
+<title>UniView 7.0.0b</title>
+<link rel="stylesheet" href="uniview-style.css" type="text/css"/>
+
+<!-- &copy; Copyright 2001-2015 Richard Ishida [ishida@w3.org].  All rights reserved.  -->
+<script src="u.js" type="text/javascript"></script>
+<script src="descriptions.js" type="text/javascript"></script>
+<script src="local.js" type="text/javascript"></script>
+<script src="graphicranges.js" type="text/javascript"></script>
+<script src="scriptGroups.js" type="text/javascript"></script>
+<script src="subtitles.js" type="text/javascript"></script>
+<script src="function-text.js" type="text/javascript"></script>
+<script src="propNames.js" type="text/javascript"></script>
+<script src="functions.js" type="text/javascript"></script>
+<script type="text/javascript" src="/rishida/code/normalization/js/n11n.js"></script>
+<script type="text/javascript" src="/rishida/code/normalization/js/n11ndata.js"></script>
+<style type="text/css">
+.dim {
+	background-color: #F9F5DE;
+	background-color: #f2f2f2;
+	color: #ccc;
+}
+.dim img {
+	opacity: 0.1;
+	filter: alpha(opacity=10);
+}
+.empty {
+	background-color: #f2f2f2;
+}
+</style>
+</head>
+
+<body>
+<div style="float:left;">
+  <div id="title">UniView 7.0.0b</div>
+	</div>
+<div id="externallinks" style="float: right; text-align: left; font-size:90%; line-height:2em;"><span onclick="help = window.open('/rishida/utilities', 'home'); home.focus();" title="Find more tools like this." style="color:teal; text-decoration:none;" class="link">rishida apps</span> &nbsp; </div>
+<br  style="clear:both;" />
+<div id="tabpanels"  style="float:left;">
+  <ul id="tabs" style="float:left;" >
+    <li class="ontab" id="lookuppaneltab"><a href="#initialpanel" onclick="tabswitch('lookuppanel', 'listpanel optionspanel helppanel'); return false;">Look up</a></li>
+    <li id="listpaneltab"><a href="#rangepanel" onclick="tabswitch('listpanel', 'lookuppanel optionspanel helppanel'); return false;">Filter</a></li>
+    <li id="optionspaneltab"><a href="#optionspanel" onclick="tabswitch('optionspanel', 'listpanel lookuppanel helppanel'); return false;">Options</a></li>
+    <li id="helppaneltab"><a href="#helppanel" onclick="help = window.open('help', 'help'); help.focus(); return false;">Help</a></li>
+  </ul>
+  <br  style="clear:both;" />
+  <div id="lookuppanel">
+    <table id="lookuptable">
+      <tbody>
+        <tr>
+          <th> <div title="Display the characters in a Unicode block."><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#showrange', 'help'); help.focus();" class="help">S</span>how block: </div>
+          </th>
+          <td><form action="none" onsubmit="showSelection(document.getElementById('block').value);  return false;">
+              <select name="block" onchange="showSelection(this.value)" id="block" style="font-size: 100%;">
+                <!--select name="block" id="block"-->
+                <option value="0020:00FF" selected="selected">Select a block (* indicates new in 7.0)</option>
+                <optgroup label="European scripts">
+                <option value="0530:058F">Armenian</option>
+                <option value="FB13:FB17" class="pb">Armenian ligatures</option>
+<option value="10530:1056F">Caucasian Albanian*	</option>
+               <option value="10800:1083F">Cypriot Syllabary</option>
+                <option value="0400:04FF">Cyrillic</option>
+                <option value="0500:052F">Cyrillic Supplement</option>
+                <option value="2DE0:2DFF">Cyrillic Extended-A</option>
+                <option value="A640:A69F">Cyrillic Extended-B</option>
+<option value="10500:1052F">Elbasan*</option>
+                <option value="10A0:10FF">Georgian</option>
+                <option value="2D00:2D2F">Georgian Supplement</option>
+                <option value="2C00:2C5F">Glagolitic</option>
+                <option value="10330:1034F">Gothic</option>
+                <option value="0370:03FF">Greek and Coptic</option>
+                <option value="1F00:1FFF">Greek Extended</option>
+                <option value="0020:00FF">Latin, Basic &amp; Latin-1 Supplement</option>
+                <option value="0100:017F">Latin Extended-A</option>
+                <option value="0180:024F">Latin Extended-B</option>
+                <option value="2C60:2C7F">Latin Extended-C</option>
+                <option value="A720:A7FF">Latin Extended-D</option>
+<option value="AB30:AB6F">Latin Extended-E*</option>
+                <option value="1E00:1EFF">Latin Extended Additional</option>
+                <option value="FB00:FB06" class="pb">Latin ligatures</option>
+                <option value="FF00:FF5E" class="pb">Fullwidth Latin letters</option>
+<option value="10600:1077F">Linear A*</option>
+                <option value="10000:1007F">Linear B Syllabary</option>
+                <option value="10080:100FF">Linear B Ideograms</option>
+                <option value="1680:169F">Ogham</option>
+                <option value="10300:1032F">Old Italic</option>
+<option value="10350:1037F">Old Permic*</option>
+                <option value="101D0:101FF">Phaistos Disc</option>
+                <option value="16A0:16FF">Runic</option>
+                <option value="10450:1047F">Shavian</option>
+                </optgroup>
+                <optgroup label="Phonetic &amp; Shorthand Symbols">
+<option value="1BC00:1BC9F">Duployan*</option>
+                <option value="0250:02AF">IPA Extensions</option>
+                <option value="1D00:1D7F">Phonetic Extensions</option>
+                <option value="1D80:1DBF">Phonetic Extensions Supplement</option>
+                <option value="A700:A71F">Modifier Tone Letters</option>
+<option value="1BCA0:1BCAF">Shorthand Format Controls*</option>
+                <option value="02B0:02FF">Spacing Modifier Letters</option>
+                <option value="2070:209F">Superscripts and Subscripts</option>
+                </optgroup>
+                <optgroup label="Combining Diacritics">
+                <option value="0300:036F">Combining Diacritical Marks</option>
+<option value="1AB0:1AFF">Combining Diacritical Marks Extended*</option>
+                <option value="20D0:20FF">Combining Diacritical Marks for Symbols</option>
+                <option value="1DC0:1DFF">Combining Diacritical Marks Supplement</option>
+                <option value="FE20:FE2F">Combining Half Marks</option>
+                </optgroup>
+                <optgroup label="African Scripts">
+                <option value="A6A0:A6FF">Bamum</option>
+                <option value="16800:16A3F">Bamum Supplement</option>
+<option value="16AD0:16AFF">Bassa Vah*</option>
+                <option value="2C80:2CFF">Coptic</option>
+                <option value="03E2:03EF" class="pb">Coptic in Greek block</option>
+ <option value="102E0:102FF">Coptic Epact Numbers*</option>
+	                <option value="13000:1342F">Egyptian Hieroglyphs</option>
+                <option value="1200:137F">Ethiopic</option>
+                <option value="1380:139F">Ethiopic Supplement</option>
+                <option value="2D80:2DDF">Ethiopic Extended</option>
+                <option value="AB00:AB2F">Ethiopic Extended-A</option>
+<option value="1E800:1E8DF">Mende Kikakui*</option>
+                <option value="109A0:109FF">Meroitic Cursive</option>
+                <option value="10980:1099F">Meroitic Hieroglyphs</option>
+                <option value="07C0:07FF">N'Ko</option>
+                <option value="10480:104AF">Osmanya</option>
+                <option value="2D30:2D7F">Tifinagh</option>
+                <option value="A500:A63F">Vai</option>
+                </optgroup>
+                <optgroup label="Middle Eastern Scripts">
+                <option value="0600:06FF">Arabic</option>
+                <option value="0750:077F">Arabic Supplement</option>
+                <option value="08A0:08FF">Arabic Extended-A</option>
+                <option value="FB50:FDFF">Arabic Presentation Forms-A</option>
+                <option value="FE70:FEFF">Arabic Presentation Forms-B</option>
+                <option value="10B00:10B3F">Avestan</option>
+                <option value="102A0:102DF">Carian</option>
+                <option value="12000:123FF">Cuneiform</option>
+                <option value="12400:1247F">Cuneiform Numbers and Punctuation</option>
+                <option value="0590:05FF">Hebrew</option>
+                <option value="FB1D:FB4F" class="pb">Hebrew Presentation Forms</option>
+                <option value="10840:1085F">Imperial Aramaic</option>
+                <option value="10B60:10B7F">Inscriptional Pahlavi</option>
+                <option value="10B40:10B5F">Inscriptional Parthian</option>
+                <option value="10280:1029F">Lycian</option>
+                <option value="10920:1093F">Lydian</option>
+                <option value="0840:085F">Mandaic</option>
+<option value="10880:108AF">Nabataean*</option>
+<option value="10A80:10A9F">Old North Arabian*</option>
+                <option value="103A0:103DF">Old Persian</option>
+<option value="10860:1087F">Palmyrene*</option>
+                <option value="10A60:10A7F">Old South Arabian</option>
+                <option value="10900:1091F">Phoenician</option>
+<option value="10B80:10BAF">Psalter Pahlavi*</option>
+                <option value="0800:083F">Samaritan</option>
+                <option value="0700:074F">Syriac</option>
+                <option value="10380:1039F">Ugaritic</option>
+                </optgroup>
+                <optgroup label="Central Asian Scripts">
+<option value="10AC0:10AFF">Manichaean*</option>
+                <option value="1800:18AF">Mongolian</option>
+                <option value="10C00:10C4F">Old Turkic</option>
+                <option value="A840:A87F">Phags-pa</option>
+                <option value="0F00:0FFF">Tibetan</option>
+                </optgroup>
+                <optgroup label="South Asian Scripts">
+                <option value="0980:09FF">Bengali</option>
+                <option value="11000:1107F">Brahmi</option>
+                <option value="11100:1114F">Chakma</option>
+                <option value="0900:097F">Devanagari</option>
+                <option value="A8E0:A8FF">Devanagari Extended</option>
+<option value="11300:1137F">Grantha*</option>
+                <option value="0A80:0AFF">Gujarati</option>
+                <option value="0A00:0A7F">Gurmukhi</option>
+                <option value="11080:110CF">Kaithi</option>
+                <option value="0C80:0CFF">Kannada</option>
+                <option value="10A00:10A5F">Kharoshthi</option>
+<option value="11200:1124F">Khojki*</option>
+<option value="112B0:112FF">Khudawadi*</option>
+                <option value="1C00:1C4F">Lepcha</option>
+                <option value="1900:194F">Limbu</option>
+<option value="11150:1117F">Mahajani*</option>
+                <option value="0D00:0D7F">Malayalam</option>
+                <option value="ABC0:ABFF">Meetei Mayek</option>
+                <option value="AAE0:AAEF">Meetei Mayek Extensions</option>
+<option value="11600:1165F">Modi*</option>
+<option value="16A40:16A6F">Mro*</option>
+                <option value="1C50:1C7F">Ol Chiki</option>
+                <option value="0B00:0B7F">Oriya</option>
+                <option value="A880:A8DF">Saurashtra</option>
+<option value="11580:115FF">Siddham*</option>
+                <option value="0D80:0DFF">Sinhala</option>
+<option value="111E0:111FF">Sinhala Archaic Numbers*</option>
+                <option value="11180:111DF">Sharada</option>
+                <option value="110D0:110FF">Sora Sompeng</option>
+                <option value="A800:A82F">Syloti Nagri</option>
+                <option value="11680:116CF">Takri</option>
+                <option value="0B80:0BFF">Tamil</option>
+                <option value="0C00:0C7F">Telugu</option>
+                <option value="0780:07BF">Thaana</option>
+<option value="11480:114DF">Tirhuta*</option>
+                <option value="1CD0:1CFF">Vedic Extensions</option>
+<option value="118A0:118FF">Warang Citi*</option>
+                </optgroup>
+                <optgroup label="Southeast Asian Scripts">
+                <option value="AA00:AA5F">Cham</option>
+                <option value="A900:A92F">Kayah Li</option>
+                <option value="1780:17FF">Khmer</option>
+                <option value="19E0:19FF">Khmer Symbols</option>
+                <option value="0E80:0EFF">Lao</option>
+                <option value="1000:109F">Myanmar</option>
+                <option value="AA60:AA7F">Myanmar Extended-A</option>
+<option value="A9E0:A9FF">Myanmar Extended-B*</option>
+                <option value="1980:19DF">New Tai Lue</option>
+<option value="16B00:16B8F">Pahawh Hmong*</option>
+<option value="11AC0:11AFF">Pau Cin Hau*</option>
+                <option value="1950:197F">Tai Le</option>
+                <option value="1A20:1AAF">Tai Tham</option>
+                <option value="AA80:AADF">Tai Viet</option>
+                <option value="0E00:0E7F">Thai</option>
+                </optgroup>
+                <optgroup label="Indonesia &amp; Oceania Scripts">
+                <option value="1B00:1B7F">Balinese</option>
+                <option value="1BC0:1BFF">Batak</option>
+                <option value="1A00:1A1F">Buginese</option>
+                <option value="1740:175F">Buhid</option>
+                <option value="1720:173F">Hanunoo</option>
+                <option value="A980:A9DF">Javanese</option>
+                <option value="A930:A95F">Rejang</option>
+                <option value="1B80:1BBF">Sundanese</option>
+                <option value="1CC0:1CCF">Sundanese Supplement</option>
+                <option value="1700:171F">Tagalog</option>
+                <option value="1760:177F">Tagbanwa</option>
+                </optgroup>
+                <optgroup label="East Asian Scripts">
+                <option value="3100:312F">Bopomofo</option>
+                <option value="31A0:31BF">Bopomofo Extended</option>
+                <option value="4E00:9FFF">CJK Unified Ideographs (big!)</option>
+                <option value="3400:4DBF">CJK Unified Ideographs Extension-A (big!)</option>
+                <option value="20000:2A6DF">CJK Unified Ideographs Extension B (big!)</option>
+                <option value="2A700:2B73F">CJK Unified Ideographs Extension C (big!)</option>
+                <option value="2B740:2B81F">CJK Unified Ideographs Extension D</option>
+                <option value="F900:FAFF">CJK Compatibility Ideographs</option>
+                <option value="2F800:2FA1F">CJK Compatibility Ideographs Supplement</option>
+                <option value="2F00:2FDF">Kangxi Radicals</option>
+                <option value="2E80:2EFF">CJK Radicals Supplement</option>
+                <option value="31C0:31EF">CJK Strokes</option>
+                <option value="2FF0:2FFF">Ideographic Description Characters</option>
+                <option value="AC00:D7AF">Hangul Syllables (big!)</option>
+                <option value="1100:11FF">Hangul Jamo</option>
+                <option value="A960:A97F">Hangul Jamo Extended-A</option>
+                <option value="D7B0:D7FF">Hangul Jamo Extended-B</option>
+                <option value="3130:318F">Hangul Compatibility Jamo</option>
+                <option value="FFA0:FFDC" class="pb">Halfwidth Jamo</option>
+                <option value="3040:309F">Hiragana</option>
+                <option value="30A0:30FF">Katakana</option>
+                <option value="31F0:31FF">Katakana Phonetic Extensions</option>
+                <option value="1B000:1B0FF">Kana Supplement</option>
+                <option value="FF65:FF9F" class="pb">Halfwidth Katakana</option>
+                <option value="3190:319F">Kanbun</option>
+                <option value="A4D0:A4FF">Lisu</option>
+                <option value="16F00:16F9F">Miao</option>
+                <option value="A000:A48F">Yi Syllables</option>
+                <option value="A490:A4CF">Yi Radicals</option>
+                </optgroup>
+                <optgroup label="American Scripts">
+                <option value="13A0:13FF">Cherokee</option>
+                <option value="10400:1044F">Deseret</option>
+                <option value="1400:167F">Unified Canadian Aboriginal Syllabics</option>
+                <option value="18B0:18FF">UCAS Extended</option>
+                </optgroup>
+                <optgroup label="Other">
+                <option value="FB00:FB4F">Alphabetic Presentation Forms</option>
+                <option value="FF00:FFEF">Halfwidth and Fullwidth Forms</option>
+                </optgroup>
+                <optgroup label="Punctuation">
+                <option value="2000:206F">General Punctuation</option>
+                <option value="0021:007F" class="pb">ASCII Punctuation</option>
+                <option value="00A1:00BF" class="pb">Latin-1 Punctuation</option>
+                <option value="FE50:FE6F">Small Form Variants</option>
+                <option value="2E00:2E7F">Supplemental Punctuation</option>
+                <option value="3000:303F">CJK Symbols and Punctuation</option>
+                <option value="FE30:FE4F">CJK Compatibility Forms</option>
+                <option value="FF01:FF60" class="pb">Fullwidth ASCII Punctuation</option>
+                <option value="FE10:FE1F">Vertical Forms</option>
+                </optgroup>
+                <optgroup label="Alphanumeric Symbols">
+                <option value="1EE00:1EEFF">Arabic Mathematical Alphabetic Symbols</option>
+                <option value="2100:214F">Letterlike Symbols</option>
+                <option value="10190:101CF">Roman Symbols</option>
+                <option value="1D400:1D7FF">Mathematical Alphanumeric Symbols</option>
+                <option value="2460:24FF">Enclosed Alphanumerics</option>
+                <option value="1F100:1F1FF">Enclosed Alphanumeric Supplement</option>
+                <option value="3200:32FF">Enclosed CJK Letters and Months</option>
+                <option value="1F200:1F2FF">Enclosed Ideographic Supplement</option>
+                <option value="3300:33FF">CJK Compatibility</option>
+                </optgroup>
+                <optgroup label="Technical Symbols">
+                <option value="2300:23FF">Miscellaneous Technical</option>
+                <option value="2400:243F">Control Pictures</option>
+                <option value="2440:245F">Optical Character Recognition</option>
+                </optgroup>
+                <optgroup label="Numbers and Digits">
+                <option value="10100:1013F">Aegean Numbers</option>
+                <option value="10140:1018F">Ancient Greek Numbers</option>
+                <option value="A830:A83F">Common Indic Number Forms</option>
+                <option value="1D360:1D37F">Counting Rod Numerals</option>
+                <option value="12400:1247F">Cuneiform Numbers and Punctuation</option>
+                <option value="FF10:FF19" class="pb">Fullwidth ASCII Digits</option>
+                <option value="2150:218F">Number Forms</option>
+                <option value="10E60:10E7F">Rumi Numeral Symbols</option>
+                <option value="2070:209F">Superscripts and Subscripts</option>
+                </optgroup>
+                <optgroup label="Mathematical Symbols">
+                <option value="2190:21FF">Arrows</option>
+                <option value="27F0:27FF">Supplemental Arrows-A</option>
+                <option value="2900:297F">Supplemental Arrows-B</option>
+<option value="1F800:1F8FF">Supplemental Arrows-C*</option>
+                <option value="2B00:2BFF">Miscellaneous Symbols and Arrows</option>
+                <option value="1D400:1D7FF">Mathematical Alphanumeric Symbols</option>
+<option value="1EE00:1EEFF">Arabic Mathematical Alphabetic Symbols*</option>
+                <option value="2100:214F">Letterlike Symbols</option>
+                <option value="2200:22FF">Mathematical Operators</option>
+                <option value="27C0:27EF">Miscellaneous Mathematical Symbols-A</option>
+                <option value="2980:29FF">Miscellaneous Mathematical Symbols-B</option>
+                <option value="2A00:2AFF">Supplemental Mathematical Operators</option>
+                <option value="2308:230B" class="pb">Ceilings and Floors</option>
+                <option value="25A0:25FF">Geometric Shapes</option>
+<option value="1F780:1F7FF">Geometric Shapes Extended*</option>
+                <option value="2500:257F">Box Drawing</option>
+                <option value="2580:259F">Block Elements</option>
+                </optgroup>
+                <optgroup label="Musical Symbols">
+                <option value="1D100:1D1FF">Musical Symbols</option>
+                <option value="2669:266F" class="pb">More Musical Symbols</option>
+                <option value="1D200:1D24F">Ancient Greek Musical Notation</option>
+                <option value="1D000:1D0FF">Byzantine Musical Symbols</option>
+                </optgroup>
+                <optgroup label="Game Symbols">
+                <option value="2654:265F" class="pb">Chess</option>
+                <option value="1F030:1F09F">Domino Tiles</option>
+                <option value="26C0:26C3" class="pb">Draughts</option>
+                <option value="2616:2617" class="pb">Japanese Chess</option>
+                <option value="1F000:1F02F">Mahjong Tiles</option>
+                <option value="1F0A0:1F0FF">Playing Cards</option>
+                <option value="2660:2667" class="pb">Playing Cards</option>
+                </optgroup>
+                <optgroup label="Other Symbols">
+                <option value="1F700:1F77F">Alchemical Symbols</option>
+                <option value="10190:101CF">Ancient Symbols</option>
+                <option value="2800:28FF">Braille Patterns</option>
+                <option value="20A0:20CF">Currency Symbols</option>
+                <option value="2700:27BF">Dingbats</option>
+<option value="1F650:1F67F">Ornamental Dingbats*</option>
+                <option value="1F600:1F64F">Emoticons</option>
+                <option value="2600:26FF">Miscellaneous Symbols</option>
+                <option value="2B00:2BFF">Miscellaneous Symbols and Arrows</option>
+                <option value="1F300:1F5FF">Miscellaneous Symbols And Pictographs</option>
+                <option value="4DC0:4DFF">Yijing Hexagram Symbols</option>
+                <option value="268A:268F" class="pb">Yijing Mono and Digrams</option>
+                <option value="2630:2637" class="pb">Yijing Trigrams</option>
+                <option value="1D300:1D35F">Tai Xuan Jing Symbols</option>
+                <option value="1F680:1F6FF">Transport And Map Symbols</option>
+                </optgroup>
+                <optgroup label="Other">
+                <option value="FFF0:FFFF">Specials</option>
+                <option value="E0000:E007F">Tags</option>
+                <option value="FE00:FE0F">Variation Selectors</option>
+                <option value="E0100:E01EF">Variation Selectors Supplement</option>
+                </optgroup>
+              </select>
+              <input src="images/apply.gif" alt="Apply"  title="List results below" type="image" style="border:0; margin:0; padding:0;  vertical-align: top;" />
+            </form></td>
+        </tr>
+        <tr>
+          <th> <div title="Display the range of characters between two end points."> <span title="Provide two hex digits with :, -, or dots or spaces as separators. NCR, JavaScript, CSS escapes ok."><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help"  onclick="help = window.open('help#customcontrol', 'help'); help.focus();" class="help">S</span>how range:</span> </div>
+          </th>
+          <td><form action="none" onsubmit="showRange(); return false;"  title="Provide two hex digits with :, -, or dots or spaces as separators. NCR, JavaScript, CSS escapes ok.">
+              <input id="customRange1" size="15" name="customRange1" style="text-align:center;" />
+              &nbsp;  
+              <input src="images/apply.gif" alt="Apply"  title="List characters below" type="image"  style="border:0; margin:0; padding:0;  vertical-align: top;" />
+              
+              <span id="searchParameters" style="display: none; font-size:80%; margin-left:10px; margin-bottom: 5px; "> <span title="Search character names.">
+    <input name="searchNames" type="checkbox" id="searchNames" checked="checked"  />
+    Name&nbsp;</span> <span title="Search character descriptions (ie. the NamesList.txt file).">
+    <input name="searchDesc" type="checkbox" id="searchDesc" checked="checked"  />
+    Description&nbsp;</span> <span title="Search alternative names.">
+    <input name="searchOther" type="checkbox" id="searchOther" checked="checked"   />
+    Other</span> </span>
+            </form></td>
+        </tr>
+        <tr>
+          <th> <div title="Display information for a list of characters. The characters can be either a list of hex or decimal code points, or a simple list of characters."> 
+              <!--form action="none" onsubmit="if (document.getElementById('decimal').checked == true) { showCodepoint(document.getElementById('charNum').value, 'dec'); } else if (document.getElementById('hexcp').checked == true)  {showCodepoint(document.getElementById('charNum').value, 'hex'); } else {showCharacterList(document.getElementById('charNum').value);} _lastOperation = 'codepoint'; return false;" style="border:0;margin:0;padding:0;"--> 
+              <span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help"  onclick="help = window.open('help#codepointcontrol', 'help'); help.focus();" class="help">F</span>ind: </div>
+            </th>
+          <td style="vertical-align:top;"><form action="none" onsubmit="activateFind(); return false;" 
+                    style="border:0;margin:0;padding:0;">
+              <input type="text" id="charNum" tabindex="2" name="charNum" style="width:320px; font-size:110%;" />
+              <input name="image2" type="image"  title="List characters to left with names" src="images/apply.gif" alt="Apply" style="border:0; margin:0; padding:0; margin-left:3px; vertical-align: top;"  />
+              <br />
+              <button onclick="makeActive(this); hideSearchParameters(); showCodepoint(document.getElementById('charNum').value, 'hex'); return false;" title="List hex code point values. Most of the time codepoints embedded in escapes or other text are recognised, eg. 'the codepoints U+1234 and U+1235'." id="hexbutton" class="activebutton">Hex</button>
+              <button onclick="makeActive(this); hideSearchParameters(); showCodepoint(document.getElementById('charNum').value, 'dec'); return false;" title="List decimal code point values. Most of the time codepoints embedded in escapes or other text are recognised, eg. 'the codepoints 1234 and 1235'." id="decbutton">Dec</button>
+              <button onclick="makeActive(this); hideSearchParameters(); showCharacterList(document.getElementById('charNum').value); return false;" title="List characters." id="charbutton">Characters</button>
+              <button onclick="makeActive(this); showSearchParameters();  findString(document.getElementById('charNum').value);  return false;" title="Search the Unicode database. You can use basic regular expressions, eg. \btet\b, or latin.*alpha|latin.*beta, etc." id="searchbutton">Search</button>
+              <span style="font-size:80%;" title="Search only within the characters shown in a list or table, and highlight the characters found.">
+              <input name="localSearch" type="checkbox" id="localSearch" />
+              &nbsp;Local&nbsp;</span> 
+              
+              <!-- span style="font-size:80%;" title="List hex code point values. Most of the time codepoints embedded in escapes or other text are recognised, eg. 'the codepoints U+1234 and U+1235'."><input type="radio" name="charrepn" id="hexcp" checked="checked" />
+						HexCP</span>
+                        <span style="font-size:80%;" title="List decimal code point values. Most of the time codepoints embedded in escapes or other text are recognised, eg. 'the codepoints 1234 and 1235'.">
+                        <input type="radio" name="charrepn" id="decimal" style="margin-left: 10px;" />
+                        DecCP</span>
+                        <span style="font-size:80%;" title="Check this if the codepoint values are decimal.">
+                        <input type="radio" name="charrepn" id="chardata" style="margin-left: 10px;" />Characters</span>
+                        <img src="images/han.gif" alt="UniHan" onclick="if (document.getElementById('decimal').checked == true) { inputtype = 'dec'; } else if (document.getElementById('hexcp').checked == true) { inputtype = 'hex'; } else { inputtype = 'char';} showUnihan(document.getElementById('charNum').value, inputtype);" title="Look up characters in the UniHan database."  style="margin-left:10px;" /><img
+src="images/convert.png" alt="Convert" title="Send characters to the Unicode Character Converter tool."	onclick="converter = window.open('/rishida/tools/conversion?q='+encodeURIComponent(document.getElementById('charNum').value), 'converter'); converter.focus();" style="margin-left:3px;" /--> 
+              <!--img src="images/convert.png" alt="Open the converter file" title="Open the converter file"  style="margin-left:3px;" onclick="showConverter(document.getElementById('charNum').value, 'codepoint');" /--> 
+              <img src="images/clearpicker.png" alt="Clear" title="Clear the input field." style="margin-left: 3px;" onclick="clearInputFields();" />
+            </form></td>
+        </tr>
+      </tbody>
+    </table>
+  <div id="searchResultCount" style="display: none; float:right; font-size: 80%; vertical-align:top;">Search results found: 0</div>
+  <div> <span title="Switch between using graphics or font-based display of characters.">
+    <input type="checkbox" id="graphicsToggle" onclick="toggleGraphic(this);" checked="checked" />
+    &nbsp;<span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#graphicscontrol', 'help'); help.focus();" class="help">U</span>se graphics&nbsp;</span> <span title="Use a list where UniView would normally produce a matrix (eg. for display of Unicode blocks).">
+    <input name="listMatrixToggle" type="checkbox" id="listMatrixToggle" style="margin-top: 2px; margin-bottom: 2px;" onclick="toggleDisplay(this);" />
+    &nbsp;<span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#rangecontrol', 'help'); help.focus();" class="help">S</span>how range as list</span> </div>
+</div>
+<!-- lookuptab -->
+
+<div id="listpanel">
+  <div title="Search for characters with a particular property."><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#searchpropcontrol', 'help'); help.focus();" class="help">S</span>how properties
+    <form action="none" onsubmit="showProperties(document.getElementById('select').value); return false;">
+      <select name="select" id="select"
+									 onchange="showProperties(this.value); return false;" 
+									 title="List characters from a particular category.">
+        <option value="startup" selected="selected">None</option>
+        <option value="none">None</option>
+        <option value="(;Lu;|;Ll;|;Lt;|;Lm;|;Lo;)">Letter</option>
+        <option value="(;Mn;|;Mc;|;Me;)">Mark</option>
+        <option value="(;Nd;|;Nl;|;No;)">Number</option>
+        <option value="(;Pc;|;Pd;|;Ps;|;Pe;|;Pi;|;Pf;|;Po;)">Punctuation</option>
+        <option value="(;Zs;|;Zl;|;Zp;)">Separator</option>
+        <option value="(;Sm;|;Sc;|;Sk;|;So;)">Symbol</option>
+        <option value="(;Cc;|;Cf;|;Co;|;Cn;)">Other</option>
+        <option value=";Lu;">Lu: Letter, uppercase</option>
+        <option value=";Ll;">Ll: Letter, lowercase</option>
+        <option value=";Lt;">Lt: Letter, titlecase</option>
+        <option value=";Lm;">Lm: Letter, modifier</option>
+        <option value=";Lo;">Lo: Letter, other</option>
+        <option value=";Mn;">Mn: Mark, nonspacing</option>
+        <option value=";Mc;">Mc: Mark, spacing combining</option>
+        <option value=";Me;">Me: Mark, enclosing</option>
+        <option value=";0;">0: Mark, combining class 0</option>
+        <option value=";Nd;">Nd: Number, decimal digit</option>
+        <option value=";Nl;">Nl: Number, letter</option>
+        <option value=";No;">No: Number, other</option>
+        <option value=";Pc;">Pc: Punctuation, connector</option>
+        <option value=";Pd;">Pd: Punctuation, dash</option>
+        <option value=";Ps;">Ps: Punctuation, open</option>
+        <option value=";Pe;">Pe: Punctuation, close</option>
+        <option value=";Pi;">Pi: Punctuation, initial quote</option>
+        <option value=";Pf;">Pf: Punctuation, final quote</option>
+        <option value=";Po;">Po: Punctuation, other</option>
+        <option value=";Zs;">Zs: Separator, space</option>
+        <option value=";Zl;">Zl: Separator, line</option>
+        <option value=";Zp;">Zp: Separator, paragraph</option>
+        <option value=";Sm;">Sm: Symbol, math</option>
+        <option value=";Sc;">Sc: Symbol, currency</option>
+        <option value=";Sk;">Sk: Symbol, modifier</option>
+        <option value=";So;">So: Symbol, other</option>
+        <option value=";Cc;">Cc: Other, control</option>
+        <option value=";Cf;">Cf: Other, format</option>
+        <option value=";Co;">Co: Other, private use</option>
+        <option value=";Cn;">Cn: Other, not assigned</option>
+        <option value=";L;">L: Left</option>
+        <option value=";R;">R: Right</option>
+        <option value=";AL;">AL: Right-to-left Arabic</option>
+        <option value=";EN;">EN: European number</option>
+        <option value=";ES;">ES: European number separator</option>
+        <option value=";ET;">ET: European number terminator</option>
+        <option value=";AN;">AN: Arabic number</option>
+        <option value=";CS;">CS: Common number separator</option>
+        <option value=";NSM;">NSM: Nonspacing mark</option>
+        <option value=";BN;">BN: Boundary neutral</option>
+        <option value=";WS;">WS: Whitespace</option>
+        <option value=";ON;">ON: Other neutrals</option>
+      </select>
+      &nbsp;
+      <input src="images/apply.gif" alt="Apply"  title="List characters below" type="image"  style="border:0; margin:0; padding:0;  vertical-align: top;" />
+      <span title="By default, Show Properties highlights characters in what is displayed below. Unchecking this produces a new list using a full database search." style="font-size:80%; margin-left:10px; margin-bottom: 5px;">
+      <input name="locallist" type="checkbox" checked="checked" id="locallist" />
+      &nbsp;Local</span>
+    </form>
+  </div>
+  <div title="If you have highlighted characters using Search or Show Properties, this creates a list including only the un-highlighted items." onclick="highlight2List(); return false;"><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#makelistfrom', 'help'); help.focus();" class="help">M</span>ake list from highlights &nbsp; <img src="images/apply.gif" alt="Apply"  title="List results below" style="border:0; margin:0; padding:0;  vertical-align: top;" /></div>
+  <div title="If you have highlighted characters using Search or Show Properties, this creates a list including only the highlighted items." onclick="nonHighlight2List(); return false;"><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#makelistfromnon', 'help'); help.focus();" class="help">M</span>ake list from non-highlighted items &nbsp; <img src="images/apply.gif" alt="Apply"  title="List results below" style="border:0; margin:0; padding:0;  vertical-align: top;" /></div>
+  <!--div onclick="removeNonChars(); return false;"><img src="images/apply.gif" alt="Apply"  title="Show results below" style="border:0; margin:0; padding:0;  vertical-align: top;" /> <span onmouseover="this.innerHTML='?'" title="Get context-sensitive help" onmouseout="this.innerHTML='R'" onclick="help = window.open('help#removeunassigned', 'help'); help.focus();" class="help">R</span>emove unassigned characters from list</div-->
+  
+<div id="propertyResultCount" style="display: none; float:right; font-size: 80%; vertical-align:top;">Search results found: 0</div>
+<div title="Show in which version of Unicode each character was introduced. Unmarked characters were introduced before version 2."> <span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#showage', 'help'); help.focus();" class="help">S</span>how age &nbsp;
+    <input src="images/apply.gif" alt="Apply"  title="Apply." type="image"  style="border:0; margin:0; padding:0;  vertical-align: top;" onclick="showAge(); return false;" />
+    &nbsp;<img src="images/clearpicker.png" alt="Clear." title="Clear the age-related information." style="margin-left: 10px;" onclick="clearHighlighting();" /> 
+    <!--span><input type="checkbox" id="tests" onclick="findScriptGroup(43264);" title="tests" /> tests</span--></div>
+</div>
+<!-- listpanel -->
+
+<div id="optionspanel"> 
+  
+  <!--div title="Type the name of a font to apply to characters when Use Graphics is not selected.  To reset, empty the box and click on the triangle.">
+					<form onsubmit="changeFont(document.getElementById('chFont').value); return false;" action="none">
+						<span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#fontcontrol', 'help'); help.focus();" class="help">U</span>se this font for UniView
+						<input name="chFont" style="color:gray;" id="chFont" value="" size="20"/>&nbsp;<input src="images/go.gif" alt="Apply"  title="Apply" type="image" style="border:0; margin:0; padding:0;  vertical-align: top;" />
+					</form>
+				</div>
+                
+<div title="Type the name of a font to use for the Copy &amp; Paste box. To reset, empty the box and click on the triangle.">
+     			<form action="none" onsubmit="document.getElementById('picker').style.fontFamily=document.getElementById('charfont').value; return false;"  style="padding:0; margin:0; border:0;color:#a52a2a;font-size:80%; line-height:18px;">
+				Use this font for the Copy &amp; Paste box:
+				<input name="charfont" id="charfont" style="width:160px; border:1px solid #dbce99;" />
+				<input src="images/go.gif" alt="Apply"  title="Change the font" type="image" style="border:0; margin:0; padding:0;  vertical-align: middle;" />
+			</form>
+	</div--> 
+  <!-- id="addCommands"--> 
+  <!--div title="Shows information under DB Notes in the detailed character information when data for that character exists in the UniView character database."><img src="images/X.gif" alt=X/><input style="display:none;" name="showDB" type="checkbox" id="showDB"  /> <span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#dbcontrol', 'help'); help.focus();" class="help">S</span>how character database information</div-->
+  
+  
+  <div title="Puts U+ in front of codepoint numbers in a list.">
+    <input name="uPlusToggle" type="checkbox" id="uPlusToggle" title="Toggle between showing and hiding U+ before numbers." style="margin:0;" onclick="redrawList();" />
+    &nbsp;<span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#showu', 'help'); help.focus();" class="help">S</span>how U+ in lists</div>
+  <div title="Allows you to change the composition and order of items in a row for lists of characters. It is particularly useful to prepare a list for copy/pasting."><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#listformat', 'help'); help.focus();" class="help">L</span>ist format:
+    &nbsp;&nbsp;
+    <input name="listC1" onclick="redrawList();" type="checkbox" checked="checked" id="listC1" style="margin-top: 2px; margin-bottom: 2px;"  title="Show character at start of list item." />
+    character &nbsp;
+    <input name="listN" onclick="redrawList();" type="checkbox" checked="checked" id="listN" style="margin-top: 2px; margin-bottom: 2px;"  title="Show character number in list item." />
+    # &nbsp;
+    <input name="listC2" onclick="redrawList();" type="checkbox" id="listC2" style="margin-top: 2px; margin-bottom: 2px;"  title="Show character between number and name." />
+    character &nbsp;
+    <input name="listNm" onclick="redrawList();" type="checkbox" checked="checked" id="listNm" style="margin-top: 2px; margin-bottom: 2px;"  title="Show character name in list item." />
+    name </div>
+  <div title="Hides the numbers around a table of characters.">
+    <input name="hideNumbers" type="checkbox" id="hideNumbers" title="Toggle between showing and hiding numbers round a table of characters." style="margin:0;" onclick="toggleNumbers();" />
+    &nbsp; <span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#hidenumbers', 'help'); help.focus();" class="help">H</span>ide numbers around a table of characters</div>
+  <div title="Adjust the size of the characters displayed in tables or lists. (Only works if Use Graphics is turned off.)"><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#panelsize', 'help'); help.focus();" class="help">L</span>eft panel font size:
+    <select id="fontSize" name="fontSize" onchange="changeFontSize(this.value)" title="Change the size of characters in the matrix."
+				 style="color:gray;">
+      <option value="75%">75%</option>
+      <option value="100%" selected="selected">100%</option>
+      <option value="150%">150%</option>
+      <option value="200%">200%</option>
+      <option value="300%">300%</option>
+      <option value="400%">400%</option>
+      <option value="500%">500%</option>
+    </select>
+  </div>
+  <div title="Sets a maximum viewport height for list. Useful for keeping everything on one screen when working on small devices such as ipads, netbooks, etc."><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#panelheight', 'help'); help.focus();" class="help">L</span>eft panel max height (pixels):
+    <form onsubmit="changeHeight(document.getElementById('chHeight').value+'px'); return false;" action="none">
+      <input name="chHeight" id="chHeight" value="500" size="5" style="color:gray;"/>
+      &nbsp;<img src="images/go.gif" height="16"
+					width="20" alt="Apply" style="vertical-align: middle" onclick="changeHeight(document.getElementById('chHeight').value+'px'); return false;" title="Apply"/>
+    </form>
+  </div>
+  <div title="Sets a maximum viewport height for list. Useful for keeping everything on one screen when working on small devices such as ipads, netbooks, etc."><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#panelheight', 'help'); help.focus();" class="help">L</span>eft panel max height presets:
+     <select id="chHeightps"  onchange="changeHeight(this.value+'px');">
+     <option value="20000">Fullsize</option>
+     <option value="900">iPad portrait</option>
+     <option value="420">iPad landscape</option>
+     <option value="400">Smartphone landscape</option>
+     <option value="400">Netbook</option>
+     </select>
+  </div>
+</div>
+<!-- optionspanel -->
+
+<div id="helppanel">
+<p><span class="quickstartmsg">See the <strong><span onclick="help = window.open('help', 'help'); help.focus(); return false;" style="color:teal; text-decoration:none; cursor:pointer;" class="link">User Guide</span></strong> or mouse over the first letter of a command name to reveal an orange link to context-sensitive help.<br>
+<br/>
+<strong>Basic use:</strong> Use the <span class="onscreen">Show Block</span> selector on the <span class="onscreen">Lookup</span> tab, or add characters or code points or a search string to one of the input fields in the <span class="onscreen">Find</span> field and click on one of <span class="onscreen">Hex</span>, <span class="onscreen">Dec</span>, <span class="onscreen">Characters</span> or <span class="onscreen">Search</span>. The
+        <input src="images/apply.gif" alt="Apply"  title="List results below" type="image" style="border:0; margin:0; padding:0;  vertical-align: top;" />
+      icon repeats the action.
+      UniView produces tables or lists of characters on the left. By default, clicking on a character in a list or table displays detailed information for that character to the right.
+      Use <img src="images/clicktocparea.png" alt=" " style="height: 1.4em; width: 1.2em;" /> to add the characters to the <span class="onscreen">Edit Buffer</span> box instead.  Alternatively, you can paste characters  directly into the <span class="onscreen">Edit Buffer</span> box and hit
+      <input src="images/apply.gif" alt="Apply"  title="List results below" type="image" style="border:0; margin:0; padding:0;  vertical-align: top; height: 1.4em;" />
+      to discover what they are.  <br><br>
+    The app covers Unicode version 7.0.0. For more information about Unicode 7.0, see the <a href="http://www.unicode.org/versions/Unicode7.0.0/">Unicode 7.0.0 page</a> or this very informative <a href="http://babelstone.blogspot.co.uk/2013/10/whats-new-in-unicode-70.html">Babelstone post</a>.</span></p>
+
+</div>
+</div>
+<!-- tabs --> 
+
+<!--div id="dropzone">
+      <ul id="dztabs" style="float:left;" >
+		<li id="dzinitialpaneltab"><a href="#dzinitialpanel">&nbsp;</a></li>
+		</ul>
+    <br  style="clear:both;" />
+    <div id="dropzonepanel" title="Drag a hex number into the yellow box and move the mouse away. You'll see the character with that codepoint, if you have a font.">
+    	<div id="preview" style="font-size: 40px; color: #ccc; text-align: center;">A</div>
+			<form action="none" onsubmit="showCodepoint(document.getElementById('charNum').value); return false;">
+				<input id="dropPoint" tabindex="2" size="5" name="dropPoint" style="background-color: #ffc; text-align: center;"
+						 onmouseout="if(this.value!=''){previewChar(this.value); this.value=''; return false;}"/>
+				</form>
+			</div>
+        <div>
+			<img src="images/clicktopanel.png" alt="Clear." title="Toggle to determine what happens if you click on characters in a list or table: copy to the Copy &amp; Paste box, or display details to the right." onclick="if(_copy2Picker){this.src='images/clicktopanel.png';_copy2Picker=false;}else{this.src='images/clicktocparea.png';_copy2Picker=true;}" style="margin-top:3px;" />
+            </div>
+    </div-->
+
+<div style="float:left;" id="cparea">
+  <div>
+    <ul id="cptabs" style="float:left;" >
+      <li class="ontab" id="initialpaneltab"><a href="#cpinitialpanel"><span onmouseover="this.className='cshelp';"  onmouseout="this.className='';" title="Click for context-sensitive help" onclick="help = window.open('help#characterarea', 'help'); help.focus();" class="help">E</span>dit buffer</a></li>
+    </ul>
+    <br  style="clear:both;" />
+    <div id="cppanel">
+      <div style="padding-bottom: 5px;">
+        <form action="none" onsubmit="
+            if (document.getElementById('dropPoint') && document.getElementById('dropPoint').value != '') { 
+               altwin = window.open('index?charlist='+encodeURIComponent(document.getElementById('dropPoint').value), 'altWindow');  
+               altwin.focus();
+               document.getElementById('dropPoint').value = '';
+               return false;
+               }
+            showCharacterList(document.getElementById('picker').value);  
+            _lastOperation = 'cutpaste'; 
+            return false;"  
+            style="color: #a52a2a; padding:0; margin:0; border:0; ">
+          <div><textarea style="width:17em; font-size: 130%; border:2px solid #ede4d0; height: 4em;" id="picker" name="picker" rows="3" cols="25"></textarea></div>
+          <div style="float:left;"><img src="images/clicktopanel.png" alt="Clear." title="Toggle to determine what happens if you click on characters in a list or table: copy to the Copy &amp; Paste box, or display details to the right." onclick="if(_copy2Picker){this.src='images/clicktopanel.png';_copy2Picker=false;}else{this.src='images/clicktocparea.png';_copy2Picker=true;}" style="margin-top:3px;" /></div>
+          <div><input name="image3" type="image" title="Create a list from the characters in the Copy &amp; Paste box." src="images/apply2.gif" alt="List" style="border:0; margin:0; padding:0; vertical-align:top; margin-left: 10px; float: left;" />
+          <img src="images/selectall.png" alt="Select" title="Select all text in the Copy &amp; Paste box." onclick="document.getElementById('picker').focus();document.getElementById('picker').select()" style="margin-left: 5px;" /><img src="images/tochar.png" alt="Add characters" title="Add characters in a list or table to the Copy &amp; Paste box." onclick="output2CharArea();"  style="margin-left:3px;" /><img src="images/addspace.png" alt="Select" title="Add a space to the Copy &amp; Paste box." onclick="addSpacesToPicker();"  style="margin-left: 10px;" /><img src="images/nfc.png" alt="NFC" title="Convert text in the Copy &amp; Paste box to NFC." onclick="doN11n('nfc'); document.getElementById('picker').focus();" style="margin-left:10px;" /><img src="images/nfd.png" style="margin-left: 3px;" alt="NFD" title="Convert text in the Copy &amp; Paste box to NFD."
+			onclick="doN11n('nfd'); document.getElementById('picker').focus();" /> <br/>
+          <img src="images/expand.png" alt="Expand" title="Expand ranges of characters in the Copy &amp; Paste box. For example, 'a-zA-Z'." onclick="if (document.getElementById('picker').value== '') { alert('Add characters to the text area.'); } else { document.getElementById('picker').value = expandList(document.getElementById('picker').value); }"  style="margin-left: 5px;" /><img src="images/count.png" alt="Count" title="Count the characters in the Copy &amp; Paste box." onclick="if (document.getElementById('picker').value== '') { alert('None.'); } else { alert(document.getElementById('picker').value.length); }"  style="margin-left: 2px;" /><img src="images/han.gif" alt="UniHan" onclick="showUnihan(document.getElementById('picker').value, 'char');" title="Look up characters in the Copy &amp; Paste box in the UniHan database."  style="margin-left:10px;" /><img
+src="images/convert.png" alt="Convert" title="Send characters in the Copy &amp; Paste box to the Unicode Character Converter tool."	onclick="converter = window.open('/rishida/tools/conversion?q='+encodeURIComponent(document.getElementById('picker').value), 'converter'); converter.focus();" /> <img src="images/case-simple.png" alt="Convert" title="Show upper/lower/title case alternatives for all characters in the copy/paste box."	onclick="convert2upper(document.getElementById('picker').value, false);  return false;" /> <img src="images/case-detail.png" alt="Convert" title="Show upper/lower/title case alternatives with correspondences for all characters in the copy/paste box."	onclick="convert2upper(document.getElementById('picker').value, true);  return false;" />
+          <img src="images/clearpicker.png" alt="Clear" style="margin-left: 15px;" title="Clear the  Copy &amp; Paste box." onClick="document.getElementById('picker').value = ''; document.getElementById('picker').focus(); return false;" /></div>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
+<!-- cparea -->
+
+<div id="blockInfoPointer"></div>
+
+
+<div id="namedisplay" style="clear:both;"><span>&nbsp;</span></div>
+<div id="listOutput">
+  <div id="chart">
+    <p class="startmsg"><span class="quickstartmsg"><span style="font-size:150%;color:#A52a2a;">Tables and lists appear here.</span> <br>
+      <br>
+      <strong>To get started</strong>, use the <span class="onscreen">Show Block</span> selector above, or add characters, code points or a search string to  the <span class="onscreen">Find</span> field  and click on one of <span class="onscreen">Hex</span>, <span class="onscreen">Dec</span>, <span class="onscreen">Characters</span> or <span class="onscreen">Search</span>. The
+        <input src="images/apply.gif" alt="Apply"  title="List results below" type="image" style="border:0; margin:0; padding:0;  vertical-align: top;" />
+      icon repeats the action.
+      <br>
+      <br>
+      The <img src="images/clicktocparea.png" alt=" " style="height: 1.5em; width: 1.5em;" /> button changes the effect of clicking on a character in a list or table. By default, or when the icon is greyed out,  detailed information for that character is displayed to the right of this box. <br>
+      Alternatively, the highlighted <img src="images/clicktocparea.png" alt=" " style="height: 1.5em; width: 1.5em;" /> button makes UniView add the characters to the <strong><span class="onscreen">Edit Buffer</span></strong> box instead. Click the icon to toggle back and forth.<br>
+      <br>
+      By default, characters are shown as graphics. If you have the necessary font you can speed up display by unchecking <span class="onscreen">Use graphics</span> above. <br />
+      <br />
+      UniView can do much more. Mouse over the first letter of a command name to reveal an orange link to context-sensitive help, or check out the <span onclick="help = window.open('help', 'help'); help.focus(); return false;" style="color:teal; text-decoration:none; cursor:pointer;" class="link"><strong>User Guide</strong></span>. <br>
+    </span></p>
+  </div>
+  <p id="startupMsg">You need to enable JavaScript to use this</p>
+  <p id="ack">Uses graphics from decodeunicode project.</p>
+</div>
+<div id="charOutput">
+  <div id="charInfo">
+      <p class="startmsg"><span class="quickstartmsg"><span style="font-size:150%;color:#A52a2a;">Character data appears here. <br>
+        <br>
+      </span>By default, or if <img src="images/clicktocparea.png" alt=" " style="height: 1.5em; width: 1.5em;" /> is greyed out, any time you click on a character in a list or table to the left displays here detailed information and links for that character.<br>
+      <br>
+      If <img src="images/clicktocparea.png" alt=" " style="height: 1.5em; width: 1.5em;" /> is not greyed out, clicking on a character in a table or list will put that character into the <span class="onscreen">Edit buffer</span> above.<br/>
+          <br/>
+      <strong>You can also</strong> paste characters  directly into the <strong><span class="onscreen">Edit buffer</span></strong> box  and hit the 
+      <input src="images/apply.gif" alt="Apply"  title="List results below" type="image" style="border:0; margin:0; padding:0;  vertical-align: top;" />
+      icon below it to discover what they are. The results appear to the left.<br>
+      <br/>
+      The app covers Unicode version 7.0.0. For more information about Unicode 7.0, see the <a href="http://www.unicode.org/versions/Unicode7.0.0/">Unicode 7.0.0 page</a> or this very informative <a href="http://babelstone.blogspot.co.uk/2013/10/whats-new-in-unicode-70.html">Babelstone post</a>.</span></p>
+  </div>
+</div>
+<div id="notescontainer"></div>
+<script type="text/javascript">
+// stop the startup message
+document.getElementById('startupMsg').style.display = 'none';
+
+
+// stop IE changing the focus when clicking on an img
+if (document.all) {  
+	document.getElementById('chart').onselectstart = function () { return false };
+	}
+document.getElementById('picker').focus();
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'char') { if (pairs[1]) { printProperties( parseInt(pairs[1],16) ); } }
+	if (pairs[0] == 'charlist') { if (pairs[1]) { document.getElementById("picker").value = decodeURIComponent(pairs[1]);showCharacterList(decodeURIComponent(pairs[1])); } }
+	if (pairs[0] == 'codepoints') { if (pairs[1]) { showCodepoint(pairs[1]); } }
+	if (pairs[0] == 'block') { if (pairs[1]) { range=getRange(pairs[1]); firstcp=range.split(":"); infoptr = scriptInfoPointer(firstcp[0]);  showSelection( getRange(pairs[1]) ); /*if (infoptr > 0) { displayBlockData(infoptr); } */ } }
+	if (pairs[0] == 'font') { if (pairs[1]) { changeFont(pairs[1]); } }
+	}
+
+</script>
+</body>
+</html>
