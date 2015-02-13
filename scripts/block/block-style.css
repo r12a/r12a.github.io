@@ -1,0 +1,193 @@
+/* This is a new version of style.css, adapted to work with the docs.css style sheet */
+
+
+.notes { margin-top: 2em; margin-bottom: 0; margin-left: 7.5%; margin-right: 10px; }
+.character .notes p { margin-right: 5%; }
+.notes ul, .letter li { margin-right: 0; text-align: left; }
+
+.letter { margin-top: 2em; border: 1px solid #999; margin-bottom: 10px; border-radius: 10px; hyphens: auto; }
+.letter img { vertical-align: middle; border-radius: 5px; }
+
+
+#index { margin-left: 7.5%; margin-right: 20%; margin-top: 20px;  }
+#index td { border: 1px solid #ccc; text-align: left; }
+#index th { vertical-align: top; }
+#index a { width: 80px; }
+#index td a:link,#index td a:visited, #index td a:active { color: #999; line-height: 2em; }
+#index td a:hover { color: white; background-color: gray }
+
+.charname { letter-spacing: 0.02em; }
+
+
+h2 { clear: left; }
+
+
+#endlinks li {
+	text-align: left;
+	}
+
+
+#charlistsection img { vertical-align: top; }
+#charlistsection p { line-height: 1.2em; margin-top:0;  margin-bottom: 0; font-style: italic; }
+.character { margin-left: 7%; margin-right: 28%; }
+
+
+.choices .ex { font-size: 200%; }
+.choices .uname { font-size: 70%; }
+.choices th { text-align: center; }
+.choices td { padding: 10px 10px 0 10px; }
+
+
+.database h2 {  clear: both; }
+.unicodenotes { line-height: 1.2em; }
+.subtitle { font-size: 80%; font-style: italic; color: #999; margin-bottom: 0; }
+.notes .title { color: #F63; font-size: 120%; font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif; font-weight:normal; letter-spacing: 0.03em; }
+.notes .title:after { content: '\00A0  '; }
+
+/* perhaps not used */
+.expandedtext { border: 1px solid teal; padding: 3px; margin-bottom: 10px; text-align: left;	}
+.expandedtext img { vertical-align: middle; }
+
+
+.ex { color:red; cursor:pointer;  }
+.exi { color:red; cursor:pointer; vertical-align: top; }
+.meaning { font-style: italic; letter-spacing: 0.02em; }
+.name { font-style: italic; }
+.name { font-family: 'doulos sil', 'charis sil', gentium, sans-serif; font-size:110%;  }
+.ref { font-size: 60%; }
+.trans { font-family: "Lucida Sans Unicode", "Lucida Grande", 'lucida sans', "helvetica neue", "Gentium Plus", sans-serif; font-size: 16px; }
+.trans:before { content: '{'; color: #bbb; }
+.trans:after { content: '}';  color: #bbb; }
+
+
+.character { margin-top: 5px; margin-bottom: 5px; background-color: #FDFADF; border: 1px solid #FBF4BF; clear: left; margin-bottom: 20px; padding-bottom: 15px; }
+.character p { margin-right: 100px; }
+.charimg { float: left; margin: 15px; border: 1px solid #FBF4BF; border: 1px solid #E7D10E; }
+.edit { text-align: right; font-size: 80%; color: teal; cursor: pointer; margin-right: 10px; }
+#input { margin-bottom: 20px; color: #999; font-size: 80%; }
+.leadin { color: #CC6600; font-style: italic; }
+#list { border: 3px solid #ffa500;  width: 100%; font-size: 120%; border-radius: 5px; } 
+.message { color: #F63; margin-top: 4em; font-size: 120%; line-height: 1.4em;  
+	background-color:#ffe; 
+	border: 1px solid #CCC; 
+	box-shadow: 7px 7px 5px #888; 
+	padding: 5px 10px 5px 15px; 
+	border-radius: 10px; 
+	}
+#panel { position: fixed; bottom: 20px; right: 10px; background-color: #FFFFFF; padding: 0.5em; width: 26%; 
+	background-color:#ffe; 
+	border: 1px solid #CCC; 
+	box-shadow: 7px 7px 5px #888; 
+	padding: 5px 10px 5px 15px; 
+	border-radius: 10px; 
+	z-index:2000;
+	width: 28%;
+	font-size: 80%;
+	text-align: left;
+	text-align: start;
+	max-height: 80%;
+	overflow: auto;
+	}
+#panel .ex, #panel .exi { font-size: 160%; }
+#panel img { vertical-align: middle; }
+#panel p { margin: 0; margin-top: 3px; }
+#panel #title { font-size: 200%; }
+.ref { font-size:60%; }
+#resultsarea { margin-right:28%; margin-bottom:30px; margin-left:7%; }
+.title { font-weight: bold; }
+
+
+[lang |= 'ak'] { font-family: 'Doulos SIL', 'Charis SIL', Gentium, sans-serif; font-size: 100%; }
+[lang |= 'am'] 	{font-family: "Abyssinica SIL", "Ethiopia Jiret", sans-serif; }
+[lang |= 'ban'] { font-family: "Aksara Bali", "Noto Sans Balinese", sans-serif; font-size: 24px; }
+[lang |= 'ber'] { font-family: "Hapax Berbère", "Noto Sans Tifinagh", Ebrima, "Tifinaghe-ircam Unicode", sans-serif; font-size: 18px;}
+:lang(bn) { font-family: SolaimanLipi, "Lohit Bengali", "Bangla MN", "Bangla Sangam MN", "Shonar Bangla", Nirmala, Vrinda, sans-serif;  font-size: 24px; }
+[lang |= 'cy'] { font-family: Gentium, serif; font-size: 100%; }
+[lang |= 'dz'] { font-family: "Tibetan Machine Uni", serif; font-size: 140%; }
+[lang |= 'el'] 	{font-family: Gentium, "Times New Roman", serif; font-size: 110%; }
+[lang |= 'en-gb-fonipa'] { font-family: 'Doulos SIL', 'Charis SIL', Gentium, sans-serif; font-size: 110%; }
+[lang |= 'fa'] { font-family: IranNastaliq, tahoma, sans-serif; font-size: 32px;  direction: rtl; unicode-bidi: embed; unicode-bidi: isolate; }
+/* [lang |= 'he'] 	{font-family: "Ezra SIL", "Times New Roman", "Narkisim", "New Peninim MT", serif; font-size: 110%;  direction: rtl; unicode-bidi: embed; unicode-bidi: isolate; } */
+[lang |= 'hi'] 	{font-family: Chandas, Mangal, sans-serif; font-size: 110%; }
+[lang |= 'hu'] { font-family: Gentium, serif; font-size: 100%; }
+[lang |= 'hy'] { font-family: 'Noto Serif Armenian', 'Arian AMU', "Arial Unicode MS", Sylfaen, Mshtakan, sans-serif; font-size: 100%; }
+[lang |= 'iu'] 	{font-family: Uqammaq, sans-serif; }
+[lang |= 'ja'] 	{font-family: "MS Mincho", "Arial Unicode MS", sans-serif; font-size: 110%; }
+[lang |= 'kk'] 	{font-family: "Doulos SIL", serif; font-size: 100%; }
+[lang |= "km"] { font-family: "Khmer OS Battambang", sans-serif; font-size: 130%; }
+:lang(lis) { font-family: "Lisu Tzimu", "Noto Sans Lisu", sans-serif; font-size: 18px; }
+:lang(lo) { font-family: "Saysettha OT", "Lao MN", "Lao Sangam MN", Dokchampa, "Lao Sans Pro", "Noto Sans Lao", "Noto Serif Lao", Petsarath, Souliyo, Dhyana, sans-serif; font-size: 24px; }
+:lang(ml) { font-family: "Malayalam Sangam MN", "Malayalam MN", Karthika, "Noto Sans Malayalam", thoolikatraditionalunicode, thoolikaunicode, sans-serif; font-size: 24px; }
+[lang |= 'ne'] 	{font-family: Kanjirowa, Mangal, sans-serif; font-size: 100%; }
+[lang |= 'pa'] 	{font-family: AnmolUniBani, sans-serif; }
+[lang |= 'ru'] 	{font-family: "Doulos SIL", serif; font-size: 100%; }
+:lang(ta)	{font-family: "Tamil Sangam MN", "Tamil MN", InaiMathi, "Noto Sans Tamil", Latha, Vijaya, sans-serif; font-size: 24px; }
+[lang |= 'te'] 	{font-family: "Akshar Unicode", Gautami, sans-serif; font-size: 130%; }
+:lang(th)  {font-family: "Noto Sans Thai", Dokchampa, Thonburi, "Angsana New", "Cordia New", sans-serif; font-size: 25px; }
+[lang |= 'ur'] { font-family: "Nafees Nastaleeq", "Urdu Typesetting", "Aldhabi", serif; font-size: 24px; direction: rtl;  }
+[lang |= 've'] { font-family: Gentium, serif; }
+[lang |= 'zh-Hans'] { font-family: "Simsun", sans-serif; }
+[lang |= 'zh-Hant'] { font-family: "Mingliu", sans-serif; }
+
+
+.ednote { font-size: 80%; color: #666; font-style:italic; }
+
+section { clear: left; }
+
+
+
+
+
+.trans { 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", 'lucida sans', "helvetica", "Gentium Plus", sans-serif; 
+	font-size: 16px; 
+	}
+.ipa { 
+	font-family: doulosipa,"Gentium Plus", "Lucida Sans Unicode", "Lucida Grande", 'lucida sans', "helvetica", sans-serif; 
+	font-size: 18px; 
+	}
+.ipa:before { content: '/'; font-family: 'Helvetica Neue', serif; margin-right: 1.5px; }
+.ipa:after { content: '/'; font-family: 'Helvetica Neue', serif; margin-left: 1.5px; }
+.name { 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", 'lucida sans', "helvetica", "Gentium Plus", sans-serif; 
+	font-size: 16px; 
+	}
+
+
+#fontsetting {	
+	line-height: 1em; 
+	position:fixed; 
+	bottom: 10px; 
+	background-color: #eee; 
+	border-top-left-radius: 15px; 
+	border-bottom-left-radius: 15px; 
+	right: 0px; 
+	width: 210px; 
+	padding-top:0; 
+	z-index: 1000;
+	}
+#fontsetting h2 { 
+	margin-top: 10px; 
+	margin-left: 12px; 
+	vertical-align:middle; 
+	}
+#fontsettingswitch { 
+	float:left; 
+	height: 200px; 
+	width: 12px;
+	background-color:#b4d5ff; 
+	font-size: 12px; 
+	cursor:pointer; 
+	}
+
+
+.character div.up { 
+	float: right; 
+	margin-right: 0; 
+	margin-top: -5px; 
+	}
+
+
+sup {
+	font-size: 65%;
+	}
