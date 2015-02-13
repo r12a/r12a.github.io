@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Unicode character pickers</title>
+<meta name="description" content="Pickers allow you to quickly create phrases in a script by clicking on Unicode characters arranged in a way that aids their identification. The phrase appears at the bottom of the screen and you can easily cut and paste the result into your own document. They're written in XHTML with a small amount of JavaScript."/>
+<link rel="stylesheet" href="../style/docs.css" type="text/css" />
+<script src="../code/boilerplate.js" type="text/javascript"></script>
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/rishida/i/world.gif','docs','../..');</script>
+</header>
+
+
+<div class="sidebar">
+  <div class="noprint">
+    <h2><a id="contents" name="contents" accesskey="1">Pickers</a></h2>
+    <!--p><a href="arabic-basic/">Arabic, Persian</a></p-->
+    <p><a href="arabic-block/">Arabic block</a></p>
+    <p><a href="armenian/">Armenian</a></p>
+    <p><a href="balinese/">Balinese</a></p>
+    <p><a href="bengali/">Bengali</a></p>
+    <p><a href="devanagari/">Devanagari</a></p>
+    <p><a href="ethiopic/">Basic Ethiopic</a></p>
+    <p><a href="gujarati/">Gujarati</a></p>
+    <p><a href="gurmukhi/">Gurmukhi</a></p>
+    <p><a href="hebrew/">Hebrew</a></p>
+    <p><a href="khmer/">Khmer</a></p>
+    <p><a href="ipa/">IPA</a></p>
+    <p><a href="lao/">Lao</a></p>
+    <p><a href="latin/">Latin &amp; diacritics</a></p>
+    <p><a href="lisu/">Lisu (Fraser script)</a></p>
+    <p><a href="malayalam/">Malayalam</a></p>
+    <p><a href="mongolian/">Mongolian</a></p>
+    <p><a href="myanmar/">Myanmar</a></p>
+    <p><a href="tamil/">Tamil</a></p>
+    <p><a href="thai/">Thai</a></p>
+    <p><a href="tibetan/">Tibetan</a></p>
+    <p><a href="tifinagh/">Tifinagh </a></p>
+    <p><a href="tlicho/">Tlicho (Dogrib) </a></p>
+    <p><a href="uighur/">Uighur</a></p>
+    <p><a href="urdu/">Urdu</a></p>
+    <p><a href="vietnamese/">Vietnamese</a></p>
+  </div>
+  <div class="noprint">
+    <h2><a id="note" name="note" accesskey="2">Note</a></h2>
+    <p class="notes">Please contact me (<a href="mailto:ishida@w3.org">ishida@w3.org</a>) if feel I should add other characters or fonts, and
+      I will consider it.</p>
+    <p>For latest additions see my <a href="http://rishida.net/blog/index.php?cat=2">blog</a>.</p>
+  </div>
+  <div class="noprint">
+    <h2><a id="links" name="links" accesskey="2">Related links</a></h2>
+    <p class="notes"><a href="/rishida/scripts/tutorial/" title="A tutorial on writing systems characteristics">Writing systems
+      tutorial</a></p>
+    <p><a href="http://www.w3.org/International" title="Home of the Unicode Consortium.">Unicode</a></p>
+    <p><a href="http://www.w3.org/International" title="The Internationalization Activity of the World Wide Web Consortium.">W3C i18n
+      activity</a></p>
+  </div>
+</div>
+<h1>Unicode character pickers</h1>
+<div id="navigation">
+  <p> <a>what's new:&nbsp;</a> <a href="http://rishida.net/blog/index.php?s=picker"
+				title="Search the r12a blog for 'picker'">pickers</a>&nbsp;- <a href="http://rishida.net/blog/index.php?cat=2" title="Show the utilities category of the r12a blog">apps</a>&nbsp;- <a href="http://rishida.net/blog/" title="Show the r12a blog">site</a></p>
+</div>
+<div class="section">
+  <p><a id="contentstart" name="contentstart" accesskey="3"></a> The Unicode character pickers allow you to produce or analyse runs of  text for a language or script that uses non-Latin characters. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification and input (unlike a regular character map). </p>
+  <p>You can easily cut and paste the
+    result into your own document. The pickers are written in HTML and JavaScript, so no need to download anything – just use any browser. </p>
+  <p>See <a href="http://rishida.net/blog/index.php?s=picker"
+				title="Search the r12a blog for 'picker'">this list of blog posts</a> for the latest developments.</p>
+</div>
+<div class="section">
+  <h2><a id="howto" name="howto" accesskey="4" href="#howto">How to use</a></h2>
+  <p>If you are using a mobile device, such as an iPad or phone, you may want to turn <code class="kw" translate="no">Autofocus</code> off before using the picker. This stops the keyboard jumping up every time you enter a character. </p>
+  <p>Click on or touch the characters you need. They will appear in the <em>results box</em>. When you have finished creating your piece of text, click on the <code class="button" translate="no">Select all</code> button and copy-paste, or drag-drop, the text into the content you are creating. On a mobile device you may have to click on or touch a character twice to add it to the output box. The first time the background will turn orange and the name of the character will be displayed, then on the second selection it will be transferred to the box.</p>
+  <p>You can also type or paste text directly into the output area. This is useful for adding characters from another script, especially ASCII. To avoid overcrowding, the pickers assume that you can enter characters in the ASCII range from the keyboard. Some special characters, such as space, zero width non-joiner, etc. are also made available for selection. You can also add codepoints and escapes via the <code class="kw" translate="no">Add codepoint</code> control.</p>
+  <p>You can
+    manually move the cursor to any point in the box text and insert characters. Use the keyboard delete and backspace keys to delete content. </p>
+  <p>Various input options are available via the vertical grey bar on the left. You may be able to find characters based on shape, or input text via a Latin transcription. For more details, see the notes at the bottom of the picker page.</p>
+  <p>You can use the <code class="button" translate="no">Codepoints</code> button to get a list of the characters you have assembled in or pasted into the results box. The list has links to detailed information for each character. You can also convert the characters to escapes using the <code class="button" translate="no">Escapes</code> button.</p>
+  <p>Some pickers have additional buttons to do such things as automatically produce transcriptions, break text into syllables, transpose characters, etc.</p>
+  <p>Use the controls on the yellow background to set preferences, or search for a character by name or code point value (regular expressions allowed), or enter a character by code point value (hex). You can also set preferences for Unicode normalization of the text.</p>
+</div>
+<div id="author">
+  <p>Available at: rishida.net/scripts/pickers/<!-- [Translator: ___NAME, ____ORGANISATION.]--></p>
+</div>
+<div class="smallprint">
+  <p id="version">First published 2004. Last update <span id="version-info"><!-- #BeginDate format:IS1m -->2015-02-12  14:55<!-- #EndDate --></span> GMT</p>
+  <p class="copyright">Copyright © 2004-2015 Richard Ishida, All Rights Reserved.</p>
+</div>
+</body>
+</html>
