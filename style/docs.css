@@ -44,13 +44,12 @@ h1 {
 	color: #005a9c;
 	padding: 5px;
 	padding-left: 10px;
-	margin: 0;
-	margin-top: 2em;
-	margin-left: 6.5%;
-	margin-right: 28%;
+	margin: 2em 28% 1.1em 6.5%;
 	line-height: 1.3;
 	}
-
+h1.compact {
+	margin-bottom: 0.5em;
+	}
 h2 {
 	color: #005a9c;
 	text-align: left;
@@ -97,7 +96,10 @@ h2 + section > h3 {
 	margin-top: 2em;
 	}
 
-	
+.sidebar h2.flush {
+	margin-top: -10px;
+	}
+
 .leadin { 
 	font-weight: 500; 
 	font-size: 100%;
@@ -123,6 +125,14 @@ h2 + section > h3 {
 	margin: 0;
 	margin-right: 28%;
 	line-height: 1.1;
+	}
+#topbar a:link { 
+	color: #005a9c; 
+	text-decoration: none; 
+	}
+#topbar a:visited { 
+	color: #005a9c; 
+	text-decoration: none; 
 	}
 
 
@@ -191,13 +201,27 @@ h2 + section > h3 {
 	border-left: 2px dotted #005a9c;
 	height: 30em;
 	}
+#line.midlength {
+	height: 20em;
+	}
 #line.compact {
 	height: 14em;
 	}
 	
+#bp_picture {
+	margin-top: 5em;
+	margin-bottom: 0em;
+	margin-left: 20px;
+	display: block;
+	}
+#bp_picture.compact {
+	margin-top: 1em;
+	margin-bottom: 0;
+	}
+/* phase the following out */
 #picture {
 	margin-top: 5em;
-	margin-bottom: 3em;
+	margin-bottom: 0em;
 	margin-left: 20px;
 	display: block;
 	}
@@ -213,7 +237,7 @@ h2 + section > h3 {
 	background-color: transparent;
 	color: #555;
 	font-weight: 500;
-	margin-top: 3em;
+	margin-top: 0em;
 	margin-bottom: 2em;
 	text-transform: lowercase;
 	}
