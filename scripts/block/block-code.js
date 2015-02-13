@@ -127,8 +127,9 @@ function showNameDetails (chars, clang, base, target) {
 	var p = document.createElement('p')
 	p.style.textAlign = 'right'
 	img = document.createElement('img')
-	img.src = '/code/showcharacters/close.png'
+	img.src = '/scripts/block/images/close.png'
 	img.alt = 'Close'
+	img.style.cursor = 'pointer'
 	shownames_setClose(img)
 	p.appendChild(img)	
 	panel.appendChild(p)

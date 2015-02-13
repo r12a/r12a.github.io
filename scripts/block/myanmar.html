@@ -7,41 +7,34 @@
     
 <style type="text/css">
 @font-face {
-    font-family: 'doulosipa';
-    src: url('../myanmar/doulosipa.woff2') format('woff2'),
-         url('../myanmar/doulosipa.woff') format('woff');
+    font-family: 'noto sans myanmar WF';
+    src: url('/webfonts/notosansmyanmar-regularwf.woff2') format('woff2'),
+         url('/webfonts/notosansmyanmar-regularwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'notosansmyanmarWF';
-    src: url('fonts/notosansmyanmar-regularwf.woff2') format('woff2'),
-         url('fonts/notosansmyanmar-regularwf.woff') format('woff');
+    font-family: 'myanmar3 WF';
+    src: url('/webfonts/mm3-multiwf.woff2') format('woff2'),
+         url('/webfonts/mm3-multiwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'myanmar3WF';
-    src: url('fonts/mm3-multiwf.woff2') format('woff2'),
-         url('fonts/mm3-multiwf.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-	}
-@font-face {
-    font-family: 'tharlonWF';
-    src: url('fonts/tharlon-regularwf.woff2') format('woff2'),
-         url('fonts/tharlon-regularwf.woff') format('woff');
+    font-family: 'tharlon WF';
+    src: url('/webfonts/tharlon-regularwf.woff2') format('woff2'),
+         url('/webfonts/tharlon-regularwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 </style>
-<link rel="stylesheet" href="/rishida/style/docs.css" type="text/css" />
-<link rel="stylesheet" href="/rishida/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="block-style.css" type="text/css" />
 <style type="text/css">
-[lang='my'] { font-family: myanmar3wf,tharlonwf,hell"Tharlon", "Myanmar Text", "Myanmar Sangam MN", "Noto Sans Myanmar", sans-serif; font-size: 20px; }
-#index td { font-family: myanmar3wf,tharlonwf,"Tharlon", "Noto Sans Myanmar", Padauk, Myanmar3, "Myanmar Text", "Myanmar Sangam MN", sans-serif; font-size: 26px; padding: 8px;  }
+[lang='my'] { font-family: "myanmar3 wf","tharlon wf","Tharlon", "Myanmar Text", "Myanmar Sangam MN", "Noto Sans Myanmar", sans-serif; font-size: 20px; }
+#index td { font-family: "myanmar3 wf","tharlon wf","Tharlon", "Noto Sans Myanmar", Padauk, Myanmar3, "Myanmar Text", "Myanmar Sangam MN", sans-serif; font-size: 26px; padding: 8px;  }
 
-.charimg { font-size: 110px; min-width: 190px; min-height: 190px; text-align: center; vertical-align: middle; line-height: 190px; font-family: myanmar3wf,tharlonwf,Myanmar3, 'Noto Sans Myanmar', "Tharlon", Padauk, "Myanmar Text", "Myanmar Sangam MN", sans-serif; background-color: white; }
+.charimg { font-size: 110px; min-width: 190px; min-height: 190px; text-align: center; vertical-align: middle; line-height: 190px; font-family: "myanmar3 wf","tharlon wf",Myanmar3, 'Noto Sans Myanmar', "Tharlon", Padauk, "Myanmar Text", "Myanmar Sangam MN", sans-serif; background-color: white; }
 
 #fontsetting { width: 270px; }
 #fontsetting.open { right: 0px; }
@@ -49,27 +42,27 @@
 #fontsettingswitch { height: 130px; }
 </style>
 
-<script src="/rishida/javascript/toc.js" type="text/javascript">//</script>
+<script src="/code/toc_section.js" type="text/javascript">//</script>
 <script src="myanmar-names-subset.js" type="text/javascript"></script>
-<script src="/rishida/scripts/block/block-code.js" type="text/javascript"></script>
-<script src="../../javascript/level3-docs.js" type="text/javascript"></script>
-<script src="../../uniview/scriptGroups.js" type="text/javascript"></script>
+<script src="block-code.js" type="text/javascript"></script>
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+<script src="/uniview/scriptGroups.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/rishida/i/world.gif');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs','');</script>
 
 	<div class="sidebar">
 			<h2 class="notoc"><a id="tochead" name="tochead" tabindex="4">Contents</a></h2>
 			<div id="toc"><!-- placeholder --></div>
 		<div class="noprint">
 			<h2 class="notoc"><a id="links" name="links" tabindex="5">Related links</a></h2>
-            <p><a href="/rishida/scripts/myanmar">Myanmar script notes</a></p>
-<p><a href="/rishida/scriptlinks?script=myanmar">Myanmar links</a></p>
-			<p><a href="/rishida/scripts/pickers/myanmar/">Myanmar character picker</a></p>
-			<p style="line-height: 1.3em"><a href="/rishida/scripts/uniview/?block=myanmar">UniView </a></p>
+            <p><a href="/scripts/myanmar">Myanmar script notes</a></p>
+<p><a href="/scripts/scriptlinks?script=myanmar">Myanmar links</a></p>
+			<p><a href="/scripts/pickers/myanmar/">Myanmar character picker</a></p>
+			<p style="line-height: 1.3em"><a href="/uniview/?block=myanmar">UniView </a></p>
 		</div>
 
 
@@ -82,9 +75,9 @@
 <select id="exfontswitchfont" 
 onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'my');">
         <optgroup label="Webfonts">
-        <option value="Myanmar3WF">Myanmar3</option>
-        <option value="TharlonWF">Tharlon</option>
-        <option value="NotoSansMyanmarWF">Noto Sans Myanmar</option>
+        <option value="Myanmar3 WF">Myanmar3</option>
+        <option value="Tharlon WF">Tharlon</option>
+        <option value="Noto Sans Myanmar WF">Noto Sans Myanmar</option>
         </optgroup>
         <optgroup label="Mac fonts">
         <option value="Myanmar MN">Myanmar MN</option>
@@ -113,9 +106,9 @@ onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this
 <select  id="slfontswitchfont" 
 onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#exfontswitchsize').value, 'my');">
         <optgroup label="Webfonts">
-        <option value="Myanmar3WF">Myanmar3</option>
-        <option value="TharlonWF">Tharlon</option>
-        <option value="NotoSansMyanmarWF">Noto Sans Myanmar</option>
+        <option value="Myanmar3 WF">Myanmar3</option>
+        <option value="Tharlon WF">Tharlon</option>
+        <option value="Noto Sans Myanmar WF">Noto Sans Myanmar</option>
         </optgroup>
         <optgroup label="Mac fonts">
         <option value="Myanmar MN">Myanmar MN</option>
@@ -151,10 +144,10 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 		<p><a>What's new:&nbsp;</a> <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all articles tagged with 'myanmar' in ishida>>blog">Myanmar</a>&nbsp;- <a href="http://rishida.net/blog/?cat=23" title="Show all articles in the 'script notes' category in ishida>>blog">All script notes</a></p>
 </div>
 <a id="contentstart" name="contentstart" tabindex="1"></a>
-	<p>This page lists characters in the Unicode Myanmar block and provides information about them. For information about Myanmar script and its features in general, see the companion document <a href="/rishida/scripts/myanmar/">Myanmar Script Notes</a>.</p>
+	<p>This page lists characters in the Unicode Myanmar block and provides information about them. For information about Myanmar script and its features in general, see the companion document <a href="/scripts/myanmar/">Myanmar Script Notes</a>.</p>
 	<p>You can obtain  fonts for this page free from the Web, but <strong>you must use fonts compatible with Unicode 5.1</strong>. For this page I used Tharlon, which comes with this page as a webfont.  Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p>
 <p>If you click on any red Myanmar example text, you will see a list of the  characters that make up the example  at the bottom right of the page.</p>
-	<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
+<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
 <section id="charlistsection">
   <h2><a href="#characterlist" name="characterlist" id="characterlist">Index</a></h2>
   <p>Click on a character in the table to jump to its description. Only characters with a line below have descriptive notes attached (apart from any descriptions in the Unicode database).</p>
@@ -238,7 +231,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <a href="#char1036" title="U+1036 MYANMAR SIGN ANUSVARA">&nbsp;&#x1036;&nbsp;</a> 
 <a href="#char1037" title="U+1037 MYANMAR SIGN DOT BELOW">&nbsp;&#x1037;&nbsp;</a> 
 <a href="#char1038" title="U+1038 MYANMAR SIGN VISARGA">&nbsp;&#x1038;&nbsp;</a> 
-<a href="#char1039"><img src="/rishida/c/Myanmar/1039.png" alt="&#x1039;" title="U+1039 MYANMAR SIGN VIRAMA"/></a>
+<a href="#char1039"><img src="/c/Myanmar/1039.png" alt="&#x1039;" title="U+1039 MYANMAR SIGN VIRAMA"/></a>
 <a href="#char103A" title="U+103A MYANMAR SIGN ASAT">&nbsp;&nbsp;&nbsp;&#x103A;&nbsp;</a> 
 <a href="#char104C" title="U+104C MYANMAR SYMBOL LOCATIVE">&nbsp;&#x104C;&nbsp;</a> 
 <a href="#char104D" title="U+104D MYANMAR SYMBOL COMPLETED">&#x104D;</a> 
@@ -391,7 +384,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <h2><a id='consonants'>Consonants</a></h2>
 <div class='character' id='char1000'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1000;</div>
-<p class='charname'><strong>U+1000</strong> <a href='/rishida/scripts/uniview/?codepoints=1000'>MYANMAR LETTER KA</a></p><div class='notes'>
+<p class='charname'><strong>U+1000</strong> <a href='/uniview/?codepoints=1000'>MYANMAR LETTER KA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -406,7 +399,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1001'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1001;</div>
-<p class='charname'><strong>U+1001</strong> <a href='/rishida/scripts/uniview/?codepoints=1001'>MYANMAR LETTER KHA</a></p><div class='notes'>
+<p class='charname'><strong>U+1001</strong> <a href='/uniview/?codepoints=1001'>MYANMAR LETTER KHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">kʰ</span>  <span lang="my"></span>--></p>
 
@@ -417,7 +410,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1002'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1002;</div>
-<p class='charname'><strong>U+1002</strong> <a href='/rishida/scripts/uniview/?codepoints=1002'>MYANMAR LETTER GA</a></p><div class='notes'>
+<p class='charname'><strong>U+1002</strong> <a href='/uniview/?codepoints=1002'>MYANMAR LETTER GA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -426,7 +419,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1003'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1003;</div>
-<p class='charname'><strong>U+1003</strong> <a href='/rishida/scripts/uniview/?codepoints=1003'>MYANMAR LETTER GHA</a></p><div class='notes'>
+<p class='charname'><strong>U+1003</strong> <a href='/uniview/?codepoints=1003'>MYANMAR LETTER GHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -436,7 +429,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1004'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1004;</div>
-<p class='charname'><strong>U+1004</strong> <a href='/rishida/scripts/uniview/?codepoints=1004'>MYANMAR LETTER NGA</a></p><div class='notes'>
+<p class='charname'><strong>U+1004</strong> <a href='/uniview/?codepoints=1004'>MYANMAR LETTER NGA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -444,7 +437,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 
 <p>Vowel nasalisation in final position in native syllables, eg. <span class="ex" lang="my">ဝင်</span> <span class="ipa">wɪ̀ɴ</span> <span class="meaning">enter</span>.</p>
 
-<p>When this is the first consonant in a consonant cluster and non-word-final, it rises over the second letter and keeps its virama, rather than pushing the second consonant below it, eg. <span class="ex" lang="my">အင်္ဂလန်</span> <span class="ipa">ʔɪ̀ɴga̰làɴ</span> <span class="meaning">England</span>. This is called '<a href="/rishida/scripts/myanmar/#kinzi">kinzi</a>' <span class="ex" lang="my">ကင်းစီး</span> <span class="ipa">kɪ́ɴzí</span>.</p>
+<p>When this is the first consonant in a consonant cluster and non-word-final, it rises over the second letter and keeps its virama, rather than pushing the second consonant below it, eg. <span class="ex" lang="my">အင်္ဂလန်</span> <span class="ipa">ʔɪ̀ɴga̰làɴ</span> <span class="meaning">England</span>. This is called '<a href="/scripts/myanmar/#kinzi">kinzi</a>' <span class="ex" lang="my">ကင်းစီး</span> <span class="ipa">kɪ́ɴzí</span>.</p>
 
 <p>Before Unicode 5.1 it was  occasionally difficult to automatically detect whether a kinzi followed by a medial consonant spans two syllables or not.  This was fixed in Unicode 5.1.  The required sequence of characters to represent a kinzi is: </p>
 <p><a href="#char1004"><span class="uname">U+1004 MYANMAR LETTER NGA</span> <span lang="my">&#x1004;</span></a><br><a href="#char103A"><span class="uname">U+103A MYANMAR SIGN ASAT</span> <span lang="my">&#xA0;&#x103A;</span></a><br><a href="#char1039"><span class="uname">U+1039 MYANMAR SIGN VIRAMA</span> <span lang="my">&#xA0;&#x1039;</span></a><br>
@@ -454,7 +447,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div>
 </div><div class='character' id='char1005'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1005;</div>
-<p class='charname'><strong>U+1005</strong> <a href='/rishida/scripts/uniview/?codepoints=1005'>MYANMAR LETTER CA</a></p><div class='notes'>
+<p class='charname'><strong>U+1005</strong> <a href='/uniview/?codepoints=1005'>MYANMAR LETTER CA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -470,7 +463,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1006'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1006;</div>
-<p class='charname'><strong>U+1006</strong> <a href='/rishida/scripts/uniview/?codepoints=1006'>MYANMAR LETTER CHA</a></p><div class='notes'>
+<p class='charname'><strong>U+1006</strong> <a href='/uniview/?codepoints=1006'>MYANMAR LETTER CHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -480,7 +473,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1007'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1007;</div>
-<p class='charname'><strong>U+1007</strong> <a href='/rishida/scripts/uniview/?codepoints=1007'>MYANMAR LETTER JA</a></p><div class='notes'>
+<p class='charname'><strong>U+1007</strong> <a href='/uniview/?codepoints=1007'>MYANMAR LETTER JA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -488,7 +481,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1008'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1008;</div>
-<p class='charname'><strong>U+1008</strong> <a href='/rishida/scripts/uniview/?codepoints=1008'>MYANMAR LETTER JHA</a></p><div class='notes'>
+<p class='charname'><strong>U+1008</strong> <a href='/uniview/?codepoints=1008'>MYANMAR LETTER JHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -498,7 +491,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1009'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1009;</div>
-<p class='charname'><strong>U+1009</strong> <a href='/rishida/scripts/uniview/?codepoints=1009'>MYANMAR LETTER NYA</a></p><div class='notes'>
+<p class='charname'><strong>U+1009</strong> <a href='/uniview/?codepoints=1009'>MYANMAR LETTER NYA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -510,7 +503,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char100A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x100A;</div>
-<p class='charname'><strong>U+100A</strong> <a href='/rishida/scripts/uniview/?codepoints=100A'>MYANMAR LETTER NNYA</a></p><div class='notes'>
+<p class='charname'><strong>U+100A</strong> <a href='/uniview/?codepoints=100A'>MYANMAR LETTER NNYA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -522,7 +515,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char100B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x100B;</div>
-<p class='charname'><strong>U+100B</strong> <a href='/rishida/scripts/uniview/?codepoints=100B'>MYANMAR LETTER TTA</a></p><div class='notes'>
+<p class='charname'><strong>U+100B</strong> <a href='/uniview/?codepoints=100B'>MYANMAR LETTER TTA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -532,7 +525,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char100C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x100C;</div>
-<p class='charname'><strong>U+100C</strong> <a href='/rishida/scripts/uniview/?codepoints=100C'>MYANMAR LETTER TTHA</a></p><div class='notes'>
+<p class='charname'><strong>U+100C</strong> <a href='/uniview/?codepoints=100C'>MYANMAR LETTER TTHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -548,7 +541,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char100D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x100D;</div>
-<p class='charname'><strong>U+100D</strong> <a href='/rishida/scripts/uniview/?codepoints=100D'>MYANMAR LETTER DDA</a></p><div class='notes'>
+<p class='charname'><strong>U+100D</strong> <a href='/uniview/?codepoints=100D'>MYANMAR LETTER DDA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -558,7 +551,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char100E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x100E;</div>
-<p class='charname'><strong>U+100E</strong> <a href='/rishida/scripts/uniview/?codepoints=100E'>MYANMAR LETTER DDHA</a></p><div class='notes'>
+<p class='charname'><strong>U+100E</strong> <a href='/uniview/?codepoints=100E'>MYANMAR LETTER DDHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -568,7 +561,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char100F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x100F;</div>
-<p class='charname'><strong>U+100F</strong> <a href='/rishida/scripts/uniview/?codepoints=100F'>MYANMAR LETTER NNA</a></p><div class='notes'>
+<p class='charname'><strong>U+100F</strong> <a href='/uniview/?codepoints=100F'>MYANMAR LETTER NNA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -578,7 +571,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1010'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1010;</div>
-<p class='charname'><strong>U+1010</strong> <a href='/rishida/scripts/uniview/?codepoints=1010'>MYANMAR LETTER TA</a></p><div class='notes'>
+<p class='charname'><strong>U+1010</strong> <a href='/uniview/?codepoints=1010'>MYANMAR LETTER TA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -590,7 +583,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1011'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1011;</div>
-<p class='charname'><strong>U+1011</strong> <a href='/rishida/scripts/uniview/?codepoints=1011'>MYANMAR LETTER THA</a></p><div class='notes'>
+<p class='charname'><strong>U+1011</strong> <a href='/uniview/?codepoints=1011'>MYANMAR LETTER THA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -600,7 +593,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1012'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1012;</div>
-<p class='charname'><strong>U+1012</strong> <a href='/rishida/scripts/uniview/?codepoints=1012'>MYANMAR LETTER DA</a></p><div class='notes'>
+<p class='charname'><strong>U+1012</strong> <a href='/uniview/?codepoints=1012'>MYANMAR LETTER DA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -608,7 +601,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1013'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1013;</div>
-<p class='charname'><strong>U+1013</strong> <a href='/rishida/scripts/uniview/?codepoints=1013'>MYANMAR LETTER DHA</a></p><div class='notes'>
+<p class='charname'><strong>U+1013</strong> <a href='/uniview/?codepoints=1013'>MYANMAR LETTER DHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -616,7 +609,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1014'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1014;</div>
-<p class='charname'><strong>U+1014</strong> <a href='/rishida/scripts/uniview/?codepoints=1014'>MYANMAR LETTER NA</a></p><div class='notes'>
+<p class='charname'><strong>U+1014</strong> <a href='/uniview/?codepoints=1014'>MYANMAR LETTER NA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -626,7 +619,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1015'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1015;</div>
-<p class='charname'><strong>U+1015</strong> <a href='/rishida/scripts/uniview/?codepoints=1015'>MYANMAR LETTER PA</a></p><div class='notes'>
+<p class='charname'><strong>U+1015</strong> <a href='/uniview/?codepoints=1015'>MYANMAR LETTER PA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -638,7 +631,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1016'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1016;</div>
-<p class='charname'><strong>U+1016</strong> <a href='/rishida/scripts/uniview/?codepoints=1016'>MYANMAR LETTER PHA</a></p><div class='notes'>
+<p class='charname'><strong>U+1016</strong> <a href='/uniview/?codepoints=1016'>MYANMAR LETTER PHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -650,7 +643,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1017'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1017;</div>
-<p class='charname'><strong>U+1017</strong> <a href='/rishida/scripts/uniview/?codepoints=1017'>MYANMAR LETTER BA</a></p><div class='notes'>
+<p class='charname'><strong>U+1017</strong> <a href='/uniview/?codepoints=1017'>MYANMAR LETTER BA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -660,7 +653,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1018'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1018;</div>
-<p class='charname'><strong>U+1018</strong> <a href='/rishida/scripts/uniview/?codepoints=1018'>MYANMAR LETTER BHA</a></p><div class='notes'>
+<p class='charname'><strong>U+1018</strong> <a href='/uniview/?codepoints=1018'>MYANMAR LETTER BHA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -670,7 +663,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1019'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1019;</div>
-<p class='charname'><strong>U+1019</strong> <a href='/rishida/scripts/uniview/?codepoints=1019'>MYANMAR LETTER MA</a></p><div class='notes'>
+<p class='charname'><strong>U+1019</strong> <a href='/uniview/?codepoints=1019'>MYANMAR LETTER MA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -680,7 +673,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char101A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x101A;</div>
-<p class='charname'><strong>U+101A</strong> <a href='/rishida/scripts/uniview/?codepoints=101A'>MYANMAR LETTER YA</a></p><div class='notes'>
+<p class='charname'><strong>U+101A</strong> <a href='/uniview/?codepoints=101A'>MYANMAR LETTER YA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -696,7 +689,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char101B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x101B;</div>
-<p class='charname'><strong>U+101B</strong> <a href='/rishida/scripts/uniview/?codepoints=101B'>MYANMAR LETTER RA</a></p><div class='notes'>
+<p class='charname'><strong>U+101B</strong> <a href='/uniview/?codepoints=101B'>MYANMAR LETTER RA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -712,7 +705,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char101C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x101C;</div>
-<p class='charname'><strong>U+101C</strong> <a href='/rishida/scripts/uniview/?codepoints=101C'>MYANMAR LETTER LA</a></p><div class='notes'>
+<p class='charname'><strong>U+101C</strong> <a href='/uniview/?codepoints=101C'>MYANMAR LETTER LA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -724,7 +717,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char101D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x101D;</div>
-<p class='charname'><strong>U+101D</strong> <a href='/rishida/scripts/uniview/?codepoints=101D'>MYANMAR LETTER WA</a></p><div class='notes'>
+<p class='charname'><strong>U+101D</strong> <a href='/uniview/?codepoints=101D'>MYANMAR LETTER WA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -734,7 +727,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char101E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x101E;</div>
-<p class='charname'><strong>U+101E</strong> <a href='/rishida/scripts/uniview/?codepoints=101E'>MYANMAR LETTER SA</a></p><div class='notes'>
+<p class='charname'><strong>U+101E</strong> <a href='/uniview/?codepoints=101E'>MYANMAR LETTER SA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -746,7 +739,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char101F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x101F;</div>
-<p class='charname'><strong>U+101F</strong> <a href='/rishida/scripts/uniview/?codepoints=101F'>MYANMAR LETTER HA</a></p><div class='notes'>
+<p class='charname'><strong>U+101F</strong> <a href='/uniview/?codepoints=101F'>MYANMAR LETTER HA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -758,7 +751,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1020'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1020;</div>
-<p class='charname'><strong>U+1020</strong> <a href='/rishida/scripts/uniview/?codepoints=1020'>MYANMAR LETTER LLA</a></p><div class='notes'>
+<p class='charname'><strong>U+1020</strong> <a href='/uniview/?codepoints=1020'>MYANMAR LETTER LLA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -770,7 +763,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char103F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x103F;</div>
-<p class='charname'><strong>U+103F</strong> <a href='/rishida/scripts/uniview/?codepoints=103F'>MYANMAR LETTER GREAT SA</a></p><div class='notes'>
+<p class='charname'><strong>U+103F</strong> <a href='/uniview/?codepoints=103F'>MYANMAR LETTER GREAT SA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant ligature<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -785,7 +778,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <h2><a id='independent'>Independent vowels</a></h2>
 <div class='character' id='char1021'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1021;</div>
-<p class='charname'><strong>U+1021</strong> <a href='/rishida/scripts/uniview/?codepoints=1021'>MYANMAR LETTER A</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• also represents the glottal stop as a consonant</div><div class='notes'>
+<p class='charname'><strong>U+1021</strong> <a href='/uniview/?codepoints=1021'>MYANMAR LETTER A</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• also represents the glottal stop as a consonant</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> consonant / initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -880,9 +873,9 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1022'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1022;</div>
-<p class='charname'><strong>U+1022</strong> <a href='/rishida/scripts/uniview/?codepoints=1022'>MYANMAR LETTER SHAN A</a></p></div><div class='character' id='char1023'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1022</strong> <a href='/uniview/?codepoints=1022'>MYANMAR LETTER SHAN A</a></p></div><div class='character' id='char1023'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1023;</div>
-<p class='charname'><strong>U+1023</strong> <a href='/rishida/scripts/uniview/?codepoints=1023'>MYANMAR LETTER I</a></p><div class='notes'>
+<p class='charname'><strong>U+1023</strong> <a href='/uniview/?codepoints=1023'>MYANMAR LETTER I</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 <p><span class="ipa">ʔḭ</span><!-- eg. <span class="ex" lang="my"></span> <span class="ipa"></span>  (<span class="meaning"></span>).--> Alternative character for 'short' version of primary front vowel, used in syllable initial position, and indicating creaky tone, cf. <span class="ex" lang="my">အိ</span> which uses the vowel support character  and vowel-sign.</p>
@@ -893,7 +886,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1024'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1024;</div>
-<p class='charname'><strong>U+1024</strong> <a href='/rishida/scripts/uniview/?codepoints=1024'>MYANMAR LETTER II</a></p><div class='notes'>
+<p class='charname'><strong>U+1024</strong> <a href='/uniview/?codepoints=1024'>MYANMAR LETTER II</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -906,7 +899,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1025'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1025;</div>
-<p class='charname'><strong>U+1025</strong> <a href='/rishida/scripts/uniview/?codepoints=1025'>MYANMAR LETTER U</a></p><div class='notes'>
+<p class='charname'><strong>U+1025</strong> <a href='/uniview/?codepoints=1025'>MYANMAR LETTER U</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -919,7 +912,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1026'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1026;</div>
-<p class='charname'><strong>U+1026</strong> <a href='/rishida/scripts/uniview/?codepoints=1026'>MYANMAR LETTER UU</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>≡ 1025 102E</div><div class='notes'>
+<p class='charname'><strong>U+1026</strong> <a href='/uniview/?codepoints=1026'>MYANMAR LETTER UU</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>≡ 1025 102E</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -932,7 +925,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1027'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1027;</div>
-<p class='charname'><strong>U+1027</strong> <a href='/rishida/scripts/uniview/?codepoints=1027'>MYANMAR LETTER E</a></p><div class='notes'>
+<p class='charname'><strong>U+1027</strong> <a href='/uniview/?codepoints=1027'>MYANMAR LETTER E</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -945,9 +938,9 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1028'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1028;</div>
-<p class='charname'><strong>U+1028</strong> <a href='/rishida/scripts/uniview/?codepoints=1028'>MYANMAR LETTER MON E</a></p></div><div class='character' id='char1029'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1028</strong> <a href='/uniview/?codepoints=1028'>MYANMAR LETTER MON E</a></p></div><div class='character' id='char1029'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1029;</div>
-<p class='charname'><strong>U+1029</strong> <a href='/rishida/scripts/uniview/?codepoints=1029'>MYANMAR LETTER O</a></p><div class='notes'>
+<p class='charname'><strong>U+1029</strong> <a href='/uniview/?codepoints=1029'>MYANMAR LETTER O</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -960,7 +953,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char102A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x102A;</div>
-<p class='charname'><strong>U+102A</strong> <a href='/rishida/scripts/uniview/?codepoints=102A'>MYANMAR LETTER AU</a></p><div class='notes'>
+<p class='charname'><strong>U+102A</strong> <a href='/uniview/?codepoints=102A'>MYANMAR LETTER AU</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> initial vowel <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -977,7 +970,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <h2><a id='depvowelsigns'>Dependent vowel signs</a></h2>
 <div class='character' id='char102B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x102B;</div>
-<p class='charname'><strong>U+102B</strong> <a href='/rishida/scripts/uniview/?codepoints=102B'>MYANMAR VOWEL SIGN TALL AA</a></p><div class='notes'>
+<p class='charname'><strong>U+102B</strong> <a href='/uniview/?codepoints=102B'>MYANMAR VOWEL SIGN TALL AA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span>  vowel sign <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -998,7 +991,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char102C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x102C;</div>
-<p class='charname'><strong>U+102C</strong> <a href='/rishida/scripts/uniview/?codepoints=102C'>MYANMAR VOWEL SIGN AA</a></p><div class='notes'>
+<p class='charname'><strong>U+102C</strong> <a href='/uniview/?codepoints=102C'>MYANMAR VOWEL SIGN AA</a></p><div class='notes'>
   <div class='letter'>
     <p><span class="title">Burmese</span> vowel sign
     <!--, <span class="name">cɔː</span>  <span lang="my"></span>-->
@@ -1017,7 +1010,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div>
 </div><div class='character' id='char102D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x102D;</div>
-<p class='charname'><strong>U+102D</strong> <a href='/rishida/scripts/uniview/?codepoints=102D'>MYANMAR VOWEL SIGN I</a></p><div class='notes'>
+<p class='charname'><strong>U+102D</strong> <a href='/uniview/?codepoints=102D'>MYANMAR VOWEL SIGN I</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span>  vowel sign<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1040,7 +1033,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char102E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x102E;</div>
-<p class='charname'><strong>U+102E</strong> <a href='/rishida/scripts/uniview/?codepoints=102E'>MYANMAR VOWEL SIGN II</a></p><div class='notes'>
+<p class='charname'><strong>U+102E</strong> <a href='/uniview/?codepoints=102E'>MYANMAR VOWEL SIGN II</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span>  vowel sign <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1053,7 +1046,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char102F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x102F;</div>
-<p class='charname'><strong>U+102F</strong> <a href='/rishida/scripts/uniview/?codepoints=102F'>MYANMAR VOWEL SIGN U</a></p><div class='notes'>
+<p class='charname'><strong>U+102F</strong> <a href='/uniview/?codepoints=102F'>MYANMAR VOWEL SIGN U</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span>  vowel sign <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1076,7 +1069,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div>
 </div><div class='character' id='char1030'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1030;</div>
-<p class='charname'><strong>U+1030</strong> <a href='/rishida/scripts/uniview/?codepoints=1030'>MYANMAR VOWEL SIGN UU</a></p><div class='notes'>
+<p class='charname'><strong>U+1030</strong> <a href='/uniview/?codepoints=1030'>MYANMAR VOWEL SIGN UU</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span>  vowel sign <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1089,7 +1082,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div>
 </div><div class='character' id='char1031'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1031;</div>
-<p class='charname'><strong>U+1031</strong> <a href='/rishida/scripts/uniview/?codepoints=1031'>MYANMAR VOWEL SIGN E</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• stands to the left of the consonant</div><div class='notes'>
+<p class='charname'><strong>U+1031</strong> <a href='/uniview/?codepoints=1031'>MYANMAR VOWEL SIGN E</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• stands to the left of the consonant</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> vowel sign <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1108,7 +1101,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1032'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1032;</div>
-<p class='charname'><strong>U+1032</strong> <a href='/rishida/scripts/uniview/?codepoints=1032'>MYANMAR VOWEL SIGN AI</a></p><div class='notes'>
+<p class='charname'><strong>U+1032</strong> <a href='/uniview/?codepoints=1032'>MYANMAR VOWEL SIGN AI</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> vowel sign <!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1120,17 +1113,17 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1033'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1033;</div>
-<p class='charname'><strong>U+1033</strong> <a href='/rishida/scripts/uniview/?codepoints=1033'>MYANMAR VOWEL SIGN MON II</a></p></div><div class='character' id='char1034'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1033</strong> <a href='/uniview/?codepoints=1033'>MYANMAR VOWEL SIGN MON II</a></p></div><div class='character' id='char1034'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1034;</div>
-<p class='charname'><strong>U+1034</strong> <a href='/rishida/scripts/uniview/?codepoints=1034'>MYANMAR VOWEL SIGN MON O</a></p></div><div class='character' id='char1035'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1034</strong> <a href='/uniview/?codepoints=1034'>MYANMAR VOWEL SIGN MON O</a></p></div><div class='character' id='char1035'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1035;</div>
-<p class='charname'><strong>U+1035</strong> <a href='/rishida/scripts/uniview/?codepoints=1035'>MYANMAR VOWEL SIGN E ABOVE</a></p></div></div>
+<p class='charname'><strong>U+1035</strong> <a href='/uniview/?codepoints=1035'>MYANMAR VOWEL SIGN E ABOVE</a></p></div></div>
 
 <div>
 <h2><a id='depconsonants'>Dependent consonant signs</a></h2>
 <div class='character' id='char103B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x103B;</div>
-<p class='charname'><strong>U+103B</strong> <a href='/rishida/scripts/uniview/?codepoints=103B'>MYANMAR CONSONANT SIGN MEDIAL YA</a></p><div class='notes'>
+<p class='charname'><strong>U+103B</strong> <a href='/uniview/?codepoints=103B'>MYANMAR CONSONANT SIGN MEDIAL YA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> medial consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1144,7 +1137,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char103C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x103C;</div>
-<p class='charname'><strong>U+103C</strong> <a href='/rishida/scripts/uniview/?codepoints=103C'>MYANMAR CONSONANT SIGN MEDIAL RA</a></p><div class='notes'>
+<p class='charname'><strong>U+103C</strong> <a href='/uniview/?codepoints=103C'>MYANMAR CONSONANT SIGN MEDIAL RA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> medial consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1158,7 +1151,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char103D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x103D;</div>
-<p class='charname'><strong>U+103D</strong> <a href='/rishida/scripts/uniview/?codepoints=103D'>MYANMAR CONSONANT SIGN MEDIAL WA</a></p><div class='notes'>
+<p class='charname'><strong>U+103D</strong> <a href='/uniview/?codepoints=103D'>MYANMAR CONSONANT SIGN MEDIAL WA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> medial consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1167,7 +1160,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char103E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x103E;</div>
-<p class='charname'><strong>U+103E</strong> <a href='/rishida/scripts/uniview/?codepoints=103E'>MYANMAR CONSONANT SIGN MEDIAL HA</a></p><div class='notes'>
+<p class='charname'><strong>U+103E</strong> <a href='/uniview/?codepoints=103E'>MYANMAR CONSONANT SIGN MEDIAL HA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> medial consonant<!--, <span class="name">cɔː</span>  <span lang="my"></span>--></p>
 
@@ -1188,7 +1181,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <h2><a id='signs'>Various signs</a></h2>
 <div class='character' id='char1036'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1036;</div>
-<p class='charname'><strong>U+1036</strong> <a href='/rishida/scripts/uniview/?codepoints=1036'>MYANMAR SIGN ANUSVARA</a></p><div class='notes'>
+<p class='charname'><strong>U+1036</strong> <a href='/uniview/?codepoints=1036'>MYANMAR SIGN ANUSVARA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> combining mark <!--, <span class="name">cɔː</span>  <span class="ex" lang="my"></span>--></p>
 
@@ -1198,7 +1191,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1037'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1037;</div>
-<p class='charname'><strong>U+1037</strong> <a href='/rishida/scripts/uniview/?codepoints=1037'>MYANMAR SIGN DOT BELOW</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= aukmyit<br />• a tone mark</div><div class='notes'>
+<p class='charname'><strong>U+1037</strong> <a href='/uniview/?codepoints=1037'>MYANMAR SIGN DOT BELOW</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= aukmyit<br />• a tone mark</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> combining mark <!--, <span class="name">cɔː</span>  <span class="ex" lang="my"></span>--></p>
 
@@ -1206,7 +1199,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1038'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1038;</div>
-<p class='charname'><strong>U+1038</strong> <a href='/rishida/scripts/uniview/?codepoints=1038'>MYANMAR SIGN VISARGA</a></p><div class='notes'>
+<p class='charname'><strong>U+1038</strong> <a href='/uniview/?codepoints=1038'>MYANMAR SIGN VISARGA</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> combining mark <!--, <span class="name">cɔː</span>  <span class="ex" lang="my"></span>--></p>
 
@@ -1215,8 +1208,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 
 </div></div>
 </div><div class='character' id='char1039'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'><img src='/rishida/c/Myanmar/large/1039.png' alt='&#x1039;' /></div>
-<p class='charname'><strong>U+1039</strong> <a href='/rishida/scripts/uniview/?codepoints=1039'>MYANMAR SIGN VIRAMA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= killer (when rendered visibly)</div><div class='notes'>
+<div class='charimg'><img src='/c/Myanmar/large/1039.png' alt='&#x1039;' /></div>
+<p class='charname'><strong>U+1039</strong> <a href='/uniview/?codepoints=1039'>MYANMAR SIGN VIRAMA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= killer (when rendered visibly)</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> virama <!--, <span class="name">cɔː</span>  <span class="ex" lang="my"></span>--></p>
 
@@ -1230,7 +1223,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char103A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x103A;</div>
-<p class='charname'><strong>U+103A</strong> <a href='/rishida/scripts/uniview/?codepoints=103A'>MYANMAR SIGN ASAT</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= killer (always rendered visibly)</div><div class='notes'>
+<p class='charname'><strong>U+103A</strong> <a href='/uniview/?codepoints=103A'>MYANMAR SIGN ASAT</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= killer (always rendered visibly)</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> mark, <span class="name">əθaʔ</span>  <span class="ex" lang="my">အသတ်</span></p>
 
@@ -1246,7 +1239,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char104C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x104C;</div>
-<p class='charname'><strong>U+104C</strong> <a href='/rishida/scripts/uniview/?codepoints=104C'>MYANMAR SYMBOL LOCATIVE</a></p><div class='notes'>
+<p class='charname'><strong>U+104C</strong> <a href='/uniview/?codepoints=104C'>MYANMAR SYMBOL LOCATIVE</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> symbol, <span class="name">ɛʔkʰəjanʰaɪʔ</span>  <!--span class="ex" lang="my"></span>--></p>
 
@@ -1256,7 +1249,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char104D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x104D;</div>
-<p class='charname'><strong>U+104D</strong> <a href='/rishida/scripts/uniview/?codepoints=104D'>MYANMAR SYMBOL COMPLETED</a></p><div class='notes'>
+<p class='charname'><strong>U+104D</strong> <a href='/uniview/?codepoints=104D'>MYANMAR SYMBOL COMPLETED</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> symbol, <span class="name">ɛʔkʰəjajwɛ</span>  <!--span class="ex" lang="my"></span>--></p>
 
@@ -1266,7 +1259,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char104E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x104E;</div>
-<p class='charname'><strong>U+104E</strong> <a href='/rishida/scripts/uniview/?codepoints=104E'>MYANMAR SYMBOL AFOREMENTIONED</a></p><div class='notes'>
+<p class='charname'><strong>U+104E</strong> <a href='/uniview/?codepoints=104E'>MYANMAR SYMBOL AFOREMENTIONED</a></p><div class='notes'>
 <div class='letter'>
 <div class="myanmar">
 <p><span class="title">Burmese</span> symbol, <span class="name">ɛʔkʰəjajwɛ</span>  <!--span class="ex" lang="my"></span>--></p>
@@ -1278,7 +1271,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char104F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x104F;</div>
-<p class='charname'><strong>U+104F</strong> <a href='/rishida/scripts/uniview/?codepoints=104F'>MYANMAR SYMBOL GENITIVE</a></p><div class='notes'>
+<p class='charname'><strong>U+104F</strong> <a href='/uniview/?codepoints=104F'>MYANMAR SYMBOL GENITIVE</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> symbol, <span class="name">ɛʔkʰəjaí</span>  <!--span class="ex" lang="my"></span>--></p>
 
@@ -1292,7 +1285,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <h2><a id='digits'>Digits</a></h2>
 <div class='character' id='char1040'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1040;</div>
-<p class='charname'><strong>U+1040</strong> <a href='/rishida/scripts/uniview/?codepoints=1040'>MYANMAR DIGIT ZERO</a></p><div class='notes'>
+<p class='charname'><strong>U+1040</strong> <a href='/uniview/?codepoints=1040'>MYANMAR DIGIT ZERO</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1300,7 +1293,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1041'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1041;</div>
-<p class='charname'><strong>U+1041</strong> <a href='/rishida/scripts/uniview/?codepoints=1041'>MYANMAR DIGIT ONE</a></p><div class='notes'>
+<p class='charname'><strong>U+1041</strong> <a href='/uniview/?codepoints=1041'>MYANMAR DIGIT ONE</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1308,7 +1301,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1042'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1042;</div>
-<p class='charname'><strong>U+1042</strong> <a href='/rishida/scripts/uniview/?codepoints=1042'>MYANMAR DIGIT TWO</a></p><div class='notes'>
+<p class='charname'><strong>U+1042</strong> <a href='/uniview/?codepoints=1042'>MYANMAR DIGIT TWO</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1316,7 +1309,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1043'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1043;</div>
-<p class='charname'><strong>U+1043</strong> <a href='/rishida/scripts/uniview/?codepoints=1043'>MYANMAR DIGIT THREE</a></p><div class='notes'>
+<p class='charname'><strong>U+1043</strong> <a href='/uniview/?codepoints=1043'>MYANMAR DIGIT THREE</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1324,7 +1317,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1044'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1044;</div>
-<p class='charname'><strong>U+1044</strong> <a href='/rishida/scripts/uniview/?codepoints=1044'>MYANMAR DIGIT FOUR</a></p><div class='notes'>
+<p class='charname'><strong>U+1044</strong> <a href='/uniview/?codepoints=1044'>MYANMAR DIGIT FOUR</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1332,7 +1325,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1045'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1045;</div>
-<p class='charname'><strong>U+1045</strong> <a href='/rishida/scripts/uniview/?codepoints=1045'>MYANMAR DIGIT FIVE</a></p><div class='notes'>
+<p class='charname'><strong>U+1045</strong> <a href='/uniview/?codepoints=1045'>MYANMAR DIGIT FIVE</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1340,7 +1333,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1046'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1046;</div>
-<p class='charname'><strong>U+1046</strong> <a href='/rishida/scripts/uniview/?codepoints=1046'>MYANMAR DIGIT SIX</a></p><div class='notes'>
+<p class='charname'><strong>U+1046</strong> <a href='/uniview/?codepoints=1046'>MYANMAR DIGIT SIX</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1348,7 +1341,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1047'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1047;</div>
-<p class='charname'><strong>U+1047</strong> <a href='/rishida/scripts/uniview/?codepoints=1047'>MYANMAR DIGIT SEVEN</a></p><div class='notes'>
+<p class='charname'><strong>U+1047</strong> <a href='/uniview/?codepoints=1047'>MYANMAR DIGIT SEVEN</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1356,7 +1349,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1048'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1048;</div>
-<p class='charname'><strong>U+1048</strong> <a href='/rishida/scripts/uniview/?codepoints=1048'>MYANMAR DIGIT EIGHT</a></p><div class='notes'>
+<p class='charname'><strong>U+1048</strong> <a href='/uniview/?codepoints=1048'>MYANMAR DIGIT EIGHT</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1364,7 +1357,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char1049'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1049;</div>
-<p class='charname'><strong>U+1049</strong> <a href='/rishida/scripts/uniview/?codepoints=1049'>MYANMAR DIGIT NINE</a></p><div class='notes'>
+<p class='charname'><strong>U+1049</strong> <a href='/uniview/?codepoints=1049'>MYANMAR DIGIT NINE</a></p><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> number</p>
 
@@ -1376,7 +1369,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <h2><a id='punctuation'>Punctuation</a></h2>
 <div class='character' id='char104A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x104A;</div>
-<p class='charname'><strong>U+104A</strong> <a href='/rishida/scripts/uniview/?codepoints=104A'>MYANMAR SIGN LITTLE SECTION</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>→ (devanagari danda - 0964)</div><div class='notes'>
+<p class='charname'><strong>U+104A</strong> <a href='/uniview/?codepoints=104A'>MYANMAR SIGN LITTLE SECTION</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>→ (devanagari danda - 0964)</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> punctuation <!--, <span class="name">cɔː</span>  <span class="ex" lang="my"></span>--></p>
 
@@ -1384,7 +1377,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </div></div>
 </div><div class='character' id='char104B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x104B;</div>
-<p class='charname'><strong>U+104B</strong> <a href='/rishida/scripts/uniview/?codepoints=104B'>MYANMAR SIGN SECTION</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>→ (devanagari double danda - 0965)</div><div class='notes'>
+<p class='charname'><strong>U+104B</strong> <a href='/uniview/?codepoints=104B'>MYANMAR SIGN SECTION</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>→ (devanagari double danda - 0965)</div><div class='notes'>
 <div class='letter'>
 <p><span class="title">Burmese</span> punctuation <!--, <span class="name">cɔː</span>  <span class="ex" lang="my"></span>--></p>
 
@@ -1398,213 +1391,213 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <h2><a id='pali'>Pali and Sanskrit extensions</a></h2>
 <div class='character' id='char1050'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1050;</div>
-<p class='charname'><strong>U+1050</strong> <a href='/rishida/scripts/uniview/?codepoints=1050'>MYANMAR LETTER SHA</a></p></div><div class='character' id='char1051'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1050</strong> <a href='/uniview/?codepoints=1050'>MYANMAR LETTER SHA</a></p></div><div class='character' id='char1051'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1051;</div>
-<p class='charname'><strong>U+1051</strong> <a href='/rishida/scripts/uniview/?codepoints=1051'>MYANMAR LETTER SSA</a></p></div><div class='character' id='char1052'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1051</strong> <a href='/uniview/?codepoints=1051'>MYANMAR LETTER SSA</a></p></div><div class='character' id='char1052'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1052;</div>
-<p class='charname'><strong>U+1052</strong> <a href='/rishida/scripts/uniview/?codepoints=1052'>MYANMAR LETTER VOCALIC R</a></p></div><div class='character' id='char1053'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1052</strong> <a href='/uniview/?codepoints=1052'>MYANMAR LETTER VOCALIC R</a></p></div><div class='character' id='char1053'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1053;</div>
-<p class='charname'><strong>U+1053</strong> <a href='/rishida/scripts/uniview/?codepoints=1053'>MYANMAR LETTER VOCALIC RR</a></p></div><div class='character' id='char1054'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1053</strong> <a href='/uniview/?codepoints=1053'>MYANMAR LETTER VOCALIC RR</a></p></div><div class='character' id='char1054'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1054;</div>
-<p class='charname'><strong>U+1054</strong> <a href='/rishida/scripts/uniview/?codepoints=1054'>MYANMAR LETTER VOCALIC L</a></p></div><div class='character' id='char1055'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1054</strong> <a href='/uniview/?codepoints=1054'>MYANMAR LETTER VOCALIC L</a></p></div><div class='character' id='char1055'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1055;</div>
-<p class='charname'><strong>U+1055</strong> <a href='/rishida/scripts/uniview/?codepoints=1055'>MYANMAR LETTER VOCALIC LL</a></p></div><div class='character' id='char1056'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1055</strong> <a href='/uniview/?codepoints=1055'>MYANMAR LETTER VOCALIC LL</a></p></div><div class='character' id='char1056'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1056;</div>
-<p class='charname'><strong>U+1056</strong> <a href='/rishida/scripts/uniview/?codepoints=1056'>MYANMAR VOWEL SIGN VOCALIC R</a></p></div><div class='character' id='char1057'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1056</strong> <a href='/uniview/?codepoints=1056'>MYANMAR VOWEL SIGN VOCALIC R</a></p></div><div class='character' id='char1057'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1057;</div>
-<p class='charname'><strong>U+1057</strong> <a href='/rishida/scripts/uniview/?codepoints=1057'>MYANMAR VOWEL SIGN VOCALIC RR</a></p></div><div class='character' id='char1058'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1057</strong> <a href='/uniview/?codepoints=1057'>MYANMAR VOWEL SIGN VOCALIC RR</a></p></div><div class='character' id='char1058'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1058;</div>
-<p class='charname'><strong>U+1058</strong> <a href='/rishida/scripts/uniview/?codepoints=1058'>MYANMAR VOWEL SIGN VOCALIC L</a></p></div><div class='character' id='char1059'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1058</strong> <a href='/uniview/?codepoints=1058'>MYANMAR VOWEL SIGN VOCALIC L</a></p></div><div class='character' id='char1059'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1059;</div>
-<p class='charname'><strong>U+1059</strong> <a href='/rishida/scripts/uniview/?codepoints=1059'>MYANMAR VOWEL SIGN VOCALIC LL</a></p></div></div>
+<p class='charname'><strong>U+1059</strong> <a href='/uniview/?codepoints=1059'>MYANMAR VOWEL SIGN VOCALIC LL</a></p></div></div>
 
 <div>
 <h2><a id='mon'>Extensions for Mon</a></h2>
 <div class='character' id='char105A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x105A;</div>
-<p class='charname'><strong>U+105A</strong> <a href='/rishida/scripts/uniview/?codepoints=105A'>MYANMAR LETTER MON NGA</a></p></div><div class='character' id='char105B'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+105A</strong> <a href='/uniview/?codepoints=105A'>MYANMAR LETTER MON NGA</a></p></div><div class='character' id='char105B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x105B;</div>
-<p class='charname'><strong>U+105B</strong> <a href='/rishida/scripts/uniview/?codepoints=105B'>MYANMAR LETTER MON JHA</a></p></div><div class='character' id='char105C'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+105B</strong> <a href='/uniview/?codepoints=105B'>MYANMAR LETTER MON JHA</a></p></div><div class='character' id='char105C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x105C;</div>
-<p class='charname'><strong>U+105C</strong> <a href='/rishida/scripts/uniview/?codepoints=105C'>MYANMAR LETTER MON BBA</a></p></div><div class='character' id='char105D'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+105C</strong> <a href='/uniview/?codepoints=105C'>MYANMAR LETTER MON BBA</a></p></div><div class='character' id='char105D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x105D;</div>
-<p class='charname'><strong>U+105D</strong> <a href='/rishida/scripts/uniview/?codepoints=105D'>MYANMAR LETTER MON BBE</a></p></div><div class='character' id='char105E'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+105D</strong> <a href='/uniview/?codepoints=105D'>MYANMAR LETTER MON BBE</a></p></div><div class='character' id='char105E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x105E;</div>
-<p class='charname'><strong>U+105E</strong> <a href='/rishida/scripts/uniview/?codepoints=105E'>MYANMAR CONSONANT SIGN MON MEDIAL NA</a></p></div><div class='character' id='char105F'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+105E</strong> <a href='/uniview/?codepoints=105E'>MYANMAR CONSONANT SIGN MON MEDIAL NA</a></p></div><div class='character' id='char105F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x105F;</div>
-<p class='charname'><strong>U+105F</strong> <a href='/rishida/scripts/uniview/?codepoints=105F'>MYANMAR CONSONANT SIGN MON MEDIAL MA</a></p></div><div class='character' id='char1060'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+105F</strong> <a href='/uniview/?codepoints=105F'>MYANMAR CONSONANT SIGN MON MEDIAL MA</a></p></div><div class='character' id='char1060'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1060;</div>
-<p class='charname'><strong>U+1060</strong> <a href='/rishida/scripts/uniview/?codepoints=1060'>MYANMAR CONSONANT SIGN MON MEDIAL LA</a></p></div></div>
+<p class='charname'><strong>U+1060</strong> <a href='/uniview/?codepoints=1060'>MYANMAR CONSONANT SIGN MON MEDIAL LA</a></p></div></div>
 
 <div>
 <h2><a id='sgaw'>Extensions for S'gaw Karen</a></h2>
 <div class='character' id='char1061'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1061;</div>
-<p class='charname'><strong>U+1061</strong> <a href='/rishida/scripts/uniview/?codepoints=1061'>MYANMAR LETTER SGAW KAREN SHA</a></p></div><div class='character' id='char1062'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1061</strong> <a href='/uniview/?codepoints=1061'>MYANMAR LETTER SGAW KAREN SHA</a></p></div><div class='character' id='char1062'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1062;</div>
-<p class='charname'><strong>U+1062</strong> <a href='/rishida/scripts/uniview/?codepoints=1062'>MYANMAR VOWEL SIGN SGAW KAREN EU</a></p></div><div class='character' id='char1063'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1062</strong> <a href='/uniview/?codepoints=1062'>MYANMAR VOWEL SIGN SGAW KAREN EU</a></p></div><div class='character' id='char1063'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1063;</div>
-<p class='charname'><strong>U+1063</strong> <a href='/rishida/scripts/uniview/?codepoints=1063'>MYANMAR TONE MARK SGAW KAREN HATHI</a></p></div><div class='character' id='char1064'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1063</strong> <a href='/uniview/?codepoints=1063'>MYANMAR TONE MARK SGAW KAREN HATHI</a></p></div><div class='character' id='char1064'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1064;</div>
-<p class='charname'><strong>U+1064</strong> <a href='/rishida/scripts/uniview/?codepoints=1064'>MYANMAR TONE MARK SGAW KAREN KE PHO</a></p></div></div>
+<p class='charname'><strong>U+1064</strong> <a href='/uniview/?codepoints=1064'>MYANMAR TONE MARK SGAW KAREN KE PHO</a></p></div></div>
 
 <div>
 <h2><a id='wpwo'>Extensions for Western Pwo Karen</a></h2>
 <div class='character' id='char1065'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1065;</div>
-<p class='charname'><strong>U+1065</strong> <a href='/rishida/scripts/uniview/?codepoints=1065'>MYANMAR LETTER WESTERN PWO KAREN THA</a></p></div><div class='character' id='char1066'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1065</strong> <a href='/uniview/?codepoints=1065'>MYANMAR LETTER WESTERN PWO KAREN THA</a></p></div><div class='character' id='char1066'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1066;</div>
-<p class='charname'><strong>U+1066</strong> <a href='/rishida/scripts/uniview/?codepoints=1066'>MYANMAR LETTER WESTERN PWO KAREN PWA</a></p></div><div class='character' id='char1067'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1066</strong> <a href='/uniview/?codepoints=1066'>MYANMAR LETTER WESTERN PWO KAREN PWA</a></p></div><div class='character' id='char1067'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1067;</div>
-<p class='charname'><strong>U+1067</strong> <a href='/rishida/scripts/uniview/?codepoints=1067'>MYANMAR VOWEL SIGN WESTERN PWO KAREN EU</a></p></div><div class='character' id='char1068'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1067</strong> <a href='/uniview/?codepoints=1067'>MYANMAR VOWEL SIGN WESTERN PWO KAREN EU</a></p></div><div class='character' id='char1068'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1068;</div>
-<p class='charname'><strong>U+1068</strong> <a href='/rishida/scripts/uniview/?codepoints=1068'>MYANMAR VOWEL SIGN WESTERN PWO KAREN UE</a></p></div><div class='character' id='char1069'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1068</strong> <a href='/uniview/?codepoints=1068'>MYANMAR VOWEL SIGN WESTERN PWO KAREN UE</a></p></div><div class='character' id='char1069'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1069;</div>
-<p class='charname'><strong>U+1069</strong> <a href='/rishida/scripts/uniview/?codepoints=1069'>MYANMAR SIGN WESTERN PWO KAREN TONE-1</a></p></div><div class='character' id='char106A'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1069</strong> <a href='/uniview/?codepoints=1069'>MYANMAR SIGN WESTERN PWO KAREN TONE-1</a></p></div><div class='character' id='char106A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x106A;</div>
-<p class='charname'><strong>U+106A</strong> <a href='/rishida/scripts/uniview/?codepoints=106A'>MYANMAR SIGN WESTERN PWO KAREN TONE-2</a></p></div><div class='character' id='char106B'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+106A</strong> <a href='/uniview/?codepoints=106A'>MYANMAR SIGN WESTERN PWO KAREN TONE-2</a></p></div><div class='character' id='char106B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x106B;</div>
-<p class='charname'><strong>U+106B</strong> <a href='/rishida/scripts/uniview/?codepoints=106B'>MYANMAR SIGN WESTERN PWO KAREN TONE-3</a></p></div><div class='character' id='char106C'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+106B</strong> <a href='/uniview/?codepoints=106B'>MYANMAR SIGN WESTERN PWO KAREN TONE-3</a></p></div><div class='character' id='char106C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x106C;</div>
-<p class='charname'><strong>U+106C</strong> <a href='/rishida/scripts/uniview/?codepoints=106C'>MYANMAR SIGN WESTERN PWO KAREN TONE-4</a></p></div><div class='character' id='char106D'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+106C</strong> <a href='/uniview/?codepoints=106C'>MYANMAR SIGN WESTERN PWO KAREN TONE-4</a></p></div><div class='character' id='char106D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x106D;</div>
-<p class='charname'><strong>U+106D</strong> <a href='/rishida/scripts/uniview/?codepoints=106D'>MYANMAR SIGN WESTERN PWO KAREN TONE-5</a></p></div></div>
+<p class='charname'><strong>U+106D</strong> <a href='/uniview/?codepoints=106D'>MYANMAR SIGN WESTERN PWO KAREN TONE-5</a></p></div></div>
 
 <div>
 <h2><a id='epwo'>Extensions for Eastern Pwo Karen</a></h2>
 <div class='character' id='char106E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x106E;</div>
-<p class='charname'><strong>U+106E</strong> <a href='/rishida/scripts/uniview/?codepoints=106E'>MYANMAR LETTER EASTERN PWO KAREN NNA</a></p></div><div class='character' id='char106F'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+106E</strong> <a href='/uniview/?codepoints=106E'>MYANMAR LETTER EASTERN PWO KAREN NNA</a></p></div><div class='character' id='char106F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x106F;</div>
-<p class='charname'><strong>U+106F</strong> <a href='/rishida/scripts/uniview/?codepoints=106F'>MYANMAR LETTER EASTERN PWO KAREN YWA</a></p></div><div class='character' id='char1070'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+106F</strong> <a href='/uniview/?codepoints=106F'>MYANMAR LETTER EASTERN PWO KAREN YWA</a></p></div><div class='character' id='char1070'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1070;</div>
-<p class='charname'><strong>U+1070</strong> <a href='/rishida/scripts/uniview/?codepoints=1070'>MYANMAR LETTER EASTERN PWO KAREN GHWA</a></p></div></div>
+<p class='charname'><strong>U+1070</strong> <a href='/uniview/?codepoints=1070'>MYANMAR LETTER EASTERN PWO KAREN GHWA</a></p></div></div>
 
 <div>
 <h2><a id='geba'>Extension for Geba Karen</a></h2>
 <div class='character' id='char1071'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1071;</div>
-<p class='charname'><strong>U+1071</strong> <a href='/rishida/scripts/uniview/?codepoints=1071'>MYANMAR VOWEL SIGN GEBA KAREN I</a></p></div></div>
+<p class='charname'><strong>U+1071</strong> <a href='/uniview/?codepoints=1071'>MYANMAR VOWEL SIGN GEBA KAREN I</a></p></div></div>
 
 <div>
 <h2><a id='kayah'>Extensions for Kayah</a></h2>
 <div class='character' id='char1072'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1072;</div>
-<p class='charname'><strong>U+1072</strong> <a href='/rishida/scripts/uniview/?codepoints=1072'>MYANMAR VOWEL SIGN KAYAH OE</a></p></div><div class='character' id='char1073'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1072</strong> <a href='/uniview/?codepoints=1072'>MYANMAR VOWEL SIGN KAYAH OE</a></p></div><div class='character' id='char1073'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1073;</div>
-<p class='charname'><strong>U+1073</strong> <a href='/rishida/scripts/uniview/?codepoints=1073'>MYANMAR VOWEL SIGN KAYAH U</a></p></div><div class='character' id='char1074'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1073</strong> <a href='/uniview/?codepoints=1073'>MYANMAR VOWEL SIGN KAYAH U</a></p></div><div class='character' id='char1074'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1074;</div>
-<p class='charname'><strong>U+1074</strong> <a href='/rishida/scripts/uniview/?codepoints=1074'>MYANMAR VOWEL SIGN KAYAH EE</a></p></div></div>
+<p class='charname'><strong>U+1074</strong> <a href='/uniview/?codepoints=1074'>MYANMAR VOWEL SIGN KAYAH EE</a></p></div></div>
 
 <div>
 <h2><a id='shan'>Extensions for Shan</a></h2>
 <div class='character' id='char1075'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1075;</div>
-<p class='charname'><strong>U+1075</strong> <a href='/rishida/scripts/uniview/?codepoints=1075'>MYANMAR LETTER SHAN KA</a></p></div><div class='character' id='char1076'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1075</strong> <a href='/uniview/?codepoints=1075'>MYANMAR LETTER SHAN KA</a></p></div><div class='character' id='char1076'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1076;</div>
-<p class='charname'><strong>U+1076</strong> <a href='/rishida/scripts/uniview/?codepoints=1076'>MYANMAR LETTER SHAN KHA</a></p></div><div class='character' id='char1077'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1076</strong> <a href='/uniview/?codepoints=1076'>MYANMAR LETTER SHAN KHA</a></p></div><div class='character' id='char1077'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1077;</div>
-<p class='charname'><strong>U+1077</strong> <a href='/rishida/scripts/uniview/?codepoints=1077'>MYANMAR LETTER SHAN GA</a></p></div><div class='character' id='char1078'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1077</strong> <a href='/uniview/?codepoints=1077'>MYANMAR LETTER SHAN GA</a></p></div><div class='character' id='char1078'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1078;</div>
-<p class='charname'><strong>U+1078</strong> <a href='/rishida/scripts/uniview/?codepoints=1078'>MYANMAR LETTER SHAN CA</a></p></div><div class='character' id='char1079'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1078</strong> <a href='/uniview/?codepoints=1078'>MYANMAR LETTER SHAN CA</a></p></div><div class='character' id='char1079'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1079;</div>
-<p class='charname'><strong>U+1079</strong> <a href='/rishida/scripts/uniview/?codepoints=1079'>MYANMAR LETTER SHAN ZA</a></p></div><div class='character' id='char107A'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1079</strong> <a href='/uniview/?codepoints=1079'>MYANMAR LETTER SHAN ZA</a></p></div><div class='character' id='char107A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x107A;</div>
-<p class='charname'><strong>U+107A</strong> <a href='/rishida/scripts/uniview/?codepoints=107A'>MYANMAR LETTER SHAN NYA</a></p></div><div class='character' id='char107B'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+107A</strong> <a href='/uniview/?codepoints=107A'>MYANMAR LETTER SHAN NYA</a></p></div><div class='character' id='char107B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x107B;</div>
-<p class='charname'><strong>U+107B</strong> <a href='/rishida/scripts/uniview/?codepoints=107B'>MYANMAR LETTER SHAN DA</a></p></div><div class='character' id='char107C'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+107B</strong> <a href='/uniview/?codepoints=107B'>MYANMAR LETTER SHAN DA</a></p></div><div class='character' id='char107C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x107C;</div>
-<p class='charname'><strong>U+107C</strong> <a href='/rishida/scripts/uniview/?codepoints=107C'>MYANMAR LETTER SHAN NA</a></p></div><div class='character' id='char107D'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+107C</strong> <a href='/uniview/?codepoints=107C'>MYANMAR LETTER SHAN NA</a></p></div><div class='character' id='char107D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x107D;</div>
-<p class='charname'><strong>U+107D</strong> <a href='/rishida/scripts/uniview/?codepoints=107D'>MYANMAR LETTER SHAN PHA</a></p></div><div class='character' id='char107E'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+107D</strong> <a href='/uniview/?codepoints=107D'>MYANMAR LETTER SHAN PHA</a></p></div><div class='character' id='char107E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x107E;</div>
-<p class='charname'><strong>U+107E</strong> <a href='/rishida/scripts/uniview/?codepoints=107E'>MYANMAR LETTER SHAN FA</a></p></div><div class='character' id='char107F'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+107E</strong> <a href='/uniview/?codepoints=107E'>MYANMAR LETTER SHAN FA</a></p></div><div class='character' id='char107F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x107F;</div>
-<p class='charname'><strong>U+107F</strong> <a href='/rishida/scripts/uniview/?codepoints=107F'>MYANMAR LETTER SHAN BA</a></p></div><div class='character' id='char1080'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+107F</strong> <a href='/uniview/?codepoints=107F'>MYANMAR LETTER SHAN BA</a></p></div><div class='character' id='char1080'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1080;</div>
-<p class='charname'><strong>U+1080</strong> <a href='/rishida/scripts/uniview/?codepoints=1080'>MYANMAR LETTER SHAN THA</a></p></div><div class='character' id='char1081'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1080</strong> <a href='/uniview/?codepoints=1080'>MYANMAR LETTER SHAN THA</a></p></div><div class='character' id='char1081'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1081;</div>
-<p class='charname'><strong>U+1081</strong> <a href='/rishida/scripts/uniview/?codepoints=1081'>MYANMAR LETTER SHAN HA</a></p></div><div class='character' id='char1082'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1081</strong> <a href='/uniview/?codepoints=1081'>MYANMAR LETTER SHAN HA</a></p></div><div class='character' id='char1082'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1082;</div>
-<p class='charname'><strong>U+1082</strong> <a href='/rishida/scripts/uniview/?codepoints=1082'>MYANMAR CONSONANT SIGN SHAN MEDIAL WA</a></p></div><div class='character' id='char1083'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1082</strong> <a href='/uniview/?codepoints=1082'>MYANMAR CONSONANT SIGN SHAN MEDIAL WA</a></p></div><div class='character' id='char1083'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1083;</div>
-<p class='charname'><strong>U+1083</strong> <a href='/rishida/scripts/uniview/?codepoints=1083'>MYANMAR VOWEL SIGN SHAN AA</a></p></div><div class='character' id='char1084'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1083</strong> <a href='/uniview/?codepoints=1083'>MYANMAR VOWEL SIGN SHAN AA</a></p></div><div class='character' id='char1084'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1084;</div>
-<p class='charname'><strong>U+1084</strong> <a href='/rishida/scripts/uniview/?codepoints=1084'>MYANMAR VOWEL SIGN SHAN E</a></p></div><div class='character' id='char1085'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1084</strong> <a href='/uniview/?codepoints=1084'>MYANMAR VOWEL SIGN SHAN E</a></p></div><div class='character' id='char1085'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1085;</div>
-<p class='charname'><strong>U+1085</strong> <a href='/rishida/scripts/uniview/?codepoints=1085'>MYANMAR VOWEL SIGN SHAN E ABOVE</a></p></div><div class='character' id='char1086'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1085</strong> <a href='/uniview/?codepoints=1085'>MYANMAR VOWEL SIGN SHAN E ABOVE</a></p></div><div class='character' id='char1086'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1086;</div>
-<p class='charname'><strong>U+1086</strong> <a href='/rishida/scripts/uniview/?codepoints=1086'>MYANMAR VOWEL SIGN SHAN FINAL Y</a></p></div><div class='character' id='char1087'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1086</strong> <a href='/uniview/?codepoints=1086'>MYANMAR VOWEL SIGN SHAN FINAL Y</a></p></div><div class='character' id='char1087'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1087;</div>
-<p class='charname'><strong>U+1087</strong> <a href='/rishida/scripts/uniview/?codepoints=1087'>MYANMAR SIGN SHAN TONE-2</a></p></div><div class='character' id='char1088'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1087</strong> <a href='/uniview/?codepoints=1087'>MYANMAR SIGN SHAN TONE-2</a></p></div><div class='character' id='char1088'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1088;</div>
-<p class='charname'><strong>U+1088</strong> <a href='/rishida/scripts/uniview/?codepoints=1088'>MYANMAR SIGN SHAN TONE-3</a></p></div><div class='character' id='char1089'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1088</strong> <a href='/uniview/?codepoints=1088'>MYANMAR SIGN SHAN TONE-3</a></p></div><div class='character' id='char1089'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1089;</div>
-<p class='charname'><strong>U+1089</strong> <a href='/rishida/scripts/uniview/?codepoints=1089'>MYANMAR SIGN SHAN TONE-5</a></p></div><div class='character' id='char108A'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1089</strong> <a href='/uniview/?codepoints=1089'>MYANMAR SIGN SHAN TONE-5</a></p></div><div class='character' id='char108A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x108A;</div>
-<p class='charname'><strong>U+108A</strong> <a href='/rishida/scripts/uniview/?codepoints=108A'>MYANMAR SIGN SHAN TONE-6</a></p></div><div class='character' id='char108B'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+108A</strong> <a href='/uniview/?codepoints=108A'>MYANMAR SIGN SHAN TONE-6</a></p></div><div class='character' id='char108B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x108B;</div>
-<p class='charname'><strong>U+108B</strong> <a href='/rishida/scripts/uniview/?codepoints=108B'>MYANMAR SIGN SHAN COUNCIL TONE-2</a></p></div><div class='character' id='char108C'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+108B</strong> <a href='/uniview/?codepoints=108B'>MYANMAR SIGN SHAN COUNCIL TONE-2</a></p></div><div class='character' id='char108C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x108C;</div>
-<p class='charname'><strong>U+108C</strong> <a href='/rishida/scripts/uniview/?codepoints=108C'>MYANMAR SIGN SHAN COUNCIL TONE-3</a></p></div><div class='character' id='char108D'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+108C</strong> <a href='/uniview/?codepoints=108C'>MYANMAR SIGN SHAN COUNCIL TONE-3</a></p></div><div class='character' id='char108D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x108D;</div>
-<p class='charname'><strong>U+108D</strong> <a href='/rishida/scripts/uniview/?codepoints=108D'>MYANMAR SIGN SHAN COUNCIL EMPHATIC TONE</a></p></div></div>
+<p class='charname'><strong>U+108D</strong> <a href='/uniview/?codepoints=108D'>MYANMAR SIGN SHAN COUNCIL EMPHATIC TONE</a></p></div></div>
 
 <div>
 <h2><a id='rumai'>Extensions for Rumai Palaung</a></h2>
 <div class='character' id='char108E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x108E;</div>
-<p class='charname'><strong>U+108E</strong> <a href='/rishida/scripts/uniview/?codepoints=108E'>MYANMAR LETTER RUMAI PALAUNG FA</a></p></div><div class='character' id='char108F'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+108E</strong> <a href='/uniview/?codepoints=108E'>MYANMAR LETTER RUMAI PALAUNG FA</a></p></div><div class='character' id='char108F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x108F;</div>
-<p class='charname'><strong>U+108F</strong> <a href='/rishida/scripts/uniview/?codepoints=108F'>MYANMAR SIGN RUMAI PALAUNG TONE-5</a></p></div></div>
+<p class='charname'><strong>U+108F</strong> <a href='/uniview/?codepoints=108F'>MYANMAR SIGN RUMAI PALAUNG TONE-5</a></p></div></div>
 
 <div>
 <h2><a id='shand'>Shan digits</a></h2>
 <div class='character' id='char1090'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1090;</div>
-<p class='charname'><strong>U+1090</strong> <a href='/rishida/scripts/uniview/?codepoints=1090'>MYANMAR SHAN DIGIT ZERO</a></p></div><div class='character' id='char1091'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1090</strong> <a href='/uniview/?codepoints=1090'>MYANMAR SHAN DIGIT ZERO</a></p></div><div class='character' id='char1091'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1091;</div>
-<p class='charname'><strong>U+1091</strong> <a href='/rishida/scripts/uniview/?codepoints=1091'>MYANMAR SHAN DIGIT ONE</a></p></div><div class='character' id='char1092'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1091</strong> <a href='/uniview/?codepoints=1091'>MYANMAR SHAN DIGIT ONE</a></p></div><div class='character' id='char1092'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1092;</div>
-<p class='charname'><strong>U+1092</strong> <a href='/rishida/scripts/uniview/?codepoints=1092'>MYANMAR SHAN DIGIT TWO</a></p></div><div class='character' id='char1093'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1092</strong> <a href='/uniview/?codepoints=1092'>MYANMAR SHAN DIGIT TWO</a></p></div><div class='character' id='char1093'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1093;</div>
-<p class='charname'><strong>U+1093</strong> <a href='/rishida/scripts/uniview/?codepoints=1093'>MYANMAR SHAN DIGIT THREE</a></p></div><div class='character' id='char1094'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1093</strong> <a href='/uniview/?codepoints=1093'>MYANMAR SHAN DIGIT THREE</a></p></div><div class='character' id='char1094'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1094;</div>
-<p class='charname'><strong>U+1094</strong> <a href='/rishida/scripts/uniview/?codepoints=1094'>MYANMAR SHAN DIGIT FOUR</a></p></div><div class='character' id='char1095'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1094</strong> <a href='/uniview/?codepoints=1094'>MYANMAR SHAN DIGIT FOUR</a></p></div><div class='character' id='char1095'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1095;</div>
-<p class='charname'><strong>U+1095</strong> <a href='/rishida/scripts/uniview/?codepoints=1095'>MYANMAR SHAN DIGIT FIVE</a></p></div><div class='character' id='char1096'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1095</strong> <a href='/uniview/?codepoints=1095'>MYANMAR SHAN DIGIT FIVE</a></p></div><div class='character' id='char1096'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1096;</div>
-<p class='charname'><strong>U+1096</strong> <a href='/rishida/scripts/uniview/?codepoints=1096'>MYANMAR SHAN DIGIT SIX</a></p></div><div class='character' id='char1097'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1096</strong> <a href='/uniview/?codepoints=1096'>MYANMAR SHAN DIGIT SIX</a></p></div><div class='character' id='char1097'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1097;</div>
-<p class='charname'><strong>U+1097</strong> <a href='/rishida/scripts/uniview/?codepoints=1097'>MYANMAR SHAN DIGIT SEVEN</a></p></div><div class='character' id='char1098'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1097</strong> <a href='/uniview/?codepoints=1097'>MYANMAR SHAN DIGIT SEVEN</a></p></div><div class='character' id='char1098'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1098;</div>
-<p class='charname'><strong>U+1098</strong> <a href='/rishida/scripts/uniview/?codepoints=1098'>MYANMAR SHAN DIGIT EIGHT</a></p></div><div class='character' id='char1099'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+1098</strong> <a href='/uniview/?codepoints=1098'>MYANMAR SHAN DIGIT EIGHT</a></p></div><div class='character' id='char1099'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x1099;</div>
-<p class='charname'><strong>U+1099</strong> <a href='/rishida/scripts/uniview/?codepoints=1099'>MYANMAR SHAN DIGIT NINE</a></p></div></div>
+<p class='charname'><strong>U+1099</strong> <a href='/uniview/?codepoints=1099'>MYANMAR SHAN DIGIT NINE</a></p></div></div>
 
 <div>
 <h2><a id='kshan'>Extensions for Khamti Shan</a></h2>
 <div class='character' id='char109A'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x109A;</div>
-<p class='charname'><strong>U+109A</strong> <a href='/rishida/scripts/uniview/?codepoints=109A'>MYANMAR SIGN KHAMTI TONE-1</a></p></div><div class='character' id='char109B'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+109A</strong> <a href='/uniview/?codepoints=109A'>MYANMAR SIGN KHAMTI TONE-1</a></p></div><div class='character' id='char109B'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x109B;</div>
-<p class='charname'><strong>U+109B</strong> <a href='/rishida/scripts/uniview/?codepoints=109B'>MYANMAR SIGN KHAMTI TONE-3</a></p></div></div>
+<p class='charname'><strong>U+109B</strong> <a href='/uniview/?codepoints=109B'>MYANMAR SIGN KHAMTI TONE-3</a></p></div></div>
 
 <div>
 <h2><a id='aiton'>Extensions for Aiton and Phake</a></h2>
 <div class='character' id='char109C'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x109C;</div>
-<p class='charname'><strong>U+109C</strong> <a href='/rishida/scripts/uniview/?codepoints=109C'>MYANMAR VOWEL SIGN AITON A</a></p></div><div class='character' id='char109D'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+109C</strong> <a href='/uniview/?codepoints=109C'>MYANMAR VOWEL SIGN AITON A</a></p></div><div class='character' id='char109D'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x109D;</div>
-<p class='charname'><strong>U+109D</strong> <a href='/rishida/scripts/uniview/?codepoints=109D'>MYANMAR VOWEL SIGN AITON AI</a></p></div></div>
+<p class='charname'><strong>U+109D</strong> <a href='/uniview/?codepoints=109D'>MYANMAR VOWEL SIGN AITON AI</a></p></div></div>
 
 <div>
 <h2><a id='shans'>Shan symbols</a></h2>
 <div class='character' id='char109E'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x109E;</div>
-<p class='charname'><strong>U+109E</strong> <a href='/rishida/scripts/uniview/?codepoints=109E'>MYANMAR SYMBOL SHAN ONE</a></p></div><div class='character' id='char109F'><div class='up'><a href='#index'>⇧</a></div>
+<p class='charname'><strong>U+109E</strong> <a href='/uniview/?codepoints=109E'>MYANMAR SYMBOL SHAN ONE</a></p></div><div class='character' id='char109F'><div class='up'><a href='#index'>⇧</a></div>
 <div class='charimg'>&#x109F;</div>
-<p class='charname'><strong>U+109F</strong> <a href='/rishida/scripts/uniview/?codepoints=109F'>MYANMAR SYMBOL SHAN EXCLAMATION</a></p></div></div>
+<p class='charname'><strong>U+109F</strong> <a href='/uniview/?codepoints=109F'>MYANMAR SYMBOL SHAN EXCLAMATION</a></p></div></div>
 <div class="section" id="references">
   <h2><a href="#endlinks" id="endlinks">Further reading</a></h2>
   <ol>
@@ -1620,17 +1613,17 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   </ol>
 </div>
 
-<div id="panel" style="display:none"><div style="display:block">&nbsp;</div><p style="text-align:right;"><img src="/rishida/icons/close.png" alt="Close" onclick="document.getElementById('panel').style.display = 'none';" /></p></div>
+<div id="panel" style="display:none"><div style="display:block">&nbsp;</div><p style="text-align:right;"><img src="/scripts/block/images/close.png" alt="Close" onclick="document.getElementById('panel').style.display = 'none';" /></p></div>
 
 	<div id="author" style="clear:both;"> 
-		<p>Available at: <a href="http://rishida.net/block/myanmar">rishida.net/block/myanmar</a>. </p>
+		<p>Available at: /block/myanmar</p>
 </div>
 	<div class="smallprint"> 
 		<p id="version">Content first published  3 February, 2014.  This version <span
 			id="version-info">
-			<!-- #BeginDate format:IS1m -->2015-02-10  20:54<!-- #EndDate -->
+			<!-- #BeginDate format:IS1m -->2015-02-13  13:42<!-- #EndDate -->
 		</span> GMT</p>
-		<p class="copyright">Copyright © 2014-5 Richard Ishida, All Rights Reserved.</p>
+		<p class="copyright">Copyright © 2014-2015 Richard Ishida, All Rights Reserved.</p>
 </div>
 
 <!-- Uncomment this code to get a list of all character names for the file names-subset.js
@@ -1640,7 +1633,7 @@ abdefghijklmnoprstuvwzàáèéìíðòóùúŋɔɕəɛɡɪɲɴʃʊʑʔʰ̥̰̀́
 </span></div>
 <div id="listofIPAchars"></div>
 <div id="listofchars"></div>
-<script type="text/javascript" src="/rishida/javascript/showcharacters/names.js"></script>
+<script type="text/javascript" src="/code/showcharacters/names.js"></script>
 <script src="data-extraction.js" type="text/javascript">//</script>
 <script>document.getElementById('listofIPAchars').innerHTML = getlistofIPAchars();
 document.getElementById('listofchars').innerHTML = getlistofchars();
