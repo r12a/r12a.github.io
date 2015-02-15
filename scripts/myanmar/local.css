@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'notosansmyanmarWF';
-    src: url('../block/fonts/notosansmyanmar-regularwf.woff2') format('woff2'),
-         url('../block/fonts/notosansmyanmar-regularwf.woff') format('woff');
+    src: url('/webfonts/notosansmyanmar-regularwf.woff2') format('woff2'),
+         url('/webfonts/notosansmyanmar-regularwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'myanmar3WF';
-    src: url('../block/fonts/mm3-multiwf.woff2') format('woff2'),
-         url('../block/fonts/mm3-multiwf.woff') format('woff');
+    src: url('/webfonts/mm3-multiwf.woff2') format('woff2'),
+         url('/webfonts/mm3-multiwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'tharlonWF';
-    src: url('../block/fonts/tharlon-regularwf.woff2') format('woff2'),
-         url('../block/fonts/tharlon-regularwf.woff') format('woff');
+    src: url('/webfonts/tharlon-regularwf.woff2') format('woff2'),
+         url('/webfonts/tharlon-regularwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
