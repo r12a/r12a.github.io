@@ -54,19 +54,19 @@
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs','');</script>
 
-	<div class="sidebar">
-			<h2 class="notoc"><a id="tochead" name="tochead" tabindex="4">Contents</a></h2>
+<h1>Myanmar character notes</h1>
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
 			<div id="toc"><!-- placeholder --></div>
 		<div class="noprint">
 			<h2 class="notoc"><a id="links" name="links" tabindex="5">Related links</a></h2>
             <p><a href="/scripts/myanmar">Myanmar script notes</a></p>
-<p><a href="/scripts/scriptlinks?script=myanmar">Myanmar links</a></p>
-			<p><a href="/scripts/pickers/myanmar/">Myanmar character picker</a></p>
-			<p style="line-height: 1.3em"><a href="/uniview/?block=myanmar">UniView </a></p>
+<p><a href="/scripts/links?script=myanmar">Myanmar script links</a></p>
+			<p><a href="/pickers/burmese/">Burmese character picker</a></p>
+		  <p><a href="/uniview/?block=myanmar">UniView </a></p>
 		</div>
-
-
-        
+       
 <div id="fontsetting" class="closed">
 <h2 class="notoc"><a id="fonts">Fonts</a></h2>
 <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
@@ -134,18 +134,14 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </p>
 <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
 </div>
-        
+</aside>
 
-</div>
 
-	<h1>Myanmar character notes</h1>
+<p id="status">Updated Sun 15 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=burmese" title="Show all blog posts tagged with 'burmese'">burmese</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
 
-<div id="navigation">
-		<p><a>Updated Sat 14 Feb 2015 and tagged with  </a> <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all articles tagged with 'myanmar' in blog">myanmar</a>, <a href="http://rishida.net/blog/?cat=23" title="Show all articles in the 'script notes' category in blog">script</a></p>
-</div>
-<a id="contentstart" name="contentstart" tabindex="1"></a>
-	<p>This page lists characters in the Unicode Myanmar block and provides information about them. For information about Myanmar script and its features in general, see the companion document <a href="/scripts/myanmar/">Myanmar Script Notes</a>.</p>
-	<p>You can obtain  fonts for this page free from the Web, but <strong>you must use fonts compatible with Unicode 5.1</strong>. For this page I used Tharlon, which comes with this page as a webfont.  Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p>
+<section>
+<p>This page lists characters in the Unicode Myanmar block and provides information about them. For information about Myanmar script and its features in general, see the companion document <a href="/scripts/myanmar/"> Script Notes</a>.</p>
+	<p>You can obtain  fonts for this page free from the Web, but <strong>you must use fonts compatible with Unicode 5.1</strong>. Click the blue vertical bar at the bottom right of the page to apply webfonts downloaded with this page, or other  fonts if you have them on your system. For the IPA transcriptions, I recommend downloading the free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=doulossil_download">Doulos Sil</a> or <a href="http://scripts.sil.org/gentium_download">Gentium Plus</a> fonts.</p>
 <p>If you click on any red Myanmar example text, you will see a list of the  characters that make up the example  at the bottom right of the page.</p>
 <p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
 <section id="charlistsection">
@@ -1615,16 +1611,10 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 
 <div id="panel" style="display:none"><div style="display:block">&nbsp;</div><p style="text-align:right;"><img src="/scripts/block/images/close.png" alt="Close" onclick="document.getElementById('panel').style.display = 'none';" /></p></div>
 
-	<div id="author" style="clear:both;"> 
-		<p><a href="/docs">docs</a> > myanmar</p>
-</div>
-	<div class="smallprint"> 
-		<p id="version">Content first published  3 February, 2014.  This version <span
-			id="version-info">
-			<!-- #BeginDate format:IS1m -->2015-02-14  7:12<!-- #EndDate -->
-		</span> GMT</p>
-		<p class="copyright">Copyright © 2014-2015 Richard Ishida, All Rights Reserved.</p>
-</div>
+<div class="smallprint"><span id="version">First published  3 February, 2014.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-15  11:24<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
 
 <!-- Uncomment this code to get a list of all character names for the file names-subset.js
 <div id=charliststr></div>
