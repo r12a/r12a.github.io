@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Script features by language</title>
+		<meta name="description" content="Translations of three phrases used for examples in presentations, etc., in multiple scripts." />
+		<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+
+		<style type="text/css" media="all">
+p { font-family: sans-serif; text-align: left; }
+p[dir=rtl] { text-align:right; }
+.item div { font-size: 80%; text-align: right; }
+div.indent { margin-left: 3em; font-size: 120%; }
+.indent div { font-size: 65%; margin-left: 30px;  }
+.indent p { margin-bottom: 0px;  }
+.y { background-color:#FC6;  background-color:#ffe; background-color: #ffcfaf; 
+	border-radius: 10px; 
+	}
+#reviewtable td {  font-size: 70%; border: 0; margin: 0; color: #444; }
+#reviewtable th { font-size: 60%; font-weight:normal; text-align:left; vertical-align:bottom; }
+#reviewtable tr:hover { background-color:#eee; }
+#line { height: 25em; }
+[title='Script'] { font-family: Helvetica, 'Helvetica Neue', calibri, corbel, "Segoe UI", sans-serif; }
+</style>
+
+<script type="application/javascript" src="table.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+</head>
+
+<body>
+    <div id="header-boilerplate"></div>
+	<script type="text/javascript">document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+
+		<h1>Script features by language</h1>
+
+		<aside class="sidebar"> 
+		  <div class="noprint"> 
+
+				<h2 class="flush"><a id="related">Related links</a></h2>
+				<p><a href="/scripts/uniview/">UniView</a></p>
+				<p><a href="/docs/unicode-tutorial/">An Introduction to Writing Systems &amp; Unicode</a></p>
+			</div>
+		</aside>
+
+<p id="status">Updated 21 Oct 2014 &bull; tags <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
+
+<div class="section">
+  <p>This page provides information about script characteristics for a number of languages. The characteristics described are based on the exemplarCharacters lists in CLDR, ie. just the core characters needed to represent the language. It is not intended to be exhaustively scientific – merely to give a basic idea of what languages require what type of feature support. The symbol <img src='link.png' alt='details'/> after a script name points to a  page that gives a quick summary of the script used for that language.</p>
+</div>
+		
+						<p class="instructions">Click on the column headings to sort by that column.</p>
+              
+              
+<div id="theTable"></div>
+<script type="text/javascript">resort(0);</script>
+
+
+
+	<div class="section">
+	<h2>Notes</h2>
+	<p>The table is intended to provide a general indication only. There are things that could be disputed, and sometimes that goes back to the CLDR data. .</p>
+	<p><b class="leadin">Number of characters</b> This figure is based on the simplest list of exemplarCharacters in CLDR. It is therefore the set of core characters needed to represent the language, and typically doesn't include common punctuation, currency symbols, etc. Nor does it include the additional characters that you may find in publications. For example, the English set of characters doesn't include é, which you might use for 'résumé'. It also doesn't include combinations regarded as letters that are made up of groups of characters.</p>
+	<p>Note that CLDR is not necessarily correct or complete, but the figure is intended to give an idea of the general size of the character set, rather than an absolutely accurate figure.</p>
+<p>Where a language uses a case sensitive script, uppercase versions of letters are included in this figure.</p>
+	<p>The characteristics described below are also based on this set of characters only.</p>
+	<p><b class="leadin">Case sensitive?</b> Whether or not the script makes case distinctions.</p>
+	<p><b class="leadin">Combining characters.</b> This shows the subset of the number of characters that are combining characters. No attempt is made to indicate how many of the base characters each combining character can combine with. In some cases, this will be limited, but in most cases a combining character will combine with a fair number of base characters.</p>
+	<p><b class="leadin">Contextual positioning.</b> This is typically related to combining characters, and indicates that a typical font uses OpenType rules to position of a glyph according to the glyphs that surround it, eg. tone marks in Thai, or vowel signs in Arabic (if used).</p>
+	<p><b class="leadin">Multiple combining characters.</b> Whether more than one combining character can be associated with a give base character.</p>
+	<p><b class="leadin">Contextual shaping.</b> Whether different glyph shapes have to be used for a character depending on the visual context, eg. the RA in Myanmar that grows and shrinks to fit around the character is surrounds. Note that this does not include shaping for cursive scripts (see below).</p>
+	<p><b class="leadin">Cursive script.</b> Do the letters in this script join up, eg. as in Arabic?</p>
+	<p><b class="leadin">Ligatures.</b> Does the script require certain ligatures, ie. a single glyph for more than one underlying character.</p>
+	<p><b class="leadin">Right-to-left.</b> Is this a right-to-left script (which actually usually means that bidirectional behaviour needs to be supported, for numbers and embedded foreign text.)</p>
+	<p><b class="leadin">Space not word separator.</b> Is this a script like Thai, where spaces are used to separate phrases, not words, or like Japanese and Chinese, that don't use spaces, or Ethiopic, that has its own word separator?</p>
+	<p><b class="leadin">Baseline.</b> The baseline for Latin text is labelled 'mid'. Scripts designed like Indic scripts that hang from a high baseline, are labelled 'high'. Scripts like Chinese are labelled 'low'.</p>
+	<p><b class="leadin">Text wrap.</b> At the end of a line, where is the typically break point? Is it between words, or characters? Entries labelled 'special' wrap at a character that is not a space, eg. Tibetan, which uses a tsheg between words, rather than a space.</p>
+	<p><b class="leadin">Justification.</b> What is the basic starting point for justification of text on a line? Typically this is related to the spaces between words. Here are the other alternatives listed: 'char' is typical of Chinese and Japanese, where justification starts with inter-character spaces; 'cluster'  refers to scripts such as in South East Asia, where word boundaries are taken into account, but spaces are used as phrase separators; 'word' is used for arabic-based scripts, where justification is commonly achieved by stretching the baseline or using ligatures.</p>
+	<p><b class="leadin">Region.</b> This rough grouping places the language in the region where it originated, so English is in Europe, and Arabic is in the Middle East. It serves to get a very rough idea of how things stack up on a regional basis.</p>
+	<p><b class="leadin">Feature count.</b> This is a very simplistic indicator that simply awards one point for each column after the first three columns that doesn't read 'no', 'mid' or '0'.</p>
+	</div>
+
+<div class="smallprint"><span id="version">First published  29 August, 2010.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-15  11:45<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+	
+</body>
+</html>
