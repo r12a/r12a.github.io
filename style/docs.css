@@ -1,7 +1,15 @@
+@font-face {
+    font-family: 'robotolight';
+    src: url('/webfonts/roboto-lightwebfont.woff2') format('woff2'),
+         url('/webfonts/roboto-lightwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
 body {
 	margin: 0;
 	padding: 0;
-    font-family: adobe-clean, 'Helvetica Neue', calibri, corbel, "Segoe UI", helvetica, sans-serif;
+    font-family: adobe-clean, 'Helvetica Neue', robotolight, calibri, corbel, "Segoe UI", helvetica, sans-serif;
     font-size: 17px;
     font-weight: 300;
     line-height: 1.75;
@@ -11,7 +19,7 @@ body {
 	}
 
 strong {
-    font-family: 'Helvetica Neue',  "Segoe UI", sans-serif;
+    font-family: 'Helvetica Neue',  robotolight, "Segoe UI", sans-serif;
     font-weight: 400;
 	color: #444;
 	}
@@ -39,7 +47,7 @@ dd p { margin-left: 0; margin-right: 0; }
 
 h1 {
 	text-align: left;
-	font-size: 45px;
+	font-size: 48px;
 	font-weight: 300;
 	color: #005a9c;
 	padding: 5px;
@@ -50,27 +58,25 @@ h1 {
 h1.compact {
 	margin-bottom: 0.5em;
 	}
+h1 a:link { 
+	text-decoration: none;
+	color: #005a9c;
+	}
+h1 a:visited { 
+	color: #005a9c;
+	text-decoration: none;
+	}
+
 h2 {
 	color: #005a9c;
 	text-align: left;
 	font-size: 123%;
-	font-weight: 300;
+	font-weight: 200;
 	margin-top: 4em;
 	margin-bottom: 1em;
 	border-bottom: 1px solid #eee;
 	text-transform: lowercase;
 	}
-
-h3 {
-	text-align: left;
-	font-size: 120%;
-	font-weight: normal;
-	margin-top: 4em;
-	margin-bottom: 1em;
-	border-bottom: 1px solid #eee;
-	text-transform: lowercase;
-	}
-
 h2 a:link { 
 	text-decoration: none;
 	color: #005a9c;
@@ -83,6 +89,17 @@ h2 a:hover {
 	color: #005a9c;
 	text-decoration: none; 
 	}
+
+h3 {
+	text-align: left;
+	font-size: 120%;
+	font-weight: normal;
+	margin-top: 4em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #eee;
+	text-transform: lowercase;
+	}
+
 h3 a:link { 
 	color: gray; 
 	text-decoration: none; 
@@ -117,13 +134,13 @@ h2 + section > h3 {
 
 #topbar {
 	text-align: left;
-	font-size: 180%;
+	font-size: 150%;
 	color: #005a9c;
-	background-color: #eee;
+	background-color: #f5f5f5;
 	padding: 5px;
 	padding-left: 10px;
 	margin: 0;
-	margin-right: 28%;
+	margin-right: 29%;
 	line-height: 1.1;
 	}
 #topbar a:link { 
@@ -136,66 +153,9 @@ h2 + section > h3 {
 	}
 
 
-.sidebar {
-	float: right;
-	width: 28%;
-	clear: right;
-	text-align: left;
-	text-align: start;
-	}
-#sidebar li {
-	list-style-type: none;
-	}
-.sidebar h2 {
-	margin-top: 2em;
-	margin-left: 0;
-	margin-right: 0;
-	padding-left: 10px;
-	}
-.sidebar p {
-	margin-left: 2em;
-	margin-right: 1em; 
-	line-height: 1.2em;
-	}
-
-
-#toc{ 
-	margin-bottom: 1em; 
-	}
-.toc1 { 
-	margin-left: 2em; 
-	margin-right: 1em; 
-	margin-bottom: 4px; 
-	margin-top: 8px;
-	line-height: 1.2;
-	}
-.toc2 { 
-	margin-left: 2em; 
-	margin-right: 1em; 
-	font-size: 80%; 
-	margin-bottom: 2px; 
-	}
-
-
-
-.sidenoteGroup {
-	position: relative;
-	width: 100%;
-	}
-.sidenote {
-	position: absolute;
-	top: 0;
-	right: 2em;
-	width: 24%;
-	font-size: 80%;
-	line-height: 1.2em;
-	text-align: left;
-	}
-
-
 #line {
 	position: absolute;
-	left: 72%;
+	left: 71%;
 	top: 0;
 	width: 10px;
 	border-left: 2px dotted #005a9c;
@@ -218,6 +178,9 @@ h2 + section > h3 {
 	margin-top: 1em;
 	margin-bottom: 0;
 	}
+#level2-picture {
+	margin-bottom: 30px;
+	}
 /* phase the following out */
 #picture {
 	margin-top: 5em;
@@ -232,20 +195,86 @@ h2 + section > h3 {
 	
 	
 
+.sidebar {
+	float: right;
+	width: 27%;
+	clear: right;
+	text-align: left;
+	text-align: start;
+	}
+#sidebar li {
+	list-style-type: none;
+	}
+.sidebar h2 {
+	margin-top: 2em;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0px;
+	}
+.sidebar p {
+	margin-left: 1em;
+	margin-right: 1em; 
+	line-height: 1.2em;
+	}
+
+
+#toc{ 
+	margin-bottom: 1em; 
+	}
+.toc1 { 
+	margin-left: 1em; 
+	margin-right: 1em; 
+	margin-bottom: 4px; 
+	margin-top: 8px;
+	line-height: 1.2;
+	}
+.toc2 { 
+	margin-left: 1em; 
+	margin-right: 1em; 
+	font-size: 80%; 
+	margin-bottom: 2px; 
+	}
+
+
+
+.sidenoteGroup {
+	position: relative;
+	width: 100%;
+	}
+.sidenote {
+	position: absolute;
+	top: 0;
+	right: 2em;
+	width: 24%;
+	font-size: 80%;
+	line-height: 1.2em;
+	text-align: left;
+	}
+
+
+#status {
+	line-height: 150%;
+	background-color: transparent;
+	color: #999;
+	font-weight: 300;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: left;
+	font-size: 11.5px;
+	}
 #navigation {
 	line-height: 150%;
 	background-color: transparent;
-	color: #555;
-	font-weight: 500;
+	color: #999;
+	font-weight: 300;
 	margin-top: 0em;
-	margin-bottom: 2em;
-	text-transform: lowercase;
+	margin-bottom: 1em;
 	}
 #navigation p {
 	margin-top: 0;
 	margin-bottom: .25em;
 	text-align: left;
-	font-size: 90%;
+	font-size: 11.5px;
 	}
 
 
@@ -257,6 +286,7 @@ h2 + section > h3 {
 	clear: right;
 	padding-top: 1em;
 	padding-bottom: 1em;
+	text-align: center;
 	}
 #site-navigation a:link {
 	color: black;
@@ -311,11 +341,23 @@ address {
 	}
 .smallprint {
 	font-size: 12px;
-	line-height: 1.3;
+	line-height: 1.2;
+	color: #999;
+	margin: 0;
+	margin-top: 7em;
+	/* background-color: #f5f5f5;
+	padding: 8px 10px 8px 10px; */
+	text-align: right;
 	}
 .smallprint p { 
 	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
+	margin-right: 10px;
+	margin-left: 10px;
+	}
+span#version {
+	padding: 8px 20px;
+	background-color: #f5f5f5;
 	}
 #logos {
 	float: right;
@@ -502,6 +544,7 @@ table.inband th {
 
 
 .hidden { display:none; }
+/*
 .collapsingList li { 
 	position:relative;
 	border-bottom: 1px solid white;
@@ -512,9 +555,9 @@ table.inband th {
 	}
 .collapsingList .hidden { 
 	position: absolute;
-	top: -20px;
+	top: 0px;
 	left: 50%;
-	width: 60%;
+	width: 50%;
 	font-size: 80%;
 	line-height: 1.2em;
 	text-align: left;
@@ -522,17 +565,11 @@ table.inband th {
 
 	background-color:#ffe; 
 	border: 1px solid #CCC; 
-	box-shadow: 7px 7px 5px #888; 
 	padding: 5px 10px 5px 15px; 
 	border-radius: 10px; 
 	}
-.collapsingList li:hover {
-	/*border-radius: 10px; 
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px;
-	border-bottom: 1px solid #CCC;*/
-	}
 .collapsingList li:hover .hidden { display:block; }
+*/
 
 @media handheld {
 .collapsingList li:after { content: 'info'; color: #CCC; }
