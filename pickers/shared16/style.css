@@ -7,6 +7,7 @@
 	}
 .sidebar p {
 	line-height: 1em;
+	margin-bottom: 0;
 	}
 
 h1 {
@@ -32,7 +33,20 @@ table, tr, td, th { font-size: 100%; }
 
 table td { border: 0; }
 
-
+.instructions {
+	 font-family: robotolight; 
+	 font-style: italic; 
+	 text-align:center;
+	 margin-bottom: 0;
+	}
+#hidePageTop {
+	font-size: 80%;
+	text-align: center;
+	clear: both;
+	margin: 0 32% 10px 0;
+	font-style: italic;
+	font-family: robotolight;
+	}
 
 
 #subtitle { 
