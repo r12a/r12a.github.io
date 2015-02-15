@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>Myanmar script notes</title>
+<meta name="description" content="Notes about the Myanmar script as used for Burmese."/>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+<script src="/scripts/block/myanmar-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+<script src="/code/toc_section.js" type="text/javascript"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="/uniview/scriptGroups.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+
+<h1>Myanmar script notes</h1>
+
+<aside class="sidebar">
+<nav>
+<h2 class="notoc flush"><a id="tochead" tabindex="4">Contents</a></h2>
+<div id="toc"><!-- placeholder --></div>
+<div class="noprint">
+  <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+  <p><a href="/scripts/block/myanmar">Myanmar character notes</a></p>
+  <p><a href="/scripts/links?script=myanmar">Myanmar script links</a></p>
+  <p><a href="/pickers/myanmar/">Burmese character picker</a></p>
+  <p style="line-height: 1.3em"><a href="/uniview/?block=myanmar">Myanmar in UniView </a></p>
+  </div>
+  </nav>
+<div id="fontsetting" class="closed">
+  <h2 class="notoc"><a id="fonts">Fonts</a></h2>
+  <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+  <p>Set a font for Burmese text</p>
+  <p>
+  <select id="exfontswitchfont" 
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'my');">
+  <optgroup label="Webfonts">
+  <option value="Myanmar3WF">Myanmar3</option>
+  <option value="TharlonWF">Tharlon</option>
+  <option value="NotoSansMyanmarWF">Noto Sans Myanmar</option>
+  </optgroup>
+  <optgroup label="Mac fonts">
+  <option value="Myanmar MN">Myanmar MN</option>
+  <option value="Myanmar Sangam MN">Myanmar Sangam MN</option>
+  </optgroup>
+  <optgroup label="Windows fonts">
+  <option value="Myanmar Text">Myanmar Text</option>
+  </optgroup>
+  <optgroup label="Google fonts">
+  <option value="Tharlon">Tharlon</option>
+  <option value="Noto Sans Myanmar">Noto Sans Myanmar</option>
+  <option value="Padauk">Padauk</option>
+  </optgroup>
+  <optgroup label="Other fonts">
+  <option value="Myanmar3">Myanmar3</option>
+  </optgroup>
+  </select>
+  <input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'my');" />
+  </p>
+  <p>Set a font for the index</p>
+  <p>
+  <select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#exfontswitchsize').value, 'my');">
+  <optgroup label="Webfonts">
+  <option value="Myanmar3WF">Myanmar3</option>
+  <option value="TharlonWF">Tharlon</option>
+  <option value="NotoSansMyanmarWF">Noto Sans Myanmar</option>
+  </optgroup>
+  <optgroup label="Mac fonts">
+  <option value="Myanmar MN">Myanmar MN</option>
+  <option value="Myanmar Sangam MN">Myanmar Sangam MN</option>
+  </optgroup>
+  <optgroup label="Windows fonts">
+  <option value="Myanmar Text">Myanmar Text</option>
+  </optgroup>
+  <optgroup label="Google fonts">
+  <option value="Tharlon">Tharlon</option>
+  <option value="Noto Sans Myanmar">Noto Sans Myanmar</option>
+  <option value="Padauk">Padauk</option>
+  </optgroup>
+  <optgroup label="Other fonts">
+  <option value="Myanmar3">Myanmar3</option>
+  </optgroup>
+  </select>
+  <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'my');" />
+  </p>
+  <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+</div>
+</aside>
+
+
+<p id="status">Updated Sun 15 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=burmese" title="Show all blog posts tagged with 'burmese'">burmese</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
+
+<div class="section"><a id="contentstart" tabindex="1"></a>
+  <p>In these notes I synthesize  information from various sources, encountered as I explore <span class="ex" lang="my">မြန်မာစာ</span> <span class="ipa">mjàɴmàzà</span>, and the  Myanmar script as used for Burmese. They may be updated from time to time. </p>
+  <p>The page  contains brief notes on general script features. See also the companion document, <a href="/scripts/block/myanmar">Myanmar Character Notes</a>, which describes the characters used in Myanmar script one by one.</p>
+  <p>For more detailed information, especially about the history and phonology of the Myanmar script, follow the links in the text and <a href="#endlinks">at the bottom of the page</a>, from which I took these notes. </p>
+  <p>When you see red text (examples of Burmese) you can click on it to reveal the component characters.</p>
+  <p>You can obtain  fonts for this page free from the Web, but <strong>you must use fonts compatible with the latest version of Unicode</strong>.   Click the blue vertical bar at the bottom right of the page to apply particular fonts, if you have them on your system. For the IPA transcriptions, I recommend downloading the free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=doulossil_download">Doulos Sil</a> or <a href="http://scripts.sil.org/gentium_download">Gentium Plus</a> fonts.</p>
+</div>
+<section id="intro">
+  <h2><a href="#intro">Brief script introduction</a></h2>
+  <p> The script is an abugida, ie. consonants carry an inherent vowel sound that is overridden, where needed, using vowel signs.</p>
+  <p>Spaces are used to separate phrases, rather than words. Words can be separated with <a href="/scripts/block/myanmar#char200C"><span class="uname">U+200C ZERO WIDTH NON-JOINER</span></a> to allow for easy wrapping of text. </p>
+  <p>Text runs from left to right.</p>
+  <p>There are a set of Myanmar numerals, which are used just like Latin digits.</p>
+  <p>Example of Burmese:</p>
+  <p lang="my" style="color:black; line-height:2em; text-align: left;">လူတိုင်းသည် တူညီ လွတ်လပ်သော ဂုဏ်သိက္ခါဖြင့် လည်းကောင်း၊ တူညီလွတ်လပ်သော အခွင့်အရေးများဖြင့် လည်းကောင်း၊ မွေးဖွားလာသူများ ဖြစ်သည်။ ထိုသူတို့၌ ပိုင်းခြား ဝေဖန်တတ်သော ဉာဏ်နှင့် ကျင့်ဝတ် သိတတ်သော စိတ်တို့ရှိကြ၍ ထိုသူတို့သည် အချင်းချင်း မေတ္တာထား၍ ဆက်ဆံကျင့်သုံးသင့်၏။ </p>
+</section>
+<section id="burmese">
+  <h2><a href="#burmese">Characters used for Burmese</a></h2>
+  <section id="burmeseOverview">
+    <h3><a href="#burmeseOverview">Overview</a></h3>
+    <p>The Burmese language is  tonal and  syllable-based.</p>
+    <p>Words are composed of syllables.  These start with an consonant or initial vowel. An initial consonant may  be followed by a medial consonant, which adds the sound <span class="ipa">j</span> or <span class="ipa">w</span>. After the vowel, a syllable may end with a nasalisation of the vowel or an unreleased glottal stop, though these final sounds can be represented by various different consonant symbols. </p>
+    <p>At the end of a  syllable a final consonant usually has an 'asat' sign above it, to show that there is no inherent vowel.</p>
+    <p>In multisyllabic words  derived from an Indian language such as Pali, where two consonants occur internally with no intervening vowel, the consonants tend to be stacked vertically, and the asat sign is not used. </p>
+    <p>Burmese uses the   Myanmar numerals, which are used just like Latin digits.</p>
+  </section>
+  <section id="consonantintro">
+    <h3><a href="#consonantintro">Consonants</a></h3>
+    <p>Native Burmese words use a <a href="#clbasic">subset of the consonants</a> that make up
+      the traditional articulatory arrangement of indic scripts, however <a href="#clotherc">additional symbols</a> are available for use in loan words, especially Indian loan
+      words. These include the retroflex and voiced aspirated consonants. Other characters in the Myanmar Unicode block are used for variations for minority scripts based on myanmar. The latter are not dealt with here.</p>
+    <p><a class="leadin" href="#syllfinal" id="syllfinal">Syllable-final consonants and asat.</a> When there is a  consonant at the end of a syllable, it carries a visible mark called a.sat (<span class="ex" lang="my">အသတ်</span> <span class="ipa">ʔa̰θaʔ</span>) to indicate that the inherent vowel is killed, eg. see the small 'c' like mark over the last character in <span class="ex" lang="my">ဝင်</span> <span class="ipa">wɪ̀ɴ</span> <span class="meaning">enter</span>. The <a href="/scripts/block/myanmar#char103A"><span class="uname">U+103A MYANMAR SIGN ASAT</span> <span lang="my">&#xA0;&#x103A;</span></a> is a  character introduced in Unicode version 5.1 for this purpose. It is effectively a visible virama. </p>
+    <p>In native Burmese, 9 characters (5 nasals, <span class="ex" lang="my">င ဉ ည န မ</span> NGA, NYA, NNYA, NA and MA,
+      and 4 stops, <span class="ex" lang="my">က စ တ ပ</span> KA, CA, TA, PA) appear in syllable final position. In final
+      position nasals are pronounced as a nasalization of the previous vowel, eg. <span class="ex" lang="my">ရင်</span> <span class="ipa">jɪ̀ɴ</span> <span class="meaning">if</span>, and all stops are pronounced <span class="ipa">ʔ</span>, eg. <span class="ex" lang="my">မတ်</span> <span class="ipa">maʔ</span> <span class="meaning">March</span>.</p>
+    <p>Some syllables ending in nasal consonants use the anusvara rather than the ordinary consonant sign, eg. <span class="ex" lang="my" >သိမ်း</span> <span class="ipa">θéɪɴ</span> but <span class="ex" lang="my" >သုံး</span> <span class="ipa">θóʊɴ</span>.</p>
+    <p>(Note that the ASAT is also used over <span class="ex" lang="my" >&nbsp;ာ</span> and <span class="ex" lang="my" >ယ</span> to produce  vowel+tone combinations.) </p>
+    <p><a class="leadin" href="#stacking" id="stacking">Consonant stacking. </a>In many multi-syllabic words (mostly derived from Pali), consonants that have no intervening inherent vowel are 
+      arranged such that the consonant cluster is stacked. The second consonant appears below the first, eg. <span class="ex" lang="my"
+
+				xml:lang="my">မန္တလေး</span> <span class="ipa">màɴda̰lé</span> <span class="meaning">Mandalay</span>, and <span class="ex" lang="my">ဗုဒ္ဓ</span> <span class="ipa">boʊʔda̰</span> <span class="meaning">Buddha</span>. In some cases the lower character is abbreviated or reoriented, eg. <span class="ex" lang="my"
+
+				xml:lang="my">က္ဌ</span> to represent <span class="ex" lang="my"
+
+				xml:lang="my">က်ဌ</span>.</p>
+    <p>This effect is achieved in Unicode by using the character <a href="/scripts/block/myanmar#char1039"><span class="uname">U+1039 MYANMAR SIGN VIRAMA</span></a> between the consonants forming the cluster. Note that the virama is never visible. </p>
+    <p>Stacked consonants of this kind are always doubled consonants or homorganic.<sup><a href="http://en.wikipedia.org/wiki/Burmese_alphabet#Stacked_consonants">wpAlpha</a></sup></p>
+    <p>Consonants may also be stacked in abbreviations of native Burmese words, in which case they may not be homorganic and vowels may be prounounced between the consonants. For example, <span class="ex" lang="my">လက်ဖက်</span> <span class="ipa">lɛʔpʰɛʔ</span> <span class="meaning">tea </span> is sometimes abbreviated to <span class="ex" lang="my">လ္ဘက်</span>.<sup><a href="http://en.wikipedia.org/wiki/Burmese_alphabet#Stacked_consonants">wpAlpha</a></sup></p>
+    <p><a class="leadin" href="#repetition" id="repetition">Consonant repetition.</a> Where the same consonant appears at the end of a syllable and the beginning of a new syllable in the same word they are commonly represented in the usual cluster form, eg. <span class="ex" lang="my" >ပိန္နဲသီး</span> <span class="ipa">pèɪɴnɛ́ dʰí</span> <span class="meaning">jackfruit</span>.</p>
+    <p>In a few Burmese words, however, a doubled consonant is represented by a single consonant plus asat, eg. <span class="ex" lang="my" >ယောက်ျား</span> <span class="ipa">jaʊʔtɕá</span> <span class="meaning">man, husband</span> and <span class="ex" lang="my" >ကျွန်ုပ်</span> <span class="ipa">tɕʊ̀ɴnoʊʔ</span> <span class="meaning">first person singular</span>. Note how this produces a situation where an asat is used between a consonant and a medial or vowel sign.<sup><a href="http://www.unicode.org/notes/tn11/">Hosken</a></sup></p>
+    <p>A repeated <span class="ex" lang="my" >သ</span> can be represented using <a href="/scripts/block/myanmar#char103F"><span class="uname">U+103F MYANMAR LETTER GREAT SA</span> <span lang="my">&#x103F;</span></a></span>. In modern Burmese, <span class="ex" lang="my" >ဿ</span> appears within words, whereas <span class="ex" lang="my" >သ်သ</span> is used across word boundaries.<sup><a href="http://www.unicode.org/L2/L2006/06077-n3043r-myanmar.pdf">Uniprop</a>, 3</sup></p>
+    <p><a class="leadin" href="#medialdesc" id="medialdesc">Medial consonants.</a> <span class="ex" lang="my">ယ</span> YA, <span class="ex" lang="my">ဝ</span> WA, <span class="ex" lang="my">ရ</span> RA, and <span class="ex" lang="my">ဟ</span> HA have special  variant forms when used  medially as modifiers of the syllable's vowel. Dedicated medial signs exist in Unicode for each of these uses. They are combining characters, eg. <span class="ex" lang="my">ချက်</span> <span class="ipa">tɕʰɛʔ</span> <span class="meaning">cook</span>, <span class="ex" lang="my">ကြက်</span> <span class="ipa">tɕɛʔ</span> <span class="meaning">chicken</span>, <span class="ex" lang="my">နွား</span> <span class="ipa">nwá</span> <span class="meaning">cow</span>, and <span class="ex" lang="my">မှာ</span> <span class="ipa">m̥à</span> <span class="meaning">in, at</span>. </p>
+    <p>It is also possible to find two
+      medials associated with a consonant, eg. <span class="ex" lang="my">လျှ</span> <span	class="ipa">lʰjá</span> or <span class="ipa">ʃá</span> and <span class="ex" lang="my">မြွေ</span> <span class="ipa">mwè</span> <span class="meaning">snake</span>. </p>
+    <p>The combination of velar stop and medial RA or YA are pronounced as<span class="ipa"> tɕ</span>, eg. <span class="ex" lang="my">ကြက်</span> <span class="ipa">tɕɛʔ</span> <span class="meaning">chicken</span>, <span class="ex" lang="my">ကျပ်</span> <span class="ipa">tɕaʔ</span> <span class="meaning">to be tight</span>.</p>
+    <p>Note that  Pali and Sanskrit texts written in the Myanmar script, as well as in older orthographies of Burmese, sometimes render the consonants YA, RA, WA and HA in subjoined form. In those cases, <a href="/scripts/block/myanmar#char1039"><span class="uname">U+1039 MYANMAR SIGN VIRAMA</span></a> and the regular form of the consonant are used.<sup><a href="http://www.unicode.org/versions/Unicode7.0.0/ch16.pdf">Unicode,</a> 597</sup></p>
+    <p>The medial HA is used to create aspirated versions of consonants, and also to create the sound <span class="ipa">ʃ</span>. The latter is represented by either <span class="ex" lang="my" >ရှ</span> or <span class="ex" lang="my" >လျှ</span> (see the example above), depending on the word, eg. <span class="ex" lang="my">ရှိတယ်</span> <span class="ipa">ʃḭdɛ̀</span> <span class="meaning">to have</span>.</p>
+    <p>The old spelling of many words uses a fifth medial consonant, la swe, eg. <span class="ex" lang="my">ခ္လိုဝ်း</span> <span class="trans">hkluiw:</span> <span class="meaning">wash</span>, which is produced using just a subjoined <a href="/scripts/block/myanmar#char101C"><span class="uname">U+101C MYANMAR LETTER LA</span> <span lang="my">&#x101C;</span></a>.</p>
+    <p><a class="leadin" href="#kinzi" id="kinzi">Kinzi.</a> When the first consonant in a consonant cluster is a non-word-final <span class="ex" lang="my">င</span> it rises over the following letter and keeps its virama, rather than pushing the following consonant below it, eg. <span class="ex" lang="my">အင်္ဂလန်</span> <span class="ipa">ʔɪ̀ɴgəlàɴ</span> <span class="meaning">England</span>. This is called 'kinzi' (<span class="ex" lang="my">ကင်းစီး</span> <span class="ipa">kɪ́ɴzí</span>). To achieve this, use the sequence <a href="/scripts/block/myanmar#char1004"><span class="uname">U+1004 MYANMAR LETTER NGA</span> <span lang="my">&#x1004;</span></a>, <a href="/scripts/block/myanmar#char103A"><span class="uname">U+103A MYANMAR SIGN ASAT</span> <span lang="my">&#xA0;&#x103A;</span></a> and <a href="/scripts/block/myanmar#char1039"><span class="uname">U+1039 MYANMAR SIGN VIRAMA</span></a>, then continue with the next letter. </p>
+    <p><a class="leadin" href="#unicodechanges" id="unicodechanges">Changes in Unicode 5.1.</a> In Unicode 5.0, <a href="/scripts/block/myanmar#char103A"><span class="uname">U+103A MYANMAR SIGN ASAT</span> <span lang="my">&#xA0;&#x103A;</span></a> did not exist, and <a href="/scripts/block/myanmar/scripts/block/myanmar#char1039"><span class="uname">U+1039 MYANMAR SIGN VIRAMA</span></a> had to be used for both visible and non-visible viramas. This approach was problematic in that, since there are no spaces between words, it is not easy to automatically ascertain whether
+      a virama should appear above a consonant or cause the stacking effect. For example, should my sequence of characters appear like this, <span class="ex" lang="my">အမ်မီတာ</span>, or like this <span class="ex" lang="my">အမ္မီတာ</span>? To get
+      around this in Unicode 5.0 you needed to use a <a href="/scripts/block/myanmar#char200C"><span class="uname">U+200C ZERO WIDTH NON-JOINER</span></a> (ZWNJ) after the virama if you wanted it to remain visible (ie. the first example above would have been 
+      transcribed as <span class="trans">øm̸ˣʲmītā</span> and the second as <span class="trans">øm̸mītā</span>). The non-joiner prevents stacking. In
+      practice, this meant that there were very many ZWNJ characters in Burmese text, since there are many syllable-final consonants needing ASAT, and typing in the Myanmar script was therefore much more time-consuming than it needed to be.</p>
+    <p>Unicode 5.1 also introduced dedicated medial consonants. This makes it easier to type Myanmar text, but also allows for easy distinction of subjoined variants of these consonants rather than the usual medial forms. </p>
+    <p>One or two other characters were introduced, such as the TALL AA (described below). </p>
+    <p><a class="leadin" href="#aspiration" id="aspiration">Aspirated consonants.</a> Burmese aspirates many consonants. In some cases these are separate characters, in other cases the aspiration is indicated using <a href="/scripts/block/myanmar#char103E"><span class="uname">U+103E MYANMAR CONSONANT SIGN MEDIAL HA</span> <span lang="my">&#x103E;</span></a>. Aspirated sounds include the following<sup>Mesher, 12</sup>, where the last six use MEDIAL HA:</p>
+    <ul>
+      <li><span class="ipa">cʰ</span> <span class="ex" lang="my" >ချ</span>, eg. <span class="ex" lang="my" >ချားနား</span> <span class="ipa">tɕʰáná </span> different</li>
+      <li><span class="ipa">kʰ</span> <span class="ex" lang="my" >ခ</span>, eg. <span class="ex" lang="my" >ခက်</span> <span class="ipa">kʰɛʔ</span> difficult</li>
+      <li><span class="ipa">pʰ</span> <span class="ex" lang="my" >ဖ</span>, eg. <span class="ex" lang="my" >ဖိနပ်</span> <span class="ipa">pʰənaʔ </span> shoe</li>
+      <li><span class="ipa">sʰ</span> <span class="ex" lang="my" >ဆ</span>, eg. <span class="ex" lang="my" >ဆေး</span> <span class="ipa">sʰé </span> medecine</li>
+      <li><span class="ipa">tʰ</span> <span class="ex" lang="my" >ထ</span>, eg. <span class="ex" lang="my" >ထီး</span> <span class="ipa">tʰí</span> umbrella</li>
+      <li><span class="ipa">l̥</span><span class="ex" lang="my" >လှ</span>, eg. <span class="ex" lang="my" >လှ</span> <span class="ipa">l̥a̰</span> pretty</li>
+      <li><span class="ipa">m̥</span> <span class="ex" lang="my" >မှ</span>, eg. <span class="ex" lang="my" >မှာ</span> <span class="ipa">m̥à</span> at</li>
+      <li><span class="ipa">n̥</span> <span class="ex" lang="my" >နှ</span>, eg. <span class="ex" lang="my" >နှာ</span> <span class="ipa">n̥à</span> nose</li>
+      <li><span class="ipa">ŋ̥</span> <span class="ex" lang="my" >ငှ</span>, eg. <span class="ex" lang="my" >ငှက်</span> <span class="ipa">ŋ̥ɛʔ</span> bird</li>
+      <li><span class="ipa">ɲ̥</span> <span class="ex" lang="my" >ညှ</span>, eg. <span class="ex" lang="my" >ညှပ်</span> <span class="ipa">ɲ̥aʔ</span> cut</li>
+      <li><span class="ipa">w̥</span> <span class="ex" lang="my" >ဝှ</span>, eg. <span class="ex" lang="my" >ဝှက်</span> <span class="ipa">w̥ɛʔ</span> hide</li>
+    </ul>
+    <p><a class="leadin" href="#voicing" id="voicing">Voicing.</a> Unvoiced syllable initial consonants are typically pronounced with voicing when they appear in non-initial syllables of a word or in particle suffixes, unless they follow a syllable with stopped tone or follow the <span class="ex" lang="my" >အ</span> prefix. Aspirated consonants lose their aspiration at the same time. For example, <span class="ex" lang="my">သတင်းစာ</span> farmer is pronounced <span class="ipa">θədɪ́ɴzà</span> not <span class="ipa">θətɪ́ɴsà</span>. However, because of the rule about the stopped tone (ie. a syllable ending in a plosive consonant), <span class="ex" lang="my">တစ်ဆယ်</span> ten is pronounced <span class="ipa">təʔsʰɛ̀</span> not <span class="ipa">təʔzɛ̀</span>. </p>
+    <p>Note that care needs to be taken with compound words, since they contain more than one word-initial syllable, eg. <span class="ex" lang="my" >နားထောင်</span> listen is pronounced <span class="ipa">nátʰàʊɴ </span> not <span class="ipa">nádàʊɴ </span>.<sup>Mesher, 175-176</sup></p>
+    <p>There is also an irregular pattern of voicing initial consonants, particularly with place names. Mesher provides examples of words beginning with <span class="ex" lang="my" >စ ပ တ</span> and <span class="ex" lang="my" >ထ</span>, eg. <span class="ex" lang="my">စေတီ</span> table is pronounced <span class="ipa">zèdì </span> not <span class="ipa">sèdì </span>; <span class="ex" lang="my">ပုဂံ</span> Pagan/Bagan is pronounced <span class="ipa">bəgàɴ</span> not <span class="ipa">pəgàɴ</span>; <span class="ex" lang="my">ထားဝယ်</span> Tavoy/Dawei is pronounced <span class="ipa">dəwɛ̀</span> not <span class="ipa">tʰəwɛ̀</span>.<sup>Mesher, 251</sup></p>
+    <p><a class="leadin" href="#otherphonetic" id="otherphonetic">Representing foreign sounds.</a> Some conventions exist for representing foreign sounds. <span class="ipa">f</span> is <span class="ex" lang="my">ဖ</span> (usually <span class="ipa">pʰ</span>), <span class="ipa">v</span> is <span class="ex" lang="my">ဗ</span> (usually <span class="ipa">b</span>) or <span class="ex" lang="my">ဗွ</span> (usually <span class="ipa">bw</span>), eg. <span class="ex" lang="my">တီဗွီ</span> <span class="ipa">tìbwì</span>. A foriegn syllable final sound can be rendered by placing a second killed consonant
+      after the syllable, sometimes in parentheses, eg. <span class="ex" lang="my">ဘတ်(စ်)</span> <span class="ipa">bas</span> <span class="meaning">bus</span>.</p>
+  </section>
+  <section id="vowels">
+    <h3><a href="#vowels">Vowels and tones</a></h3>
+    <p>The Unicode Myanmar block lists <a href="/scripts/block/myanmar#independent"> independent vowels</a> and <a href="/scripts/block/myanmar#depvowelsigns"> dependent vowel signs</a>. Burmese also has an inherent vowel.</p>
+    <p><a class="leadin" href="#inherent" id="inherent">Inherent vowel.</a> The inherent vowel is <span class="ipa">a</span>. Very often this is reduced phonetically to <span class="ipa">ə</span>.</p>
+    <p>The independent form, used for syllable initial position, is represented using <a href="/scripts/block/myanmar#char1021"><span class="uname">U+1021 MYANMAR LETTER A</span> <span lang="my">အ</span></a> as a base, eg. <span class="ex" lang="my">အတန်း</span> <span class="ipa">ʔətáɴ</span> <span class="meaning">class</span>. Note that this is classed as a consonant rather than a vowel by the Burmese, and carries the inherent vowel when used alone. </p>
+    <p><a class="leadin" href="#independentvoweldesc" id="independentvoweldesc">Independent/initial vowels.</a> As mentioned above, the consonant <a href="/scripts/block/myanmar#char1021"><span class="uname">U+1021 MYANMAR LETTER A</span> <span lang="my">အ</span></a> is used as a support for vowel signs, and the combination of that and the
+      vowel sign is the normal native way of showing independent/initial vowels, eg. <span class="ex" lang="my">အိတ်</span> <span class="ipa">ʔeɪʔ</span> <span class="meaning">bag</span>.</p>
+    <p>Some independent/initial vowels have an alternative form that is used in some words only - typically Indian loan words, eg. <span class="ex" lang="my">ဧရာဝတီ</span> <span class="ipa">ʔèjàwa̰dì</span> <span class="meaning">Irawaddy river</span>, <span class="ex" lang="my">ဩဂုတ်</span> <span class="ipa">ʔɔ́goʊʔ</span> <span class="meaning">August</span>, and <span class="ex" lang="my">ဤ</span> <span
+
+				class="ipa">ʔì</span> <span class="meaning">this</span>. There are normally different forms for specific tones, and normally only one or two vowel+tone combinations have
+      these forms.</p>
+    <p><a class="leadin" href="#longvshort" id="longvshort">Long vs. short vowels.</a> The 'primary' vowels have 'short' and 'long' written forms that hark back to the earlier Indic script origins, but the distinction is
+      used nowadays for indicating different tones only.</p>
+    <p><a class="leadin" href="#vsplacement" id="vsplacement">Vowel sign placement.</a> Vowel signs appear above, below, or to the left or right of the base consonant. There are also vowel sign combinations that appear both top and bottom, or left and right. </p>
+    <p>A consonant cluster is treated as a unit when it comes to vowel-signs, for example <span class="ex" lang="my">အငွေ</span> <span class="trans">a.ngwe</span>, where the  E is displayed to the left of the NGA although the
+      character appears after the WA in memory. </p>
+    <p>On the other hand, vowel signs that would normally appear below a consonant are normally displayed to the right if something else intrudes on that space, such as a stacked consonant eg. <span class="ex" lang="my">စက္ကူ</span> <span
+
+				class="ipa">sɛʔkù</span> <span class="meaning">paper</span>, or a medial consonant eg. <span class="ex" lang="my" >အဖြူ</span> <span class="ipa">ʔəpʰjù</span> <span class="meaning">white</span>, or a consonant with a 'descender' eg. <span class="ex" lang="my" >အညို</span> <span class="ipa">ʔəɲò</span> <span class="meaning">brown</span>.</p>
+    <p><a class="leadin" href="#shapechanges" id="shapechanges">Contextual shape changes.</a> In order to avoid visual confusion, there are two forms of the long -aa vowel sign in Burmese. <span class="ex" lang="my" style="font-family:Myanmar2">ဝာ</span> <span class="ipa">wà</span> is hard to distinguish from <span class="ex" lang="my">တ</span> <span class="ipa">ta̰</span>, so a taller form of AA is used, <a href="/scripts/block/myanmar#char102B"><span class="uname">U+102B MYANMAR VOWEL SIGN TALL AA</span> <span lang="my">&#xA0;&#x102B;</span></a>. This form, whether alone or as part of a complex vowel, is  used after the following consonants: <span class="ex" lang="my">ခ ဂ င ဒ ပ ဝ</span>, eg. <span class="ex" lang="my">ပေါင်</span> <span
+
+				class="ipa">pàʊɴ</span> <span class="meaning">thigh</span>. Where there is no ambiguity, however, the normal shape is used, eg. <span class="ex" lang="my">ပြောင်းဖူး</span> <span
+
+				class="ipa">pjáʊɴbú</span> <span class="meaning">corn</span>. </p>
+    <p>Whereas in Unicode 5.0 the choice of appropriate form was left to the font or implementation during rendering, such contextual decisions are not appropriate for Sgaw Karen and other minority scripts, which only use the tall form, so <a href="/scripts/block/myanmar#char102B"><span class="uname">U+102B MYANMAR VOWEL SIGN TALL AA</span> <span lang="my">&#xA0;&#x102B;</span></a> was added to Unicode 5.1 as a separate character.<sup><a href="http://www.unicode.org/versions/Unicode7.0.0/ch16.pdf">Unicode,</a> 597</sup></p>
+    <p>As mentioned <a href="#vsplacement">earlier</a>, there are also special long forms of <a href="/scripts/block/myanmar#char102F"><span class="uname">U+102F MYANMAR VOWEL SIGN U</span> <span lang="my">&#xA0;&#x102F;</span></a> and <a href="/scripts/block/myanmar#char1030"><span class="uname">U+1030 MYANMAR VOWEL SIGN UU</span> <span lang="my">&#xA0;&#x1030;</span></a> when there is not enough room for them below a cluster. These forms need to be produced by the font, since there are no special characters for them. </p>
+    <p><a class="leadin" href="#opensyllables" id="opensyllables">Tones.</a> There are four tones in Burmese, creaky, low, high and stopped. A vowel plus tone combination is called a rhyme. The tone of a syllable can be 
+      indicated  by the vowel used, or by a combination of vowel and diacritic. The stopped tone only, but always, occurs where a syllable ends in a stop consonant. Syllables that end with a vowel sound and syllables that end with the nasal sound <span class="ipa"><span class="sectionstart">ɴ</span> </span>can have one or more of the other three tones.</p>
+    <p><img src="tones.png" alt="Diagram of tones." /><sup>Mesher, 7</sup></p>
+    <p>The phonemic transcriptions here use the following conventions for marking tones, using <span class="ipa">a</span> as the base for the examples.</p>
+    <ul>
+      <li>stopped tone <span style="font-size: 120%;" class="ipa">a</span></li>
+      <li>creaky tone <span style="font-size: 120%;" class="ipa">a̰</span></li>
+      <li>high tone <span style="font-size: 120%;" class="ipa">á</span></li>
+      <li>low tone <span style="font-size: 120%;" class="ipa">à</span></li>
+    </ul>
+    <p><a class="leadin" href="#rhymes" id="rhymes">Rhymes</a> The following table shows the normal combinations of vowel, final consonant and tone mark characters that are seen in Burmese, and their pronunciations.  Read down the left column to find the symbol used for the vowel sound, and across the top row to find syllable final consonants. The table doesn't take vowel reduction into account.</p>
+    <table id=rhymes summary="Syllable rhymes of Burmese.">
+      <tbody>
+        <tr>
+          <th lang=my scope="col">&nbsp;</th>
+          <th lang=my scope="col">open</th>
+          <th lang=my class="ex" scope="col">က်</th>
+          <th lang=my class="ex" scope="col">စ်</th>
+          <th lang=my class="ex" scope="col">တ်</th>
+          <th lang=my class="ex" scope="col">ပ်</th>
+          <th lang=my class="ex" scope="col">င်</th>
+          <th lang=my class="ex" scope="col">ည်</th>
+          <th lang=my class="ex" scope="col">ဉ်</th>
+          <th lang=my class="ex" scope="col">န်</th>
+          <th lang=my class="ex" scope="col">မ်</th>
+          <th lang=my class="ex" scope="col">ံ</th>
+        </tr>
+        <tr class="notone">
+          <th lang=my scope="row">-</th>
+          <td>a̰, ə</td>
+          <td class="sectionstart">ɛʔ</td>
+          <td>ɪʔ</td>
+          <td>aʔ</td>
+          <td>aʔ</td>
+          <td class="sectionstart">ɪ̀ɴ</td>
+          <td>ì, è, ɛ̀</td>
+          <td>ɪ̀ɴ</td>
+          <td>àɴ</td>
+          <td>àɴ</td>
+          <td>àɴ</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">ɪ̰ɴ</td>
+          <td>ḭ, ḛ, ɛ̰</td>
+          <td>ɪ̰ɴ</td>
+          <td>a̰ɴ</td>
+          <td>a̰ɴ</td>
+          <td>a̰ɴ</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">ɪ́ɴ</td>
+          <td>í, é, ɛ́</td>
+          <td>ɪ́ɴ</td>
+          <td>áɴ</td>
+          <td>áɴ</td>
+          <td>áɴ</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ာ/ါ</th>
+          <td>à</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း</th>
+          <td>á</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ယ်</th>
+          <td>ɛ̀</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ိ (ဣ)</th>
+          <td>ḭ</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>eɪʔ</td>
+          <td>eɪʔ</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>èɪɴ</td>
+          <td>èɪɴ</td>
+          <td>èɪɴ</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>ḛɪɴ</td>
+          <td>ḛɪɴ</td>
+          <td>ḛɪɴ</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>éɪɴ</td>
+          <td>éɪɴ</td>
+          <td>éɪɴ</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ီ (ဤ)</th>
+          <td>ì</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း</th>
+          <td>í</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ု (ဥ)</th>
+          <td>ṵ</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>oʊʔ</td>
+          <td>oʊʔ</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>òʊɴ</td>
+          <td>òʊɴ</td>
+          <td>òʊɴ</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>o̰ʊɴ</td>
+          <td>o̰ʊɴ</td>
+          <td>o̰ʊɴ</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>óʊɴ</td>
+          <td>óʊɴ</td>
+          <td>óʊɴ</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ူ (ဦ)</th>
+          <td>ù</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း</th>
+          <td>ú</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ေ (ဧ)</th>
+          <td>è</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>ḛ</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း (ဧး)</th>
+          <td>é</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ဲ</th>
+          <td>ɛ́</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>ɛ̰</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း </th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ော/ေါ (ဩ)</th>
+          <td>ɔ́</td>
+          <td class="sectionstart">aʊʔ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">àʊɴ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>ɔ̰</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">a̰ʊɴ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း </th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">áʊɴ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ော်/ေါ် (ဪ)</th>
+          <td>ɔ̀</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း </th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ို</th>
+          <td>ò</td>
+          <td class="sectionstart">aɪʔ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">àɪɴ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>o̰</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">a̰ɪɴ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း </th>
+          <td>ó</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">áɪɴ</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="notone">
+          <th lang=my class="ex" scope="row">ွ</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>ʊʔ</td>
+          <td>ʊʔ</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>ʊ̀ɴ</td>
+          <td>ʊ̀ɴ</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row">+ ့</th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>ʊ̰ɴ</td>
+          <td>ʊ̰ɴ</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="tone">
+          <th lang=my scope="row"> + း </th>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="sectionstart">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>ʊ́ɴ</td>
+          <td>ʊ́ɴ</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a class="leadin" href="#opensyll" id="opensyll">Vowels in open syllables.</a> There are 7 main vowel sounds in open syllables. The following lists those sounds and their different representations for the three tones
+      in Burmese, creaky, low and high, that apply to open syllables. (Combining symbols are shown with <span class="ex" lang="my">အ</span>, and alternate independent forms are shown in parentheses.)</p>
+    <table id="openvowels">
+      <tr>
+        <th></th>
+        <th>description</th>
+        <th>low</th>
+        <th>high</th>
+        <th>creaky</th>
+        <th>example</th>
+      </tr>
+      <tr>
+        <th><span class="ipa">a</span></th>
+        <td>Primary central</td>
+        <td><span class="ex" lang="my">အာ</span></td>
+        <td><span class="ex" lang="my">အား</span></td>
+        <td>inherent</td>
+        <td><span	class="ex" lang="my">လာ</span> <span class="ipa">là</span> <span class="meaning">come</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">i</span></th>
+        <td>Primary front</td>
+        <td><span class="ex" lang="my">အီ</span></td>
+        <td><span class="ex" lang="my">အီး (<span class="ex" lang="my">ဤ</span>)</span></td>
+        <td><span class="ex" lang="my">အိ</span> (<span class="ex" lang="my">ဣ</span>) </td>
+        <td><span	class="ex" lang="my">မီး</span> <span class="ipa">mí</span> <span class="meaning">fire</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">u</span></th>
+        <td>Primary back</td>
+        <td><span class="ex" lang="my">အူ</span> (<span class="ex" lang="my">ဦ</span>) </td>
+        <td><span class="ex" lang="my">အူး</span></td>
+        <td><span class="ex" lang="my">အု</span> (<span class="ex" lang="my">ဥ</span>)</td>
+        <td><span	class="ex" lang="my">တူ</span> <span class="ipa">tù</span> <span class="meaning">chopsticks</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">e</span></th>
+        <td>High front mid</td>
+        <td><span class="ex" lang="my">အေ</span></td>
+        <td><span class="ex" lang="my">အေး (<span class="ex" lang="my">ဧ</span>)</span></td>
+        <td><span class="ex" lang="my">အေ့</span></td>
+        <td><span	class="ex" lang="my">နှေး</span> <span class="ipa">n̥é</span> <span class="meaning">slow</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">o</span></th>
+        <td>High back mid</td>
+        <td><span class="ex" lang="my">အို</span></td>
+        <td><span class="ex" lang="my">အိုး</span></td>
+        <td><span class="ex" lang="my">အို့</span></td>
+        <td><span	class="ex" lang="my">ဆိုး</span> <span class="ipa">sʰó</span> <span class="meaning">bad</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">ɛ</span></th>
+        <td>Low front mid</td>
+        <td><span class="ex" lang="my">အယ်</span></td>
+        <td><span class="ex" lang="my">အဲ</span></td>
+        <td><span class="ex" lang="my">အဲ့</span></td>
+        <td><span	class="ex" lang="my">ဘယ်</span> <span class="ipa">bɛ̀</span> <span class="meaning">which</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">ɔ</span></th>
+        <td>Low back mid</td>
+        <td><span class="ex" lang="my">အော်</span> (<span class="ex" lang="my">ဪ</span>)</td>
+        <td><span class="ex" lang="my">အော</span> (<span class="ex" lang="my">ဩ</span>)</td>
+        <td><span class="ex" lang="my">အော့</span></td>
+        <td><span	class="ex" lang="my">ပျော်</span> <span class="ipa">pjɔ̀</span> <span class="meaning">happy</span></td>
+      </tr>
+    </table>
+    <blockquote> </blockquote>
+    <p>The following table summarises the above in a way that allows you to see how the various  tones are applied to open syllables using
+      the native Myanmar characters. Where long vs. short forms exist, for the purposes of clarity in the table, the long form is taken here to be the standard form and the short form a variant.</p>
+    <blockquote>
+      <table>
+        <tr>
+          <th></th>
+          <th>low</th>
+          <th>high</th>
+          <th>creaky</th>
+        </tr>
+        <tr>
+          <th><span class="ipa">a</span></th>
+          <td>no mark </td>
+          <td>visarga</td>
+          <td>inherent vowel</td>
+        </tr>
+        <tr>
+          <th><span class="ipa">i</span></th>
+          <td>no mark</td>
+          <td>visarga</td>
+          <td>short form</td>
+        </tr>
+        <tr>
+          <th><span class="ipa">u</span></th>
+          <td>no mark</td>
+          <td>visarga</td>
+          <td>short form</td>
+        </tr>
+        <tr>
+          <th><span class="ipa">e</span></th>
+          <td>no mark</td>
+          <td>visarga</td>
+          <td>dot below</td>
+        </tr>
+        <tr>
+          <th><span class="ipa">o</span></th>
+          <td>no mark</td>
+          <td>visarga</td>
+          <td>dot below</td>
+        </tr>
+        <tr>
+          <th><span class="ipa">ɛ</span></th>
+          <td>killed-y form</td>
+          <td>no mark</td>
+          <td>dot below</td>
+        </tr>
+        <tr>
+          <th><span class="ipa">ɔ</span></th>
+          <td>asat</td>
+          <td>no mark</td>
+          <td>dot below</td>
+        </tr>
+      </table>
+    </blockquote>
+    <p><a class="leadin" href="#closedsyllables" id="closedsyllables">Vowels in closed syllables.</a> Vowels in 'closed' syllables end in a glottal stop or nasalisation. Historically, however, they ended in one of four nasals or four
+      stops, and this is still reflected in the orthography. The vowel quality has also evolved in these syllables, typically producing diphthongs.</p>
+    <p>To indicate that the consonant is syllable-final, an asat is placed over it. </p>
+    <p>The sound values of vowel signs used in open and closed syllables differs systematically as follows.</p>
+    <blockquote>
+      <p><span class="ipa">i</span> becomes <span class="ipa">eɪ</span>, eg. <span class="ex" lang="my">အိန်</span> <span class="ipa">ʔèɪɴ</span>; <span class="ex" lang="my">အိတ်</span> <span class="ipa">ʔeɪʔ</span>.</p>
+      <p><span class="ipa">u</span> becomes <span class="ipa">oʊ</span>, eg.<span class="ex" lang="my">အုန်</span> <span class="ipa">ʔòʊɴ</span>; <span class="ex" lang="my">အုတ်</span> <span class="ipa">ʔoʊʔ</span>.</p>
+      <p><span class="ipa">ɔ</span> becomes <span class="ipa">aʊ, eg. </span> <span class="ex" lang="my">အောင်</span> <span class="ipa">ʔàʊɴ</span>; <span class="ex" lang="my">အောက်</span> <span class="ipa">ʔaʊʔ</span>.</p>
+      <p><span class="ipa">o</span> becomes <span class="ipa">aɪ</span>, eg. <span class="ex" lang="my">အိုင်</span> <span class="ipa">ʔàɪɴ</span>; <span class="ex" lang="my">အိုက်</span> <span class="ipa">ʔaɪʔ</span>.</p>
+      <p>The inherent <span class="ipa">a</span> is a lot more complicated, becoming one of <span class="ipa">ɪ</span>, <span class="ipa">e</span>, <span class="ipa">a</span>,  or <span class="ipa">ɛ</span>.</p>
+    </blockquote>
+    <p>The list of most common sounds are show in the large table above, and in the smaller tables below. There are other combinations of vowel and final consonant found in Burmese words of Indian origin, which often stick to the original
+      Indian spelling, however, they tend to follow Burmese pronunciation, eg. <span class="ex" lang="my">ဓာတ်</span> <span class="ipa">daʔ</span>, <span class="ex" lang="my">ဗိုလ်</span> <span class="ipa">bò</span>, <span class="ex" lang="my">ဥယ္ယာဉ်</span> <span	class="ipa">ʔṵjaɴ</span>.</p>
+    <p><a class="leadin" href="#nasalending" id="nasalending">Vowels in closed syllables ending in nasals.</a> The following table lists the main sounds in Burmese where the syllable ends in a nasal.</p>
+    <table id="nasalvowels">
+      <tr class="th">
+        <th></th>
+        <th><span lang="my">င</span></th>
+        <th><span lang="my">ည</span></th>
+        <th><span lang="my">န</span></th>
+        <th><span lang="my">မ</span></th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <th><span class="ipa">ã</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အန်</span></td>
+        <td><span class="ex" lang="my">အမ်</span></td>
+        <td><span class="ex" lang="my">ပန်း</span> <span class="ipa">páɴ</span> <span class="meaning">flower</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">ĩ</span></th>
+        <td><span class="ex" lang="my">အင်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">ဝင်</span> <span class="ipa">wɪ̀ɴ</span> <span class="meaning">enter</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">ɛ</span></th>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အည်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th><span class="ipa">ũ</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အွန်</span></td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">ဇွန်း</span> <span class="ipa">zʊ́ɴ</span> <span class="meaning">spoon</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">eĩ</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အိန်</span></td>
+        <td><span class="ex" lang="my">အိမ်</span></td>
+        <td><span class="ex" lang="my">အိမ်</span> <span class="ipa">ʔèɪɴ</span> <span class="meaning">house</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">oʊ̃</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အုန်</span></td>
+        <td><span class="ex" lang="my">အုမ်</span></td>
+        <td><span class="ex" lang="my">ရန်ကုန်</span> <span class="ipa">jàɴkòʊɴ</span> <span class="meaning">Rangoon</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">aʊ̃</span></th>
+        <td><span class="ex" lang="my">အောင်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">ကောင်း</span> <span class="ipa">káʊɴ</span> <span class="meaning">good</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">aɪ̃</span></th>
+        <td><span class="ex" lang="my">အိုင်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">ဆိုင်</span> <span class="ipa">sʰàɪɴ</span> <span class="meaning">store</span></td>
+      </tr>
+    </table>
+    <p>Note how <span class="ex" lang="my">အည်</span> doesn't end in a nasalisation. There is another consonant, <span class="ex" lang="my">ဉ</span>, which has come to be used to produce nasalisation.</p>
+    <p>These syllables are by default low in tone, but creaky and high tones can be indicated using &#xA0;<span class="ex" lang="my">-့</span> and &#xA0;<span class="ex" lang="my">-း</span> in a very regular way. Note that the tone mark appears at the end of the syllable, not immediately after the vowel, eg. <span class="ex" lang="my">အုန့်</span> and <span class="ex" lang="my">ကောင်း</span>.</p>
+    <p><a class="leadin" href="#stopending" id="stopending">Vowels in closed syllables ending in stops.</a> The following table lists the main sounds in Burmese where the syllable ends in a stop.</p>
+    <table id="stoppedvowels">
+      <tr class="th">
+        <th></th>
+        <th><span lang="my">က</span></th>
+        <th><span lang="my">စ</span></th>
+        <th><span lang="my">တ</span></th>
+        <th><span lang="my">ပ</span></th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <th><span class="ipa">aʔ</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အတ်</span></td>
+        <td><span class="ex" lang="my">အပ်</span></td>
+        <td><span class="ex" lang="my">ဖတ်</span> <span class="ipa">pʰaʔ</span> <span class="meaning">read</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">iʔ</span></th>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အစ်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">နှစ်</span> <span class="ipa">n̥ɪʔ</span> <span class="meaning">year</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">ɛʔ</span></th>
+        <td><span class="ex" lang="my">အက်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">ကြက်</span> <span class="ipa">tɕɛʔ</span> <span class="meaning">chicken</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">ũ</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အွတ်</span></td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">လွတ်လပ်</span> <span class="ipa">lʊʔlaʔ</span> <span class="meaning">independent</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">eiʔ</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အိတ်</span></td>
+        <td><span class="ex" lang="my">အိပ်</span></td>
+        <td><span class="ex" lang="my">အရိပ်</span> <span class="ipa">ʔa̰jeɪʔ</span> <span class="meaning">shadow</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">oʊʔ</span></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">အုတ်</span></td>
+        <td><span class="ex" lang="my">အုပ်</span></td>
+        <td><span class="ex" lang="my">စာအုပ်</span> <span class="ipa">sàʔoʊʔ</span> <span class="meaning">book</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">aʊʔ</span></th>
+        <td><span class="ex" lang="my">အောက်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">နောက်</span> <span class="ipa">naʊʔ</span> <span class="meaning">next</span></td>
+      </tr>
+      <tr>
+        <th><span class="ipa">aɪʔ</span></th>
+        <td><span class="ex" lang="my">အိုက်</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="ex" lang="my">လိုက်</span> <span class="ipa">laɪʔ</span> <span class="meaning">follow</span></td>
+      </tr>
+    </table>
+    <p>These syllables are all unmarked 4th (stopped) tone. </p>
+    <p><a class="leadin" href="#weakening" id="weakening">Vocalic weakening.</a> A process called vocalic weakening affects the first syllables of certain words (mostly nouns and adverbs), eg. <span class="ex" lang="my">ထမင်</span> is pronounced <span class="ipa">tʰəmɪ̀ɴ</span>, not <span class="ipa">tʰa̰mɪ̀ɴ</span>; <span class="ex" lang="my">ဘုရား</span> is pronounced <span class="ipa">pʰəjá</span>, not <span class="ipa">pʰṵjá</span>.</p>
+  </section>
+  <section id="cporder">
+    <h3><a href="#cporder">Codepoint order </a></h3>
+    <p>The following table shows the order in which characters should be typed and stored in memory for a given syllable, per the description in the Unicode Standard. (It is Burmese-specific and doesn't reflect the order or characters needed for languages such as Karen, Mon, Shan, etc.) <sup><a href="http://www.unicode.org/versions/Unicode7.0.0/ch16.pdf">Unicode,</a> 598-9</sup></p>
+    <table style="margin-right: 30%;">
+      <tr>
+        <th>kinzi</th>
+        <td><span lang="my">င</span> U+1004 <span lang="my">&#xA0;+&#xA0;်</span> U+103A <span lang="my">&#xA0;+&#xA0;္</span> U+1039</td>
+      </tr>
+      <tr>
+        <th>consonants/vowels</th>
+        <td>[ <span lang="my">က</span> U+1000 .. <span lang="my">&#x1021;</span> U+1021 | <span lang="my">&#x1023;</span> U+1023  .. <span lang="my">&#x1027;</span> U+1027 | <span lang="my">&#x1029;</span> U+1029  | <span lang="my">ဪ</span> U+102A | <span lang="my">ဿ</span> U+103F | <span lang="my">၎</span> U+104E ]</td>
+      </tr>
+      <tr>
+        <th>subscript consonant</th>
+        <td><span lang="my">&#xA0;္</span> U+1039 + [ <span lang="my">က</span> U+1000 .. <span lang="my">&#x1008;</span> U+1008 | <span lang="my">&#x100A;</span> U+100A .. <span lang="my">မ</span> U+1019 | <span lang="my">&#x101B;</span> U+101B | <span lang="my">လ</span> U+101C | <span lang="my">သ</span> U+101E | <span lang="my">ဠ</span> U+1020 | <span lang="my">အ</span> U+1021 ] </td>
+      </tr>
+      <tr>
+        <th>asat sign</th>
+        <td><span lang="my">&#xA0;&#xA0;်</span> U+103A</td>
+      </tr>
+      <tr>
+        <th>medial ya*</th>
+        <td><span lang="my">&#xA0;ျ</span> U+103B (+<span lang="my">&#xA0;&#xA0;်</span> U+103A)</td>
+      </tr>
+      <tr>
+        <th>medial ra</th>
+        <td><span lang="my">&#xA0;ြ</span> &#xA0;U+103C</td>
+      </tr>
+      <tr>
+        <th>medial wa</th>
+        <td><span lang="my">&#xA0;ွ</span> U+103D</td>
+      </tr>
+      <tr>
+        <th>medial ha</th>
+        <td><span lang="my">&#xA0;ှ</span> U+103E</td>
+      </tr>
+      <tr>
+        <th>vowel sign e </th>
+        <td><span lang="my">&#xA0;ေ</span> U+1031</td>
+      </tr>
+      <tr>
+        <th>vowel sign i, ii, ai </th>
+        <td>[<span lang="my">&#xA0;&#xA0;ိ</span> U+102D | <span lang="my">&#xA0;&#xA0;ီ</span> U+102E | <span lang="my">&#xA0;&#xA0;ဲ</span> U+1032]</td>
+      </tr>
+      <tr>
+        <th>vowel sign u, uu </th>
+        <td> [<span lang="my">&#xA0;ု</span> U+102F | <span lang="my">&#xA0;ူ</span> U+1030]</td>
+      </tr>
+      <tr>
+        <th>vowel sign tall aa, aa* </th>
+        <td> [<span lang="my">&#xA0;ါ</span> U+102B | <span lang="my">&#xA0;ာ</span> U+102C] (+<span lang="my">&#xA0;&#xA0;်</span> U+103A)</td>
+      </tr>
+      <tr>
+        <th>anusvara</th>
+        <td><span lang="my">&#xA0;ံ</span> U+1036</td>
+      </tr>
+      <tr>
+        <th>dot below </th>
+        <td><span lang="my">&#xA0;့</span> U+1037</td>
+      </tr>
+      <tr>
+        <th>visarga</th>
+        <td><span lang="my">&#xA0;း</span> U+1038</td>
+      </tr>
+    </table>
+    <p>Characters with an asterisk are potentially followed by an asat sign.</p>
+    <p> Unfortunately, normalization may result in a different order. In particular, <a href="/scripts/block/myanmar#char103A"><span class="uname">U+103A MYANMAR SIGN ASAT</span> <span lang="my">&#x103A;</span></a> occurs after <a href="/scripts/block/myanmar#char1037"><span class="uname">U+1037 MYANMAR SIGN DOT BELOW</span> <span lang="my">&#x1037;</span></a> in normalized text. Applications such as fonts should still handle this alternative order, since the sequences are canonically equivalent.</p>
+    <p>The following schematic shows sequences that typically make up a syllable in Burmese. Start with the <span style="color: #E100F7">C</span> (consonant) on the left, or <span style="color: #E100F7">IV</span> (initial vowel) and travel from left to right only. You can stop at any point. The plus sign in the box represents the virama – this should be followed immediately by another syllable, as should the kinzi.</p>
+    <p><img src="syllable.png" alt="schematic of syllable composition"/></p>
+  </section>
+  <section id="shaping">
+    <h3><a href="#shaping">Notes on shaping</a></h3>
+    <p>The following is a selection of examples of situations where OpenType or similar font features are needed to produce Burmese text as expected. It is not an exhaustive list.</p>
+    <p>Glyphs for subscripted consonants tend to be smaller than their full forms, eg. <span class="ex" lang="my" >သဒ္ဒါ</span> <span class="ipa">θəʔdà</span> <span class="meaning">grammar</span>, and may be rotated, eg. <span class="ex" lang="my" >က္ဌ</span> 
+      <!-- <span class="ipa">θəda</span> (grammar)--> 
+      .</p>
+    <p>The shape of <a href="/scripts/block/myanmar#char103C"><span class="uname">U+103C MYANMAR CONSONANT SIGN MEDIAL RA</span> <span lang="my">&#xA0;&#x103C;</span></a> changes according to what it surrounds, eg. compare the two different widths in the word <span class="ex" lang="my" >ကြက်သွန်ဖြူ</span> <span class="ipa">tɕɛʔθʊ̀ɴbjù</span> <span class="meaning">garlic</span> and shortening at the top right of <span class="ex" lang="my" >ဝန်ကြီး</span> <span class="ipa">wʊ̀ɴtɕí</span> <span class="meaning">minister</span>. The joining behaviour of <a href="/scripts/block/myanmar#char103B"><span class="uname">U+103B MYANMAR CONSONANT SIGN MEDIAL YA</span> <span lang="my">&#xA0;&#x103B;</span></a> also differs, eg. <span class="ex" lang="my" >ချက်</span> <span class="ipa">tɕʰɛʔ</span> cook vs <span class="ex" lang="my" >ကျွန်မတို့</span> <span class="ipa">tɕəma̰do̰</span> <span class="meaning">female we</span>. </p>
+    <p>The ASAT varies its position and shape according to context, eg. <span class="ex" lang="my" >လမ်း</span> <span class="ipa">láɴ</span> road, but <span class="ex" lang="my" >ဒေါ်လေး</span> <span class="ipa">dɔ̀lé</span> aunt.</p>
+    <p>The shape of NA changes when something appears below it, eg.<span class="ex" lang="my" >နို့နဲ့</span> <span class="ipa">no̰nɛ̰</span> <span class="meaning">with milk</span>. Similarly, the bottom of NYA <span class="ex" lang="my">ဉ</span> also changes in the following context, <span class="ex" lang="my">ပဉ္စမ</span> <span class="ipa">pɪ̀ɴza̰ma̰</span> <span class="meaning">fifth</span>.</p>
+    <p>The placement of the <a href="/scripts/block/myanmar#char1037"><span class="uname">U+1037 MYANMAR SIGN DOT BELOW</span> <span lang="my">&#xA0;&#x1037;</span></a>, used as a tone mark, varies slightly according to context, eg. <span class="ex" lang="my" >ပြီးခဲ့တဲ့</span> <span class="ipa">pígɛ̰dɛ̰</span> <span class="meaning">last, ago</span> and <span class="ex" lang="my" >တချို့</span> <span class="ipa">tətɕʰo̰</span> <span class="meaning">some</span>, as does that of <a href="/scripts/block/myanmar#char103E"><span class="uname">U+103E MYANMAR CONSONANT SIGN MEDIAL HA</span> <span lang="my">&#xA0;&#x103E;</span></a>, eg. it is smaller than usual in <span class="ex" lang="my" >ကောက်ညှင်း</span> <span class="ipa">kaʊʔɲ̥ɪ́ɴ</span> <span class="meaning">sticky rice</span>, and the shape and position are very different in  <span class="ex" lang="my" >ရွှေပဲသီး</span> <span class="ipa">ʃwebɛ̀</span> snow peas.</p>
+    <p>Other examples noted above include the change of shape and position of <a href="/scripts/block/myanmar#char102F"><span class="uname">U+102F MYANMAR VOWEL SIGN U</span> <span lang="my">&#xA0;&#x102F;</span></a> and <a href="/scripts/block/myanmar#char1030"><span class="uname">U+1030 MYANMAR VOWEL SIGN UU</span> <span lang="my">&#xA0;&#x1030;</span></a> when other items appear below the base consonant, and the production of the kinzi.</p>
+  </section>
+</section>
+<section id="layout">
+  <h2><a href="#layout">Text layout</a></h2>
+  <section id="words">
+    <h3><a href="#words">Word boundaries and punctuation</a></h3>
+    <p>Spaces are used to separate phrases, rather than words. Phrase length is variable. Examples can be seen in the extract from the Declaration of Human Rights at the top of the page.</p>
+    <p>Lines are normally broken at word boundaries, but words can contain multiple syllables and there is not usually a way of visually determining where a word in a phrase begins and ends.</p>
+    <p>The Unicode 7.0 Myanmar block lists <a href="/scripts/block/myanmar#punctuation">2 punctuation characters</a>. Punctuation is commonly limited to <span class="ex" lang="my">၊</span> and <span class="ex" lang="my">။</span>, with significance close to comma and full
+      stop, respectively.</p>
+  </section>
+</section>
+<section id="linebreak">
+  <h3><a href="#linebreak">Line breaking</a> &amp; justification</h3>
+  <p>A common approach to justification is to adjust inter-phrase spacing so that the line breaks at a phrase boundary.<sup><a href="http://www.unicode.org/notes/tn11/">Hosken</a> 12</sup></p>
+  <p>If it is necessary to break text within a phrase, breaks can occur at syllable boundaries, but not within a word. The difficulty is that there is no visual information about which sequences of syllables consitute a word.</p>
+  <p>The best way of detecting line-break opportunities  is to use a dictionary to search for polysyllabic words, and then break at syllable boundaries outside the word. This approach may run into problems when uncommon words or new words are used, especially those borrowed foreign terms.</p>
+  <p>An alternative is  to indicate break points by inserting <a href="#char200B"><span class="uname">U+200B ZERO WIDTH SPACE</span></a> between words when the content is developed, although this can lead to a lot of extra work. </p>
+  <p>Another alternative is to tie the syllables in a word together using <a href="#char2060"><span class="uname">U+2060 WORD JOINER</span></a> while authoring the content. This requires less intervention, since the number of polysyllabic words is smaller than the total number of words, but applications must be able to ignore the word joiner for searching, sorting, and the like. For this reason Hosken recommends against using it,	and	recommends instead the use of a dictionary with ZWSP backup for words that the dictionary doesn't handle well. However, it's not clear which words a dictionary will fail to recognise when the text is used across different platforms and applications, so this is not an ideal solution either – not to mention that it is difficult for an author to know in advance which words will cause problems and which won't.<sup><a href="http://www.unicode.org/notes/tn11/">Hosken</a>, 12</sup></p>
+</section>
+<section> </section>
+<!--div class="section">
+		<h2><a id="usage">Script usage</a></h2>
+		<div class="section2">
+			<h3>Text direction</h3>
+			<p>Script direction is predominantly right to left. Embedded left to right scripts and all numbers run left to right.</p>
+			<p><span class="prompt">List different bidi properties in block</span></p>
+			<p>The Unicode Standard provides an algorithm for ordering bidirectional Arabic.</p>
+		</div>
+		<div class="section2">
+			<h3>Shaping and case</h3>
+			<p>There is no case distinction.</p>
+			<p><span class="prompt">word final / cursive?</span></p>
+			<p><span class="prompt">joiner and non-joiner usage</span></p>
+			<p><span class="prompt">ligatures &amp; special joining forms?</span></p>
+			<p><span class="prompt">conjuncts?</span></p>
+			<p><span class="prompt">non-European numerals?</span></p>
+		</div>
+		<div class="section2">
+			<h3>Combining characters</h3>
+			<p><span class="prompt">breakdown of categories</span></p>
+			<p><span class="prompt">multiple combining characters? specific ordering rules for memory?</span></p>
+			<p><span class="prompt">context dependent placement?</span></p>
+			<p>Note the different placement of vowel signs in <span class="ur" style="font-size: 200%;">بِ</span> and <span class="ur" style="font-size: 200%;">بِب</span></p>
+			<p><span class="prompt">canonical combining classes</span></p>
+			<p> <span class="prompt">predisposed or surrounding glyphs?</span></p>
+			<p><span class="prompt">precomposed forms? normalisation?</span></p>
+		</div>
+		<div class="section2">
+			<h3>Text units, punctuation &amp; signs</h3>
+			<p><span class="prompt">how are words separated? how are sentences &amp; phrases delimited?</span></p>
+			<p><span class="prompt">punctuation and other signs in the block</span></p>
+			<p><span class="prompt">use of other punctuation and signs</span></p>
+		</div>
+		<div class="section2">
+			<h3>Wrapping &amp; justification</h3>
+			<p><span class="prompt">rules</span></p>
+		</div>
+		<div class="section2">
+			<h3>Collation &amp; sort order</h3>
+			<p><span class="prompt">rules</span></p>
+			<p><span class="prompt">importance of loose matching</span></p>
+		</div>
+		<div class="section2">
+			<h3>Other</h3>
+			<p><span class="prompt">method of writing characters</span></p>
+			<p>A number of arabic words that consist of a single character (plus unwritten vowel) are joined to the beginning of the word that
+				follows, eg. <span class="ar">لرجل</span> [<span class="ipa1">lɪ-ræʒul </span>].</p>
+			<p><span class="prompt">special input needs, eg. IMEs</span></p>
+			<p><span class="prompt">font and line height: min. pixel dimensions for characters, line height, inter-line spacing</span></p>
+			<p><span class="prompt">underlining</span></p>
+			<p><span class="prompt">font width: proportional spacing, kerning?</span></p>
+			<p><span class="prompt">baseline alignment</span></p>
+			<p><span class="prompt">ruby</span></p>
+			<p>Line height: To accomodate the sloping baseline of the nasta'liq style, you will need to set the CSS line-height property quite high
+				(perhaps 300% or 400%?).</p>
+		</div>
+</div--><!--div> 
+		<h2><a id="pali">Pali and Sanskrit extensions</a></h2>
+<php getresults( '4176', '4185' ); >
+		</div-->
+<section id="charlistsection">
+  <h2><a href="#characterlist" id="characterlist">List of basic symbols</a></h2>
+  <section id="burmeselist">
+    <h3><a href="#burmeselist">Burmese</a></h3>
+    <p>This is a list of main characters or character combinations needed for Burmese. Clicking on these characters will open a  page in another window. If the character is underlined, the new page will display additional information about that character.</p>
+    <p>&nbsp;</p>
+    <table id="index">
+      <tbody>
+        <tr>
+          <th><a href="#clbasic">Basic consonants</a></th>
+          <td><a target="c" href="../block/myanmar#char1000" title="U+1000 MYANMAR LETTER KA">&#x1000;</a> <a target="c" href="../block/myanmar#char1001" title="U+1001 MYANMAR LETTER KHA">&#x1001;</a> <a target="c" href="../block/myanmar#char1002" title="U+1002 MYANMAR LETTER GA">&#x1002;</a> <a target="c" href="../block/myanmar#char1004" title="U+1004 MYANMAR LETTER NGA">&#x1004;</a> <a target="c" href="../block/myanmar#char1005" title="U+1005 MYANMAR LETTER CA">&#x1005;</a> <a target="c" href="../block/myanmar#char1006" title="U+1006 MYANMAR LETTER CHA">&#x1006;</a> <a target="c" href="../block/myanmar#char1007" title="U+1007 MYANMAR LETTER JA">&#x1007;</a> <a target="c" href="../block/myanmar#char100A" title="U+100A MYANMAR LETTER NNYA">&#x100A;</a> <a target="c" href="../block/myanmar#char1010" title="U+1010 MYANMAR LETTER TA">&#x1010;</a> <a target="c" href="../block/myanmar#char1011" title="U+1011 MYANMAR LETTER THA">&#x1011;</a> <a target="c" href="../block/myanmar#char1012" title="U+1012 MYANMAR LETTER DA">&#x1012;</a> <a target="c" href="../block/myanmar#char1014" title="U+1014 MYANMAR LETTER NA">&#x1014;</a> <a target="c" href="../block/myanmar#char1015" title="U+1015 MYANMAR LETTER PA">&#x1015;</a> <a target="c" href="../block/myanmar#char1016" title="U+1016 MYANMAR LETTER PHA">&#x1016;</a> <a target="c" href="../block/myanmar#char1017" title="U+1017 MYANMAR LETTER BA">&#x1017;</a> <a target="c" href="../block/myanmar#char1019" title="U+1019 MYANMAR LETTER MA">&#x1019;</a> <a target="c" href="../block/myanmar#char101A" title="U+101A MYANMAR LETTER YA">&#x101A;</a> <a target="c" href="../block/myanmar#char101B" title="U+101B MYANMAR LETTER RA">&#x101B;</a> <a target="c" href="../block/myanmar#char101C" title="U+101C MYANMAR LETTER LA">&#x101C;</a> <a target="c" href="../block/myanmar#char101D" title="U+101D MYANMAR LETTER WA">&#x101D;</a> <a target="c" href="../block/myanmar#char101E" title="U+101E MYANMAR LETTER SA">&#x101E;</a> <a target="c" href="../block/myanmar#char103F" title="U+103F MYANMAR LETTER GREAT SA">&#x103F;</a> <a target="c" href="../block/myanmar#char101F" title="U+101F MYANMAR LETTER HA">&#x101F;</a> <a target="c" href="../block/myanmar#char1021" title="U+1021 MYANMAR LETTER A">&#x1021;</a></td>
+        </tr>
+        <tr>
+          <th><a href="#clotherc">Other consonants</a></th>
+          <td><a target="c" href="../block/myanmar#char1003" title="U+1003 MYANMAR LETTER GHA">&#x1003;</a> <a target="c" href="../block/myanmar#char1008" title="U+1008 MYANMAR LETTER JHA">&#x1008;</a> <a target="c" href="../block/myanmar#char1009" title="U+1009 MYANMAR LETTER NYA">&#x1009;</a> <a target="c" href="../block/myanmar#char100B" title="U+100B MYANMAR LETTER TTA">&#x100B;</a> <a target="c" href="../block/myanmar#char100C" title="U+100C MYANMAR LETTER TTHA">&#x100C;</a> <a target="c" href="../block/myanmar#char100D" title="U+100D MYANMAR LETTER DDA">&#x100D;</a> <a target="c" href="../block/myanmar#char100E" title="U+100E MYANMAR LETTER DDHA">&#x100E;</a> <a target="c" href="../block/myanmar#char100F" title="U+100F MYANMAR LETTER NNA">&#x100F;</a> <a target="c" href="../block/myanmar#char1013" title="U+1013 MYANMAR LETTER DHA">&#x1013;</a> <a target="c" href="../block/myanmar#char1018" title="U+1018 MYANMAR LETTER BHA">&#x1018;</a> <a target="c" href="../block/myanmar#char1020" title="U+1020 MYANMAR LETTER LLA">&#x1020;</a></td>
+        </tr>
+        <tr>
+          <th><a href="#clmedial">Medial consonants</a></th>
+          <td><a target="c" href="../block/myanmar#char103B" title="U+103B MYANMAR CONSONANT SIGN MEDIAL YA">&nbsp;&nbsp;&#x103B;</a> <a target="c" href="../block/myanmar#char103C" title="U+103C MYANMAR CONSONANT SIGN MEDIAL RA">&nbsp;&nbsp;&#x103C;</a> <a target="c" href="../block/myanmar#char103D" title="U+103D MYANMAR CONSONANT SIGN MEDIAL WA">&nbsp;&nbsp;&#x103D;</a> <a target="c" href="../block/myanmar#char103E" title="U+103E MYANMAR CONSONANT SIGN MEDIAL HA">&nbsp;&nbsp;&#x103E;</a></td>
+        </tr>
+        <tr>
+          <th><a href="#clvowelsigns">Vowel signs</a></th>
+          <td><a target="c" href="../block/myanmar#char102B" title="U+102B MYANMAR VOWEL SIGN TALL AA">&nbsp;&nbsp;&#x102B;</a> <a target="c" href="../block/myanmar#char102C" title="U+102C MYANMAR VOWEL SIGN AA">&nbsp;&nbsp;&#x102C;</a> <a target="c" href="../block/myanmar#char102D" title="U+102D MYANMAR VOWEL SIGN I">&nbsp;&nbsp;&#x102D;</a> <a target="c" href="../block/myanmar#char102E" title="U+102E MYANMAR VOWEL SIGN II">&nbsp;&nbsp;&#x102E;</a> <a target="c" href="../block/myanmar#char102F" title="U+102F MYANMAR VOWEL SIGN U">&nbsp;&nbsp;&#x102F;</a> <a target="c" href="../block/myanmar#char1030" title="U+1030 MYANMAR VOWEL SIGN UU">&nbsp;&nbsp;&#x1030;</a> <a target="c" href="../block/myanmar#char1031" title="U+1031 MYANMAR VOWEL SIGN E">&nbsp;&nbsp;&#x1031;</a> <a target="c" href="../block/myanmar#char1032" title="U+1032 MYANMAR VOWEL SIGN AI">&nbsp;&nbsp;&#x1032;</a></td>
+        </tr>
+        <tr>
+          <th><a href="#clcompoundv">Compound vowels</a></th>
+          <td><a target="c" href="../block/myanmar#char102D" title="U+102D U+102F: MYANMAR VOWEL SIGN I, MYANMAR VOWEL SIGN U">&nbsp;&nbsp;&#x102D;&#x102F;</a> <a target="c" href="../block/myanmar#char1031" title="U+1031 U+102C: MYANMAR VOWEL SIGN E, MYANMAR VOWEL SIGN AA">&nbsp;&nbsp;&#x1031;&#x102C;</a></td>
+        </tr>
+        <tr>
+          <th><a href="#clindependent">Independent vowels</a></th>
+          <td><a target="c" href="../block/myanmar#char1023" title="U+1023 MYANMAR LETTER I">&#x1023;</a> <a target="c" href="../block/myanmar#char1024" title="U+1024 MYANMAR LETTER II">&#x1024;</a> <a target="c" href="../block/myanmar#char1025" title="U+1025 MYANMAR LETTER U">&#x1025;</a> <a target="c" href="../block/myanmar#char1026" title="U+1026 MYANMAR LETTER UU">&#x1026;</a> <a target="c" href="../block/myanmar#char1027" title="U+1027 MYANMAR LETTER E">&#x1027;</a> <a target="c" href="../block/myanmar#char1029" title="U+1029 MYANMAR LETTER O">&#x1029;</a> <a target="c" href="../block/myanmar#char102A" title="U+102A MYANMAR LETTER AU">&#x102A;</a></td>
+        </tr>
+        <tr>
+          <th><a href="#clcombining">Combining marks</a></th>
+          <td><a target="c" href="../block/myanmar#char103A" title="U+103A MYANMAR SIGN ASAT">&nbsp;&nbsp;&#x103A;</a> <a target="c" href="../block/myanmar#char1036" title="U+1036 MYANMAR SIGN ANUSVARA">&nbsp;&nbsp;&#x1036;</a> <a target="c" href="../block/myanmar#char1037" title="U+1037 MYANMAR SIGN DOT BELOW">&nbsp;&nbsp;&#x1037;</a> <a target="c" href="../block/myanmar#char1038" title="U+1038 MYANMAR SIGN VISARGA">&nbsp;&nbsp;&#x1038;</a> <a target="c" href="../block/myanmar#char1004" title="U+1004 U+103A U+1039: MYANMAR LETTER NGA, MYANMAR SIGN ASAT, MYANMAR SIGN VIRAMA">&nbsp;&nbsp;&#x1004;&#x103A;&#x1039;</a> <a target="c" href="../block/myanmar#char1039"><img src="/c/Myanmar/1039.png" alt="&#x1039;" title="U+1039 MYANMAR SIGN VIRAMA"/></a></td>
+        </tr>
+        <tr>
+          <th><a href="#clsymbols">Symbols &amp; punctuation</a></th>
+          <td><a target="c" href="../block/myanmar#char104C" title="U+104C MYANMAR SYMBOL LOCATIVE">&#x104C;</a> <a target="c" href="../block/myanmar#char104D" title="U+104D MYANMAR SYMBOL COMPLETED">&#x104D;</a> <a target="c" href="../block/myanmar#char104E" title="U+104E MYANMAR SYMBOL AFOREMENTIONED">&#x104E;</a> <a target="c" href="../block/myanmar#char104F" title="U+104F MYANMAR SYMBOL GENITIVE">&#x104F;</a></td>
+        </tr>
+        <tr>
+          <th><a href="#clnumbers">Numbers</a></th>
+          <td><a target="c" href="../block/myanmar#char1040" title="U+1040 MYANMAR DIGIT ZERO">&#x1040;</a> <a target="c" href="../block/myanmar#char1041" title="U+1041 MYANMAR DIGIT ONE">&#x1041;</a> <a target="c" href="../block/myanmar#char1042" title="U+1042 MYANMAR DIGIT TWO">&#x1042;</a> <a target="c" href="../block/myanmar#char1043" title="U+1043 MYANMAR DIGIT THREE">&#x1043;</a> <a target="c" href="../block/myanmar#char1044" title="U+1044 MYANMAR DIGIT FOUR">&#x1044;</a> <a target="c" href="../block/myanmar#char1045" title="U+1045 MYANMAR DIGIT FIVE">&#x1045;</a> <a target="c" href="../block/myanmar#char1046" title="U+1046 MYANMAR DIGIT SIX">&#x1046;</a> <a target="c" href="../block/myanmar#char1047" title="U+1047 MYANMAR DIGIT SEVEN">&#x1047;</a> <a target="c" href="../block/myanmar#char1048" title="U+1048 MYANMAR DIGIT EIGHT">&#x1048;</a> <a target="c" href="../block/myanmar#char1049" title="U+1049 MYANMAR DIGIT NINE">&#x1049;</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>To see a list of ligatures and alternative shapes go to the 'shape' view of the <a href="/scripts/pickers/myanmar/?view=shape">Myanmar character picker</a>. (Hint: to see the composition of a conjunct, click on it and select 'Codepoints'.)</p>
+  </section>
+</section>
+<div class="section" id="references">
+  <h2><a href="#endlinks" id="endlinks">Further reading</a></h2>
+  <ol>
+    <li>[Daniels] Peter T. Daniels and William Bright, <span class="title">The World's Writing Systems</span>, Oxford University Press, ISBN
+      0-19-507993-0</li>
+    <li>[Hosken] Martin Hosken &amp; Maung Tuntunlwin, <a href="http://www.unicode.org/notes/tn11/">Unicode Technical Note #11, Representing Myanmar in Unicode: Details and Examples</a></li>
+    <li><span class="refcode">[Mesher]</span> Gene Mesher, <span class="doctitle">Burmese for Beginners </span>, ISBN 1-887521-51-8 </li>
+    <li>[Unicode] The Unicode Standard v7.0, <a href="http://www.unicode.org/versions/latest/ch16.pdf">Myanmar</a>. </li>
+    <li>[Uniprop] Ireland (NSAI), United Kingdom (BSI), Myanmar Language Commission, Myanmar Unicode and Natural Language Processing Research Center, Myanmar Computer Federation, <a href="http://www.unicode.org/L2/L2006/06077-n3043r-myanmar.pdf">Proposal to encode seven additional Myanmar characters in the UCS</a></li>
+    <li>[wpAlpha] Wikipedia, <a href="http://en.wikipedia.org/wiki/Burmese_alphabet">Burmese Alphabet</a></li>
+    <li>[wpTrans] Wikipedia, <a href="http://en.wikipedia.org/wiki/MLC_Transcription_System">MLC Transcription System</a></li>
+    <li>[wpLang] Wikipedia, <a href="http://en.wikipedia.org/wiki/Burmese_language">Burmese language</a></li>
+    <li>[msTyp] Microsoft Typography, <a href="http://www.microsoft.com/typography/OpenTypeDev/myanmar/intro.htm">Creating and Supporting OpenType Fonts for Myanmar Script</a>, Dec 2013</li>
+    <li>[Sealang] <a href="http://sealang.net/burmese/">Sealang Library Burmese</a></li>
+  </ol>
+</div>
+
+<div id="panel" style="display:none">
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"></p>
+</div>
+
+
+<div class="smallprint"> <span id="version">First published  7 April, 2006.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-15  8:41<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
+
+
+<!-- Uncomment this code to get a list of all character names for the file names-subset.js 
+<div id="listofchars"></div>
+<script type="text/javascript" src="../../javascript/showcharacters/names.js"></script>
+<script>document.getElementById('listofchars').innerHTML = getlistofchars();</script>
+ --> 
+
+<script type="text/javascript">
+createtoc();
+initialiseShowNames('/scripts/block/myanmar', 'c');
+highlightIndexChars()
+</script>
+</body>
+</html>
