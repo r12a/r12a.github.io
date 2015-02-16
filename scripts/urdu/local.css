@@ -1,0 +1,34 @@
+@font-face { 
+	font-family: 'Nafees Nastaliq WF'; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: url('/webfonts/NafeesNastaleeq.woff'); 
+	} 
+@font-face { 
+	font-family: 'Scheherezade WF'; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: url('/webfonts/scheherazaderegotwebfont.woff'); 
+	src: url('/webfonts/scheherazaderegotwebfont.woff2'); 
+	} 
+@font-face {
+    font-family: 'Noto Nastaliq WF';
+    src: url('/webfonts/notonastaliqurdudraftwebfont.woff2') format('woff2'),
+         url('/webfonts/notonastaliqurdudraftwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+td { padding: 5px; }
+
+[lang |= 'ur'] { font-family: webfont, "Nafees Nastaleeq", 'Noto Nastaliq WF', Aldhabi, "Urdu Typesetting", sans-serif; font-size: 22px; }
+[lang |= 'ur-x-naskh'] { font-family: Lateef, "Scheherazade", "Al Bayan", "Arabic Typesetting", "Traditional Arabic", sans-serif; font-size: 24px; }
+
+
+#index td { font-family: webfont, "Nafees Nastaleeq", 'Noto Nastaliq WF', Aldhabi, "Urdu Typesetting", sans-serif; font-size: 26px; padding: 8px;  direction: rtl; text-align: right; line-height: 2em; }
+
+
+#fontsetting { width: 270px; }
+#fontsetting.open { right: 0px; }
+#fontsetting.closed { right: -258px; }
+#fontsettingswitch { height: 150px; }
