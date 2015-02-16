@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>Script summary for Thai</title>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<meta name="description" content="Notes about the Thai script as used for Thai."/>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+<style type="text/css">
+@font-face {
+	font-family: 'webfont';
+	font-style: normal;
+	font-weight: normal;
+	src: url('/webfonts/garuda-regularwf.woff');
+	}
+#freeText {
+	font-size: 24px;
+	font-family: webfont, Garuda, Leelawadee, Thonburi, serif;
+	text-align: left;
+	line-height: 2;
+	}
+</style>
+
+<script src="/scripts/block/thai-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+
+<script src="functions.js" type="text/javascript"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Thai</h1>
+
+<aside class="sidebar">
+  <div class="noprint">
+    <h2 class="notoc flush"><a id="links">Related links</a></h2>
+    <p><a href="/scripts/featurelist/">Script features by language</a></p>
+    <p><a href="/pickers/thai">Thai character picker</a></p>
+    <p><a href="/scripts/links?script=thai">Thai script links</a></p>
+  </div>
+
+ <div id="fontsetting" class="closed">
+  <h2 class="notoc"><a id="fonts">Fonts</a></h2>
+  <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+    <form onSubmit="document.getElementById('freeText').style.fontFamily = document.getElementById('fontName').value; return false;">
+      <p dir="ltr" class="english">Use this font:<br/>
+        <input type="text" id="fontName" value="webfont"/>
+        <button
+		  type="submit">Apply</button>
+      </p>
+  </form>
+    <form oninput="document.getElementById('freeText').style.fontSize = (this.slider.value*this.multiplier.value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (this.slider.value*this.multiplier.value)+'px';
+	return false;">
+      <p>Change size:<br />
+        <input id="slider" type="range" min="12" max="100" step="1" value="32">
+        &#xA0; <span id="sizeIndicator">32px</span><br />
+        <input id="multiplier" type="hidden" value="1" />
+        Multiplier:
+        <input type="radio" name="step" id="x1" value="1" checked="checked" onclick="document.getElementById('multiplier').value=1; document.getElementById('freeText').style.fontSize = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px';" />
+        <label for="x1">1</label>
+        <input type="radio" name="step" id="x5" value="2"  onclick="document.getElementById('multiplier').value = 2;  document.getElementById('freeText').style.fontSize = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px';" />
+        <label for="x5">2</label>
+        <input type="radio" name="step" id="x10" value="10"  onclick="document.getElementById('multiplier').value = 10;  document.getElementById('freeText').style.fontSize = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px';" />
+        <label for="x10">10</label>
+      </p>
+    </form>
+</div>
+</aside>
+
+<p id="status">Updated Tue 21 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=thai" title="Show all blog posts tagged with 'thai'">thai</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<div class="section">
+  <p>This page provides information about the characteristics of the script used to write Thai.  It is not intended to be exhaustively scientific – merely to give a basic idea of the essential features of the script.</p>
+</div>
+
+<section>
+<div class="sidenoteGroup">
+<h2 id="sample">Sample (Thai)</h2>
+  <div id="freeText" lang="th"><p title="This is Thai"> ณ ยามที่โลกต้องการเอ่ยถ้อยคำใดๆ <span id="e5" class="ex">โลกจะใช้เพียง</span> Unicode เราจึงขอเชิญชวนท่านรีบลงทะเบียนงาน International Unicode Conference <span id="e4" class="ex">ครั้งที่</span> 10 ซึ่งจะจัด<span id="e1" class="ex">ให้มีขึ้น</span> ณ เมือง Mainz ประเทศเยอรมัน ในระหว่างวันที่ 10-12
+      มีนาคม ค.ศ. 1997 เสียแต่บัดนี้ โดยในงานประชุมดังกล่าว ท่านจะมีโอกาสได้พบกับบรรดา<span id="e3" class="ex">ผู้เชี่</span>ยวชาญจากธุรกิจอินเตอร์เน็ตและ Unicode ธุรกิจ
+      Internationalization และ Localization จากทุก<span id="e2" class="ex">มุมทั่ว</span>โลก พร้อมรับทราบการใช้ประโยชน์จาก Unicode ร่วมกับระบบปฏิบัติการและโปรแกรมต่างๆ ฟอนต์ รูปแบบข้อความ <span id="e6" class="ex">รวมทั้งวิทยาการด้านคอมพิว</span>เตอร์ในภาษาต่างๆ </p>
+  </div>
+  <div class="sidenote" id="features">
+<table>
+      <tbody>
+        <tr>
+          <th>Script name</th>
+          <td><p>Thai</p></td>
+        </tr>
+        <tr>
+          <th>Script type</th>
+          <td title="Number taken from CLDR.">abugida</td>
+        </tr>
+        <tr>
+          <th>Number of characters</th>
+          <td><a href="#notes" onclick="showFeatureInfo('', 'n-chars')">87</a></td>
+        </tr>
+        <tr>
+          <th>Case distinction</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Combining characters</th>
+          <td>16</td>
+        </tr>
+        <tr>
+          <th>Multiple combining characters</th>
+          <td><a href="#notes" onclick="showFeatureInfo('e4', 'n-multiple')">yes</a></td>
+        </tr>
+        <tr>
+          <th>Context-based positioning</th>
+          <td><a href="#notes" onclick="showFeatureInfo('e1', 'n-placement')">yes</a></td>
+        </tr>
+        <tr>
+          <th>Contextual shaping</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Cursive script</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Many more glyphs than characters?</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Text direction</th>
+          <td>ltr</td>
+        </tr>
+        <tr>
+          <th>Baseline</th>
+          <td> mid</td>
+        </tr>
+        <tr>
+          <th>Space is word separator</th>
+          <td><a href="#notes" onclick="showFeatureInfo('e6', 'n-space')">no</a></td>
+        </tr>
+        <tr>
+          <th>Wraps at</th>
+          <td><a href="#notes" onclick="showFeatureInfo('e5', 'n-wrapping')">word</a></td>
+        </tr>
+        <tr>
+          <th>Justification</th>
+          <td><a href="#notes" onclick="showFeatureInfo('', 'n-justify')">distributed</a></td>
+        </tr>
+        <tr>
+          <th>Non-ASCII digits?</th>
+          <td>yes</td>
+        </tr>
+        <tr>
+          <th>Other</th>
+          <td><a href="#sample" onclick="showFeatureInfo('e3', 'n-tall')">height</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+</div>
+</section>
+
+<section id="notes"> 
+<div id="default">
+  <p class="instructions">Click on the orange text in the features list (right column) to see examples and notes. Click on highlighted text in the Sample section to see the characters. Click on the vertical blue bar, bottom right, to change font settings.</p>
+  </div>
+  <div id="n-placement">
+    <h2>Context-based positioning</h2>
+    <p>Combining characters need to be placed in different positions, according to the context.</p>
+    <p>The highlighted example shows the same tone character displayed at different heights, according to what falls beneath it.</p>
+    <p><img src="images/thai-position.png" alt=" "></p>
+    <p class="instructions">Click on the highlighted text in the Sample section to see the characters that make up this example.</p>
+  </div>
+  <div id="n-multiple">
+    <h2>Multiple combining characters</h2>
+    <p>Thai regularly combines multiple combining characters above a base consonant. There are two examples in the text below, both of which show a base character with a vowel sign and then a tone mark on top.</p>
+    <p><img src="images/thai-multiple.png" alt=" "></p>
+    <p class="instructions">Click on the highlighted text in the Sample section to see the characters that make up this example.</p>
+  </div>
+  <div id="n-tall">
+    <h2>Line height</h2>
+    <p>Thai places  vowel and tone marks above base characters, one above the other, and can also add combining characters below the line. The complexity of these marks means that the vertical resolution needed for clearly readable Thai text is higher than for, say, Latin text. In addition, Thai tends to adds more interline spacing than Latin text does.</p>
+    <p>Here is an example of combining characters above and below base characters:</p>
+    <p><img src="images/thai-tall.png" alt=" "></p>
+    <p class="instructions">Click on the highlighted text in the Sample section to see the characters that make up this example.</p>
+  </div>
+  <div id="n-space">
+    <h2>Spaces</h2>
+    <p>Thai words are not separated by spaces or any other character, within a phrase. Spaces do have a function in Thai text, but it is to separate phrases or sentences – they are the equivalent of the comma or period. Although the boundaries are not demarcated, there is a concept of words in the text, for example, lines are supposed to be broken at word boundaries. The following text shows the word boundaries in the example highlighted above:</p>
+    <p><img src="images/thai-words.png" alt=" "></p>
+  </div>
+  <div id="n-wrapping">
+    <h2>Text wrapping</h2>
+    <p>Thai doesn't indicate word boundaries, but when Thai text is wrapped at the end of a line you should not split a word. This normally requires an application to look up in a dictionary where the word boundaries fall. As you change the width of the browser window the highlighted text above should break at the following points if you browser supports Thai wrapping:</p>
+    <p><img src="images/thai-wrap.png" alt=" "></p>
+  </div>
+  <div id="n-justify">
+    <h2>Justification</h2>
+    <p>Justification in Thai adjusts blank spaces, but also makes certain adjustments to inter-character spacing. Browsers currently tend not to justify Thai text well. </p>
+    <p class="instructions">Use the control below to see how this browser justifies Thai. 
+      <button type="button" id="justifyButton" onclick="toggleJustification()">   Justify   </button>
+    </p>
+  </div>
+  <div id="n-chars">
+    <h2>Character list</h2>
+    <p>The Thai script characters in Unicode 7.0 are contained in a single block:</p>
+    <ul>
+      <li><a href="/uniview/?block=Thai">Thai</a></li>
+    </ul>
+<p>The following is an incomplete list of languages and the number of characters they use, per version 26 of CLDR's lists of characters (exemplarCharacters).</p>
+    <ul>
+      <li>Thai: main 73, auxiliary 1, punctuation 25</li>
+    </ul>
+    <!--p>These are the lists of characters (exemplarCharacters) used by Thai according to CLDR. Click on the subsection title to see detailed information about the characters.</p>
+    <section class="characters">
+      <h3><a target='c' href="/uniview/?charlist=%E0%B9%8E%E0%B9%8C%E0%B9%87%E0%B9%88%E0%B9%89%E0%B9%8A%E0%B9%8B%E0%B8%AF%E0%B9%86%E0%B8%81%E0%B8%82%E0%B8%83%E0%B8%84%E0%B8%85%E0%B8%86%E0%B8%87%E0%B8%88%E0%B8%89%E0%B8%8A%E0%B8%8B%E0%B8%8C%E0%B8%8D%E0%B8%8E%E0%B8%8F%E0%B8%90%E0%B8%91%E0%B8%92%E0%B8%93%E0%B8%94%E0%B8%95%E0%B8%96%E0%B8%97%E0%B8%98%E0%B8%99%E0%B8%9A%E0%B8%9B%E0%B8%9C%E0%B8%9D%E0%B8%9E%E0%B8%9F%E0%B8%A0%E0%B8%A1%E0%B8%A2%E0%B8%A3%E0%B8%A4%E0%B8%A5%E0%B8%A6%E0%B8%A7%E0%B8%A8%E0%B8%A9%E0%B8%AA%E0%B8%AB%E0%B8%AC%E0%B8%AD%E0%B8%AE%E0%B9%8D%E0%B8%B0%E0%B8%B1%E0%B8%B2%E0%B9%85%E0%B8%B3%E0%B8%B4%E0%B8%B5%E0%B8%B6%E0%B8%B7%E0%B8%B8%E0%B8%B9%E0%B9%80%E0%B9%81%E0%B9%82%E0%B9%83%E0%B9%84%E0%B8%BA">Main</a></h3>
+      <p><img alt="๎" src="../../c/Thai/0E4E.png"/><img alt="์" src="../../c/Thai/0E4C.png"/><img alt="็" src="../../c/Thai/0E47.png"/><img alt="่" src="../../c/Thai/0E48.png"/><img alt="้" src="../../c/Thai/0E49.png"/><img alt="๊" src="../../c/Thai/0E4A.png"/><img alt="๋" src="../../c/Thai/0E4B.png"/><img alt="ฯ" src="../../c/Thai/0E2F.png"/><img alt="ๆ" src="../../c/Thai/0E46.png"/><img alt="ก" src="../../c/Thai/0E01.png"/><img alt="ข" src="../../c/Thai/0E02.png"/><img alt="ฃ" src="../../c/Thai/0E03.png"/><img alt="ค" src="../../c/Thai/0E04.png"/><img alt="ฅ" src="../../c/Thai/0E05.png"/><img alt="ฆ" src="../../c/Thai/0E06.png"/><img alt="ง" src="../../c/Thai/0E07.png"/><img alt="จ" src="../../c/Thai/0E08.png"/><img alt="ฉ" src="../../c/Thai/0E09.png"/><img alt="ช" src="../../c/Thai/0E0A.png"/><img alt="ซ" src="../../c/Thai/0E0B.png"/><img alt="ฌ" src="../../c/Thai/0E0C.png"/><img alt="ญ" src="../../c/Thai/0E0D.png"/><img alt="ฎ" src="../../c/Thai/0E0E.png"/><img alt="ฏ" src="../../c/Thai/0E0F.png"/><img alt="ฐ" src="../../c/Thai/0E10.png"/><img alt="ฑ" src="../../c/Thai/0E11.png"/><img alt="ฒ" src="../../c/Thai/0E12.png" style="width: 24px; height: 33px;"/><img alt="ณ" src="../../c/Thai/0E13.png"/><img alt="ด" src="../../c/Thai/0E14.png"/><img alt="ต" src="../../c/Thai/0E15.png"/><img alt="ถ" src="../../c/Thai/0E16.png"/><img alt="ท" src="../../c/Thai/0E17.png"/><img alt="ธ" src="../../c/Thai/0E18.png"/><img alt="น" src="../../c/Thai/0E19.png"/><img alt="บ" src="../../c/Thai/0E1A.png"/><img alt="ป" src="../../c/Thai/0E1B.png"/><img alt="ผ" src="../../c/Thai/0E1C.png"/><img alt="ฝ" src="../../c/Thai/0E1D.png"/><img alt="พ" src="../../c/Thai/0E1E.png"/><img alt="ฟ" src="../../c/Thai/0E1F.png"/><img alt="ภ" src="../../c/Thai/0E20.png"/><img alt="ม" src="../../c/Thai/0E21.png"/><img alt="ย" src="../../c/Thai/0E22.png"/><img alt="ร" src="../../c/Thai/0E23.png"/><img alt="ฤ" src="../../c/Thai/0E24.png"/><img alt="ล" src="../../c/Thai/0E25.png"/><img alt="ฦ" src="../../c/Thai/0E26.png"/><img alt="ว" src="../../c/Thai/0E27.png"/><img alt="ศ" src="../../c/Thai/0E28.png"/><img alt="ษ" src="../../c/Thai/0E29.png"/><img alt="ส" src="../../c/Thai/0E2A.png"/><img alt="ห" src="../../c/Thai/0E2B.png"/><img alt="ฬ" src="../../c/Thai/0E2C.png"/><img alt="อ" src="../../c/Thai/0E2D.png"/><img alt="ฮ" src="../../c/Thai/0E2E.png"/><img alt="ํ" src="../../c/Thai/0E4D.png"/><img alt="ะ" src="../../c/Thai/0E30.png"/><img alt="ั" src="../../c/Thai/0E31.png"/><img alt="า" src="../../c/Thai/0E32.png"/><img alt="ๅ" src="../../c/Thai/0E45.png"/><img alt="ำ" src="../../c/Thai/0E33.png"/><img alt="ิ" src="../../c/Thai/0E34.png"/><img alt="ี" src="../../c/Thai/0E35.png"/><img alt="ึ" src="../../c/Thai/0E36.png"/><img alt="ื" src="../../c/Thai/0E37.png"/><img alt="ุ" src="../../c/Thai/0E38.png"/><img alt="ู" src="../../c/Thai/0E39.png"/><img alt="เ" src="../../c/Thai/0E40.png"/><img alt="แ" src="../../c/Thai/0E41.png"/><img alt="โ" src="../../c/Thai/0E42.png"/><img alt="ใ" src="../../c/Thai/0E43.png"/><img alt="ไ" src="../../c/Thai/0E44.png"/><img alt="ฺ" src="../../c/Thai/0E3A.png"/></p>
+      <h3><a target='c' href="/uniview/?charlist=-,;:!?.()[]{}">Punctuation</a></h3>
+        <p><img alt="-" src="../../c/Basic%20Latin/002D.png"/><img alt="," src="../../c/Basic%20Latin/002C.png"/><img alt=";" src="../../c/Basic%20Latin/003B.png"/><img alt=":" src="../../c/Basic%20Latin/003A.png"/><img alt="!" src="../../c/Basic%20Latin/0021.png"/><img alt="?" src="../../c/Basic%20Latin/003F.png"/><img alt="." src="../../c/Basic%20Latin/002E.png"/><img alt="(" src="../../c/Basic%20Latin/0028.png"/><img alt=")" src="../../c/Basic%20Latin/0029.png"/><img alt="[" src="../../c/Basic%20Latin/005B.png"/><img alt="]" src="../../c/Basic%20Latin/005D.png"/><img alt="{" src="../../c/Basic%20Latin/007B.png"/><img alt="}" src="../../c/Basic%20Latin/007D.png" style="width: 24px; height: 33px;"/></p>
+      <h3><a target='c' href="/uniview/?charlist=%E2%80%8B">Auxiliary</a></h3>
+        <p><img alt="​" src="http://decodeunicode.org/data/glyph/26x26/200B.gif" style="width: 26px; height: 26px;"/></p>
+    </section-->
+  </div>
+</section>
+
+<!-- MAKE EXAMPLES HERE 
+<div style="border:1px solid gray; padding: 0 20px; font-size: 72px; font-family: "adobe arabic";">
+<span style="color:red">المؤتمر</span>
+</div>-->
+
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  16 Dec 2002.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  10:45<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+<script type="text/javascript">
+var notes = document.getElementById('notes').getElementsByTagName('div');
+for (var i=0; i<notes.length; i++) { notes[i].style.display = 'none'; }
+document.getElementById('default').style.display = 'block'
+</script> 
+
+<script type="text/javascript">
+initialiseShowNames('/scripts/block/thai', 'c');
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+names = new Array();
+
+names[12290]=["IDEOGRAPHIC FULL STOP","CJK Symbols and Punctuation"];
+names[12356]=["HIRAGANA LETTER I","Hiragana"];
+names[12358]=["HIRAGANA LETTER U","Hiragana"];
+names[12363]=["HIRAGANA LETTER KA","Hiragana"];
+names[12365]=["HIRAGANA LETTER KI","Hiragana"];
+names[12371]=["HIRAGANA LETTER KO","Hiragana"];
+names[12373]=["HIRAGANA LETTER SA","Hiragana"];
+names[12377]=["HIRAGANA LETTER SU","Hiragana"];
+names[12391]=["HIRAGANA LETTER DE","Hiragana"];
+names[12412]=["HIRAGANA LETTER BO","Hiragana"];
+names[12414]=["HIRAGANA LETTER MA","Hiragana"];
+names[12426]=["HIRAGANA LETTER RI","Hiragana"];
+names[12435]=["HIRAGANA LETTER N","Hiragana"];
+names[12461]=["KATAKANA LETTER KI","Katakana"];
+names[12473]=["KATAKANA LETTER SU","Katakana"];
+names[12486]=["KATAKANA LETTER TE","Katakana"];
+names[12488]=["KATAKANA LETTER TO","Katakana"];
+names[20250]=["CJK Unified Ideographs","CJK Unified Ideographs"];
+names[35696]=["CJK Unified Ideographs","CJK Unified Ideographs"];
+names[38598]=["CJK Unified Ideographs","CJK Unified Ideographs"];
+names[65288]=["FULLWIDTH LEFT PARENTHESIS","Halfwidth and Fullwidth Forms"];

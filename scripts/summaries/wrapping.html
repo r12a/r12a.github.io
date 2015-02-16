@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+  <head> 
+	 <title>Text wrapping examples</title> <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/> 
+	 <style type="text/css">
+    body { color: black; background: white; font-family: arial, sans-serif; }
+    div { color: teal; margin-top: 1em; margin-bottom: 1em; }
+h1 { width: 800px }
+   table { cellpadding: 3px; width: 800px;  }
+   td { vertical-align: top; text-align: center; }
+    p { background: #ccffcc; font-size: 150%; }
+    /*
+	.english    {font-family: "Arial Narrow", Arial, sans-serif; font-size: 20px}
+    .eninarabic {font-family: "Arial Narrow", Arial, sans-serif; font-size: 18px}
+    .eninhebr   {font-family: "Arial Narrow", Arial, sans-serif; font-size: 22pt}
+    .bodytext   {font-family: Arial, sans-serif; font-size: 10pt}
+    .arabic {font-family: "Traditional Arabic", Tahoma, sans-serif; font-size: 24px}
+    .hebrew {font-family: Tahoma, David, sans-serif; font-size: 20px; }
+    .simpchin   {font-family: SimSun, sans-serif; font-size: 20px; }
+    .tradchin   {font-family: MingLiu, sans-serif; font-size: 20px;}
+    .greek  {font-family: Tahoma, Arial, sans-serif; font-size: 18px;}
+    .japanese   {font-family: "MS Gothic", sans-serif; font-size: 20px;}
+    .korean {font-family: Gulim, sans-serif; font-size: 20px;}
+    .russian    {font-family: Tahoma, Arial, sans-serif; font-size: 18px;}
+    .thai   {font-family: CordiaUPC, "Angsana New", sans-serif; font-size: 28px;}
+    .hindi  {font-family: Mangal, sans-serif; font-size: 20px;}
+    */
+</style> 
+	 <script type="text/javascript" language="JavaScript" src="wrapping.js"></script> 
+  </head> 
+  <body> 
+	 <h1>Text Wrapping Examples</h1> 
+	 <table> 
+		<tr> 
+		  <td id="cell0" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'english' ))">
+			 English</td> 
+		  <td id="cell1" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'arabic' ))">
+			 Arabic</td> 
+		  <td id="cell2" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'hebrew' ))">
+			 Hebrew</td> 
+		  <td id="cell3" onmouseover="highlight(this)" onmouseout="unhighlight(this)"
+			onclick="showThis( document.getElementById( 'simpchin' ) )">Chinese</td> 
+		  <td id="cell4" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'japanese' ))">
+			 Japanese</td> 
+		  <td id="cell5" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'korean' ))">
+			 Korean</td> 
+		  <td id="cell6" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'thai' ))"> Thai</td>
+		  
+		  <td id="cell7" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'greek' ))">
+			 Greek</td> 
+		  <td id="cell8" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'russian' ))">
+			 Russian</td> 
+		  <td id="cell9" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showThis( document.getElementById( 'hindi' ))">
+			 Hindi</td> 
+		  <td id="cell10" onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showAll( )"> ALL</td> 
+		</tr> 
+	 </table> 
+	 <p class="english" id="english" lang="en-GB" xml:lang="en-GB" title="This is the original English">Richard Ishida Consultant, Designing International User Interfaces</p> 
+	 <p class="arabic" id="arabic" lang="ar" xml:lang="ar" dir="rtl" title="This is Arabic">ريتشارد ايشيدا - مستشار, (123-456) تصميم عالمي
+		لواجهات (global design) المستعمل</p> 
+	 <p class="hebrew" id="hebrew" lang="he" xml:lang="he" dir="rtl" title="This is Hebrew">ריצ'רד אישידה ־ יועץ, (123-456) תכנון מישקי למשתמש
+		123-456 בין־לאומי</p> 
+	 <p class="simpchin" id="simpchin" lang="zh-cn" xml:lang="zh-cn" title="This is Simplified Chinese (used in PRC &amp; Singapore">
+		瑞查德．伊喜达、国际化软件界面设计顾问。国际化软件界面、设计顾问「国际化软件界面设计顾问」</p> 
+	 <p class="japanese" id="japanese" lang="ja" xml:lang="ja" title="This is Japanese">石田リチャード ユーザーインターフェース「国際化対応設計」コンサルタント。</p> 
+	 <p class="korean" id="korean" lang="ko" xml:lang="ko" title="This is Korean">리챠드 이시다 각국어 인터페이스 기술컨설턴트</p> 
+	 <p class="thai" id="thai" lang="th" xml:lang="th" title="This is Thai">ริชาร์ด อิชิดะ ริชาร์ด อิชิดะ ที่ปรึกษา งานออกแบบรายการใช้เครื่องระบบสากล (UI)</p> 
+	 <p class="greek" id="greek" lang="el" xml:lang="el" title="This is Greek">Ρίτσαρντ Ίσιντα Σύμβουλος, Σχεδιασμός διεθνών διασυνδέσεων χρήστη</p> 
+	 <p class="russian" id="russian" lang="ru" xml:lang="ru" title="This is Russian (Cyrillic script)">Ричард Ишида Консультант по интернационализации
+  интерфейса пользователя</p> 
+	 <p class="hindi" id="hindi" lang="hi" xml:lang="hi" title="This is Hindi">रिचड ईशिदा परामशरढाता, डिज़इन औफ इन्टरनेशनल यूज़र इन्टरफेज़</p> 
+	 <div>Select a script and move the right hand side of the window to see the wrapping behaviour enabled by your browser. If you select All they
+		should all wrap in their own way.</div> 
+	 <div>DOM scripting is used to hide and display text. If clicking on a script name above doesn't work in your browser, use the file with
+		<a href="wrapping-no-dhtml.html">no dynamic HTML</a>.</div> <hr/> 
+		
+<!--<script type="text/javascript">if (document.getElementById('english')) { init();} </script>-->
+  </body> 
+</html> 

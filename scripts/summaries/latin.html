@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>Script summary for Latin</title>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<meta name="description" content="Notes about the Latin script as used for English."/>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+<style type="text/css">
+#freeText {
+	font-size: 28px;
+	font-family: 'Helvetica Neue', calibri, corbel, "Segoe UI", helvetica, sans-serif;
+	line-height: 1.5;
+	text-align: left;
+	hyphens: auto;
+	}
+</style>
+
+<script src="/scripts/block/latin-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+
+<script src="functions.js" type="text/javascript"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Latin</h1>
+
+<aside class="sidebar">
+  <div class="noprint">
+    <h2 class="notoc flush"><a id="links" name="links" tabindex="5">Related links</a></h2>
+    <p><a href="/scripts/featurelist/">Script features by language</a></p>
+    <p><a href="/pickers/latin">Latin character picker</a></p>
+    <p><a href="/scripts/links?script=latin">Latin script links</a></p>
+  </div>
+ 
+ <div id="fontsetting" class="closed">
+  <h2 class="notoc"><a id="fonts">Fonts</a></h2>
+  <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+    <form onSubmit="document.getElementById('freeText').style.fontFamily = document.getElementById('fontName').value; return false;">
+      <p dir="ltr" class="english">Use this font:<br/>
+        <input type="text" id="fontName" value="webfont"/>
+        <button
+		  type="submit">Apply</button>
+      </p>
+  </form>
+    <form oninput="document.getElementById('freeText').style.fontSize = (this.slider.value*this.multiplier.value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (this.slider.value*this.multiplier.value)+'px';
+	return false;">
+      <p>Change size:<br />
+        <input id="slider" type="range" min="12" max="100" step="1" value="32">
+        &#xA0; <span id="sizeIndicator">32px</span><br />
+        <input id="multiplier" type="hidden" value="1" />
+        Multiplier:
+        <input type="radio" name="step" id="x1" value="1" checked="checked" onclick="document.getElementById('multiplier').value=1; document.getElementById('freeText').style.fontSize = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px';" />
+        <label for="x1">1</label>
+        <input type="radio" name="step" id="x5" value="2"  onclick="document.getElementById('multiplier').value = 2;  document.getElementById('freeText').style.fontSize = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px';" />
+        <label for="x5">2</label>
+        <input type="radio" name="step" id="x10" value="10"  onclick="document.getElementById('multiplier').value = 10;  document.getElementById('freeText').style.fontSize = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px'; 
+	document.getElementById('sizeIndicator').innerHTML = (document.getElementById('slider').value*document.getElementById('multiplier').value)+'px';" />
+        <label for="x10">10</label>
+      </p>
+    </form>
+</div>
+</aside>
+
+<p id="status">Updated Tue 21 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=latin" title="Show all blog posts tagged with 'latin'">latin</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<div class="section">
+  <p>This page provides information about the characteristics of the Latin script.  It is not intended to be exhaustively scientific – merely to give a basic idea of the essential features of the script.</p>
+</div>
+
+<section>
+<div class="sidenoteGroup">
+  <h2 id="sample">Sample (Hungarian)</h2>
+  <div id="freeText">
+    <p lang="en" title="This is the original English.">Ha a világ beszélni akarna, Unicode-ul szólalna meg. Regisztráljon már most a Tizedik Nemzetközi Unicode Konferenciára, melyet 1997. március 10-12-én rendeznek Meinz-ban, Németországban. Ezen a konferencián az iparág több neves szakértője is résztvesz. Ízelítőül a témákból: a világháló és a Unicode nemzetközisítése és lokalizálása, a Unicode alkalmazása működő rendszerekben és alkalmazásokban, szövegelrendezésnél, és többnyelvű számítógépeken.</p>
+  </div>
+  <div class="sidenote" id="features">
+  <table>
+      <tbody>
+        <tr>
+          <th>Script name</th>
+          <td><p>Latin</p></td>
+        </tr>
+        <tr>
+          <th>Script type</th>
+          <td title="Number taken from CLDR.">alphabet</td>
+        </tr>
+        <tr>
+          <th>Number of characters (not including phonetic or combining blocks)</th>
+          <td><a href="#notes" onclick="showFeatureInfo('', 'n-chars')">1015</a></td>
+        </tr>
+        <tr>
+          <th>Case distinction?</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Combining characters</th>
+          <td title="Number taken from CLDR.">0</td>
+        </tr>
+        <tr>
+          <th>Multiple combining characters</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Context-based positioning</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Contextual shaping</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Cursive script</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Many more glyphs than characters?</th>
+          <td>no</td>
+        </tr>
+        <tr>
+          <th>Text direction</th>
+          <td>ltr</td>
+        </tr>
+        <tr>
+          <th>Baseline</th>
+          <td> mid </td>
+        </tr>
+        <tr>
+          <th>Space is word separator</th>
+          <td>yes</td>
+        </tr>
+        <tr>
+          <th>Wraps at</th>
+          <td>word</td>
+        </tr>
+        <tr>
+          <th>Justification</th>
+          <td><a href="#sample" onclick="showFeatureInfo('', 'n-justify')">word</a></td>
+        </tr>
+        <tr>
+          <th>Native digits?</th>
+          <td>yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</section>
+
+<section id="notes"> 
+<div id="default">
+  <p class="instructions">Click on the orange text in the features list (right column) to see examples and notes. Click on highlighted text in the Sample section to see the characters. Click on the vertical blue bar, bottom right, to change font settings.</p>
+  </div>
+  <div id="n-justify">
+    <h2>Justification</h2>
+    <p>Justification is done, principally, by adjusting the space between words. (High-end systems may also adjust inter-character spacing slightly if inter-word doesn't resolve the issue, or to improve aesthetics.)</p>
+    <p class="instructions">You can justify the text in the Sample section using this control. 
+      <button type="button" id="justifyButton" onclick="toggleJustification()">   Justify   </button>
+    </p>
+  </div>
+  <div id="n-chars">
+    <h2>Character list</h2>
+    <p>The Latin script characters in Unicode 7.0 are spread across 8 blocks (not counting the phonetic blocks nor any of the combining character blocks):</p>
+    <ul>
+      <li><a href="/uniview/?block=basic_latin">Basic Latin</a> (94)</li>
+      <li><a href="/uniview/?block=latin-1_supplement">Latin-1 Supplement</a> (95)</li>
+      <li><a href="/uniview/?block=Latin_Extended-A">Latin Extended-A</a> (128)</li>
+      <li><a href="/uniview/?block=Latin_Extended-B">Latin Extended-B</a> (208)</li>
+      <li><a href="/uniview/?block=Latin_Extended-C">Latin Extended-C</a> (32)</li>
+      <li><a href="/uniview/?block=Latin_Extended-D">Latin Extended-D</a> (152)</li>
+      <li><a href="/uniview/?block=Latin_Extended-E">Latin Extended-E</a> (50)</li>
+      <li><a href="/uniview/?block=Latin_Extended_Additional">Latin Extended Additional</a> (256)</li>
+    </ul>
+<p>The following is an incomplete list of languages and the number of characters they use, per version 26 of CLDR's lists of characters (exemplarCharacters).</p>
+    <ul>
+      <li>Hungarian: main 31, auxiliary 35, punctuation 32</li>
+    </ul>
+    <!--p>These are the lists of characters (exemplarCharacters) used by English according to CLDR (with upper case added to the main category). Click on the subsection title to see detailed information about the characters.</p>
+    <section class="characters">
+      <h3><a href="/tools/analysestring/index.php?list=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ">Main</a></h3>
+        <p><img alt="a" src="../../c/Basic Latin/0061.png"/><img alt="b" src="../../c/Basic Latin/0062.png"/><img alt="c" src="../../c/Basic Latin/0063.png"/><img alt="d" src="../../c/Basic Latin/0064.png"/><img alt="e" src="../../c/Basic Latin/0065.png"/><img alt="f" src="../../c/Basic Latin/0066.png"/><img alt="g" src="../../c/Basic Latin/0067.png"/><img alt="h" src="../../c/Basic Latin/0068.png"/><img alt="i" src="../../c/Basic Latin/0069.png"/><img alt="j" src="../../c/Basic Latin/006A.png"/><img alt="k" src="../../c/Basic Latin/006B.png"/><img alt="l" src="../../c/Basic Latin/006C.png"/><img alt="m" src="../../c/Basic Latin/006D.png"/><img alt="n" src="../../c/Basic Latin/006E.png"/><img alt="o" src="../../c/Basic Latin/006F.png"/><img alt="p" src="../../c/Basic Latin/0070.png"/><img alt="q" src="../../c/Basic Latin/0071.png"/><img alt="r" src="../../c/Basic Latin/0072.png"/><img alt="s" src="../../c/Basic Latin/0073.png"/><img alt="t" src="../../c/Basic Latin/0074.png"/><img alt="u" src="../../c/Basic Latin/0075.png"/><img alt="v" src="../../c/Basic Latin/0076.png"/><img alt="w" src="../../c/Basic Latin/0077.png"/><img alt="x" src="../../c/Basic Latin/0078.png"/><img alt="y" src="../../c/Basic Latin/0079.png"/><img alt="z" src="../../c/Basic Latin/007A.png"/><img alt="A" src="../../c/Basic Latin/0041.png"/><img alt="B" src="../../c/Basic Latin/0042.png"/><img alt="C" src="../../c/Basic Latin/0043.png"/><img alt="D" src="../../c/Basic Latin/0044.png"/><img alt="E" src="../../c/Basic Latin/0045.png"/><img alt="F" src="../../c/Basic Latin/0046.png"/><img alt="G" src="../../c/Basic Latin/0047.png"/><img alt="H" src="../../c/Basic Latin/0048.png"/><img alt="I" src="../../c/Basic Latin/0049.png"/><img alt="J" src="../../c/Basic Latin/004A.png"/><img alt="K" src="../../c/Basic Latin/004B.png"/><img alt="L" src="../../c/Basic Latin/004C.png"/><img alt="M" src="../../c/Basic Latin/004D.png"/><img alt="N" src="../../c/Basic Latin/004E.png"/><img alt="O" src="../../c/Basic Latin/004F.png"/><img alt="P" src="../../c/Basic Latin/0050.png"/><img alt="Q" src="../../c/Basic Latin/0051.png"/><img alt="R" src="../../c/Basic Latin/0052.png"/><img alt="S" src="../../c/Basic Latin/0053.png"/><img alt="T" src="../../c/Basic Latin/0054.png"/><img alt="U" src="../../c/Basic Latin/0055.png"/><img alt="V" src="../../c/Basic Latin/0056.png"/><img alt="W" src="../../c/Basic Latin/0057.png"/><img alt="X" src="../../c/Basic Latin/0058.png"/><img alt="Y" src="../../c/Basic Latin/0059.png" style="width: 24px; height: 33px;"/><img alt="Z" src="../../c/Basic Latin/005A.png"/></p>
+      <h3><a href="/tools/analysestring/index.php?list=-%E2%80%90%E2%80%93%E2%80%94%2C%3B%3A%21%3F.%E2%80%A6%27%E2%80%98%E2%80%99%22%E2%80%9C%E2%80%9D%28%29%5B%5D%C2%A7%40%2A%2F%26%23%E2%80%A0%E2%80%A1%E2%80%B2%E2%80%B3">Punctuation</a></h3>
+        <p><img alt="-" src="../../c/Basic Latin/002D.png"/><img alt="‐" src="http://decodeunicode.org/data/glyph/26x26/2010.gif"/><img alt="–" src="http://decodeunicode.org/data/glyph/26x26/2013.gif"/><img alt="—" src="http://decodeunicode.org/data/glyph/26x26/2014.gif"/><img alt="," src="../../c/Basic Latin/002C.png"/><img alt=";" src="../../c/Basic Latin/003B.png"/><img alt=":" src="../../c/Basic Latin/003A.png"/><img alt="!" src="../../c/Basic Latin/0021.png"/><img alt="?" src="../../c/Basic Latin/003F.png"/><img alt="." src="../../c/Basic Latin/002E.png"/><img alt="…" src="http://decodeunicode.org/data/glyph/26x26/2026.gif"/><img alt="'" src="../../c/Basic Latin/0027.png"/><img alt="'" src="http://decodeunicode.org/data/glyph/26x26/2018.gif"/><img alt="'" src="http://decodeunicode.org/data/glyph/26x26/2019.gif"/><img alt="&quot;" src="../../c/Basic Latin/0022.png"/><img alt=""" src="http://decodeunicode.org/data/glyph/26x26/201C.gif"/><img alt=""" src="http://decodeunicode.org/data/glyph/26x26/201D.gif"/><img alt="(" src="../../c/Basic Latin/0028.png"/><img alt=")" src="../../c/Basic Latin/0029.png"/><img alt="[" src="../../c/Basic Latin/005B.png"/><img alt="]" src="../../c/Basic Latin/005D.png"/><img alt="§" src="../../c/Latin-1 Supplement/00A7.png"/><img alt="@" src="../../c/Basic Latin/0040.png"/><img alt="*" src="../../c/Basic Latin/002A.png"/><img alt="/" src="../../c/Basic Latin/002F.png"/><img alt="&amp;" src="../../c/Basic Latin/0026.png"/><img alt="#" src="../../c/Basic Latin/0023.png"/><img alt="†" src="http://decodeunicode.org/data/glyph/26x26/2020.gif" style="width: 26px; height: 26px;"/><img alt="‡" src="http://decodeunicode.org/data/glyph/26x26/2021.gif"/><img alt="′" src="http://decodeunicode.org/data/glyph/26x26/2032.gif"/><img alt="″" src="http://decodeunicode.org/data/glyph/26x26/2033.gif"/></p>
+      <h3><a href="/tools/analysestring/index.php?list=%C3%A1%C3%A0%C4%83%C3%A2%C3%A5%C3%A4%C3%A3%C4%81%C3%A6%C3%A7%C3%A9%C3%A8%C4%95%C3%AA%C3%AB%C4%93%C3%AD%C3%AC%C4%AD%C3%AE%C3%AF%C4%AB%C3%B1%C3%B3%C3%B2%C5%8F%C3%B4%C3%B6%C3%B8%C5%8D%C5%93%C3%BA%C3%B9%C5%AD%C3%BB%C3%BC%C5%AB%C3%BF">Auxiliary</a></h3>
+        <p><img alt="á" src="../../c/Latin-1 Supplement/00E1.png"/><img alt="à" src="../../c/Latin-1 Supplement/00E0.png" style="width: 24px; height: 33px;"/><img alt="ă" src="../../c/Latin Extended-A/0103.png"/><img alt="â" src="../../c/Latin-1 Supplement/00E2.png"/><img alt="å" src="../../c/Latin-1 Supplement/00E5.png"/><img alt="ä" src="../../c/Latin-1 Supplement/00E4.png"/><img alt="ã" src="../../c/Latin-1 Supplement/00E3.png"/><img alt="ā" src="../../c/Latin Extended-A/0101.png"/><img alt="æ" src="../../c/Latin-1 Supplement/00E6.png"/><img alt="ç" src="../../c/Latin-1 Supplement/00E7.png" style="width: 24px; height: 33px;"/><img alt="é" src="../../c/Latin-1 Supplement/00E9.png"/><img alt="è" src="../../c/Latin-1 Supplement/00E8.png"/><img alt="ĕ" src="../../c/Latin Extended-A/0115.png"/><img alt="ê" src="../../c/Latin-1 Supplement/00EA.png"/><img alt="ë" src="../../c/Latin-1 Supplement/00EB.png"/><img alt="ē" src="../../c/Latin Extended-A/0113.png"/><img alt="í" src="../../c/Latin-1 Supplement/00ED.png"/><img alt="ì" src="../../c/Latin-1 Supplement/00EC.png"/><img alt="ĭ" src="../../c/Latin Extended-A/012D.png"/><img alt="î" src="../../c/Latin-1 Supplement/00EE.png"/><img alt="ï" src="../../c/Latin-1 Supplement/00EF.png"/><img alt="ī" src="../../c/Latin Extended-A/012B.png"/><img alt="ñ" src="../../c/Latin-1 Supplement/00F1.png"/><img alt="ó" src="../../c/Latin-1 Supplement/00F3.png"/><img alt="ò" src="../../c/Latin-1 Supplement/00F2.png"/><img alt="ŏ" src="../../c/Latin Extended-A/014F.png"/><img alt="ô" src="../../c/Latin-1 Supplement/00F4.png"/><img alt="ö" src="../../c/Latin-1 Supplement/00F6.png"/><img alt="ø" src="../../c/Latin-1 Supplement/00F8.png"/><img alt="ō" src="../../c/Latin Extended-A/014D.png"/><img alt="œ" src="../../c/Latin Extended-A/0153.png"/><img alt="ú" src="../../c/Latin-1 Supplement/00FA.png"/><img alt="ù" src="../../c/Latin-1 Supplement/00F9.png"/><img alt="ŭ" src="../../c/Latin Extended-A/016D.png"/><img alt="û" src="../../c/Latin-1 Supplement/00FB.png"/><img alt="ü" src="../../c/Latin-1 Supplement/00FC.png"/><img alt="ū" src="../../c/Latin Extended-A/016B.png"/><img alt="ÿ" src="../../c/Latin-1 Supplement/00FF.png"/></p>
+    </section-->
+  </div>
+</section>
+
+<!-- MAKE EXAMPLES HERE 
+<div style="border:1px solid gray; padding: 0 20px; font-size: 72px; font-family: "adobe arabic";">
+<span style="color:red">المؤتمر</span>
+</div>-->
+
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  2012.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  10:48<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+<script type="text/javascript">
+var notes = document.getElementById('notes').getElementsByTagName('div');
+for (var i=0; i<notes.length; i++) { notes[i].style.display = 'none'; }
+initialiseShowNames('/scripts/block/latin', 'c');
+document.getElementById('default').style.display = 'block'
+</script>
+</body>
+</html>
