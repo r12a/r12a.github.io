@@ -356,43 +356,6 @@ function clearHighlights () {
 	
 	
 
-function oldtranscribe (node, direction) {
-	// node: the output element
-	// direction: a string that the local routine will recognise to do the right transcription
-	var chstring; // the text to be converted
-	
-	// get the highlighted text, or default to all text
-	//IE support
-	if (document.selection) { 
-		//outputNode.focus();
-	    chstring = document.selection.createRange()
-		}
-	// Mozilla and Safari support
-	else if (node.selectionStart || node.selectionStart == '0') {
-		chstring = node.value.substring(node.selectionStart, node.selectionEnd)
-		}
-
-	// add a ¶ to avoid breaking on lookahead; if no selection, try whole field; if still nothing, abort
-	chstring = chstring.toLowerCase()+' ¶'
-	if (chstring==' ¶') { chstring = node.value.toLowerCase()+' ¶' }
-	if (chstring==' ¶') { return }
-
-	// for security, remmove angle brackets
-	chstring = chstring.replace(/</g,'')
-	chstring = chstring.replace(/>/g,'')
-	
-	var close = "<div id='closeTranscription' title='Hide transcription'>x</div>"
-	document.getElementById('transcription').innerHTML = localtranscribe(node, direction, chstring)+close
-	document.getElementById('transcription').style.display = 'block' 
-	alts = document.querySelectorAll('.altfirst, .altlast, .alt')
-	for (i=0;i<alts.length;i++) {
-		alts[i].onclick = choose
-		}
-	var close = document.querySelector("#closeTranscription")
-	close.onclick = closeTranscription
-	}
-
-	
 	
 
 // INITIALISATION
@@ -636,7 +599,7 @@ window.onload = function() {
 		}
 
 
-	document.location = "#main"
+	//document.location = "#main"
 	};
 
 
