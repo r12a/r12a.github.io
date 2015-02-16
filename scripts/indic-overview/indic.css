@@ -1,0 +1,176 @@
+
+
+/* TABLE SETTINGS */
+
+#ipa-table {
+	margin-bottom: 2em; 
+	font-size: 90%;
+	}
+#ipa-table td {
+	vertical-align: middle;
+	padding: 2px;
+	}
+#ipa-table th {
+	vertical-align: middle;
+	text-align: right;
+	padding-right: 4px;
+	}
+#ipa-table th.group {
+	border-right: 1px solid teal;
+	}
+#ipa-table td.ipa-large { 
+	font-size: 170%;
+	font-family: "doulos sil", "arial unicode ms", sans-serif;
+	line-height: 180%;
+	padding: 0 5px 0 5px; 
+	}
+
+
+
+#tamil-vowel-ligs {
+	border-collapse: collapse;
+	margin-bottom: 2em;
+	}
+#tamil-vowel-ligs td {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	}
+#tamil-vowel-ligs tr.noVS td {
+	border-bottom: 0;
+	}
+#tamil-vowel-ligs tr.withVS td {
+	color: black;
+	border-top: 0;
+	}
+
+#telugu-vowels td {
+	padding-left: 5px;
+	padding-right: 5px;
+	line-height: 2.5em;
+	}
+
+
+#chart-key td {
+	padding: 3px;
+	width: 150px;
+	}
+
+table#charts {
+	border-collapse: collapse;
+	}
+table#charts td {
+	padding: 0;
+	margin: 0;
+	}
+table#charts table.chart {
+	margin: 0;
+	margin-right: 10px;
+	}
+table.chart {
+	border-collapse: collapse;
+	}
+table.chart td {
+	width: 30px;
+	}
+table.chart td.ta {
+	font-size: 80%;
+	}
+
+td.td-iscii { 
+	background-color: yellow; 
+	background-color: #F0EDA6;
+	text-align: center; 
+	font-size: 120%;
+	padding: 0;
+	vertical-align: middle;
+	}
+td.td-unicode-ext { 
+	background-color: orange; 
+	background-color: #edd0b7;
+	text-align: center; 
+	font-size: 120%;
+	padding: 0;
+	vertical-align: middle;
+	}
+td.td-script-spec  { 
+	background-color: #630;  
+	background-color: #f0a39c;
+	color: white; 
+	font-weight: bold; 
+	text-align: center; 
+	font-size: 120%;
+	padding: 0;
+	vertical-align: middle;
+	}
+
+td.block-comparison {
+	border: 0;
+	padding: 0;
+	padding-right: 10px;
+	}
+
+
+
+/* FONT SETTINGS FOR NON-LATIN1 STUFF */
+	
+
+.be { 
+	font-size: 1.5em;
+ 	font-family: SolaimanLipi, Likhan, "arial unicode ms", sans-serif; 
+	color: black 
+	}
+.gu { 
+	font-size: 1.4em;
+	font-family: shruti, "arial unicode ms", sans-serif; 
+	color: black; 
+	}
+.hi { 
+	font-size: 1.4em;
+	font-family: Chandas, mangal, "arial unicode ms", sans-serif;
+	color: black 
+	}
+.ka { 
+	font-size: 1.4em;
+	font-family: tunga, "arial unicode ms", sans-serif;
+	color: black; 
+	}
+.ma { 
+	font-size: 1.5em; 
+	font-family: thoolikatraditionalunicode, thoolikaunicode, "arial unicode ms", sans-serif; 
+	color: black 
+	}
+.or { 	
+	font-size: 1.5em;
+	font-family: "arial unicode ms", sans-serif; 
+	color: black; 
+	}
+.pa { 
+	font-size: 1.4em;
+	font-family: AnmolUniBani, raavi, "arial unicode ms", sans-serif; 
+	color: black; 
+	}
+.ta { 
+	font-size: 1.4em;
+	font-family: JanaTamil, Latha, "arial unicode ms", sans-serif; 
+	color: black; 
+	}
+.te { 
+	font-size: 1.5em;
+	font-family: gautami, "arial unicode ms", sans-serif;
+	color: black; 
+	}
+/* .char { 
+	font-size: 3em;
+	font-family: "arial unicode ms", sans-serif;
+	}
+*/
+
+td.be {
+	font-size: 1.25em;
+ 	font-family: "arial unicode ms", sans-serif; 
+	color: black 
+	}
+
+.ex { cursor:pointer; }
