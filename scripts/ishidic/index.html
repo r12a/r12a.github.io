@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="en-GB"> 
+ 
+	<head> 
+		<meta charset="utf-8" /> 
+		<title>Ishidic script notes</title> 
+		<meta name="description" content="Notes about the Ishidic (RaiTing) script." /> 
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+
+<script src="/code/toc_section.js" type="text/javascript"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<style type="text/css" media="all"> 
+.ishidic { vertical-align: middle; }
+</style> 
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head> 
+ 
+<body> 
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Ishidic script notes</h1> 
+
+<aside class="sidebar"> 
+			<h2 class="notoc flush"><a id="tochead" tabindex="4">Contents</a></h2>
+			<div id="toc"><!-- placeholder --></div>
+			<div class="noprint"> 
+ 
+				<h2 class="notoc"><a id="links" name="links" tabindex="4">Related links</a></h2> 
+				<p><a href="http://www.flickr.com/photos/ishida/3781010968/sizes/l/">Sample text</a></p> 
+				</div> 
+			<div class="noprint"> 
+ 
+				<h2 class="notoc"><a id="fonts" name="fonts" tabindex="4">Fonts</a></h2> 
+				<p style="line-height: 1.3em;">There are currently no fonts available for Ishidic.</p>
+				</div>
+			</aside>
+ 
+<p id="status">Updated Wed 15 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=ishidic" title="Show all blog posts tagged with 'ishidic'">ishidic</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<div class="section"> 
+			<p><!--span class="ed">These notes are still in development.</span-->
+			    These notes are about the use of the Ishidic script. There are no Ishidic characters encoded in Unicode as yet.		</p>
+		</div> 
+		<div class="section"> 
+ 
+			<h2><a id="intro" name="intro" href="#intro">Brief script introduction</a></h2> 
+			<p>The script is a mixture of abugida, abjad, alphabet and other script techniques. It can be written without vowels if speed is essential. It can also be written in either linear or cascading styles, the latter providing for greater speed. Ishidic is highly optimised for efficiency in handwriting, but those features make it quite a complicated script to implement for computers.</p>
+			<figure><img src="images/udhr.png" alt="Quotation from Universal Declaration of Human Rights."/>
+        <figcaption>Example of Ishidic text: "All human beings are born free and equal in dignity and rights."</figcaption></figure> 
+			<p>Spaces are used to separate  words. </p>
+			<p>Text usually runs from left to right, but it can also be written right to left. Digits in embedded numbers in  right-to-left text run left-to-right, but embedded Latin text runs right-to-left just like the surrounding text.</p>
+<p>The transcription is not phonetic, and is only loosely phonemic. For example, vowels are written only when needed for clarity of comprehension, and no distinction is made between short central vowels such as /ɘ/, /ə/, /ɜ/ and /ʌ/ .  Furthermore, some glyphs represent grammatical information or logograms, rather than phonetic information. The writing therefore only covers an approximation to the phonetic information, and it is expected that context will  play a role in clarifying ambiguities.</p>
+			<p><strong>Consonants.</strong> There are two versions of most glyphs. Consonants followed by a vowel are drawn 'full-size', eg. <img class="ishidic" src="characters/pe.png" alt="pe" /> <span class="ipa">pə</span>. Unless modified by a combining mark, these consonants carry an inherent central vowel sound, represented here as <span class="ipa">ə</span>, but actually including several possible central vowels, as mentioned above. Those not followed by a vowel are smaller, eg. <img class="ishidic" src="characters/p.png" alt="p" /> /p/. </p>
+			<p><strong>Variant forms:</strong> One glyph has a word-initial form that is slightly different to the form within or at the end of a word, eg. <img class="ishidic" src="characters/he-initial.png" alt="p" /> (initial) vs. <img class="ishidic" src="characters/he.png" alt="p" /> (non-initial) /hə/.</p>
+			<p><strong>Vowels.</strong>  Unstressed vowels in non-initial position are indicated by the long form of a consonant, eg. <img class="ishidic" src="characters/seq-ket.png" alt="ket" /> /kət/ vs.  <img class="ishidic" src="characters/seq-kt.png" alt="kt" /> /kt/. Unstressed vowels in word-initial position are drawn as a simple  extension of the baseline leading into the first consonant, eg. <img class="ishidic" src="characters/seq-ep.png" alt="əp" /> /əp/.</p>
+			<p>Other vowels are written using diacritics. Word initial vowels appear over a blank space, immediately to the left of the first consonant, eg. <img class="ishidic" src="characters/seq-aet.png" alt="ket" /> <span class="ipa">æt</span>. Non-initial vowels are  written as diacritics above the consonant they follow, eg. <img class="ishidic" src="characters/seq-kaet.png" alt="kaet" /> <span class="ipa">kæt</span>.</p>
+<p>Typically vowel diacritics are just used for the primary and secondary stress in a word. When speed is paramount, vowel diacritics can be omitted: they may be limited just to primary stress, or omitted altogether. This is particularly common in the cascading style (see below). </p>
+<p>The use of long forms of consonants to indicate the presence of a vowel, however, is never optional. The same goes for initial unstressed vowels  drawn with the  baseline extension at the beginning of a word.</p>
+			<p><strong>Glyph positioning.</strong> Most words will begin at and continue along the baseline in the linear style, though this is not a hard-and-fast rule, by any means. Word-initial consonant clusters may start above or below the baseline, but such sequences  should approach the baseline for  the word to continue. </p>
+			<p>The letters corresponding to the sounds p, s, ʃ, and small t or d usually start away from the baseline and move towards it at the beginning of a word.</p>
+<p>In the linear style, the writer will usually lift the pen after p, s, ʃ,  t, and d to return to the baseline. Near the end of a word, however, the writer may continue above or below the baseline. </p>
+<p>The  example of <span class="ipa">spæn</span> illustrates both of these points, <img src="characters/seq-spaen.png" alt="span" /> . The initial <span class="ipa">s</span> starts below the baseline (shown as a horizontal red line), and the final <span class="ipa">n</span> appears above the baseline at the end of the <span class="ipa">p</span> glyph. It would be equally fine to write this as either <img src="characters/seq-spaen2.png" alt="" /> or even<img src="characters/seq-spaen3.png" alt="" />.</p>
+<p>In the cascading style, however, the writer continues through a whole word at a time without lifting the pen. This produces words that look very like nastaliq fonts. The cascading style is used for speed of transcription.</p>
+<p>In the cascading style, letters for the following pairs of sounds are identical: /p/ and /b/, /s/ and /z/, /ʃ/ and /ʒ/, and small /t/ and /d/. If desired, the unvoiced phoneme can be identified by adding a dot to the centre and left of a letter, eg. <img class="ishidic" src="characters/cascade-spaen.png" alt="spaen" /> <span class="ipa">spæn</span> (cf. <img class="ishidic" src="characters/cascade-baen.png" alt="baen" /> <span class="ipa">bæn</span>).</p>
+<p><strong>Numbers.</strong> European digits are used for numbers, and numbers are always written this way - they are not spelled out as words. </p> 
+			<!--<p>Note: In the transcription method I use, the virama is indicated with a combining slash. For example, <span class="trans">āmt</span> is
+				pronounced <span class="ipa">amata</span>, but <span class="trans">ām̸t</span> is pronounced <span class="ipa">amta</span>. Also, the vowel carrier
+				<span class="ex" lang="my" xml:lang="my">အ</span> is consistently transcribed <span class="trans">ø</span>, but is pronounced <span class="ipa">a</span> when
+				used as an initial vowel. Other invisible characters are transcribed using superscript letters, ie. zero-width joiner <span class="trans">ʲ</span>,
+				zero-width non-joiner <span class="trans">ˣʲ</span>, and word joiner <span class="trans">ʷʲ</span>, and zero-width space <span class="trans">ˢ</span>.</p>--> 
+<p><strong>Logograms.</strong> The script contains a number of logograms - ligatures representing common words. Sometimes these bear some resemblance to the word as spelled out, though typically abbreviated; other times they are completely idiosyncratic forms based on pictograms or sometimes quite arbitrary shapes. In either case, these forms are represented using a single glyph.</p>
+<p>Where more than one logogram appears side-by-side, they should be written together, with no intervening space.</p>
+<p>Logograms are normally written on the baseline, however for some logograms vertical position relative to the baseline is an important distinctive feature. For example, the logograms for the indefinite and definite articles are the same, apart from their position.</p>
+<p>Some consonant groupings are written using combined forms that do not proceed along the baseline as per normal text. The use of these clusters varies from writer to writer, however they are all recognisable combinations of the phones concerned.	</p>
+<p><strong>Case.</strong> There is no upper-vs-lower case distinction, however  a capitalisation in a script that is being transcribed can be signalled using a special symbol, and so can a sequence of all upper-case characters in that script.</p>
+<p><strong>Grammatical modifiers.</strong> Typically, grammatical endings are written using special symbols, rather than spelled out as pronounced. To do this, a mark is added immediately after the point where the pen is lifted at the end of the word. The word itself is typically transcribed in its base form, eg. singular, or present tense. </p>
+<p>However, this is not required, and a writer is perfectly free to spell out the word in full. This leads to two possible forms for many words.</p>
+<p>Grammatical modifiers are used to: </p>
+<ul>
+	<li>convert nouns to plural</li>
+	<li>represent third-person conjugation of verbs</li>
+	<li>turn adjectives into adverbs</li>
+	<li>signify the possessive form of a noun</li>
+	<li>signify the past tense of a verb or the past participle</li>
+	<li>signify the gerund</li>
+</ul>
+<p>Logograms may use the grammatical modifiers. They may also use the 'not' modifier to signify the negative. </p>
+	</div>
+		<div class="section">
+			<h2><a id="alphabet" name="alphabet" href="#alphabet">Alphabet</a></h2>
+			<p><strong>Basic letters.</strong> These are shown in relation to the baseline.</p>
+<p><img src="images/basics.png" alt="Pictures of basic letters." /></p>
+			<p><strong>Modifier forms and punctuation.</strong></p>
+			<p><img src="images/modifiers.png" alt="Pictures of modifier forms and punctuation." /></p>
+			<p><strong>Logograms.</strong></p>
+			<p><img src="images/logograms.png" alt="Pictures of logograms." /></p>
+	</div> 
+		<div class="section"> 
+			<h2><a id="sample" name="sample" href="#sample">Sample text</a></h2>
+			<p><img src="http://farm4.static.flickr.com/3556/3781010968_7d6d76594e_b.jpg" alt="Sample text." /></p>
+		</div>
+        
+<div id="panel" style="display:none"></div>
+
+	<div class="smallprint"><span id="version">First published  27 Nov 2009.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  16:13<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+<script type="text/javascript">
+createtoc();
+</script>
+	</body> 
+</html> 
