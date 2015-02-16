@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-GB"> 
+  <head> 
+  	<meta charset="utf-8"/>
+	 <title>Simplified vs Traditional Chinese in Unicode</title> 
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+ <style type="text/css" media="All">
+table.data td { border: 1px solid teal; vertical-align: top; text-align: center; border-collapse: collapse; }
+table.data th { font-size: 80%; text-align: left; }
+[lang='zh-Hans'], [lang='zh-Hant'], [lang='ja'] { font-size: 130%; font-weight: normal;  }
+[lang='zh-Hans'] { font-family: stheiti, simhei, sans-serif; }
+[lang='zh-Hant'] { font-family: "apple lisong", "Microsoft JhengHei", sans-serif; }
+[lang='ja'] { font-family: "hiragino kaku gothic pro", "ms gothic", sans-serif; }
+
+</style> 
+
+<script src="/code/toc_section.js" type="text/javascript">//</script>
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>What's the Difference between Simplified &amp; Traditional Chinese, and are they Separate in Unicode?</h1>
+
+<aside class="sidebar"> 
+		<h2 class="notoc flush"><a id="tochead" name="tochead" tabindex="4">Contents</a></h2>
+	<div id="toc"><!-- placeholder --></div>
+
+	<div class="noprint">
+			<h2 class="notoc"><a id="links" name="links" tabindex="4">Related links</a></h2>
+			<p><a href="/scripts/tutorial/" title="A tutorial on writing systems characteristics">Script&nbsp;tutorial</a></p>
+			<p><a href="http://www.w3.org/International" title="The Internationalization Activity of the World Wide Web Consortium.">W3C&nbsp;i18n</a></p>
+			<p><a href="http://www.w3.org/International" title="Home of the Unicode Consortium.">Unicode</a></p> 
+	</div>
+</aside>
+
+<p id="status">Updated Wed 15 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=han" title="Show all blog posts tagged with 'han'">han</a>, <a href="http://rishida.net/blog/index.php?tag=chinese" title="Show all blog posts tagged with 'chinese'">chinese</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<div class="section">
+  <p>These notes attempt to provide answers to the following questions:</p> 
+<ul> 
+  	<li>Is it correct that simplified and traditional Chinese are not completely separate sets of code entries in Unicode?</li> 
+  	<li>If so, are they simply like two different fonts for the same Unicode point?</li> 
+  	<li>Would I have to have a simplified and a traditional font installed?</li> 
+  	<li>One traditional character may correspond to several simplified ones, right?</li> 
+  </ul> 
+</div>
+  
+<div class="section">
+<h2><a id="simpchin" name="simpchin" tabindex="1">What is simplified chinese?</a></h2> 
+<p>Variant forms of a given Chinese character have developed over time. For example Japanese has many simplified forms, such as
+    <span lang="ja">国</span> (country) which derives from the Chinese <span lang="zh-Hant">國</span>. The number of Chinese
+   characters keeps growing too. </p>
+<div class="sidenoteGroup">
+<p>In the 1950's, Mainland China decided to reform the Chinese writing system. They simplified the shapes of many of the
+  more common characters in use. For example, they chose the same form of 'country' as used in Japanese to replace the previous form. However, not all
+  the simplifications adopted were simply taken from existing variants. The following shows a few examples:</p> 
+<div class="sidenote">
+<p>It is important to stress that people speaking many different, often mutually unintelligible, Chinese dialects  in mainland China use the same script to write Chinese  – ie. the characters do not  represent the sounds, but rather ideas. It is true, however, that some small vocabulary differences have arisen since the simplified Chinese diverged from Traditional.</p> 
+</div>
+</div>
+
+<figure>
+<table class="data" title="Table variation in ideographic forms for the same underlying concept."
+				 summary="Each row of the table shows how an ideograph looks in Traditional Chinese, Japanese, then Simplified Chinese.  There are four different permutations of variation, and the last row shows an example where all three look the same.">
+				  
+  	<tr><th>Traditional</th><th>Japanese</th><th>Simplified</th><th></th> 
+  	</tr> 
+  	<tr><td lang="zh-Hant">廣</td><td lang="ja">広</td><td lang="zh-Hans">广</td><th>all different</th> 
+  	</tr> 
+  	<tr><td lang="zh-Hant">東</td><td lang="ja">東</td><td lang="zh-Hans">东</td><th>simplified Chinese
+						different</th> 
+  	</tr> 
+  	<tr><td lang="zh-Hant">缺</td><td lang="ja">欠</td><td lang="zh-Hans">缺</td><th>Japanese different</th> 
+  	</tr> 
+  	<tr><td lang="zh-Hant">國</td><td lang="ja">国</td><td lang="zh-Hans">国</td><th>traditional Chinese
+						different</th> 
+  	</tr> 
+  	<tr><td lang="zh-Hant">界</td><td lang="ja">界</td><td lang="zh-Hans">界</td><th>all same</th> 
+  	</tr> 
+  </table> 
+ </figure>
+ 
+<p>The simplification process also simplified certain <em>components</em> that occur in many characters. For example the component
+				  derived from <span lang="zh-Hans">言</span> in <span lang="zh-Hant">語</span> becomes <span lang="zh-Hans">讠</span>in the
+   simplified form of the same character, <span lang="zh-Hans">语</span>.</p> 
+<p>Simplification also attempted to define a relatively smaller set of characters for common usage than had traditionally been the case.
+				  In many cases, this meant that a single character from the simplified set was used in place of several characters from the larger traditional set.
+				  For example, <span lang="zh-Hans">干</span> was used in the simplified character set in place of the following four characters from the
+   traditional set, <span lang="zh-Hant">干 幹 乾 </span>and <span lang="zh-Hant">榦</span>.</p> 
+<p>Traditional Chinese is still used to write characters in Taiwan and Hong Kong, and much of the Chinese diaspora. Simplified Chinese is
+   used in Mainland China and Singapore.  There are also a few local
+  characters, such as for Cantonese in Hong Kong, that are not in widespread use.</p>
+  </div>
+   
+<div class="section">
+<h2><a id="unification" name="unification" tabindex="2">Han unification in unicode</a></h2> 
+<p>Next we turn to how these characters are encoded in Unicode, and we have to start with a short word about 'unification' in
+   Unicode.</p> 
+<p>Unicode provides a superset of most character sets in use around the world, but tries not to duplicate characters unnecessarily. For
+				  example, there are several ISO character sets in the 8859 series that all duplicate the ASCII characters. Unicode doesn't have as many codes for the
+				  letter 'a' as there are character sets - that would be ridiculous. The same principle applies for Han (Chinese) characters. The initial set of
+				  sources for Han encoding in Unicode laid end to end comprised 121,000 characters, but there were many repeats, and the final Unicode tally for all
+   these after elimination of duplicates was 20,902.</p> 
+<p>(It is said that Chinese people typically use around 3-4,000 characters for most communication, but a reasonable word processor would
+   need to support at least 10,000. Unicode now supports over 70,000 Han characters.)</p> 
+<p>If Han characters had different meanings or etymologies, they were not unified in Unicode. Han characters, however, are highly
+				  pictorial in nature. So the (dis-)unification process had to take into account the visual forms to some extent. Where there was a significant visual
+				  difference between Han characters that represented the same thing they were allotted to separate Unicode codepoints. (This was a pretty sophisticated
+   process, in fact, carried out over a long period by many East-Asian experts.)</p> 
+<p>Factors such as the following prevented unification:</p> 
+
+<figure>
+<table class="data" title="Examples of factors that prevent unification."
+				summary="A typical factor preventing unification is cited in the left column.  Then follow two columns showing example characters that exhibit this difference.">
+				  
+  	<tr><th>Factor</th><th colspan="2">Examples</th> 
+  	</tr> 
+  	<tr><td>Different number of components</td><td lang="zh-Hant">崖</td><td lang="zh-Hans">厓</td> 
+  	</tr> 
+  	<tr><td>Same components but different position</td><td lang="zh-Hant">峰</td><td lang="zh-Hans">峯</td> 
+  	</tr> 
+  	<tr><td>Different components</td><td lang="zh-Hant">祕</td><td lang="zh-Hans">秘</td> 
+  	</tr> 
+  </table>
+  </figure>
+   
+<p>(Note that the last example also disunifies traditional-simplified pairs where the radical is simplified, such as
+   <span lang="zh-Hant">語</span> and<span lang="zh-Hans"> 语</span>.)</p> 
+<p>What is left for unification are characters representing the same thing but exhibiting no visual differences, or relatively minor
+				  differences such as different sequence for writing strokes, differences in stroke overshoot and protrusion, differences in contact and bend of
+   strokes, differences in accent and termination of strokes, etc.</p> 
+<p>The codes that remained after unification were all lumped together and sorted by 'radical'. A radical is one of 214 named character
+				  components. Nearly all Han characters include one of these radicals. (This is a very simplified view, but I don't think it's necessary to bore you
+				  with all the gory details. Also as more characters were added to the initial 20,000, new characters were stored in different areas of the code space.
+   But lets keep this simple for now.)</p>
+  </div>
+
+<div class="section">
+<h2><a id="simpvtrad" name="simpvtrad" tabindex="3">Simplified vs. traditional character sets</a></h2> 
+<p>So now, coming back to the question about simplified vs. traditional character sets...</p> 
+<p>The Chinese national GB standard defines a basic set of (around 6,000) characters for use with Simplified Chinese writing that does
+				  not include many of the characters in the Taiwanese industry standard for Traditional Chinese called Big 5 (around 13,000 characters in the basic
+   set). Unicode is however a superset of both with all duplication removed down to the level of detail described above.</p> 
+<p>So the characters for 'country' in Simplified and Traditional Chinese, <span lang="zh-Hans">国</span> and
+    <span lang="zh-Hant">國</span> respectively, are stored as separate codes and you cannot simply switch between the two by using a different
+				  font. On the other hand, the character for 'the world' in both Simplied and Traditional writing looks the same, <span lang="zh-Hans"
+				 >界</span>, and both writing systems do share the same code point. Then there are characters such as <span lang="zh-Hans"
+				 >雪</span> ('snow') which share the code point because they are not significantly different in appearance, but may typically exhibit
+				  systematic differences in stroke overshoot and rotation of minor strokes between simplified and traditional writing systems. To see these correctly
+   you need to apply the right font, eg. a Song font for simplified and a Ming font for traditional.</p> 
+<p>If you have simplified and traditional fonts on your system, you should see the difference here in the second horizontal stroke from the bottom (alternatively, look at
+				  the <a href="snow.png">graphic version</a>):</p>
+ <figure>
+           <table><tbody>
+           <tr><th>Simplified</th><th>Traditional</th></tr>
+           <tr><td><span lang="zh-Hans" style="font-size:60px;">雪</span></td><td><span lang="zh-Hant" style="font-size:60px;">雪</span></td></tr>
+           </tbody></table>
+</figure>
+
+  </div>
+
+<div class="section">
+<h2><a id="converting" name="converting" tabindex="4">Converting between the two</a></h2> 
+<p>There are applications that attempt to convert between simplified and traditional Chinese. (It's generally easier from traditional to
+  simplified, since you are more likely to be mapping from many to one character than the other way around.)</p> 
+<p>Over the years, translation between simplified and traditional Chinese has been complicated by the divergences in language usage between
+				the two communities. Grammatical differences are not generally considered to be major, but there are terminological differences such as that for the
+  word 'subway', which is different in the PRC (<span lang="zh-Hans">地铁</span>) and Taiwan (<span lang="zh-Hant">捷運</span>).</p> 
+</div>
+
+<div class="smallprint"><span id="version">First published  23 Jul 2003.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  21:00<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+<script type="text/javascript">
+createtoc();
+</script>
+</body> 
+</html> 
