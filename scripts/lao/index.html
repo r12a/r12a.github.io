@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="utf-8"/>
+<title>Lao script notes</title>
+<meta name="description" content="Notes about the Lao script as used for Lao."/>
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+	
+<script src="/scripts/block/lao-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+
+<script src="/code/toc_section.js" type="text/javascript"></script>
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+<script src="/uniview/scriptGroups.js" type="text/javascript"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Lao script notes</h1>
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead" tabindex="4">Contents</a></h2>
+  <nav id="toc"><!-- placeholder --></nav>
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/block/lao">Lao character notes</a></p>
+        <p><a href="/pickers/lao/">Lao character picker</a></p>
+        <p style="line-height: 1.3em"><a href="/uniview/?block=lao">Lao in UniView </a></p>
+        <p><a href="/scripts/links?script=lao">Lao script links</a></p>
+      </div>
+      
+        
+<div id="fontsetting" class="closed">
+<h2 class="notoc"><a id="fonts">Fonts</a></h2>
+<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+<p>Set a font for Lao text</p>
+<p>
+<select id="exfontswitchfont" 
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'lo');">
+            <option value="Saysettha OT:24">Saysettha OT</option>
+            <option value="Lao MN:24">Lao MN</option>
+            <option value="Lao Sangam MN:24">Lao Sangam MN</option>
+            <option value="Dokchampa:24">Dokchampa</option>
+            <option value="Lao Sans Pro:26">Lao Sans Pro</option>
+            <option value="Noto Sans Lao:24">Noto Sans Lao</option>
+            <option value="Noto Serif Lao:24">Noto Serif Lao</option>
+            <option value="Petsarath:24">Petsarath</option>
+            <option value="Souliyo:24">Souliyo</option>
+        <option value="Dhyana:24">Dhyana</option>
+</select> 
+<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'lo');" />
+</p>
+<p>Set a font for the symbol list</p>
+<p>
+<select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'lo');">
+            <option value="Saysettha OT:24">Saysettha OT</option>
+            <option value="Lao MN:24">Lao MN</option>
+            <option value="Lao Sangam MN:24">Lao Sangam MN</option>
+            <option value="Dokchampa:24">Dokchampa</option>
+            <option value="Lao Sans Pro:26">Lao Sans Pro</option>
+            <option value="Noto Sans Lao:24">Noto Sans Lao</option>
+            <option value="Noto Serif Lao:24">Noto Serif Lao</option>
+            <option value="Petsarath:24">Petsarath</option>
+            <option value="Souliyo:24">Souliyo</option>
+        <option value="Dhyana:24">Dhyana</option>
+</select> 
+<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'lo');" />
+</p>
+</div>
+        
+</aside>
+
+<p id="status">Updated Sun 21 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=lao" title="Show all blog posts tagged with 'lao'">lao</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<section>
+	<p>I am compiling these notes as I explore the  Lao script as used for the Lao language. They may be updated from time to time. </p>
+	<p>The page  contains brief notes on general script features. See also the companion document, <a href="/scripts/block/lao">Lao Character Notes</a>, which describes the characters used in Lao script one by one.</p>
+		<p>For more detailed information, especially about the history and phonology of the Lao script, follow the links in the text and <a href="#endlinks">at the bottom of the page</a>.  When you see red text (examples of Lao) you can click on it to reveal the component characters.</p>
+		<p>You can obtain   fonts for this page free from the Web. For this page I used <a href="http://www.laoscript.net/downloads/">Saysettha OT</a>.</p>
+</section>
+	
+<section id="intro">
+<h2><a href="#intro">Brief script introduction</a></h2>
+			<p>Lao has its own script, closely related to Thai, but exhibiting some significant differences.</p>
+			<p>The script was originally an abugida, but since the script reforms leading up to 1960 it has been  alphabetic. The syllable is the unit for various aspects of the behaviour of the script. Lao is a tonal language, and the script is designed to reflect tonal information. </p>
+		<p>The alphabet is split into vowels and consonants. The consonants are grouped into classes that affect the default tonal behaviour of a syllable. There are no independent vowels. Where there is no consonant to support a vowel sign, the character <span class="ex" lang="lo">ອ</span> is used as a support. Vowel signs are typically used in combinations to form the vowel sounds of a syllable. </p>
+		<p>Example of Lao:</p>
+		<p lang="lo" class="ex" style="color:black; line-height:2em; text-align: left;">ມະນຸດເກີດມາມີສິດເສລີພາບ ແລະ ສະເໝີໜ້າກັນໃນທາງກຽດຕິສັກ ແລະ ທາງສິດດ້ວຍມະນຸດມີສະຕິສຳປັດຊັນຍະ (ຮູ້ດີຮູ້ຊົ່ວ) ແລະມີມະໂນທຳຈື່ງຕ້ອງປະພຶດຕົນຕໍ່ກັນໃນທາງພີ່ນ້ອງ.</p>
+</section>
+
+<section id="Lao">
+<h2> Characters used for Lao</h2>
+        
+    <section id="tonevalues">
+		<h3><a href="#tonevalues">Tone values</a></h3>
+		<p>The tone depends on the class of the initial consonant in a syllable, the structure of the syllable, and whether or not a tone mark is applied to override the default. Tone values vary depending on location in Laos. There is some disagreement whether there are 5 or 6 tones in Vientiane, and you will see in the tables below that different sources disagree on the tones produced. </p>
+		<p>The following tables present different descriptions of tone values in Lao for the Vientiane dialect. The first and third tables basically agree on the tone value, although the names of tones vary. The middle table shows some different tone values altogether. See a <a href="http://www.seasite.niu.edu/lao/lao3.htm">list of studies</a> for Vientiane tones. </p>
+		<p>This diagram shows 5 tones with names corresponding to a mixture of the first two tables below. </p>
+		<p><img src="/scripts/lao/tones.png" alt="Diagrams of tone vectors." width="292" height="100" /></p>
+		<p>Tone marks are normally used only on open syllables, and modify the default tone value. Two of the four tone marks are only used with Class 1 consonants. Tone marks tend to be placed directly over the consonant (or superscript vowel), unlike Thai which tends to place them slightly to the right. </p>
+		<p>Open or live syllables are those that end with a long vowel or sonorant (eg. <span class="ex" lang="lo">ງນມຍວ</span>). Closed or dead syllables end with a stop consonant (eg. <span class="ex" lang="lo">ກດບ</span>) or short vowel. </p>
+		<table  class="tones" border="0">
+			<tr>
+				<th scope="col">&nbsp;</th>
+				<th scope="col">Open</th>
+				<th scope="col">Closed<br />
+					short vowel </th>
+				<th scope="col">Closed<br />
+					long vowel </th>
+				<th scope="col">Tone<br />
+					mai eːk </th>
+				<th scope="col"> Tone<br />
+					mai toː</th>
+				<th scope="col">Tone<br />
+					mai tiː </th>
+				<th scope="col">Tone<br />
+					mai cat-ta-waː</th>
+			</tr>
+			<tr>
+				<th>Class 1 </th>
+				<td>low</td>
+				<td>ˊ high</td>
+				<td>ˆ low falling</td>
+				<td>ˉ mid</td>
+				<td>ˋ high falling </td>
+				<td>ˋ high falling </td>
+				<td>ˇ low rising </td>
+			</tr>
+			<tr>
+				<th>Class 2 </th>
+				<td>ˇ low rising </td>
+				<td>ˊ high</td>
+				<td>ˆ low falling</td>
+				<td>ˉ mid</td>
+				<td>ˆ low falling</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<th>Class3</th>
+				<td>ˊ high</td>
+				<td>ˉ mid</td>
+				<td>ˋ high falling</td>
+				<td>ˉ mid</td>
+				<td>ˋ high falling </td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+		</table>
+		<p class='ref'><a href="#endlinks">Refs:</a> Daniels</p>
+		<table  class="tones" border="0">
+			<tr>
+				<th scope="col">&nbsp;</th>
+				<th scope="col">Live</th>
+				<th scope="col">Dead<br />
+					short vowel </th>
+				<th scope="col">Dead<br />
+					long vowel </th>
+				<th scope="col">Tone<br />
+					mai eːk</th>
+				<th scope="col"> Tone<br />
+					mai toː</th>
+				<th scope="col">Tone<br />
+					mai tiː</th>
+				<th scope="col">Tone<br />
+					mai cat-ta-waː</th>
+			</tr>
+			<tr>
+				<th>Class 1 </th>
+				<td>ˋ low</td>
+				<td>ˇ rising </td>
+				<td>ˇ rising</td>
+				<td>mid</td>
+				<td>ˆ falling</td>
+				<td>ˊ high</td>
+				<td>ˇ rising</td>
+			</tr>
+			<tr>
+				<th>Class 2 </th>
+				<td>ˇ rising</td>
+				<td>ˇ rising</td>
+				<td>ˋ low</td>
+				<td>mid</td>
+				<td>ˋ low</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<th>Class3</th>
+				<td>ˊ high</td>
+				<td>mid</td>
+				<td>ˆ falling</td>
+				<td>mid</td>
+				<td>ˆ falling</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+		</table>
+		<p class='ref'><a href="#endlinks">Refs:</a> Simmala </p>
+		<table class="tones"  border="0">
+			<tr>
+				<th scope="col">&nbsp;</th>
+				<th scope="col">Live</th>
+				<th scope="col">Dead<br />
+					short vowel </th>
+				<th scope="col">Dead<br />
+					long vowel </th>
+				<th scope="col"> Tone<br />
+					mai eːk</th>
+				<th scope="col"> Tone<br />
+					mai toː</th>
+				<th scope="col">Tone<br />
+					mai tiː</th>
+				<th scope="col">Tone<br />
+					mai cat-ta-waː</th>
+			</tr>
+			<tr>
+				<th>Class 1 </th>
+				<td>low rising </td>
+				<td>high rising </td>
+				<td>low falling </td>
+				<td>high-mid</td>
+				<td>high falling </td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th>Class 2 </th>
+				<td>low rising </td>
+				<td>high rising </td>
+				<td>low falling </td>
+				<td>high-mid</td>
+				<td>low falling </td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th>Class3</th>
+				<td>high rising </td>
+				<td>high-mid</td>
+				<td>high falling </td>
+				<td>high-mid</td>
+				<td>high falling </td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<p class='ref'><a href="#endlinks">Refs:</a> SEAlang </p>
+		<p>The Simmala chart seems suspect to me, since they say in the text that the rising tone doesn't occur in dead syllables, and the book has examples of dead syllables with long vowels with a low tone.</p>
+    </section>
+
+	<section id="voweldescn">
+		<h3><a href="#voweldescn">Vowels</a></h3>
+		<p>Vowels can  be grouped into short and long alternatives, diphthongs, and 'complex vowels' that end in <span class="ipa">j</span>, <span class="ipa">w</span> or in one case <span class="ipa">m</span> .</p>
+		<p>The number of vowel sounds is greater than the number of vowel signs. Many vowel sounds are represented by a combination of 2 to 4 symbols, often surrounding the initial consonant or consonant cluster on three sides. Some of these components are also used as consonants. These symbols are encoded separately, and only those symbols that appear over a consonant are encoded as combining characters. For example, <span class="ex" lang="lo">ເກັຍະ</span> or <span class="ex" lang="lo">ເກົາ</span>.</p>
+		<p>The basic vowel repertoire can be summarised as follows. For the corresponding script representation, see the <a href="/pickers/lao/?view=phonic">Lao picker</a>. </p>
+		<table id="vowelsounds">
+			<tr>
+				<th scope="col">Short</th>
+				<th scope="col">Long</th>
+				<th scope="col">Complex</th>
+			</tr>
+			<tr>
+				<td>a</td>
+				<td>aː</td>
+				<td>aj aw aaj aaw am </td>
+			</tr>
+			<tr>
+				<td>e</td>
+				<td>eː</td>
+				<td>eew</td>
+			</tr>
+			<tr>
+				<td><span class="ipa">ə</span></td>
+				<td><span class="ipa">əː</span></td>
+				<td><span class="ipa">əəj</span></td>
+			</tr>
+			<tr>
+				<td><span class="ipa">ɛ</span></td>
+				<td><span class="ipa">ɛː</span></td>
+				<td><span class="ipa">ɛɛw</span></td>
+			</tr>
+			<tr>
+				<td>i</td>
+				<td>iː</td>
+				<td><span class="ipa">iw</span></td>
+			</tr>
+			<tr>
+				<td>o</td>
+				<td>oː</td>
+				<td>ooj</td>
+			</tr>
+			<tr>
+				<td><span class="ipa">ɔ</span></td>
+				<td><span class="ipa">ɔː</span></td>
+				<td><span class="ipa">ɔɔj</span></td>
+			</tr>
+			<tr>
+				<td>u</td>
+				<td>uː</td>
+				<td>uj</td>
+			</tr>
+			<tr>
+				<td><span class="ipa">ɯ</span></td>
+				<td><span class="ipa">ɯː</span></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>ia</td>
+				<td>&nbsp;</td>
+				<td><span class="ipa">iaw</span></td>
+			</tr>
+			<tr>
+				<td>ua</td>
+				<td>&nbsp;</td>
+				<td><span class="ipa">uaj</span></td>
+			</tr>
+			<tr>
+				<td><span class="ipa">ɯ</span>a</td>
+				<td>&nbsp;</td>
+				<td><span class="ipa">ɯaj</span></td>
+			</tr>
+		</table>
+<p>Although the diphthongs at the end don't have long and short sounds, they do have long and short orthographic forms. </p>
+		<p>Some vowels are represented by different combinations of symbols when they appear in a closed syllable.</p>
+</section>
+	<section id="conjuncts">
+		<h3><a href="#conjuncts">Conjuncts</a></h3>
+		<p>The character <span class="ex" lang="lo">ຫ</span> can be added before the following characters to make their default tonal behaviour Class 2: <span class="ex" lang="lo">ງນມລວຍຽ</span>. This constitutes a syllable initial compound.</p>
+		<p>There are alternate forms for some of these compounds. Two can be represented as ligatures, for which there are separate characters in Unicode: <span class="ex" lang="lo">ໜ</span> and <span class="ex" lang="lo">ໝ</span>. Another can be represented by converting the second consonant to a subscript (<span class="ex" lang="lo">ຫຼ</span>), also available as a separate character in Unicode.</p>
+		<p>In a consonant cluster any tone marks or superscript vowels appear over the second consonant. </p>
+		<p class='ref'><a href="#endlinks">Refs:</a> Daniels 462; Unicode 378 </p>
+</section>
+</section>
+
+<section id="layout">
+<h2><a href="#layout">Text layout</a></h2>
+	<section>
+		<h3><a id="cporder" href="#cporder">Punctuation and word separation</a></h3>
+		<p>Words are not separated by spaces. Spaces are used between sentences, but Western punctuation is also used.</p>
+	</section>
+</section>
+<!--div class="section">
+		<h2><a id="usage">Script usage</a></h2>
+		<div class="section2">
+			<h3>Text direction</h3>
+			<p>Script direction is predominantly right to left. Embedded left to right scripts and all numbers run left to right.</p>
+			<p><span class="prompt">List different bidi properties in block</span></p>
+			<p>The Unicode Standard provides an algorithm for ordering bidirectional Arabic.</p>
+		</div>
+		<div class="section2">
+			<h3>Shaping and case</h3>
+			<p>There is no case distinction.</p>
+			<p><span class="prompt">word final / cursive?</span></p>
+			<p><span class="prompt">joiner and non-joiner usage</span></p>
+			<p><span class="prompt">ligatures &amp; special joining forms?</span></p>
+			<p><span class="prompt">conjuncts?</span></p>
+			<p><span class="prompt">non-European numerals?</span></p>
+		</div>
+		<div class="section2">
+			<h3>Combining characters</h3>
+			<p><span class="prompt">breakdown of categories</span></p>
+			<p><span class="prompt">multiple combining characters? specific ordering rules for memory?</span></p>
+			<p><span class="prompt">context dependent placement?</span></p>
+			<p>Note the different placement of vowel signs in <span class="ur" style="font-size: 200%;">بِ</span> and <span class="ur" style="font-size: 200%;">بِب</span></p>
+			<p><span class="prompt">canonical combining classes</span></p>
+			<p> <span class="prompt">predisposed or surrounding glyphs?</span></p>
+			<p><span class="prompt">precomposed forms? normalisation?</span></p>
+		</div>
+		<div class="section2">
+			<h3>Text units, punctuation &amp; signs</h3>
+			<p><span class="prompt">how are words separated? how are sentences &amp; phrases delimited?</span></p>
+			<p><span class="prompt">punctuation and other signs in the block</span></p>
+			<p><span class="prompt">use of other punctuation and signs</span></p>
+		</div>
+		<div class="section2">
+			<h3>Wrapping &amp; justification</h3>
+			<p><span class="prompt">rules</span></p>
+		</div>
+		<div class="section2">
+			<h3>Collation &amp; sort order</h3>
+			<p><span class="prompt">rules</span></p>
+			<p><span class="prompt">importance of loose matching</span></p>
+		</div>
+		<div class="section2">
+			<h3>Other</h3>
+			<p><span class="prompt">method of writing characters</span></p>
+			<p>A number of arabic words that consist of a single character (plus unwritten vowel) are joined to the beginning of the word that
+				follows, eg. <span class="ar">لرجل</span> [<span class="ipa1">lɪ-ræʒul </span>].</p>
+			<p><span class="prompt">special input needs, eg. IMEs</span></p>
+			<p><span class="prompt">font and line height: min. pixel dimensions for characters, line height, inter-line spacing</span></p>
+			<p><span class="prompt">underlining</span></p>
+			<p><span class="prompt">font width: proportional spacing, kerning?</span></p>
+			<p><span class="prompt">baseline alignment</span></p>
+			<p><span class="prompt">ruby</span></p>
+			<p>Line height: To accomodate the sloping baseline of the nasta'liq style, you will need to set the CSS line-height property quite high
+				(perhaps 300% or 400%?).</p>
+		</div>
+</div--><!--div> 
+		<h2><a id="pali">Pali and Sanskrit extensions</a></h2>
+<php getresults( '4176', '4185' ); >
+		</div-->
+<section id="charlistsection">
+	<h2><a href="#characterlist" id="characterlist">List of basic symbols</a></h2>
+    
+    <section id="laolist">
+    <h3><a href="#laolist">Lao</a></h3>
+	<p>This is a list of main characters or character combinations needed for Lao. Clicking on these characters will open a  page in another window. If the character is underlined, the new page will display additional information about that character.</p>
+	<p>&nbsp;</p>
+	<table id="index">
+	  <tbody>
+<tr><th><a href="#clmiddle">Class 1 (middle) consonants</a></th><td>
+<a href="../block/lao#char0E81" target="c" title="U+0E81 LAO LETTER KO">&#x0E81;</a> 
+<a href="../block/lao#char0E88" target="c" title="U+0E88 LAO LETTER CO">&#x0E88;</a> 
+<a href="../block/lao#char0E94" target="c" title="U+0E94 LAO LETTER DO">&#x0E94;</a> 
+<a href="../block/lao#char0E95" target="c" title="U+0E95 LAO LETTER TO">&#x0E95;</a> 
+<a href="../block/lao#char0E9A" target="c" title="U+0E9A LAO LETTER BO">&#x0E9A;</a> 
+<a href="../block/lao#char0E9B" target="c" title="U+0E9B LAO LETTER PO">&#x0E9B;</a> 
+<a href="../block/lao#char0EA2" target="c" title="U+0EA2 LAO LETTER YO">&#x0EA2;</a> 
+<a href="../block/lao#char0EAD" target="c" title="U+0EAD LAO LETTER O">&#x0EAD;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clhigh">Class 2 (high) consonants</a></th><td>
+<a href="../block/lao#char0E82" target="c" title="U+0E82 LAO LETTER KHO SUNG">&#x0E82;</a> 
+<a href="../block/lao#char0EAA" target="c" title="U+0EAA LAO LETTER SO SUNG">&#x0EAA;</a> 
+<a href="../block/lao#char0E96" target="c" title="U+0E96 LAO LETTER THO SUNG">&#x0E96;</a> 
+<a href="../block/lao#char0E9C" target="c" title="U+0E9C LAO LETTER PHO SUNG">&#x0E9C;</a> 
+<a href="../block/lao#char0E9D" target="c" title="U+0E9D LAO LETTER FO TAM">&#x0E9D;</a> 
+<a href="../block/lao#char0EAB" target="c" title="U+0EAB LAO LETTER HO SUNG">&#x0EAB;</a> 
+</td></tr>
+
+
+<tr><th><a href="#cllow">Class 3 (low) consonants</a></th><td>
+<a href="../block/lao#char0E84" target="c" title="U+0E84 LAO LETTER KHO TAM">&#x0E84;</a> 
+<a href="../block/lao#char0E87" target="c" title="U+0E87 LAO LETTER NGO">&#x0E87;</a> 
+<a href="../block/lao#char0E8A" target="c" title="U+0E8A LAO LETTER SO TAM">&#x0E8A;</a> 
+<a href="../block/lao#char0E8D" target="c" title="U+0E8D LAO LETTER NYO">&#x0E8D;</a> 
+<a href="../block/lao#char0E97" target="c" title="U+0E97 LAO LETTER THO TAM">&#x0E97;</a> 
+<a href="../block/lao#char0E99" target="c" title="U+0E99 LAO LETTER NO">&#x0E99;</a> 
+<a href="../block/lao#char0E9E" target="c" title="U+0E9E LAO LETTER PHO TAM">&#x0E9E;</a> 
+<a href="../block/lao#char0E9F" target="c" title="U+0E9F LAO LETTER FO SUNG">&#x0E9F;</a> 
+<a href="../block/lao#char0EA1" target="c" title="U+0EA1 LAO LETTER MO">&#x0EA1;</a> 
+<a href="../block/lao#char0EA5" target="c" title="U+0EA5 LAO LETTER LO LOOT">&#x0EA5;</a> 
+<a href="../block/lao#char0EA7" target="c" title="U+0EA7 LAO LETTER WO">&#x0EA7;</a> 
+<a href="../block/lao#char0EAE" target="c" title="U+0EAE LAO LETTER HO TAM">&#x0EAE;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clother">Other consonants</a></th><td>
+<a href="../block/lao#char0EBD" target="c" title="U+0EBD LAO SEMIVOWEL SIGN NYO">&#x0EBD;</a> 
+<a href="../block/lao#char0EBC" target="c" title="U+0EBC LAO SEMIVOWEL SIGN LO">&#xA0;&#xA0;&#x0EBC;</a> 
+<a href="../block/lao#char0EDC" target="c" title="U+0EDC LAO HO NO">&#x0EDC;</a> 
+<a href="../block/lao#char0EDD" target="c" title="U+0EDD LAO HO MO">&#x0EDD;</a> 
+<a href="../block/lao#char0EA3" target="c" title="U+0EA3 LAO LETTER LO LING">&#x0EA3;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clvowels">Vowels</a></th><td>
+<a href="../block/lao#char0EB0" target="c" title="U+0EB0 LAO VOWEL SIGN A">&#x0EB0;</a> 
+<a href="../block/lao#char0EB2" target="c" title="U+0EB2 LAO VOWEL SIGN AA">&#x0EB2;</a> 
+<a href="../block/lao#char0EB4" target="c" title="U+0EB4 LAO VOWEL SIGN I">&#xA0;&#xA0;&#x0EB4;</a> 
+<a href="../block/lao#char0EB5" target="c" title="U+0EB5 LAO VOWEL SIGN II">&#xA0;&#xA0;&#x0EB5;</a> 
+<a href="../block/lao#char0EB6" target="c" title="U+0EB6 LAO VOWEL SIGN Y">&#xA0;&#xA0;&#x0EB6;</a> 
+<a href="../block/lao#char0EB7" target="c" title="U+0EB7 LAO VOWEL SIGN YY">&#xA0;&#xA0;&#x0EB7;</a> 
+<a href="../block/lao#char0EB8" target="c" title="U+0EB8 LAO VOWEL SIGN U">&#xA0;&#xA0;&#x0EB8;</a> 
+<a href="../block/lao#char0EB9" target="c" title="U+0EB9 LAO VOWEL SIGN UU">&#xA0;&#xA0;&#x0EB9;</a> 
+<a href="../block/lao#char0EC0" target="c" title="U+0EC0 LAO VOWEL SIGN E">&#x0EC0;</a> 
+<a href="../block/lao#char0EC1" target="c" title="U+0EC1 LAO VOWEL SIGN EI">&#x0EC1;</a> 
+<a href="../block/lao#char0EC2" target="c" title="U+0EC2 LAO VOWEL SIGN O">&#x0EC2;</a> 
+<a href="../block/lao#char0EC3" target="c" title="U+0EC3 LAO VOWEL SIGN AY">&#x0EC3;</a> 
+<a href="../block/lao#char0EC4" target="c" title="U+0EC4 LAO VOWEL SIGN AI">&#x0EC4;</a> 
+<a href="../block/lao#char0EB3" target="c" title="U+0EB3 LAO VOWEL SIGN AM">&#xA0;&#xA0;&#x0EB3;</a> 
+<a href="../block/lao#char0EB1" target="c" title="U+0EB1 LAO VOWEL SIGN MAI KAN">&#xA0;&#xA0;&#x0EB1;</a> 
+<a href="../block/lao#char0EBB" target="c" title="U+0EBB LAO VOWEL SIGN MAI KON">&#xA0;&#xA0;&#x0EBB;</a> 
+<a href="../block/lao#char0ECD" target="c" title="U+0ECD LAO NIGGAHITA">&#xA0;&#xA0;&#x0ECD;</a> 
+</td></tr>
+
+
+
+<tr><th><a href="#cltones">Tone marks & cancellation mark</a></th><td>
+<a href="../block/lao#char0EC8" target="c" title="U+0EC8 LAO TONE MAI EK">&#xA0;&#xA0;&#x0EC8;</a> 
+<a href="../block/lao#char0EC9" target="c" title="U+0EC9 LAO TONE MAI THO">&#xA0;&#xA0;&#x0EC9;</a> 
+<a href="../block/lao#char0ECA" target="c" title="U+0ECA LAO TONE MAI TI">&#xA0;&#xA0;&#x0ECA;</a> 
+<a href="../block/lao#char0ECB" target="c" title="U+0ECB LAO TONE MAI CATAWA">&#xA0;&#xA0;&#x0ECB;</a> 
+<a href="../block/lao#char0ECC" target="c" title="U+0ECC LAO CANCELLATION MARK">&#xA0;&#xA0;&#x0ECC;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clnumbers">Numbers</a></th><td>
+<a href="../block/lao#char0ED0" target="c" title="U+0ED0 LAO DIGIT ZERO">&#x0ED0;</a> 
+<a href="../block/lao#char0ED1" target="c" title="U+0ED1 LAO DIGIT ONE">&#x0ED1;</a> 
+<a href="../block/lao#char0ED2" target="c" title="U+0ED2 LAO DIGIT TWO">&#x0ED2;</a> 
+<a href="../block/lao#char0ED3" target="c" title="U+0ED3 LAO DIGIT THREE">&#x0ED3;</a> 
+<a href="../block/lao#char0ED4" target="c" title="U+0ED4 LAO DIGIT FOUR">&#x0ED4;</a> 
+<a href="../block/lao#char0ED5" target="c" title="U+0ED5 LAO DIGIT FIVE">&#x0ED5;</a> 
+<a href="../block/lao#char0ED6" target="c" title="U+0ED6 LAO DIGIT SIX">&#x0ED6;</a> 
+<a href="../block/lao#char0ED7" target="c" title="U+0ED7 LAO DIGIT SEVEN">&#x0ED7;</a> 
+<a href="../block/lao#char0ED8" target="c" title="U+0ED8 LAO DIGIT EIGHT">&#x0ED8;</a> 
+<a href="../block/lao#char0ED9" target="c" title="U+0ED9 LAO DIGIT NINE">&#x0ED9;</a> 
+</td></tr>
+
+
+
+      </tbody>
+  </table>
+  </section>
+</section>
+
+<section id="references"> 
+
+		<h2><a href="#references">Further reading</a></h2>
+		<ol>
+		  <li><span class="refcode">[Simmala]</span> Buasawan Simmala &amp; Benjawan Poomsan Becker, <span class="doctitle">Lao for Beginners </span>,  ISBN 1-887521-28-3 </li>
+		  <li><span class="refcode">[Daniels]</span> Peter T. Daniels &amp; William Bright, The World's Writing Systems, ISBN 0-19-507993-0. </li>
+		  <li>[Unicode] The Unicode Standard v5.0, esp the <a href="http://www.unicode.org/versions/Unicode5.0.0/ch09.pdf">South Asian scripts chapter</a>. </li>
+  </ol>
+</section>
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  10 Feb 2008.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  16:27<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+<script type="text/javascript">
+createtoc();
+initialiseShowNames('/scripts/block/lao', 'c');
+highlightIndexChars()
+</script>
+
+</body>
+</html>
