@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="utf-8"/>
+<title>Tibetan script notes</title>
+<meta name="description"  content="Notes about the Tibetan script."/>
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+	
+<script src="/scripts/block/tibetan-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+<script src="/uniview/scriptGroups.js" type="text/javascript"></script>
+
+<script src="/code/toc_section.js" type="text/javascript"></script>
+<script  src="/code/boilerplate.js"type="text/javascript"></script>
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+	<h1>Tibetan script notes</h1>
+
+	<aside class="sidebar">
+			<h2 class="notoc flush"><a id="tochead"  tabindex="4">Contents</a></h2>
+			<div id="toc"><!-- placeholder --></div>
+		<div class="noprint">
+			<h2 class="notoc"><a id="links"  tabindex="5">Related links</a></h2>
+			<p><a href="/scripts/block/tibetan">Tibetan character notes</a></p>
+			<p><a href="/pickers/tibetan/">Tibetan character picker</a></p>
+			<p><a href="/uniview/?block=tibetan">Tibetan in UniView </a></p>
+			<p><a href="/scripts/links?script=tibetan">Tibetan script links</a></p>
+		</div>
+        
+        
+<div id="fontsetting" class="closed">
+<h2 class="notoc"><a id="fonts">Fonts</a></h2>
+<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+<p>Set a font for Tibetan text</p>
+<p>
+<select id="exfontswitchfont" 
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'bo');">
+<option value="webfont:28">Tibetan Machine Uni</option>
+<option value="Kailasa:28">Kailasa</option>
+<option value="Kokonor:24">Kokonor</option>
+<option value="Microsoft Himalaya:36">Microsoft Himalaya</option>
+</select> 
+<input id="exfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'bo');" />
+</p>
+<p>Set a font for the symbol list</p>
+<p>
+<select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'bo');">
+<option value="Tibetan Machine Uni:28">Tibetan Machine Uni</option>
+<option value="Kailasa:28">Kailasa</option>
+<option value="Kokonor:24">Kokonor</option>
+<option value="Microsoft Himalaya:36">Microsoft Himalaya</option>
+</select> 
+<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'bo');" />
+</p>
+</div>
+</aside>
+
+<p id="status">Updated Sun 21 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=tibetan" title="Show all blog posts tagged with 'tibetan'">tibetan</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<section>
+  <p>In these notes I synthesize information from various sources, encountered as I explore the  Tibetan script as used for Tibetan. They may be updated from time to time and should not be considered authoritative.</p>
+  <p>The page  contains brief notes on general script features. See also the companion document, <a href="/scripts/block/tibetan">Tibetan Character Notes</a>, which describes the characters used in Tibetan script one by one. </p>
+  <p>Basically I am mostly simplifying, combining, streamlining and arranging the text from the sources listed <a href="#endlinks">at the bottom of the page</a>. See those links for more information, especially about the history and phonology of the Tibetan script.</p>
+  <p>You can obtain  fonts for this page free from the Web. For this page I used <a href="http://www.thlib.org/tools/scripts/wiki/Tibetan%20Machine%20Uni.html">Tibetan Machine Uni</a>, which is downloaded with this page as a webfont. Click the blue vertical bar at the bottom right of the page to apply other fonts.</p>
+  <p>When you see red text (examples of Tibetan) you can click on it to reveal the component characters.</p>
+</section>
+<!--script type="text/javascript">
+var index = document.getElementById('index');
+var imgs = index.getElementsByTagName('img');
+for (i=0;i<imgs.length; i++) {
+	imgs[i].title = 'U+'+imgs[i].title+' '+Unames[parseInt(imgs[i].title, 16)];
+	}
+</script-->
+<section>
+  <h2><a id="intro" href="#intro">Brief script introduction</a></h2>
+<p>Tibetan  is an abugida, ie. consonants carry an inherent vowel sound <span class="ipa">a</span> that is overridden using vowel signs. Text runs from left to right.</p>
+<p>There are various different Tibetan scripts, of two basic types: <span class="ex" lang="bo">དབུ་ཅན་</span> <span class="trans">dbu-can</span>, pronounced <span class="ipa">uchen</span> (<span class="meaning">with a head</span>), and <span class="ex" lang="bo">དབུ་མེད་</span> <span class="trans">dbu-med</span>, pronounced <span class="ipa">ume</span> (<span class="meaning">headless</span>). This page concentrates on the former. Pronunciations are based on the central, Lhasa dialect.</p>
+<p>Traditional Tibetan text was written on <a href="http://en.wikipedia.org/wiki/Pecha">pechas</a> (<span class="trans">dpe-cha</span> <span class="ex" lang="bo">དཔེ་ཆ་</span>), loose-leaf sheets. Some of the characters used and formatting approaches are different in books and pechas.</p>
+		<p>Example of Tibetan:</p>
+		<p lang="bo" class="ex" style="color:black; line-height:2em; text-align: left;">འགྲོ་བ་མིའི་རིགས་རྒྱུད་ཡོངས་ལ་སྐྱེས་ཙམ་ཉིད་ནས་ཆེ་མཐོངས་དང༌། ཐོབ་ཐངགི་རང་དབང་འདྲ་མཉམ་དུ་ཡོད་ལ། ཁོང་ཚོར་རང་བྱུང་གི་བློ་རྩལ་དང་བསམ་ཚུལ་བཟང་པོ་འདོན་པའི་འོས་བབས་ཀྱང་ཡོད། དེ་བཞིན་ཕན་ཚུན་གཅིག་གིས་གཅིག་ལ་བུ་སྤུན་གྱི་འདུ་ཤེས་འཛིན་པའི་བྱ་སྤྱོད་ཀྱང་ལག་ལེན་བསྟར་དགོས་པ་ཡིན༎</p>
+</section>
+
+<section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+	<h2><a id="tibetanchars"  href="#tibetanchars">Tibetan script used for Tibetan</a></h2>
+	<section>
+	  <h3><a id="consonantintro"  href="#consonantintro">Consonants</a></h3>
+		<p> Native Tibetan words use  30 consonants, but the Tibetan block contains many more. Many of the extra consonants (and other characters) are used for transliteration of other languages, principally Sanskrit and Chinese. These include the retroflex and voiced aspirated consonants. A couple of characters are extensions for Balti.</p>
+	  <p>The pronunciation of Tibetan words is typically much simpler than the orthography, which involves patterns of consonants. These reduce ambiguity and can affect pronunciation and tone. </p>
+	  <p>The primary consonant is called the root consonant (or radical), and the other consonants in the syllable (which normally has up to 6 consonants in total) annotate or modify it. The following rules help identify the root:</p>
+	  <ul>
+      <li>
+        <p>a consonant with a vowel is always the root, unless it is the phrase connector <span class="ex" lang="bo">འི</span>, and letters with superscripts or subscripts are root consonants.</p></li>
+      
+        <li>
+          <p>in a 2-consonant syllable with no vowel, the first consonant is always the root</p></li>
+        <li>
+          <p>in a 3-consonant syllable where the last consonant is not <span class="ex" lang="bo">ས</span>, the second consonant is likely to be the root.</p>
+        </li>
+        <li><p>in a 4-consonant syllable, the second consonant is always the root.</p>
+        </li>
+      </ul>
+	  <p>The following diagram shows characters in all of the syllabic positions, and lists the characters that can appear in each of the non-root locations. The word is  <span class="ex" lang="bo">འགྲེམས་སྟོན་</span> <span class="trans">'grems-ston</span> <span class="ipa">ɖɹem-ton</span> (<span class="meaning">exhibition</span>).</p>
+	  <p><img src="images/syllable.png" width="552" height="278" alt="" /></p>
+	  <p><a class="leadin" href="#prefix"  id="prefix">Prefixes. </a>Characters in the prefix position are not pronounced, but de-aspirate aspirated root characters and give a higher tone value to nasal root characters. The consonant <span class="ex" lang="bo">ག </span><span class="trans">g</span> may occur before 11 root characters, <span class="ex" lang="bo">ད</span> <span class="trans">d</span> before 6, <span class="ex" lang="bo">བ </span><span class="trans">b</span> before 10, <span class="ex" lang="bo">མ</span><span class="trans"> m</span> before 11, and <span class="ex" lang="bo">འ </span> <span class="trans">a</span> before 10, eg. <span class="ex" lang="bo">འཁོར་ལོ་</span> <span class="trans">'khor-lo</span> <span class="ipa">kor-lo</span>  (<span class="meaning">wheel</span>), <span class="ex" lang="bo">བསད་</span> <span class="trans">bsad</span> <span class="ipa">sɛ́</span> (<span class="meaning">killed</span>).</p>
+	  <p><a class="leadin" href="#suffix"  id="suffix">Suffixes. </a>Characters in the suffix position have one of the following effects:</p>
+	  <ol>
+	    <li>
+	      <p>add their own sound ( <span class="ex" lang="bo">ག 	ང 	བ མ 	འ 	ར</span> ) , eg. <span class="ex" lang="bo"> 	དག་</span> <span class="trans">dag</span> <span class="ipa">dag</span> (<span class="meaning">I</span>).</p>
+	    </li>
+	    <li>
+	      <p>modify the root's vowel value ( <span class="ex" lang="bo">ད ས</span> ), eg. <span class="ex" lang="bo">བསད་</span> <span class="trans">bsad</span> <span class="ipa">sɛ́</span> (<span class="meaning">killed</span>).</p>
+	    </li>
+	    <li>
+	      <p>both of the above ( <span class="ex" lang="bo">ན ལ</span> ), eg. <span class="ex" lang="bo">བདུན་</span> <span class="trans">bdun</span> <span class="ipa">dỳn</span> (<span class="meaning">seven</span>).</p>
+	    </li>
+	  </ol>
+	  <p><a class="leadin" href="#suffix2"  id="suffix2">Secondary suffixes. </a>Only two characters can appear in the secondary suffix location, according to Tibetan grammar, <span class="ex" lang="bo">ས</span> and <span class="ex" lang="bo">ད</span>, and the latter is no longer officially found in modern Tibetan. A character in this position adds no sound and nor does it affect the sounds in the rest of the syllable, eg. <span class="ex" lang="bo">བསྒྲུབས་</span> <span class="trans">bsgrubs</span> <span class="ipa">ɖɹúb</span> (<span class="meaning">established</span>), and <span class="ex" lang="bo">གྱུརད་</span> <span class="trans">gyurd</span> <span class="ipa">kjùr</span> (<span class="meaning">became</span>).</p>
+	  <p><a class="leadin" href="#superscript"  id="superscript">Superscripts. </a>The three characters that appear in the superscript location raise the tone pitch of the syllable, but are not pronounced themselves. Each superscript character can only be used with a specified set of root characters.</p>
+      <table class="locations"><tbody>
+       <tr>
+			<th rowspan="2"><a target='c' href='/scripts/block/tibetan#char0F62'><img src='images/0F62.png' alt='' title='0F62' /></a></th>
+          <td><span class="ex" lang="bo">རྐ</span></td>
+          <td><span class="ipa">ka</span></td>
+          <td><span class="ex" lang="bo">རྒ</span></td>
+          <td><span class="ipa">ga</span></td>
+          <td><span class="ex" lang="bo">རྔ</span></td>
+          <td><span class="ipa">ŋa</span></td>
+          <td><span class="ex" lang="bo">རྗ</span></td>
+          <td><span class="ipa">ʤa</span></td>
+          <td><span class="ex" lang="bo">རྙ</span></td>
+          <td><span class="ipa">ɲa</span></td>
+          <td><span class="ex" lang="bo">རྟ</span></td>
+          <td><span class="ipa">ta</span></td>
+        </tr>
+          <tr>
+            <td><span class="ex" lang="bo">རྡ</span></td>
+            <td><span class="ipa">da</span></td>
+            <td><span class="ex" lang="bo">རྣ</span></td>
+            <td><span class="ipa">na</span></td>
+            <td><span class="ex" lang="bo">རྦ</span></td>
+            <td><span class="ipa">ba</span></td>
+            <td><span class="ex" lang="bo">རྨ</span></td>
+            <td><span class="ipa">ma</span></td>
+            <td><span class="ex" lang="bo">རྩ</span></td>
+            <td><span class="ipa">tsa</span></td>
+            <td><span class="ex" lang="bo">རྫ</span></td>
+            <td><span class="ipa">dza</span></td>
+          </tr>
+          <tr><td colspan="13" style="height: 7px;"></td></tr>
+          <tr>
+			<th rowspan="2"><a target='c' href='/scripts/block/tibetan#char0F63'><img src='images/0F63.png' alt='' title='0F63' /></a></th>
+			<td><span class="ex" lang="bo">ལྐ</span></td>
+			<td><span class="ipa">ka</span></td>
+			<td><span class="ex" lang="bo">ལྒ</span></td>
+			<td><span class="ipa">ga</span></td>
+			<td><span class="ex" lang="bo">ལྔ</span></td>
+			<td><span class="ipa">ŋa</span></td>
+			<td><span class="ex" lang="bo">ལྕ</span></td>
+			<td><span class="ipa">ca</span></td>
+			<td><span class="ex" lang="bo">ལྗ</span></td>
+			<td><span class="ipa">ʤa</span></td>
+			<td><span class="ex" lang="bo">ལྟ</span></td>
+			<td><span class="ipa">ta</span></td>
+		  </tr>
+		  <tr>
+			<td><span class="ex" lang="bo">ལྡ</span></td>
+			<td><span class="ipa">da</span></td>
+			<td><span class="ex" lang="bo">ལྤ</span></td>
+			<td><span class="ipa">pa</span></td>
+			<td><span class="ex" lang="bo">ལྦ</span></td>
+			<td><span class="ipa">ba</span></td>
+			<td><span class="ex" lang="bo">ལྷ</span></td>
+			<td><span class="ipa">lha</span></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+          <tr><td colspan="13" style="height: 7px;"></td></tr>
+          <tr>
+			<th rowspan="2"><a target='c' href='/scripts/block/tibetan#char0F66'><img src='images/0F66.png' alt='' title='0F66' /></a></th>
+            <td><span class="ex" lang="bo">སྐ</span></td>
+            <td><span class="ipa">ka</span></td>
+            <td><span class="ex" lang="bo">སྒ</span></td>
+            <td><span class="ipa">ga</span></td>
+            <td><span class="ex" lang="bo">སྔ</span></td>
+            <td><span class="ipa">ŋa</span></td>
+            <td><span class="ex" lang="bo">སྙ</span></td>
+            <td><span class="ipa">ɲa</span></td>
+            <td><span class="ex" lang="bo">སྟ</span></td>
+            <td><span class="ipa">ta</span></td>
+            <td><span class="ex" lang="bo">སྡ</span></td>
+            <td><span class="ipa">da</span></td>
+          </tr>
+          <tr>
+            <td><span class="ex" lang="bo">སྡ</span></td>
+            <td><span class="ipa">na</span></td>
+            <td><span class="ex" lang="bo">སྤ</span></td>
+            <td><span class="ipa">pa</span></td>
+            <td><span class="ex" lang="bo">སྦ</span></td>
+            <td><span class="ipa">ba</span></td>
+            <td><span class="ex" lang="bo">སྨ</span></td>
+            <td><span class="ipa">ma</span></td>
+            <td><span class="ex" lang="bo">སྩ</span></td>
+            <td><span class="ipa">tsa</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          </tbody></table>
+	  <p>Note that RA has a shape slightly different from its nominal shape in all combinations except <span class="ex" lang="bo">རྙ</span> and <span class="ex" lang="bo">རླ.</span> You should still use the normal RA character for the superscript. The font will make the needed adjustments of shape.</p>
+	  <p><a class="leadin" href="#subscript"  id="subscript">Subscripts. </a>The four characters that can appear in the subscript location are also each combined with a particular subset of root characters and have different effects. </p>
+      <table class="locations"><tbody>
+      <tr>
+				<th><a target='c' href='/scripts/block/tibetan#char0FB1'><img src='images/0FB1.png' alt='' title='0FB1' /></a></th>
+				<td><span class="ex" lang="bo">ཀྱ</span></td>
+		  		<td><span class="ipa">kja</span></td>
+				<td><span class="ex" lang="bo">ཁྱ</span></td>
+				<td><span class="ipa">kʰja</span></td>
+				<td><span class="ex" lang="bo">གྱ</span></td>
+				<td><span class="ipa">gja</span></td>
+				<td><span class="ex" lang="bo">པྱ</span></td>
+				<td><span class="ipa">cja</span></td>
+				<td><span class="ex" lang="bo">ཕྱ</span></td>
+				<td><span class="ipa">cʰja</span></td>
+				<td><span class="ex" lang="bo">བྱ</span></td>
+				<td><span class="ipa">ʤja</span></td>
+				<td><span class="ex" lang="bo">མྱ</span></td>
+				<td><span class="ipa">ɲa</span></td>
+				<td><span class="ex" lang="bo">ཧྱ</span></td>
+				<td><span class="ipa">hja</span></td>
+	    </tr>
+          <tr><td colspan="17" style="height: 7px;"></td></tr>
+              <tr>
+				<th rowspan="2"><a target='c' href='/scripts/block/tibetan#char0FB2'><img src='images/0FB2.png' alt='' title='0FB2' /></a></th>
+				<td><span class="ex" lang="bo">ཀྲ</span></td>
+				<td><span class="ipa">tra</span></td>
+				<td><span class="ex" lang="bo">ཁྲ</span></td>
+				<td><span class="ipa">tʰra</span></td>
+				<td><span class="ex" lang="bo">གྲ</span></td>
+				<td><span class="ipa">dra</span></td>
+				<td><span class="ex" lang="bo">ཏྲ</span></td>
+				<td><span class="ipa">tra</span></td>
+				<td><span class="ex" lang="bo">ཐྲ</span></td>
+				<td><span class="ipa">tʰra</span></td>
+				<td><span class="ex" lang="bo">དྲ</span></td>
+				<td><span class="ipa">dra</span></td>
+				<td><span class="ex" lang="bo">ནྲ</span></td>
+				<td><span class="ipa">na</span></td>
+				<td></td>
+				<td></td>
+			  </tr>
+			  <tr>
+				<td><span class="ex" lang="bo">པྲ</span></td>
+				<td><span class="ipa">tra</span></td>
+				<td><span class="ex" lang="bo">ཕྲ</span></td>
+				<td><span class="ipa">tʰra</span></td>
+				<td><span class="ex" lang="bo">བྲ</span></td>
+				<td><span class="ipa">tra</span></td>
+				<td><span class="ex" lang="bo">མྲ</span></td>
+				<td><span class="ipa">ma</span></td>
+				<td><span class="ex" lang="bo">སྲ</span></td>
+				<td><span class="ipa">sa</span></td>
+				<td><span class="ex" lang="bo">ཧྲ</span></td>
+				<td><span class="ipa">hra</span></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			  </tr>
+          <tr><td colspan="17" style="height: 7px;"></td></tr>
+              <tr>
+				<th><a target='c' href='/scripts/block/tibetan#char0FB3'><img src='images/0FB3.png' alt='' title='0FB3' /></a></th>
+				<td><span class="ex" lang="bo">ཀླ</span></td>
+				<td><span class="ipa">la</span></td>	
+				<td><span class="ex" lang="bo">གླ</span></td>
+				<td><span class="ipa">la</span></td>
+				<td><span class="ex" lang="bo">བླ</span></td>
+				<td><span class="ipa">la</span></td>
+				<td><span class="ex" lang="bo">རླ</span></td>
+				<td><span class="ipa">la</span></td>	
+				<td><span class="ex" lang="bo">སླ</span></td>
+				<td><span class="ipa">la</span></td>
+				<td><span class="ex" lang="bo">ཟླ</span></td>
+				<td><span class="ipa">da</span></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			  </tr>
+          <tr><td colspan="17" style="height: 7px;"></td></tr>
+              <tr>
+				<th rowspan="2"><a target='c' href='/scripts/block/tibetan#char0FAD'><img src='images/0FAD.png' alt='' title='0FAD' /></a></th>
+				<td><span class="ex" lang="bo">ཀྭ</span></td>
+				<td><span class="ipa">ka</span></td>
+				<td><span class="ex" lang="bo">ཁྭ</span></td>
+				<td><span class="ipa">ka</span></td>
+				<td><span class="ex" lang="bo">གྭ</span></td>
+				<td><span class="ipa">ga</span></td>
+				<td><span class="ex" lang="bo">ཉྭ</span></td>
+				<td><span class="ipa">ɲa</span></td>
+				<td><span class="ex" lang="bo">དྭ</span></td>
+				<td><span class="ipa">da</span></td>
+				<td><span class="ex" lang="bo">ཙྭ</span></td>
+				<td><span class="ipa">tsa</span></td>
+				<td><span class="ex" lang="bo">ཚྭ</span></td>
+				<td><span class="ipa">ʧa</span></td>
+				<td></td>
+				<td></td>
+			  </tr>
+			  <tr>
+				<td><span class="ex" lang="bo">ཞྭ</span></td>
+				<td><span class="ipa">zʰa</span></td>
+				<td><span class="ex" lang="bo">ཟྭ</span></td>
+				<td><span class="ipa">za</span></td>
+				<td><span class="ex" lang="bo">རྭ</span></td>
+				<td><span class="ipa">ra</span></td>
+				<td><span class="ex" lang="bo">ལྭ</span></td>
+				<td><span class="ipa">la</span></td>	
+				<td><span class="ex" lang="bo">ཤྭ</span></td>
+				<td><span class="ipa">ʃa</span></td>
+				<td><span class="ex" lang="bo">ཧྭ</span></td>
+				<td><span class="ipa">ha</span></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			  </tr>
+      </tbody></table>
+      
+	  <p>Note that three of the subscripts have shapes that are significantly different from the nominal shape of the character they represent.</p>
+	  <p>Uniquely, WA can also appear as a sub-subscript as in  <span class="ex" lang="bo"  >གྲྭ་</span> <span class="trans">grwa</span>.</p>
+	  <p><a class="leadin" href="#stacking"  id="stacking">Consonant stacking. </a> A standard stack  has a standard consonant character at the top (although it may actually be slightly squeezed or adapted slightly in shape), and one or more special subjoined consonant characters beneath it. </p>
+	  <p>The  topmost consonant in a stack always uses the standard character from the Unicode Tibetan block regardless of whether it is a root consonant or not, and consonants below it always use a character from the subjoined range.</p>
+	  <p>See this example from the Unicode Standard of the word <span class="ex" lang="bo"  >སྤྱིར་</span>  <span class="trans">spyir</span> <span class="ipa">ʧí</span> (<span class="meaning">general</span>), which shows a stack with three consonants.</p>
+		<p><img src="images/spyir.png" alt="spyir"/></p>
+		<p>Unlike Indic scripts, there is no virama (or halant) used for Tibetan. Instead, just a full and subjoined form of each consonant. The subjoined forms are combining characters. Avoiding the virama makes sense because the virama is not used by Tibetans, and the approach taken makes it easier to create the large number of stacks contained in Tibetan text.</p>
+	  <p>Tibetan uses the word 'head' to refer to either the top-most consonant (ie. spacially) or the root consonant of a syllable, which may be a subjoined consonant. We therefore avoid this term here, and say 'root' or 'topmost'.</p>
+	  <p>The following list shows the order in which characters should be typed, and stored in memory, for a set of stacked characters.</p>
+	  <ol>
+	    <li>Standard consonant shape</li>
+	    <li>First subjoined consonant</li>
+	    <li>Any other subjoined consonants, in order of descent</li>
+	    <li>Subjoined vowel 'a-chung</li>
+	    <li>Standard or compound vowel sign, or virama</li>
+      </ol>
+	  <p>Where used, the character <a href="#char0F39"><span class="uname">U+0F39 TIBETAN MARK TSA-PHRU</span> <span lang="bo">&#xA0;&#x0F39;&#xA0;</span></a> occurs immediately after the consonant it modifies</p>
+		<p><a class="leadin" href="#achung"  id="achung">A-chung and a-chen.</a> The phonological realisation for <a href="#char0F60"><span class="uname">U+0F60 TIBETAN LETTER -A</span> <span lang="bo">&#x0F60;</span></a> (called <span class="ex" lang="bo">འ་ཆུང་</span>, <span class="trans">'a-chung</span>) and <a href="#char0F68"><span class="uname">U+0F68 TIBETAN LETTER A</span> <span lang="bo">&#x0F68;</span></a> (called <span class="ex" lang="bo">ཨ་ཆེན་</span>, <span class="trans">a-chen</span>) is <span class="ipa">a</span>. In the Lhasa dialect, the former has a high and the latter a low tone.</p>
+		<p>Both 'a-chung and a-chen can be used with vowel signs, in which case the <span class="ipa">a</span> sound is replaced by that of the vowel.</p>
+		<p>'A-chung can also represent a nasal, so <span class="ex" lang="bo">མཚམས་</span> <span class="trans">mtshams</span>  (<span class="meaning">boundary</span>) and  <span class="ex" lang="bo">མཐུན་</span> <span class="trans">mthun</span> (<span class="meaning">agreement</span>) are often written <span class="ex" lang="bo">འཚམས་</span> and <span class="ex" lang="bo">འཐུན་</span>. </p>
+		<p>'A-chung may also nasalise the juncture of two morphemes, as in <span class="ex" lang="bo">དགེ་འདུན་</span> <span class="trans">dge-'dun</span> (<span class="meaning">buddhist community</span>), pronounced <span class="ipa">ɡenyn</span>.</p>
+	  <p>Other than loanwords, Tibetan only allows diphthongs in diminutive expressions. 'A-chung is used to write these, as in the following:  <span class="ex" lang="bo">མི་</span> <span class="trans">mi</span> <span class="meaning">person</span> →   <span class="ex" lang="bo">མེའུ་</span> <span class="trans">me'u</span> <span class="meaning">dwarf</span>;   <span class="ex" lang="bo">རྡོ་</span> <span class="trans">rdo</span> <span class="meaning">stone</span> →   <span class="ex" lang="bo">རྡེའུ་</span> <span class="trans">rde'u</span> <span class="meaning">pebble</span>.</p>
+		<p>A subjoined 'a-chung is used to express long vowels in loan words (Tibetan doesn't have them natively), such as those borrowed from Chinese, Hindi and Mongolian. For example,   <span class="ex" lang="bo">ཏཱ་བླ་མ་</span> <span class="trans">tā-bla-ma</span> (<span class="meaning">grand lama</span>) (ta from Chinese), and   <span class="ex" lang="bo">ཤྲཱི་</span> <span class="trans">śrī</span> (<span class="meaning">wealth</span>) from Sanskrit. For this purpose you should use <a href="#char0F71"><span class="uname">U+0F71 TIBETAN VOWEL SIGN AA</span> <span lang="bo">&#xA0;&#x0F71;</span></a>, and not <a href="#char0FB0"><span class="uname">U+0FB0 TIBETAN SUBJOINED LETTER -A</span> <span lang="bo">&#xA0;&#x0FB0;</span></a>.</p>
+		<p>The Unicode Standard says of SUBJOINED LETTER -A: </p>
+		<blockquote>U+0FB0 TIBETAN SUBJOINED LETTER -A ( a-chung ) should be used only in the very rare cases where a full-sized subjoined a-chung letter is required. The small vowel lengthening a-chung encoded as U+0F71 TIBETAN VOWEL SIGN AA is far more frequently used in Tibetan text, and it is therefore recommended that implementations treat this character (rather than U+0FB0) as the normal subjoined a-chung.</blockquote>
+		<p>Finally, <span class="name">'a-chung</span> can be used to disambiguate the location of an inherent vowel in a syllable. The sequence <span class="ex" lang="bo">དག་</span> <span class="trans">dag</span> <span class="ipa">dàg</span> (<span class="meaning">I</span>) is interpreted as CVC. To express CCV add <span class="name">'a-chung</span>, eg. <span class="ex" lang="bo">དགའ་</span> <span class="trans">dga'</span> <span class="ipa">gà</span> (<span class="meaning">virtue</span>).</p>
+		<p><a class="leadin" href="#irregpron"  id="irregpron">Irregular pronunciations.</a> Most consonants translate to the same basic sound unless they are modified by surrounding letters as mentioned above. In some cases, however, the pronunciation of a consonant is irregular. In particular, <span class="trans">b</span> is sometimes pronounced <span class="trans">w</span>, eg. <span class="ex" lang="bo"  >རེ་བ་</span> <span class="trans">re-ba</span> <span class="ipa">re-wa	</span> (<span class="meaning">hope</span>), <span class="ex" lang="bo"  >དབང་ཆ་</span> <span class="trans">dbang-ca</span> <span class="ipa">wang-ʧa</span> (<span class="meaning">power</span>), and some words have an additional nasalisation which is not shown, eg. <span class="ex" lang="bo"  >ད་ལྟ་</span> <span class="trans">da-lta</span> <span class="ipa">dan-ta</span> (<span class="meaning">now</span>).</p>
+  </section>
+	<section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+		<h3><a id="vowels"  href="#vowels">Vowels and tones</a></h3>
+		<p>Standard Tibetan has five vowels, for which there are four characters, since one vowel, <span class="ipa">a</span>, is inherent in the consonant. Non-inherent vowels are indicated by a single mark attached to and typed after a consonant or consonant stack. In the example  <span class="ex" lang="bo"  >སྤྱིར་</span> <span class="ipa">ʧí</span> (general) the vowel sign that appears above the stack is typed after the three consonants that make up the stack.</p>
+        
+       <figure>
+	  <table>
+		  <tr>
+		    <th scope="col">I</th>
+		    <th scope="col">U</th>
+		    <th scope="col">E</th>
+		    <th scope="col">O</th>
+        </tr>
+		  <tr>
+		    <td><a target='c' href='/scripts/block/tibetan#char0F72'><img src='images/0F72.png' alt='' title='0F72' /></a></td>
+		    <td><a target='c' href='/scripts/block/tibetan#char0F74'><img src='images/0F74.png' alt='' title='0F74' /></a></td>
+		    <td><a target='c' href='/scripts/block/tibetan#char0F7A'><img src='images/0F7A.png' alt='' title='0F7A' /></a></td>
+		    <td><a target='c' href='/scripts/block/tibetan#char0F7C'><img src='images/0F7C.png' alt='' title='0F7C' /></a></td>
+	      </tr>
+	  </table>
+		<figcaption>Tibetan vowel signs.</figcaption>
+      </figure>
+	</section>
+  <section>
+   	<div class="up"><a href="#tochead">⇧</a></div>
+   <h3><a id="headmark"  href="#headmark">Head marks</a></h3>
+	  <p>In traditional, loose-leaf Tibetan pechas a head mark or <span class="name">yig-mgo</span> (<span class="ipa">yig go</span>) is used at the beginning of the front of the folio so that you can tell which is the front. </p>
+	  <p>Head marks are also used in both pechas and books to indicate the start of a headline or the start of the first paragraph in a longer text.</p>
+	  <p>Head marks differ from text to text. The Unicode Standard provides a number of characters to give some basic coverage, but may not meet all needs.</p>
+	  <p>A common head mark is <a href="/scripts/block/tibetan#char0F04" target="c"><span class="uname">U+0F04 TIBETAN MARK INITIAL YIG MGO MDUN MA</span> <span lang="bo">&#x0F04;</span></a>, and there is also the extension character <a href="/scripts/block/tibetan#char0F05" target="c"><span class="uname">U+0F05 TIBETAN MARK CLOSING YIG MGO SGAB MA</span> <span lang="bo">&#x0F05;</span></a>. A head mark can be written alone, or can be followed by as many as three closing marks; head marks are also followed by two shads, eg.<span class="ex" lang="bo">&#x0F04;&#x0F05;&#x0F0D; &#x0F0D;</span>.</p>
+	  <p>Three less common head marks, used in Nyingmapa and Bonpo literature, are also represented in the Tibetan block, namely:</p>
+    <p><a href="/scripts/block/tibetan#char0F01" target="c"><span class="uname">U+0F01 TIBETAN MARK GTER YIG MGO TRUNCATED A</span> <span lang="bo">&#x0F01;</span></a><br>
+      <a href="/scripts/block/tibetan#char0F02" target="c"><span class="uname">U+0F02 TIBETAN MARK GTER YIG MGO -UM RNAM BCAD MA</span> <span lang="bo">&#x0F02;</span></a><br>
+    <a href="/scripts/block/tibetan#char0F03" target="c"><span class="uname">U+0F03 TIBETAN MARK GTER YIG MGO -UM GTER TSHEG MA</span> <span lang="bo">&#x0F03;</span></a></p>
+  </section>
+  <section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+    <h3><a id="transliteration"  href="#transliteration">Transliteration</a></h3>
+	  <p>Many of the characters in the Tibetan block are there for transcribing or transliterating non-Tibetan text. The Tibetan script provides for perfect mappings between Sanskrit and Tibetan, but Tibetan is also used to transliterate other languages, such as Chinese, Mongolian and English.</p>
+	  <p>There are a number of consonants, including a range of aspirated consonants, and the following range of retroflex consonants. </p>
+      <figure>
+	  <table>
+	    <tr>
+	      <th scope="col">&nbsp;</th>
+	      <th scope="col">GHA</th>
+	      <th scope="col">DDHA</th>
+	      <th scope="col">DHA</th>
+	      <th scope="col">BHA</th>
+	      <th scope="col">DZHA</th>
+	      <th scope="col">KSSA</th>
+	      <th scope="col" style="border:0;">&nbsp;</th>
+	      <th scope="col">TTA</th>
+	      <th scope="col">TTHA</th>
+	      <th scope="col">DDA</th>
+	      <th scope="col">NNA</th>
+	      <th scope="col">SSA</th>
+        </tr>
+	    <tr>
+	      <th scope="row">head</th>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F43'><img src='images/0F43.png' alt='' title='0F43' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F4D'><img src='images/0F4D.png' alt='' title='0F4D' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F52'><img src='images/0F52.png' alt='' title='0F52' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F57'><img src='images/0F57.png' alt='' title='0F57' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F5C'><img src='images/0F5C.png' alt='' title='0F5C' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F69'><img src='images/0F69.png' alt='' title='0F69' /></a></td>
+	      <td style="border:0;">&nbsp;</td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F4A'><img src='images/0F4A.png' alt='' title='0F4A' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F4B'><img src='images/0F4B.png' alt='' title='0F4B' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F4C'><img src='images/0F4C.png' alt='' title='0F4C' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F4E'><img src='images/0F4E.png' alt='' title='0F4E' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F65'><img src='images/0F65.png' alt='' title='0F65' /></a></td>
+        </tr>
+	    <tr>
+	      <th scope="row">subjoined</th>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F93'><img src='images/0F93.png' alt='' title='0F93' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F9D'><img src='images/0F9D.png' alt='' title='0F9D' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0FA2'><img src='images/0FA2.png' alt='' title='0FA2' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0FA7'><img src='images/0FA7.png' alt='' title='0FA7' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0FAC'><img src='images/0FAC.png' alt='' title='0FAC' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0FB9'><img src='images/0FB9.png' alt='' title='0FB9' /></a></td>
+	      <td style="width: 30px; border:0;">&nbsp;</td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F9A'><img src='images/0F9A.png' alt='' title='0F9A' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F9B'><img src='images/0F9B.png' alt='' title='0F9B' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F9C'><img src='images/0F9C.png' alt='' title='0F9C' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0F9E'><img src='images/0F9E.png' alt='' title='0F9E' /></a></td>
+	      <td><a target='c' href='/scripts/block/tibetan#char0FB5'><img src='images/0FB5.png' alt='' title='0FB5' /></a></td>
+        </tr>
+      </table>
+      <figcaption>Additional consonant characters for transliteration.</figcaption>
+      </figure>
+      
+    <p>The retroflex consonants, which are reversed versions of Tibetan consonant shapes, are often used to distinguish loan words from sequences of Tibetan syllables. For example,  <span class="ex" lang="bo">ཁ་ཎ་ཌ་</span> <span class="trans">kha-ṇa-ḍa</span>  (<span class="meaning">Canada</span>), <span class="ex" lang="bo">མོ་ཊ་</span> <span class="trans">mo-ṭa</span>  (<span class="meaning">car</span>).</p>
+	  <p>In transliterated text consonants are sometimes stacked in ways that are not allowed in native Tibetan text.</p>
+	  <p>There are also additional vowel signs between U+0F71 and U+0F7D  for Sanskrit transcriptions, and several are compound shapes. The component parts of these compounds should normally be typed individually, rather than using the compound codepoints. The table below shows the characters, and indicates those whose use is  discouraged and strongly discouraged.</p>
+    <figure>
+	    <table>
+	      <tr>
+	        <th scope="col">II</th>
+	        <th scope="col">EE</th>
+	        <th scope="col">OO</th>
+	        <th scope="col">Rev I</th>
+	        <th scope="col">V R</th>
+	        <th scope="col">V L</th>
+	        <th scope="col">II</th>
+	        <th scope="col">UU</th>
+	        <th scope="col">Rev II</th>
+	        <th scope="col">V RR</th>
+	        <th scope="col">V LL</th>
+          </tr>
+	      <tr>
+	        <th>Ok</th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F7B"><img src="images/0F7B.png" alt="" title="U+0F7B TIBETAN VOWEL SIGN EE"></a></td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F7D"><img src="images/0F7D.png" alt="" title="U+0F7D TIBETAN VOWEL SIGN OO"></a></td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F80"><img src="images/0F80.png" alt="" title="U+0F80 TIBETAN VOWEL SIGN REVERSED I"></a></td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F76"><img src="images/0F76.png" alt="" title="U+0F76 TIBETAN VOWEL SIGN VOCALIC R"></a></td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F78"><img src="images/0F78.png" alt="" title="U+0F78 TIBETAN VOWEL SIGN VOCALIC L"></a></td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+          </tr>
+	      <tr>
+	        <th>Discouraged</th>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F73"><img src="images/0F73.png" alt="" title="U+0F73 TIBETAN VOWEL SIGN II"></a></td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F75"><img src="images/0F75.png" alt="" title="U+0F75 TIBETAN VOWEL SIGN UU"></a></td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F81"><img src="images/0F81.png" alt="" title="U+0F81 TIBETAN VOWEL SIGN REVERSED II"></a></td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+          </tr>
+	      <tr>
+	        <th>Deprecated &amp; <br>
+            strongly discouraged</th>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td>&nbsp;</td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F77"><img src="images/0F77.png" alt="" title="U+0F77 TIBETAN VOWEL SIGN VOCALIC RR"></a></td>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F79"><img src="images/0F79.png" alt="" title="U+0F79 TIBETAN VOWEL SIGN VOCALIC LL"></a></td>
+          </tr>
+        </table>
+	    <figcaption>Additional vowel sign characters for transliteration.</figcaption>
+    </figure>
+    <p><a href="/scripts/block/tibetan#char0F7F"><span class="uname">U+0F7F TIBETAN SIGN RNAM BCAD</span> <span lang="bo">&#x0F7F;</span></a> ( <span class="name">nam chay</span> ) is the visarga, and <a href="/scripts/block/tibetan#char0F7E"><span class="uname">U+0F7E TIBETAN SIGN RJES SU NGA RO</span> <span lang="bo">&#xA0;&#x0F7E;</span></a> ( <span class="name">ngaro</span> ) is the anusvara. </p>
+		<p><a class="leadin" href="#compounds"  id="compounds">Compound consonants.</a> The six compound consonants GHA, DDHA, DHA, BHA, DZHA and KSSA in the table above, used to represent the Indic consonants during transliteration, can be created<span class='ref'></span> by combining a head consonant with a subjoined HA, but the Unicode Standard recommends that the precomposed characters be used in order to maximise effectiveness of transmission and searching. I have suggested that this recommendation be changed in version 7, since many applications silently normalise text to the decomposed sequence.</p>
+	  <p><a class="leadin" href="#rahead"  id="rahead2">Fixed form letters.</a> <span class="uname">U+0F62 TIBETAN LETTER RA</span> at the top of a stack usually has a reduced form, eg. <span class="ex" lang="bo">རྐ</span> <span class="trans">rka</span>. For transliterations it is sometimes desirable to retain the full form of RA where in Tibetan words it would be reduced. To do this use <a href="/scripts/block/tibetan#char0F6A"><span class="uname">U+0F6A TIBETAN LETTER FIXED-FORM RA</span> <span lang="bo">&#x0F6A;</span></a> instead of the normal RA, but only where the normal RA would not produce the full form anyway, ie. do not use eg. <span class="ex" lang="bo">རྙ</span> <span class="trans">rnya</span>, which has the full form already.</p>
+    <p>There are also fixed form variants of subjoined RA, YA and WA.</p>
+  </section>
+  
+  
+<section>
+  <div class="up"><a href="#tochead">⇧</a></div>
+  <h3><a id="numbers" href="#numbers">Numbers</a></h3>
+  <p>Tibetan has its own set of numbers. My Chinese publication, however, uses european digits.</p>
+  <table>
+    <tr>
+      <th scope="col">0</th>
+      <th scope="col">1</th>
+      <th scope="col">2</th>
+      <th scope="col">3</th>
+      <th scope="col">4</th>
+      <th scope="col">5</th>
+      <th scope="col">6</th>
+      <th scope="col">7</th>
+      <th scope="col">8</th>
+      <th scope="col">9</th>
+    </tr>
+    <tr>
+      <td><a target="c" href="/scripts/block/tibetan#char0F20"><img src="images/0F20.png" alt="" title="U+0F20 TIBETAN DIGIT ZERO"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F21"><img src="images/0F21.png" alt="" title="U+0F21 TIBETAN DIGIT ONE"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F22"><img src="images/0F22.png" alt="" title="U+0F22 TIBETAN DIGIT TWO"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F23"><img src="images/0F23.png" alt="" title="U+0F23 TIBETAN DIGIT THREE"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F24"><img src="images/0F24.png" alt="" title="U+0F24 TIBETAN DIGIT FOUR"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F25"><img src="images/0F25.png" alt="" title="U+0F25 TIBETAN DIGIT FIVE"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F26"><img src="images/0F26.png" alt="" title="U+0F26 TIBETAN DIGIT SIX"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F27"><img src="images/0F27.png" alt="" title="U+0F27 TIBETAN DIGIT SEVEN"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F28"><img src="images/0F28.png" alt="" title="U+0F28 TIBETAN DIGIT EIGHT"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F29"><img src="images/0F29.png" alt="" title="U+0F29 TIBETAN DIGIT NINE"></a></td>
+    </tr>
+  </table>
+  <p><span class="leadin">Half-numbers.</span> By some interpretations, the following shapes each have the value of 0.5 less than the number within which it appears. Used only in some traditional contexts, they appear as the last digit of a multidigit number, eg. <span class="ex" lang="bo">&#x0F24;&#x0F2C;</span> represents 42.5. These are very rarely used, however, and other uses have been postulated. For more information see <a href="http://babelstone.blogspot.co.uk/2007/04/numbers-that-dont-add-up-tibetan-half.html">Numbers that Don't Add Up : Tibetan Half Digits</a>, by Andrew West.</p>
+  <table>
+    <tr>
+      <th scope="col">0.5</th>
+      <th scope="col">1.5</th>
+      <th scope="col">2.5</th>
+      <th scope="col">3.5</th>
+      <th scope="col">4.5</th>
+      <th scope="col">5.5</th>
+      <th scope="col">6.5</th>
+      <th scope="col">7.5</th>
+      <th scope="col">8.5</th>
+      <th scope="col">9.5</th>
+    </tr>
+    <tr>
+      <td><a target="c" href="/scripts/block/tibetan#char0F2A"><img src="images/0F2A.png" alt="" title="U+0F2A TIBETAN DIGIT HALF ONE"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F2B"><img src="images/0F2B.png" alt="" title="U+0F2B TIBETAN DIGIT HALF TWO"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F2C"><img src="images/0F2C.png" alt="" title="U+0F2C TIBETAN DIGIT HALF THREE"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F2D"><img src="images/0F2D.png" alt="" title="U+0F2D TIBETAN DIGIT HALF FOUR"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F2E"><img src="images/0F2E.png" alt="" title="U+0F2E TIBETAN DIGIT HALF FIVE"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F2F"><img src="images/0F2F.png" alt="" title="U+0F2F TIBETAN DIGIT HALF SIX"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F30"><img src="images/0F30.png" alt="" title="U+0F30 TIBETAN DIGIT HALF SEVEN"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F31"><img src="images/0F31.png" alt="" title="U+0F31 TIBETAN DIGIT HALF EIGHT"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F32"><img src="images/0F32.png" alt="" title="U+0F32 TIBETAN DIGIT HALF NINE"></a></td>
+      <td><a target="c" href="/scripts/block/tibetan#char0F33"><img src="images/0F33.png" alt="" title="U+0F33 TIBETAN DIGIT HALF ZERO"></a></td>
+    </tr>
+  </table>
+  </section>
+</section>
+    
+	<section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+	  <h2><a id="formatting"  href="#formatting">Text formatting</a></h2>
+	  <p>In pechas, Tibetan text is written inside a visible box which defines the margin of the page. In more recent publications this box may be invisible. Modern publications also use paragraphs. The initial line of a new paragraph may be indented.</p>
+	  <div class="sidenoteGroup">
+	  <p>Key divisions of the text are sections (or expressions (<span class="name">brjod-pa</span>)) and topics (<span class="name">don-tshan</span>), which do not necessarily equate to English phrases, sentences and paragraphs. Sections normally end with a shay, <a href="/scripts/block/tibetan#char0F0D"><span class="uname">U+0F0D TIBETAN MARK SHAD</span> <span lang="bo">&#x0F0D;</span></a>, followed by a space. Topics (eg. headlines, verses, and longer paragraphs) are often terminated or separated with shay+space+shay.</p>
+	  <figure>
+	    <p lang="bo">དུང་དང་འོ་མར་འགྲན་པའི་ལྷག་བསམ་མཐུ<span class="ex">། །</span>དམན་ཡང་དཀར་པོའི་བྱས་འབྲས་ཅུང་ཟད་ཅིག །བློ་དང་འདུན་པ་བཟང་བའི་རང་རིགས་ཀུན<span class="ex">། །</span>རྒྱལ་ཁའི་འཕྲིན་བཟང་ལས་དོན་འགྲུབ་ཕྱིར་འབད<span class="ex">།།</span></p>
+	    <figcaption>Examples of double shay.</figcaption>
+	    </figure>
+	  <p>Unicode provides <a href="/scripts/block/tibetan#char0F0E"><span class="uname">U+0F0E TIBETAN MARK NYIS SHAD</span> <span lang="bo">&#x0F0E;</span></a> as a means of regularising the spacing between the two shad marks, which tends to be slightly bigger than a normal space. <span class="ed">The space between the shad marks can be stretched during justification, however, and it's not clear to me how that would work when using NYIS SHAD.</span></p>
+      <div class="sidenote" style="line-height:1.4em;">
+	  In a Chinese magazine publication I have, most articles contain no double shay as a delimiter. (The text is formatted in paragraphs.) I did find a double shay at the very end of one of the articles, and it was used at the end of each line on a page containing some verse-formatted folk literature. The same appears to apply for large parts of the Bhutanese newspapers I have, however there are other pages with plenty of double shays - some at the end of paragraphs, some inside paragraphs.
+      </div>
+      </div>
+	  <p>A line that ends with the root consonant <a href="/scripts/block/tibetan#char0F40"><span class="uname">U+0F40 TIBETAN LETTER KA</span> <span lang="bo">&#x0F40;</span></a> or <a href="/scripts/block/tibetan#char0F42"><span class="uname">U+0F42 TIBETAN LETTER GA</span> <span lang="bo">&#x0F42;</span></a> will normally swallow up the shay that immediately follows it, even if there is a vowel sign. For example, where you might expect to see a double shay, you might see <span class="ex" lang="bo" style="white-space:nowrap;">ཀུ །</span> and <span class="ex" lang="bo" style="white-space:nowrap;">སྐུ །</span>. However, the shad is not omitted if these characters have a subscript, eg. <span class="ex" lang="bo" style="white-space:nowrap;">གྲུ། །</span>. </p>
+	  <figure>
+	    <p lang="bo">དུང་དང་འོ་མར་འགྲན་པའི་ལྷག་བསམ་མཐུ། །དམན་ཡང་དཀར་པོའི་བྱས་འབྲས་ཅུང་ཟད་ཅི<span class="ex">ག །</span>བློ་དང་འདུན་པ་བཟང་བའི་རང་རིགས་ཀུན། །རྒྱལ་ཁའི་འཕྲིན་བཟང་ལས་དོན་འགྲུབ་ཕྱིར་འབད།།</p>
+	    <figcaption>Example of GA swallowing up a shay at the end of a topic.</figcaption>
+      </figure>
+	  <figure>
+	    <p lang="bo">རྩོམ་པ་པོ། ལྡོང་ཕྲུ<span class="ex">ག </span>པར་སྐྲུན་ཁང་། གངས་ཅན་པ་ཚོང་འཕྲིན་ཇུས་འགོད་ཞབས་ཞུ་ལྟེ་གནས་ནས་དཔར།</p>
+	    <figcaption>Example of GA swallowing up a shay at the end of a section.</figcaption>
+      </figure>
+	  <p>Word boundaries within a section are not indicated. Only 'syllables', known as <span class="name">tsheg-bar</span> <span class="ipa">tsek bar</span>, are separated by the tsek character, <a href="#char0F0B"><span class="uname">U+0F0B TIBETAN MARK INTER-SYLLABIC TSHEG</span> <span lang="bo">&#x0F0B;</span></a>.</p>
+	  <p>The tsek is not used before a shay, except after <a href="/scripts/block/tibetan#char0F44"><span class="uname">U+0F44 TIBETAN LETTER NGA</span> <span lang="bo">&#x0F44;</span></a>. For example, note the end of the three sections in this example:</p>
+	  <figure>
+      <p lang="bo">དོན་ཚན་དང་<span class="ex">པོ།</span>&nbsp;འགྲོ་བ་མིའི་རིགས་རྒྱུད་ཡོངས་ལ་སྐྱེས་ཙམ་ཉིད་ནས་ཆེ་མཐོངས་ད<span class="ex">ང༌།</span>&nbsp;ཐོབ་ཐངགི་རང་དབང་འདྲ་མཉམ་དུ་ཡོད་<span class="ex">ལ།</span></p>
+      <figcaption>Examples of tsek not being used before shay, and of U+0F0C being used between NGA and shay.</figcaption>
+      </figure>
+	  <p>Users may use an ordinary TSHEG between NGA and SHAD, but Unicode also provides a special non-breaking character that can be used instead, <a href="/scripts/block/tibetan#char0F0C"><span class="uname">U+0F0C TIBETAN MARK DELIMITER TSHEG BSTAR</span> <span lang="bo">&#x0F0C;</span></a>. The word 'delimiter' in the name is a misnomer.</p>
+	  <figure>
+	    <p lang="bo">སུ་གང་གིས་གང་ཞིག་གི་རྒྱལ་ཁབ་ཐོབ་ཐང་བཙན་ཤེད་ཀྱིས་འཕྲོག་པ་ད<span class="ex">ང༌།</span> ཡང་ན་དེའི་རྒྱལ་ཁབ་བརྗེ་བསྒྱུར་གྱི་ཐོབ་ཐང་བཀག་འགོག་བྱེདཔའི་རིགས་མི་ཆོག །</p>
+	    <figcaption>Example of U+0F0C being used between NGA and shay.</figcaption>
+      </figure>
+	  <p>Whitespace in Tibetan text should use U+00A0   NO-BREAK SPACE. Spaces in Tibetan text are usually wider than spaces in English text, and typically only occur after one of the following: <span class="ex" lang="bo">&#x0F0D;</span>, <span class="ex" lang="bo">༑</span>, <span class="ex" lang="bo">&#x0F14;</span> or <span class="ex" lang="bo">&#x0F7F;</span>. However, numbers and embedded Western text are surrounded by smaller spaces, eg. <span class="ex" lang="bo">ལོ་ ༢༠༠༡ ཤིང་བྱ་ཟླ་ ༩ ཚེས་ ༥ ཉིན་</span>. <span class="ednote">Looks like this is also something that the application needs to take care of.</span></p>
+      <section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+	  <h3><a id="linebreak"  href="#linebreak">Line breaks</a></h3>
+	  <p> Normally, Tibetan only breaks after the tsek, and doesn't break after spaces.</p>
+	  <p>Line breaks do not occur after a tsek
+	    when it follows <a href="/scripts/block/tibetan#char0F44"><span class="uname">U+0F44 TIBETAN LETTER NGA</span> <span lang="bo">&#x0F44;</span></a> (with or without a vowel sign) and precedes a shay, <a href="/scripts/block/tibetan#char0F0D"><span class="uname">U+0F0D TIBETAN MARK SHAD</span> <span lang="bo">&#x0F0D;</span></a>. <span class="ednote">The Unicode Standard also talks of other instances where Tibetan grammatical rules do not permit a break, but it isn't clear what those are.</span></p>
+	  <p>If the character after NGA is an ordinary INTER-SYLLABIC TSHEG, then applications need to ensure that lines do not break between the TSHEG and the SHAD. Text is likely to be more portable if content authors use the  TSHEG BSTAR in these locations, instead of the normal TSHEG.</p>
+	  <p>Line breaks are also possible after:</p>
+	  <ul>
+	    <li><a href="/scripts/block/tibetan#char0F0D"><span class="uname">U+0F0D TIBETAN MARK SHAD</span> <span lang="bo">&#x0F0D;</span></a> - as long as the next line starts with a consonant (ie. not a second shad).</li>
+	    <li><a href="/scripts/block/tibetan#char0F14"><span class="uname">U+0F14 TIBETAN MARK GTER TSHEG</span> <span lang="bo">&#x0F14;</span></a></li>
+      </ul>
+	  <ul>
+	    <li><a href="/scripts/block/tibetan#char0F7F"><span class="uname">U+0F7F TIBETAN SIGN RNAM BCAD</span> <span lang="bo">&#x0F7F;</span></a> (visarga) (there is never a tsek after this character, eg. <span class="ex" lang="bo">ཨོཾ་ཨཱཿཧཱུྃ་</span>)</li>
+      </ul>
+	  <p>Tibetan never breaks inside a syllable, and has no hyphenation. If a word is composed of multiple syllables, it is also preferable to avoid breaking a line in the middle of the word.</p>
+	  <p>A line must never start with a shad.</p>
+	  <p> <a class="leadin" href="#linebreak"  id="linebreak2">Line breaks and rin chen spungs shad.</a> In Tibetan, especially in pechas, it is considered a special case if the last syllable of an expression that is terminated by a shay breaks onto a new line. In that case the shay or double shay is replaced by rin chen spungs shad, <a href="#char0F11"><span class="uname">U+0F11 TIBETAN MARK RIN CHEN SPUNGS SHAD</span> <span lang="bo">&#x0F11;</span></a>. At the end of a topic the rules say that only one shay should be converted, ie. <span class="ex" lang="bo" style="white-space:nowrap;">༑  །</span>, however it is moderately popular to convert both, ie. <span class="ex" lang="bo" style="white-space:nowrap;">༑ ༑</span>. This change serves as an optical indication that there is a left-over syllable at the beginning of the line that actually belongs to the preceding line. </p>
+	  <p>This varies in the following cases:</p>
+	  <ul>
+	    <li>
+	      when a line starts with <span class="ex" lang="bo" style="white-space:nowrap;">ལེའུ། །</span>, no rin chen spungs shad would be used, since <span class="ipa">le'u</span> is pronounced as two syllables.</li>
+	    <li>sometimes  only the first of two shays is replaced, ie. <span class="ex" lang="bo" style="white-space:nowrap;">༑ །</span>, but this style is considered less attractive.</li>
+	    <li> some printed books do not use rin chen spungs shad replacements, however the majority of books seem to apply the same rules as are used with pechas.</li>
+	  </ul>
+	  <p>In an environment where the width or content of the page can change, this feature poses a problem for the content author. The application needs to be able to automatically switch between the two styles of shad as a syllable moves on or off a new line when the page is resized or when preceding content is modified.</p>
+	  <p>The Unicode Standard adds: &quot;Not only is rin-chen-spungs-shad used as the replacement for the shay but a whole class of “ornamental shays ” are used for the same purpose. All are scribal variants on a rin-chen-spungs-shad, which is correctly written with three dots above it.&quot;</p>
+      </section>
+      
+      <section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+	  <h3><a id="justification"  href="#justification">Justification</a></h3>
+	  <p> There appear to be two alternative methods of justification.</p>
+	  <p> <a class="leadin" href="#icspacing"  id="icspacing">Method 1: inter-character spacing.</a> Spacing between all characters should be adapted equally. Note that the width of the white-space character should not be changed significantly, so Tibetan texts use the non-breaking space mentioned above, which doesn't change width on justification.</p>
+	  <p> <a class="leadin"  id="icspacing2">Method 2: tsek padding.</a> While hand writing, authors add small spaces across the text to get the line end as near as possible to the right margin. Where space remains at the margin, it may be left as is, if it is short. Otherwise, the remaining space will be filled with tseks to make the line as flush as possible with the right margin (there will usually still be a slight raggedness to the right edge of the text).</p>
+	  <figure><img src="images/tsek-justification.jpeg" width="313" height="475" alt="" /><figcaption>A page of a booklet showing tsek padding.</figcaption></figure>
+	  <p>There are a couple of detailed rules about the use of tsek padding. Justifying tseks are almost always used when the line ends in a tsek. If, however, the line ends in a shay, there are a number of alternatives.</p>
+	  <p>If the line ends with a single shay the shay is followed by spaces. Tsek padding is never applied after spaces. (See examples in the figure above.)</p>
+	  <p>If the line ends in a double shay (with space between), it is unusual (though possible) to add tsek padding. Instead, the space between the shays is stretched or narrowed. (See examples in the figure below.) The same applies if the second shay was removed because it was preceded by a KA or GA.</p>
+	  <figure><img src="images/shay-justification.jpeg" width="600" height="440" alt="" /><figcaption>Booklet pages showing double shay usage at the end of a line.</figcaption></figure>
+  </section>
+  
+	<section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+	  <h3><a id="punctuation"  href="#punctuation">Other punctuation and signs</a></h3>
+	  <p>Over and above that described in the previous section, traditional Tibetan text uses very little punctuation, but there a number of signs and symbols to choose from.</p>
+	  <p><a href="/scripts/block/tibetan#char0F08" target="c"><span class="uname">U+0F08 TIBETAN MARK SBRUL SHAD</span> <span lang="bo">&#x0F08;</span></a> is used to separate texts that are equivalent to topics and subtopics, such as the start of a smaller text, the start of a prayer, a chapter boundary, or to mark the beginning and end of insertions into text in pechas.</p>
+	  <p>This <span class="name">drul-shay</span> is usually surrounded on both sides by the equivalent of about three non-breaking spaces (though no rule is specified). The <span class="name">drul-shay</span> should not appear at the beginning of a new line and the whole structure of spacing-plus- shay needs to be kept together.</p>
+	  <p><a href="/scripts/block/tibetan#char0F3C" target="c"><span class="uname">U+0F3C TIBETAN MARK ANG KHANG GYON</span> <span lang="bo">&#x0F3C;</span></a> and <a href="/scripts/block/tibetan#char0F3D" target="c"><span class="uname">U+0F3D TIBETAN MARK ANG KHANG GYAS</span> <span lang="bo">&#x0F3D;</span></a> are paired punctuation used to form a roof over one or more digits or words. The right-hand character can also be used much like a single parenthesis in list counters.</p>
+	  <p><a href="/scripts/block/tibetan#char0F3E" target="c"><span class="uname">U+0F3E TIBETAN SIGN YAR TSHES</span> <span lang="bo">&#x0F3E;</span></a> and <a href="/scripts/block/tibetan#char0F3F" target="c"><span class="uname">U+0F3F TIBETAN SIGN MAR TSHES</span> <span lang="bo">&#x0F3F;</span></a> are also paired characters used in combination with digits.</p>
+	  <p><a href="/scripts/block/tibetan#char0F34" target="c"><span class="uname">U+0F34   TIBETAN MARK BSDUS RTAGS</span> <span lang="bo">&#x0F34;</span></a> means 'etc.', and is used after the first few tsek-bar of a recurring phrase.</p>
+	  <p><a href="/scripts/block/tibetan#char0FBE" target="c"><span class="uname">U+0FBE   TIBETAN KU RU KHA</span> <span lang="bo">&#x0FBE;</span></a> (often repeated three times) indicates a refrain.</p>
+	  <p><a href="/scripts/block/tibetan#char0F36" target="c"><span class="uname">U+0F36   TIBETAN MARK CARET -DZUD RTAGS BZHI MIG CAN</span> <span lang="bo">&#x0F36;</span></a> and <a href="/scripts/block/tibetan#char0FBF" target="c"><span class="uname">U+0FBF   TIBETAN KU RU KHA BZHI MIG CAN</span> <span lang="bo">&#x0FBF;</span></a> are used to indicate where text should be inserted within other text or as references to footnotes and marginal notes.</p>
+	  <p><a href="/scripts/block/tibetan#char2638" target="c"><span class="uname">U+2638   WHEEL OF DHARMA</span> <span lang="bo">&#x2638;</span></a> which occurs sometimes in Tibetan texts is encoded in the Miscellaneous Symbols block.</p>
+    </section>
+
+	<section>
+  	<div class="up"><a href="#tochead">⇧</a></div>
+	  <h3><a id="emphasis"  href="#emphasis">Text emphasis and highlighting</a></h3>
+	  <p><a href="/scripts/block/tibetan#char0F35" target="c"><span class="uname">U+0F35 TIBETAN MARK NGAS BZUNG NYI ZLA</span> <span lang="bo">&#xA0;&#x0F35;</span></a> and <a href="/scripts/block/tibetan#char0F37" target="c"><span class="uname">U+0F37 TIBETAN MARK NGAS BZUNG SGOR RTAGS</span> <span lang="bo">&#xA0;&#x0F37;</span></a> can be used to create a similar effect to underlining or to mark emphasis.</p>
+	  <p>The use of these marks is not straightforward, since they attach to a syllable rather than a character and therefore to place them correctly the application needs to take syllable boundary positions into account. If entered as combining characters they can be added after the vowel-sign in a stack.</p>
+	  <p>Application software  has to ignore these characters for text processing, such as search and collation.</p>
+	  <p>Alternative methods of emphasis include use of a different colour, or the use of the prefix <span class="ex" lang="bo">༸</span>.</p>
+	  <figure>
+	    <p lang="bo" style="text-align:center;">སྐལ་ལྡན་གདུལ་བྱར་སྣང་བའི་<span class="ex" style="color:#768029">བསོ༵ད་ནམ༵ས་</span>གཟུགས།</p>
+	    <figcaption>Use of colour and diacritics to emphasise text.</figcaption>
+      </figure>
+	  <p>These characters may also be used in interspersed commentaries to tag the root text that is being commented on. An alternative is to set the tsek-bar being commented on in large type and the commentary in small type.</p>
+	  <figure>
+	    <p lang="bo" style="text-align:center;"><span class="ex" lang="bo">སྐུ༷</span>་ག<span class="ex" lang="bo">སུ༷</span>ང་ཐུ<span class="ex" lang="bo">ག༷</span>ས།.</p>
+	    <figcaption>Marks being used to identify root text.</figcaption>
+      </figure>
+	  <p>Modern texts appear to use bolding on text.</p>
+	</section>
+    
+    	<section>
+	  <h3><a id="alignment"  href="#alignment">Text alignment</a></h3>
+	<p>When text in smaller annotations or larger heading text is mixed with normal text, the letter-heads of all characters should align to the same height.
+	</section>
+</section>
+	<section id="charlistsection">
+	  <h2><a href="#characterlist"  id="characterlist">List of basic symbols</a></h2>
+	  <p>This is a list of main characters or character combinations needed for Tibetan. Clicking on these characters will open a  page in another window. If the character is underlined, the new page will display additional information about that character.</p>
+	  <table id="index">
+	    <tbody>
+	      <tr>
+	        <th><span class="leadin">Consonants</span></th>
+	        <td><table style="margin:0;">
+	          <tbody> 
+
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F40" title="U+0F40 TIBETAN LETTER KA">&#x0F40;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F41" title="U+0F41 TIBETAN LETTER KHA">&#x0F41;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F42" title="U+0F42 TIBETAN LETTER GA">&#x0F42;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F44" title="U+0F44 TIBETAN LETTER NGA">&#x0F44;</a></td>
+	              <td class="gap">&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F90" title="U+0F90 TIBETAN SUBJOINED LETTER KA">&nbsp;&#x0F90;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F91" title="U+0F91 TIBETAN SUBJOINED LETTER KHA">&nbsp;&#x0F91;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F92" title="U+0F92 TIBETAN SUBJOINED LETTER GA">&nbsp;&#x0F92;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F94" title="U+0F94 TIBETAN SUBJOINED LETTER NGA">&nbsp;&#x0F94;</a></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F45" title="U+0F45 TIBETAN LETTER CA">&#x0F45;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F46" title="U+0F46 TIBETAN LETTER CHA">&#x0F46;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F47" title="U+0F47 TIBETAN LETTER JA">&#x0F47;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F49" title="U+0F49 TIBETAN LETTER NYA">&#x0F49;</a></td>
+	              <td>&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F95" title="U+0F95 TIBETAN SUBJOINED LETTER CA">&nbsp;&#x0F95;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F96" title="U+0F96 TIBETAN SUBJOINED LETTER CHA">&nbsp;&#x0F96;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F97" title="U+0F97 TIBETAN SUBJOINED LETTER JA">&nbsp;&#x0F97;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F99" title="U+0F99 TIBETAN SUBJOINED LETTER NYA">&nbsp;&#x0F99;</a></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F4F" title="U+0F4F TIBETAN LETTER TA">&#x0F4F;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F50" title="U+0F50 TIBETAN LETTER THA">&#x0F50;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F51" title="U+0F51 TIBETAN LETTER DA">&#x0F51;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F53" title="U+0F53 TIBETAN LETTER NA">&#x0F53;</a></td>
+	              <td>&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F9F" title="U+0F9F TIBETAN SUBJOINED LETTER TA">&nbsp;&#x0F9F;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA0" title="U+0FA0 TIBETAN SUBJOINED LETTER THA">&nbsp;&#x0FA0;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA1" title="U+0FA1 TIBETAN SUBJOINED LETTER DA">&nbsp;&#x0FA1;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA3" title="U+0FA3 TIBETAN SUBJOINED LETTER NA">&nbsp;&#x0FA3;</a></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F54" title="U+0F54 TIBETAN LETTER PA">&#x0F54;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F55" title="U+0F55 TIBETAN LETTER PHA">&#x0F55;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F56" title="U+0F56 TIBETAN LETTER BA">&#x0F56;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F58" title="U+0F58 TIBETAN LETTER MA">&#x0F58;</a></td>
+	              <td>&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA4" title="U+0FA4 TIBETAN SUBJOINED LETTER PA">&nbsp;&#x0FA4;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA5" title="U+0FA5 TIBETAN SUBJOINED LETTER PHA">&nbsp;&#x0FA5;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA6" title="U+0FA6 TIBETAN SUBJOINED LETTER BA">&nbsp;&#x0FA6;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA8" title="U+0FA8 TIBETAN SUBJOINED LETTER MA">&nbsp;&#x0FA8;</a></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F59" title="U+0F59 TIBETAN LETTER TSA">&#x0F59;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F5A" title="U+0F5A TIBETAN LETTER TSHA">&#x0F5A;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F5B" title="U+0F5B TIBETAN LETTER DZA">&#x0F5B;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F5D" title="U+0F5D TIBETAN LETTER WA">&#x0F5D;</a></td>
+	              <td>&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA9" title="U+0FA9 TIBETAN SUBJOINED LETTER TSA">&nbsp;&#x0FA9;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FAA" title="U+0FAA TIBETAN SUBJOINED LETTER TSHA">&nbsp;&#x0FAA;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FAB" title="U+0FAB TIBETAN SUBJOINED LETTER DZA">&nbsp;&#x0FAB;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FAD" title="U+0FAD TIBETAN SUBJOINED LETTER WA">&nbsp;&#x0FAD;</a></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F5E" title="U+0F5E TIBETAN LETTER ZHA">&#x0F5E;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F5F" title="U+0F5F TIBETAN LETTER ZA">&#x0F5F;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F60" title="U+0F60 TIBETAN LETTER -A">&#x0F60;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F61" title="U+0F61 TIBETAN LETTER YA">&#x0F61;</a></td>
+	              <td>&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FAE" title="U+0FAE TIBETAN SUBJOINED LETTER ZHA">&nbsp;&#x0FAE;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FAF" title="U+0FAF TIBETAN SUBJOINED LETTER ZA">&nbsp;&#x0FAF;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB0" title="U+0FB0 TIBETAN SUBJOINED LETTER -A">&nbsp;&#x0FB0;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB1" title="U+0FB1 TIBETAN SUBJOINED LETTER YA">&nbsp;&#x0FB1;</a></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F62" title="U+0F62 TIBETAN LETTER RA">&#x0F62;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F63" title="U+0F63 TIBETAN LETTER LA">&#x0F63;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F64" title="U+0F64 TIBETAN LETTER SHA">&#x0F64;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F66" title="U+0F66 TIBETAN LETTER SA">&#x0F66;</a></td>
+	              <td>&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB2" title="U+0FB2 TIBETAN SUBJOINED LETTER RA">&nbsp;&#x0FB2;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB3" title="U+0FB3 TIBETAN SUBJOINED LETTER LA">&nbsp;&#x0FB3;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB4" title="U+0FB4 TIBETAN SUBJOINED LETTER SHA">&nbsp;&#x0FB4;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB6" title="U+0FB6 TIBETAN SUBJOINED LETTER SA">&nbsp;&#x0FB6;</a></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F67" title="U+0F67 TIBETAN LETTER HA">&#x0F67;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F68" title="U+0F68 TIBETAN LETTER A">&#x0F68;</a></td>
+	              <td>&nbsp;</td>
+	              <td>&nbsp;</td>
+	              <td>&nbsp;</td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB7" title="U+0FB7 TIBETAN SUBJOINED LETTER HA">&nbsp;&#x0FB7;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB8" title="U+0FB8 TIBETAN SUBJOINED LETTER A">&nbsp;&#x0FB8;</a></td>
+	              <td>&nbsp;</td>
+	              <td>&nbsp;</td>
+                </tr>
+              </tbody>
+	          </table></td>
+          </tr>
+        </tbody>
+	    <tbody>
+	      <tr>
+	        <th><span class="leadin">Extensions for Balti</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F6B" title="U+0F6B TIBETAN LETTER KKA">&#x0F6B;</a> <a target="c" href="/scripts/block/tibetan#char0F6C" title="U+0F6C TIBETAN LETTER RRA">&#x0F6C;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Dependent vowel signs</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F72" title="U+0F72 TIBETAN VOWEL SIGN I">&nbsp;&#x0F72;</a> <a target="c" href="/scripts/block/tibetan#char0F74" title="U+0F74 TIBETAN VOWEL SIGN U">&nbsp;&#x0F74;</a> <a target="c" href="/scripts/block/tibetan#char0F7A" title="U+0F7A TIBETAN VOWEL SIGN E">&nbsp;&#x0F7A;</a> <a target="c" href="/scripts/block/tibetan#char0F7C" title="U+0F7C TIBETAN VOWEL SIGN O">&nbsp;&#x0F7C;</a> <a target="c" href="/scripts/block/tibetan#char0F71" title="U+0F71 TIBETAN VOWEL SIGN AA">&nbsp;&#x0F71;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Additional consonants for transliteration</span></th>
+	        <td><table style="margin:0;">
+	          <tbody>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F4A" title="U+0F4A TIBETAN LETTER TTA">&#x0F4A;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F4B" title="U+0F4B TIBETAN LETTER TTHA">&#x0F4B;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F4C" title="U+0F4C TIBETAN LETTER DDA">&#x0F4C;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F4E" title="U+0F4E TIBETAN LETTER NNA">&#x0F4E;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F65" title="U+0F65 TIBETAN LETTER SSA">&#x0F65;</a></td>
+	              <td></td>
+	              <td class="gap"></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F9A" title="U+0F9A TIBETAN SUBJOINED LETTER TTA">&nbsp;&#x0F9A;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F9B" title="U+0F9B TIBETAN SUBJOINED LETTER TTHA">&nbsp;&#x0F9B;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F9C" title="U+0F9C TIBETAN SUBJOINED LETTER DDA">&nbsp;&#x0F9C;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F9E" title="U+0F9E TIBETAN SUBJOINED LETTER NNA">&nbsp;&#x0F9E;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB5" title="U+0FB5 TIBETAN SUBJOINED LETTER SSA">&nbsp;&#x0FB5;</a></td>
+	              <td></td>
+                </tr>
+	            <tr>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F43" title="U+0F43 TIBETAN LETTER GHA">&#x0F43;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F4D" title="U+0F4D TIBETAN LETTER DDHA">&#x0F4D;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F52" title="U+0F52 TIBETAN LETTER DHA">&#x0F52;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F57" title="U+0F57 TIBETAN LETTER BHA">&#x0F57;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F5C" title="U+0F5C TIBETAN LETTER DZHA">&#x0F5C;</a></td>
+	              <td class="gap"><a target="c" href="/scripts/block/tibetan#char0F69" title="U+0F69 TIBETAN LETTER KSSA">&#x0F69;</a></td>
+	              <td></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F93" title="U+0F93 TIBETAN SUBJOINED LETTER GHA">&nbsp;&#x0F93;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0F9D" title="U+0F9D TIBETAN SUBJOINED LETTER DDHA">&nbsp;&#x0F9D;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA2" title="U+0FA2 TIBETAN SUBJOINED LETTER DHA">&nbsp;&#x0FA2;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FA7" title="U+0FA7 TIBETAN SUBJOINED LETTER BHA">&nbsp;&#x0FA7;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FAC" title="U+0FAC TIBETAN SUBJOINED LETTER DZHA">&nbsp;&#x0FAC;</a></td>
+	              <td><a target="c" href="/scripts/block/tibetan#char0FB9" title="U+0FB9 TIBETAN SUBJOINED LETTER KSSA">&nbsp;&#x0FB9;</a></td>
+                </tr>
+              </tbody>
+	          </table></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Transliteration, fixed-form  consonants</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F6A" title="U+0F6A TIBETAN LETTER FIXED-FORM RA">&#x0F6A;</a> <a target="c" href="/scripts/block/tibetan#char0FBA" title="U+0FBA TIBETAN SUBJOINED LETTER FIXED-FORM WA">&nbsp;&#x0FBA;</a> <a target="c" href="/scripts/block/tibetan#char0FBB" title="U+0FBB TIBETAN SUBJOINED LETTER FIXED-FORM YA">&nbsp;&#x0FBB;</a> <a target="c" href="/scripts/block/tibetan#char0FBC" title="U+0FBC TIBETAN SUBJOINED LETTER FIXED-FORM RA">&nbsp;&#x0FBC;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Additional vowel signs for transliteration</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F73" title="U+0F73 TIBETAN VOWEL SIGN II">&nbsp;&#x0F73;</a> <a target="c" href="/scripts/block/tibetan#char0F75" title="U+0F75 TIBETAN VOWEL SIGN UU">&nbsp;&#x0F75;</a> <a target="c" href="/scripts/block/tibetan#char0F76" title="U+0F76 TIBETAN VOWEL SIGN VOCALIC R">&nbsp;&#x0F76;</a> <a target="c" href="/scripts/block/tibetan#char0F77" title="U+0F77 TIBETAN VOWEL SIGN VOCALIC RR">&nbsp;&#x0F77;</a> <a target="c" href="/scripts/block/tibetan#char0F78" title="U+0F78 TIBETAN VOWEL SIGN VOCALIC L">&nbsp;&#x0F78;</a> <a target="c" href="/scripts/block/tibetan#char0F79" title="U+0F79 TIBETAN VOWEL SIGN VOCALIC LL">&nbsp;&#x0F79;</a> <a target="c" href="/scripts/block/tibetan#char0F7B" title="U+0F7B TIBETAN VOWEL SIGN EE">&nbsp;&#x0F7B;</a> <a target="c" href="/scripts/block/tibetan#char0F7D" title="U+0F7D TIBETAN VOWEL SIGN OO">&nbsp;&#x0F7D;</a> <a target="c" href="/scripts/block/tibetan#char0F80" title="U+0F80 TIBETAN VOWEL SIGN REVERSED I">&nbsp;&#x0F80;</a> <a target="c" href="/scripts/block/tibetan#char0F81" title="U+0F81 TIBETAN VOWEL SIGN REVERSED II">&nbsp;&#x0F81;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Transliteration, vocalic modification</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F7E" title="U+0F7E TIBETAN SIGN RJES SU NGA RO">&nbsp;&#x0F7E;</a> <a target="c" href="/scripts/block/tibetan#char0F7F" title="U+0F7F TIBETAN SIGN RNAM BCAD">&nbsp;&#x0F7F;</a> <a target="c" href="/scripts/block/tibetan#char0F84" title="U+0F84 TIBETAN MARK HALANTA">&nbsp;&#x0F84;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Transliteration, head letters</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F88" title="U+0F88 TIBETAN SIGN LCE TSA CAN">&#x0F88;</a> <a target="c" href="/scripts/block/tibetan#char0F89" title="U+0F89 TIBETAN SIGN MCHU CAN">&#x0F89;</a> <a target="c" href="/scripts/block/tibetan#char0F8A" title="U+0F8A TIBETAN SIGN GRU CAN RGYINGS">&#x0F8A;</a> <a target="c" href="/scripts/block/tibetan#char0F8B" title="U+0F8B TIBETAN SUBJOINED SIGN GRU MED RGYINGS">&#x0F8B;</a> <a target="c" href="/scripts/block/tibetan#char0F8C"><img src="/c/tibetan/0F8C.png" alt="&#x0F8C;" title="U+0F8C TIBETAN SUBJOINED SIGN INVERTED MCHU CAN"/></a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Transliteration, subjoined signs</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F8D"><img src="/c/tibetan/0F8D.png" alt="&#x0F8D;" title="U+0F8D TIBETAN SUBJOINED SIGN LCE TSA CAN"/></a> 
+            <a target="c" href="/scripts/block/tibetan#char0F8E"><img src="/c/tibetan/0F8E.png" alt="&#x0F8E;" title="U+0F8E TIBETAN SUBJOINED SIGN MCHU CAN"/></a> 
+            <a target="c" href="/scripts/block/tibetan#char0F8F"><img src="/c/tibetan/0F8F.png" alt="&#x0F8F;" title="U+0F8F TIBETAN SUBJOINED SIGN INVERTED MCHU CAN"/></a> 
+            </td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Head marks</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F01" title="U+0F01 TIBETAN MARK GTER YIG MGO TRUNCATED A">&#x0F01;</a> <a target="c" href="/scripts/block/tibetan#char0F02" title="U+0F02 TIBETAN MARK GTER YIG MGO -UM RNAM BCAD MA">&#x0F02;</a> <a target="c" href="/scripts/block/tibetan#char0F03" title="U+0F03 TIBETAN MARK GTER YIG MGO -UM GTER TSHEG MA">&#x0F03;</a> <a target="c" href="/scripts/block/tibetan#char0F04" title="U+0F04 TIBETAN MARK INITIAL YIG MGO MDUN MA">&#x0F04;</a> <a target="c" href="/scripts/block/tibetan#char0F05" title="U+0F05 TIBETAN MARK CLOSING YIG MGO SGAB MA">&#x0F05;</a> <a target="c" href="/scripts/block/tibetan#char0F06" title="U+0F06 TIBETAN MARK CARET YIG MGO PHUR SHAD MA">&#x0F06;</a> <a target="c" href="/scripts/block/tibetan#char0F07" title="U+0F07 TIBETAN MARK YIG MGO TSHEG SHAD MA">&#x0F07;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Punctuation</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F0B" title="U+0F0B TIBETAN MARK INTERSYLLABIC TSHEG">&#x0F0B;</a> <a target="c" href="/scripts/block/tibetan#char0F0C"><img src="/c/Tibetan/0F0C.png" alt="" title="U+0F0C TIBETAN MARK DELIMITER TSHEG BSTAR"></a> <a target="c" href="/scripts/block/tibetan#char0F0D" title="U+0F0D TIBETAN MARK SHAD">&#x0F0D;</a> <a target="c" href="/scripts/block/tibetan#char0F0E" title="U+0F0E TIBETAN MARK NYIS SHAD">&#x0F0E;</a> <a target="c" href="/scripts/block/tibetan#char0F0F" title="U+0F0F TIBETAN MARK TSHEG SHAD">&#x0F0F;</a> <a target="c" href="/scripts/block/tibetan#char0F10" title="U+0F10 TIBETAN MARK NYIS TSHEG SHAD">&#x0F10;</a> <a target="c" href="/scripts/block/tibetan#char0F11" title="U+0F11 TIBETAN MARK RIN CHEN SPUNGS SHAD">&#x0F11;</a> <a target="c" href="/scripts/block/tibetan#char0F08" title="U+0F08 TIBETAN MARK SBRUL SHAD">&#x0F08;</a> <a target="c" href="/scripts/block/tibetan#char0F14" title="U+0F14 TIBETAN MARK GTER TSHEG">&#x0F14;</a> <a target="c" href="/scripts/block/tibetan#char0F34" title="U+0F34 TIBETAN MARK BSDUS RTAGS">&#x0F34;</a> <a target="c" href="/scripts/block/tibetan#char0F35" title="U+0F35 TIBETAN MARK NGAS BZUNG NYI ZLA">&nbsp;&#x0F35;</a> <a target="c" href="/scripts/block/tibetan#char0F37" title="U+0F37 TIBETAN MARK NGAS BZUNG SGOR RTAGS">&nbsp;&#x0F37;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Paired punctuation</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F3A" title="U+0F3A TIBETAN MARK GUG RTAGS GYON">&#x0F3A;</a> <a target="c" href="/scripts/block/tibetan#char0F3B" title="U+0F3B TIBETAN MARK GUG RTAGS GYAS">&#x0F3B;</a> <a target="c" href="/scripts/block/tibetan#char0F3C" title="U+0F3C TIBETAN MARK ANG KHANG GYON">&#x0F3C;</a> <a target="c" href="/scripts/block/tibetan#char0F3D" title="U+0F3D TIBETAN MARK ANG KHANG GYAS">&#x0F3D;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Annotation marks</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0FD9"><img src="/c/Tibetan/0FD9.png" alt="" title="U+0FD9 TIBETAN MARK LEADING MCHAN RTAGS"></a> <a target="c" href="/scripts/block/tibetan#char0FDA"><img src="/c/Tibetan/0FDA.png" alt="" title="U+0FDA TIBETAN MARK TRAILING MCHAN RTAGS"></a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Om</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F00" title="U+0F00 TIBETAN SYLLABLE OM">&#x0F00;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Various marks, signs &amp; symbols</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F09" title="U+0F09 TIBETAN MARK BSKUR YIG MGO">&#x0F09;</a> <a target="c" href="/scripts/block/tibetan#char0F0A" title="U+0F0A TIBETAN MARK BKA- SHOG YIG MGO">&#x0F0A;</a> <a target="c" href="/scripts/block/tibetan#char0F12" title="U+0F12 TIBETAN MARK RGYA GRAM SHAD">&#x0F12;</a> <a target="c" href="/scripts/block/tibetan#char0F13" title="U+0F13 TIBETAN MARK CARET -DZUD RTAGS ME LONG CAN">&#x0F13;</a> <a target="c" href="/scripts/block/tibetan#char0F36" title="U+0F36 TIBETAN MARK CARET -DZUD RTAGS BZHI MIG CAN">&#x0F36;</a> <a target="c" href="/scripts/block/tibetan#char0F38" title="U+0F38 TIBETAN MARK CHE MGO">&#x0F38;</a> <a target="c" href="/scripts/block/tibetan#char0F39" title="U+0F39 TIBETAN MARK TSA -PHRU">&nbsp;&#x0F39;</a> <a target="c" href="/scripts/block/tibetan#char0F82" title="U+0F82 TIBETAN SIGN NYI ZLA NAA DA">&nbsp;&#x0F82;</a> <a target="c" href="/scripts/block/tibetan#char0F83" title="U+0F83 TIBETAN SIGN SNA LDAN">&nbsp;&#x0F83;</a> <a target="c" href="/scripts/block/tibetan#char0F85" title="U+0F85 TIBETAN MARK PALUTA">&#x0F85;</a> <a target="c" href="/scripts/block/tibetan#char0F86" title="U+0F86 TIBETAN SIGN LCI RTAGS">&nbsp;&#x0F86;</a> <a target="c" href="/scripts/block/tibetan#char0F87" title="U+0F87 TIBETAN SIGN YANG RTAGS">&nbsp;&#x0F87;</a> <a target="c" href="/scripts/block/tibetan#char0FBE" title="U+0FBE TIBETAN KU RU KHA">&#x0FBE;</a> <a target="c" href="/scripts/block/tibetan#char0FBF" title="U+0FBF TIBETAN KU RU KHA BZHI MIG CAN">&#x0FBF;</a> <a target="c" href="/scripts/block/tibetan#char0FD0" title="U+0FD0 TIBETAN MARK BSKA- SHOG GI MGO RGYAN">&#x0FD0;</a> <a target="c" href="/scripts/block/tibetan#char0FD1" title="U+0FD1 TIBETAN MARK MNYAM YIG GI MGO RGYAN">&#x0FD1;</a> <a target="c" href="/scripts/block/tibetan#char0FD2" title="U+0FD2 TIBETAN MARK NYIS TSHEG">&#x0FD2;</a> <a target="c" href="/scripts/block/tibetan#char0FC4" title="U+0FC4 TIBETAN SYMBOL DRIL BU">&#x0FC4;</a> <a target="c" href="/scripts/block/tibetan#char0FC5" title="U+0FC5 TIBETAN SYMBOL RDO RJE">&#x0FC5;</a> <a target="c" href="/scripts/block/tibetan#char0FC6" title="U+0FC6 TIBETAN SYMBOL PADMA GDAN">&nbsp;&#x0FC6;</a> <a target="c" href="/scripts/block/tibetan#char0FC7" title="U+0FC7 TIBETAN SYMBOL RDO RJE RGYA GRAM">&#x0FC7;</a> <a target="c" href="/scripts/block/tibetan#char0FC8" title="U+0FC8 TIBETAN SYMBOL PHUR PA">&#x0FC8;</a> <a target="c" href="/scripts/block/tibetan#char0FC9" title="U+0FC9 TIBETAN SYMBOL NOR BU">&#x0FC9;</a> <a target="c" href="/scripts/block/tibetan#char0FCA" title="U+0FCA TIBETAN SYMBOL NOR BU NYIS -KHYIL">&#x0FCA;</a> <a target="c" href="/scripts/block/tibetan#char0FCB" title="U+0FCB TIBETAN SYMBOL NOR BU GSUM -KHYIL">&#x0FCB;</a> <a target="c" href="/scripts/block/tibetan#char0FCC" title="U+0FCC TIBETAN SYMBOL NOR BU BZHI -KHYIL">&#x0FCC;</a> <a target="c" href="/scripts/block/tibetan#char0FD5" title="U+0FD5 RIGHT-FACING SVASTI SIGN">&#x0FD5;</a> <a target="c" href="/scripts/block/tibetan#char0FD6" title="U+0FD6 LEFT-FACING SVASTI SIGN">&#x0FD6;</a> <a target="c" href="/scripts/block/tibetan#char0FD7" title="U+0FD7 RIGHT-FACING SVASTI SIGN WITH DOTS">&#x0FD7;</a> <a target="c" href="/scripts/block/tibetan#char0FD8" title="U+0FD8 LEFT-FACING SVASTI SIGN WITH DOTS">&#x0FD8;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Astrological signs</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F15" title="U+0F15 TIBETAN LOGOTYPE SIGN CHAD RTAGS">&#x0F15;</a> <a target="c" href="/scripts/block/tibetan#char0F16" title="U+0F16 TIBETAN LOGOTYPE SIGN LHAG RTAGS">&#x0F16;</a> <a target="c" href="/scripts/block/tibetan#char0F17" title="U+0F17 TIBETAN ASTROLOGICAL SIGN SGRA GCAN -CHAR RTAGS">&#x0F17;</a> <a target="c" href="/scripts/block/tibetan#char0F18" title="U+0F18 TIBETAN ASTROLOGICAL SIGN -KHYUD PA">&nbsp;&#x0F18;</a> <a target="c" href="/scripts/block/tibetan#char0F19" title="U+0F19 TIBETAN ASTROLOGICAL SIGN SDONG TSHUGS">&nbsp;&#x0F19;</a> <a target="c" href="/scripts/block/tibetan#char0F1A" title="U+0F1A TIBETAN SIGN RDEL DKAR GCIG">&#x0F1A;</a> <a target="c" href="/scripts/block/tibetan#char0F1B" title="U+0F1B TIBETAN SIGN RDEL DKAR GNYIS">&#x0F1B;</a> <a target="c" href="/scripts/block/tibetan#char0F1C" title="U+0F1C TIBETAN SIGN RDEL DKAR GSUM">&#x0F1C;</a> <a target="c" href="/scripts/block/tibetan#char0F1D" title="U+0F1D TIBETAN SIGN RDEL NAG GCIG">&#x0F1D;</a> <a target="c" href="/scripts/block/tibetan#char0F1E" title="U+0F1E TIBETAN SIGN RDEL NAG GNYIS">&#x0F1E;</a> <a target="c" href="/scripts/block/tibetan#char0F1F" title="U+0F1F TIBETAN SIGN RDEL DKAR RDEL NAG">&#x0F1F;</a> <a target="c" href="/scripts/block/tibetan#char0F3E" title="U+0F3E TIBETAN SIGN YAR TSHES">&nbsp;&#x0F3E;</a> <a target="c" href="/scripts/block/tibetan#char0F3F" title="U+0F3F TIBETAN SIGN MAR TSHES">&nbsp;&#x0F3F;</a> <a target="c" href="/scripts/block/tibetan#char0FCE" title="U+0FCE TIBETAN SIGN RDEL NAG RDEL DKAR">&#x0FCE;</a> <a target="c" href="/scripts/block/tibetan#char0FCF" title="U+0FCF TIBETAN SIGN RDEL NAG GSUM">&#x0FCF;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Cantillation signs</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0FC0" title="U+0FC0 TIBETAN CANTILLATION SIGN HEAVY BEAT">&#x0FC0;</a> <a target="c" href="/scripts/block/tibetan#char0FC1" title="U+0FC1 TIBETAN CANTILLATION SIGN LIGHT BEAT">&#x0FC1;</a> <a target="c" href="/scripts/block/tibetan#char0FC2" title="U+0FC2 TIBETAN CANTILLATION SIGN CANG TE-U">&#x0FC2;</a> <a target="c" href="/scripts/block/tibetan#char0FC3" title="U+0FC3 TIBETAN CANTILLATION SIGN SBUB -CHAL">&#x0FC3;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Digits</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F21" title="U+0F21 TIBETAN DIGIT ONE">&#x0F21;</a> <a target="c" href="/scripts/block/tibetan#char0F22" title="U+0F22 TIBETAN DIGIT TWO">&#x0F22;</a> <a target="c" href="/scripts/block/tibetan#char0F23" title="U+0F23 TIBETAN DIGIT THREE">&#x0F23;</a> <a target="c" href="/scripts/block/tibetan#char0F24" title="U+0F24 TIBETAN DIGIT FOUR">&#x0F24;</a> <a target="c" href="/scripts/block/tibetan#char0F25" title="U+0F25 TIBETAN DIGIT FIVE">&#x0F25;</a> <a target="c" href="/scripts/block/tibetan#char0F26" title="U+0F26 TIBETAN DIGIT SIX">&#x0F26;</a> <a target="c" href="/scripts/block/tibetan#char0F27" title="U+0F27 TIBETAN DIGIT SEVEN">&#x0F27;</a> <a target="c" href="/scripts/block/tibetan#char0F28" title="U+0F28 TIBETAN DIGIT EIGHT">&#x0F28;</a> <a target="c" href="/scripts/block/tibetan#char0F29" title="U+0F29 TIBETAN DIGIT NINE">&#x0F29;</a> <a target="c" href="/scripts/block/tibetan#char0F20" title="U+0F20 TIBETAN DIGIT ZERO">&#x0F20;</a></td>
+          </tr>
+	      <tr>
+	        <th><span class="leadin">Digits minus half</span></th>
+	        <td><a target="c" href="/scripts/block/tibetan#char0F2A" title="U+0F2A TIBETAN DIGIT HALF ONE">&#x0F2A;</a> <a target="c" href="/scripts/block/tibetan#char0F2B" title="U+0F2B TIBETAN DIGIT HALF TWO">&#x0F2B;</a> <a target="c" href="/scripts/block/tibetan#char0F2C" title="U+0F2C TIBETAN DIGIT HALF THREE">&#x0F2C;</a> <a target="c" href="/scripts/block/tibetan#char0F2D" title="U+0F2D TIBETAN DIGIT HALF FOUR">&#x0F2D;</a> <a target="c" href="/scripts/block/tibetan#char0F2E" title="U+0F2E TIBETAN DIGIT HALF FIVE">&#x0F2E;</a> <a target="c" href="/scripts/block/tibetan#char0F2F" title="U+0F2F TIBETAN DIGIT HALF SIX">&#x0F2F;</a> <a target="c" href="/scripts/block/tibetan#char0F30" title="U+0F30 TIBETAN DIGIT HALF SEVEN">&#x0F30;</a> <a target="c" href="/scripts/block/tibetan#char0F31" title="U+0F31 TIBETAN DIGIT HALF EIGHT">&#x0F31;</a> <a target="c" href="/scripts/block/tibetan#char0F32" title="U+0F32 TIBETAN DIGIT HALF NINE">&#x0F32;</a> <a target="c" href="/scripts/block/tibetan#char0F33" title="U+0F33 TIBETAN DIGIT HALF ZERO">&#x0F33;</a></td>
+          </tr>
+        </tbody>
+      </table>
+</section>
+	<section id="references"> 
+  	<div class="up"><a href="#tochead">⇧</a></div>
+	  <h2><a href="#endlinks"  id="endlinks">Further reading</a></h2>
+		<ol>
+			<li>[Daniels] Peter T. Daniels and William Bright, <span class="title">The World's Writing Systems</span>, Oxford University Press, ISBN
+				0-19-507993-0</li>
+			<li>[LanguageStudent] <a href="http://www.learntibetan.net/">The Tibetan Language Student</a></li>
+			<li>[Unicode] The Unicode Standard v6.3, <a href="http://www.unicode.org/versions/Unicode6.3.0/ch10.pdf#Tibetan">Tibetan</a>. </li>
+			<li><span class="refcode">[Formatting]</span> <a href="http://digitaltibetan.org/index.php/Formatting_rules_for_Tibetan_text">Formatting rules for Tibetan text</a></li>
+			<li><a href="http://www.thlib.org/reference/transliteration/">Transliteration &amp; Transcription Systems for Tibetan &amp; Himalayan Languages</a></li>
+		</ol>
+</section>
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  7 Apr 2006.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  18:00<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+<script type="text/javascript">
+createtoc()
+initialiseShowNames('/scripts/block/tibetan', 'c')
+highlightIndexChars()
+</script>
+
+</body>
+</html>

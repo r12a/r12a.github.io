@@ -1,0 +1,36 @@
+
+@font-face { 
+	font-family: 'Tibetan Machine Uni WF'; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: url(/webfonts/TibMachUni-1.901.woff); 
+	} 
+
+[lang='bo'] { 
+	font-family: 'Tibetan Machine Uni WF', "Tibetan Machine Uni", Kokonor, "Microsoft Himalaya", sans-serif; 
+	font-size: 28px; 
+	}
+
+
+section p, .section p { line-height: 32px; }
+td.gap { width: 30px; }
+
+.locations th { border: 1px solid #CCC; vertical-align: middle; height: 40px; }
+.locations td { border: 0; vertical-align: middle; height: 40px; }
+.locations td .ex { margin-left: 8px; font-size: 36px; }
+
+
+#index td td { border: 0; }
+#index td { line-height: 1em; }
+#index td { 
+	font-family: 'Tibetan Machine Uni WF', "Tibetan Machine Uni", Kokonor, "Microsoft Himalaya", sans-serif; 
+	font-size: 28px; 
+	padding: 8px; 
+	}
+
+#fontsetting { width: 240px; }
+#fontsetting.open { right: 0px; }
+#fontsetting.closed { right: -228px; }
+#fontsettingswitch { height: 150px; }
+
+        
