@@ -18,6 +18,12 @@
 
 .charname { letter-spacing: 0.02em; }
 
+.instructions {
+	 font-family: robotolight; 
+	 font-style: italic; 
+	 text-align:center;
+	 margin-bottom: 0;
+	}
 
 h2 { clear: left; }
 
@@ -123,7 +129,7 @@ h2 { clear: left; }
 [lang |= 'ru'] 	{font-family: "Doulos SIL", serif; font-size: 100%; }
 :lang(ta)	{font-family: "Tamil Sangam MN", "Tamil MN", InaiMathi, "Noto Sans Tamil", Latha, Vijaya, sans-serif; font-size: 24px; }
 [lang |= 'te'] 	{font-family: "Akshar Unicode", Gautami, sans-serif; font-size: 130%; }
-:lang(th)  {font-family: "Noto Sans Thai", Dokchampa, Thonburi, "Angsana New", "Cordia New", sans-serif; font-size: 25px; }
+[lang |= 'th']  {font-family: "Noto Sans Thai", Dokchampa, Thonburi, "Angsana New", "Cordia New", sans-serif; font-size: 25px; }
 [lang |= 'ur'] { font-family: "Nafees Nastaleeq", "Urdu Typesetting", "Aldhabi", serif; font-size: 24px; direction: rtl;  }
 [lang |= 've'] { font-family: Gentium, serif; }
 [lang |= 'zh-Hans'] { font-family: "Simsun", sans-serif; }
@@ -157,7 +163,7 @@ section { clear: left; }
 #fontsetting {	
 	line-height: 1em; 
 	position:fixed; 
-	bottom: 10px; 
+	bottom: 35px; 
 	background-color: #eee; 
 	border-top-left-radius: 15px; 
 	border-bottom-left-radius: 15px; 
