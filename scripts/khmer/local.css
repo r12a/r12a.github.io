@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Noto Sans Khmer WF';
+    src: url('/webfonts/notosanskhmer-regularwebfont.woff2') format('woff2'),
+         url('/webfonts/notosanskhmer-regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face { 
+	font-family: 'Battambang WF'; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: url('/webfonts/khmerosbbangw.woff'); 
+	} 
+
+:lang(km) { font-family: webfont, "Khmer OS Battambang", "Battambang WF", "Noto Sans Khmer WF", "Noto Sans Khmer", "Arial Unicode MS", serif; font-size: 130%; }
+:lang(km-x-round) {  font-family:"Khmer Mool"; font-size: 140%; }
+
+#index td { font-family: webfont, "Khmer OS Battambang", "Battambang WF", "Noto Sans Khmer WF", "Noto Sans Khmer", "Arial Unicode MS", serif; font-size: 26px; padding: 16px; text-align:left;  }
+
+
+#fontsetting { width: 270px; }
+#fontsetting.open { right: 0px; }
+#fontsetting.closed { right: -258px; }
+#fontsettingswitch { height: 130px; }
