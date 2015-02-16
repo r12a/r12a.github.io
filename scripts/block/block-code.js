@@ -14,25 +14,6 @@ function initialiseShowNames (base, target) {
 			}
 		else { shownames_setOnclick(examples[e], base, target) }
 		}
-
-	/*
-	var examples = document.querySelectorAll('img') 
-	var total = examples.length
-	for (i=0;i<total;i++) { 
-		if (examples[i].className.match(/ex/)) {
-			shownames_setImgOnclick(examples[i], base, target)
-			}
-		}
-		
-		
-	var examples = document.querySelectorAll('.ex') 
-	total = examples.length;
-	for (i=0;i<total;i++) { 
-		if (examples[i].className == 'ex') {
-			shownames_setOnclick(examples[i], base, target)
-			}
-		}
-		*/
 	}
 
 
@@ -88,7 +69,7 @@ function showNameDetails (chars, clang, base, target) {
 			hex = hex.toUpperCase()
 			chardiv = document.createElement('div')
 			charimg = document.createElement('img')
-			charimg.src = '/c/'+names[chars.charCodeAt(c)][1]+"/"+hex+'.png'
+			charimg.src = '/c/'+names[chars.charCodeAt(c)][1].replace(/ /g,'_')+"/"+hex+'.png'
 			charimg.alt = 'U+'+hex
 			chardiv.appendChild(charimg)
 			thelink = document.createElement('a');
@@ -109,7 +90,7 @@ function showNameDetails (chars, clang, base, target) {
 			hex = hex.toUpperCase()
 			chardiv = document.createElement('div')
 			charimg = document.createElement('img')
-			charimg.src = '/c/Basic Latin/005F.png'
+			charimg.src = '/c/Basic_Latin/005F.png'
 			charimg.alt = 'U+'+hex
 			chardiv.appendChild(charimg)
 			thename = document.createTextNode(' U+'+hex+' No data for this character')
