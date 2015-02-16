@@ -43,11 +43,18 @@
 <p>
 <select id="exfontswitchfont" 
 onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'ur');">
-            <option value="Nafees Nastaleeq:22">Nafees Nastaleeq (woff)</option>
-            <option value="Aldhabi:20">Aldhabi</option>
-            <option value="Urdu Typesetting:20">Urdu Typesetting</option>
-            <option value="Scheherazade:32">Scheherazade (woff)</option>
-            <option value="Noto Naskh Arabic:22">Noto Naskh Arabic (woff)</option>
+<optgroup label="Webfonts">
+    <option value="Nafees Nastaliq WF">Nafees Nastaleeq</option>
+    <option value="Noto Nastaliq WF">Noto Nastaliq</option>
+</optgroup>
+<optgroup label="Windows fonts">
+            <option value="Aldhabi">Aldhabi</option>
+            <option value="Urdu Typesetting">Urdu Typesetting</option>
+</optgroup>
+<optgroup label="Google fonts">
+        <option value="Nafees Nastaliq">Nafees Nastaleeq</option>
+        <option value="Noto Nastaliq">Noto Nastaliq</option>
+</optgroup>
 </select> 
 <input id="exfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'ur');" />
@@ -56,14 +63,23 @@ onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this
 <p>
 <select id="ex2fontswitchfont" 
 onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#ex2fontswitchsize').value+'px', 'ur-x-naskh');">
-            <option value="Lateef:32">Lateef</option>
-            <option value="Scheherazade:32">Scheherazade (woff)</option>
-            <option value="Al Bayan:24">Al Bayan</option>
+ <optgroup label="Webfont">
+		<option value="Scheherazade WF">Scheherazade</option>
+</optgroup>
+<optgroup label="Mac fonts">
+        <option value="Al Bayan">Al Bayan</option>
+        <option value="Geeza Pro">Geeza Pro</option>
+</optgroup>
+ <optgroup label="Windows fonts">
             <option value="Arabic Typesetting:20">Arabic Typesetting</option>
             <option value="Traditional Arabic:20">Traditional Arabic</option>
             <option value="Sakkal Majalla:20">Sakkal Majalla</option>
-            <option value="Noto Naskh Arabic:22">Noto Naskh Arabic (woff)</option>
-            <option value="Nafees Nastaleeq:22">Nafees Nastaleeq (woff)</option>
+</optgroup>
+<optgroup label="Google fonts">
+          <option value="Lateef:32">Lateef</option>
+        <option value="Scheherazade">Scheherazade</option>
+        <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>
+</optgroup>
 </select> 
 <input id="ex2fontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setGeneralFont(document.querySelector('#ex2fontswitchfont').value, this.value+'px', 'ur-x-naskh');" />
@@ -72,15 +88,31 @@ onChange="setGeneralFont(document.querySelector('#ex2fontswitchfont').value, thi
 <p>
 <select  id="slfontswitchfont" 
 onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'ur');">
-            <option value="Nafees Nastaleeq:22">Nafees Nastaleeq (woff)</option>
-            <option value="Urdu Typesetting:20">Urdu Typesetting</option>
-            <option value="Aldhabi:20">Aldhabi</option>
-            <option value="Scheherazade:32">Scheherazade (woff)</option>
-            <option value="Noto Naskh Arabic:22">Noto Naskh Arabic (woff)</option>
+<optgroup label="Webfonts">
+    <option value="Nafees Nastaliq WF">Nafees Nastaleeq</option>
+    <option value="Noto Nastaliq WF">Noto Nastaliq</option>
+    <option value="Scheherazade WF">Scheherazade</option>
+</optgroup>
+<optgroup label="Mac fonts">
+        <option value="Al Bayan">Al Bayan</option>
+        <option value="Geeza Pro">Geeza Pro</option>
+</optgroup>
+<optgroup label="Windows fonts">
+            <option value="Arabic Typesetting:20">Arabic Typesetting</option>
+            <option value="Traditional Arabic:20">Traditional Arabic</option>
+            <option value="Sakkal Majalla:20">Sakkal Majalla</option>
+</optgroup>
+<optgroup label="Google fonts">
+        <option value="Nafees">Nafees Nastaleeq</option>
+        <option value="Noto Nastaliq">Noto Nastaliq</option>
+        <option value="Scheherazade">Scheherazade</option>
+        <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>
+</optgroup>
 </select> 
 <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'ar');" />
 </p>
+  <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
 </div>
 </aside>
 
@@ -523,7 +555,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  7 Apr 2006.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-16  18:22<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  20:01<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">
