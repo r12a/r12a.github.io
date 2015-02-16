@@ -1,0 +1,13 @@
+@import url(http://fonts.googleapis.com/earlyaccess/lohitbengali.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansbengali.css);
+
+:lang(bn) { font-family: SolaimanLipi, Likhan, "Bangla Sangam MN", "Shonar Bangla", "Vrinda", "Lohit Bengali", "Noto Sans Bengali", "Arial Unicode MS", sans-serif; font-size: 150%; }
+
+#index td { font-family: SolaimanLipi, Likhan, "Bangla Sangam MN", "Shonar Bangla", "Vrinda", "Lohit Bengali", "Noto Sans Bengali", "Arial Unicode MS", serif; font-size: 26px; padding: 16px; text-align:left;  }
+
+
+
+#fontsetting { width: 270px; }
+#fontsetting.open { right: 0px; }
+#fontsetting.closed { right: -258px; }
+#fontsettingswitch { height: 130px; }

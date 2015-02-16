@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="utf-8"/>
+<title>Bengali script notes</title>
+<meta name="description" content="Notes about the Bengali script as used for Bengali."/>
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+	
+<script src="/scripts/block/bengali-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+
+<script src="/code/toc_section.js" type="text/javascript"></script>
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+<script src="/uniview/scriptGroups.js" type="text/javascript"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Bengali script notes</h1>
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead" tabindex="4">Contents</a></h2>
+  <nav id="toc"><!-- placeholder --></nav>
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/block/bengali">Bengali character notes</a></p>
+<p><a href="/scripts/links?script=bengali">Bengali script links</a></p>
+        <p><a href="/pickers/bengali/">Bengali character picker</a></p>
+        <p><a href="/uniview/?block=bengali">Bengali in UniView </a></p>
+      </div>
+      
+        
+<div id="fontsetting" class="closed">
+<h2 class="notoc"><a id="fonts">Fonts</a></h2>
+<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+<p>Set a font for Bengali text</p>
+<p>
+<select id="exfontswitchfont" 
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'bn');">
+            <option value="">Choose...</option>
+			<optgroup label="Web fonts">
+            <option value="Lohit Bengali">Lohit Bengali</option>
+            <option value="Noto Sans Bengali">Noto Sans Bengali</option>
+           </optgroup>
+            
+			<optgroup label="Mac fonts">
+            <option value="Bangla MN">Bangla MN</option>
+            <option value="Bangla Sangam MN">Bangla Sangam MN</option>
+           </optgroup>
+            
+            <optgroup label="Windows fonts">
+            <option value="Nirmala UI">Nirmala UI</option>
+            <option value="Shonar Bangla">Shonar Bangla</option>
+            <option value="Vrinda">Vrinda</option>
+			</optgroup>
+            
+			<optgroup label="Google fonts">
+            <option value="Lohit Bengali">Lohit Bengali</option>
+            <option value="Noto Sans Bengali">Noto Sans Bengali</option>
+            <option value="Noto Sans Bengali UI">Noto Sans Bengali UI</option>
+            </optgroup>
+            
+			<optgroup label="Other fonts">
+            <option value="Likhan">Likhan</option>
+            <option value="SolaimanLipi">Solaiman Lipi</option>
+            </optgroup>
+</select> 
+<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'bn');" />
+</p>
+<p>Set a font for the symbol list</p>
+<p>
+<select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'bn');">
+            <option value="">Choose...</option>
+			<optgroup label="Web fonts">
+            <option value="Lohit Bengali">Lohit Bengali</option>
+            <option value="Noto Sans Bengali">Noto Sans Bengali</option>
+           </optgroup>
+            
+			<optgroup label="Mac fonts">
+            <option value="Bangla MN">Bangla MN</option>
+            <option value="Bangla Sangam MN">Bangla Sangam MN</option>
+           </optgroup>
+            
+            <optgroup label="Windows fonts">
+            <option value="Nirmala UI">Nirmala UI</option>
+            <option value="Shonar Bangla">Shonar Bangla</option>
+            <option value="Vrinda">Vrinda</option>
+			</optgroup>
+            
+			<optgroup label="Google fonts">
+            <option value="Lohit Bengali">Lohit Bengali</option>
+            <option value="Noto Sans Bengali">Noto Sans Bengali</option>
+            <option value="Noto Sans Bengali UI">Noto Sans Bengali UI</option>
+            </optgroup>
+            
+			<optgroup label="Other fonts">
+            <option value="Likhan">Likhan</option>
+            <option value="SolaimanLipi">Solaiman Lipi</option>
+            </optgroup>
+</select> 
+<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'bn');" />
+</p>
+<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+</div>
+        
+  <div class="noprint">
+        <h2 class="notoc"><a id="transcription" tabindex="4">Notes on transliterations </a></h2>
+    <p>There is some variability in pronunciation that is not always systematic, due to vowel harmony and other things. Because of this I
+          usually provide a transcription rather than a phonetic equivalent for examples. The transcription is that used in the book by William Radice. If your
+          browser supports the necessary CSS, transcriptions are shown between <span class="trans">curly brackets</span> and approximate phonetic information is shown between <span class="ipa">slashes</span>, using IPA characters.</p>
+        <p>Letter names are taken from Radice for the most common letters. In the text, names are rendered using italics</p>
+  </div>
+	</aside>
+
+<p id="status">Updated Sun 18 Jan 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=bengali" title="Show all blog posts tagged with 'bengali'">bengali</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+
+<section><a id="contentstart" tabindex="1"></a>
+	<p>In these notes I synthesize information from various sources, encountered as I explore the  Bengali script as used for the Bangla language. They may be updated from time to time. </p>
+	<p>The page  contains brief notes on general script features. See also the companion document, <a href="/scripts/block/bengali">Bengali Character Notes</a>, which describes the characters used in Bengali script one by one. For more detailed information, especially about the history and phonology of the Bengali script, follow the links in the text and <a href="#endlinks">at the bottom of the page</a>.  </p>
+	<p>When you see red text (examples of Bangla) you can click on it to reveal the component characters.</p>
+		<p>You can obtain  fonts for this page free from the Web.  I created this page using <span style="line-height: 1.3em;"><a href="http://www.ekushey.org/index.php/page/otf_bangla_fonts">Solaiman Lipi</a></span>.  Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p>
+</section>
+	
+<section id="intro">
+<h2><a href="#intro">Brief script introduction</a></h2>
+			<p>Bengali has its own script, called <span class="ex" lang="bn">বাংলা</span> <span class="trans">baɱla</span> in the Bangla language.</p>
+<p>The script is an abugida. This is characterised by consonant characters that include an inherent vowel sound. The inherent vowel can be overridden using vowel signs appended to the character. There are also independent vowel signs to represent vowels that are not preceded by consonants. The syllable is the unit for various aspects of the behaviour of the script. </p>
+		<p>The alphabet is split into vowels and consonants. With one exception (<span class="name">ɔ-kar</span>), each vowel is represented by an independent version or a combining vowel sign.</p>
+		<p>Example of Bangla:</p>
+		<p lang="bn" class="ex" style="color:black; line-height:2em; text-align: left;">সমস্ত মানুষ স্বাধীনভাবে সমান মর্যাদা এবং অধিকার নিয়ে জন্মগ্রহণ করে। তাঁদের বিবেক এবং বুদ্ধি আছে ; সুতরাং সকলেরই একে অপরের প্রতি ভ্রাতৃত্বসুলভ মনোভাব নিয়ে আচরণ করা উচিত্‍।</p>
+</section>
+
+<section id="bengali">
+		<h2><a href="#bengali">Characters used for Bangla language</a></h2>
+        
+<section id="vowelharmonydesc">
+		<h3><a href="#vowelharmonydesc">Vowel harmony</a></h3>
+			<p>The pronunciation of a vowel can be affected by the vowel in the following syllable. Radice provides the following table, though this is a simplification and there are many exceptions.</p>
+			<table id="vowelharmony" width="300" border="0">
+				<tr>
+					<th style="text-align:center;" scope="col">Followed by i or u </th>
+					<th style="text-align:center;"  scope="col">Followed by ɔ, o, e or a </th>
+				</tr>
+				<tr>
+					<td>o → u</td>
+					<td>o → ɔ</td>
+				</tr>
+				<tr>
+					<td> <span title="8594" id="largeChar">ɔ → o</span></td>
+					<td>u → o</td>
+				</tr>
+				<tr>
+					<td>e → i</td>
+					<td>e → æ</td>
+				</tr>
+				<tr>
+					<td>æ → e</td>
+					<td>i → e</td>
+				</tr>
+			</table>
+			<p>For example, the verb <span class="ex" lang="bn">শোনা</span> <span class="ipa">ʃona</span> <span class="meaning">to hear</span> with an <span class="name">i</span> ending becomes <span class="ipa">ʃuni</span>, <span class="ex" lang="bn">দেখা</span> <span class="ipa">dækʰa</span> <span class="meaning">to see</span> becomes <span class="ipa">dekʰi</span>, etc.  This sometimes accounts for the pronunciation of the inherent vowel, eg. <span class="ex" lang="bn">অতিথি</span> <span class="trans">ôtithi</span> <span class="meaning">guest</span> and <span class="ex" lang="bn">অনুবাদ</span> <span class="trans">ônubad</span> <span class="meaning">translation</span> start with <span class="ipa">o</span> rather than <span class="ipa">ɔ</span>.</p>
+  </section>
+
+<section id="inherentvowel">
+		<h3><a href="#inherentvowel">Inherent vowel</a></h3>
+			<p>The inherent vowel, unlike Hindi, is <span class="ipa">ɔ</span> or <span class="ipa">o</span>. (And sometimes halfway between these
+				two, when influenced by surrounding sounds.) Bengalis are not always aware of these sound differences – thinking of this as one sound. </p>
+			<p>Note that there is also a vowel pronounced <span class="ipa">o</span>. This can lead to inconsistent spellings, eg. <span class="trans">bhalo</span>, <span class="meaning">good, well</span>, can be spelled either <span class="ex" lang="bn">ভালো</span> or <span class="ex" lang="bn">ভাল</span>. Verb forms tend to be particularly inconsistent, sometimes basing the rationale on what looks good in a particular
+				context.</p>
+			<p>The rules for determining the sound of the inherent vowel are not simple. Partly it is a question of vowel harmony. The following two
+				tendencies can help:</p>
+			<ul>
+				<li>
+					<p>In words with inherent vowels in two consecutive syllables, the sound will usually be <span class="ipa">ɔ</span>..<span
+							class="ipa">o</span>, not <span class="ipa">o</span>..<span class="ipa">ɔ</span>, eg. <span class="ex" lang="bn">গরম</span> <span class="trans">gɔrôm</span>, <span class="meaning">hot</span>.</p>
+				</li>
+				<li>
+					<p>The inherent vowel is always pronounced <span class="ipa">ɔ</span> in words that end with a conjunct consonant and pronounce the
+						vowel.</p>
+				</li>
+			</ul>
+			<p>The inherent vowel is pronounced at the end of some words and not others, eg. <span class="ex" lang="bn">গরম</span> <span class="trans">gɔrôm</span>, <span class="meaning">hot</span> vs. <span class="ex" lang="bn">গড়ান</span> <span class="trans">gɔɽanô</span>, <span class="meaning">to roll </span>. There is no real way to tell when it is pronounced and when not in this position, except that it is usually pronounced following a word-final conjunct, eg. <span class="ex" lang="bn" >যুদ্ধ</span> <span class="trans">y̌uddhô</span> <span class="meaning">war</span>. When pronounced in this position, the sound is usually <span class="ipa">o</span> .</p>
+	<p class='ref'><a href="/scripts/bengali/#refs">Refs:</a> Radice 3, 7-8, 21, 148; Daniels 400</p>
+  </section>
+<section id="vowelligatures">
+		<h3><a href="#vowelligatures">Vowel ligatures</a></h3>
+			<p>Some vowel signs can form ligatures with a preceding base consonant in certain contexts, but do not ligate in others (eg. newspapers and modern typefaces). Both forms are equivalent in every way but visually. </p>
+	  <p>The default behaviour of a given font can be modified using the zero-width joiner and zero-width non-joiner characters, eg. <span class="ex" lang="bn" >গু</span> vs. <span class="ex" lang="bn" >গ‌ু</span>.</p>
+</section>
+<section id="conjuncts">
+		<h3><a href="#conjuncts">Conjuncts </a></h3>
+	<p>The absence of vowels between consonants can be represented in the following ways:</p>
+			<ul>
+			  <li>with no special rendering, eg. <span class="ex" lang="bn">করতাল</span> <span class="trans">kɔrtal</span> <span class="meaning">cymbal</span>.</li>
+			  <li>by specially shaped combinations of character glyphs called conjuncts, eg. <span class="ex" lang="bn"> গন্ধ</span> <span class="trans">gɔndhô</span> <span class="meaning">scent</span>.</li>
+			  <li>by showing the virama (called <span class="ex" lang="bn">হসন্ত</span> <span class="trans">hɔsôntô </span>in Bengali), eg. <span class="ex" lang="bn" >ফ্‌ল্যাট</span> <span class="trans">ph‌læʈ</span> <span class="meaning">flat</span>. </li>
+    </ul>
+			<p>Unlike languages written in the Devanagari script, consonant clusters are often not represented as conjuncts in Bengali. It is necessary to just know that the vowel should not be pronounced, eg. <span class="ex" lang="bn">রিকশা</span> <span class="trans">rikʃa</span> <span class="meaning">rickshaw</span>. Grammatical suffixes and endings are typically written without conjuncts, eg. <span
+					class="ex" lang="bn">খাননা</span> <span class="trans">khanna</span>, which is the present tense form <span class="trans">khan</span> plus negative suffix <span class="ipa">na</span>; <span class="ex" lang="bn">করছ</span> <span class="trans">kôrchô</span>, which is stem <span class="trans">kôr</span> from <span class="trans">kôra</span> plus present continuous ending <span class="trans">chô</span>.</p>
+			<p>Conjunct shapes are commonly formed by displaying a slightly smaller version of the non-final consonants in a cluster (equivalent to half-forms in Hindi), eg. see the <span class="trans">m</span> in <span class="ex" lang="bn">ক্যম্পাস</span> <span class="trans">kyæmpas</span> <span class="meaning">campus</span>, or by combining the consonants into a more complex conjunct shape, eg. <span class="trans">khr</span> and <span class="trans">ʂʈ</span> in <span class="ex" lang="bn">খ্রিষ্টান</span> <span class="trans">khriʂʈan</span> <span class="meaning">christian</span>.</p>
+			<p>Like other scripts, <a href="#char09B0"><span class="uname">U+09B0 BENGALI LETTER RA</span> <span lang="bn">&#x09B0;</span></a> is displayed in a non-standard way in consonant clusters. A syllable initial <span class="name">rɔ</span> is displayed as a mark to the top right of the cluster, eg. <span class="trans">rt</span> in <span class="ex" lang="bn">গর্ত</span> <span class="trans">gɔrtô</span> <span class="meaning">hole</span>, and a trailing <span class="name">rɔ</span> is typically displayed as a wavy line below the other consonants, eg. <span class="trans">gr</span> in <span class="ex" lang="bn">গ্রাম</span> <span class="trans">gram</span> <span class="meaning">village</span>.</p>
+			<p>Bengali also has a particular way of representing a cluster-final <span class="ipa">j</span> semi-vowel. This is typically represented
+				using the full form of the preceding consonant followed by a special form of <a href="#char09AF"><span class="uname">U+09AF BENGALI LETTER YA</span> <span lang="bn">&#x09AF;</span></a>, known as <span class="name">y̌ɔ-phɔla</span>, eg. <span class="ex" lang="bn">হ্যাঁ</span> <span class="trans">hyæ̃</span> <span class="meaning">yes</span>.</p>
+			<p>When the virama is often used  it is usually because the font doesn't have a particular conjunct ligature, but it may also be visible in places where the phonology is unusual, eg. <span class="ex" lang="bn">ফ্‌ল্যাট</span> <span class="trans">phlæʈ</span> <span class="meaning">flat</span>; <span class="ex" lang="bn">লান্‌চ</span> <span class="trans">lanc</span> <span class="meaning">lunch</span> (though these may also be spelled with conjuncts, eg. <span class="ex" lang="bn">ফ্ল্যাট</span> <span class="trans">phlæʈ</span> <span class="meaning">flat</span>). It is also quite common to see <span class="ex" lang="bn">উদ্‌যাপন</span> to distinguish it from words like <span class="ex" lang="bn">উদ্যান</span>. These words are etymologically related, but distinct phonetically.</p>
+	  <p>Nasals in conjuncts tend to conform to phonological patterns. Velar consonants (k, kh, g, etc) combine with <span class="ex" lang="bn">ঙ</span> <span class="name">ŋɔ</span>, palatal consonant (c, ch, ..) combine with <span class="ex" lang="bn">ঞ</span> <span class="name">ñɔ</span>, retroflex  <span class="ex" lang="bn">ণ</span> <span class="name">ɳɔ</span>, dental <span class="ex" lang="bn">ন</span> <span class="name">nɔ</span>, and labial <span class="ex" lang="bn">ম</span> <span class="name">mɔ</span>.</p>
+  </section>
+  <section>
+  </section>
+	<section id="choices">
+	  <h3><a href="#choices">Character choices</a></h3>
+			<p>The Bengali character block in Unicode provides 3 precomposed characters that are decomposed in Normalization Form C. The NFC form should be used. </p>
+			
+			<table class="choices"><tbody>
+			<tr><th>Don't use</th><th>Use</th></tr>
+			<tr>
+			<td><span class="ex" lang="bn">ড়</span><br />
+				<a target="c" href="/scripts/block/bengali#char09DC" class="uname">09DC BENGALI LETTER RRA</a></td>
+			<td><span class="ex" lang="bn">ড</span> + <span class="ex" lang="bn"> ়</span><br />
+				<a target="c" href="/scripts/block/bengali#char09A1" class="uname">09A1 BENGALI LETTER DDA</a>  +<br /><a target="c" href="/scripts/block/bengali#char09BC" class="uname">09BC BENGALI SIGN NUKTA</a></td>
+			</tr>
+			<tr>
+			<td><span class="ex" lang="bn">ঢ়</span><br />
+				<a target="c" href="/scripts/block/bengali#char09DD" class="uname">09DD BENGALI LETTER RHA</a></td>
+			<td><span class="ex" lang="bn">ঢ</span> + <span class="ex" lang="bn"> ়</span><br />
+				<a target="c" href="/scripts/block/bengali#char09A2" class="uname">09A2 BENGALI LETTER DDHA</a>  +<br /><a target="c" href="/scripts/block/bengali#char09BC" class="uname">09BC BENGALI SIGN NUKTA</a></td>
+			</tr>
+			<tr>
+			<td><span class="ex" lang="bn">য়</span><br />
+				<a target="c" href="/scripts/block/bengali#char09DF" class="uname">09DF   BENGALI LETTER YYA</a></td>
+			<td><span class="ex" lang="bn">য</span> + <span class="ex" lang="bn"> ়</span><br />
+				<a target="c" href="/scripts/block/bengali#char09AF" class="uname">09AF BENGALI LETTER YA</a>  +<br /><a target="c" href="/scripts/block/bengali#char09BC" class="uname">09BC BENGALI SIGN NUKTA</a></td>
+			</tr>
+			</tbody></table>
+			<p>The Bengali block also has code points that enable you to split vowel signs that circumvent the base into two parts; the single code point should be used. (If you do use the two code points, they must be both input after the base, and in the correct order.)</p>
+			<table class="choices"><tbody>
+			<tr><th>Don't use</th><th>Use</th></tr>
+			<tr>
+			<td><span class="ex" lang="bn">ে</span> + <span class="ex" lang="bn">ৗ</span><br />
+				<a target="c" href="/scripts/block/bengali#char09C7" class="uname">09C7 BENGALI VOWEL SIGN E</a> +<br /><a target="c" href="/scripts/block/bengali#char09D7" class="uname">09D7 BENGALI AU LENGTH MARK</a></td>
+			<td><span class="ex" lang="bn">ৌ</span><br />
+				<a target="c" href="/scripts/block/bengali#char09CC" class="uname">09CC BENGALI VOWEL SIGN AU</a></td>
+			</tr>
+			<tr>
+			<td><span class="ex" lang="bn">ে</span> + <span class="ex" lang="bn">া</span><br />
+				<a target="c" href="/scripts/block/bengali#char09C7" class="uname">09C7 BENGALI VOWEL SIGN E</a> +<br /><a target="c" href="/scripts/block/bengali#char09BE" class="uname">09BE BENGALI VOWEL SIGN AA</a></td>
+			<td><span class="ex" lang="bn">ো</span><br />
+				<a target="c" href="/scripts/block/bengali#char09CB" class="uname">09CB BENGALI VOWEL SIGN O</a></td>
+			</tr>
+		</tbody></table>
+  </section>
+</section>
+<!--div class="section">
+		<h2><a id="usage">Script usage</a></h2>
+		<div class="section2">
+			<h3>Text direction</h3>
+			<p>Script direction is predominantly right to left. Embedded left to right scripts and all numbers run left to right.</p>
+			<p><span class="prompt">List different bidi properties in block</span></p>
+			<p>The Unicode Standard provides an algorithm for ordering bidirectional Arabic.</p>
+		</div>
+		<div class="section2">
+			<h3>Shaping and case</h3>
+			<p>There is no case distinction.</p>
+			<p><span class="prompt">word final / cursive?</span></p>
+			<p><span class="prompt">joiner and non-joiner usage</span></p>
+			<p><span class="prompt">ligatures &amp; special joining forms?</span></p>
+			<p><span class="prompt">conjuncts?</span></p>
+			<p><span class="prompt">non-European numerals?</span></p>
+		</div>
+		<div class="section2">
+			<h3>Combining characters</h3>
+			<p><span class="prompt">breakdown of categories</span></p>
+			<p><span class="prompt">multiple combining characters? specific ordering rules for memory?</span></p>
+			<p><span class="prompt">context dependent placement?</span></p>
+			<p>Note the different placement of vowel signs in <span class="ur" style="font-size: 200%;">بِ</span> and <span class="ur" style="font-size: 200%;">بِب</span></p>
+			<p><span class="prompt">canonical combining classes</span></p>
+			<p> <span class="prompt">predisposed or surrounding glyphs?</span></p>
+			<p><span class="prompt">precomposed forms? normalisation?</span></p>
+		</div>
+		<div class="section2">
+			<h3>Text units, punctuation &amp; signs</h3>
+			<p><span class="prompt">how are words separated? how are sentences &amp; phrases delimited?</span></p>
+			<p><span class="prompt">punctuation and other signs in the block</span></p>
+			<p><span class="prompt">use of other punctuation and signs</span></p>
+		</div>
+		<div class="section2">
+			<h3>Wrapping &amp; justification</h3>
+			<p><span class="prompt">rules</span></p>
+		</div>
+		<div class="section2">
+			<h3>Collation &amp; sort order</h3>
+			<p><span class="prompt">rules</span></p>
+			<p><span class="prompt">importance of loose matching</span></p>
+		</div>
+		<div class="section2">
+			<h3>Other</h3>
+			<p><span class="prompt">method of writing characters</span></p>
+			<p>A number of arabic words that consist of a single character (plus unwritten vowel) are joined to the beginning of the word that
+				follows, eg. <span class="ar">لرجل</span> [<span class="ipa1">lɪ-ræʒul </span>].</p>
+			<p><span class="prompt">special input needs, eg. IMEs</span></p>
+			<p><span class="prompt">font and line height: min. pixel dimensions for characters, line height, inter-line spacing</span></p>
+			<p><span class="prompt">underlining</span></p>
+			<p><span class="prompt">font width: proportional spacing, kerning?</span></p>
+			<p><span class="prompt">baseline alignment</span></p>
+			<p><span class="prompt">ruby</span></p>
+			<p>Line height: To accomodate the sloping baseline of the nasta'liq style, you will need to set the CSS line-height property quite high
+				(perhaps 300% or 400%?).</p>
+		</div>
+</div--><!--div> 
+		<h2><a id="pali">Pali and Sanskrit extensions</a></h2>
+<php getresults( '4176', '4185' ); >
+		</div-->
+<section id="formatting">
+  <h2><a href="#formatting">Text formatting</a></h2>
+  <p>The following is a brief summary of script features until such time as I have more detailed information. </p>
+  <p>Text runs left to right, horizontally, and lines typically break at the spaces between words. The script has no upper-/lowercase distinction.</p>
+  <p>The basic unit for text segmentation is the syllable. Unicode grapheme clusters don't cover consonant clusters, so some additional processing is needed to identify text unit boundaries.</p>
+  <p>Initial letter styling can be applied to Bengali text.</p>
+  <p>
+    <section id="punctuationdesc"> </section>
+  </p>
+  <section id="punctuationdesc">
+    <h3><a href="#punctuationdesc">Punctuation</a></h3>
+  <p>The danda (<a href="#char0964"><span class="uname">U+0964 DEVANAGARI DANDA</span> <span lang="bn">&#x0964;</span></a>) is used for sentence final punctuation. <span class="ed">I haven't seen much evidence for the use of the double danda (<a href="#char0965"><span class="uname">U+0965 DEVANAGARI DOUBLE DANDA</span> <span lang="bn">&#x0965;</span></a>).</span></p>
+  <p>Western punctuation, such as commas, semicolons, colons, quotation marks and hyphens are also used quite commonly. </p>
+  <p>The <span class="name">bisɔrgô</span> <a href="#char0983"><span class="uname">U+0983 BENGALI SIGN VISARGA</span> <span lang="bn">&#x0983;</span></a> is sometimes used to mark initial abbreviations.</p>
+  <p class='ref'><a href="/scripts/bengali/#refs">Refs:</a> Bhattacharya </p>
+</section>
+<section id="counters">
+  <h3><a href="#counters">Counters</a></h3>
+  <p>The <a href="http://www.w3.org/International/docs/counter-styles/#bengali-styles">Predefined Counter Styles</a> document contains a single counter style for Bengali. It is numeric.</p>
+  <pre style="margin-left:7.5%;">
+@counter-style bengali {
+system: numeric;
+symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';
+/* symbols: '০' '১' '২' '৩' '৪' '৫' '৬' '৭' '৮' '৯'; */
+} 
+  </pre>
+  <p>Examples: 1 ⇨	<span class="ex" lang="bn">১</span>, 2 ⇨	<span class="ex" lang="bn">২</span>, 3 ⇨ <span class="ex" lang="bn">৩</span>, 4 ⇨ <span class="ex" lang="bn">৪</span>, 11 ⇨ <span class="ex" lang="bn">১১</span>, 22 ⇨	<span class="ex" lang="bn">২২</span>, 33 ⇨	<span class="ex" lang="bn">৩৩</span>, 44 ⇨	<span class="ex" lang="bn">৪৪</span>, 111 ⇨	<span class="ex" lang="bn">১১১</span>, 2222 ⇨	<span class="ex" lang="bn">২২২২</span>.</p>
+</section>
+</section>
+
+
+<section id="charlistsection">
+  <h2><a href="#charlistsection" id="characterlist">List of basic symbols</a></h2>
+    
+    <section id="banglalist">
+    <h3><a href="#banglalist">Bangla</a></h3>
+	<p>This is a list of main characters or character combinations needed for Bangla. Clicking on these characters will open a  page in another window. If the character is underlined, the new page will display additional information about that character.</p>
+	<p>&nbsp;</p>
+	<table id="index">
+	  <tbody>
+<tr><th><a href="#clconsonants">Consonants</a></th><td>
+<a href="../block/bengali#char0995" target="c" title="U+0995 BENGALI LETTER KA">&#x0995;</a> 
+<a href="../block/bengali#char0996" target="c" title="U+0996 BENGALI LETTER KHA">&#x0996;</a> 
+<a href="../block/bengali#char0997" target="c" title="U+0997 BENGALI LETTER GA">&#x0997;</a> 
+<a href="../block/bengali#char0998" target="c" title="U+0998 BENGALI LETTER GHA">&#x0998;</a> 
+<a href="../block/bengali#char0999" target="c" title="U+0999 BENGALI LETTER NGA">&#x0999;</a> 
+<a href="../block/bengali#char099A" target="c" title="U+099A BENGALI LETTER CA">&#x099A;</a> 
+<a href="../block/bengali#char099B" target="c" title="U+099B BENGALI LETTER CHA">&#x099B;</a> 
+<a href="../block/bengali#char099C" target="c" title="U+099C BENGALI LETTER JA">&#x099C;</a> 
+<a href="../block/bengali#char099D" target="c" title="U+099D BENGALI LETTER JHA">&#x099D;</a> 
+<a href="../block/bengali#char099E" target="c" title="U+099E BENGALI LETTER NYA">&#x099E;</a> 
+<a href="../block/bengali#char099F" target="c" title="U+099F BENGALI LETTER TTA">&#x099F;</a> 
+<a href="../block/bengali#char09A0" target="c" title="U+09A0 BENGALI LETTER TTHA">&#x09A0;</a> 
+<a href="../block/bengali#char09A1" target="c" title="U+09A1 BENGALI LETTER DDA">&#x09A1;</a> 
+<a href="../block/bengali#char09A1" target="c" title="U+09A1 U+09BC BENGALI LETTER DDA, BENGALI SIGN NUKTA">&#x09A1;&#x09BC;</a> 
+<a href="../block/bengali#char09A2" target="c" title="U+09A2 BENGALI LETTER DDHA">&#x09A2;</a> 
+<a href="../block/bengali#char09A2" target="c" title="U+09A2 U+09BC BENGALI LETTER DDHA, BENGALI SIGN NUKTA">&#x09A2;&#x09BC;</a> 
+<a href="../block/bengali#char09A3" target="c" title="U+09A3 BENGALI LETTER NNA">&#x09A3;</a> 
+<a href="../block/bengali#char09A4" target="c" title="U+09A4 BENGALI LETTER TA">&#x09A4;</a> 
+<a href="../block/bengali#char09A5" target="c" title="U+09A5 BENGALI LETTER THA">&#x09A5;</a> 
+<a href="../block/bengali#char09A6" target="c" title="U+09A6 BENGALI LETTER DA">&#x09A6;</a> 
+<a href="../block/bengali#char09A7" target="c" title="U+09A7 BENGALI LETTER DHA">&#x09A7;</a> 
+<a href="../block/bengali#char09A8" target="c" title="U+09A8 BENGALI LETTER NA">&#x09A8;</a> 
+<a href="../block/bengali#char09AA" target="c" title="U+09AA BENGALI LETTER PA">&#x09AA;</a> 
+<a href="../block/bengali#char09AB" target="c" title="U+09AB BENGALI LETTER PHA">&#x09AB;</a> 
+<a href="../block/bengali#char09AC" target="c" title="U+09AC BENGALI LETTER BA">&#x09AC;</a> 
+<a href="../block/bengali#char09AD" target="c" title="U+09AD BENGALI LETTER BHA">&#x09AD;</a> 
+<a href="../block/bengali#char09AE" target="c" title="U+09AE BENGALI LETTER MA">&#x09AE;</a> 
+<a href="../block/bengali#char09AF" target="c" title="U+09AF BENGALI LETTER YA">&#x09AF;</a> 
+<a href="../block/bengali#char09AF" target="c" title="U+09AF U+09BC BENGALI LETTER YA, BENGALI SIGN NUKTA">&#x09AF;&#x09BC;</a> 
+<a href="../block/bengali#char09B0" target="c" title="U+09B0 BENGALI LETTER RA">&#x09B0;</a> 
+<a href="../block/bengali#char09B2" target="c" title="U+09B2 BENGALI LETTER LA">&#x09B2;</a> 
+<a href="../block/bengali#char09B6" target="c" title="U+09B6 BENGALI LETTER SHA">&#x09B6;</a> 
+<a href="../block/bengali#char09B7" target="c" title="U+09B7 BENGALI LETTER SSA">&#x09B7;</a> 
+<a href="../block/bengali#char09B8" target="c" title="U+09B8 BENGALI LETTER SA">&#x09B8;</a> 
+<a href="../block/bengali#char09B9" target="c" title="U+09B9 BENGALI LETTER HA">&#x09B9;</a> 
+<a href="../block/bengali#char09CE" target="c" title="U+09CE BENGALI LETTER KHANDA TA">&#x09CE;</a> 
+<a href="../block/bengali#char09AF" target="c" title="U+09CD U+09AF BENGALI SIGN VIRAMA BENGALI LETTER YA">&#xA0;&#xA0;&#x09CD;&#x09AF;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clindependent">Independent vowels</a></th><td>
+<a href="../block/bengali#char0985" target="c" title="U+0985 BENGALI LETTER A">&#x0985;</a> 
+<a href="../block/bengali#char0986" target="c" title="U+0986 BENGALI LETTER AA">&#x0986;</a> 
+<a href="../block/bengali#char0987" target="c" title="U+0987 BENGALI LETTER I">&#x0987;</a> 
+<a href="../block/bengali#char0988" target="c" title="U+0988 BENGALI LETTER II">&#x0988;</a> 
+<a href="../block/bengali#char0989" target="c" title="U+0989 BENGALI LETTER U">&#x0989;</a> 
+<a href="../block/bengali#char098A" target="c" title="U+098A BENGALI LETTER UU">&#x098A;</a> 
+<a href="../block/bengali#char098B" target="c" title="U+098B BENGALI LETTER VOCALIC R">&#x098B;</a> 
+<a href="../block/bengali#char098F" target="c" title="U+098F BENGALI LETTER E">&#x098F;</a> 
+<a href="../block/bengali#char0990" target="c" title="U+0990 BENGALI LETTER AI">&#x0990;</a> 
+<a href="../block/bengali#char0993" target="c" title="U+0993 BENGALI LETTER O">&#x0993;</a> 
+<a href="../block/bengali#char0994" target="c" title="U+0994 BENGALI LETTER AU">&#x0994;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clvowelsigns">Vowel signs</a></th><td>
+<a href="../block/bengali#char09BE" target="c" title="U+09BE BENGALI VOWEL SIGN AA">&#xA0;&#xA0;&#x09BE;</a> 
+<a href="../block/bengali#char09BF" target="c" title="U+09BF BENGALI VOWEL SIGN I">&#xA0;&#xA0;&#x09BF;</a> 
+<a href="../block/bengali#char09C0" target="c" title="U+09C0 BENGALI VOWEL SIGN II">&#xA0;&#xA0;&#x09C0;</a> 
+<a href="../block/bengali#char09C1" target="c" title="U+09C1 BENGALI VOWEL SIGN U">&#xA0;&#xA0;&#x09C1;</a> 
+<a href="../block/bengali#char09C2" target="c" title="U+09C2 BENGALI VOWEL SIGN UU">&#xA0;&#xA0;&#x09C2;</a> 
+<a href="../block/bengali#char09C3" target="c" title="U+09C3 BENGALI VOWEL SIGN VOCALIC R">&#xA0;&#xA0;&#x09C3;</a> 
+<a href="../block/bengali#char09C7" target="c" title="U+09C7 BENGALI VOWEL SIGN E">&#xA0;&#xA0;&#x09C7;</a> 
+<a href="../block/bengali#char09C8" target="c" title="U+09C8 BENGALI VOWEL SIGN AI">&#xA0;&#xA0;&#x09C8;</a> 
+<a href="../block/bengali#char09CB" target="c" title="U+09CB BENGALI VOWEL SIGN O">&#xA0;&#xA0;&#x09CB;</a> 
+<a href="../block/bengali#char09CC" target="c" title="U+09CC BENGALI VOWEL SIGN AU">&#xA0;&#xA0;&#x09CC;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clcombining">Combining marks</a></th><td>
+<a href="../block/bengali#char0981" target="c" title="U+0981 BENGALI SIGN CANDRABINDU">&#xA0;&#xA0;&#x0981;</a> 
+<a href="../block/bengali#char0982" target="c" title="U+0982 BENGALI SIGN ANUSVARA">&#xA0;&#xA0;&#x0982;</a> 
+<a href="../block/bengali#char0983" target="c" title="U+0983 BENGALI SIGN VISARGA">&#xA0;&#xA0;&#x0983;</a> 
+<a href="../block/bengali#char09BC" target="c" title="U+09BC BENGALI SIGN NUKTA">&#xA0;&#xA0;&#x09BC;</a> 
+<a href="../block/bengali#char09CD" target="c" title="U+09CD BENGALI SIGN VIRAMA">&#xA0;&#xA0;&#x09CD;</a> 
+</td></tr>
+
+<tr><th><a href="#clsymbols">Symbols & punctuation</a></th><td>
+<a href="../block/bengali#char09F3" target="c" title="U+09F3 BENGALI RUPEE SIGN">&#x09F3;</a> 
+<a href="../block/devanagari#char0964" target="c" title="U+0964 DEVANAGARI DANDA">&#x0964;</a> 
+<a href="../block/devanagari#char0965" target="c" title="U+0965 DEVANAGARI DOUBLE DANDA">&#x0965;</a> 
+</td></tr>
+
+
+<tr><th><a href="#clnumbers">Numbers</a></th><td>
+<a href="../block/bengali#char09E6" target="c" title="U+09E6 BENGALI DIGIT ZERO">&#x09E6;</a> 
+<a href="../block/bengali#char09E7" target="c" title="U+09E7 BENGALI DIGIT ONE">&#x09E7;</a> 
+<a href="../block/bengali#char09E8" target="c" title="U+09E8 BENGALI DIGIT TWO">&#x09E8;</a> 
+<a href="../block/bengali#char09E9" target="c" title="U+09E9 BENGALI DIGIT THREE">&#x09E9;</a> 
+<a href="../block/bengali#char09EA" target="c" title="U+09EA BENGALI DIGIT FOUR">&#x09EA;</a> 
+<a href="../block/bengali#char09EB" target="c" title="U+09EB BENGALI DIGIT FIVE">&#x09EB;</a> 
+<a href="../block/bengali#char09EC" target="c" title="U+09EC BENGALI DIGIT SIX">&#x09EC;</a> 
+<a href="../block/bengali#char09ED" target="c" title="U+09ED BENGALI DIGIT SEVEN">&#x09ED;</a> 
+<a href="../block/bengali#char09EE" target="c" title="U+09EE BENGALI DIGIT EIGHT">&#x09EE;</a> 
+<a href="../block/bengali#char09EF" target="c" title="U+09EF BENGALI DIGIT NINE">&#x09EF;</a> 
+</td></tr>
+
+
+<tr><th><a href="#CLother">Other symbols in the Bengali block</a></th><td>
+<a href="../block/bengali#char09F2" target="c" title="U+09F2 BENGALI RUPEE MARK">&#x09F2;</a> 
+<a href="../block/bengali#char09F4" target="c" title="U+09F4 BENGALI CURRENCY NUMERATOR ONE">&#x09F4;</a> 
+<a href="../block/bengali#char09F5" target="c" title="U+09F5 BENGALI CURRENCY NUMERATOR TWO">&#x09F5;</a> 
+<a href="../block/bengali#char09F6" target="c" title="U+09F6 BENGALI CURRENCY NUMERATOR THREE">&#x09F6;</a> 
+<a href="../block/bengali#char09F7" target="c" title="U+09F7 BENGALI CURRENCY NUMERATOR FOUR">&#x09F7;</a> 
+<a href="../block/bengali#char09F8" target="c" title="U+09F8 BENGALI CURRENCY NUMERATOR ONE LESS THAN THE DENOMINATOR">&#x09F8;</a> 
+<a href="../block/bengali#char09F9" target="c" title="U+09F9 BENGALI CURRENCY DENOMINATOR SIXTEEN">&#x09F9;</a> 
+<a href="../block/bengali#char09FA" target="c" title="U+09FA BENGALI ISSHAR">&#x09FA;</a> 
+<a href="../block/bengali#char09BD" target="c" title="U+09BD BENGALI SIGN AVAGRAHA">&#x09BD;</a> 
+<a href="../block/bengali#char09F1" target="c" title="U+09F1 BENGALI LETTER RA WITH LOWER DIAGONAL">&#x09F1;</a> 
+<a href="../block/bengali#char09F0" target="c" title="U+09F0 BENGALI LETTER RA WITH MIDDLE DIAGONAL">&#x09F0;</a> 
+<a href="../block/bengali#char09D7" target="c" title="U+09D7 BENGALI AU LENGTH MARK">&#xA0;&#xA0;&#x09D7;</a> 
+<a href="../block/bengali#char09E0" target="c" title="U+09E0 BENGALI LETTER VOCALIC RR">&#x09E0;</a> 
+<a href="../block/bengali#char098C" target="c" title="U+098C BENGALI LETTER VOCALIC L">&#x098C;</a> 
+<a href="../block/bengali#char09E1" target="c" title="U+09E1 BENGALI LETTER VOCALIC LL">&#x09E1;</a> 
+<a href="../block/bengali#char09C4" target="c" title="U+09C4 BENGALI VOWEL SIGN VOCALIC RR">&#xA0;&#xA0;&#x09C4;</a> 
+<a href="../block/bengali#char09E2" target="c" title="U+09E2 BENGALI VOWEL SIGN VOCALIC L">&#xA0;&#xA0;&#x09E2;</a> 
+<a href="../block/bengali#char09E3" target="c" title="U+09E3 BENGALI VOWEL SIGN VOCALIC LL">&#xA0;&#xA0;&#x09E3;</a> 
+<a href="../block/bengali#char09DC" target="c" title="U+09DC BENGALI LETTER RRA">&#x09DC;</a> 
+<a href="../block/bengali#char09DD" target="c" title="U+09DD BENGALI LETTER RHA">&#x09DD;</a> 
+<a href="../block/bengali#char09DF" target="c" title="U+09DF BENGALI LETTER YYA">&#x09DF;</a> 
+</td></tr>
+
+
+
+
+
+      </tbody>
+  </table>
+<p>&nbsp;</p>
+<p>To see a list of ligatures and alternative shapes go to the 'shape' view of the <a href="/pickers/bengali/?view=shape">Bengali character picker</a>. (Hint: to see the composition of a conjunct, click on it and select 'Codepoints' .)</p>
+</section>
+</section>
+
+<section id="references"> 
+
+		<h2><a href="#references">Further reading</a></h2>
+		<ol>
+		  <li>Peter T. Daniels and William Bright, <span class="title"><cite>The World's Writing Systems</cite></span>, Oxford University Press, ISBN
+		    0-19-507993-0</li>
+		  <li>Wikipedia, <a href="http://en.wikipedia.org/wiki/Bengali_script"><cite>Bengali Script</cite></a></li>
+		  <li>William Radice, <span class="doctitle"><cite>Teach Yourself Bengali</cite></span>, Hodder &amp; Shoughton, ISBN 0-340-86029-4</li>
+		  <li><a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf"><cite>The Unicode Standard v5.2</cite></a></li>
+		  <li>Private correspondance with Tanmoy Bhattacharya, July 2004. </li>
+		  <li>Ishida, <cite><a href="http://www.w3.org/International/docs/counter-styles/">Predefined Counter Styles</a></cite></li>
+  </ol>
+</section>
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  7 Apr 2006.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-16  15:43<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+<script type="text/javascript">
+createtoc();
+initialiseShowNames('/scripts/block/bengali', 'c');
+highlightIndexChars()
+</script>
+
+</body>
+</html>
