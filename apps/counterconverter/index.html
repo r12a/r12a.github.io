@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Counter styles converter</title>
+<meta name="keywords" content="utf-8 bom test signature" />
+<meta name="description" content="Tool to ascertain whether a UTF8-encoded file on the web has a BOM at the beginning or not." />
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="style.css" />
+<script src="routines.js"></script>
+</head>
+
+<body><header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','apps');</script>
+</header>
+
+<h1>Counter styles converter</h1>
+
+
+<aside class="sidebar">
+  <div class="section">
+    <h2 class="flush">Related links</h2>
+    <p><a target="_blank" href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a></p>
+    <p><a target="_blank" href="http://www.w3.org/TR/predefined-counter-styles/">Predefined Counter Styles</a></p>
+  </div>
+</aside>
+
+<p id="status">Updated Tue 23 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'counterstyles'">counterstyles</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+
+<div class="section">
+  <p>This page allows you to convert ASCII numbers into other representations that can be used for counters for ordered lists, headings, figures, etc. It uses the algorithms described by <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a> and <a href="http://www.w3.org/TR/predefined-counter-styles/">Predefined Counter Styles</a>, but doesn't yet cover negative numbers, and outside the ranges defined in Counter Styles no fallback is applied other than to ASCII digits.</p>
+  <p>This is still a work in progress: more styles will be added as I get the time.</p>
+</div>
+<div class="section">
+  <form action="none" onsubmit="selectstyle(); return false;">
+    <p>Type in the numbers you want to convert (separate with spaces):<br/>
+      <input id="numbers" type="text"/>
+    </p>
+    <p>Choose a numbering system:<br/>
+      <select id="system" onchange="selectstyle(); return false;">
+        <optgroup label="Arabic script">
+        <option value="arabic-indic">Arabic-indic (numeric)</option>
+        <option value="persian">Persian (numeric)</option>
+        <option value="persianabjad">Persian abjad  (fixed, 1-28)</option>
+        <option value="persianalphabetic">Persian alphabetic  (fixed, 1-32)</option>
+        </optgroup>
+        <optgroup label="Armenian script">
+        <option value="armenian">Armenian (additive, range 1-9999)</option>
+        <option value="lowerarmenian">Armenian, lower (additive, range 1-9999)</option>
+        <option value="upperarmenian">Armenian, upper (additive, range 1-9999)</option>
+        </optgroup>
+        <optgroup label="Bengali script">
+        <option value="bengali">Bengali (numeric)</option>
+        </optgroup>
+        <optgroup label="Cyrillic script">
+        <option value="lowerbelorussian">Belorussian, lower (alphabetic)</option>
+        <option value="upperbelorussian">Belorussian, upper (alphabetic)</option>
+        <option value="lowerbulgarian">Bulgarian, lower (alphabetic)</option>
+        <option value="upperbulgarian">Bulgarian, upper (alphabetic)</option>
+        <option value="lowermacedonian">Macedonian, lower (alphabetic)</option>
+        <option value="uppermacedonian">Macedonian, upper (alphabetic)</option>
+        <option value="lowerrussian">Russian, lower (alphabetic)</option>
+        <option value="upperrussian">Russian, upper (alphabetic)</option>
+        <option value="lowerrussianfull">Russian, full, lower (alphabetic)</option>
+        <option value="upperrussianfull">Russian, full, upper (alphabetic)</option>
+        <option value="lowerserbocroatian">Serbo-croatian, lower (alphabetic)</option>
+        <option value="upperserbocroatian">Serbo-croatian, upper (alphabetic)</option>
+        <option value="lowerukrainian">Ukrainian, lower (alphabetic)</option>
+        <option value="upperukrainian">Ukrainian, upper (alphabetic)</option>
+        <option value="lowerukrainianfull">Ukrainian, full, lower (alphabetic)</option>
+        <option value="upperukrainianfull">Ukrainian, full, upper (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Devanagari script">
+        <option value="devanagari">Devanagari (numeric)</option>
+        <option value="hindi">Hindi (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Ethiopic script">
+        <option value="ethiopic-numeric">Ethiopic, numeric (numeric)</option>
+        </optgroup>
+        <optgroup label="Georgian script">
+        <option value="georgian">Georgian (additive, range 1-19999)</option>
+        </optgroup>
+        <optgroup label="Greek script">
+        <option value="greek">Greek, (additive, range 1 - 999)</option>
+        <option value="lower-greek">Greek, lower (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Gujarati script">
+        <option value="gujarati">Gujarati (numeric)</option>
+        </optgroup>
+        <optgroup label="Gurmukhi script">
+        <option value="gurmukhi">Gurmukhi (numeric)</option>
+        </optgroup>
+        <optgroup label="Hebrew script">
+        <option value="hebrew">Hebrew (additive, range 1-10999)</option>
+        </optgroup>
+        <optgroup label="Ideographic script">
+        <option value="simp-chinese-informal">Chinese, simplified informal 0-9999</option>
+        <option value="simp-chinese-formal">Chinese, simplified formal 0-9999</option>
+        <option value="trad-chinese-informal">Chinese, traditional informal 0-9999</option>
+        <option value="trad-chinese-formal">Chinese, traditional formal 0-9999</option>
+        <option value="cjk-decimal">CJK decimal (numeric)</option>
+        <option value="cjkearthlybranch">CJK earthly branch (fixed, 1-12)</option>
+        <option value="cjkheavenlystem">CJK heavenly stem (fixed, 1-10)</option>
+        <option value="japanese-informal">Japanese, informal (additive, range 0-9999)</option>
+        <option value="japanese-formal">Japanese, formal (additive, range 0-9999)</option>
+        <option value="korean-hanja-informal">Korean, hanja informal (additive, range 0-9999)</option>
+        <option value="korean-hanja-formal">Korean, hanja formal (additive, range 0-9999)</option>
+        </optgroup>
+        <optgroup label="Japanese script">
+        <option value="hiragana">Hiragana (alphabetic)</option>
+        <option value="hiragana-iroha">Hiragana, iroha (alphabetic)</option>
+        <option value="katakana">Katakana (alphabetic)</option>
+        <option value="katakana-iroha">Katakana, iroha (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Kannada script">
+        <option value="kannada">Kannada (numeric)</option>
+        </optgroup>
+        <optgroup label="Khmer script">
+        <option value="cambodian-khmer">Khmer (numeric)</option>
+        <option value="khmerconsonant">Cambodian consonant (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Korean hangul script">
+        <option value="korean-hangul-formal">Korean, hangul formal (additive, range 0-9999)</option>
+        <option value="circledkoreanconsonant">Korean, circled consonant (fixed, 1-14)</option>
+        <option value="circledkoreansyllable">Korean, circled syllable (fixed, 1-14)</option>
+        <option value="koreanconsonant">Korean, consonant (alphabetic)</option>
+        <option value="koreansyllable">Korean, syllable (alphabetic)</option>
+        <option value="parenthesizedhangulconsonant">Korean, parenthesized consonant (fixed, 1-14)</option>
+        <option value="parenthesizedhangulsyllable">Korean, parenthesized syllable (fixed, 1-14)</option>
+        </optgroup>
+        <optgroup label="Lao script">
+        <option value="lao">Lao (numeric)</option>
+        </optgroup>
+        <optgroup label="Latin script">
+        <option value="lower-roman">Roman, lower (additive, range 1-3999)</option>
+        <option value="upper-roman">Roman, upper (additive, range 1-3999)</option>
+        </optgroup>
+        <optgroup label="Lepcha script">
+        <option value="lepcha">Lepcha (numeric)</option>
+        </optgroup>
+        <optgroup label="Malayalam script">
+        <option value="malayalam">Malayalam (numeric)</option>
+        </optgroup>
+        <optgroup label="Mongolian script">
+        <option value="mongolian">Mongolian (numeric)</option>
+        </optgroup>
+        <optgroup label="Myanmar script">
+        <option value="myanmar">Burmese/Myanmar (numeric)</option>
+        <option value="shan">Shan (numeric)</option>
+        </optgroup>
+        <optgroup label="Oriya script">
+        <option value="oriya">Oriya (numeric)</option>
+        </optgroup>
+        <optgroup label="Telugu script">
+        <option value="telugu">Telugu (numeric)</option>
+        </optgroup>
+        <optgroup label="Tamil script">
+        <option value="tamil">Tamil (numeric)</option>
+        <option value="ancienttamil">Tamil, ancient (additive, range 1-9999)</option>
+        </optgroup>
+        <optgroup label="Thai script">
+        <option value="thai">Thai (numeric)</option>
+        <option value="thaialphabetic">Thai, alphabetic (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Tibetan script">
+        <option value="tibetan">Tibetan (numeric)</option>
+        </optgroup>
+      </select>
+      &nbsp;&nbsp;
+      <button type="submit">Convert</button>
+    </p>
+  </form>
+  <p id="output">&nbsp;</p>
+</div>
+<section>
+  <h3>Notes</h3>
+  <p>For more information about what's going on here, see  <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a>. Basically, this app converts a sequence of ASCII numbers to counters that could be based on numeric, alphabetic, additive, or fixed principles. It uses the names of styles defined in the spec.</p>
+  <p>Those counters are typically used with numbered lists (<code class="kw">ol</code> in HTML), or for numbering section headers, footnotes, etc.</p>
+  <p><strong>Numeric</strong> styles just substitute other characters for the digits 0-9 .</p>
+  <p><strong>Alphabetic</strong> styles produce counters like a, b, c ... z, aa, ab ... etc</p>
+  <p><strong>Additive</strong> styles use a more complicated method to build counters in a way similar to the Roman numbering, i, ii, iii, iv, v, ... x, xi ... etc</p>
+  <p><strong>Fixed</strong> styles are just a single sequence of characters, and therefore the range is quite limited. For example, there are only twenty filled-circle numbers in Unicode, and so you only see a result for  numbers between 1 and 20 (eg. ❶, ❷, ❸, ❹ ... ⓳, ⓴).</p>
+</section>
+
+<div class="smallprint"><span id="version">First published  24 Jul 2013.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-17  12:00<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+</body>
+</html>
