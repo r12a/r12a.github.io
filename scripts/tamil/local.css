@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Noto Sans Tamil WF';
+    src: url('/webfonts/notosanstamil-regularwebfont.woff2') format('woff2'),
+         url('/webfonts/notosanstamil-regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 :lang(ta) { font-family: InaiMathi, "Tamil MN", "Latha", "Noto Sans Tamil", "Noto Sans Tamil WF", "Droid Sans Tamil", "Lohit Tamil", serif; font-size: 130%; }
 
