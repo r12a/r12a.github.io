@@ -48,5 +48,7 @@ function convertChar2CP ( textString ) {
 			CPstring += dec2hex(b) + ' ';
 			}
 		}
-	return CPstring.substring(0, CPstring.length-1);
+	var out = CPstring.substring(0, CPstring.length-1)
+	while (out.length < 4) out = '0'+out
+	return out
 	}
