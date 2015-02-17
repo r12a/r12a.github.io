@@ -1,0 +1,11 @@
+
+:lang(ta) { font-family: InaiMathi, "Tamil MN", "Latha", "Noto Sans Tamil", "Noto Sans Tamil WF", "Droid Sans Tamil", "Lohit Tamil", serif; font-size: 130%; }
+
+#index td { font-family: InaiMathi, "Tamil MN", "Latha", "Noto Sans Tamil", "Noto Sans Tamil WF", "Droid Sans Tamil", "Lohit Tamil", serif; font-size: 26px; padding: 16px; text-align:left;  }
+
+
+#fontsetting { width: 270px; }
+#fontsetting.open { right: 0px; }
+#fontsetting.closed { right: -258px; }
+#fontsettingswitch { height: 130px; }
+
