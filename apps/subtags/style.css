@@ -1,0 +1,191 @@
+h1 {
+	margin-top: 10px;
+	}
+h2 {
+	margin-bottom: 0;
+	}
+
+a.term {
+	border-bottom: 1px dotted teal;
+	color: #666;
+	}
+
+.registryItem {
+	margin:1px;
+	margin-left: 7.5%;
+	margin-right: 32%;
+	background-color:#f8f8f8;
+	}
+	
+.registryItem h3 {
+	margin:0px;
+	padding:1.5%;
+	width:97%;
+	font-weight:normal;
+	color:#fff;
+	}
+	
+.registryItem h3 span.st {
+	font-weight:bold;
+	width:6em;
+	display:block;
+	float:left;
+	}
+
+.report {
+	margin: 10px 32% 0 7.5%;
+	background-color:#f8f8f8;
+	padding: 8px;
+	text-align: left;
+	}
+.reportNote {
+	font-size:80%; 
+	line-height:1.2;
+	margin-top: 0;
+	margin-left: 7.5%;
+	margin-right: 32%;
+	background-color:#f8f8f8;
+	padding: 8px;
+	padding-top: 0;
+	text-align: left;
+	}
+
+#userDefined .registryItem h3 {
+	color:#666;
+	}
+
+.registryItem ul {
+	color:#444;
+	margin: 0;
+	padding-left: 6em;
+	font-family:"Courier New", Courier, monospace;
+	}
+	
+/* Coloring */
+#listScripts h3 {
+	background-color:#544;
+	}
+	
+#listLanguages h3 {
+	background-color:#454;
+	}
+	
+#listRegions h3 {
+	background-color:#445;
+	}
+	
+#listVariant h3 {
+	background-color:#455;
+	}
+	
+#listExtlang h3 {
+	background-color: #F90;  ;
+	}
+	
+#listGrand h3 {
+	background-color:#554;
+	}
+	
+#listRedundant h3 {
+	background-color:#545;
+	}
+
+/* Form */	
+form {
+	font-size: 95%;
+	color: gray;
+	text-align: left;
+	}
+	
+form select, form select option, form input {
+	font-size: 100%;
+	}
+
+select, input[type='text'] {
+	color: #333;
+	font-size: 95%;
+	background-color: #DAFDE8;
+	background-color: #eee;
+	border: 0;
+	border-radius: 8px;
+	padding: 2px 5px;
+	}
+
+input[type='submit'] {
+	font-size: 90%;
+	}
+	
+select option {
+	background-color: white;
+	}
+	
+#registryForm fieldset {
+	border: 0;
+	padding: 0;	
+	display: inline;
+	}
+
+#registryForm fieldset p {
+	margin-left: 0;
+	margin-right: 0;
+	}
+	
+.radio {
+	white-space: nowrap; 
+	}
+	
+#form strong {
+	color: brown;
+	}
+
+form {
+	display: inline;
+	}
+	
+.stname {
+	color:#C30; 
+	font-style: italic;
+	white-space: nowrap;
+	}
+.explanation { font-size: 70%; color:#C30; line-height: 1.2em; margin-top: 4em; }
+.notenumber { font-size: 120%; color:#C30; }
+.registryitem img { vertical-align: middle; }
+sub { color:#C30; font-style: italic; }
+
+.comments { margin-left: 50px; margin-bottom: 5px; }
+.task { font-size: 200%; font-weight:bold; color: #669;  }
+
+#search { float: left; width: 30%; margin: 0 0 0 6.5%; padding: 1%; }
+#check { float: left; width: 30%; margin: 0; padding: 1%; }
+#search p, #check p { margin: 0 0 20px 0; }
+
+#author { margin-top:0; }
+
+#search p, #check p {
+	border: 1px solid #ccc;
+	box-shadow: 3px 3px 5px #888; 
+	padding: 5px 10px 5px 15px; 
+	border-radius: 10px; 
+	}
+
+#resultTable td { border: 1px solid #ccc; border: 0; padding: 0 20px; text-align: left; }
+.originalNumber { font-size: 40px; }
+
+#picture { margin-top: 1em; margin-bottom: 1em; }
+
+
+
+
+
+.sil { float:right; width: 20px; text-align:right; }
+
+.bigOK { 
+	color:#FFF; 
+	font-size: 1.2em; 
+	background-color: #55B05A; 
+	border: 1px solid #55B05A; 
+	padding: 0.3em; 
+	border-radius: 5px; 
+	box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.4), 0px 0.9em 0.5em -1.2em rgba(255,255,255,0.2) inset; 
+	text-align:center;
+	}
