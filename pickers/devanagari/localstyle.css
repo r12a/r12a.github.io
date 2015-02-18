@@ -1,0 +1,142 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansdevanagari.css);
+
+#alphabet { display: block; }
+#phonelist { display: none; }
+#fontgrid { display: none; }
+
+
+table {
+	border-spacing: 0;
+	}
+
+#alphabet td span.c { 
+	cursor: pointer; 
+	font-family: "Noto Sans Devanagari", "Devanagari Sangam MN", Raavi, "Nirmala UI", "Arial Unicode MS", sans-serif;
+	font-size: 28px;
+	padding: 1px;
+	}
+
+#alphabet td.hint {  
+	font-size: 14px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	}
+	
+#kbd { 	
+	margin-left: 0; 
+	color: #888;
+	}
+#kbd table {
+	margin:0;
+	}
+	
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1;
+	}
+	
+	
+	
+#kbd #consonants {
+	margin-left: 0px; 
+	}
+
+
+#kbd #vowels {
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	padding: 0 4px;
+	}
+#kbd #vowels .hint {
+	}
+#kbd #vowels td {
+	text-align: center; 
+	line-height: 1.3;
+	}
+#kbd #vowels span.c {
+	}
+	
+
+#kbd #diacritics {
+	margin-left: 0px; 
+	margin-top: 5px;
+	}
+#kbd #diacritics td {
+	text-align: center; 
+	line-height: 1;
+	}
+#kbd #diacritics span {
+	padding: 0 5px;
+	}
+
+#kbd #symbols {
+	margin-top: 10px;
+	margin-left: 20px; 
+	}
+
+#kbd #symbols td {
+	text-align: right;
+	}
+
+#kbd #numbers {
+	margin-left: 20px;
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	}
+#kbd #numbers img {
+	vertical-align: top;
+	}
+
+#kbd #punctuation {
+	margin-left: 20px;
+	}
+#kbd #punctuation td {
+	min-width: 30px;
+	}
+
+#rare td {
+	line-height: 1;
+	}
+
+
+#toggleRare {
+	font-size: 12px;
+	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif;
+	}
+
+
+
+.key span { 
+	font-size: 24px; 
+	color: gray; 
+	font-weight: normal; 
+	font-family:  "Noto Sans Devanagari",  "mongolian writing",sans-serif;  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	}
+.key .s { position:absolute; bottom: 5px; left: 15px; }
+.key .n { position:absolute; bottom: 5px; right: 5px;  }
+
+
+
+
+#fontgrid { 
+	color: #808080; 
+	background: white; 
+	padding: 10px 20px;
+	font-size: 30px;
+	}
+#fontgrid span { 
+	cursor: pointer; 
+	margin-right: 10px; 
+	}
+#fontgrid span:after { 
+	content: '\200B ' ; /* zwsp */ 
+	}
