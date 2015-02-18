@@ -1,4 +1,5 @@
 var _local = true;
+if (window.location.href.match('r12a.github.io')) _local = false
 
 function makeCharacterLink (cp, block, lang, direction) { 
 	var hex = convertChar2CP(cp)
