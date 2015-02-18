@@ -10,7 +10,7 @@ NEW STUFF
 - add spaces to picker function from old add single space
 
 -->
-<title>UniView 7.0.0b</title>
+<title>UniView 7.0.0c</title>
 <link rel="stylesheet" href="uniview-style.css" type="text/css"/>
 
 <!-- &copy; Copyright 2001-2015 Richard Ishida [ishida@w3.org].  All rights reserved.  -->
@@ -23,8 +23,8 @@ NEW STUFF
 <script src="function-text.js" type="text/javascript"></script>
 <script src="propNames.js" type="text/javascript"></script>
 <script src="functions.js" type="text/javascript"></script>
-<script type="text/javascript" src="../code/normalization/js/n11n.js"></script>
-<script type="text/javascript" src="../code/normalization/js/n11ndata.js"></script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js"></script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata.js"></script>
 <style type="text/css">
 .dim {
 	background-color: #F9F5DE;
@@ -42,11 +42,12 @@ NEW STUFF
 </head>
 
 <body>
-<div style="float:left;">
-  <div id="title">UniView 7.0.0b</div>
-	</div>
-<div id="externallinks" style="float: right; text-align: left; font-size:90%; line-height:2em;"><span onclick="help = window.open('/rishida/utilities', 'home'); home.focus();" title="Find more tools like this." style="color:teal; text-decoration:none;" class="link">rishida apps</span> &nbsp; </div>
-<br  style="clear:both;" />
+<header>
+<div id="header-boilerplate"><div id="site-navigation"> <img id="bp_picture" class="compact" alt=" " src="/images/world.gif"></div><div id="boilerplate"><div id="line" class="midlength">&nbsp;</div></div><div id="topbar"><a href="/">r12a</a> &gt;&gt; apps  &gt;&gt; UniView 7.0.0c</div><div id="sitelinks" class="noprint"><a href="http://rishida.net/blog/">blog</a>&nbsp; <a href="/doclist">docs</a>&nbsp; <a href="/applist">apps</a>&nbsp; <a href="/photos">photos</a>&nbsp;&nbsp;</div></div>
+</header>
+
+<div role="main">
+<br  style="clear:both; height: 10px;" />
 <div id="tabpanels"  style="float:left;">
   <ul id="tabs" style="float:left;" >
     <li class="ontab" id="lookuppaneltab"><a href="#initialpanel" onclick="tabswitch('lookuppanel', 'listpanel optionspanel helppanel'); return false;">Look up</a></li>
@@ -643,7 +644,7 @@ src="images/convert.png" alt="Convert" title="Send characters to the Unicode Cha
           <img src="images/selectall.png" alt="Select" title="Select all text in the Copy &amp; Paste box." onclick="document.getElementById('picker').focus();document.getElementById('picker').select()" style="margin-left: 5px;" /><img src="images/tochar.png" alt="Add characters" title="Add characters in a list or table to the Copy &amp; Paste box." onclick="output2CharArea();"  style="margin-left:3px;" /><img src="images/addspace.png" alt="Select" title="Add a space to the Copy &amp; Paste box." onclick="addSpacesToPicker();"  style="margin-left: 10px;" /><img src="images/nfc.png" alt="NFC" title="Convert text in the Copy &amp; Paste box to NFC." onclick="doN11n('nfc'); document.getElementById('picker').focus();" style="margin-left:10px;" /><img src="images/nfd.png" style="margin-left: 3px;" alt="NFD" title="Convert text in the Copy &amp; Paste box to NFD."
 			onclick="doN11n('nfd'); document.getElementById('picker').focus();" /> <br/>
           <img src="images/expand.png" alt="Expand" title="Expand ranges of characters in the Copy &amp; Paste box. For example, 'a-zA-Z'." onclick="if (document.getElementById('picker').value== '') { alert('Add characters to the text area.'); } else { document.getElementById('picker').value = expandList(document.getElementById('picker').value); }"  style="margin-left: 5px;" /><img src="images/count.png" alt="Count" title="Count the characters in the Copy &amp; Paste box." onclick="if (document.getElementById('picker').value== '') { alert('None.'); } else { alert(document.getElementById('picker').value.length); }"  style="margin-left: 2px;" /><img src="images/han.gif" alt="UniHan" onclick="showUnihan(document.getElementById('picker').value, 'char');" title="Look up characters in the Copy &amp; Paste box in the UniHan database."  style="margin-left:10px;" /><img
-src="images/convert.png" alt="Convert" title="Send characters in the Copy &amp; Paste box to the Unicode Character Converter tool."	onclick="converter = window.open('/rishida/tools/conversion?q='+encodeURIComponent(document.getElementById('picker').value), 'converter'); converter.focus();" /> <img src="images/case-simple.png" alt="Convert" title="Show upper/lower/title case alternatives for all characters in the copy/paste box."	onclick="convert2upper(document.getElementById('picker').value, false);  return false;" /> <img src="images/case-detail.png" alt="Convert" title="Show upper/lower/title case alternatives with correspondences for all characters in the copy/paste box."	onclick="convert2upper(document.getElementById('picker').value, true);  return false;" />
+src="images/convert.png" alt="Convert" title="Send characters in the Copy &amp; Paste box to the Unicode Character Converter tool."	onclick="converter = window.open('/apps/conversion?q='+encodeURIComponent(document.getElementById('picker').value), 'converter'); converter.focus();" /> <img src="images/case-simple.png" alt="Convert" title="Show upper/lower/title case alternatives for all characters in the copy/paste box."	onclick="convert2upper(document.getElementById('picker').value, false);  return false;" /> <img src="images/case-detail.png" alt="Convert" title="Show upper/lower/title case alternatives with correspondences for all characters in the copy/paste box."	onclick="convert2upper(document.getElementById('picker').value, true);  return false;" />
           <img src="images/clearpicker.png" alt="Clear" style="margin-left: 15px;" title="Clear the  Copy &amp; Paste box." onClick="document.getElementById('picker').value = ''; document.getElementById('picker').focus(); return false;" /></div>
         </form>
     </div>
@@ -692,6 +693,8 @@ src="images/convert.png" alt="Convert" title="Send characters in the Copy &amp; 
   </div>
 </div>
 <div id="notescontainer"></div>
+</div><!-- end of div role=main -->
+
 <script type="text/javascript">
 // stop the startup message
 document.getElementById('startupMsg').style.display = 'none';

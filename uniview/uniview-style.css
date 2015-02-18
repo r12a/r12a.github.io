@@ -14,7 +14,76 @@ body {
 	color: black;
 	font-size: 14px; 
 	font-family: 'arial unicode ms', Arial, Helvetica, sans-serif;
+	margin: 0;
 	}
+
+/* header */
+
+header { 
+	font-family: adobe-clean,"Helvetica Neue",robotolight,calibri,corbel,"Segoe UI",helvetica,sans-serif;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 1.75;
+	color: #666;
+	text-align: justify;
+	}
+#site-navigation {
+    float: right;
+    background-color: #FFF;
+    color: #000;
+    width: 28%;
+    clear: right;
+    text-align: center;
+	}
+#bp_picture.compact {
+    margin-top: 1em;
+    margin-bottom: 0px;
+}
+#bp_picture {
+    margin-top: 5em;
+    margin-bottom: 0em;
+    margin-left: 20px;
+    display: block;
+}
+img {
+    border: 0px none;
+	}
+#topbar {
+    text-align: left;
+    font-size: 150%;
+    color: #a52a2a;
+    background-color: #F5F5F5;
+    padding: 5px 5px 5px 10px;
+    margin: 0px 29% 0px 0px;
+    line-height: 1.1;
+	}
+#topbar a:link , #topbar a:visited {
+    color: #a52a2a;
+	background-color: transparent;
+    text-decoration: none;
+	}
+#sitelinks {
+    padding-left: 10px;
+    line-height: 24px;
+	}
+#sitelinks a {
+    color: #808080;
+	}
+#line {
+    position: absolute;
+    left: 71%;
+    top: 0px;
+    width: 10px;
+    border-left: 2px dotted #005A9C;
+    height: 4.5em;
+	}
+/* end header */
+
+
+div[role='main'] {
+	margin: 0 8px;
+	}
+
 form { 
 	margin:0; 
 	padding: 0; 
