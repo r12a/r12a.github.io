@@ -89,7 +89,9 @@ h2 a:hover {
 	color: #005a9c;
 	text-decoration: none; 
 	}
-
+body.app h2 {
+	color: #a52a2a;
+	}
 h3 {
 	text-align: left;
 	font-size: 120%;
@@ -151,7 +153,19 @@ h2 + section > h3 {
 	color: #005a9c; 
 	text-decoration: none; 
 	}
-
+body.app #topbar {
+	color: #a52a2a;
+	}
+body.app #topbar a:link { 
+	color: #a52a2a; 
+	}
+body.app #topbar a:visited { 
+	color: #a52a2a; 
+	}
+.versionnumber {
+	font-size: 50%;
+	margin-left: 10px;
+	}
 
 #line {
 	position: absolute;
@@ -167,7 +181,13 @@ h2 + section > h3 {
 #line.compact {
 	height: 14em;
 	}
-	
+#line.app {
+	height: 4.5em;
+	}
+body.app #line {
+	display: none;
+	}
+
 #bp_picture {
 	margin-top: 5em;
 	margin-bottom: 0em;
@@ -176,6 +196,10 @@ h2 + section > h3 {
 	}
 #bp_picture.compact {
 	margin-top: 1em;
+	margin-bottom: 0;
+	}
+#bp_picture.app {
+	margin-top: 0.3em;
 	margin-bottom: 0;
 	}
 #level2-picture {
@@ -288,6 +312,10 @@ h2 + section > h3 {
 	padding-bottom: 1em;
 	text-align: center;
 	}
+body.app #site-navigation {
+	padding-top: 0;
+	padding-bottom: 0;
+	}
 #site-navigation a:link {
 	color: black;
 	}
@@ -314,6 +342,9 @@ h2 + section > h3 {
 	margin-bottom: 5em;
 	line-height: 24px;
 	}
+body.app #sitelinks {
+	margin-bottom: 3em;
+	}
 #sitelinks a {
 	color: gray;
 	}
@@ -325,6 +356,9 @@ div.up {
 	margin-top: -5px; 
 	}
 
+#showNotes {
+	cursor: pointer;
+	}
 
 address {
 	font-style: normal;
