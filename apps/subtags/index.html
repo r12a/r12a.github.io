@@ -39,29 +39,13 @@ http://www.gnu.org/licenses/gpl.html
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
-<body>
+<body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif', 'apps');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif', 'Language subtag lookup','');</script>
 </header>
 
-<h1> Language Subtag  Lookup</h1>
-
-<aside class="sidebar">
-  <div class="section">
-    <h2 class="flush">Related links</h2>
-    <p><a target="_blank" href="http://www.w3.org/International/articles/language-tags/">About language subtags</a></p>
-    <p><a target="_blank" href="http://www.iana.org/assignments/language-subtag-registry">IANA subtag registry</a></p>
-    <h2>Version information</h2>
-    <p>Currently supports the IANA Subtag registry of 2014-12-17.  The tool currently reports subtags for 8,081  languages, 228 extlangs, 174 scripts, 301 regions, 68 variants, and 26 grandfathered subtags. Please report any bugs to <a href="mailto:ishida@w3.org">me</a>.</p>
-  </div>
-</aside>
-
-<p id="status">Updated Thu 25 Dec 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=subtags" title="Show all blog posts tagged with 'subtags'">subtags</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
-
 <div class="section">
-  <p>BCP 47 language tags are built from subtags in the IANA Subtag Registry. This tool helps you find or look up subtags and check for errors in language tags.</p>
-  <p>Read <a href="http://www.w3.org/International/questions/qa-choosing-language-tags">Choosing a Language Tag</a> for step-by-step guidelines on creating language tags. This tool also provides information to guide your choices.</p>
   <div id="search">
       <p><strong class="task">Find</strong> <br/>
         a subtag by searching for text in the descriptions <a href="#note2" class="explanation">See note&#xA0;2.</a> <br />
@@ -104,8 +88,25 @@ one or more subtags <a href="#note3" class="explanation">See note&#xA0;3.</a><br
 <div id="out"></div>
 
 
-<div id="notes" style="display:block; margin-top: 10em;">
-    <h2>Notes</h2>
+<div id="showNotes"  style="margin-left: 7.5%"  onclick="toggleNotes()">show notes</div>
+
+<div id="detailednotes" style="display:none">
+<aside class="sidebar">
+  <div class="section">
+    <h2 class="flush">Related links</h2>
+    <p><a target="_blank" href="http://www.w3.org/International/articles/language-tags/">About language subtags</a></p>
+    <p><a target="_blank" href="http://www.iana.org/assignments/language-subtag-registry">IANA subtag registry</a></p>
+    <h2>Version information</h2>
+    <p>Currently supports the IANA Subtag registry of 2014-12-17.  The tool currently reports subtags for 8,081  languages, 228 extlangs, 174 scripts, 301 regions, 68 variants, and 26 grandfathered subtags. Please report any bugs to <a href="mailto:ishida@w3.org">me</a>.</p>
+  </div>
+</aside>
+
+<p id="status">Updated Thu 25 Dec 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=subtags" title="Show all blog posts tagged with 'subtags'">subtags</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+
+<div class="section">
+  <p>BCP 47 language tags are built from subtags in the IANA Subtag Registry. This tool helps you find or look up subtags and check for errors in language tags.</p>
+  <p>Read <a href="http://www.w3.org/International/questions/qa-choosing-language-tags">Choosing a Language Tag</a> for step-by-step guidelines on creating language tags. This tool also provides information to guide your choices.</p>
+    <h2>Usage notes</h2>
     <p><strong><span class="notenumber">1</span> Raw data. </strong>Click on the results with a coloured background to see the raw IANA data for a subtag.</p>
     <p><strong><span class="notenumber" id="note2">2</span> Find.</strong> The description is  the name of the subtag, ie. the language, region, etc. You can search on any part of a description (eg. <a href="/apps/subtags/?find=eng">eng</a> gives results that include B<strong>eng</strong>ali, <strong>Eng</strong>lish and T<strong>eng</strong>war). Note that some languages may be spelled differently, eg. <a href="/apps/subtags/?find=panjabi">Panjabi</a> yields three results, but <a href="/apps/subtags/?find=punjabi">Punjabi</a> only one.</p>
     <p><strong><span id="note3" class="notenumber">3</span> Look up. </strong> Looks up all forms of all subtags in the list, eg. it returns both a language and extlang subtag for <a href="/apps/subtags/?lookup=cmn">cmn</a>. Subtags can be separated by commas, semicolons, hyphens, or spaces, eg. <a href="/apps/subtags/?lookup=en%3B%20fr%2C%20ca%2C%20Bali-1901&amp">en; fr, ca, Bali-1901</a>.<br />
@@ -125,9 +126,8 @@ one or more subtags <a href="#note3" class="explanation">See note&#xA0;3.</a><br
       combining separate subtags from the current registry. They do not show up in search results.</p>
 
 </div>
-
 <div class="smallprint"><span id="version">First published 1 Apr 2007.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-17  21:31<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-18  9:50<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GNU-GPL (see source).</span></div>
 
 

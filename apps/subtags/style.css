@@ -153,10 +153,10 @@ form {
 sub { color:#C30; font-style: italic; }
 
 .comments { margin-left: 50px; margin-bottom: 5px; }
-.task { font-size: 200%; font-weight:bold; color: #669;  }
+.task { font-size: 200%; font-weight:bold; color: #a52a2a;  }
 
-#search { float: left; width: 30%; margin: 0 0 0 6.5%; padding: 1%; }
-#check { float: left; width: 30%; margin: 0; padding: 1%; }
+#search { float: left; width: 40%; margin: 0 0 0 6.5%; padding: 1%; }
+#check { float: left; width: 40%; margin: 0; padding: 1%; }
 #search p, #check p { margin: 0 0 20px 0; }
 
 #author { margin-top:0; }
