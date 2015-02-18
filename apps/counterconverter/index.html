@@ -11,28 +11,19 @@
 <script src="routines.js"></script>
 </head>
 
-<body><header>
+<body class="app">
+<header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','apps');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Counter styles converter','');</script>
 </header>
 
-<h1>Counter styles converter</h1>
-
-
 <aside class="sidebar">
-  <div class="section">
-    <h2 class="flush">Related links</h2>
-    <p><a target="_blank" href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a></p>
-    <p><a target="_blank" href="http://www.w3.org/TR/predefined-counter-styles/">Predefined Counter Styles</a></p>
-  </div>
-</aside>
-
-<p id="status">Updated Tue 23 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'counterstyles'">counterstyles</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
-
-<div class="section">
+<section>
   <p>This page allows you to convert ASCII numbers into other representations that can be used for counters for ordered lists, headings, figures, etc. It uses the algorithms described by <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a> and <a href="http://www.w3.org/TR/predefined-counter-styles/">Predefined Counter Styles</a>, but doesn't yet cover negative numbers, and outside the ranges defined in Counter Styles no fallback is applied other than to ASCII digits.</p>
   <p>This is still a work in progress: more styles will be added as I get the time.</p>
-</div>
+</section>
+</aside>
+
 <div class="section">
   <form action="none" onsubmit="selectstyle(); return false;">
     <p>Type in the numbers you want to convert (separate with spaces):<br/>
@@ -174,8 +165,29 @@
   </form>
   <p id="output">&nbsp;</p>
 </div>
+
+<div id="showNotes"  style="margin-left: 7.5%"  onclick="toggleNotes()">show notes</div>
+
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+
+<aside class="sidebar">
+  <div class="section">
+    <h2 class="flush">Related links</h2>
+    <p><a target="_blank" href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a></p>
+    <p><a target="_blank" href="http://www.w3.org/TR/predefined-counter-styles/">Predefined Counter Styles</a></p>
+  </div>
+</aside>
+
+<p id="status">Updated Tue 23 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'counterstyles'">counterstyles</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+
 <section>
-  <h3>Notes</h3>
+  <p>This page allows you to convert ASCII numbers into other representations that can be used for counters for ordered lists, headings, figures, etc. It uses the algorithms described by <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a> and <a href="http://www.w3.org/TR/predefined-counter-styles/">Predefined Counter Styles</a>, but doesn't yet cover negative numbers, and outside the ranges defined in Counter Styles no fallback is applied other than to ASCII digits.</p>
+  <p>This is still a work in progress: more styles will be added as I get the time.</p>
+</section>
+
+<section>
+  <h3>Usage notes</h3>
   <p>For more information about what's going on here, see  <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS3 Counter Styles</a>. Basically, this app converts a sequence of ASCII numbers to counters that could be based on numeric, alphabetic, additive, or fixed principles. It uses the names of styles defined in the spec.</p>
   <p>Those counters are typically used with numbered lists (<code class="kw">ol</code> in HTML), or for numbering section headers, footnotes, etc.</p>
   <p><strong>Numeric</strong> styles just substitute other characters for the digits 0-9 .</p>
@@ -184,8 +196,10 @@
   <p><strong>Fixed</strong> styles are just a single sequence of characters, and therefore the range is quite limited. For example, there are only twenty filled-circle numbers in Unicode, and so you only see a result for  numbers between 1 and 20 (eg. ❶, ❷, ❸, ❹ ... ⓳, ⓴).</p>
 </section>
 
+</div>
+
 <div class="smallprint"><span id="version">First published  24 Jul 2013.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-17  12:04<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-18  10:40<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </body>
 </html>
