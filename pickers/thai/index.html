@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head>
+<meta charset="UTF-8" />
+<title>Thai character picker 17</title>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link type="text/css" href="/pickers/shared17/style.css" rel="Stylesheet" />
+<link type="text/css" href="localstyle.css" rel="Stylesheet" />
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script src="/scripts/block/thai-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+<!--script type="text/javascript" src="phonetictranscribe.js">  </script-->
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Thai character picker','v17');</script>
+</header>
+
+
+<div id="main">
+  <button type="button" onclick="selectAll(); return false;">Select all</button>
+    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
+    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
+    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+    <button type="button" onclick="transcribe(document.getElementById('output'),'toISO1');document.getElementById('output').focus();" title="Convert thai text to an ISO 11940-1 latin transcription.">toISO-1</button>
+<button type="button" onclick="transcribe(document.getElementById('output'),'toISO2');document.getElementById('output').focus();" title="Convert thai text to an ISO 11940-2 latin transcription.">toISO-2</button>
+    <button type="button" onclick="transcribe(document.getElementById('output'),'toIPA');document.getElementById('output').focus();" title="Convert thai text to an IPA transcription.">toIPA</button>
+    <button type="button" onclick="add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();" title="Remove spaces and hyphens.">condense</button>
+    <!--button type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'th','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button-->
+</div>
+
+
+<div id="outputDiv">
+  <textarea rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+
+<div id="transcriptionWrapper">
+<div id="closeTranscription" onclick="closeTranscription()">X</div>
+<div id="transcription"></div>
+</div>
+
+
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    <span id="afoff" class="off" 
+    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+
+
+
+<!--div id=debug style="margin: 20px 100px;"></div-->
+
+
+<div id="phonemelist">
+<div id=latintranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('ɛ')">ɛ</span>
+<span class="t" onclick="dotrans('ʰ')">ʰ</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('ʨ')">ʨ</span>
+<span class="t" onclick="dotrans('ʉ')">ʉ</span>
+<span class="t" onclick="dotrans('ɯ')">ɯ</span>
+<span class="t" onclick="dotrans('ː')">ː</span>
+<span class="t" onclick="dotrans('\u0300')">&#xA0;&#x0300;</span>
+<span class="t" onclick="dotrans('\u0302')">&#xA0;&#x0302;</span>
+<span class="t" onclick="dotrans('\u0301')">&#xA0;&#x0301;</span>
+<span class="t" onclick="dotrans('\u030C')">&#xA0;&#x030C;</span>
+</div>
+
+
+<div id=iso2transcript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('บ')">b</span>
+<span class="t" onclick="dotrans('จ')">c</span>
+<span class="t" onclick="dotrans('ฉ,ช,ฌ')">ch</span>
+<span class="t" onclick="dotrans('ฎ,ด')">d</span>
+<span class="t" onclick="dotrans('ฝ,ฟ')">f</span>
+<span class="t" onclick="dotrans('ห,ฮ')">h</span>
+<span class="t" onclick="dotrans('ก')">k</span>
+<span class="t" onclick="dotrans('ข,ฃ,ค,ฅ,ฆ')">kh</span>
+<span class="t" onclick="dotrans('ล,ฬ')">l</span>
+<span class="t" onclick="dotrans('ม')">m</span>
+<span class="t" onclick="dotrans('น,ณ')">n</span>
+<span class="t" onclick="dotrans('ง')">ng</span>
+<span class="t" onclick="dotrans('ป')">p</span>
+<span class="t" onclick="dotrans('ผ,พ,ภ')">ph</span>
+<span class="t" onclick="dotrans('ร')">r</span>
+<span class="t" onclick="dotrans('ซ,ศ,ษ,ส')">s</span>
+<span class="t" onclick="dotrans('ฏ,ต')">t</span>
+<span class="t" onclick="dotrans('ฐ,ถ,ฑ,ฒ,ท,ธ')">th</span>
+<span class="t" onclick="dotrans('ว')">w</span>
+<span class="t" onclick="dotrans('ย,ญ')">y</span>
+<button type="button" onclick=" add(sendVowelLeft(getHighlightedText(document.getElementById('output')))); document.getElementById('output').focus();">reorder</button>
+<br/>
+<span class="t" onclick="dotrans('ะ,ั,า')">a</span>
+<span class="t" onclick="dotrans('แว')">aeo</span>
+<span class="t" onclick="dotrans('าย,ไ,ใ,ไย,ัย')">ai</span>
+<span class="t" onclick="dotrans('าว,เา')">ao</span>
+<span class="t" onclick="dotrans('เะ,เ')">e</span>
+<span class="t" onclick="dotrans('เว,เ็ว')">eo</span>
+<span class="t" onclick="dotrans('เอะ,เอ')">oe</span>
+<span class="t" onclick="dotrans('เย')">oei</span>
+<span class="t" onclick="dotrans('ิ,ี')">i</span>
+<span class="t" onclick="dotrans('เีย,เียะ')">ia</span>
+<span class="t" onclick="dotrans('เียว')">iao</span>
+<span class="t" onclick="dotrans('ิว')">io</span>
+<span class="t" onclick="dotrans('โะ,โ,เาะ,อ')">o</span>
+<span class="t" onclick="dotrans('อย,โย')">oi</span>
+<span class="t" onclick="dotrans('ุ,ู')">u</span>
+<span class="t" onclick="dotrans('ัว,ัวะ')">ua</span>
+<span class="t" onclick="dotrans('วย')">uai</span>
+<span class="t" onclick="dotrans('ึ,ื')">ue</span>
+<span class="t" onclick="dotrans('เืย,เืยะ')">uea</span>
+<span class="t" onclick="dotrans('เือย')">ueai</span>
+<span class="t" onclick="dotrans('ูย,ุก')">ui</span>
+</div>
+
+
+<div id=beckertranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('บ')">b</span>
+<span class="t" onclick="dotrans('ป')">bp</span>
+<span class="t" onclick="dotrans('ฉ,ช,ฌ')">ch</span>
+<span class="t" onclick="dotrans('ฎ,ด')">d</span>
+<span class="t" onclick="dotrans('ฏ,ต')">dt</span>
+<span class="t" onclick="dotrans('ฝ,ฟ')">f</span>
+<span class="t" onclick="dotrans('ก')">g</span>
+<span class="t" onclick="dotrans('ห,ฮ')">h</span>
+<span class="t" onclick="dotrans('จ')">j</span>
+<span class="t" onclick="dotrans('ข,ค,ฆ,ก')">k</span>
+<span class="t" onclick="dotrans('ผ,พ,ภ,บ')">p</span>
+<span class="t" onclick="dotrans('ล,ฬ')">l</span>
+<span class="t" onclick="dotrans('ม')">m</span>
+<span class="t" onclick="dotrans('น,ณ')">n</span>
+<span class="t" onclick="dotrans('ง')">ng</span>
+<span class="t" onclick="dotrans('ร')">r</span>
+<span class="t" onclick="dotrans('ศ,ษ,ส,ซ,ซ,ทร')">s</span>
+<span class="t" onclick="dotrans('ฐ,ถ,ฑ,ฒ,ท,ธ')">t</span>
+<span class="t" onclick="dotrans('ว')">w</span>
+<span class="t" onclick="dotrans('ย,ญ')">y</span>
+<button type="button" onclick=" add(sendVowelLeft(getHighlightedText(document.getElementById('output')))); document.getElementById('output').focus();">reorder</button>
+<br/>
+<span class="t" onclick="dotrans('ะ,&nbsp;ั,รร')">a</span>
+<span class="t" onclick="dotrans('า')">aa</span>
+<span class="t" onclick="dotrans('ไ,ใ,&nbsp;ัย')">ai</span>
+<span class="t" onclick="dotrans('าย')">aai</span>
+<span class="t" onclick="dotrans('เา,เัว')">ao</span></span>
+<span class="t" onclick="dotrans('าว')">aao</span></span>
+<span class="t" onclick="dotrans('ำ')">am</span></span>
+<span class="t" onclick="dotrans('รร')">an</span>
+<span class="t" onclick="dotrans('เะ,เ็')">e</span>
+<span class="t" onclick="dotrans('เ')">ee</span>
+<span class="t" onclick="dotrans('เ็ว')">eo</span>
+<span class="t" onclick="dotrans('เว')">eeo</span>
+<span class="t" onclick="dotrans('เอะ')">ə</span>
+<span class="t" onclick="dotrans('เอ,เิ')">əə</span>
+<span class="t" onclick="dotrans('เย')">əəi</span>
+<span class="t" onclick="dotrans('แะ,แ็')">ɛ</span>
+<span class="t" onclick="dotrans('แ')">ɛɛ</span>
+<span class="t" onclick="dotrans('แว')">ɛɛo</span>
+<br/>
+<span class="t" onclick="dotrans('ิ,ย')">i</span>
+<span class="t" onclick="dotrans('ี')">ii</span>
+<span class="t" onclick="dotrans('เียะ,เีย')">ia</span>
+<span class="t" onclick="dotrans('เียว')">iao</span>
+<span class="t" onclick="dotrans('ิว')">iu</span>
+<span class="t" onclick="dotrans('โะ')">o</span>
+<span class="t" onclick="dotrans('โ')">oo</span>
+<span class="t" onclick="dotrans('โย')">ooi</span>
+<span class="t" onclick="dotrans('เาะ,็อ')">ɔ</span>
+<span class="t" onclick="dotrans('อ')">ɔɔ</span>
+<span class="t" onclick="dotrans('อย')">ɔɔi</span>
+<span class="t" onclick="dotrans('ุ')">u</span>
+<span class="t" onclick="dotrans('ัวะ,ัว,ว')">ua</span>
+<span class="t" onclick="dotrans('วย')">uai</span>
+<span class="t" onclick="dotrans('ุย')">ui</span>
+<span class="t" onclick="dotrans('ู')">uu</span>
+<span class="t" onclick="dotrans('ึ')">ʉ</span>
+<span class="t" onclick="dotrans('ือ,ื')">ʉʉ</span>
+<span class="t" onclick="dotrans('เือะ,เือ')">ʉa</span>
+<span class="t" onclick="dotrans('เือย')">ʉai</span>
+<span class="t" onclick="dotrans('ฤ')">rʉ</span>
+<span class="t" onclick="dotrans('ฤๅ')">rʉʉ</span>
+</div>
+</div>
+
+
+<div id="chardata"><span id="charname">Click on characters  to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div style="position:relative;">
+<div id=vertical-menu>
+<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
+menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = '';_showISO2Trans = '';_showBeckerTrans = '';
+document.getElementById('shapelist').style.display = 'none';
+document.getElementById('latintranscript').style.display = 'none';
+document.getElementById('iso2transcript').style.display = 'none';
+document.getElementById('beckertranscript').style.display = 'none';
+ return false;">D</div>
+
+<div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
+
+<div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
+
+<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
+
+<div class="vmtab" onmouseover="this.textContent='ISO-11940-2 transcription'+_showISO2Trans" onmouseout="this.textContent='I'"  onclick="if (_showISO2Trans) {_showISO2Trans = ''; this.textContent ='ISO-11940-2 transcription'; this.style.color='white'; document.getElementById('iso2transcript').style.display = 'none';} else {_showISO2Trans = ' ✓'; this.textContent='ISO-11940-2 transcription'+_showISO2Trans;  this.style.color='orange'; document.getElementById('iso2transcript').style.display = 'block';} return false;">I</div>
+
+<div class="vmtab" onmouseover="this.textContent='Becker transcription'+_showBeckerTrans" onmouseout="this.textContent='B'"  onclick="if (_showBeckerTrans) {_showBeckerTrans = ''; this.textContent ='Becker transcription'; this.style.color='white'; document.getElementById('beckertranscript').style.display = 'none';} else {_showBeckerTrans = ' ✓'; this.textContent='Becker transcription'+_showBeckerTrans;  this.style.color='orange'; document.getElementById('beckertranscript').style.display = 'block';} return false;">B</div>
+
+</div>
+
+
+
+
+
+
+
+
+<div id="tables">
+ <div id="transcriptionChoice" style="position:absolute;left:40px; font-size: 60px; background-color: white; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
+ 
+  <!-- SHAPE -->
+  <div id="alphabet" class="default">
+    <table id="kbd">
+      <tr>
+        <td><table id="leftvowels">
+          <tbody>
+            <tr>
+              <td class="hint">ī</td>
+              <td><span class="c">&#xE40;</span></td>
+            </tr>
+            <tr>
+              <td class="hint">ū </td>
+              <td><span class="c">&#xE41;</span></td>
+            </tr>
+            <tr>
+              <td class="hint">-i</td>
+              <td><span class="c">&#xE44;</span></td>
+            </tr>
+            <tr>
+              <td class="hint">ai </td>
+              <td><span class="c">&#xE42;</span></td>
+            </tr>
+            <tr>
+              <td class="hint">au </td>
+              <td><span class="c">&#xE43;</span></td>
+            </tr>
+            </tbody>
+        </table></td>
+        <td><table id="consonants">
+         <tr>
+            <td class="hint" style="hint">k</td>
+            <td><span class="c">&#xE01;</span></td>
+            <td class="hint" style="width: 15px;">kh</td>
+            <td><span class="c">&#xE02;</span></td>
+            <td class="hint" style="width: 15px;">&nbsp;</td>
+            <td><span class="c">&#xE04;</span></td>
+            <td class="hint" style="width: 15px;">&nbsp;</td>
+            <td><span class="c">&#xE06;</span></td>
+            <td class="hint">c</td>
+            <td><span class="c">&#xE08;</span></td>
+            <td class="hint">ch</td>
+            <td><span class="c">&#xE09;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE0A;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE0C;</span></td>
+            </tr>
+           <tr>
+            <td class="hint">t</td>
+            <td><span class="c">&#xE15;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE0F;</span></td>
+            <td class="hint">th</td>
+            <td><span class="c">&#xE10;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE11;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE12;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE16;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE17;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE18;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">p</td>
+            <td><span class="c">&#xE1B;</span></td>
+            <td class="hint">ph</td>
+            <td><span class="c">&#xE1C;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE1E;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE20;</span></td>
+            <td class="hint">b</td>
+            <td><span class="c">&#xE1A;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="hint">d</td>
+            <td><span class="c">&#xE0E;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE14;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">s</td>
+            <td><span class="c">&#xE0B;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE28;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE29;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE2A;</span></td>
+            <td class="hint">f</td>
+            <td><span class="c">&#xE1F;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE1D;</span></td>
+            <td class="hint">h</td>
+            <td><span class="c">&#xE2B;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE2E;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">l</td>
+            <td><span class="c">&#xE25;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE2C;</span></td>
+            <td class="hint">r</td>
+            <td><span class="c">&#xE23;</span></td>
+            <td class="hint">y</td>
+            <td><span class="c">&#xE22;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE0D;</span></td>
+            <td class="hint">w</td>
+            <td><span class="c">&#xE27;</span></td>
+            <td class="hint">'</td>
+            <td><span class="c">&#xE2D;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td class="hint">n</td>
+            <td><span class="c">&#xE19;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#xE13;</span></td>
+            <td class="hint">m</td>
+            <td><span class="c">&#xE21;</span></td>
+            <td class="hint">ng</td>
+            <td><span class="c">&#xE07;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          </table></td>
+        <td>
+          
+          <table id="combining">
+            <tr>
+               <td class="hint">&nbsp;</td>
+              <td>&nbsp;</td>
+             <td><span class="c">&#xE48;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE49;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE4A;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE4B;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE4C;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE47;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE33;</span></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td class="hint">a</td>
+              <td><span class="c">&#xE31;</span></td>
+              <td class="hint">i</td>
+              <td><span class="c">&#xE34;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE35;</span></td>
+              <td class="hint">ue</td>
+              <td><span class="c">&#xE36;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE37;</span></td>
+              <td class="hint">u</td>
+              <td><span class="c">&#xE38;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE39;</span></td>
+              </tr>
+            </table>
+          <table id="finals">
+            <tr>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE30;</span></td>
+              <td class="hint">ā</td>
+              <td><span class="c">&#xE32;</span></td>
+              <td class="hint">y</td>
+              <td><span class="c">&#xE22;</span></td>
+              <td class="hint">w</td>
+              <td><span class="c">&#xE27;</span></td>
+              <td class="hint">o</td>
+              <td><span class="c">&#xE2D;</span></td>
+              <td class="hint">r</td>
+              <td><span class="c">&#xE23;</span></td>
+              <td class="hint">ru</td>
+              <td><span class="c">&#xE24;</span></td>
+            </tr>
+            <tr>
+              <td class="hint">n</td>
+              <td><span class="c">&#xE19;</span></td>
+              <td class="hint">m</td>
+              <td><span class="c">&#xE21;</span></td>
+              <td class="hint">ng</td>
+              <td><span class="c">&#xE07;</span></td>
+               <td class="hint">&nbsp;</td>
+             <td>&nbsp;</td>
+               <td class="hint">k</td>
+              <td><span class="c">&#xE01;</span></td>
+              <td class="hint">t</td>
+              <td><span class="c">&#xE14;</span></td>
+              <td class="hint">p</td>
+              <td><span class="c">&#xE1A;</span></td>
+           </tr>
+            </table>
+          <table id="punctuation">
+            <tr>
+              <td><span class="c">&#xE2F;</span></td>
+              <td><span class="c">&#xE46;</span></td>
+              <td><span class="c">&#xE5A;</span></td>
+              <td><span class="c">&#xE2F;&#xE25;&#xE2F;</span></td>
+              </tr>
+        </table></td>
+        <td><table>
+          <tbody>
+            <tr>
+              <td><img title="U+200B: ZERO-WIDTH SPACE" src="images/200B.png" alt="zws" onclick="add('\u200B');" /></td>
+            </tr>
+            <tr>
+              <td><img title="U+0020: SPACE" src="images/0020.png" alt=" " onclick="add(' ');" /></td>
+            </tr>
+            <tr>
+              <td><img title="U+00A0: NO-BREAK SPACE" style="height:60px;" src="images/00A0.png" alt="&#xA0;" onclick="add('\u00A0');" /></td>
+            </tr>
+          </tbody>
+        </table></td>
+
+        <td id="symbols">
+          <table id="numbers" style="margin: 0 10px 10px 0;"><tbody>
+            <tr>
+              <td class="hint">1</td><td><span class="c">&#xE51;</span></td>
+              <td class="hint">2</td><td><span class="c">&#xE52;</span></td>
+              <td class="hint">3</td><td><span class="c">&#xE53;</span></td>
+              </tr>
+            <tr>
+              <td class="hint">4</td><td><span class="c">&#xE54;</span></td>
+              <td class="hint">5</td><td><span class="c">&#xE55;</span></td>
+              <td class="hint">6</td><td><span class="c">&#xE56;</span></td>
+              </tr>
+            <tr>
+              <td class="hint">7</td><td><span class="c">&#xE57;</span></td>
+              <td class="hint">8</td><td><span class="c">&#xE58;</span></td>
+              <td class="hint">9</td><td><span class="c">&#xE59;</span></td>
+              </tr>
+            <tr>
+              <td></td><td></td>
+              <td class="hint">0</td><td><span class="c">&#xE50;</span></td>
+              <td></td><td><span class="c">&#xE3F;</span></td>
+              </tr>
+            </tbody></table></td>
+          <td>
+      </tr>
+    </table>
+ <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide less used characters</p>
+ <table id="rare" style="display:none;"><tbody>
+        <tr><td>
+        <div id="ccs">
+            <div id="deprecated">
+                <div>Unnormalized:</div>
+                <span class="c">&#xE03;</span> <span class="c">&#xE05;</span> <span class="c">&#xE26;</span></div>
+        	</div>
+            
+              </td>
+              <td>
+        	<div id="rareother">
+            	<div>Other:</div>
+          <div><span class="c">&#xE4E;</span> <span class="c">&#xE3A;</span> <span class="c">&#xE4D;</span>
+          <span class="c">&#xE5B;</span> <span class="c">&#xE4F;</span>
+          <span class="c">&#xE45;</span></div>
+      		</div>
+</td>
+          </tr>
+</tbody></table> 
+  </div>
+  
+
+
+<div id=shapelist>
+<img alt="shape1" src="images/shape1.png" onclick="findShape('E01,E16,E20,E24,E26,E0E,E0F,E13,E0C,E0D,E12',true)" /> 
+<img alt="shape2" src="images/shape2.png" onclick="findShape('E32,E33,E45,E27,E08,E2D,E09,E25,E2A,E26',true)" /> 
+<img alt="shape3" src="images/shape3.png" onclick="findShape('E04,E14,E28,E05,E15,E12,E0C,E24',true)" /> 
+<img alt="shape4" src="images/shape4.png" onclick="findShape('E17,E2B,E11',true)" /> 
+<img alt="shape5" src="images/shape5.png" onclick="findShape('E06,E19,E21,E1A,E1B,E29,E2E,E18,E52,E22',true)" /> 
+<img alt="shape6" src="images/shape6.png" onclick="findShape('E02,E03,E0A,E0B',true)" /> 
+<img alt="shape7" src="images/shape7.png" onclick="findShape('E1C,E1D,E1E,E1F,E2C',true)" /> 
+<img alt="shape8" src="images/shape8.png" onclick="findShape('E2F,E5A,E46',true)" /> 
+<img alt="shape10" src="images/shape10.png" onclick="findShape('E40,E41,E42,E43,E44',true)" /> 
+<img alt="shape11" src="images/shape11.png" onclick="findShape('E34,E35,E36,E37',true)" /> 
+<img alt="shape9" src="images/shape9.png" onclick="findShape('E30,E31,E4C,E49',true)" /> 
+<img alt="shape16" src="images/shape0.png" onclick="findShape('E07,E23,E10,E4D,E47,E4E,E3A,E38,E39,E48,E4B,E49,E4A,E5B,E3F,E4F,E50,E51,E53,E54,E55,E56,E57,E58,E59',true)" /> 
+</div>
+
+
+
+
+
+
+</div><!-- end of tables -->
+
+</div><!-- end of wrapper round tables and vertical menu -->
+
+
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+      <option value="0">Select...</option>
+        <optgroup label="Webfonts">
+        <option value="Noto Serif Thai">Noto Serif Thai</option>
+        </optgroup>
+        
+        <optgroup label="Mac font">
+        <option value="Ayuthaya">Ayuthaya</option>
+        <option value="Krungthep">Krungthep</option>
+        <option value="Sathu">Sathu</option>
+        <option value="Silom">Silom</option>
+        <option value="Tahoma">Tahoma (Lion)</option>
+        <option value="Thonburi">Thonburi</option>
+        </optgroup>
+        
+        <optgroup label="Windows fonts">
+        <option value="Angsana New">Angsana New</option>
+        <option value="AngsanaUPC">AngsanaUPC</option>
+        <option value="Browallia New">Browallia New</option>
+        <option value="BrowalliaUPC">BrowalliaUPC</option>
+        <option value="Cordia New">Cordia New</option>
+        <option value="DilleniaUPC">DilleniaUPC</option>
+        <option value="DokChampa">DokChampa</option>
+        <option value="EucrosiaUPC">EucrosiaUPC</option>
+        <option value="FreesiaUPC">FreesiaUPC</option>
+        <option value="IrisUPC">IrisUPC</option>
+        <option value="JasmineUPC">JasmineUPC</option>
+        <option value="KodchiangUPC">KodchiangUPC</option>
+        <option value="Leelawadee">Leelawadee</option>
+        <option value="LilyUPC">LilyUPC</option>
+        <option value="Tahoma">Tahoma</option>
+        </optgroup>
+        
+        <optgroup label="Google fonts">
+        <option value="Noto Sans Thai">Noto Sans Thai</option>
+        <option value="Noto Serif Thai">Noto Serif Thai</option>
+        <option value="Droid Sans Thai">Droid Sans Thai</option>
+        <option value="Droid Serif Thai">Droid Serif Thai</option>
+        </optgroup>
+        
+		<optgroup label="Other fonts">
+        <option value="Cordia UPC">Cordia UPC</option>
+        <option value="Courier MonoThai">Courier MonoThai </option>
+        <option value="Courier ProportionalThai">Courier ProportionalThai</option>
+        <option value="FMBF Tahoma">FMBF Tahoma</option>
+        <option value="Garuda">Garuda</option>
+        <option value="Kinnari">Kinnari</option>
+        <option value="Loma">Loma</option>
+        <option value="Mod SSS">Mod SSS</option>
+        <option value="Mod SSSMono">Mod SSSMono</option>
+        <option value="NFT-Norasi">NFT-Norasi</option>
+        <option value="Norasi">Norasi</option>
+        <option value="Phaisarn97">Phaisarn97</option>
+        <option value="Phaisarn98">Phaisarn98</option>
+        <option value="Thaimono">Thaimono</option>
+        <option value="Thaiprop">Thaiprop</option>
+        </optgroup>
+        
+        <optgroup label="General fonts">
+        <option value="Arial Unicode MS">Arial Unicode MS</option>
+        <option value="Code2000">Code2000</option>
+        <option value="Microsoft Sans Serif">Microsoft Sans Serif</option>
+        <option value="sans-serif">sans-serif</option>
+        <option value="serif">serif</option>
+        </optgroup>
+    </select>
+  </div>
+  <div class="control">Custom font:<br />
+    <form action="none"
+						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
+    </form>
+  </div>
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+  </div>
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'thai'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'thai');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+</div>
+<div id="extracontrols">
+  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+
+
+
+
+<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+<input name="uiFont" id="uiFont" onchange="setUIFont(document.getElementById('uiFont').value); return false;" value="" />
+
+<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+
+<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">∅</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+
+
+                            
+<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+</div>
+<div id="showNotes" onclick="toggleNotes()">show notes</div>
+
+
+
+
+
+<!--div id="notes">
+</div-->
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+<aside class="sidebar">
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <!--p><a href="/scripts/thai">Thai script notes</a></p-->
+        <p><a href="/scripts/block/thai">Thai character notes</a></p>
+<p><a href="/scripts/links?script=thai">Thai script links</a></p>
+        <p><a href="/uniview/?block=thai">Thai in UniView </a></p>
+        <p><a href="/pickers/">Other pickers </a></p>
+  </div>
+</aside>     
+
+<p id="status">Updated Wed 18 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=thai" title="Show all blog posts tagged with 'thai'">thai</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
+<p>Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+
+     <p>You must have JavaScript enabled. Choose a view from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+  <p>To properly display the text you will need to choose a font that is loaded on your system or device or use the two web font downloaded with the page (Noto Serif Thai). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7, as well as which are the web fonts. Note that the  fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="/scripts/fontlist/#thai">standard OS fonts in Mac and Windows</a>.</p>
+  <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter <code class="kw" translate="no">\bka\b</code>, or the short form <code class="kw" translate="no">:ka:</code>.</p>
+    <dl>
+      <dt>Mobile devices</dt>
+   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
+      <dt>About the chart</dt>
+		<dd>Includes almost the characters in the Unicode <a href="/uniview/?block=thai">Thai</a> block as of Unicode 7.0.</dd>
+      <dd>All Thai text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on 'more controls' and using the switch in the yellow area. Note that normalization only takes place when you add a character by clicking on the table – text pasted into the box won't be normalised until you click on another character below, or change the control in the yellow area.</dd>
+      <dt>Input options</dt>
+      <dd>The following options are available by clicking on the vertical grey bar to the left of the selection area. <!--You can start up directly in one of the  views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>default</code>, <code>shape</code>, <code>transcription</code>, <code>phones</code> or <code>fontgrid</code>.--></dd>
+      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Thai. Characters are arranged based on the order of input, to speed up picking.</dd>
+      <dd>Vowel signs that appear to the left of a syllable appear to the left of the table. To their right are the Thai consonants, arranged so that phonetically similar characters are grouped together. This helps when creating a Thai sequence from a transcription. Further to the right are vowels and tone marks; below them are characters that frequently occur at the end of a syllable; and below them are punctuation marks. Digits appear to the far right.</dd>
+      <dd>Open the expanding link for  obsoleted  and other less commonly used characters.</dd>
+      <dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd>
+      <dd><strong class="leadin">Shape lookup</strong> This adds a row of orange pictures that represent basic shapes associated with the Thai characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</dd>
+      <dd><strong class="leadin">Transcriptions</strong> There are three transcription panels available in this picker: Latin, ISO 11940-2, and Becker. These panels allow you to follow a transcription to arrive at a Thai string. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</dd>
+      <dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+      <dd>The <code class="kw" translate="no">ISO 11940-2</code> panel allows you to generate some Thai text from an ISO 11940-2 transcription. This may need more work to be fully-operational. For example, it is not clear how to input 'an' and get รร. </dd>
+      <dd>The <code class="kw" translate="no">Becker</code> panel allows you to generate some Thai text from a transcription in the book <cite>Thai for Beginners</cite>, by Benjawan Poomsan Becker.</dd>
+      <dd>Both of the previous two panels will insert vowel characters such as ไ to the right of the character(s) they ought to preceed. There is a simple way to fix this. Highlight the syllable containing the wrongly-placed character in the output area, then press the <code class="button" translate="no">reorder</code> button. The character that should appear to the left of the syllable will be moved to the beginning of the highlighted area.</dd>
+
+      <dt>Automatic transcriptions</dt>
+   		<dd>There are three buttons that allow you to convert from Thai text to Latin transcriptions. If you highlight part of the text, only that part will be transcribed.  The result appears in a separate area below the main output area.</dd>
+        <dd>The <code class="button" translate="no">toISO-1</code> button produces an ISO 11940-1 transliteration, that basically latinizes the Thai characters, without changing their order. The result doesn't normally tell you how to pronounce the Thai text, but it can be converted back to Thai, since each Thai character is represented by a unique sequence in Latin. This transcription should produce fully conformant output. There is no need to identify syllable boundaries first.</dd>
+   		<dd>The <code class="button" translate="no">toISO-2</code> and <code class="button" translate="no">toIPA</code> buttons produce an output that is intended to <strong>approximately</strong> reflect actual pronunciation. It will work fine most of the time, but there are occasional ambiguities and idiosynchrasies in Thai which will cause the converter to render certain, less common syllables incorrectly. It also  automatically adds accent marks to the phonetic version. So the output of these buttons should be treated as something that gets you 90% of the way. <strong>NOTE: Before using these two buttons you need to add spaces or hyphens between each syllable of the Thai text.</strong> Syllable boundaries are important for correct interpretation of the text, and they are not detected automatically.</dd>
+        <dd>The <code class="button" translate="no">condense</code> button removes the spaces from the highlighted range (or the whole output area, if nothing is highlighted).</dd>
+   		<dd><strong>Non-standard features:</strong> For the <code class="button" translate="no">toISO-2</code> transcription I use a macron over long vowels. This is non-standard.</dd>
+    
+      <dt>Notes on other controls</dt>
+      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
+      <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
+      
+      <dt>If something is missing/broken</dt>
+      <dd>... <a href="mailto:rishida@w3.org?subject=%5BThai%20picker%5D%20">let me know</a>.</dd>
+    </dl>
+</div>
+
+
+<div id="panel" style="display:none">
+	<div id="title" class="ex" lang="th"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"></p>
+</div>
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+
+</body>
+</html>

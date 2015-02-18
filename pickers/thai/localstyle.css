@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notoserifthai.css);
+
+
+#alphabet { display: block; }
+
+
+form#buttonform { margin: 0; padding: 0; border: 0;  line-height: normal; }
+dt { color: #FF6600; }
+
+td.hint {
+	margin-right: 2px;
+	vertical-align: top;
+	font-size: 15px;
+	}
+
+#alphabet { padding-left: 5px; padding-right: 5px; }
+
+#leftvowels { margin: 15px 10px 0 0; border: 1px dotted #ccc; border-radius: 10px; }
+
+#kbd {
+	margin: 0;
+	line-height: 1.2;
+	color: #888;
+	}
+
+#consonants {  margin:0; border-collapse:collapse; }
+#consonants td {  padding: 0;  white-space: nowrap; margin: 0; padding-bottom: 3px; }
+
+#combining { border: 1px dotted #ccc; border-radius: 10px; margin-left: 10px; line-height: 1.6; }
+#combining .hint { padding-right: 0px;  }
+#combining td { min-width: 12px; }
+#combining .c { padding-left: 7px; }
+
+#punctuation { 	margin-top: 4px; float: right;}
+#punctuation td { padding-left: 10px; text-align: right; }
+
+#alpharare { width: 100px;}
+#deprecated { border: 2px solid #DDDDDD;  }
+#deprecated div { background-color:#DDDDDD;  }
+#alphaobsolete { border: 2px solid #DDDDDD;  }
+#alphaobsolete div { background-color:#DDDDDD;  }
+
+#numbers {
+	margin-left: 20px;
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	}
+#numbers .hint { margin:0; padding: 0; }
+
+
+#rare td { text-align: left; }
+
+#fontgrid { font-size: 24px; display: none; }
+#fontgrid table {height: 600px;}
+#fontgrid td {height: 12%;width: 8%;}
+
+
