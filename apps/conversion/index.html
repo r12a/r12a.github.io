@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Unicode code converter [ishida >> utilities]</title>
+<meta name="description" content="Helps you convert between Unicode character numbers, characters, UTF-8 and UTF-16 code units in hex, percent escapes,and Numeric Character References (hex and decimal)." />
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="localstyle.css" type="text/css" />
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+
+<script src="conversionfunctions.js" type="text/javascript">//</script>
+<script src="entities.js" type="text/javascript">//</script>
+
+<style>
+.options { font-size: 80%; }
+td { vertical-align: middle; }
+#sitelinks { margin-bottom: 1em; }
+h1 { margin-bottom: 20px; }
+</style>
+<!--
+	Copyright (C) 2007  Richard Ishida ishida@w3.org
+	This program is free software; you can redistribute it and/or modify it under the terms 
+	of the GNU General Public License as published by the Free Software Foundation; either 
+	version 2 of the License, or (at your option) any later version as long as you point to 
+	http://rishida.net/ in your code.
+
+	This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+	without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+	See the GNU General Public License for more details. http://www.gnu.org/licenses/gpl.html
+	 -->
+
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_compactHeader('/images/world.gif','apps');</script>
+</header>
+
+<h1 style="margin-top: 0;">Unicode Code Converter v7<a href="versions"><small class="subversion">.08</small></a></h1>
+
+<aside class="sidebar">
+  <div class="section">
+    <h2 class="flush">Related links</h2>
+    <p><a href="/uniview/">UniView</a></p>
+  </div>
+</aside>
+
+<p id="status">Updated Sun 7 Dec 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=converter" title="Show all blog posts tagged with 'converter'">converter</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<div class="section">
+  <p id="intro">Type or paste text in any of the green or grey shaded boxes and click on the button <code>Convert</code> button above it. Alternative representations will appear in all the other boxes. You can then cut &amp; paste the results into your document. <img src="selectall.png" alt="Select" /> selects all the text in a box. See the <a href="#notesection">notes</a> at the bottom of the page for other options.
+    <button style="color:teal;" onclick="escapedInput.value='The decomposition mapping is \u003C츠, U+11B8>, and not \u003C0x110E, &#x1173;, 11B8>.\n\u003Cp>The title says ‫פעילות הבינאום, W3C‬ in Hebrew\u003C/p>\nabcáßçकखी國際𐎄𐎔𐎘'; document.getElementById('example').style.display='block';">Show an example.</button>
+  </p>
+  <div style="display:none;" id="example">
+    <p>The text in the <code>Mixed input</code> field below now contains a variety of escapes. Normally you would click on the <code>Convert</code> button just above the field to show the various escape formats below. Note, however, that this (unusually convoluted) text represents one character using just a hex code point number - therefore you should instead click on the button labelled <code>Hex code points</code> to convert that number as well as the other escapes in this particular example.</p>
+    <p>To continue with this example, click on <code>Hex code points</code> button.</p>
+    <p>You should now see the conversion results. You can use checkboxes with many fields to tweak the results. For more information see the notes in the lower part of the page.</p>
+  </div>
+</div>
+<table id="converter">
+  <tr>
+    <td colspan="2">&#xA0;Mixed input<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('escapedInput').focus();document.getElementById('escapedInput').select();" />
+      <button value="Convert" 
+				onclick="displayResults(convertAllEscapes(escapedInput.value, 'none'), escapedInput.id);
+                return false;" >Convert</button>
+       <span class="options"> Convert numbers as</span>
+<button value="Convert" 
+				onclick="displayResults(convertAllEscapes(escapedInput.value, 'hex'), escapedInput.id);
+                return false;" >Hex code points</button>
+      <button value="Convert" 
+				onclick="displayResults(convertAllEscapes(escapedInput.value, 'dec'), escapedInput.id);
+                return false;" >Dec code points</button>
+      <button value="Convert" 
+				onclick="displayResults(convertAllEscapes(escapedInput.value, 'utf8'), escapedInput.id);
+                return false;" >UTF-8 units</button>
+      <button value="Convert" 
+				onclick="displayResults(convertAllEscapes(escapedInput.value, 'utf16'), escapedInput.id);
+                return false;" >UTF-16 units</button>
+      &nbsp;
+      <span class="options">Convert \x&#xA0;
+      <input type="checkbox" id="singleletterescapes" />
+      </span><br/>
+      <textarea id="escapedInput" name="escapedInput" rows="3" cols="5" style="background-color: #DFD; color:#333"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2"><!--  *********** CHARACTERS *********** --> 
+      &#xA0;Characters<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('chars').focus();document.getElementById('chars').select();" />
+      <button value="Convert" 
+				onclick="displayResults( chars.value, chars.id );
+                return false;" >Convert</button>
+       
+      <!--button  
+				onclick="if (chars.value== '') { alert('No characters in the text area.'); } else { var list = window.open('/rishida/tools/analysestring?list='+encodeURIComponent(chars.value)+'&amp;smallgraphics=on&amp;compact=on&amp;noblock=on&amp;nounicode=on&amp;nonotes=on', 'list'); list.focus(); }
+                return false;" >View names</button-->
+       
+      <!--button  
+				onclick="var list = window.open( '/rishida/uniview/?codepoints='+convertChar2CP( chars.value ) );
+                return false;" >View in UniView</button-->
+      <button  
+				onclick="var list = window.open( '/uniview/?charlist='+chars.value );
+                return false;" >View in UniView</button>
+      <br/>
+      <textarea id="chars" name="chars" rows="2" cols="5"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2"><!--  *********** HTML/XML *********** --> 
+      &#xA0;HTML/XML<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('XML').focus();document.getElementById('XML').select();" />
+      <button value="Convert" 
+				onclick="displayResults(convertXML2Char(XML.value), XML.id);
+                return false;" >Convert</button>
+      &nbsp;&nbsp;
+      <span class="options">Escape invisible characters
+<input class="check" type="checkbox" id="xmlinvisibles" checked="checked" />
+      Convert bidi controls to HTML markup
+      <input type="checkbox" id="xmlbidimarkup" />
+      </span><br/>
+      <textarea id="XML" name="XML" rows="2" cols="5"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2"><!--  *********** % ESCAPES *********** --> 
+      &#xA0;Percent encoding for URIs<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('pEsc').focus();document.getElementById('pEsc').select();" />
+      <button value="Convert" 
+				onclick="displayResults( convertpEnc2Char(pEsc.value), pEsc.id ); 
+                return false;" >Convert</button>
+      <br/>
+      <textarea id="pEsc" name="pEsc" rows="2" cols="5"></textarea></td>
+  </tr>
+  <tr>
+    <td><!--  *********** HEX NCRS *********** --> 
+      &#xA0;Hexadecimal NCRs<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('hexNCRs').focus();document.getElementById('hexNCRs').select();" />
+      <button value="Convert" 
+				onclick="displayResults( convertHexNCR2Char(hexNCRs.value), hexNCRs.id ); 
+                return false;" >Convert</button>
+       
+      &nbsp;&nbsp;<span class="options"> Show ascii
+      <input class="check" type="checkbox" id="hexncrascii" checked="checked" />
+      Latin1</span>
+<input type="checkbox" id="hexncrlatin1" />
+      <br/>
+      <textarea id="hexNCRs" name="hexNCRs" rows="3" cols="5"></textarea></td>
+    <td><!--  *********** DEC NCRS *********** --> 
+      &#xA0;Decimal NCRs<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('decNCRs').focus();document.getElementById('decNCRs').select();" />
+      <button value="Convert" 
+				onclick="displayResults( convertDecNCR2Char(decNCRs.value), decNCRs.id ); 
+                return false;" >Convert</button>
+       
+      &nbsp;&nbsp; <span class="options">Show ascii
+<input type="checkbox" id="decncrascii" checked="checked" />
+      Latin1
+      <input type="checkbox" id="decncrlatin1" />
+      </span><br/>
+      <textarea id="decNCRs" name="decNCRs" rows="3" cols="5"></textarea></td>
+  </tr>
+  <tr>
+    <td><!--  *********** U+ *********** --> 
+      &#xA0;Unicode U+hex notation<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('Unicode').focus();document.getElementById('Unicode').select();" />
+      <button value="Convert" 
+				onclick="displayResults( convertUnicode2Char(Unicode.value), Unicode.id ); 
+                return false;" >Convert</button>
+      &nbsp;&nbsp; <span class="options">Show ascii
+<input class="check" type="checkbox" id="unicodeascii" checked="checked" />
+      Latin1
+      <input type="checkbox" id="unicodelatin1" />
+      </span><br/>
+      <textarea id="Unicode" name="Unicode" rows="3" cols="5"></textarea></td>
+    <td><!--  *********** 0x... *********** --> 
+      &#xA0;0x... notation<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('zeroX').focus();document.getElementById('zeroX').select();" />
+      <button value="Convert" 
+				onclick="displayResults( convertZeroX2Char(zeroX.value), zeroX.id ); 
+                return false;" >Convert</button>
+      &nbsp;&nbsp; <span class="options">Show ascii
+<input class="check" type="checkbox" id="zeroXascii" checked="checked" />
+      Latin1
+      <input type="checkbox" id="zeroXlatin1" />
+      </span><br/>
+      <textarea id="zeroX" name="zeroX" rows="3" cols="5"></textarea></td>
+  </tr>
+  <tr>
+    <td><!--  *********** CODE POINTS *********** --> 
+      &#xA0;Hexadecimal code points<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('codePoints').focus();document.getElementById('codePoints').select();" />
+      <button value="Convert" 
+				onclick="displayResults( convertNumbers2Char(codePoints.value, 'hex'), codePoints.id ); 
+                return false;" >Convert</button>
+      &nbsp;&nbsp; <span class="options">Show ascii
+<input class="check" type="checkbox" id="hexcpascii" />
+      Latin1
+      <input type="checkbox" id="hexcplatin1" />
+      </span><br/>
+      <textarea id="codePoints" name="codePoints" rows="3" cols="5"></textarea></td>
+    <td><!--  *********** DEC CODE POINTS *********** --> 
+      &#xA0;Decimal code points<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('decCodePoints').focus();document.getElementById('decCodePoints').select();" />
+      <button value="Convert" 
+				onclick="displayResults( convertNumbers2Char(decCodePoints.value, 'dec'), decCodePoints.id ); 
+                return false;" >Convert</button>
+      &nbsp;&nbsp; <span class="options">Show ascii
+<input class="check" type="checkbox" id="deccpascii"  />
+      Latin1
+      <input type="checkbox" id="deccplatin1" />
+      </span><br/>
+      <textarea id="decCodePoints" name="decCodePoints" rows="3" cols="5"></textarea></td>
+  </tr>
+  <tr>
+    <td><!--  *********** UTF-8 *********** --> 
+      &#xA0;UTF-8 code units<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('UTF8').focus();document.getElementById('UTF8').select();" />
+      <button value="Convert" 
+				onclick="displayResults(convertUTF82Char(UTF8.value), UTF8.id); 
+                return false;" >Convert</button>
+      <br/>
+      <textarea id="UTF8" name="UTF8" rows="3" cols="5"></textarea></td>
+    <td><!--  *********** UTF-16 *********** --> 
+      &#xA0;UTF-16 code units<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('UTF16').focus();document.getElementById('UTF16').select();" />
+      <button value="Convert" 
+ 				onclick="displayResults(convertUTF162Char(UTF16.value), UTF16.id); 
+                return false;" >Convert</button>
+      <br/>
+      <textarea id="UTF16" name="UTF16" rows="3" cols="5"></textarea></td>
+  </tr>
+  <tr>
+    <td><!--  *********** \ ESCAPES *********** --> 
+      &#xA0;JavaScript escapes<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('jEsc').focus();document.getElementById('jEsc').select();" />
+      <button value="Convert" 
+				onclick="displayResults(convertjEsc2Char(jEsc.value, true), jEsc.id); 
+                return false;" >Convert</button>
+      &nbsp;&nbsp;<span class="options">
+      <input class="check" type="checkbox" id="cstyleSC" />
+      Use C-style Supp. Chars. 
+      </span>
+      <!--button value="Switch" 
+				onclick="jEsc.value = convert2C( jEsc.value ); 
+                return false;" >C-style Supp. Chars.</button--> 
+      <br/>
+      <textarea id="jEsc" name="jEsc" rows="3" cols="5"></textarea></td>
+    <td><!--  *********** CSS ESCAPES *********** --> 
+      &#xA0;CSS escapes<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('CSS').focus();document.getElementById('CSS').select();" />
+      <button value="Convert" 
+				onclick="displayResults(convertCSS2Char(CSS.value, true), CSS.id); 
+                return false;" >Convert</button>
+      <br/>
+      <textarea id="CSS" name="CSS" rows="3" cols="5"></textarea></td>
+  </tr>
+</table>
+<div class="section" style="font-size: 90%;">
+  <h2 id="notesection">Notes</h2>
+  <p>Most of the time you will probably drop the text to be converted in the <code>Mixed input</code> field, and hit the associated <code>Convert</code> button. This will convert all escapes to characters, then convert that into each of the forms listed against the boxes below. If your text contains bare numbers that you also want to convert, use one of the convert buttons to the right. (Be aware, however, that in this case something like 'ab' could be interpreted as a hex number.) </p>
+  <p>
+    <button style="color:teal;" onclick="document.getElementById('notes').style.display='block';this.style.display='none';">More...</button>
+  </p>
+  <div id="notes" style="display:none;">
+    <p>Note, also, that escapes of the form \x, where x is one of a-zA-Z0-9 are not recognised by default. If you check the box next to <code>Convert \x</code> only the special JavaScript escapes are recognised (eg. \b, \n, \t, \&quot;, etc.) For full CSS behaviour here, use the CSS input field.</p>
+    <p>If you only want to convert a specific type of escape and leave all others untouched, paste the text into one of the other boxes and hit its associated <code>Convert</code> button.</p>
+    <!--p>You can also pass a string to the page using the q parameter in the URI. For example, <a href="/tools/conversion/?q=Cr%C3%AApes">http://rishida.net/tools/conversion/?q=Crêpes</a>. You can also pass a string with escapes in it, but you will need to be careful to percent escape characters such as &amp;, + and # which affect the URI syntax. For example,<a href="/tools/conversion/?q=CrU%2B00EApes"> http://rishida.net/tools/conversion/?q=CrU%2B00EApes</a>.</p-->
+    <p>The following describe how the various boxes work. <em>Input</em> describes what happens if you paste or type text into the named field and hit <code>Convert</code>. <em>Output</em> describes the output in the named field if you hit <code>Convert</code> elsewhere.</p>
+    <p><strong>Characters <br />
+      </strong><em>Input: </em>&nbsp;Everything is treated as characters, eg. U+1234 is not treated as an escape. <br />
+      <em> Output:&nbsp; </em>Everything displayed as characters. <br />
+      <em> Other: </em>&nbsp;You can see a list of names of characters in the <code>Characters</code> field by clicking on the <code>View names</code> button. You can view more detail for each character by clicking on <code>View in UniView</code>.</p>
+    <p><strong>HTML/XML</strong><br />
+      <em>Input:</em> Numeric character references or HTML character entities (except &amp;lt; &amp;gt; &amp;quot; and &amp;amp;) are converted to ordinary characters.<br />
+      <em>Output:</em> Ordinary characters, except that &lt; &gt; &quot; and &amp; are converted to character entities. This is useful for preparing examples of sample code for HTML or XML.<br />
+      <em>Other:</em> By default the control <code>Escape invisible characters</code> is checked. This will cause selected invisible characters (such as RLM) or ambiguous characters (such as NO-BREAK SPACE) to be converted to escaped form. The characters affected will be added to over time.<br />
+      There is another control, <code>Convert bidi controls to HTML markup</code>, that will convert RLE, LRE and PDF to HTML markup based on a <code>span</code> element.  Note that if your text contains RLO or LRO plus PDF, the PDF will incorrectly be converted to &lt;/span&gt; at the moment.  I may fix this (and thereby allow RLO/LRO conversion too) at a later date. (Hint: if you want to get the result into source code form, once the initial conversion has been done just click <code>Convert</code> above this text area, and then look in the <code>Characters</code> text area.)</p>
+    <p><strong>Percent-encoding for URIs</strong><br />
+      <em>Input:</em> &nbsp;Can be a mix of text and escapes. Only percent escapes are converted.<br />
+      <em>Output:&nbsp;</em> Characters allowed in URI syntax are not converted. </p>
+    <p><strong>Hexadecimal NCRs</strong> <br />
+      <em>Input:</em> Can be a mix of text and escapes. Only hexadecimal NCRs are converted. <br />
+      <em> Output:</em> By default, everything except ASCII characters is converted. You can use the checkboxes to specify whether ANSI (Latin1) characters remain unchanged, or whether all characters are converted. </p>
+    <p><strong>Decimal NCRs</strong> <br />
+      <em>Input:</em> Can be a mix of text and escapes. Only decimal NCRs are converted. <br />
+      <em> Output:</em> By default, everything except ASCII characters is converted. You can use the checkboxes to specify whether ANSI (Latin1) characters remain unchanged, or whether all characters are converted. </p>
+    <p><strong>Unicode U+hex notation</strong> <br />
+      <em>Input:</em> &nbsp;Can be a mix of text and escapes. Only U+hex escapes are converted.<br />
+      <em>Output:&nbsp;</em>By default, everything except ASCII characters is converted. You can use the checkboxes to specify whether ANSI (Latin1) characters remain unchanged, or whether all characters are converted.  Adjacent escapes (only) are separated by a space.<br />
+      <em>Other:</em> &nbsp;To separate a sequence of characters by spaces, paste the characters into the <code>Mixed</code> field or <code>Characters</code> field and click <code>Convert</code>. Then click <code>Convert</code> immediately in the <code>Unicode U+hex notation</code> field and look in the <code>Characters</code> field for the result. </p>
+    <p><strong>0x... hexadecimal  notation</strong> <br />
+      <em>Input:</em> &nbsp;Can be a mix of text and hexadecimal 0x... escapes. Only 0x...escapes are converted.<br />
+      <em>Output:&nbsp;</em> By default, everything except ASCII characters is converted. You can use the checkboxes to specify whether ANSI (Latin1) characters remain unchanged, or whether all characters are converted.  Adjacent escapes (only) are separated by a space.<br />
+      <em>Other:</em> &nbsp;To separate a sequence of characters by spaces, paste the characters into the <code>Mixed</code> field or <code>Characters</code> field and click <code>Convert</code>. Then click <code>Convert</code> immediately in the <code>0x... notation</code> field and look in the <code>Characters</code> field for the result. </p>
+    <p><strong>Hexadecimal code points</strong><br />
+      <em>Input:</em> &nbsp;Can be a mix of text and hex numbers. Only hex numbers are converted. <br />
+      <em>Output:</em>&nbsp; By default, Hex numbers only, all separated by spaces.  If you use the checkbox to specify whether ASCII or Latin1 (ANSI) characters remain unchanged, a space is inserted before a code point if the character just before it is in the range [A-Za-z0-9]. (Note that after this you will get a different result in the other boxes if you immediately click on <code>Convert</code> above this box.) </p>
+    <p><strong>Decimal code points</strong><br />
+      <em>Input:</em> &nbsp;Can be a mix of text and decimal numbers. Only decimal numbers are converted. <br />
+      <em>Output:</em>&nbsp; By default, decimal numbers only, all separated by spaces.  If you use the checkbox to specify whether ASCII or Latin1 (ANSI) characters remain unchanged, a space is inserted before a code point if the character just before it is in the range [A-Za-z0-9]. (Note that after this you will get a different result in the other boxes if you immediately click on <code>Convert</code> above this box.) </p>
+    <p><strong>UTF-8 code units</strong><br />
+      <em>Input:</em> &nbsp;Must be hexadecimal byte codes only, separated by spaces.<br />
+      <em>Output:</em>&nbsp; Pairs of 2-digit hexadecimal numbers representing the bytes that make up the text when encoded in UTF-8.</p>
+    <p><strong>UTF-16 code units</strong><br />
+      <em>Input:</em> &nbsp;Must be hexadecimal code units only, separated by spaces.<br />
+      <em>Output:</em>&nbsp; Hexadecimal numbers of 1 to 4 digits representing the UTF-16 code units for the text converted. Supplementary characters are represented by two code units.</p>
+    <p><strong>JavaScript escapes</strong><br />
+      <em>Input:&nbsp;</em> Can be a mix of text and escapes. Only JavaScript escapes are converted. Accepts escapes as used in JavaScript, Java and C.<br />
+      <em>Output:</em> &nbsp;By default, everything except ASCII characters is converted. You can use the checkboxes to specify whether ANSI (Latin1) characters remain unchanged, or whether all characters are converted. Default output to this field is specifically JavaScript compliant, though this is valid Java code too (a small number of Java-only named escapes such as \e are rendered as numeric escapes). In C-style escapes, supplementary characters are rendered by a single number, rather than two adjacent surrogate code point numbers. You can change supplementary character representations to the C style using the <code>Use C-style Supp. Chars. </code> checkbox.. </p>
+    <p><strong>CSS escapes</strong> <br />
+      <em>Input:</em> Can be a mix of text and escapes.<br />
+      <em>Output:</em> Does not escape non-control ASCII  characters. Output content uses 6-digit escape forms followed by a space for supplementary characters, and 4-digit escapes followed by a space for all other escaped characters.</p>
+  </div>
+  <!-- end of notes div --> 
+</div>
+
+<div class="smallprint"><span id="version">This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-18  6:08<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GPL (see source).</span></div>
+
+<script type="text/javascript">
+	var escapedInput = document.getElementById('escapedInput');
+	var codePoints = document.getElementById('codePoints');
+	var decCodePoints = document.getElementById('decCodePoints');
+	var UTF8 = document.getElementById('UTF8');
+	var UTF16 = document.getElementById('UTF16');
+	var zeroX = document.getElementById('zeroX');
+	var hexNCRs = document.getElementById('hexNCRs');
+	var decNCRs = document.getElementById('decNCRs');
+	var Unicode = document.getElementById('Unicode');
+	var pEsc = document.getElementById('pEsc');
+	var jEsc = document.getElementById('jEsc');
+	var chars = document.getElementById('chars');
+	var CSS = document.getElementById('CSS');
+	var XML = document.getElementById('XML');
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&')
+parameters[0] = parameters[0].substring(1)
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=')
+	if (pairs[0] == 'q' && pairs[1]) { 
+		escapedInput.value = convertpEnc2Char(pairs[1])
+		displayResults(convertAllEscapes(escapedInput.value, "none"), escapedInput.id)
+		}
+	}
+
+	</script>
+</body>
+</html>
