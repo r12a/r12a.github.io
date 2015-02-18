@@ -1,0 +1,386 @@
+
+body.app #sitelinks { 
+	margin-bottom: 2em;
+	}
+
+.sidebar h2 {
+	margin-top: 0;
+	}
+.sidebar p {
+	line-height: 1em;
+	margin-bottom: 0;
+	}
+
+h1 {
+	margin-left: 30px;
+	margin-top: 0;
+	padding-left: 0;
+	}
+.versionnumber { 
+	font-size: 50%; 
+	margin-left: 10px; 
+	}
+	
+p { margin-left: 30px; }
+
+dl {  
+	margin-left: 30px;
+	}
+dd { 
+	margin-bottom: 10px;
+	}
+
+table, tr, td, th { font-size: 100%; }
+
+table td { border: 0; }
+
+.instructions {
+	 font-family: robotolight; 
+	 font-style: italic; 
+	 text-align:center;
+	 margin-bottom: 0;
+	}
+#hidePageTop {
+	font-size: 80%;
+	text-align: center;
+	clear: both;
+	margin: 0 32% 10px 0;
+	font-style: italic;
+	font-family: robotolight;
+	}
+
+
+#subtitle { 
+	float: right;
+	margin:0;
+	margin-right: 20px;
+	text-align:right;
+	clear: both;
+	}
+#main {
+	margin: 0 20px 3px 20px;
+	}
+#main button {
+	margin-right: 10px;
+	margin-top: 3px;
+	background-color:#ffe; 
+	padding: 2px; 
+	border: 1px solid #CCC; 
+	box-shadow: 2px 2px 5px #888; 
+	border-radius: 10px; 
+	}
+
+
+#outputDiv {
+	margin: 5px 20px 0 20px; 
+	}
+#output { 
+	border: 1px solid #ccc; 
+	width: 100%; 
+	border-radius: 5px; 
+	}
+
+#transcriptionWrapper {
+	position: relative;
+	display: none;
+	}
+#closeTranscription {
+	position: fixed; 
+	bottom: 0; 
+	right: 0;
+	margin-right: 20px;
+	font-size: 28px;
+	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
+	cursor: pointer;
+	}
+#moveTranscription {
+	position: absolute; 
+	bottom: 0; 
+	right: 40px;
+	margin-right: 20px;
+	font-size: 28px;
+	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
+	cursor:pointer;
+	color: #ccc;
+	}
+#transcription {
+	margin: 5px 25px 10px;
+	font-size: 28px;
+	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
+	/* border-bottom: 1px solid #ccc; */
+	color: #C33;
+	text-align: left;
+	}
+.altfirst {
+	border: 1px solid #ccc;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color: #fffacd;
+	cursor:pointer;
+	}
+.altlast {
+	border: 1px solid #ccc;
+	border-left: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor:pointer;
+	background-color: #fffacd;
+	}
+.alt {
+	border: 1px solid #ccc;
+	border-left: 0;
+	cursor:pointer;
+	background-color: #fffacd;
+	}
+#closeTranscription {
+	position: absolute; 
+	bottom:0; 
+	right:0;
+	color: #ccc;
+	font-family: sans-serif;
+	cursor: pointer;
+	}
+
+
+#phonemelist {
+	margin: 0 10px 3px 25px;
+	margin: 0 15px 3px 15px;
+	line-height: 1.2;
+	padding-left: 5px;
+	}
+#phonemelist span {
+	cursor: pointer;
+	font-family: "Doulos Sil", Gentium, "Gentium Plus", "Charis SiL", "Arial Unicode MS", sans-serif;
+	font-size: 24px; 
+	color: #aaa;
+	min-width: 10px; 
+	display: inline-block;
+	text-align: center;
+	padding: 1px;
+	}
+#phonemelist span:hover {
+	background-color: rgb(192,255,131);
+	border-radius: 5px;
+	}
+
+.transcript {
+	border-bottom: 1px solid #f0a467; 
+	border-radius: 10px; 
+	padding: 10px;
+	margin-bottom: 8px;
+	}
+
+#phondatabank {
+	margin-right: 2px;
+	float: right;
+	line-height: 1;
+	}
+#phondatabank input {
+	border-radius: 10px;
+	background-color: #ffe;
+	border: 1px solid #CCC; 
+	}
+#phondatabank button {
+	background-color:#ffe; 
+	padding: 2px; 
+	border: 1px solid #CCC; 
+	border-radius: 10px; 
+	}
+
+
+#chardata { 
+	/* clear:both; */
+	margin-left: 25px; 
+	margin-right: 20px; 
+	height: 1.2em; 
+	color: #ccc;
+	margin-bottom: 15px;
+	}
+#charname { 
+	margin-left: 5px; 
+	}
+
+
+.hint {
+	font-size: 12px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: middle;
+	font-family: "Doulos SIL", Gentium, Gentium Plus, "Charis SIL", "Arial Unicode MS", serif;
+	}
+
+
+
+
+#vertical-menu {
+	position: absolute; 
+	color: white; 
+	z-index: 1000; 
+	padding: 2px;
+	background-color:#666;
+	margin-top: 10px;
+	cursor:pointer;
+	}
+.vmtab {
+	background-color:#666; 
+	}
+
+
+#tables {
+	margin-left: 25px;
+	}
+
+span.c {
+	border-radius: 3px;
+	}
+span.c:hover {
+	background-color: #CF9;
+	border-radius: 3px;
+	}
+
+#toggleRare {
+	font-size: 80%;
+	cursor: pointer;
+	color: #aaa;
+	}
+
+#shapelist img {
+	cursor: pointer;
+	}
+
+#controls, #extracontrols {
+	margin: 0 10px; 
+	clear: both;
+	}
+.control { 
+	float:left; 
+	padding: 2px 4px; 
+	background-color: #FFFACD; 
+	border: 1px solid #ccc; 
+	margin-right: 2px; 
+	margin-bottom: 4px; 
+	border-radius: 5px; 
+	margin-top: 8px;
+	font-size: 15px;
+	line-height: 1.2;
+	height: 2.6em;
+	}
+#showMoreControls {
+	margin: 0;
+	margin-left: 2px;
+	font-size: 80%;
+	cursor: pointer;
+	}
+
+#showNotes {
+	margin: 5px 10px;
+	margin-left: 12px;
+	font-size: 80%;
+	cursor: pointer;
+	clear: both;
+	}
+
+#notes {
+	padding: 10px;
+	padding-right: 30px;
+	font-size: 80%;
+	margin-left: 10px;
+	margin-top: 15em;
+	clear:both; 
+	}
+
+
+#panel { 
+	position: fixed; 
+	bottom: 20px; 
+	right: 10px; 
+	padding: 0.5em; 
+	width: 26%; 
+	background-color:#ffe; 
+	border: 1px solid #CCC; 
+	box-shadow: 7px 7px 5px #888; 
+	padding: 5px 10px 5px 15px; 
+	border-radius: 10px; 
+	z-index:2000;
+	width: 28%;
+	font-size: 80%;
+	text-align: left;
+	text-align: start;
+	max-height: 80%;
+	overflow: auto;
+	}
+#panel img { vertical-align: middle; }
+#panel p { margin: 0; margin-top: 3px; }
+#panel #title { 
+	font-size: 200%; 
+	color: #F00;
+	}
+
+
+
+.smallprint {
+	min-height: 800px;
+	vertical-align: bottom;
+	text-align: right;
+	margin-right: 20px; 
+	}
+	
+	
+
+ #keyboard { 
+ 	padding-bottom: 10px; 
+	margin-bottom: 50px;
+	}
+ .keyboardrow {
+	 white-space: nowrap;
+	 clear: both;
+ 	}
+.key { 	
+	height: 36px; 
+	width: 65px;	
+	text-align: right; 
+	position: relative; 
+	float: left;
+	border: 1px solid #AAA;
+	margin: 2px; 
+	box-shadow: 2px 2px 5px #888;
+	border-radius: 4px;
+	}
+.key .kg { 
+	float: left; 
+	margin-left: 2px; 
+	font-size: 12px; 
+	text-transform: uppercase; 
+	color: orange; 
+	}
+/*.key span { max-height: 20px; max-width:26px; }*/
+.k { padding: 0 5px; }
+
+
+#autofocusswitch {
+	float: right; 
+	font-size: 80%; 
+	margin-right: 20px;
+	color: #aaa;
+	margin-left: 40px;
+	}
+.on { border-bottom: 1px solid #aaa; }
+#afon, #afoff { cursor: pointer; }
+
+dt {
+	color: #F60;
+	}
+
+#transcriptionChoice {
+	position:absolute;
+	left:40px; 
+	font-size: 60px; 
+	background-color: #FFFACD; 
+	border: 1px solid #ccc; 
+	border-radius:10px; 
+	padding: 7px;
+	display: none;
+	}
+#transcriptionChoice bdi {
+	cursor: pointer;
+	}
