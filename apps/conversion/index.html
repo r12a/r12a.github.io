@@ -14,8 +14,9 @@
 <style>
 .options { font-size: 80%; }
 td { vertical-align: middle; }
-#sitelinks { margin-bottom: 1em; }
-h1 { margin-bottom: 20px; }
+body.app #sitelinks { margin-bottom: 0; }
+#example p { margin-right:7.5%; font-size:90%; }
+textarea { padding: 0 5px; }
 </style>
 <!--
 	Copyright (C) 2007  Richard Ishida ishida@w3.org
@@ -31,28 +32,17 @@ h1 { margin-bottom: 20px; }
 
 </head>
 
-<body>
+<body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_compactHeader('/images/world.gif','apps');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Unicode code converter','v7.09');</script>
 </header>
 
-<h1 style="margin-top: 0;">Unicode Code Converter v7<a href="versions"><small class="subversion">.08</small></a></h1>
-
-<aside class="sidebar">
-  <div class="section">
-    <h2 class="flush">Related links</h2>
-    <p><a href="/uniview/">UniView</a></p>
-  </div>
-</aside>
-
-<p id="status">Updated Sun 7 Dec 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=converter" title="Show all blog posts tagged with 'converter'">converter</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
 
 <div class="section">
-  <p id="intro">Type or paste text in any of the green or grey shaded boxes and click on the button <code>Convert</code> button above it. Alternative representations will appear in all the other boxes. You can then cut &amp; paste the results into your document. <img src="selectall.png" alt="Select" /> selects all the text in a box. See the <a href="#notesection">notes</a> at the bottom of the page for other options.
-    <button style="color:teal;" onclick="escapedInput.value='The decomposition mapping is \u003C츠, U+11B8>, and not \u003C0x110E, &#x1173;, 11B8>.\n\u003Cp>The title says ‫פעילות הבינאום, W3C‬ in Hebrew\u003C/p>\nabcáßçकखी國際𐎄𐎔𐎘'; document.getElementById('example').style.display='block';">Show an example.</button>
-  </p>
+    <button style="color:teal; float: right;"" onclick="escapedInput.value='The decomposition mapping is \u003C츠, U+11B8>, and not \u003C0x110E, &#x1173;, 11B8>.\n\u003Cp>The title says ‫פעילות הבינאום, W3C‬ in Hebrew\u003C/p>\nabcáßçकखी國際𐎄𐎔𐎘'; document.getElementById('example').style.display='block'; this.style.display='none';">Click for instructions.</button>
   <div style="display:none;" id="example">
+ <p>Type or paste text in any of the green or grey shaded boxes and click on the button <code>Convert</code> button above it. Alternative representations will appear in all the other boxes. You can then cut &amp; paste the results into your document. <img src="selectall.png" alt="Select" /> selects all the text in a box. See the <a href="#notesection">notes</a> at the bottom of the page for other options.
     <p>The text in the <code>Mixed input</code> field below now contains a variety of escapes. Normally you would click on the <code>Convert</code> button just above the field to show the various escape formats below. Note, however, that this (unusually convoluted) text represents one character using just a hex code point number - therefore you should instead click on the button labelled <code>Hex code points</code> to convert that number as well as the other escapes in this particular example.</p>
     <p>To continue with this example, click on <code>Hex code points</code> button.</p>
     <p>You should now see the conversion results. You can use checkboxes with many fields to tweak the results. For more information see the notes in the lower part of the page.</p>
@@ -60,10 +50,11 @@ h1 { margin-bottom: 20px; }
 </div>
 <table id="converter">
   <tr>
-    <td colspan="2">&#xA0;Mixed input<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('escapedInput').focus();document.getElementById('escapedInput').select();" />
+    <td colspan="2">
       <button value="Convert" 
 				onclick="displayResults(convertAllEscapes(escapedInput.value, 'none'), escapedInput.id);
                 return false;" >Convert</button>
+    <img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('escapedInput').focus();document.getElementById('escapedInput').select();" />
        <span class="options"> Convert numbers as</span>
 <button value="Convert" 
 				onclick="displayResults(convertAllEscapes(escapedInput.value, 'hex'), escapedInput.id);
@@ -84,7 +75,7 @@ h1 { margin-bottom: 20px; }
       <textarea id="escapedInput" name="escapedInput" rows="3" cols="5" style="background-color: #DFD; color:#333"></textarea></td>
   </tr>
   <tr>
-    <td colspan="2"><!--  *********** CHARACTERS *********** --> 
+    <td colspan="2" style="padding-top: 20px;"><!--  *********** CHARACTERS *********** --> 
       &#xA0;Characters<img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('chars').focus();document.getElementById('chars').select();" />
       <button value="Convert" 
 				onclick="displayResults( chars.value, chars.id );
@@ -240,16 +231,27 @@ h1 { margin-bottom: 20px; }
       <textarea id="CSS" name="CSS" rows="3" cols="5"></textarea></td>
   </tr>
 </table>
-<div class="section" style="font-size: 90%;">
-  <h2 id="notesection">Notes</h2>
+
+<div id="showNotes"  style="margin-left: 15px"  onclick="toggleNotes()">show notes</div>
+
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+
+<aside class="sidebar">
+  <div class="section">
+    <h2 class="flush">Related links</h2>
+    <p><a href="/uniview/">UniView</a></p>
+  </div>
+</aside>
+
+<p id="status">Updated Sun 7 Dec 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=converter" title="Show all blog posts tagged with 'converter'">converter</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
   <p>Most of the time you will probably drop the text to be converted in the <code>Mixed input</code> field, and hit the associated <code>Convert</code> button. This will convert all escapes to characters, then convert that into each of the forms listed against the boxes below. If your text contains bare numbers that you also want to convert, use one of the convert buttons to the right. (Be aware, however, that in this case something like 'ab' could be interpreted as a hex number.) </p>
-  <p>
-    <button style="color:teal;" onclick="document.getElementById('notes').style.display='block';this.style.display='none';">More...</button>
-  </p>
-  <div id="notes" style="display:none;">
     <p>Note, also, that escapes of the form \x, where x is one of a-zA-Z0-9 are not recognised by default. If you check the box next to <code>Convert \x</code> only the special JavaScript escapes are recognised (eg. \b, \n, \t, \&quot;, etc.) For full CSS behaviour here, use the CSS input field.</p>
     <p>If you only want to convert a specific type of escape and leave all others untouched, paste the text into one of the other boxes and hit its associated <code>Convert</code> button.</p>
-    <!--p>You can also pass a string to the page using the q parameter in the URI. For example, <a href="/tools/conversion/?q=Cr%C3%AApes">http://rishida.net/tools/conversion/?q=Crêpes</a>. You can also pass a string with escapes in it, but you will need to be careful to percent escape characters such as &amp;, + and # which affect the URI syntax. For example,<a href="/tools/conversion/?q=CrU%2B00EApes"> http://rishida.net/tools/conversion/?q=CrU%2B00EApes</a>.</p-->
+    <p>You can also pass a string to the page using the q parameter in the URI. For example, <a href="/tools/conversion/?q=Cr%C3%AApes">http://rishida.net/tools/conversion/?q=Crêpes</a>. You can also pass a string with escapes in it, but you will need to be careful to percent escape characters such as &amp;, + and # which affect the URI syntax. For example,<a href="/tools/conversion/?q=CrU%2B00EApes"> http://rishida.net/tools/conversion/?q=CrU%2B00EApes</a>.</p>
+<section>
+  <h2 style="margin-left:10px;">Box inputs and outputs</h2>
     <p>The following describe how the various boxes work. <em>Input</em> describes what happens if you paste or type text into the named field and hit <code>Convert</code>. <em>Output</em> describes the output in the named field if you hit <code>Convert</code> elsewhere.</p>
     <p><strong>Characters <br />
       </strong><em>Input: </em>&nbsp;Everything is treated as characters, eg. U+1234 is not treated as an escape. <br />
@@ -295,12 +297,13 @@ h1 { margin-bottom: 20px; }
     <p><strong>CSS escapes</strong> <br />
       <em>Input:</em> Can be a mix of text and escapes.<br />
       <em>Output:</em> Does not escape non-control ASCII  characters. Output content uses 6-digit escape forms followed by a space for supplementary characters, and 4-digit escapes followed by a space for all other escaped characters.</p>
-  </div>
-  <!-- end of notes div --> 
+</section>
+
 </div>
 
+
 <div class="smallprint"><span id="version">This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-18  6:08<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-18  11:38<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GPL (see source).</span></div>
 
 <script type="text/javascript">
