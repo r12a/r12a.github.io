@@ -58,32 +58,28 @@ input[type='button'] {
 h1 {
 	margin-bottom: 30px;
 	}
+#showNotes {
+    margin: 5px 10px 5px 7.5%;
+    font-size: 80%;
+    cursor: pointer;
+    clear: both;
+}
+
 </style>
 <script src="/code/boilerplate.js" type="text/javascript"></script>
 
 <script type="application/javascript" src="functions.js">  </script>
 </head>
 
-<body>
+<body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_compactHeader('/images/world.gif','apps');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Convert lat/lon','');</script>
 </header>
 
-<h1 style="margin-top: 0;"> Convert lat/lon</h1>
-
-<aside class="sidebar" style="font-size:90%;">
-    <h2 class="flush">How to use this</h2>
-    <p>In the input fields you can use any of the formats shown in the results section below. </p>
-    <p>If you use  N/S/E/W it must come last. Alternatively, you can use a minus sign before the degree value.</p>
-    <p>* You can enter both a latitude and a longitude value in the 'Latitude' field, as long as you add a slash (&#xA0;/&#xA0;) between them.</p>
-    <p>Alternatively, you can populate the two fields with your approximate current location using the button provided (if your browser supports geolocation). Note that (a) it takes a moment to locate you, and (b) the result is only an approximation to your current location.</p>
-  </aside>
-
-<p id="status">Updated Thu 23 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=gpsconverter" title="Show all blog posts tagged with 'gpsconverter'">gpsconverter</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
 
 <div class="section">
-  <p>Enter latitude and longitude below to convert between formats used in Google Earth, Flickr, Adobe Bridge and plain decimal format.</p>
+  <aside class="sidebar">Enter latitude and longitude  to convert between formats used in Google Earth, Flickr, Adobe Bridge and plain decimal format.</p></aside>
   <p>Latitude*:
     <input id="lat" name="lat" value="0.000000" />
   </p>
@@ -98,16 +94,34 @@ h1 {
   </p>
 </div>
 <div class="section">
-  <h2>Result</h2>
-  <p class="result left"><span id="decimal">0.000000 &nbsp; 0.000000</span></p>
+  <p class="result right"><span id="decimal">0.000000 &nbsp; 0.000000</span></p>
   <p class="result right"><span id="degrees">0°0'0"N &nbsp; 0°0'0"E</span></p>
-  <p class="result left"><span id="exif">0,00.0N &nbsp; 0,00.0E</span></p>
+  <p class="result right"><span id="exif">0,00.0N &nbsp; 0,00.0E</span></p>
   <p class="result right"><span id="flickr">0 deg 0' 0" N &nbsp; 0 deg 0' 0" E</span></p>
 </div>
 
+<div id="showNotes"  onclick="toggleNotes()">show notes</div>
+
+<!--div id="notes">
+</div-->
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+
+<p id="status">Updated Thu 23 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=gpsconverter" title="Show all blog posts tagged with 'gpsconverter'">gpsconverter</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+
+<section>
+    <p>In the input fields you can use any of the formats shown in the results section below. </p>
+    <p>If you use  N/S/E/W it must come last. Alternatively, you can use a minus sign before the degree value.</p>
+    <p>* You can enter both a latitude and a longitude value in the 'Latitude' field, as long as you add a slash (&#xA0;/&#xA0;) between them.</p>
+    <p>Alternatively, you can populate the two fields with your approximate current location using the button provided (if your browser supports geolocation). Note that (a) it takes a moment to locate you, and (b) the result is only an approximation to your current location.</p>
+  </section>
+
+</div>
+
+
 <footer>
 <div class="smallprint"><span id="version">First published 18 Sep 2006.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-18  6:46<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-18  9:35<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </footer>
 
