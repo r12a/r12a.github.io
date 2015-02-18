@@ -2,56 +2,31 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Burmese character picker 16</title>
+<title>Burmese character picker 17</title>
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
-<link type="text/css" href="../shared16/style.css" rel="Stylesheet" />
+<link type="text/css" href="/pickers/shared17/style.css" rel="Stylesheet" />
 <link type="text/css" href="localstyle.css" rel="Stylesheet" />
 <script src="/code/boilerplate.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared16/code.js">  </script>
-<script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared16/local.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script src="defaults.js" type="text/javascript">  </script>
+<script src="/pickers/shared16/code.js" type="text/javascript">  </script>
+<script src="localcode.js" type="text/javascript">  </script>
+<script src="/pickers/shared17/local.js" type="text/javascript">  </script>
+<script src="/code/normalization/js/n11n.js" type="text/javascript">  </script>
+<script src="/code/normalization/js/n11ndata-lite.js" type="text/javascript">  </script>
 <script src="/scripts/block/myanmar-names-subset.js" type="text/javascript"></script>
 <script src="/scripts/block/block-code.js" type="text/javascript"></script>
-<script type="text/javascript" src="localtranscription.js">  </script>
+<script src="localtranscription.js" type="text/javascript">  </script>
 </head>
 
-<body>
+<body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_compactHeader('/images/world.gif','apps','/');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Burmese character picker','v17');</script>
 </header>
 
 
-<h1 class="compact">Burmese character picker <span class="versionnumber">v16</span></h1>
 
-
-
-<aside class="sidebar">
-  <nav class="noprint">
-        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="/scripts/myanmar">Myanmar script notes</a></p>
-        <p><a href="/scripts/block/myanmar">Myanmar character notes</a></p>
-        <p><a href="/scriptlinks?script=myanmar">Myanmar script links</a></p>
-        <p><a href="/uniview/?block=myanmar">Myanmar in UniView </a></p>
-        <p><a href="/pickers">Other pickers </a></p>
-  </nav>
-</aside>     
-
-
-<p id="status">Updated Sun 15 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=burmese" title="Show all blog posts tagged with 'burmese'">burmese</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
-
-
-<p>This Unicode character picker allows you to produce or analyse runs of Burmese text using the Myanmar script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification. <a href="#detailednotes" onclick="toggleNotes();">See the notes</a> for details.</p>
-<p>The <code class="button" translate="no">toIPA</code> button is intended to speed up phonetic transcription and to give a general idea of sounds, rather than to produce perfect transcriptions. For example, it doesn't apply sandhi or vowel reduction, and it doesn't handle irregular pronunciations.</p>
-<p class="instructions">Click on characters  to create text in the box, then copy &amp; paste to your content.</p>
-<p id="hidePageTop"><a href="#main">Hide the top of the page.</a></p>
-
-
-<p id="subtitle">Burmese picker</p>
 <div id="main">
   <button type="button" onclick="selectAll(); return false;">Select all</button>
     <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
@@ -292,7 +267,7 @@
 
 
 
-<div id="chardata"><span id="charname"></span></div>
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
 
 
 
@@ -589,7 +564,7 @@ document.getElementById('latintranscript').style.display = 'none';
     <form action="none"
 						 onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
       <input name="search" id="search"  type="text" />
-      <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
   </div>
 </div>
@@ -598,11 +573,11 @@ document.getElementById('latintranscript').style.display = 'none';
 
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
-    <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
 							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
 							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
 							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
 
 
@@ -638,7 +613,26 @@ document.getElementById('latintranscript').style.display = 'none';
 </div-->
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
-     <p>You must have JavaScript enabled. Choose view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+  
+<aside class="sidebar">
+  <nav class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/myanmar">Myanmar script notes</a></p>
+        <p><a href="/scripts/block/myanmar">Myanmar character notes</a></p>
+        <p><a href="/scriptlinks?script=myanmar">Myanmar script links</a></p>
+        <p><a href="/uniview/?block=myanmar">Myanmar in UniView </a></p>
+        <p><a href="/pickers">Other pickers </a></p>
+  </nav>
+</aside>     
+
+
+<p id="status">Updated Sun 15 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=burmese" title="Show all blog posts tagged with 'burmese'">burmese</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
+
+
+<p>This Unicode character picker allows you to produce or analyse runs of Burmese text using the Myanmar script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification. <a href="#detailednotes" onclick="toggleNotes();">See the notes</a> for details.</p>
+<p>The <code class="button" translate="no">toIPA</code> button is intended to speed up phonetic transcription and to give a general idea of sounds, rather than to produce perfect transcriptions. For example, it doesn't apply sandhi or vowel reduction, and it doesn't handle irregular pronunciations.</p>
+
+<p>You must have JavaScript enabled. Choose view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
     <p>To properly display the text you will need to choose a font that is loaded on your system or device, or use one of the  web fonts downloaded with the page (Myanmar3, Tharlon, and Noto Sans Myanmar). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7/8, as well as which are the web fonts. Note that the web fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="/scripts/fontlist/#myanmar">standard OS fonts in Mac and Windows</a>.</p>
    <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
     <dl>
