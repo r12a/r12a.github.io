@@ -1,5 +1,10 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notoserifthai.css);
-
+@font-face {
+    font-family: 'Noto Serif Thai WF';
+    src: url('/webfonts/NotoSerifThai-Regularwebfont.woff2') format('woff2'),
+         url('/webfonts/NotoSerifThai-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 #alphabet { display: block; }
 

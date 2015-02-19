@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-gb"><head>
 <meta charset="UTF-8" />
+
 <title>Thai character picker 17</title>
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
 <link type="text/css" href="/pickers/shared17/style.css" rel="Stylesheet" />
@@ -373,24 +374,6 @@ document.getElementById('beckertranscript').style.display = 'none';
           
           <table id="combining">
             <tr>
-               <td class="hint">&nbsp;</td>
-              <td>&nbsp;</td>
-             <td><span class="c">&#xE48;</span></td>
-              <td class="hint">&nbsp;</td>
-              <td><span class="c">&#xE49;</span></td>
-              <td class="hint">&nbsp;</td>
-              <td><span class="c">&#xE4A;</span></td>
-              <td class="hint">&nbsp;</td>
-              <td><span class="c">&#xE4B;</span></td>
-              <td class="hint">&nbsp;</td>
-              <td><span class="c">&#xE4C;</span></td>
-              <td class="hint">&nbsp;</td>
-              <td><span class="c">&#xE47;</span></td>
-              <td class="hint">&nbsp;</td>
-              <td><span class="c">&#xE33;</span></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
               <td class="hint">a</td>
               <td><span class="c">&#xE31;</span></td>
               <td class="hint">i</td>
@@ -406,8 +389,24 @@ document.getElementById('beckertranscript').style.display = 'none';
               <td class="hint">&nbsp;</td>
               <td><span class="c">&#xE39;</span></td>
               </tr>
+            <tr>
+               <td>&nbsp;</td>
+             <td><span class="c">&#xE48;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE49;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE4A;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE4B;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE4C;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE47;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td><span class="c">&#xE33;</span></td>
+            </tr>
             </table>
-          <table id="finals">
+          <table id="finals" style="margin-left::0;">
             <tr>
               <td class="hint">&nbsp;</td>
               <td><span class="c">&#xE30;</span></td>
@@ -441,30 +440,10 @@ document.getElementById('beckertranscript').style.display = 'none';
               <td><span class="c">&#xE1A;</span></td>
            </tr>
             </table>
-          <table id="punctuation">
-            <tr>
-              <td><span class="c">&#xE2F;</span></td>
-              <td><span class="c">&#xE46;</span></td>
-              <td><span class="c">&#xE5A;</span></td>
-              <td><span class="c">&#xE2F;&#xE25;&#xE2F;</span></td>
-              </tr>
-        </table></td>
-        <td><table>
-          <tbody>
-            <tr>
-              <td><img title="U+200B: ZERO-WIDTH SPACE" src="images/200B.png" alt="zws" onclick="add('\u200B');" /></td>
-            </tr>
-            <tr>
-              <td><img title="U+0020: SPACE" src="images/0020.png" alt=" " onclick="add(' ');" /></td>
-            </tr>
-            <tr>
-              <td><img title="U+00A0: NO-BREAK SPACE" style="height:60px;" src="images/00A0.png" alt="&#xA0;" onclick="add('\u00A0');" /></td>
-            </tr>
-          </tbody>
-        </table></td>
+        
 
         <td id="symbols">
-          <table id="numbers" style="margin: 0 10px 10px 0;"><tbody>
+          <table id="numbers"><tbody>
             <tr>
               <td class="hint">1</td><td><span class="c">&#xE51;</span></td>
               <td class="hint">2</td><td><span class="c">&#xE52;</span></td>
@@ -485,9 +464,20 @@ document.getElementById('beckertranscript').style.display = 'none';
               <td class="hint">0</td><td><span class="c">&#xE50;</span></td>
               <td></td><td><span class="c">&#xE3F;</span></td>
               </tr>
-            </tbody></table></td>
+          </tbody></table></td>
           <td>
       </tr>
+      <tr>
+        <td colspan="3" style="text-align:left;">
+          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200B');">ZWSP</span> 
+          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u0020');">SPACE</span>
+          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span>
+            <span class="c" style="margin-left: 20px;">&#xE2F;</span>
+          <span class="c">&#xE46;</span>
+          <span class="c">&#xE5A;</span>
+          <span class="c">&#xE2F;&#xE25;&#xE2F;</span>
+        </td>
+        </tr>
     </table>
  <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide less used characters</p>
  <table id="rare" style="display:none;"><tbody>
@@ -645,9 +635,10 @@ document.getElementById('beckertranscript').style.display = 'none';
 
 
 <div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
-<input name="uiFont" id="uiFont" onchange="setUIFont(document.getElementById('uiFont').value); return false;" value="" />
-
-<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
 
 
 
