@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+
+<title>Khmer character picker 17</title>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link type="text/css" href="/pickers/shared17/style.css" rel="Stylesheet" />
+<link type="text/css" href="localstyle.css" rel="Stylesheet" />
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script src="/scripts/block/khmer-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+<script type="text/javascript" src="localtranscription.js">  </script>
+<!--script type="text/javascript" src="phonetictranscribe.js">  </script-->
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Khmer character picker','v17');</script>
+</header>
+
+
+<div id="main">
+  <button type="button" onclick="selectAll(); return false;">Select all</button>
+  <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
+    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
+    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+    <button type="button" onclick="transcribe(document.getElementById('output'),'toIPA');document.getElementById('output').focus();" title="Convert khmer text to an IPA transcription.">toIPA</button>
+    
+    <button type="button" onclick="add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();" title="Remove spaces and hyphens.">condense</button>
+
+    <button type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'th','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+</div>
+
+
+<div id="outputDiv">
+  <textarea rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+
+
+<div id="transcriptionWrapper">
+<div id="closeTranscription" onclick="closeTranscription()">X</div>
+<div id="transcription"></div>
+</div>
+
+
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    <span id="afoff" class="off" 
+    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+
+
+   
+<div id="phonemelist">
+<div id=latintranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ʰ')">ʰ</span>
+<span class="t" onclick="dotrans('ñ')">ñ</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('ʔ')">ʔ</span>
+<span class="t" onclick="dotrans('æ')">æ</span>
+<span class="t" onclick="dotrans('ɑ')">ɑ</span>
+<span class="t" onclick="dotrans('ə̆')">ə̆</span>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('ɛ')">ɛ</span>
+<span class="t" onclick="dotrans('ɨ')">ɨ</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('ʉ')">ʉ</span>
+<span class="t" onclick="dotrans('ː')">ː</span>
+</div>
+
+
+<div id=huffmantranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ប')">b</span>
+<span class="t" onclick="dotrans('ច,ជ,ឆ,ឈ')">c</span>
+<span class="t" onclick="dotrans('ឆ,ឈ')">ch</span>
+<span class="t" onclick="dotrans('ដ,ត,ឌ')">d</span>
+<span class="t" onclick="dotrans('ហ្វ')">f</span>
+<span class="t" onclick="dotrans('ហ,ស')">h</span>
+<span class="t" onclick="dotrans('ក,គ,ខ,ឃ')">k</span>
+<span class="t" onclick="dotrans('ខ,ឃ')">kh</span>
+<span class="t" onclick="dotrans('ល,ឡ')">l</span>
+<span class="t" onclick="dotrans('ម')">m</span>
+<span class="t" onclick="dotrans('ណ,ន')">n</span>
+<span class="t" onclick="dotrans('ញ')">n̄</span>
+<span class="t" onclick="dotrans('ង')">ŋ</span>
+<span class="t" onclick="dotrans('ព,ប,ប៉,ផ,ភ')">p</span>
+<span class="t" onclick="dotrans('ផ,ភ')">ph</span>
+<span class="t" onclick="dotrans('រ')">r</span>
+<span class="t" onclick="dotrans('ស')">s</span>
+<span class="t" onclick="dotrans('ត,ទ,ដ,ឋ,ឌ,ឍ,ថ,ធ')">t</span>
+<span class="t" onclick="dotrans('ឋ,ឍ,ថ,ធ')">th</span>
+<span class="t" onclick="dotrans('វ')">w</span>
+<span class="t" onclick="dotrans('យ')">y</span>
+<br/>
+<span class="t" onclick="dotrans('័,ា,+,់,ៈ')">a</span>
+<span class="t" onclick="dotrans('ា')">aa</span>
+<span class="t" onclick="dotrans('ើ')">aə</span>
+<span class="t" onclick="dotrans('ែ,ឯ')">ae</span>
+<span class="t" onclick="dotrans('ះ')">ah</span>
+<span class="t" onclick="dotrans('ាំ')">am</span>
+<span class="t" onclick="dotrans('ាំង,ំ')">aŋ</span>
+<span class="t" onclick="dotrans('ោ,ឧ,ឱ,ឲ')">ao</span>
+<span class="t" onclick="dotrans('ៅ,ឳ')">aw</span>
+<span class="t" onclick="dotrans('័យ,ៃ,ឰ')">ay</span>
+<span class="t" onclick="dotrans('-,់')">ɑ</span>
+<span class="t" onclick="dotrans('-')">ɑɑ</span>
+<span class="t" onclick="dotrans('ោះ,ស់')">ɑh</span>
+<span class="t" onclick="dotrans('ំ,ម់')">ɑm</span>
+<span class="t" onclick="dotrans('ិ')">e</span>
+<span class="t" onclick="dotrans('េ')">ee</span>
+<span class="t" onclick="dotrans('័,ា,់,ៈ')">eə̆</span>
+<span class="t" onclick="dotrans('ះ,ាះ')">eə̆h</span>
+<span class="t" onclick="dotrans('ាំង')">eə̆ŋ</span>
+<span class="t" onclick="dotrans('ិះ,េះ,ែះ,ែស')">eh</span>
+<span class="t" onclick="dotrans('េ')">ei</span>
+<span class="t" onclick="dotrans('ិ,ឹ,េ,ឥ')">ə</span>
+<span class="t" onclick="dotrans('ើ')">əə</span>
+<span class="t" onclick="dotrans('ើះ,ឹះ')">əh</span>
+<span class="t" onclick="dotrans('ឺ')">əɨ</span>
+<span class="t" onclick="dotrans('ូវ,ឪ')">əw</span>
+<span class="t" onclick="dotrans('ិយ,ី,ឥ,ឦ')">əy</span>
+<span class="t" onclick="dotrans('ិ')">ɛ</span>
+<span class="t" onclick="dotrans('ែ')">ɛɛ</span>
+<span class="t" onclick="dotrans('ិ')">i</span>
+<span class="t" onclick="dotrans('ិយ,ី')">ii</span>
+<span class="t" onclick="dotrans('ា,ៀ')">iə</span>
+<span class="t" onclick="dotrans('ិះ,េះ')">ih</span>
+<span class="t" onclick="dotrans('ិ,ឹ,េ,ឥ')">ɨ</span>
+<span class="t" onclick="dotrans('ឺ')">ɨɨ</span>
+<span class="t" onclick="dotrans('ឿ')">ɨə</span>
+<span class="t" onclick="dotrans('ូវ,ៅ')">ɨw</span>
+<span class="t" onclick="dotrans('័យ,ៃ,េយ')">ɨy</span>
+<span class="t" onclick="dotrans('ុ,ឧ')">o</span>
+<span class="t" onclick="dotrans('ោ')">oo</span>
+<span class="t" onclick="dotrans('័,ា,់')">oə̆</span>
+<span class="t" onclick="dotrans('ុះ')">oh</span>
+<span class="t" onclick="dotrans('ាំ')">oə̆m</span>
+<span class="t" onclick="dotrans('ុំ')">om</span>
+<span class="t" onclick="dotrans('ូ,ឩ')">ou</span>
+<span class="t" onclick="dotrans('-')">ɔɔ</span>
+<span class="t" onclick="dotrans('័រ,-,+,៌')">ɔə</span>
+<span class="t" onclick="dotrans('ុ,-,+,់,ឧ')">u</span>
+<span class="t" onclick="dotrans('ូ,ឩ')">uu</span>
+<span class="t" onclick="dotrans('ួ')">uə</span>
+<span class="t" onclick="dotrans('់,-,+,់')">uə̆</span>
+<span class="t" onclick="dotrans('ោះ,ស់')">uə̆h</span>
+<span class="t" onclick="dotrans('ុះ')">uh</span>
+<span class="t" onclick="dotrans('ម់,ុំ,ំ,ុម')">um</span>
+<span class="t" onclick="dotrans('ប់')">up</span>
+<span class="t" onclick="dotrans('-,+,៌')">rə</span>
+<span class="t" onclick="dotrans('ឫ')">rɨ</span>
+<span class="t" onclick="dotrans('ឬ')">rɨɨ</span>
+<span class="t" onclick="dotrans('ឭ')">lɨ</span>
+<span class="t" onclick="dotrans('ឮ')">lɨɨ</span>
+</div>
+
+
+
+
+<div id=gilberttranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ប,ព,ភ')">b</span>
+<span class="t" onclick="dotrans('ព,ប៉')">bp</span>
+<span class="t" onclick="dotrans('ឆ,ឈ')">ch</span>
+<span class="t" onclick="dotrans('ដ,ត,ឌ')">d</span>
+<span class="t" onclick="dotrans('ត,ទ')">dt</span>
+<span class="t" onclick="dotrans('ហ្វ')">f</span>
+<span class="t" onclick="dotrans('ក,គ')">g</span>
+<span class="t" onclick="dotrans('ហ,ស')">h</span>
+<span class="t" onclick="dotrans('ហ,ស')">j</span>
+<span class="t" onclick="dotrans('ខ,ឃ,ក,គ')">k</span>
+<span class="t" onclick="dotrans('ល,ឡ')">l</span>
+<span class="t" onclick="dotrans('ម')">m</span>
+<span class="t" onclick="dotrans('ណ,ន')">n</span>
+<span class="t" onclick="dotrans('ញ')">n̄</span>
+<span class="t" onclick="dotrans('ង')">ng</span>
+<span class="t" onclick="dotrans('ផ,ប៉,ប,ផ,ភ')">p</span>
+<span class="t" onclick="dotrans('អ,ក,គ,ខ,ឃ')">q</span>
+<span class="t" onclick="dotrans('រ')">r</span>
+<span class="t" onclick="dotrans('ស')">s</span>
+<span class="t" onclick="dotrans('ថ,ធ,ឋ,ឍ,ទ,ដ,ឋ,ឍ,ត')">t</span>
+<span class="t" onclick="dotrans('ឋ,ឍ,ថ,ធ')">th</span>
+<span class="t" onclick="dotrans('វ')">vw</span>
+<span class="t" onclick="dotrans('វ')">w</span>
+<span class="t" onclick="dotrans('យ')">y</span>
+<br/>
+<span class="t" onclick="dotrans('ា,+,់,-,+,់,័,ៈ')">a</span>
+<span class="t" onclick="dotrans('ា')">aa</span>
+<span class="t" onclick="dotrans('ែ,ឯ')">ae</span>
+<span class="t" onclick="dotrans('ះ')">ah</span>
+<span class="t" onclick="dotrans('ៃ,ឰ')">ai</span>
+<span class="t" onclick="dotrans('ាំ')">am</span>
+<span class="t" onclick="dotrans('ាំង')">ang</span>
+<span class="t" onclick="dotrans('ោ,ឱ')">ao</span>
+<span class="t" onclick="dotrans('ៅ')">au</span>
+<span class="t" onclick="dotrans('ើ')">aʉ</span>
+<span class="t" onclick="dotrans('័យ')">ay</span>
+<span class="t" onclick="dotrans('ិ,័')">e</span>
+<span class="t" onclick="dotrans('េ,េ,ឦ')">ee</span>
+<span class="t" onclick="dotrans('េះ,ិះ')">eh</span>
+<span class="t" onclick="dotrans('ៃ,ឥ')">ei</span>
+<span class="t" onclick="dotrans('ី,័យ')">ey</span>
+<span class="t" onclick="dotrans('ឹ,ឹ')">ə</span>
+<span class="t" onclick="dotrans('ើ')">əə</span>
+<span class="t" onclick="dotrans('ំ')">əm</span>
+<span class="t" onclick="dotrans('ៅ')">əʉ</span>
+<span class="t" onclick="dotrans('ែ')">ɛɛ</span>
+<span class="t" onclick="dotrans('ា,់')">ɛa</span>
+<span class="t" onclick="dotrans('ះ,ៈ')">ɛah</span>
+<span class="t" onclick="dotrans('ាំង')">ɛang</span>
+<span class="t" onclick="dotrans('ិ')">i</span>
+<span class="t" onclick="dotrans('ី,យ')">ii</span>
+<span class="t" onclick="dotrans('ា,ៀ')">ia</span>
+<span class="t" onclick="dotrans('េះ,ិះ')">ih</span>
+<span class="t" onclick="dotrans('ច,ជ')">ik</span>
+<span class="t" onclick="dotrans('ុ,-,+,់')">o</span>
+<span class="t" onclick="dotrans('-,ូ,ោ,ឧ')">oo</span>
+<span class="t" onclick="dotrans('ា,់,-,+,៌,័,័រ')">oa</span>
+<span class="t" onclick="dotrans('ាំ')">oam</span>
+<span class="t" onclick="dotrans('ុះ')">oh</span>
+<span class="t" onclick="dotrans('ុំ')">om</span>
+<span class="t" onclick="dotrans('ឪ')">ow</span>
+<span class="t" onclick="dotrans('-,អ')">ɔɔ</span>
+<span class="t" onclick="dotrans('ោះ')">ɔh</span>
+<span class="t" onclick="dotrans('ំ')">ɔm</span>
+<span class="t" onclick="dotrans('ុ')">u</span>
+<span class="t" onclick="dotrans('ូ')">uu</span>
+<span class="t" onclick="dotrans('ួ')">ua</span>
+<span class="t" onclick="dotrans('ោះ')">uah</span>
+<span class="t" onclick="dotrans('ុះ')">uh</span>
+<span class="t" onclick="dotrans('ុំ')">um</span>
+<span class="t" onclick="dotrans('ឺ')">ʉʉ</span>
+<span class="t" onclick="dotrans('ឿ')">ʉa</span>
+<span class="t" onclick="dotrans('ឫ')">re</span>
+<span class="t" onclick="dotrans('ឬ')">rʉʉ</span>
+<span class="t" onclick="dotrans('ឭ')">lə</span>
+<span class="t" onclick="dotrans('ឮ')">lʉʉ</span>
+</div>
+</div>
+
+
+<div id="chardata"><span id="charname">Click on characters below to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+<div style="position:relative;">
+<div id=vertical-menu>
+<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
+menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = '';  _showHuffmanTrans = '';  _showGilbertTrans = ''; 
+document.getElementById('shapelist').style.display = 'none';
+document.getElementById('latintranscript').style.display = 'none';
+document.getElementById('huffmantranscript').style.display = 'none';
+document.getElementById('gilberttranscript').style.display = 'none';
+ return false;">D</div>
+ 
+ <div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
+
+<div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
+
+<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
+
+<div class="vmtab" onmouseover="this.textContent='Huffman transcription'+_showHuffmanTrans" onmouseout="this.textContent='H'"  onclick="if (_showHuffmanTrans) {_showHuffmanTrans = ''; this.textContent ='Huffman transcription'; this.style.color='white'; document.getElementById('huffmantranscript').style.display = 'none';} else {_showHuffmanTrans = ' ✓'; this.textContent='Huffman transcription'+_showHuffmanTrans;  this.style.color='orange'; document.getElementById('huffmantranscript').style.display = 'block';} return false;">H</div>
+
+<div class="vmtab" onmouseover="this.textContent='Gilbert transcription'+_showGilbertTrans" onmouseout="this.textContent='G'"  onclick="if (_showGilbertTrans) {_showGilbertTrans = ''; this.textContent ='Gilbert transcription'; this.style.color='white'; document.getElementById('gilberttranscript').style.display = 'none';} else {_showGilbertTrans = ' ✓'; this.textContent='Gilbert transcription'+_showGilbertTrans;  this.style.color='orange'; document.getElementById('gilberttranscript').style.display = 'block';} return false;">G</div>
+
+</div>
+
+
+
+
+<div id="tables">
+ <div id="transcriptionChoice" style="position:absolute;left:40px; font-size: 60px; background-color: #fffacd; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
+  
+  <!-- SHAPE -->
+  <div id="alphabet" class="default">
+    <table id="kbd">
+      <tr>
+        <td><table id="consonants">
+          <tr>
+            <td class="hint">k</td>
+            <td><span class=c>&#x1780;</span></td>
+            <td class="hint">kh</td>
+            <td><span class=c>&#x1781;</span></td>
+            <td class="hint">k</td>
+            <td><span class=c>&#x1782;</span></td>
+            <td class="hint">kh</td>
+            <td><span class=c>&#x1783;</span></td>
+            <td class="hint">ng</td>
+            <td><span class=c>&#x1784;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">c</td>
+            <td><span class=c>&#x1785;</span></td>
+            <td class="hint">ch</td>
+            <td><span class=c>&#x1786;</span></td>
+            <td class="hint">c</td>
+            <td><span class=c>&#x1787;</span></td>
+            <td class="hint">ch</td>
+            <td><span class=c>&#x1788;</span></td>
+            <td class="hint">ny</td>
+            <td><span class=c>&#x1789;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">d</td>
+            <td><span class=c>&#x178A;</span></td>
+            <td class="hint">tth</td>
+            <td><span class=c>&#x178B;</span></td>
+            <td class="hint">d</td>
+            <td><span class=c>&#x178C;</span></td>
+            <td class="hint">tth</td>
+            <td><span class=c>&#x178D;</span></td>
+            <td class="hint">nn</td>
+            <td><span class=c>&#x178E;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">t</td>
+            <td><span class=c>&#x178F;</span></td>
+            <td class="hint">th</td>
+            <td><span class=c>&#x1790;</span></td>
+            <td class="hint">t</td>
+            <td><span class=c>&#x1791;</span></td>
+            <td class="hint">th</td>
+            <td><span class=c>&#x1792;</span></td>
+            <td class="hint">n</td>
+            <td><span class=c>&#x1793;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">b</td>
+            <td><span class=c>&#x1794;</span></td>
+            <td class="hint">ph</td>
+            <td><span class=c>&#x1795;</span></td>
+            <td class="hint">p</td>
+            <td><span class=c>&#x1796;</span></td>
+            <td class="hint">ph</td>
+            <td><span class=c>&#x1797;</span></td>
+            <td class="hint">m</td>
+            <td><span class=c>&#x1798;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">y</td>
+            <td class="divider"><span class=c>&#x1799;</span></td>
+            <td class="hint">l</td>
+            <td class="divider"><span class=c>&#x179B;</span></td>
+            <td class="hint">l</td>
+            <td class="divider"><span class=c>&#x17A1;</span></td>
+            <td class="hint">r</td>
+            <td class="divider"><span class=c>&#x179A;</span></td>
+            <td class="hint">qa</td>
+            <td class="divider"><span class=c>&#x17A2;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">s</td>
+            <td><span class=c>&#x179F;</span></td>
+            <td class="hint">h</td>
+            <td><span class=c>&#x17A0;</span></td>
+            <td class="hint">v</td>
+            <td><span class="divider"><span class=c>&#x179C;</span></span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          </table></td>
+        <td id="closediacritics">
+          <div id=cd1><span class=c>&#x17CC;</span><br /><span class=c>&#x17C9;</span><br /><span class=c>&#x17CA;</span></div>
+          <div id=cd2><span class=c>&#x17D2;</span></div>
+          </td>
+        <td><table id="subscripts">
+          <tr>
+            <td class="hint">k</td>
+            <td><span class='c p'>&#x17D2;&#x1780;</span></td>
+            <td class="hint">kh</td>
+            <td><span class='c p'>&#x17D2;&#x1781;</span></td>
+            <td class="hint">k</td>
+            <td><span class='c p'>&#x17D2;&#x1782;</span></td>
+            <td class="hint">kh</td>
+            <td><span class=c>&#x17D2;&#x1783;</span></td>
+            <td class="hint">ng</td>
+            <td><span class='c p'>&#x17D2;&#x1784;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">c</td>
+            <td><span class='c p'>&#x17D2;&#x1785;</span></td>
+            <td class="hint">ch</td>
+            <td><span class='c p'>&#x17D2;&#x1786;</span></td>
+            <td class="hint">c</td>
+            <td><span class='c p'>&#x17D2;&#x1787;</span></td>
+            <td class="hint">ch</td>
+            <td><span class=c>&#x17D2;&#x1788;</span></td>
+            <td class="hint">ny</td>
+            <td><span class='c p'>&#x17D2;&#x1789;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">d</td>
+            <td><span class='c p'>&#x17D2;&#x178A;</span></td>
+            <td class="hint">tth</td>
+            <td><span class='c p'>&#x17D2;&#x178B;</span></td>
+            <td class="hint">d</td>
+            <td><span class='c p'>&#x17D2;&#x178C;</span></td>
+            <td class="hint">tth</td>
+            <td><span class=c>&#x17D2;&#x178D;</span></td>
+            <td class="hint">nn</td>
+            <td><span class='c p'>&#x17D2;&#x178E;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">t</td>
+            <td><span class='c p'>&#x17D2;&#x178F;</span></td>
+            <td class="hint">th</td>
+            <td><span class='c p'>&#x17D2;&#x1790;</span></td>
+            <td class="hint">t</td>
+            <td><span class='c p'>&#x17D2;&#x1791;</span></td>
+            <td class="hint">th</td>
+            <td><span class='c p'>&#x17D2;&#x1792;</span></td>
+            <td class="hint">n</td>
+            <td><span class='c p'>&#x17D2;&#x1793;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">b</td>
+            <td><span class=c>&#x17D2;&#x1794;</span></td>
+            <td class="hint">ph</td>
+            <td><span class='c p'>&#x17D2;&#x1795;</span></td>
+            <td class="hint">p</td>
+            <td><span class='c p'>&#x17D2;&#x1796;</span></td>
+            <td class="hint">ph</td>
+            <td><span class='c p'>&#x17D2;&#x1797;</span></td>
+            <td class="hint">m</td>
+            <td><span class='c p'>&#x17D2;&#x1798;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">y</td>
+            <td class="divider"><span class=c>&#x17D2;&#x1799;</span></td>
+            <td class="hint">l</td>
+            <td class="divider"><span class='c p'>&#x17D2;&#x179B;</span></td>
+            <td class="hint">l</td>
+            <td class="divider"><span class='c p'>&#x17D2;&#x17A1;</span></td>
+            <td class="hint">r</td>
+            <td class="divider"><span class=c>&#x17D2;&#x179A;</span></td>
+            <td class="hint">qa</td>
+            <td class="divider"><span class='c p'>&#x17D2;&#x17A2;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">s</td>
+            <td><span class=c>&#x17D2;&#x179F;</span></td>
+            <td class="hint">h</td>
+            <td><span class='c p'>&#x17D2;&#x17A0;</span></td>
+            <td class="hint">v</td>
+            <td><span class="divider"><span class='c p'>&#x17D2;&#x179C;</span></span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          </table></td>
+        
+        
+        <td id="misc">          
+          <div id="independentvowels"><span class="hint">i</span><span class=c>&#x17A5;</span> <span class="hint">ii</span><span class=c>&#x17A6;</span> <span class="hint">u</span><span class=c>&#x17A7;</span> <span class="hint">uu</span><span class=c>&#x17A9;</span><span class=c>&#x17AA;</span> <span class="hint">e</span><span class=c>&#x17AF;</span> <span class="hint">ai</span><span class=c>&#x17B0;</span> <span class="hint">oo</span><span class=c>&#x17B1;</span><span class=c>&#x17B2;</span> <span class="hint">au</span><span class=c>&#x17B3;</span><br>
+            <span class="hint">ry</span><span class=c>&#x17AB;</span> <span class="hint">ryy</span><span class=c>&#x17AC;</span> <span class="hint">ly</span><span class=c>&#x17AD;</span>
+            <span class="hint">lyy</span>
+            <span class=c>&#x17AE;</span> <span class="hint">u</span><span class=c>&#x17D2;&#x17A7;</span> <span class="hint">uu</span><span class=c>&#x17D2;&#x17AF;</span>
+            <span class="hint">ry</span>
+            <span class=c>&#x17D2;&#x17AB;</span> <span class="hint">ryy</span><span class=c>&#x17D2;&#x17AC;</span></div>
+          
+          <div id="combining">
+            <div><span class="hint">aa</span><span class=c>&#x17B6;</span> <span class="hint">aam</span> <span class=c>&#x17B6;&#x17C6;</span> <span class="hint">i</span>&nbsp;<span class='c p'>&#x17B7;</span> <span class="hint">ii</span><span class='c p'>&#x17B8;</span> <span class="hint">y</span><span class='c p'>&#x17B9;</span> <span class="hint">yy</span><span class='c p'>&#x17BA;</span><br/>
+            <span class="hint">u</span><span class='c p'>&#x17BB;</span> <span class="hint">om</span><span class='c p'>&#x17BB;&#x17C6;</span> <span class="hint">urk</span><span class="c">&#x17BB;&#x17C7;</span> <span class="hint">uu</span><span class='c p'>&#x17BC;</span> <span class="hint">ua</span><span class='c p'>&#x17BD;</span><br/>
+            <span class="hint">e</span><span class=c>&#x17C1;</span> <span class="hint">erk</span><span class="c">&#x17C1;&#x17C7;</span> <span class="hint">ae</span><span class=c>&#x17C2;</span> <span class="hint">ai</span><span class=c>&#x17C3;</span><br/>
+            <span class="hint">oo</span><span class=c>&#x17C4;</span> <span class="c">&#x17C4;&#x17C7;</span> <span class="hint">au</span><span class=c>&#x17C5;</span> <span class="hint">oe</span><span class=c>&#x17BE;</span> <span class="hint">ya</span><span class=c>&#x17BF;</span> <span class="hint">ie</span><span class=c>&#x17C0;</span></div>
+            <div><span class='c p'>&#x17C6;</span> <span class=c>&#x17C7;</span> <span class=c>&#x17C8;</span> <span class='c p'>&#x17CB;</span> <span class='c p'>&#x17CD;</span> <span class='c p'>&#x17CE;</span> <span class='c p'>&#x17CF;</span> <span class='c p'>&#x17D0;</span></div>
+            </div></td>
+        
+        <td id="zwspcol"><table id="numbers" style="margin: 0 10px 10px 0;">
+          <tbody>
+            <tr>
+              <td class="hint">7</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E7;</span></span></td>
+              <td class="hint">8</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E8;</span></span></td>
+              <td class="hint">9</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E9;</span></span></td>
+              </tr>
+            <tr>
+              <td class="hint">4</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E4;</span></span></td>
+              <td class="hint">5</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E5;</span></span></td>
+              <td class="hint">6</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E6;</span></span></td>
+              </tr>
+            <tr>
+              <td class="hint">1</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E1;</span></span></td>
+              <td class="hint">2</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E2;</span></span></td>
+              <td class="hint">3</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E3;</span></span></td>
+              </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="hint">0</td>
+              <td><span style="text-align: right;"><span class=c>&#x17E0;</span></span></td>
+              <td></td>
+              <td><span class=c>&#x17DB;</span></td>
+              </tr>
+            </tbody>
+        </table></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200B');">ZWSP</span> 
+        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u0020');">SPACE</span>
+        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span>
+        </td>
+        <td id="misc2"><div id="punctuation"><span class=c>&#x17D7;</span> <span class=c>។ល។</span> <span class=c>&#x17DA;</span> <span class=c>&#x17D4;</span> <span class=c>&#x17D5;</span> <span class=c>&#x17D6;</span> <span class=c>&#x17D9;</span></div></td>
+        <td id="zwspcol2">&nbsp;</td>
+      </tr>
+      </table>
+ <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">Show/hide rare characters</p>
+ <table><tbody>
+        <tr><td id="rare" style="display:none;"><table id="rarestuff">
+            <tr>
+              <td><div id="ccs">
+                  <div id="deprecated">
+                    <div>Deprecated:</div>
+                    <span class=c>&#x17A4;</span><span class=c>&#x17A3;</span><span class=c>&#x17B4;</span><span class=c>&#x17B5;</span><br />
+                    <span class='c p'>&#x17D3;</span><span class=c>&#x17A8;</span></div>
+                  <div> <span class=c>&#x179D;</span><span class='c p'>&#x17D2;&#x179D;</span><span class=c>&#x179E;</span><span class='c p'>&#x17D2;&#x179E;</span></div>
+                  <div><span class=c>&#x17DC;</span> <span class='c p'>&#x17DD;</span><span class='c p'>&#x17D1;</span></div>
+                  <div  class="divination"><span class=c>&#x17F0;</span> <span class=c>&#x17F1;</span> <span class=c>&#x17F2;</span> <span class=c>&#x17F3;</span> <span class=c>&#x17F4;</span><br />
+                    <span class=c>&#x17F5;</span> <span class=c>&#x17F6;</span><span class=c>&#x17F7;</span><span class=c>&#x17F8;</span><span class=c>&#x17F9;</span></div>
+                  <div><span class=c>&#x17D8;</span></div>
+                </div></td>
+              <td><table id="extra">
+                  <tr>
+                    <td><span class=c>&#x19E0;</span></td>
+                    <td><span class=c>&#x19E7;</span></td>
+                    <td><span class=c>&#x19EE;</span></td>
+                    <td><span class=c>&#x19F5;</span></td>
+                    <td><span class=c>&#x19FC;</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class=c>&#x19E1;</span></td>
+                    <td><span class=c>&#x19E8;</span></td>
+                    <td><span class=c>&#x19EF;</span></td>
+                    <td><span class=c>&#x19F6;</span></td>
+                    <td><span class=c>&#x19FD;</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class=c>&#x19E2;</span></td>
+                    <td><span class=c>&#x19E9;</span></td>
+                    <td><span class=c>&#x19F0;</span></td>
+                    <td><span class=c>&#x19F7;</span></td>
+                    <td><span class=c>&#x19FE;</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class=c>&#x19E3;</span></td>
+                    <td><span class=c>&#x19EA;</span></td>
+                    <td><span class=c>&#x19F1;</span></td>
+                    <td><span class=c>&#x19F8;</span></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><span class=c>&#x19E4;</span></td>
+                    <td><span class=c>&#x19EB;</span></td>
+                    <td><span class=c>&#x19F2;</span></td>
+                    <td><span class=c>&#x19F9;</span></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><span class=c>&#x19E5;</span></td>
+                    <td><span class=c>&#x19EC;</span></td>
+                    <td><span class=c>&#x19F3;</span></td>
+                    <td><span class=c>&#x19FA;</span></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><span class=c>&#x19E6;</span></td>
+                    <td><span class=c>&#x19ED;</span></td>
+                    <td><span class=c>&#x19F4;</span></td>
+                    <td><span class=c>&#x19FB;</span></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table></td>
+          </tr>
+</tbody></table> 
+  </div>
+  
+  
+    
+
+
+<div id=shapelist>
+<img alt="shape1" src="images/shape1.png" onclick="findShape('1780,1782,178F,1797,17A5',true)" /> 
+<img alt="shape2" src="images/shape2.png" onclick="findShape('1796,17B0,17AD,17AE,17E3,1789,1789,1789,178E,179B,179F,178D,17E7,1788,17A6,17D21780,17D21782,17D2178A,17D2178E,17D2178F,17D21796,17D21797',true)" /> 
+<img alt="shape3" src="images/shape3.png" onclick="findShape('1785,1790,178B,1794,17AB,17AC,1798,17A0,1783,1799,17D21784,17D21789,17D217A0,17D217AB,17D217AC,17BC,17BD',true)" /> 
+<img alt="shape4" src="images/shape4.png" onclick="findShape('1786,1792,1787,1795,178A,1784,17AF,17D21786,17D21787,17D2178B,17D21795',true)" /> 
+<img alt="shape5" src="images/shape5.png" onclick="findShape('1781,178C,17A7,17A9,17AA,17B1,17B3,1793,17D21781',true)" /> 
+<img alt="shape6" src="images/shape6.png" onclick="findShape('1791,17A1,17D217A1',true)" /> 
+<img alt="shape7" src="images/shape7.png" onclick="findShape('179A,17C1,17C117C7,179C,17DB,17A2,17C2,17C3,17C4,17C417C7,17C5,17BE,17BF,17C0',true)" /> 
+<img alt="shape8" src="images/shape8.png" onclick="findShape('17B6,17B617C6,17C4,17C5,17C417C7',true)" /> 
+<img alt="shape9" src="images/shape9.png" onclick="findShape('17C6,17C7,17C8,17D6,17BB17C7,17C417C7',true)" /> 
+<img alt="shape10" src="images/shape10.png" onclick="findShape('17B7,17B8,17B9,17BA,17CB,17C9,17CD,17CE,17CF,17D0,17CC,17CA,17C2,17C3,17BE,17BF',true)" /> 
+<img alt="shape11" src="images/shape11.png" onclick="findShape('17D21780,17D21782,17D2178A,17D2178E,17D2178F,17D21796,17D21797,17D21781,17D2178C,17D217A7,17BB,17C9,17CA,17BC,17D21784,17D21789,17D21790,17D2179B,17D21785,17D21791,17D21792,17D21793,17D21798,17D217A2,17D217A0,17D2179C,17D21786,17BD,17D21787,17D2178B,17D21795,17D217AF,17D217AB,17D217AC,17D217A1,1789,17B0',true)" /> 
+<img alt="shape12" src="images/shape12.png" onclick="findShape('17D21783,17D21788,17D2178D,17D21794,17D21799,17D217A1,17D2179F,17D2179A,17A1,17BF,17C0',true)" /> 
+</div>
+
+
+
+</div>
+<!-- end of tables -->
+
+
+</div><!-- end of wrapper round tables and vertical menu -->
+
+
+
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+      <option value="0">Select...</option>
+      <optgroup label="Webfonts">
+      <option value="Khmer OS Battambang WF">Khmer OS Battambang WF</option>
+      <option value="Noto Sans Khmer WF">Noto Sans Khmer WF</option>
+      </optgroup>
+      <optgroup label="Mac fonts">
+      <option value="Khmer MN">Khmer MN (Lion)</option>
+      <option value="Khmer MN">Khmer Sangam MN (Lion)</option>
+      </optgroup>
+      <optgroup label="Windows fonts">
+      <option value="DaunPenh">DaunPenh (Windows7)</option>
+      <option value="MoolBoran">MoolBoran (Windows7)</option>
+      </optgroup>
+      <optgroup label="Google fonts">
+      <option value="Noto Sans">Noto Sans Khmer</option>
+      </optgroup>
+      <optgroup label="Other fonts">
+      <option value="Battambang">Battambang</option>
+      <option value="CDT Khmer">CDT Khmer</option>
+      <option value="Khmer Angkulileka">Khmer Angkulileka</option>
+      <option value="Khmer Chanta">Khmer Chanta</option>
+      <option value="Khmer Kampongtrach">Khmer Kampongtrach</option>
+      <option value="Khmer Kampot">Khmer Kampot</option>
+      <option value="Khmer Kep">Khmer Kep</option>
+      <option value="Khmer Kolab">Khmer Kolab</option>
+      <option value="Khmer Mondulkiri-s">Khmer Mondulkiri-s</option>
+      <option value="Khmer Mool">Khmer Mool</option>
+      <option value="Khmer Nettra">Khmer Nettra</option>
+      <option value="Khmer Old Style">Khmer Old Style</option>
+      <option value="Khmer OS">Khmer OS</option>
+      <option value="Khmer OS Battambang">Khmer OS Battambang</option>
+      <option value="Khmer OS Fasthand">Khmer OS Fasthand</option>
+      <option value="Khmer OS Freehand">Khmer OS Freehand</option>
+      <option value="Khmer OS System">Khmer OS System</option>
+      <option value="Khmer Vanara">Khmer Vanara</option>
+      <option value="PhnomPenh OT">PhnomPenh OT</option>
+      </optgroup>
+      <optgroup label="General fonts">
+      <option value="Code2000">Code2000</option>
+      <option value="Arial Unicode MS">Arial Unicode MS</option>
+      <option value="sans-serif">sans-serif</option>
+      <option value="serif">serif</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="control">Custom font:<br />
+    <form action="none"
+						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
+    </form>
+  </div>
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+    <form action="none" onsubmit="document.getElementById( 'output' ).style.height = (document.getElementById( 'rows' ).value*100)+'px';  return false;">
+     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px/100):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px/100):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineheight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+    </form>
+  </div>
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'khmer'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'khmer');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+</div>
+<div id="extracontrols">
+  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+
+
+
+<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+<!--input name="uiFont" id="uiFont" onchange="setUIFont(document.getElementById('uiFont').value); return false;" value="" /-->
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+
+<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">∅</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+
+
+<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+</div>
+
+
+<div id="showNotes" onclick="toggleNotes()">show notes</div>
+
+
+
+
+
+
+
+
+<div id="detailednotes" style="display:none">
+<p><strong>Notes:</strong></p> 
+
+<aside class="sidebar">
+  <div class="noprint">
+        <h2 class="notoc flush"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/khmer/">Khmer script notes</a></p>
+        <p><a href="/scripts/block/khmer">Khmer character notes</a></p>
+        <p><a href="/scripts/links?script=khmer">Khmer script links</a></p>
+      	<p><a href="/uniview/?block=khmer">Khmer in UniView</a></p>
+        <p><a href="/pickers/">Other pickers </a></p>
+  </div>
+</aside>     
+
+<p id="status">Updated Thu 19 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=khmer" title="Show all blog posts tagged with 'khmer'">khmer</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
+<p>Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+
+    <p>You must have JavaScript enabled. Choose a view from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+    <p>To properly display the text you will need to choose a font that is loaded on your system or device, or use  the  web font downloaded with the page (Khmer OS Battambang). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7, as well as which are the web fonts. Note that the web fonts aren't guarranteed to work on every system/device. This typically arises because the font relies on rendering algorithms provided by the operating system. See more information about <a href="/rishida/scripts/fontlist/#khmer">standard OS fonts in Mac and Windows</a>.</p>
+   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
+    <dl>
+      <dt>Mobile devices</dt>
+   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
+      <dt>About the chart</dt>
+      <dd>Includes all the characters in the Unicode <a href="/rishida/scripts/uniview/?block=khmer">Khmer</a> and <a href="/rishida/scripts/uniview/?block=khmer_symbols">Khmer Symbols</a> blocks (in the default panel).</dd>
+      <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
+      <dt>Input options</dt>
+      <dd>The following options are available by clicking on the vertical grey bar to the left of the selection area. <!--You can start up directly in one of the  views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>default</code>, <code>shape</code>,<code> huffman</code>, <code>gilbert</code>, <code>phones</code> or <code>fontgrid</code>.--></dd>
+      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Khmer. Characters are arranged based on the order of input, to speed up picking.</dd>
+      <dd> Simple consonants are to the left in mostly alphabetic order. To their right are combining characters that follow the initial consonant, then subscript consonants, then vowels and other symbols.  Independent vowels appear at the top, then combining vowel signs, then other combining marks. At the far right are digits and the currency symbol, and various other symbols and punctuation. Clicking on the subscript characters produces a coeng sign followed by a consonant.</dd>
+      <dd>Open the expanding link for  obsoleted  and other less commonly used characters.</dd>
+      <dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd>
+      <dd><strong class="leadin">Shape lookup</strong> This adds a row of orange pictures that represent basic shapes associated with the Thai characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</dd>
+      <dd><strong class="leadin">Transcriptions</strong> There are three transcription panels available in this picker: Latin, Huffman, and Gilbert. These panels allow you to follow a transcription to generate some Khmer text. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</dd>
+      <dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+      <dd>The <code class="kw" translate="no">Huffman</code> panel allows you to generate Khmer text from a  transcription as used by Huffman in <em>Cambodian System of Writing</em>.</dd>
+      <dd>The <code class="kw" translate="no">Gilbert</code> panel allows you to generate Khmer text from a  transcription as used by Gilbert and Hang in <em>Cambodian for Beginners</em>.</dd>
+      <dd>A hyphen in a selection list for either of these transcription panels indicates that the sound is produced without a Khmer character, ie. the inherent vowel.</dd>
+      <dd>In a small number of cases, you will need to click twice on the components that make up the sound (eg. when bantoc is used on the following consonant). These cases are indicated by a  red plus sign between two clickable shapes (one of which may be just a hyphen). You need to click on the item to the left of the plus sign, then add a consonant, then click on the item to the right of the plus sign. In several cases the item to the left is a hyphen (representing the inherent vowel), in which case just add another consonant followed by the item to the right.</dd>
+      <dt>Automatic transcriptions</dt>
+      <dd>The <code class="button">toIPA</code> button produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation. It uses the rules in Franklin Huffman's <em>Cambodian System of Writing</em>. <strong><em>However, it needs some assistance from the user</em></strong>. This is because Khmer doesn't use spaces between words, and it is often ambiguous as to whether a consonant represents a syllable-final sound or a syllable in its own right. It also needs help to identify unstressed syllables. I don't have the means to do automatic word segmentation, so you will need to provide this information.</dd>
+      <dd>After the first syllable on the line, put an ordinary space before each consonant or independent vowel sign that begins a new <em>syllable</em> (not word). (Note that this may split consonant clusters. The Khmer text will look strange but still work.) You should also indicate unstressed syllables by following the syllable with a hyphen, rather than a space. For many bisyllabic words, this means putting a hyphen after the first of the two syllables. For example, converting <span class="khmer" lang="km">ប្រកាន់និទៀន</span> to <span class="khmer" lang="km">ប្រ-កាន់ និ-ទៀន</span> will produce the following transcription <span class="ipa">prɑkannitiən</span>. Note that, if you don't know Khmer well enough to know when a syllable is unstressed, you can still get an approximation to the pronunciation using only spaces. For instance, the previous example separated by spaces only will yield <span class="ipa">prɑːkanniʔtiən</span>. </dd>
+      <dd>The <code class="button" translate="no">condense</code> button removes the spaces from the highlighted range (or the whole output area, if nothing is highlighted).</dd>
+      <dd>Although the transcription is based on rules by Franklin Huffman in <em>Cambodian System of Writing</em>, some symbols are changed to be more recognizable to those familiar with IPA. While the transcription rules are quite detailed, and Khmer is largely regular, there are a few exceptions, particularly in words from Sanskrit or Pali,  or ambiguities, for example in a few independent vowel signs, that cause problems for the transcription. The transcription is non-reversible. I created it to help me quickly reproduce (simple) phonetic alternatives for examples in my notes on Khmer.</dd>
+      <dt>Notes on other controls</dt>
+      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
+      <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
+      <dt>If something is missing</dt>
+      <dd>... <a href="mailto:rishida@w3.org">let me know</a>.</dd>
+    </dl>
+</div>
+
+
+<div id="panel" style="display:none">
+	<div id="title" class="ex" lang="km"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"></p>
+</div>
+
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+
+
+</body>
+</html>
