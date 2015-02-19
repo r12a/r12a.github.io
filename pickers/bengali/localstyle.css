@@ -1,12 +1,13 @@
-@import url(http://fonts.googleapis.com/earlyaccess/lohitbengali.css);
-@import url(http://fonts.googleapis.com/earlyaccess/notosansbengali.css);
+@font-face {
+    font-family: 'Noto Sans Bengali WF';
+    src: url('/webfonts/NotoSansBengali-Regularwebfont.woff2') format('woff2'),
+         url('/webfonts/NotoSansBengali-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
-#phonic { display: none; }
-#phonic2 { display: none; }
 #shape { display: none; }
 #alphabet { display: block; }
-#phonelist { display: none; }
-#fontgrid { display: none; }
 
 
 
@@ -29,7 +30,6 @@ span.hint {
 	padding: 0; 
 	padding-bottom: 3px; 
 	text-align: left;
-	font-family: webfont, "Noto Sans Khmer", "Khmer Battambang", sans-serif;
 	font-size: 25px;
 	cursor:pointer;
 	vertical-align: top; 

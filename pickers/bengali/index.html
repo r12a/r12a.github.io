@@ -501,7 +501,7 @@ document.getElementById('radicetranscript').style.display = 'none';
   
   
  
- <div id=shapelist>
+ <div id=shapelist style="display: none;">
  <div>
 <img alt="shape1" src="images/shape1.png" onclick="findShape('995,9AC,9B0,9F1,9F0,99D','রু,রূ,ব্দ,ব্ব,ব্র,ব্ল,ক্ল,ক্ম,ক্স,ক্ব,ক্ষ্ন',true)" /> 
 <img alt="shape2" src="images/shape2.png" onclick="findShape('998,9AF,9B7,9AF9BC,9AB,9DF','ঘ্ন,ঘ্র,ষ্ণ,ফ্র,ফ্ল,ফ,ব্ধ,ক্ক,ক্ব',true)" /> 
@@ -563,9 +563,8 @@ document.getElementById('radicetranscript').style.display = 'none';
   <div class="control">Font list:<br />
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
       <option value="0">Select...</option>
-			<optgroup label="Web fonts">
-            <option value="Lohit Bengali">Lohit Bengali</option>
-            <option value="Noto Sans Bengali">Noto Sans Bengali</option>
+			<optgroup label="Web font">
+            <option value="Noto Sans Bengali WF">Noto Sans Bengali WF</option>
            </optgroup>
             
 			<optgroup label="Mac fonts">
@@ -660,9 +659,10 @@ document.getElementById('radicetranscript').style.display = 'none';
 
 
 <div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
-<input name="uiFont" id="uiFont" onchange="setUIFont(document.getElementById('uiFont').value); return false;" value="" />
-
-<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
 
 
 
