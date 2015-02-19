@@ -1,4 +1,10 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosansdevanagari.css);
+@font-face {
+    font-family: 'Noto Sans Devanagari WF';
+    src: url('/webfonts/NotoSansDevanagari-Regularwebfont.woff2') format('woff2'),
+         url('/webfonts/NotoSansDevanagari-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 #alphabet { display: block; }
 #phonelist { display: none; }
