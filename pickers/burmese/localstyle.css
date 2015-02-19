@@ -1,19 +1,19 @@
 @font-face {
-    font-family: 'NotoSansMyanmarWebfont';
+    font-family: 'Noto Sans Myanmar WF';
     src: url('/webfonts/notosansmyanmar-regularwf.woff2') format('woff2'),
          url('/webfonts/notosansmyanmar-regularwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'Myanmar3Webfont';
+    font-family: 'Myanmar3 WF';
     src: url('/webfonts/mm3-multiwf.woff2') format('woff2'),
          url('/webfonts/mm3-multiwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'TharlonWebfont';
+    font-family: 'Tharlon WF';
     src: url('/webfonts/tharlon-regularwf.woff2') format('woff2'),
          url('/webfonts/tharlon-regularwf.woff') format('woff');
     font-weight: normal;

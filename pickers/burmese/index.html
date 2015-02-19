@@ -513,9 +513,9 @@ document.getElementById('latintranscript').style.display = 'none';
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
         <option value="0">Select...</option>
         <optgroup label="Webfonts">
-        <option value="Myanmar3Webfont">Myanmar3</option>
-        <option value="TharlonWebfont">Tharlon</option>
-        <option value="NotoSansMyanmarWebfont">Noto Sans Myanmar</option>
+        <option value="Myanmar3 WF">Myanmar3 WF</option>
+        <option value="Tharlon WF">Tharlon WF</option>
+        <option value="Noto Sans Myanmar WF">Noto Sans Myanmar WF</option>
         </optgroup>
         <optgroup label="Mac fonts">
         <option value="Myanmar MN">Myanmar MN</option>
@@ -583,9 +583,10 @@ document.getElementById('latintranscript').style.display = 'none';
 
 
 <div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
-<input name="uiFont" id="uiFont" onchange="setUIFont(document.getElementById('uiFont').value); return false;" value="" />
-
-<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
 
 
 
