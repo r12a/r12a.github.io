@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Uighur character picker 17</title>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link type="text/css" href="/pickers/shared17/style.css" rel="Stylesheet" />
+<link type="text/css" href="localstyle.css" rel="Stylesheet" />
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script src="/scripts/block/arabic-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Uighur character picker','v17');</script>
+</header>
+
+
+<div id="main">
+  <button type="button" onclick="selectAll(); return false;">Select all</button>
+    <button type="button" onclick="deleteAll();">Delete all</button>
+    <button type="button" onclick="showNameDetails(document.getElementById('output').value, defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;">Codepoints</button>
+    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+</div>
+
+
+<div id="outputDiv">
+  <textarea dir="rtl" rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+
+
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    <span id="afoff" class="off" 
+    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+
+
+
+<div id="phonemelist">
+
+<div id=latintranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ɑ')">ɑ</span>
+<span class="t" onclick="dotrans('ɛ')">ɛ</span>
+<span class="t" onclick="dotrans('æ')">æ</span>
+<span class="t" onclick="dotrans('dʒ')">dʒ</span>
+<span class="t" onclick="dotrans('tʃ')">tʃ</span>
+<span class="t" onclick="dotrans('χ')">χ</span>
+<span class="t" onclick="dotrans('ɾ')">ɾ</span>
+<span class="t" onclick="dotrans('ʒ')">ʒ</span>
+<span class="t" onclick="dotrans('ʃ')">ʃ</span>
+<span class="t" onclick="dotrans('ʁ')">ʁ</span>
+<span class="t" onclick="dotrans('ɣ')">ɣ</span>
+<span class="t" onclick="dotrans('ɸ')">ɸ</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɦ')">ɦ</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('ʊ')">ʊ</span>
+<span class="t" onclick="dotrans('ø')">ø</span>
+<span class="t" onclick="dotrans('ʏ')">ʏ</span>
+<span class="t" onclick="dotrans('ɨ')">ɨ</span>
+</div>
+
+</div> 
+
+
+
+
+<div id="chardata"><span id="charname">Click on characters  to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div style="position:relative;">
+<div id=vertical-menu>
+<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
+menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+_showShapeHints = ''; 
+ return false;">D</div>
+
+<div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
+
+<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
+
+</div>
+
+</div>
+
+
+
+
+<div id="tables">
+  
+  <!-- SHAPE -->
+  <div id="alphabet" class="default"
+dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyana, 'Noto Sans Lao', sans-serif; font-size: 32px;">
+    <table id="kbd">
+      <tr>
+        <td><table id="consonants">
+          <tr>
+            <td class="hint">b</td>
+            <td><span class=c>&#x0628;</span></td>
+            <td class="hint">p</td>
+            <td><span class=c>&#x067E;</span></td>
+            <td class="hint">t</td>
+            <td><span class=c>&#x062A;</span></td>
+            <td class="hint"><span class="p">dʒ</span></td>
+            <td><span class=c>&#x062C;</span></td>
+            <td class="hint"><span class="p">tʃ</span></td>
+            <td><span class=c>&#x0686;</span></td>
+            <td class="hint"><span class="p">χ</span></td>
+            <td><span class=c>&#x062E;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">d</td>
+            <td><span class=c>&#x062F;</span></td>
+            <td class="hint">r</td>
+            <td><span class=c>&#x0631;</span></td>
+            <td class="hint">z</td>
+            <td><span class=c>&#x0632;</span></td>
+            <td class="hint"><span class="p">ʒ</span></td>
+            <td><span class=c>&#x0698;</span></td>
+            <td class="hint">s</td>
+            <td><span class=c>&#x0633;</span></td>
+            <td class="hint"><span class="p">ʃ</span></td>
+            <td><span class=c>&#x0634;</span></td>
+            </tr>
+          <tr>
+            <td class="hint"><span class="p">ʁ</span></td>
+            <td><span class=c>&#x063A;</span></td>
+            <td class="hint">f</td>
+            <td><span class=c>&#x0641;</span></td>
+            <td class="hint">q</td>
+            <td><span class=c>&#x0642;</span></td>
+            <td class="hint">k</td>
+            <td><span class=c>&#x0643;</span></td>
+            <td class="hint">g</td>
+            <td><span class=c>&#x06AF;</span></td>
+            <td class="hint"><span class="p">ŋ</span></td>
+            <td><span class=c>&#x06AD;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">l</td>
+            <td><span class=c>&#x0644;</span></td>
+            <td class="hint">m</td>
+            <td><span class=c>&#x0645;</span></td>
+            <td class="hint">n</td>
+            <td><span class=c>&#x0646;</span></td>
+            <td class="hint">h</td>
+            <td><span class=c>&#x06BE;</span></td>
+            <td class="hint">w</td>
+            <td><span class=c>&#x06CB;</span></td>
+            <td class="hint">j</td>
+            <td><span class=c>ي</span></td>
+            </tr>
+        </table></td>
+        <td style="padding-left:20px;">
+          <table id="vowels"><tbody>
+            <tr>
+              <td class="hint">a</td>
+              <td><span class=c title=06260627>&#x0626;&#x627;</span></td>
+              <td><span class=c title=0627>&#x0627;</span></td>
+              <td class="hint"><span class="p">ø</span></td>
+              <td><span class=c>&#x0626;&#x6C6;</span></td>
+              <td><span class=c>&#x06C6;</span></td>
+              </tr>
+            <tr>
+              <td class="hint"><span class="p">ɛ</span></td>
+              <td><span class=c title=062606D5>&#x0626;&#x6D5;</span></td>
+              <td><span class=c title=06D5>&#x06D5;</span></td>
+              <td class="hint">y</td>
+              <td><span class=c>&#x0626;&#x6C8;</span></td>
+              <td><span class=c>&#x06C8;</span></td>
+              </tr>
+            <tr>
+              <td class="hint">o</td>
+              <td><span class=c>&#x0626;&#x648;</span></td>
+              <td><span class=c>&#x0648;</span></td>
+              <td class="hint">e</td>
+              <td><span class=c>&#x0626;&#x6D0;</span></td>
+              <td><span class=c>&#x06D0;</span></td>
+              </tr>
+            <tr>
+              <td class="hint">u</td>
+              <td><span class=c>&#x0626;&#x6C7;</span></td>
+              <td><span class=c>&#x06C7;</span></td>
+              <td class="hint">i</td>
+              <td><span class=c>&#x0626;&#x649;</span></td>
+              <td><span class=c>&#x0649;&#x64A;</span></td>
+              </tr>
+            </tbody>
+            </table>
+          
+        </td>
+        <td id="numbers" dir=ltr>
+          <table><tbody>
+            <tr>
+              <td class="hint">7</td>
+              <td><span class=c>&#x667;</span></td>
+              <td class="hint">8</td>
+              <td><span class=c>&#x668;</span></td>
+              <td class="hint">9</td>
+              <td><span class=c>&#x669;</span></td></tr>
+            <tr>
+              <td class="hint">4</td>
+              <td><span class=c>&#x664;</span></td>
+              <td class="hint">5</td>
+              <td><span class=c>&#x665;</span></td>
+              <td class="hint">6</td>
+              <td><span class=c>&#x666;</span></td></tr>
+            <tr>
+              <td class="hint">1</td>
+              <td><span class=c>&#x661;</span></td>
+              <td class="hint">2</td>
+              <td><span class=c>&#x662;</span></td>
+              <td class="hint">3</td>
+              <td><span class=c>&#x663;</span></td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td class="hint">0</td>
+              <td><span class=c>&#x660;</span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td></tr>
+            </tbody></table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:center;">
+        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span>
+        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span>
+        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span>
+        <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200C');">ZWNJ</span>
+        <br/>
+        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2067');">RLI</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2066');">LRI</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2069');">PDI</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202B');">RLE</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; teuxt-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\202A');">LRE</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202C');">PDF</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200E');">LRM</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200F');">RLM</span>
+        </td>
+        <td>
+        <table id=punctuation><tbody>
+        <tr>
+        <td><span class=c>&#x61F;</span></td>
+        <td><span class=c>&#x60C;</span></td>
+        <td><span class=c>&#x61B;</span></td>
+        </tr>
+        </tbody></table>
+        
+        </td>
+      </tr>
+      </table>
+  </div>
+
+
+
+
+
+
+
+</div><!-- end of tables -->
+
+
+</div><!-- end of wrapper round tables and vertical menu -->
+
+
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+      <option value="0">Select...</option>
+            <optgroup label="Mac fonts ">
+            <option value="Geeza Pro">Geeza Pro</option>
+            </optgroup>
+            
+            <optgroup label="Windows fonts ">
+            <option value="Microsoft Uighur">Microsoft Uighur </option>
+            <option value="Arabic Typesetting">Arabic Typesetting</option>
+            <option value="Aldhabi">Aldhabi</option>
+            <option value="Simplified Arabic">Simplified Arabic</option>
+            <option value="Traditional Arabic">Traditional Arabic</option>
+            </optgroup>
+            
+            <optgroup label="Google fonts ">
+            <option value="Scheherazade">Scheherazade</option>
+            <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>
+            </optgroup>
+            
+            <optgroup label="Other fonts ">
+            <option value="Unikurd Tishk">Unikurd Tishk</option>
+            <option value="Unikurd Web">Unikurd Web</option>
+            </optgroup>
+            
+            <optgroup label="General fonts ">
+            <option value="Arial">Arial</option>
+            <option value="Arial Unicode MS">Arial Unicode MS</option>
+            <option value="Code2000">Code2000</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="sans-serif">sans-serif</option>
+            <option value="serif">serif</option>
+            </optgroup>
+    </select>
+  </div>
+  <div class="control">Custom font:<br />
+    <form action="none"
+						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" />
+    </form>
+  </div>
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+  </div>
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'uighur'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'arabic');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+</div>
+
+
+<div id="extracontrols">
+  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+
+
+<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">∅</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+
+
+<div class="control" id="uiTableDirection" style="display:none; text-align:right;">Table direction:<br />
+<select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
+<option value=rtl>RTL</option>
+<option value=ltr>LTR</option>
+</select>
+</div>
+
+
+<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+
+</div>
+
+
+
+
+
+<div id="showNotes" onclick="toggleNotes()">show notes</div>
+
+
+
+
+
+<!--div id="notes">
+</div-->
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+ <aside class="sidebar">
+  <div class="noprint">
+        <h2 class="notoc flush"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/arabic">Arabic character notes</a></p>
+        <p><a href="/scripts/links?script=arabic">Arabic script links</a></p>
+        <p><a href="/uniview/?block=arabic">Arabic in UniView </a></p>
+        <p><a href="/pickers/">Other pickers </a></p>
+  </div>
+</aside>     
+
+<p id="status">Updated Thu 19 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=uighur" title="Show all blog posts tagged with 'uighur'">uighur</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
+<p>Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p><strong>This picker is still in the experimental stage. If it is missing characters that are needed for Uighur, please let me know.</strong></p>
+
+
+    <p>You must have JavaScript enabled. Choose a view from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+    <p>To properly display the text you will need to choose a font that is loaded on your system or device<!--, or use one of the two web fonts downloaded with the page (Noto Sans Uighur and Dhyana)-->. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7<!--, as well as which are the web fonts. Note that the web fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system-->. See more information about <a href="/rishida/scripts/fontlist/#uighur">standard OS fonts in Mac and Windows</a>.</p>
+   <p>I am still working out which fonts work best for Uighur, so the list is probably longer than needed, particularly for Windows.</p>
+   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
+    <dl>
+      <dt>Mobile devices</dt>
+   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
+      <dt>About the chart</dt>
+      <dd>Includes characters in the Unicode <a href="/rishida/scripts/uniview/?block=uighur">Arabic</a> block that are used for Uighur. I still have to ascertain whether additional characters are needed. Certainly it's likely that there is some punctuation to be added yet. Let me know if you have suggestions.</dd>
+      <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
+      <dt>Input features</dt>
+      <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area. <!--You can start up directly in one of the  views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>default</code>, <code>shape</code>, <code>transcription</code>, <code>phones</code> or <code>fontgrid</code>.--></dd>
+      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Uighur. Characters are arranged based on the use of the script in order to speed up picking.</dd>
+      <dd>Consonants  are  to one side, and vowels are to the other side.  They are arranged in alphabetic order, within those divisions. Numbers are available in a separate block.</dd>
+      <dd>By default, the table is right-aligned and flows from right to left, however it is possible to flip it using more <code class="kw" translate="no">controls/table direction</code>.</dd>
+      <dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd>
+      <dd><strong class="leadin">Transcriptions</strong>  Latin characters used in transcription can be displayed, if needed.</dd>
+      <dt>Notes on controls</dt>
+      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <em>Add codepoint</em> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:b:</code>).</dd>
+      <dd><span class="leadin">Table direction.</span> Allows you to flip the direction of the default input table.</dd>
+      <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
+      
+      <dt>If something is missing/broken</dt>
+      <dd>... <a href="mailto:rishida@w3.org?subject=[Uighur%20picker]%20">let me know</a>.</dd>
+    </dl>
+</div>
+
+
+<div id="panel" style="display:none">
+	<div id="title" class="ex" lang="ug"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"><img src="/rishida/icons/close.png" alt="Close" onclick="document.getElementById('panel').style.display = 'none';" /></p>
+</div>
+
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+
+
+</body>
+</html>
