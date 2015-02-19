@@ -93,6 +93,7 @@ end: {}
 
 // define character to insert as a base for combining characters
 var _combiningBase = '\u00A0'
+var _combiningBase = ''
 
 
 

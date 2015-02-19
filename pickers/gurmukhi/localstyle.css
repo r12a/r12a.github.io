@@ -1,4 +1,10 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosansgurmukhi.css);
+@font-face {
+    font-family: 'Noto Sans Gurmukhi WF';
+    src: url('/webfonts/NotoSansGurmukhi-Regularwebfont.woff2') format('woff2'),
+         url('/webfonts/NotoSansGurmukhi-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 #alphabet { display: block; }
 #phonelist { display: none; }
