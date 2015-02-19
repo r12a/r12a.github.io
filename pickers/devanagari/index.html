@@ -455,6 +455,10 @@ document.getElementById('keyboard').style.display = 'none';
   <div class="control">Font list:<br />
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
       <option value="0">Select...</option>
+		<optgroup label="Web font ">
+        <option value="Noto Sans Devanagari WF">Noto Sans Devanagari WF</option>
+        </optgroup>
+        
 		<optgroup label="Mac fonts ">
         <option value="Devanagari MT">Devanagari MT</option>
         <option value="Devanagari Sangam MT">Devanagari Sangam MT</option>
@@ -549,10 +553,21 @@ document.getElementById('keyboard').style.display = 'none';
 
 
 <div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
-<input name="uiFont" id="uiFont" onchange="setUIFont(document.getElementById('uiFont').value); return false;" value="" />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
 
-<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
 
+<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">∅</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
 
                             
 <div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
