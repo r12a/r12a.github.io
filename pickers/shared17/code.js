@@ -82,11 +82,10 @@ function add(ch) {
 	// ch: string, the text to be added
 	// _cluster: boolean, global variable, set if this is a consonant cluster (used for vowels that surround base)
 	// _view: string, indicates which view is showing - this is important, since non-intelligent ordering is needed in the default view
-	// NOTE: _combiningBase needs to be assigned in localcode.js
 	
 	// remove leading base characters if this is a combining character
 	if (ch.length > 1) {
-		while (ch.charAt(0) == _combiningBase) {
+		while (ch.charAt(0) == defaults.ccbase) {
 			ch = ch.substr(1)
 			}
 		}
@@ -477,7 +476,6 @@ function titleSort (a, b) {
 	
 function initialise() { 
 	// _views: array, listing ids of all view divs
-	// NOTE: _combiningBase needs to be assigned in localcode.js
 	
 	//document.getElementById('output').contentEditable = 'true';
 	
@@ -554,12 +552,12 @@ function initialise() {
 		}
 	
 
-	// add _combiningBase to combining characters
+	// add defaults.ccbase to combining characters
 	node = document.querySelectorAll( '.c' ); 
 	for (var n = 0; n < node.length; n++ ) { 
 		prop = node[n].textContent
 		if (charData[prop].m) { 
-			node[n].textContent = _combiningBase+node[n].textContent
+			node[n].textContent = defaults.ccbase+node[n].textContent
 			}
 		}
 
@@ -669,7 +667,7 @@ function dotrans (altlist) {
 		for (i=0;i<inserts.length;i++) {
 			if (inserts[i] == '+' || inserts[i] == '-') insert += '<bdi style="color:red">'+inserts[i]+'</bdi>'
 			else { 
-				if (charData[inserts[i][0]].m) { inserts[i] = _combiningBase+inserts[i] }
+				if (charData[inserts[i][0]].m) { inserts[i] = defaults.ccbase+inserts[i] }
 				insert += "<bdi class=c onclick='add(\""+inserts[i]+"\"); closeTranscriptionChoice();'>"+inserts[i]+"</bdi> "
 				}
 			}
@@ -685,20 +683,20 @@ function dotrans (altlist) {
 function selectCCBase (base) {
 	if (base == '0') return
 	
-	//var formerbase = _combiningBase
-	//_combiningBase = base
+	//var formerbase = defaults.ccbase
+	//defaults.ccbase = base
 	
 
-	// add _combiningBase to combining characters
+	// add defaults.ccbase to combining characters
 	nodes = document.querySelectorAll( '.c' ); 
 	for (var n = 0; n < nodes.length; n++ ) { 
 		// remove leading base characters if this is a combining character
-		if (nodes[n].textContent.length > 1 && _combiningBase != '') {
-			while (nodes[n].textContent.charAt(0) == _combiningBase) {
+		if (nodes[n].textContent.length > 1 && defaults.ccbase != '') {
+			while (nodes[n].textContent.charAt(0) == defaults.ccbase) {
 				nodes[n].textContent = nodes[n].textContent.substr(1)
 				}
 			}
 		if (charData[nodes[n].textContent].m && base != '') nodes[n].textContent = base + nodes[n].textContent
 		}
-	_combiningBase = base
+	defaults.ccbase = base
 	}
