@@ -514,8 +514,19 @@ function initialise() {
 		for (var j = 0; j < node.length; j++ ) { 
 			prop = node[j].textContent
 			if (charData[prop]) { // temporary while we populate the thing
-				node[j].title = charData[prop].cp+': '+charData[prop].name
+				var codepoint = ''
+				for (c=0; c<prop.length; c++) { 
+					cp = parseInt(prop.charCodeAt(c),10)
+					cp = cp.toString(16).toUpperCase()
+					while (cp.length < 4) cp = '0'+cp
+					cp = 'U+'+cp
+					if (c < prop.length-1) cp += ' '
+					codepoint += cp
+					}
+				node[j].title = codepoint+': '+charData[prop].n
+				//node[j].title = charData[prop].cp+': '+charData[prop].name
 				}
+			else console.log('failed to find data for codepoint',prop)
 			node[j].onmouseover = event_mouseoverChar;
 			node[j].onmouseout = event_mouseoutChar;
 			}
@@ -547,7 +558,7 @@ function initialise() {
 	node = document.querySelectorAll( '.c' ); 
 	for (var n = 0; n < node.length; n++ ) { 
 		prop = node[n].textContent
-		if (charData[prop].mark) { 
+		if (charData[prop].m) { 
 			node[n].textContent = _combiningBase+node[n].textContent
 			}
 		}
@@ -648,25 +659,6 @@ function moveTranscription () {
 	add(document.getElementById('transcription').textContent)
 	}
 	
-function dotrans (altlist) { 
-	inserts = altlist.split(',')
-	if (inserts.length == 1 && inserts[0] != '-') add(inserts[0])
-	else {
-		insert = ''
-		for (i=0;i<inserts.length;i++) {
-			if (inserts[i] == '+' || inserts[i] == '-') insert += '<span style="color:red">'+inserts[i]+'</span>'
-			else { 
-				if (charData[inserts[i][0]].mark) { inserts[i] = _combiningBase+inserts[i] }
-				insert += "<span class=c onclick='add(\""+inserts[i]+"\"); closeTranscriptionChoice();'>"+inserts[i]+"</span> "
-				}
-			}
-		insert += "<span style='font-size: 28px;color: #ccc;cursor:pointer;' onclick='closeTranscriptionChoice()'>X</span>"
-		document.getElementById('transcriptionChoice').innerHTML = insert
-		document.getElementById('transcriptionChoice').style.display = 'block'
-		
-		}
-	}
-
 
 
 function dotrans (altlist) { 
@@ -677,7 +669,7 @@ function dotrans (altlist) {
 		for (i=0;i<inserts.length;i++) {
 			if (inserts[i] == '+' || inserts[i] == '-') insert += '<bdi style="color:red">'+inserts[i]+'</bdi>'
 			else { 
-				if (charData[inserts[i][0]].mark) { inserts[i] = _combiningBase+inserts[i] }
+				if (charData[inserts[i][0]].m) { inserts[i] = _combiningBase+inserts[i] }
 				insert += "<bdi class=c onclick='add(\""+inserts[i]+"\"); closeTranscriptionChoice();'>"+inserts[i]+"</bdi> "
 				}
 			}
@@ -706,7 +698,7 @@ function selectCCBase (base) {
 				nodes[n].textContent = nodes[n].textContent.substr(1)
 				}
 			}
-		if (charData[nodes[n].textContent].mark && base != '') nodes[n].textContent = base + nodes[n].textContent
+		if (charData[nodes[n].textContent].m && base != '') nodes[n].textContent = base + nodes[n].textContent
 		}
 	_combiningBase = base
 	}
