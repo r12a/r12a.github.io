@@ -1,102 +1,207 @@
 var names = new Array();
-names[32]=["SPACE","Basic Latin"];
-names[45]=["HYPHEN-MINUS","Basic Latin"];
-names[1425]=["HEBREW ACCENT ETNAHTA","Hebrew"];
-names[1426]=["HEBREW ACCENT SEGOL","Hebrew"];
-names[1427]=["HEBREW ACCENT SHALSHELET","Hebrew"];
-names[1428]=["HEBREW ACCENT ZAQEF QATAN","Hebrew"];
-names[1429]=["HEBREW ACCENT ZAQEF GADOL","Hebrew"];
-names[1430]=["HEBREW ACCENT TIPEHA","Hebrew"];
-names[1431]=["HEBREW ACCENT REVIA","Hebrew"];
-names[1432]=["HEBREW ACCENT ZARQA","Hebrew"];
-names[1433]=["HEBREW ACCENT PASHTA","Hebrew"];
-names[1434]=["HEBREW ACCENT YETIV","Hebrew"];
-names[1435]=["HEBREW ACCENT TEVIR","Hebrew"];
-names[1436]=["HEBREW ACCENT GERESH","Hebrew"];
-names[1437]=["HEBREW ACCENT GERESH MUQDAM","Hebrew"];
-names[1438]=["HEBREW ACCENT GERSHAYIM","Hebrew"];
-names[1439]=["HEBREW ACCENT QARNEY PARA","Hebrew"];
-names[1440]=["HEBREW ACCENT TELISHA GEDOLA","Hebrew"];
-names[1441]=["HEBREW ACCENT PAZER","Hebrew"];
-names[1442]=["HEBREW ACCENT ATNAH HAFUKH","Hebrew"];
-names[1443]=["HEBREW ACCENT MUNAH","Hebrew"];
-names[1444]=["HEBREW ACCENT MAHAPAKH","Hebrew"];
-names[1445]=["HEBREW ACCENT MERKHA","Hebrew"];
-names[1446]=["HEBREW ACCENT MERKHA KEFULA","Hebrew"];
-names[1447]=["HEBREW ACCENT DARGA","Hebrew"];
-names[1448]=["HEBREW ACCENT QADMA","Hebrew"];
-names[1449]=["HEBREW ACCENT TELISHA QETANA","Hebrew"];
-names[1450]=["HEBREW ACCENT YERAH BEN YOMO","Hebrew"];
-names[1451]=["HEBREW ACCENT OLE","Hebrew"];
-names[1452]=["HEBREW ACCENT ILUY","Hebrew"];
-names[1453]=["HEBREW ACCENT DEHI","Hebrew"];
-names[1454]=["HEBREW ACCENT ZINOR","Hebrew"];
-names[1455]=["HEBREW MARK MASORA CIRCLE","Hebrew"];
-names[1456]=["HEBREW POINT SHEVA","Hebrew"];
-names[1457]=["HEBREW POINT HATAF SEGOL","Hebrew"];
-names[1458]=["HEBREW POINT HATAF PATAH","Hebrew"];
-names[1459]=["HEBREW POINT HATAF QAMATS","Hebrew"];
-names[1460]=["HEBREW POINT HIRIQ","Hebrew"];
-names[1461]=["HEBREW POINT TSERE","Hebrew"];
-names[1462]=["HEBREW POINT SEGOL","Hebrew"];
-names[1463]=["HEBREW POINT PATAH","Hebrew"];
-names[1464]=["HEBREW POINT QAMATS","Hebrew"];
-names[1465]=["HEBREW POINT HOLAM","Hebrew"];
-names[1466]=["HEBREW POINT HOLAM HASER FOR VAV","Hebrew"];
-names[1467]=["HEBREW POINT QUBUTS","Hebrew"];
-names[1468]=["HEBREW POINT DAGESH OR MAPIQ","Hebrew"];
-names[1469]=["HEBREW POINT METEG","Hebrew"];
-names[1470]=["HEBREW PUNCTUATION MAQAF","Hebrew"];
-names[1471]=["HEBREW POINT RAFE","Hebrew"];
-names[1472]=["HEBREW PUNCTUATION PASEQ","Hebrew"];
-names[1473]=["HEBREW POINT SHIN DOT","Hebrew"];
-names[1474]=["HEBREW POINT SIN DOT","Hebrew"];
-names[1475]=["HEBREW PUNCTUATION SOF PASUQ","Hebrew"];
-names[1476]=["HEBREW MARK UPPER DOT","Hebrew"];
-names[1477]=["HEBREW MARK LOWER DOT","Hebrew"];
-names[1478]=["HEBREW PUNCTUATION NUN HAFUKHA","Hebrew"];
-names[1479]=["HEBREW POINT QAMATS QATAN","Hebrew"];
-names[1488]=["HEBREW LETTER ALEF","Hebrew"];
-names[1489]=["HEBREW LETTER BET","Hebrew"];
-names[1490]=["HEBREW LETTER GIMEL","Hebrew"];
-names[1491]=["HEBREW LETTER DALET","Hebrew"];
-names[1492]=["HEBREW LETTER HE","Hebrew"];
-names[1493]=["HEBREW LETTER VAV","Hebrew"];
-names[1494]=["HEBREW LETTER ZAYIN","Hebrew"];
-names[1495]=["HEBREW LETTER HET","Hebrew"];
-names[1496]=["HEBREW LETTER TET","Hebrew"];
-names[1497]=["HEBREW LETTER YOD","Hebrew"];
-names[1498]=["HEBREW LETTER FINAL KAF","Hebrew"];
-names[1499]=["HEBREW LETTER KAF","Hebrew"];
-names[1500]=["HEBREW LETTER LAMED","Hebrew"];
-names[1501]=["HEBREW LETTER FINAL MEM","Hebrew"];
-names[1502]=["HEBREW LETTER MEM","Hebrew"];
-names[1503]=["HEBREW LETTER FINAL NUN","Hebrew"];
-names[1504]=["HEBREW LETTER NUN","Hebrew"];
-names[1505]=["HEBREW LETTER SAMEKH","Hebrew"];
-names[1506]=["HEBREW LETTER AYIN","Hebrew"];
-names[1507]=["HEBREW LETTER FINAL PE","Hebrew"];
-names[1508]=["HEBREW LETTER PE","Hebrew"];
-names[1509]=["HEBREW LETTER FINAL TSADI","Hebrew"];
-names[1510]=["HEBREW LETTER TSADI","Hebrew"];
-names[1511]=["HEBREW LETTER QOF","Hebrew"];
-names[1512]=["HEBREW LETTER RESH","Hebrew"];
-names[1513]=["HEBREW LETTER SHIN","Hebrew"];
-names[1514]=["HEBREW LETTER TAV","Hebrew"];
-names[1520]=["HEBREW LIGATURE YIDDISH DOUBLE VAV","Hebrew"];
-names[1521]=["HEBREW LIGATURE YIDDISH VAV YOD","Hebrew"];
-names[1522]=["HEBREW LIGATURE YIDDISH DOUBLE YOD","Hebrew"];
-names[1523]=["HEBREW PUNCTUATION GERESH","Hebrew"];
-names[1524]=["HEBREW PUNCTUATION GERSHAYIM","Hebrew"];
-names[8206]=["LEFT-TO-RIGHT MARK","General Punctuation"];
-names[8207]=["RIGHT-TO-LEFT MARK","General Punctuation"];
-names[8234]=["LEFT-TO-RIGHT EMBEDDING","General Punctuation"];
-names[8235]=["RIGHT-TO-LEFT EMBEDDING","General Punctuation"];
-names[8236]=["POP DIRECTIONAL FORMATTING","General Punctuation"];
-names[8237]=["LEFT-TO-RIGHT OVERRIDE","General Punctuation"];
-names[8238]=["RIGHT-TO-LEFT OVERRIDE","General Punctuation"];
-names[8294]=["LEFT-TO-RIGHT ISOLATE","General Punctuation"];
-names[8295]=["RIGHT-TO-LEFT ISOLATE","General Punctuation"];
-names[8296]=["FIRST STRONG ISOLATE","General Punctuation"];
-names[8297]=["POP DIRECTIONAL ISOLATE","General Punctuation"];
-names[8362]=["NEW SHEQEL SIGN","Currency Symbols"];
+var charData = {
+"\0020":{n:"SPACE",m:0,g:"Basic Latin"},
+"\00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
+"\200C":{n:"ZERO WIDTH NON-JOINER",m:0,g:"General Punctuation"},
+"\200D":{n:"ZERO WIDTH JOINER",m:0,g:"General Punctuation"},
+"\200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
+
+"\u200E":{n:"LEFT-TO-RIGHT MARK",m:0,g:"General Punctuation"},
+"\u200F":{n:"RIGHT-TO-LEFT MARK",m:0,g:"General Punctuation"},
+"\u202A":{n:"LEFT-TO-RIGHT EMBEDDING",m:0,g:"General Punctuation"},
+"\u202B":{n:"RIGHT-TO-LEFT EMBEDDING",m:0,g:"General Punctuation"},
+"\u202D":{n:"LEFT-TO-RIGHT OVERRIDE",m:0,g:"General Punctuation"},
+"\u202E":{n:"RIGHT-TO-LEFT OVERRIDE",m:0,g:"General Punctuation"},
+"\u2066":{n:"LEFT-TO-RIGHT ISOLATE",m:0,g:"General Punctuation"},
+"\u2067":{n:"RIGHT-TO-LEFT ISOLATE",m:0,g:"General Punctuation"},
+"\u2068":{n:"FIRST STRONG ISOLATE",m:0,g:"General Punctuation"},
+"\u202C":{n:"POP DIRECTIONAL FORMATTING",m:0,g:"General Punctuation"},
+"\u2069":{n:"POP DIRECTIONAL ISOLATE",m:0,g:"General Punctuation"},
+
+"\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
+"\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
+"\u0023":{n:"NUMBER SIGN",m:0,g:"Basic Latin"},
+"\u0024":{n:"DOLLAR SIGN",m:0,g:"Basic Latin"},
+"\u0025":{n:"PERCENT SIGN",m:0,g:"Basic Latin"},
+"\u0026":{n:"AMPERSAND",m:0,g:"Basic Latin"},
+"\u0027":{n:"APOSTROPHE",m:0,g:"Basic Latin"},
+"\u0028":{n:"LEFT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u0029":{n:"RIGHT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u002A":{n:"ASTERISK",m:0,g:"Basic Latin"},
+"\u002B":{n:"PLUS SIGN",m:0,g:"Basic Latin"},
+"\u002C":{n:"COMMA",m:0,g:"Basic Latin"},
+"\u002D":{n:"HYPHEN-MINUS",m:0,g:"Basic Latin"},
+"\u002E":{n:"FULL STOP",m:0,g:"Basic Latin"},
+"\u002F":{n:"SOLIDUS",m:0,g:"Basic Latin"},
+"\u0030":{n:"DIGIT ZERO",m:0,g:"Basic Latin"},
+"\u0031":{n:"DIGIT ONE",m:0,g:"Basic Latin"},
+"\u0032":{n:"DIGIT TWO",m:0,g:"Basic Latin"},
+"\u0033":{n:"DIGIT THREE",m:0,g:"Basic Latin"},
+"\u0034":{n:"DIGIT FOUR",m:0,g:"Basic Latin"},
+"\u0035":{n:"DIGIT FIVE",m:0,g:"Basic Latin"},
+"\u0036":{n:"DIGIT SIX",m:0,g:"Basic Latin"},
+"\u0037":{n:"DIGIT SEVEN",m:0,g:"Basic Latin"},
+"\u0038":{n:"DIGIT EIGHT",m:0,g:"Basic Latin"},
+"\u0039":{n:"DIGIT NINE",m:0,g:"Basic Latin"},
+"\u003A":{n:"COLON",m:0,g:"Basic Latin"},
+"\u003B":{n:"SEMICOLON",m:0,g:"Basic Latin"},
+"\u003C":{n:"LESS-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003D":{n:"EQUALS SIGN",m:0,g:"Basic Latin"},
+"\u003E":{n:"GREATER-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003F":{n:"QUESTION MARK",m:0,g:"Basic Latin"},
+"\u0040":{n:"COMMERCIAL AT",m:0,g:"Basic Latin"},
+"\u0041":{n:"LATIN CAPITAL LETTER A",m:0,g:"Basic Latin"},
+"\u0042":{n:"LATIN CAPITAL LETTER B",m:0,g:"Basic Latin"},
+"\u0043":{n:"LATIN CAPITAL LETTER C",m:0,g:"Basic Latin"},
+"\u0044":{n:"LATIN CAPITAL LETTER D",m:0,g:"Basic Latin"},
+"\u0045":{n:"LATIN CAPITAL LETTER E",m:0,g:"Basic Latin"},
+"\u0046":{n:"LATIN CAPITAL LETTER F",m:0,g:"Basic Latin"},
+"\u0047":{n:"LATIN CAPITAL LETTER G",m:0,g:"Basic Latin"},
+"\u0048":{n:"LATIN CAPITAL LETTER H",m:0,g:"Basic Latin"},
+"\u0049":{n:"LATIN CAPITAL LETTER I",m:0,g:"Basic Latin"},
+"\u004A":{n:"LATIN CAPITAL LETTER J",m:0,g:"Basic Latin"},
+"\u004B":{n:"LATIN CAPITAL LETTER K",m:0,g:"Basic Latin"},
+"\u004C":{n:"LATIN CAPITAL LETTER L",m:0,g:"Basic Latin"},
+"\u004D":{n:"LATIN CAPITAL LETTER M",m:0,g:"Basic Latin"},
+"\u004E":{n:"LATIN CAPITAL LETTER N",m:0,g:"Basic Latin"},
+"\u004F":{n:"LATIN CAPITAL LETTER O",m:0,g:"Basic Latin"},
+"\u0050":{n:"LATIN CAPITAL LETTER P",m:0,g:"Basic Latin"},
+"\u0051":{n:"LATIN CAPITAL LETTER Q",m:0,g:"Basic Latin"},
+"\u0052":{n:"LATIN CAPITAL LETTER R",m:0,g:"Basic Latin"},
+"\u0053":{n:"LATIN CAPITAL LETTER S",m:0,g:"Basic Latin"},
+"\u0054":{n:"LATIN CAPITAL LETTER T",m:0,g:"Basic Latin"},
+"\u0055":{n:"LATIN CAPITAL LETTER U",m:0,g:"Basic Latin"},
+"\u0056":{n:"LATIN CAPITAL LETTER V",m:0,g:"Basic Latin"},
+"\u0057":{n:"LATIN CAPITAL LETTER W",m:0,g:"Basic Latin"},
+"\u0058":{n:"LATIN CAPITAL LETTER X",m:0,g:"Basic Latin"},
+"\u0059":{n:"LATIN CAPITAL LETTER Y",m:0,g:"Basic Latin"},
+"\u005A":{n:"LATIN CAPITAL LETTER Z",m:0,g:"Basic Latin"},
+"\u005B":{n:"LEFT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005C":{n:"REVERSE SOLIDUS",m:0,g:"Basic Latin"},
+"\u005D":{n:"RIGHT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005E":{n:"CIRCUMFLEX ACCENT",m:0,g:"Basic Latin"},
+"\u005F":{n:"LOW LINE",m:0,g:"Basic Latin"},
+"\u0060":{n:"GRAVE ACCENT",m:0,g:"Basic Latin"},
+"\u0061":{n:"LATIN SMALL LETTER A",m:0,g:"Basic Latin"},
+"\u0062":{n:"LATIN SMALL LETTER B",m:0,g:"Basic Latin"},
+"\u0063":{n:"LATIN SMALL LETTER C",m:0,g:"Basic Latin"},
+"\u0064":{n:"LATIN SMALL LETTER D",m:0,g:"Basic Latin"},
+"\u0065":{n:"LATIN SMALL LETTER E",m:0,g:"Basic Latin"},
+"\u0066":{n:"LATIN SMALL LETTER F",m:0,g:"Basic Latin"},
+"\u0067":{n:"LATIN SMALL LETTER G",m:0,g:"Basic Latin"},
+"\u0068":{n:"LATIN SMALL LETTER H",m:0,g:"Basic Latin"},
+"\u0069":{n:"LATIN SMALL LETTER I",m:0,g:"Basic Latin"},
+"\u006A":{n:"LATIN SMALL LETTER J",m:0,g:"Basic Latin"},
+"\u006B":{n:"LATIN SMALL LETTER K",m:0,g:"Basic Latin"},
+"\u006C":{n:"LATIN SMALL LETTER L",m:0,g:"Basic Latin"},
+"\u006D":{n:"LATIN SMALL LETTER M",m:0,g:"Basic Latin"},
+"\u006E":{n:"LATIN SMALL LETTER N",m:0,g:"Basic Latin"},
+"\u006F":{n:"LATIN SMALL LETTER O",m:0,g:"Basic Latin"},
+"\u0070":{n:"LATIN SMALL LETTER P",m:0,g:"Basic Latin"},
+"\u0071":{n:"LATIN SMALL LETTER Q",m:0,g:"Basic Latin"},
+"\u0072":{n:"LATIN SMALL LETTER R",m:0,g:"Basic Latin"},
+"\u0073":{n:"LATIN SMALL LETTER S",m:0,g:"Basic Latin"},
+"\u0074":{n:"LATIN SMALL LETTER T",m:0,g:"Basic Latin"},
+"\u0075":{n:"LATIN SMALL LETTER U",m:0,g:"Basic Latin"},
+"\u0076":{n:"LATIN SMALL LETTER V",m:0,g:"Basic Latin"},
+"\u0077":{n:"LATIN SMALL LETTER W",m:0,g:"Basic Latin"},
+"\u0078":{n:"LATIN SMALL LETTER X",m:0,g:"Basic Latin"},
+"\u0079":{n:"LATIN SMALL LETTER Y",m:0,g:"Basic Latin"},
+"\u007A":{n:"LATIN SMALL LETTER Z",m:0,g:"Basic Latin"},
+"\u007B":{n:"LEFT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007C":{n:"VERTICAL LINE",m:0,g:"Basic Latin"},
+"\u007D":{n:"RIGHT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007E":{n:"TILDE",m:0,g:"Basic Latin"},
+
+"\u20AA":{n:"NEW SHEQEL SIGN",m:0,g:"Currency Symbols"},
+
+"\u0591":{n:"HEBREW ACCENT ETNAHTA",m:1,g:"Hebrew"},
+"\u0592":{n:"HEBREW ACCENT SEGOL",m:1,g:"Hebrew"},
+"\u0593":{n:"HEBREW ACCENT SHALSHELET",m:1,g:"Hebrew"},
+"\u0594":{n:"HEBREW ACCENT ZAQEF QATAN",m:1,g:"Hebrew"},
+"\u0595":{n:"HEBREW ACCENT ZAQEF GADOL",m:1,g:"Hebrew"},
+"\u0596":{n:"HEBREW ACCENT TIPEHA",m:1,g:"Hebrew"},
+"\u0597":{n:"HEBREW ACCENT REVIA",m:1,g:"Hebrew"},
+"\u0598":{n:"HEBREW ACCENT ZARQA",m:1,g:"Hebrew"},
+"\u0599":{n:"HEBREW ACCENT PASHTA",m:1,g:"Hebrew"},
+"\u059A":{n:"HEBREW ACCENT YETIV",m:1,g:"Hebrew"},
+"\u059B":{n:"HEBREW ACCENT TEVIR",m:1,g:"Hebrew"},
+"\u059C":{n:"HEBREW ACCENT GERESH",m:1,g:"Hebrew"},
+"\u059D":{n:"HEBREW ACCENT GERESH MUQDAM",m:1,g:"Hebrew"},
+"\u059E":{n:"HEBREW ACCENT GERSHAYIM",m:1,g:"Hebrew"},
+"\u059F":{n:"HEBREW ACCENT QARNEY PARA",m:1,g:"Hebrew"},
+"\u05A0":{n:"HEBREW ACCENT TELISHA GEDOLA",m:1,g:"Hebrew"},
+"\u05A1":{n:"HEBREW ACCENT PAZER",m:1,g:"Hebrew"},
+"\u05A2":{n:"HEBREW ACCENT ATNAH HAFUKH",m:1,g:"Hebrew"},
+"\u05A3":{n:"HEBREW ACCENT MUNAH",m:1,g:"Hebrew"},
+"\u05A4":{n:"HEBREW ACCENT MAHAPAKH",m:1,g:"Hebrew"},
+"\u05A5":{n:"HEBREW ACCENT MERKHA",m:1,g:"Hebrew"},
+"\u05A6":{n:"HEBREW ACCENT MERKHA KEFULA",m:1,g:"Hebrew"},
+"\u05A7":{n:"HEBREW ACCENT DARGA",m:1,g:"Hebrew"},
+"\u05A8":{n:"HEBREW ACCENT QADMA",m:1,g:"Hebrew"},
+"\u05A9":{n:"HEBREW ACCENT TELISHA QETANA",m:1,g:"Hebrew"},
+"\u05AA":{n:"HEBREW ACCENT YERAH BEN YOMO",m:1,g:"Hebrew"},
+"\u05AB":{n:"HEBREW ACCENT OLE",m:1,g:"Hebrew"},
+"\u05AC":{n:"HEBREW ACCENT ILUY",m:1,g:"Hebrew"},
+"\u05AD":{n:"HEBREW ACCENT DEHI",m:1,g:"Hebrew"},
+"\u05AE":{n:"HEBREW ACCENT ZINOR",m:1,g:"Hebrew"},
+"\u05AF":{n:"HEBREW MARK MASORA CIRCLE",m:1,g:"Hebrew"},
+"\u05B0":{n:"HEBREW POINT SHEVA",m:1,g:"Hebrew"},
+"\u05B1":{n:"HEBREW POINT HATAF SEGOL",m:1,g:"Hebrew"},
+"\u05B2":{n:"HEBREW POINT HATAF PATAH",m:1,g:"Hebrew"},
+"\u05B3":{n:"HEBREW POINT HATAF QAMATS",m:1,g:"Hebrew"},
+"\u05B4":{n:"HEBREW POINT HIRIQ",m:1,g:"Hebrew"},
+"\u05B5":{n:"HEBREW POINT TSERE",m:1,g:"Hebrew"},
+"\u05B6":{n:"HEBREW POINT SEGOL",m:1,g:"Hebrew"},
+"\u05B7":{n:"HEBREW POINT PATAH",m:1,g:"Hebrew"},
+"\u05B8":{n:"HEBREW POINT QAMATS",m:1,g:"Hebrew"},
+"\u05B9":{n:"HEBREW POINT HOLAM",m:1,g:"Hebrew"},
+"\u05BA":{n:"HEBREW POINT HOLAM HASER FOR VAV",m:1,g:"Hebrew"},
+"\u05BB":{n:"HEBREW POINT QUBUTS",m:1,g:"Hebrew"},
+"\u05BC":{n:"HEBREW POINT DAGESH OR MAPIQ",m:1,g:"Hebrew"},
+"\u05BD":{n:"HEBREW POINT METEG",m:1,g:"Hebrew"},
+"\u05BE":{n:"HEBREW PUNCTUATION MAQAF",m:0,g:"Hebrew"},
+"\u05BF":{n:"HEBREW POINT RAFE",m:1,g:"Hebrew"},
+"\u05C0":{n:"HEBREW PUNCTUATION PASEQ",m:0,g:"Hebrew"},
+"\u05C1":{n:"HEBREW POINT SHIN DOT",m:1,g:"Hebrew"},
+"\u05C2":{n:"HEBREW POINT SIN DOT",m:1,g:"Hebrew"},
+"\u05C3":{n:"HEBREW PUNCTUATION SOF PASUQ",m:0,g:"Hebrew"},
+"\u05C4":{n:"HEBREW MARK UPPER DOT",m:1,g:"Hebrew"},
+"\u05C5":{n:"HEBREW MARK LOWER DOT",m:1,g:"Hebrew"},
+"\u05C6":{n:"HEBREW PUNCTUATION NUN HAFUKHA",m:0,g:"Hebrew"},
+"\u05C7":{n:"HEBREW POINT QAMATS QATAN",m:1,g:"Hebrew"},
+"\u05D0":{n:"HEBREW LETTER ALEF",m:0,g:"Hebrew"},
+"\u05D1":{n:"HEBREW LETTER BET",m:0,g:"Hebrew"},
+"\u05D2":{n:"HEBREW LETTER GIMEL",m:0,g:"Hebrew"},
+"\u05D3":{n:"HEBREW LETTER DALET",m:0,g:"Hebrew"},
+"\u05D4":{n:"HEBREW LETTER HE",m:0,g:"Hebrew"},
+"\u05D5":{n:"HEBREW LETTER VAV",m:0,g:"Hebrew"},
+"\u05D6":{n:"HEBREW LETTER ZAYIN",m:0,g:"Hebrew"},
+"\u05D7":{n:"HEBREW LETTER HET",m:0,g:"Hebrew"},
+"\u05D8":{n:"HEBREW LETTER TET",m:0,g:"Hebrew"},
+"\u05D9":{n:"HEBREW LETTER YOD",m:0,g:"Hebrew"},
+"\u05DA":{n:"HEBREW LETTER FINAL KAF",m:0,g:"Hebrew"},
+"\u05DB":{n:"HEBREW LETTER KAF",m:0,g:"Hebrew"},
+"\u05DC":{n:"HEBREW LETTER LAMED",m:0,g:"Hebrew"},
+"\u05DD":{n:"HEBREW LETTER FINAL MEM",m:0,g:"Hebrew"},
+"\u05DE":{n:"HEBREW LETTER MEM",m:0,g:"Hebrew"},
+"\u05DF":{n:"HEBREW LETTER FINAL NUN",m:0,g:"Hebrew"},
+"\u05E0":{n:"HEBREW LETTER NUN",m:0,g:"Hebrew"},
+"\u05E1":{n:"HEBREW LETTER SAMEKH",m:0,g:"Hebrew"},
+"\u05E2":{n:"HEBREW LETTER AYIN",m:0,g:"Hebrew"},
+"\u05E3":{n:"HEBREW LETTER FINAL PE",m:0,g:"Hebrew"},
+"\u05E4":{n:"HEBREW LETTER PE",m:0,g:"Hebrew"},
+"\u05E5":{n:"HEBREW LETTER FINAL TSADI",m:0,g:"Hebrew"},
+"\u05E6":{n:"HEBREW LETTER TSADI",m:0,g:"Hebrew"},
+"\u05E7":{n:"HEBREW LETTER QOF",m:0,g:"Hebrew"},
+"\u05E8":{n:"HEBREW LETTER RESH",m:0,g:"Hebrew"},
+"\u05E9":{n:"HEBREW LETTER SHIN",m:0,g:"Hebrew"},
+"\u05EA":{n:"HEBREW LETTER TAV",m:0,g:"Hebrew"},
+"\u05F0":{n:"HEBREW LIGATURE YIDDISH DOUBLE VAV",m:0,g:"Hebrew"},
+"\u05F1":{n:"HEBREW LIGATURE YIDDISH VAV YOD",m:0,g:"Hebrew"},
+"\u05F2":{n:"HEBREW LIGATURE YIDDISH DOUBLE YOD",m:0,g:"Hebrew"},
+"\u05F3":{n:"HEBREW PUNCTUATION GERESH",m:0,g:"Hebrew"},
+"\u05F4":{n:"HEBREW PUNCTUATION GERSHAYIM",m:0,g:"Hebrew"},
+
+end: {}
+}

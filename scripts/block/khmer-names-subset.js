@@ -1,247 +1,297 @@
-var names = new Array();
-names[32]=["SPACE","Basic Latin"];
-names[160]=["NO-BREAK SPACE","Latin-1 Supplement",0];
-names[8203]=["ZERO WIDTH SPACE","General Punctuation",0];
-names[33]=["EXCLAMATION MARK","Basic Latin",0];
-names[34]=["QUOTATION MARK","Basic Latin",0];
-names[35]=["NUMBER SIGN","Basic Latin",0];
-names[36]=["DOLLAR SIGN","Basic Latin",0];
-names[37]=["PERCENT SIGN","Basic Latin",0];
-names[38]=["AMPERSAND","Basic Latin",0];
-names[39]=["APOSTROPHE","Basic Latin",0];
-names[40]=["LEFT PARENTHESIS","Basic Latin",0];
-names[41]=["RIGHT PARENTHESIS","Basic Latin",0];
-names[42]=["ASTERISK","Basic Latin",0];
-names[43]=["PLUS SIGN","Basic Latin",0];
-names[44]=["COMMA","Basic Latin",0];
-names[45]=["HYPHEN-MINUS","Basic Latin",0];
-names[46]=["FULL STOP","Basic Latin",0];
-names[47]=["SOLIDUS","Basic Latin",0];
-names[48]=["DIGIT ZERO","Basic Latin",0];
-names[49]=["DIGIT ONE","Basic Latin",0];
-names[50]=["DIGIT TWO","Basic Latin",0];
-names[51]=["DIGIT THREE","Basic Latin",0];
-names[52]=["DIGIT FOUR","Basic Latin",0];
-names[53]=["DIGIT FIVE","Basic Latin",0];
-names[54]=["DIGIT SIX","Basic Latin",0];
-names[55]=["DIGIT SEVEN","Basic Latin",0];
-names[56]=["DIGIT EIGHT","Basic Latin",0];
-names[57]=["DIGIT NINE","Basic Latin",0];
-names[58]=["COLON","Basic Latin",0];
-names[59]=["SEMICOLON","Basic Latin",0];
-names[60]=["LESS-THAN SIGN","Basic Latin",0];
-names[61]=["EQUALS SIGN","Basic Latin",0];
-names[62]=["GREATER-THAN SIGN","Basic Latin",0];
-names[63]=["QUESTION MARK","Basic Latin",0];
-names[64]=["COMMERCIAL AT","Basic Latin",0];
-names[65]=["LATIN CAPITAL LETTER A","Basic Latin",0];
-names[66]=["LATIN CAPITAL LETTER B","Basic Latin",0];
-names[67]=["LATIN CAPITAL LETTER C","Basic Latin",0];
-names[68]=["LATIN CAPITAL LETTER D","Basic Latin",0];
-names[69]=["LATIN CAPITAL LETTER E","Basic Latin",0];
-names[70]=["LATIN CAPITAL LETTER F","Basic Latin",0];
-names[71]=["LATIN CAPITAL LETTER G","Basic Latin",0];
-names[72]=["LATIN CAPITAL LETTER H","Basic Latin",0];
-names[73]=["LATIN CAPITAL LETTER I","Basic Latin",0];
-names[74]=["LATIN CAPITAL LETTER J","Basic Latin",0];
-names[75]=["LATIN CAPITAL LETTER K","Basic Latin",0];
-names[76]=["LATIN CAPITAL LETTER L","Basic Latin",0];
-names[77]=["LATIN CAPITAL LETTER M","Basic Latin",0];
-names[78]=["LATIN CAPITAL LETTER N","Basic Latin",0];
-names[79]=["LATIN CAPITAL LETTER O","Basic Latin",0];
-names[80]=["LATIN CAPITAL LETTER P","Basic Latin",0];
-names[81]=["LATIN CAPITAL LETTER Q","Basic Latin",0];
-names[82]=["LATIN CAPITAL LETTER R","Basic Latin",0];
-names[83]=["LATIN CAPITAL LETTER S","Basic Latin",0];
-names[84]=["LATIN CAPITAL LETTER T","Basic Latin",0];
-names[85]=["LATIN CAPITAL LETTER U","Basic Latin",0];
-names[86]=["LATIN CAPITAL LETTER V","Basic Latin",0];
-names[87]=["LATIN CAPITAL LETTER W","Basic Latin",0];
-names[88]=["LATIN CAPITAL LETTER X","Basic Latin",0];
-names[89]=["LATIN CAPITAL LETTER Y","Basic Latin",0];
-names[90]=["LATIN CAPITAL LETTER Z","Basic Latin",0];
-names[91]=["LEFT SQUARE BRACKET","Basic Latin",0];
-names[92]=["REVERSE SOLIDUS","Basic Latin",0];
-names[93]=["RIGHT SQUARE BRACKET","Basic Latin",0];
-names[94]=["CIRCUMFLEX ACCENT","Basic Latin",0];
-names[95]=["LOW LINE","Basic Latin",0];
-names[96]=["GRAVE ACCENT","Basic Latin",0];
-names[97]=["LATIN SMALL LETTER A","Basic Latin",0];
-names[98]=["LATIN SMALL LETTER B","Basic Latin",0];
-names[99]=["LATIN SMALL LETTER C","Basic Latin",0];
-names[100]=["LATIN SMALL LETTER D","Basic Latin",0];
-names[101]=["LATIN SMALL LETTER E","Basic Latin",0];
-names[102]=["LATIN SMALL LETTER F","Basic Latin",0];
-names[103]=["LATIN SMALL LETTER G","Basic Latin",0];
-names[104]=["LATIN SMALL LETTER H","Basic Latin",0];
-names[105]=["LATIN SMALL LETTER I","Basic Latin",0];
-names[106]=["LATIN SMALL LETTER J","Basic Latin",0];
-names[107]=["LATIN SMALL LETTER K","Basic Latin",0];
-names[108]=["LATIN SMALL LETTER L","Basic Latin",0];
-names[109]=["LATIN SMALL LETTER M","Basic Latin",0];
-names[110]=["LATIN SMALL LETTER N","Basic Latin",0];
-names[111]=["LATIN SMALL LETTER O","Basic Latin",0];
-names[112]=["LATIN SMALL LETTER P","Basic Latin",0];
-names[113]=["LATIN SMALL LETTER Q","Basic Latin",0];
-names[114]=["LATIN SMALL LETTER R","Basic Latin",0];
-names[115]=["LATIN SMALL LETTER S","Basic Latin",0];
-names[116]=["LATIN SMALL LETTER T","Basic Latin",0];
-names[117]=["LATIN SMALL LETTER U","Basic Latin",0];
-names[118]=["LATIN SMALL LETTER V","Basic Latin",0];
-names[119]=["LATIN SMALL LETTER W","Basic Latin",0];
-names[120]=["LATIN SMALL LETTER X","Basic Latin",0];
-names[121]=["LATIN SMALL LETTER Y","Basic Latin",0];
-names[122]=["LATIN SMALL LETTER Z","Basic Latin",0];
-names[123]=["LEFT CURLY BRACKET","Basic Latin",0];
-names[124]=["VERTICAL LINE","Basic Latin",0];
-names[125]=["RIGHT CURLY BRACKET","Basic Latin",0];
-names[126]=["TILDE","Basic Latin",0];
-names[6016]=["KHMER LETTER KA","Khmer"];
-names[6017]=["KHMER LETTER KHA","Khmer"];
-names[6018]=["KHMER LETTER KO","Khmer"];
-names[6019]=["KHMER LETTER KHO","Khmer"];
-names[6020]=["KHMER LETTER NGO","Khmer"];
-names[6021]=["KHMER LETTER CA","Khmer"];
-names[6022]=["KHMER LETTER CHA","Khmer"];
-names[6023]=["KHMER LETTER CO","Khmer"];
-names[6024]=["KHMER LETTER CHO","Khmer"];
-names[6025]=["KHMER LETTER NYO","Khmer"];
-names[6026]=["KHMER LETTER DA","Khmer"];
-names[6027]=["KHMER LETTER TTHA","Khmer"];
-names[6028]=["KHMER LETTER DO","Khmer"];
-names[6029]=["KHMER LETTER TTHO","Khmer"];
-names[6030]=["KHMER LETTER NNO","Khmer"];
-names[6031]=["KHMER LETTER TA","Khmer"];
-names[6032]=["KHMER LETTER THA","Khmer"];
-names[6033]=["KHMER LETTER TO","Khmer"];
-names[6034]=["KHMER LETTER THO","Khmer"];
-names[6035]=["KHMER LETTER NO","Khmer"];
-names[6036]=["KHMER LETTER BA","Khmer"];
-names[6037]=["KHMER LETTER PHA","Khmer"];
-names[6038]=["KHMER LETTER PO","Khmer"];
-names[6039]=["KHMER LETTER PHO","Khmer"];
-names[6040]=["KHMER LETTER MO","Khmer"];
-names[6041]=["KHMER LETTER YO","Khmer"];
-names[6042]=["KHMER LETTER RO","Khmer"];
-names[6043]=["KHMER LETTER LO","Khmer"];
-names[6044]=["KHMER LETTER VO","Khmer"];
-names[6045]=["KHMER LETTER SHA","Khmer"];
-names[6046]=["KHMER LETTER SSO","Khmer"];
-names[6047]=["KHMER LETTER SA","Khmer"];
-names[6048]=["KHMER LETTER HA","Khmer"];
-names[6049]=["KHMER LETTER LA","Khmer"];
-names[6050]=["KHMER LETTER QA","Khmer"];
-names[6051]=["KHMER INDEPENDENT VOWEL QAQ","Khmer"];
-names[6052]=["KHMER INDEPENDENT VOWEL QAA","Khmer"];
-names[6053]=["KHMER INDEPENDENT VOWEL QI","Khmer"];
-names[6054]=["KHMER INDEPENDENT VOWEL QII","Khmer"];
-names[6055]=["KHMER INDEPENDENT VOWEL QU","Khmer"];
-names[6056]=["KHMER INDEPENDENT VOWEL QUK","Khmer"];
-names[6057]=["KHMER INDEPENDENT VOWEL QUU","Khmer"];
-names[6058]=["KHMER INDEPENDENT VOWEL QUUV","Khmer"];
-names[6059]=["KHMER INDEPENDENT VOWEL RY","Khmer"];
-names[6060]=["KHMER INDEPENDENT VOWEL RYY","Khmer"];
-names[6061]=["KHMER INDEPENDENT VOWEL LY","Khmer"];
-names[6062]=["KHMER INDEPENDENT VOWEL LYY","Khmer"];
-names[6063]=["KHMER INDEPENDENT VOWEL QE","Khmer"];
-names[6064]=["KHMER INDEPENDENT VOWEL QAI","Khmer"];
-names[6065]=["KHMER INDEPENDENT VOWEL QOO TYPE ONE","Khmer"];
-names[6066]=["KHMER INDEPENDENT VOWEL QOO TYPE TWO","Khmer"];
-names[6067]=["KHMER INDEPENDENT VOWEL QAU","Khmer"];
-names[6068]=["KHMER VOWEL INHERENT AQ","Khmer"];
-names[6069]=["KHMER VOWEL INHERENT AA","Khmer"];
-names[6070]=["KHMER VOWEL SIGN AA","Khmer"];
-names[6071]=["KHMER VOWEL SIGN I","Khmer"];
-names[6072]=["KHMER VOWEL SIGN II","Khmer"];
-names[6073]=["KHMER VOWEL SIGN Y","Khmer"];
-names[6074]=["KHMER VOWEL SIGN YY","Khmer"];
-names[6075]=["KHMER VOWEL SIGN U","Khmer"];
-names[6076]=["KHMER VOWEL SIGN UU","Khmer"];
-names[6077]=["KHMER VOWEL SIGN UA","Khmer"];
-names[6078]=["KHMER VOWEL SIGN OE","Khmer"];
-names[6079]=["KHMER VOWEL SIGN YA","Khmer"];
-names[6080]=["KHMER VOWEL SIGN IE","Khmer"];
-names[6081]=["KHMER VOWEL SIGN E","Khmer"];
-names[6082]=["KHMER VOWEL SIGN AE","Khmer"];
-names[6083]=["KHMER VOWEL SIGN AI","Khmer"];
-names[6084]=["KHMER VOWEL SIGN OO","Khmer"];
-names[6085]=["KHMER VOWEL SIGN AU","Khmer"];
-names[6086]=["KHMER SIGN NIKAHIT","Khmer"];
-names[6087]=["KHMER SIGN REAHMUK","Khmer"];
-names[6088]=["KHMER SIGN YUUKALEAPINTU","Khmer"];
-names[6089]=["KHMER SIGN MUUSIKATOAN","Khmer"];
-names[6090]=["KHMER SIGN TRIISAP","Khmer"];
-names[6091]=["KHMER SIGN BANTOC","Khmer"];
-names[6092]=["KHMER SIGN ROBAT","Khmer"];
-names[6093]=["KHMER SIGN TOANDAKHIAT","Khmer"];
-names[6094]=["KHMER SIGN KAKABAT","Khmer"];
-names[6095]=["KHMER SIGN AHSDA","Khmer"];
-names[6096]=["KHMER SIGN SAMYOK SANNYA","Khmer"];
-names[6097]=["KHMER SIGN VIRIAM","Khmer"];
-names[6098]=["KHMER SIGN COENG","Khmer"];
-names[6099]=["KHMER SIGN BATHAMASAT","Khmer"];
-names[6100]=["KHMER SIGN KHAN","Khmer"];
-names[6101]=["KHMER SIGN BARIYOOSAN","Khmer"];
-names[6102]=["KHMER SIGN CAMNUC PII KUUH","Khmer"];
-names[6103]=["KHMER SIGN LEK TOO","Khmer"];
-names[6104]=["KHMER SIGN BEYYAL","Khmer"];
-names[6105]=["KHMER SIGN PHNAEK MUAN","Khmer"];
-names[6106]=["KHMER SIGN KOOMUUT","Khmer"];
-names[6107]=["KHMER CURRENCY SYMBOL RIEL","Khmer"];
-names[6108]=["KHMER SIGN AVAKRAHASANYA","Khmer"];
-names[6109]=["KHMER SIGN ATTHACAN","Khmer"];
-names[6112]=["KHMER DIGIT ZERO","Khmer"];
-names[6113]=["KHMER DIGIT ONE","Khmer"];
-names[6114]=["KHMER DIGIT TWO","Khmer"];
-names[6115]=["KHMER DIGIT THREE","Khmer"];
-names[6116]=["KHMER DIGIT FOUR","Khmer"];
-names[6117]=["KHMER DIGIT FIVE","Khmer"];
-names[6118]=["KHMER DIGIT SIX","Khmer"];
-names[6119]=["KHMER DIGIT SEVEN","Khmer"];
-names[6120]=["KHMER DIGIT EIGHT","Khmer"];
-names[6121]=["KHMER DIGIT NINE","Khmer"];
-names[6128]=["KHMER SYMBOL LEK ATTAK SON","Khmer"];
-names[6129]=["KHMER SYMBOL LEK ATTAK MUOY","Khmer"];
-names[6130]=["KHMER SYMBOL LEK ATTAK PII","Khmer"];
-names[6131]=["KHMER SYMBOL LEK ATTAK BEI","Khmer"];
-names[6132]=["KHMER SYMBOL LEK ATTAK BUON","Khmer"];
-names[6133]=["KHMER SYMBOL LEK ATTAK PRAM","Khmer"];
-names[6134]=["KHMER SYMBOL LEK ATTAK PRAM-MUOY","Khmer"];
-names[6135]=["KHMER SYMBOL LEK ATTAK PRAM-PII","Khmer"];
-names[6136]=["KHMER SYMBOL LEK ATTAK PRAM-BEI","Khmer"];
-names[6137]=["KHMER SYMBOL LEK ATTAK PRAM-BUON","Khmer"];
-names[6624]=["KHMER SYMBOL PATHAMASAT","Khmer Symbols"];
-names[6625]=["KHMER SYMBOL MUOY KOET","Khmer Symbols"];
-names[6626]=["KHMER SYMBOL PII KOET","Khmer Symbols"];
-names[6627]=["KHMER SYMBOL BEI KOET","Khmer Symbols"];
-names[6628]=["KHMER SYMBOL BUON KOET","Khmer Symbols"];
-names[6629]=["KHMER SYMBOL PRAM KOET","Khmer Symbols"];
-names[6630]=["KHMER SYMBOL PRAM-MUOY KOET","Khmer Symbols"];
-names[6631]=["KHMER SYMBOL PRAM-PII KOET","Khmer Symbols"];
-names[6632]=["KHMER SYMBOL PRAM-BEI KOET","Khmer Symbols"];
-names[6633]=["KHMER SYMBOL PRAM-BUON KOET","Khmer Symbols"];
-names[6634]=["KHMER SYMBOL DAP KOET","Khmer Symbols"];
-names[6635]=["KHMER SYMBOL DAP-MUOY KOET","Khmer Symbols"];
-names[6636]=["KHMER SYMBOL DAP-PII KOET","Khmer Symbols"];
-names[6637]=["KHMER SYMBOL DAP-BEI KOET","Khmer Symbols"];
-names[6638]=["KHMER SYMBOL DAP-BUON KOET","Khmer Symbols"];
-names[6639]=["KHMER SYMBOL DAP-PRAM KOET","Khmer Symbols"];
-names[6640]=["KHMER SYMBOL TUTEYASAT","Khmer Symbols"];
-names[6641]=["KHMER SYMBOL MUOY ROC","Khmer Symbols"];
-names[6642]=["KHMER SYMBOL PII ROC","Khmer Symbols"];
-names[6643]=["KHMER SYMBOL BEI ROC","Khmer Symbols"];
-names[6644]=["KHMER SYMBOL BUON ROC","Khmer Symbols"];
-names[6645]=["KHMER SYMBOL PRAM ROC","Khmer Symbols"];
-names[6646]=["KHMER SYMBOL PRAM-MUOY ROC","Khmer Symbols"];
-names[6647]=["KHMER SYMBOL PRAM-PII ROC","Khmer Symbols"];
-names[6648]=["KHMER SYMBOL PRAM-BEI ROC","Khmer Symbols"];
-names[6649]=["KHMER SYMBOL PRAM-BUON ROC","Khmer Symbols"];
-names[6650]=["KHMER SYMBOL DAP ROC","Khmer Symbols"];
-names[6651]=["KHMER SYMBOL DAP-MUOY ROC","Khmer Symbols"];
-names[6652]=["KHMER SYMBOL DAP-PII ROC","Khmer Symbols"];
-names[6653]=["KHMER SYMBOL DAP-BEI ROC","Khmer Symbols"];
-names[6654]=["KHMER SYMBOL DAP-BUON ROC","Khmer Symbols"];
-names[6655]=["KHMER SYMBOL DAP-PRAM ROC","Khmer Symbols"];
-names[8211]=["EN DASH","General Punctuation"];
-names[8204]=["ZERO WIDTH NON-JOINER","General Punctuation",0];
-names[8205]=["ZERO WIDTH JOINER","General Punctuation",0];
+var charData = {
+"\0020":{n:"SPACE",m:0,g:"Basic Latin"},
+"\00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
+"\200C":{n:"ZERO WIDTH NON-JOINER",m:0,g:"General Punctuation"},
+"\200D":{n:"ZERO WIDTH JOINER",m:0,g:"General Punctuation"},
+"\200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
+
+"\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
+"\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
+"\u0023":{n:"NUMBER SIGN",m:0,g:"Basic Latin"},
+"\u0024":{n:"DOLLAR SIGN",m:0,g:"Basic Latin"},
+"\u0025":{n:"PERCENT SIGN",m:0,g:"Basic Latin"},
+"\u0026":{n:"AMPERSAND",m:0,g:"Basic Latin"},
+"\u0027":{n:"APOSTROPHE",m:0,g:"Basic Latin"},
+"\u0028":{n:"LEFT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u0029":{n:"RIGHT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u002A":{n:"ASTERISK",m:0,g:"Basic Latin"},
+"\u002B":{n:"PLUS SIGN",m:0,g:"Basic Latin"},
+"\u002C":{n:"COMMA",m:0,g:"Basic Latin"},
+"\u002D":{n:"HYPHEN-MINUS",m:0,g:"Basic Latin"},
+"\u002E":{n:"FULL STOP",m:0,g:"Basic Latin"},
+"\u002F":{n:"SOLIDUS",m:0,g:"Basic Latin"},
+"\u0030":{n:"DIGIT ZERO",m:0,g:"Basic Latin"},
+"\u0031":{n:"DIGIT ONE",m:0,g:"Basic Latin"},
+"\u0032":{n:"DIGIT TWO",m:0,g:"Basic Latin"},
+"\u0033":{n:"DIGIT THREE",m:0,g:"Basic Latin"},
+"\u0034":{n:"DIGIT FOUR",m:0,g:"Basic Latin"},
+"\u0035":{n:"DIGIT FIVE",m:0,g:"Basic Latin"},
+"\u0036":{n:"DIGIT SIX",m:0,g:"Basic Latin"},
+"\u0037":{n:"DIGIT SEVEN",m:0,g:"Basic Latin"},
+"\u0038":{n:"DIGIT EIGHT",m:0,g:"Basic Latin"},
+"\u0039":{n:"DIGIT NINE",m:0,g:"Basic Latin"},
+"\u003A":{n:"COLON",m:0,g:"Basic Latin"},
+"\u003B":{n:"SEMICOLON",m:0,g:"Basic Latin"},
+"\u003C":{n:"LESS-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003D":{n:"EQUALS SIGN",m:0,g:"Basic Latin"},
+"\u003E":{n:"GREATER-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003F":{n:"QUESTION MARK",m:0,g:"Basic Latin"},
+"\u0040":{n:"COMMERCIAL AT",m:0,g:"Basic Latin"},
+"\u0041":{n:"LATIN CAPITAL LETTER A",m:0,g:"Basic Latin"},
+"\u0042":{n:"LATIN CAPITAL LETTER B",m:0,g:"Basic Latin"},
+"\u0043":{n:"LATIN CAPITAL LETTER C",m:0,g:"Basic Latin"},
+"\u0044":{n:"LATIN CAPITAL LETTER D",m:0,g:"Basic Latin"},
+"\u0045":{n:"LATIN CAPITAL LETTER E",m:0,g:"Basic Latin"},
+"\u0046":{n:"LATIN CAPITAL LETTER F",m:0,g:"Basic Latin"},
+"\u0047":{n:"LATIN CAPITAL LETTER G",m:0,g:"Basic Latin"},
+"\u0048":{n:"LATIN CAPITAL LETTER H",m:0,g:"Basic Latin"},
+"\u0049":{n:"LATIN CAPITAL LETTER I",m:0,g:"Basic Latin"},
+"\u004A":{n:"LATIN CAPITAL LETTER J",m:0,g:"Basic Latin"},
+"\u004B":{n:"LATIN CAPITAL LETTER K",m:0,g:"Basic Latin"},
+"\u004C":{n:"LATIN CAPITAL LETTER L",m:0,g:"Basic Latin"},
+"\u004D":{n:"LATIN CAPITAL LETTER M",m:0,g:"Basic Latin"},
+"\u004E":{n:"LATIN CAPITAL LETTER N",m:0,g:"Basic Latin"},
+"\u004F":{n:"LATIN CAPITAL LETTER O",m:0,g:"Basic Latin"},
+"\u0050":{n:"LATIN CAPITAL LETTER P",m:0,g:"Basic Latin"},
+"\u0051":{n:"LATIN CAPITAL LETTER Q",m:0,g:"Basic Latin"},
+"\u0052":{n:"LATIN CAPITAL LETTER R",m:0,g:"Basic Latin"},
+"\u0053":{n:"LATIN CAPITAL LETTER S",m:0,g:"Basic Latin"},
+"\u0054":{n:"LATIN CAPITAL LETTER T",m:0,g:"Basic Latin"},
+"\u0055":{n:"LATIN CAPITAL LETTER U",m:0,g:"Basic Latin"},
+"\u0056":{n:"LATIN CAPITAL LETTER V",m:0,g:"Basic Latin"},
+"\u0057":{n:"LATIN CAPITAL LETTER W",m:0,g:"Basic Latin"},
+"\u0058":{n:"LATIN CAPITAL LETTER X",m:0,g:"Basic Latin"},
+"\u0059":{n:"LATIN CAPITAL LETTER Y",m:0,g:"Basic Latin"},
+"\u005A":{n:"LATIN CAPITAL LETTER Z",m:0,g:"Basic Latin"},
+"\u005B":{n:"LEFT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005C":{n:"REVERSE SOLIDUS",m:0,g:"Basic Latin"},
+"\u005D":{n:"RIGHT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005E":{n:"CIRCUMFLEX ACCENT",m:0,g:"Basic Latin"},
+"\u005F":{n:"LOW LINE",m:0,g:"Basic Latin"},
+"\u0060":{n:"GRAVE ACCENT",m:0,g:"Basic Latin"},
+"\u0061":{n:"LATIN SMALL LETTER A",m:0,g:"Basic Latin"},
+"\u0062":{n:"LATIN SMALL LETTER B",m:0,g:"Basic Latin"},
+"\u0063":{n:"LATIN SMALL LETTER C",m:0,g:"Basic Latin"},
+"\u0064":{n:"LATIN SMALL LETTER D",m:0,g:"Basic Latin"},
+"\u0065":{n:"LATIN SMALL LETTER E",m:0,g:"Basic Latin"},
+"\u0066":{n:"LATIN SMALL LETTER F",m:0,g:"Basic Latin"},
+"\u0067":{n:"LATIN SMALL LETTER G",m:0,g:"Basic Latin"},
+"\u0068":{n:"LATIN SMALL LETTER H",m:0,g:"Basic Latin"},
+"\u0069":{n:"LATIN SMALL LETTER I",m:0,g:"Basic Latin"},
+"\u006A":{n:"LATIN SMALL LETTER J",m:0,g:"Basic Latin"},
+"\u006B":{n:"LATIN SMALL LETTER K",m:0,g:"Basic Latin"},
+"\u006C":{n:"LATIN SMALL LETTER L",m:0,g:"Basic Latin"},
+"\u006D":{n:"LATIN SMALL LETTER M",m:0,g:"Basic Latin"},
+"\u006E":{n:"LATIN SMALL LETTER N",m:0,g:"Basic Latin"},
+"\u006F":{n:"LATIN SMALL LETTER O",m:0,g:"Basic Latin"},
+"\u0070":{n:"LATIN SMALL LETTER P",m:0,g:"Basic Latin"},
+"\u0071":{n:"LATIN SMALL LETTER Q",m:0,g:"Basic Latin"},
+"\u0072":{n:"LATIN SMALL LETTER R",m:0,g:"Basic Latin"},
+"\u0073":{n:"LATIN SMALL LETTER S",m:0,g:"Basic Latin"},
+"\u0074":{n:"LATIN SMALL LETTER T",m:0,g:"Basic Latin"},
+"\u0075":{n:"LATIN SMALL LETTER U",m:0,g:"Basic Latin"},
+"\u0076":{n:"LATIN SMALL LETTER V",m:0,g:"Basic Latin"},
+"\u0077":{n:"LATIN SMALL LETTER W",m:0,g:"Basic Latin"},
+"\u0078":{n:"LATIN SMALL LETTER X",m:0,g:"Basic Latin"},
+"\u0079":{n:"LATIN SMALL LETTER Y",m:0,g:"Basic Latin"},
+"\u007A":{n:"LATIN SMALL LETTER Z",m:0,g:"Basic Latin"},
+"\u007B":{n:"LEFT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007C":{n:"VERTICAL LINE",m:0,g:"Basic Latin"},
+"\u007D":{n:"RIGHT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007E":{n:"TILDE",m:0,g:"Basic Latin"},
+
+"\u1780":{n:"KHMER LETTER KA",m:0,g:"Khmer"},
+"\u1781":{n:"KHMER LETTER KHA",m:0,g:"Khmer"},
+"\u1782":{n:"KHMER LETTER KO",m:0,g:"Khmer"},
+"\u1783":{n:"KHMER LETTER KHO",m:0,g:"Khmer"},
+"\u1784":{n:"KHMER LETTER NGO",m:0,g:"Khmer"},
+"\u1785":{n:"KHMER LETTER CA",m:0,g:"Khmer"},
+"\u1786":{n:"KHMER LETTER CHA",m:0,g:"Khmer"},
+"\u1787":{n:"KHMER LETTER CO",m:0,g:"Khmer"},
+"\u1788":{n:"KHMER LETTER CHO",m:0,g:"Khmer"},
+"\u1789":{n:"KHMER LETTER NYO",m:0,g:"Khmer"},
+"\u178A":{n:"KHMER LETTER DA",m:0,g:"Khmer"},
+"\u178B":{n:"KHMER LETTER TTHA",m:0,g:"Khmer"},
+"\u178C":{n:"KHMER LETTER DO",m:0,g:"Khmer"},
+"\u178D":{n:"KHMER LETTER TTHO",m:0,g:"Khmer"},
+"\u178E":{n:"KHMER LETTER NNO",m:0,g:"Khmer"},
+"\u178F":{n:"KHMER LETTER TA",m:0,g:"Khmer"},
+"\u1790":{n:"KHMER LETTER THA",m:0,g:"Khmer"},
+"\u1791":{n:"KHMER LETTER TO",m:0,g:"Khmer"},
+"\u1792":{n:"KHMER LETTER THO",m:0,g:"Khmer"},
+"\u1793":{n:"KHMER LETTER NO",m:0,g:"Khmer"},
+"\u1794":{n:"KHMER LETTER BA",m:0,g:"Khmer"},
+"\u1795":{n:"KHMER LETTER PHA",m:0,g:"Khmer"},
+"\u1796":{n:"KHMER LETTER PO",m:0,g:"Khmer"},
+"\u1797":{n:"KHMER LETTER PHO",m:0,g:"Khmer"},
+"\u1798":{n:"KHMER LETTER MO",m:0,g:"Khmer"},
+"\u1799":{n:"KHMER LETTER YO",m:0,g:"Khmer"},
+"\u179A":{n:"KHMER LETTER RO",m:0,g:"Khmer"},
+"\u179B":{n:"KHMER LETTER LO",m:0,g:"Khmer"},
+"\u179C":{n:"KHMER LETTER VO",m:0,g:"Khmer"},
+"\u179D":{n:"KHMER LETTER SHA",m:0,g:"Khmer"},
+"\u179E":{n:"KHMER LETTER SSO",m:0,g:"Khmer"},
+"\u179F":{n:"KHMER LETTER SA",m:0,g:"Khmer"},
+"\u17A0":{n:"KHMER LETTER HA",m:0,g:"Khmer"},
+"\u17A1":{n:"KHMER LETTER LA",m:0,g:"Khmer"},
+"\u17A2":{n:"KHMER LETTER QA",m:0,g:"Khmer"},
+"\u17A3":{n:"KHMER INDEPENDENT VOWEL QAQ",m:0,g:"Khmer"},
+"\u17A4":{n:"KHMER INDEPENDENT VOWEL QAA",m:0,g:"Khmer"},
+"\u17A5":{n:"KHMER INDEPENDENT VOWEL QI",m:0,g:"Khmer"},
+"\u17A6":{n:"KHMER INDEPENDENT VOWEL QII",m:0,g:"Khmer"},
+"\u17A7":{n:"KHMER INDEPENDENT VOWEL QU",m:0,g:"Khmer"},
+"\u17A8":{n:"KHMER INDEPENDENT VOWEL QUK",m:0,g:"Khmer"},
+"\u17A9":{n:"KHMER INDEPENDENT VOWEL QUU",m:0,g:"Khmer"},
+"\u17AA":{n:"KHMER INDEPENDENT VOWEL QUUV",m:0,g:"Khmer"},
+"\u17AB":{n:"KHMER INDEPENDENT VOWEL RY",m:0,g:"Khmer"},
+"\u17AC":{n:"KHMER INDEPENDENT VOWEL RYY",m:0,g:"Khmer"},
+"\u17AD":{n:"KHMER INDEPENDENT VOWEL LY",m:0,g:"Khmer"},
+"\u17AE":{n:"KHMER INDEPENDENT VOWEL LYY",m:0,g:"Khmer"},
+"\u17AF":{n:"KHMER INDEPENDENT VOWEL QE",m:0,g:"Khmer"},
+"\u17B0":{n:"KHMER INDEPENDENT VOWEL QAI",m:0,g:"Khmer"},
+"\u17B1":{n:"KHMER INDEPENDENT VOWEL QOO TYPE ONE",m:0,g:"Khmer"},
+"\u17B2":{n:"KHMER INDEPENDENT VOWEL QOO TYPE TWO",m:0,g:"Khmer"},
+"\u17B3":{n:"KHMER INDEPENDENT VOWEL QAU",m:0,g:"Khmer"},
+"\u17B4":{n:"KHMER VOWEL INHERENT AQ",m:1,g:"Khmer"},
+"\u17B5":{n:"KHMER VOWEL INHERENT AA",m:1,g:"Khmer"},
+"\u17B6":{n:"KHMER VOWEL SIGN AA",m:1,g:"Khmer"},
+"\u17B7":{n:"KHMER VOWEL SIGN I",m:1,g:"Khmer"},
+"\u17B8":{n:"KHMER VOWEL SIGN II",m:1,g:"Khmer"},
+"\u17B9":{n:"KHMER VOWEL SIGN Y",m:1,g:"Khmer"},
+"\u17BA":{n:"KHMER VOWEL SIGN YY",m:1,g:"Khmer"},
+"\u17BB":{n:"KHMER VOWEL SIGN U",m:1,g:"Khmer"},
+"\u17BC":{n:"KHMER VOWEL SIGN UU",m:1,g:"Khmer"},
+"\u17BD":{n:"KHMER VOWEL SIGN UA",m:1,g:"Khmer"},
+"\u17BE":{n:"KHMER VOWEL SIGN OE",m:1,g:"Khmer"},
+"\u17BF":{n:"KHMER VOWEL SIGN YA",m:1,g:"Khmer"},
+"\u17C0":{n:"KHMER VOWEL SIGN IE",m:1,g:"Khmer"},
+"\u17C1":{n:"KHMER VOWEL SIGN E",m:1,g:"Khmer"},
+"\u17C2":{n:"KHMER VOWEL SIGN AE",m:1,g:"Khmer"},
+"\u17C3":{n:"KHMER VOWEL SIGN AI",m:1,g:"Khmer"},
+"\u17C4":{n:"KHMER VOWEL SIGN OO",m:1,g:"Khmer"},
+"\u17C5":{n:"KHMER VOWEL SIGN AU",m:1,g:"Khmer"},
+"\u17C6":{n:"KHMER SIGN NIKAHIT",m:1,g:"Khmer"},
+"\u17C7":{n:"KHMER SIGN REAHMUK",m:1,g:"Khmer"},
+"\u17C8":{n:"KHMER SIGN YUUKALEAPINTU",m:1,g:"Khmer"},
+"\u17C9":{n:"KHMER SIGN MUUSIKATOAN",m:1,g:"Khmer"},
+"\u17CA":{n:"KHMER SIGN TRIISAP",m:1,g:"Khmer"},
+"\u17CB":{n:"KHMER SIGN BANTOC",m:1,g:"Khmer"},
+"\u17CC":{n:"KHMER SIGN ROBAT",m:1,g:"Khmer"},
+"\u17CD":{n:"KHMER SIGN TOANDAKHIAT",m:1,g:"Khmer"},
+"\u17CE":{n:"KHMER SIGN KAKABAT",m:1,g:"Khmer"},
+"\u17CF":{n:"KHMER SIGN AHSDA",m:1,g:"Khmer"},
+"\u17D0":{n:"KHMER SIGN SAMYOK SANNYA",m:1,g:"Khmer"},
+"\u17D1":{n:"KHMER SIGN VIRIAM",m:1,g:"Khmer"},
+"\u17D2":{n:"KHMER SIGN COENG",m:1,g:"Khmer"},
+"\u17D3":{n:"KHMER SIGN BATHAMASAT",m:1,g:"Khmer"},
+"\u17D4":{n:"KHMER SIGN KHAN",m:0,g:"Khmer"},
+"\u17D5":{n:"KHMER SIGN BARIYOOSAN",m:0,g:"Khmer"},
+"\u17D6":{n:"KHMER SIGN CAMNUC PII KUUH",m:0,g:"Khmer"},
+"\u17D7":{n:"KHMER SIGN LEK TOO",m:0,g:"Khmer"},
+"\u17D8":{n:"KHMER SIGN BEYYAL",m:0,g:"Khmer"},
+"\u17D9":{n:"KHMER SIGN PHNAEK MUAN",m:0,g:"Khmer"},
+"\u17DA":{n:"KHMER SIGN KOOMUUT",m:0,g:"Khmer"},
+"\u17DB":{n:"KHMER CURRENCY SYMBOL RIEL",m:0,g:"Khmer"},
+"\u17DC":{n:"KHMER SIGN AVAKRAHASANYA",m:0,g:"Khmer"},
+"\u17DD":{n:"KHMER SIGN ATTHACAN",m:1,g:"Khmer"},
+"\u17E0":{n:"KHMER DIGIT ZERO",m:0,g:"Khmer"},
+"\u17E1":{n:"KHMER DIGIT ONE",m:0,g:"Khmer"},
+"\u17E2":{n:"KHMER DIGIT TWO",m:0,g:"Khmer"},
+"\u17E3":{n:"KHMER DIGIT THREE",m:0,g:"Khmer"},
+"\u17E4":{n:"KHMER DIGIT FOUR",m:0,g:"Khmer"},
+"\u17E5":{n:"KHMER DIGIT FIVE",m:0,g:"Khmer"},
+"\u17E6":{n:"KHMER DIGIT SIX",m:0,g:"Khmer"},
+"\u17E7":{n:"KHMER DIGIT SEVEN",m:0,g:"Khmer"},
+"\u17E8":{n:"KHMER DIGIT EIGHT",m:0,g:"Khmer"},
+"\u17E9":{n:"KHMER DIGIT NINE",m:0,g:"Khmer"},
+"\u17F0":{n:"KHMER SYMBOL LEK ATTAK SON",m:0,g:"Khmer"},
+"\u17F1":{n:"KHMER SYMBOL LEK ATTAK MUOY",m:0,g:"Khmer"},
+"\u17F2":{n:"KHMER SYMBOL LEK ATTAK PII",m:0,g:"Khmer"},
+"\u17F3":{n:"KHMER SYMBOL LEK ATTAK BEI",m:0,g:"Khmer"},
+"\u17F4":{n:"KHMER SYMBOL LEK ATTAK BUON",m:0,g:"Khmer"},
+"\u17F5":{n:"KHMER SYMBOL LEK ATTAK PRAM",m:0,g:"Khmer"},
+"\u17F6":{n:"KHMER SYMBOL LEK ATTAK PRAM-MUOY",m:0,g:"Khmer"},
+"\u17F7":{n:"KHMER SYMBOL LEK ATTAK PRAM-PII",m:0,g:"Khmer"},
+"\u17F8":{n:"KHMER SYMBOL LEK ATTAK PRAM-BEI",m:0,g:"Khmer"},
+"\u17F9":{n:"KHMER SYMBOL LEK ATTAK PRAM-BUON",m:0,g:"Khmer"},
+"\u19E0":{n:"KHMER SYMBOL PATHAMASAT",m:0,g:"Khmer Symbols"},
+"\u19E1":{n:"KHMER SYMBOL MUOY KOET",m:0,g:"Khmer Symbols"},
+"\u19E2":{n:"KHMER SYMBOL PII KOET",m:0,g:"Khmer Symbols"},
+"\u19E3":{n:"KHMER SYMBOL BEI KOET",m:0,g:"Khmer Symbols"},
+"\u19E4":{n:"KHMER SYMBOL BUON KOET",m:0,g:"Khmer Symbols"},
+"\u19E5":{n:"KHMER SYMBOL PRAM KOET",m:0,g:"Khmer Symbols"},
+"\u19E6":{n:"KHMER SYMBOL PRAM-MUOY KOET",m:0,g:"Khmer Symbols"},
+"\u19E7":{n:"KHMER SYMBOL PRAM-PII KOET",m:0,g:"Khmer Symbols"},
+"\u19E8":{n:"KHMER SYMBOL PRAM-BEI KOET",m:0,g:"Khmer Symbols"},
+"\u19E9":{n:"KHMER SYMBOL PRAM-BUON KOET",m:0,g:"Khmer Symbols"},
+"\u19EA":{n:"KHMER SYMBOL DAP KOET",m:0,g:"Khmer Symbols"},
+"\u19EB":{n:"KHMER SYMBOL DAP-MUOY KOET",m:0,g:"Khmer Symbols"},
+"\u19EC":{n:"KHMER SYMBOL DAP-PII KOET",m:0,g:"Khmer Symbols"},
+"\u19ED":{n:"KHMER SYMBOL DAP-BEI KOET",m:0,g:"Khmer Symbols"},
+"\u19EE":{n:"KHMER SYMBOL DAP-BUON KOET",m:0,g:"Khmer Symbols"},
+"\u19EF":{n:"KHMER SYMBOL DAP-PRAM KOET",m:0,g:"Khmer Symbols"},
+"\u19F0":{n:"KHMER SYMBOL TUTEYASAT",m:0,g:"Khmer Symbols"},
+"\u19F1":{n:"KHMER SYMBOL MUOY ROC",m:0,g:"Khmer Symbols"},
+"\u19F2":{n:"KHMER SYMBOL PII ROC",m:0,g:"Khmer Symbols"},
+"\u19F3":{n:"KHMER SYMBOL BEI ROC",m:0,g:"Khmer Symbols"},
+"\u19F4":{n:"KHMER SYMBOL BUON ROC",m:0,g:"Khmer Symbols"},
+"\u19F5":{n:"KHMER SYMBOL PRAM ROC",m:0,g:"Khmer Symbols"},
+"\u19F6":{n:"KHMER SYMBOL PRAM-MUOY ROC",m:0,g:"Khmer Symbols"},
+"\u19F7":{n:"KHMER SYMBOL PRAM-PII ROC",m:0,g:"Khmer Symbols"},
+"\u19F8":{n:"KHMER SYMBOL PRAM-BEI ROC",m:0,g:"Khmer Symbols"},
+"\u19F9":{n:"KHMER SYMBOL PRAM-BUON ROC",m:0,g:"Khmer Symbols"},
+"\u19FA":{n:"KHMER SYMBOL DAP ROC",m:0,g:"Khmer Symbols"},
+"\u19FB":{n:"KHMER SYMBOL DAP-MUOY ROC",m:0,g:"Khmer Symbols"},
+"\u19FC":{n:"KHMER SYMBOL DAP-PII ROC",m:0,g:"Khmer Symbols"},
+"\u19FD":{n:"KHMER SYMBOL DAP-BEI ROC",m:0,g:"Khmer Symbols"},
+"\u19FE":{n:"KHMER SYMBOL DAP-BUON ROC",m:0,g:"Khmer Symbols"},
+"\u19FF":{n:"KHMER SYMBOL DAP-PRAM ROC",m:0,g:"Khmer Symbols"},
+
+"\u17D2\u1780":{n:"KHMER SIGN COENG, KHMER LETTER KA",m:1,g:"Khmer"},
+"\u17D2\u1781":{n:"KHMER SIGN COENG, KHMER LETTER KHA",m:1,g:"Khmer"},
+"\u17D2\u1782":{n:"KHMER SIGN COENG, KHMER LETTER KO",m:1,g:"Khmer"},
+"\u17D2\u1783":{n:"KHMER SIGN COENG, KHMER LETTER KHO",m:1,g:"Khmer"},
+"\u17D2\u1784":{n:"KHMER SIGN COENG, KHMER LETTER NGO",m:1,g:"Khmer"},
+"\u17D2\u1785":{n:"KHMER SIGN COENG, KHMER LETTER CA",m:1,g:"Khmer"},
+"\u17D2\u1786":{n:"KHMER SIGN COENG, KHMER LETTER CHA",m:1,g:"Khmer"},
+"\u17D2\u1787":{n:"KHMER SIGN COENG, KHMER LETTER CO",m:1,g:"Khmer"},
+"\u17D2\u1788":{n:"KHMER SIGN COENG, KHMER LETTER CHO",m:1,g:"Khmer"},
+"\u17D2\u1789":{n:"KHMER SIGN COENG, KHMER LETTER NYO",m:1,g:"Khmer"},
+"\u17D2\u178A":{n:"KHMER SIGN COENG, KHMER LETTER DA",m:1,g:"Khmer"},
+"\u17D2\u178B":{n:"KHMER SIGN COENG, KHMER LETTER TTHA",m:1,g:"Khmer"},
+"\u17D2\u178C":{n:"KHMER SIGN COENG, KHMER LETTER DO",m:1,g:"Khmer"},
+"\u17D2\u178D":{n:"KHMER SIGN COENG, KHMER LETTER TTHO",m:1,g:"Khmer"},
+"\u17D2\u178E":{n:"KHMER SIGN COENG, KHMER LETTER NNO",m:1,g:"Khmer"},
+"\u17D2\u178F":{n:"KHMER SIGN COENG, KHMER LETTER TA",m:1,g:"Khmer"},
+"\u17D2\u1790":{n:"KHMER SIGN COENG, KHMER LETTER THA",m:1,g:"Khmer"},
+"\u17D2\u1791":{n:"KHMER SIGN COENG, KHMER LETTER TO",m:1,g:"Khmer"},
+"\u17D2\u1792":{n:"KHMER SIGN COENG, KHMER LETTER THO",m:1,g:"Khmer"},
+"\u17D2\u1793":{n:"KHMER SIGN COENG, KHMER LETTER NO",m:1,g:"Khmer"},
+"\u17D2\u1794":{n:"KHMER SIGN COENG, KHMER LETTER BA",m:1,g:"Khmer"},
+"\u17D2\u1795":{n:"KHMER SIGN COENG, KHMER LETTER PHA",m:1,g:"Khmer"},
+"\u17D2\u1796":{n:"KHMER SIGN COENG, KHMER LETTER PO",m:1,g:"Khmer"},
+"\u17D2\u1797":{n:"KHMER SIGN COENG, KHMER LETTER PHO",m:1,g:"Khmer"},
+"\u17D2\u1798":{n:"KHMER SIGN COENG, KHMER LETTER MO",m:1,g:"Khmer"},
+"\u17D2\u1799":{n:"KHMER SIGN COENG, KHMER LETTER YO",m:1,g:"Khmer"},
+"\u17D2\u179B":{n:"KHMER SIGN COENG, KHMER LETTER LO",m:1,g:"Khmer"},
+"\u17D2\u17A1":{n:"KHMER SIGN COENG, KHMER LETTER LA",m:1,g:"Khmer"},
+"\u17D2\u179A":{n:"KHMER SIGN COENG, KHMER LETTER RO",m:1,g:"Khmer"},
+"\u17D2\u17A2":{n:"KHMER SIGN COENG, KHMER LETTER QA",m:1,g:"Khmer"},
+"\u17D2\u179F":{n:"KHMER SIGN COENG, KHMER LETTER SA",m:1,g:"Khmer"},
+"\u17D2\u17A0":{n:"KHMER SIGN COENG, KHMER LETTER HA",m:1,g:"Khmer"},
+"\u17D2\u179C":{n:"KHMER SIGN COENG, KHMER LETTER VO",m:1,g:"Khmer"},
+"\u17D2\u17A7":{n:"KHMER SIGN COENG, KHMER INDEPENDENT VOWEL QU",m:1,g:"Khmer"},
+"\u17D2\u17AF":{n:"KHMER SIGN COENG, KHMER INDEPENDENT VOWEL QE",m:1,g:"Khmer"},
+"\u17D2\u17AB":{n:"KHMER SIGN COENG, KHMER INDEPENDENT VOWEL RY",m:1,g:"Khmer"},
+"\u17D2\u17AC":{n:"KHMER SIGN COENG, KHMER INDEPENDENT VOWEL RYY",m:1,g:"Khmer"},
+"\u17B6\u17C6":{n:"KHMER VOWEL SIGN AA, KHMER SIGN NIKAHIT",m:1,g:"Khmer"},
+"\u17BB\u17C6":{n:"KHMER VOWEL SIGN U, KHMER SIGN NIKAHIT",m:1,g:"Khmer"},
+"\u17BB\u17C7":{n:"KHMER VOWEL SIGN U, KHMER SIGN REAHMUK",m:1,g:"Khmer"},
+"\u17C1\u17C7":{n:"KHMER VOWEL SIGN E, KHMER SIGN REAHMUK",m:1,g:"Khmer"},
+"\u17C4\u17C7":{n:"KHMER VOWEL SIGN OO, KHMER SIGN REAHMUK",m:1,g:"Khmer"},
+"\u17D4\u179B\u17D4":{n:"KHMER SIGN KHAN, KHMER LETTER LO, KHMER SIGN KHAN",m:0,g:"Khmer"},
+"\u17D2\u179D":{n:"KHMER SIGN COENG, KHMER LETTER SHA",m:1,g:"Khmer"},
+"\u17D2\u179E":{n:"KHMER SIGN COENG, KHMER LETTER SSO",m:1,g:"Khmer"},
+
+end: {}
+}

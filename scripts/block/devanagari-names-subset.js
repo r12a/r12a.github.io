@@ -1,248 +1,274 @@
-var names = new Array();
-names[32]=["SPACE","Basic Latin"];
-names[160]=["NO-BREAK SPACE","Latin-1 Supplement",0];
-names[8203]=["ZERO WIDTH SPACE","General Punctuation",0];
-names[33]=["EXCLAMATION MARK","Basic Latin",0];
-names[34]=["QUOTATION MARK","Basic Latin",0];
-names[35]=["NUMBER SIGN","Basic Latin",0];
-names[36]=["DOLLAR SIGN","Basic Latin",0];
-names[37]=["PERCENT SIGN","Basic Latin",0];
-names[38]=["AMPERSAND","Basic Latin",0];
-names[39]=["APOSTROPHE","Basic Latin",0];
-names[40]=["LEFT PARENTHESIS","Basic Latin",0];
-names[41]=["RIGHT PARENTHESIS","Basic Latin",0];
-names[42]=["ASTERISK","Basic Latin",0];
-names[43]=["PLUS SIGN","Basic Latin",0];
-names[44]=["COMMA","Basic Latin",0];
-names[45]=["HYPHEN-MINUS","Basic Latin",0];
-names[46]=["FULL STOP","Basic Latin",0];
-names[47]=["SOLIDUS","Basic Latin",0];
-names[48]=["DIGIT ZERO","Basic Latin",0];
-names[49]=["DIGIT ONE","Basic Latin",0];
-names[50]=["DIGIT TWO","Basic Latin",0];
-names[51]=["DIGIT THREE","Basic Latin",0];
-names[52]=["DIGIT FOUR","Basic Latin",0];
-names[53]=["DIGIT FIVE","Basic Latin",0];
-names[54]=["DIGIT SIX","Basic Latin",0];
-names[55]=["DIGIT SEVEN","Basic Latin",0];
-names[56]=["DIGIT EIGHT","Basic Latin",0];
-names[57]=["DIGIT NINE","Basic Latin",0];
-names[58]=["COLON","Basic Latin",0];
-names[59]=["SEMICOLON","Basic Latin",0];
-names[60]=["LESS-THAN SIGN","Basic Latin",0];
-names[61]=["EQUALS SIGN","Basic Latin",0];
-names[62]=["GREATER-THAN SIGN","Basic Latin",0];
-names[63]=["QUESTION MARK","Basic Latin",0];
-names[64]=["COMMERCIAL AT","Basic Latin",0];
-names[65]=["LATIN CAPITAL LETTER A","Basic Latin",0];
-names[66]=["LATIN CAPITAL LETTER B","Basic Latin",0];
-names[67]=["LATIN CAPITAL LETTER C","Basic Latin",0];
-names[68]=["LATIN CAPITAL LETTER D","Basic Latin",0];
-names[69]=["LATIN CAPITAL LETTER E","Basic Latin",0];
-names[70]=["LATIN CAPITAL LETTER F","Basic Latin",0];
-names[71]=["LATIN CAPITAL LETTER G","Basic Latin",0];
-names[72]=["LATIN CAPITAL LETTER H","Basic Latin",0];
-names[73]=["LATIN CAPITAL LETTER I","Basic Latin",0];
-names[74]=["LATIN CAPITAL LETTER J","Basic Latin",0];
-names[75]=["LATIN CAPITAL LETTER K","Basic Latin",0];
-names[76]=["LATIN CAPITAL LETTER L","Basic Latin",0];
-names[77]=["LATIN CAPITAL LETTER M","Basic Latin",0];
-names[78]=["LATIN CAPITAL LETTER N","Basic Latin",0];
-names[79]=["LATIN CAPITAL LETTER O","Basic Latin",0];
-names[80]=["LATIN CAPITAL LETTER P","Basic Latin",0];
-names[81]=["LATIN CAPITAL LETTER Q","Basic Latin",0];
-names[82]=["LATIN CAPITAL LETTER R","Basic Latin",0];
-names[83]=["LATIN CAPITAL LETTER S","Basic Latin",0];
-names[84]=["LATIN CAPITAL LETTER T","Basic Latin",0];
-names[85]=["LATIN CAPITAL LETTER U","Basic Latin",0];
-names[86]=["LATIN CAPITAL LETTER V","Basic Latin",0];
-names[87]=["LATIN CAPITAL LETTER W","Basic Latin",0];
-names[88]=["LATIN CAPITAL LETTER X","Basic Latin",0];
-names[89]=["LATIN CAPITAL LETTER Y","Basic Latin",0];
-names[90]=["LATIN CAPITAL LETTER Z","Basic Latin",0];
-names[91]=["LEFT SQUARE BRACKET","Basic Latin",0];
-names[92]=["REVERSE SOLIDUS","Basic Latin",0];
-names[93]=["RIGHT SQUARE BRACKET","Basic Latin",0];
-names[94]=["CIRCUMFLEX ACCENT","Basic Latin",0];
-names[95]=["LOW LINE","Basic Latin",0];
-names[96]=["GRAVE ACCENT","Basic Latin",0];
-names[97]=["LATIN SMALL LETTER A","Basic Latin",0];
-names[98]=["LATIN SMALL LETTER B","Basic Latin",0];
-names[99]=["LATIN SMALL LETTER C","Basic Latin",0];
-names[100]=["LATIN SMALL LETTER D","Basic Latin",0];
-names[101]=["LATIN SMALL LETTER E","Basic Latin",0];
-names[102]=["LATIN SMALL LETTER F","Basic Latin",0];
-names[103]=["LATIN SMALL LETTER G","Basic Latin",0];
-names[104]=["LATIN SMALL LETTER H","Basic Latin",0];
-names[105]=["LATIN SMALL LETTER I","Basic Latin",0];
-names[106]=["LATIN SMALL LETTER J","Basic Latin",0];
-names[107]=["LATIN SMALL LETTER K","Basic Latin",0];
-names[108]=["LATIN SMALL LETTER L","Basic Latin",0];
-names[109]=["LATIN SMALL LETTER M","Basic Latin",0];
-names[110]=["LATIN SMALL LETTER N","Basic Latin",0];
-names[111]=["LATIN SMALL LETTER O","Basic Latin",0];
-names[112]=["LATIN SMALL LETTER P","Basic Latin",0];
-names[113]=["LATIN SMALL LETTER Q","Basic Latin",0];
-names[114]=["LATIN SMALL LETTER R","Basic Latin",0];
-names[115]=["LATIN SMALL LETTER S","Basic Latin",0];
-names[116]=["LATIN SMALL LETTER T","Basic Latin",0];
-names[117]=["LATIN SMALL LETTER U","Basic Latin",0];
-names[118]=["LATIN SMALL LETTER V","Basic Latin",0];
-names[119]=["LATIN SMALL LETTER W","Basic Latin",0];
-names[120]=["LATIN SMALL LETTER X","Basic Latin",0];
-names[121]=["LATIN SMALL LETTER Y","Basic Latin",0];
-names[122]=["LATIN SMALL LETTER Z","Basic Latin",0];
-names[123]=["LEFT CURLY BRACKET","Basic Latin",0];
-names[124]=["VERTICAL LINE","Basic Latin",0];
-names[125]=["RIGHT CURLY BRACKET","Basic Latin",0];
-names[126]=["TILDE","Basic Latin",0];
-names[2304]=["DEVANAGARI SIGN INVERTED CANDRABINDU","Devanagari"];
-names[2305]=["DEVANAGARI SIGN CANDRABINDU","Devanagari"];
-names[2306]=["DEVANAGARI SIGN ANUSVARA","Devanagari"];
-names[2307]=["DEVANAGARI SIGN VISARGA","Devanagari"];
-names[2308]=["DEVANAGARI LETTER SHORT A","Devanagari"];
-names[2309]=["DEVANAGARI LETTER A","Devanagari"];
-names[2310]=["DEVANAGARI LETTER AA","Devanagari"];
-names[2311]=["DEVANAGARI LETTER I","Devanagari"];
-names[2312]=["DEVANAGARI LETTER II","Devanagari"];
-names[2313]=["DEVANAGARI LETTER U","Devanagari"];
-names[2314]=["DEVANAGARI LETTER UU","Devanagari"];
-names[2315]=["DEVANAGARI LETTER VOCALIC R","Devanagari"];
-names[2316]=["DEVANAGARI LETTER VOCALIC L","Devanagari"];
-names[2317]=["DEVANAGARI LETTER CANDRA E","Devanagari"];
-names[2318]=["DEVANAGARI LETTER SHORT E","Devanagari"];
-names[2319]=["DEVANAGARI LETTER E","Devanagari"];
-names[2320]=["DEVANAGARI LETTER AI","Devanagari"];
-names[2321]=["DEVANAGARI LETTER CANDRA O","Devanagari"];
-names[2322]=["DEVANAGARI LETTER SHORT O","Devanagari"];
-names[2323]=["DEVANAGARI LETTER O","Devanagari"];
-names[2324]=["DEVANAGARI LETTER AU","Devanagari"];
-names[2325]=["DEVANAGARI LETTER KA","Devanagari"];
-names[2326]=["DEVANAGARI LETTER KHA","Devanagari"];
-names[2327]=["DEVANAGARI LETTER GA","Devanagari"];
-names[2328]=["DEVANAGARI LETTER GHA","Devanagari"];
-names[2329]=["DEVANAGARI LETTER NGA","Devanagari"];
-names[2330]=["DEVANAGARI LETTER CA","Devanagari"];
-names[2331]=["DEVANAGARI LETTER CHA","Devanagari"];
-names[2332]=["DEVANAGARI LETTER JA","Devanagari"];
-names[2333]=["DEVANAGARI LETTER JHA","Devanagari"];
-names[2334]=["DEVANAGARI LETTER NYA","Devanagari"];
-names[2335]=["DEVANAGARI LETTER TTA","Devanagari"];
-names[2336]=["DEVANAGARI LETTER TTHA","Devanagari"];
-names[2337]=["DEVANAGARI LETTER DDA","Devanagari"];
-names[2338]=["DEVANAGARI LETTER DDHA","Devanagari"];
-names[2339]=["DEVANAGARI LETTER NNA","Devanagari"];
-names[2340]=["DEVANAGARI LETTER TA","Devanagari"];
-names[2341]=["DEVANAGARI LETTER THA","Devanagari"];
-names[2342]=["DEVANAGARI LETTER DA","Devanagari"];
-names[2343]=["DEVANAGARI LETTER DHA","Devanagari"];
-names[2344]=["DEVANAGARI LETTER NA","Devanagari"];
-names[2345]=["DEVANAGARI LETTER NNNA","Devanagari"];
-names[2346]=["DEVANAGARI LETTER PA","Devanagari"];
-names[2347]=["DEVANAGARI LETTER PHA","Devanagari"];
-names[2348]=["DEVANAGARI LETTER BA","Devanagari"];
-names[2349]=["DEVANAGARI LETTER BHA","Devanagari"];
-names[2350]=["DEVANAGARI LETTER MA","Devanagari"];
-names[2351]=["DEVANAGARI LETTER YA","Devanagari"];
-names[2352]=["DEVANAGARI LETTER RA","Devanagari"];
-names[2353]=["DEVANAGARI LETTER RRA","Devanagari"];
-names[2354]=["DEVANAGARI LETTER LA","Devanagari"];
-names[2355]=["DEVANAGARI LETTER LLA","Devanagari"];
-names[2356]=["DEVANAGARI LETTER LLLA","Devanagari"];
-names[2357]=["DEVANAGARI LETTER VA","Devanagari"];
-names[2358]=["DEVANAGARI LETTER SHA","Devanagari"];
-names[2359]=["DEVANAGARI LETTER SSA","Devanagari"];
-names[2360]=["DEVANAGARI LETTER SA","Devanagari"];
-names[2361]=["DEVANAGARI LETTER HA","Devanagari"];
-names[2362]=["DEVANAGARI VOWEL SIGN OE","Devanagari"];
-names[2363]=["DEVANAGARI VOWEL SIGN OOE","Devanagari"];
-names[2364]=["DEVANAGARI SIGN NUKTA","Devanagari"];
-names[2365]=["DEVANAGARI SIGN AVAGRAHA","Devanagari"];
-names[2366]=["DEVANAGARI VOWEL SIGN AA","Devanagari"];
-names[2367]=["DEVANAGARI VOWEL SIGN I","Devanagari"];
-names[2368]=["DEVANAGARI VOWEL SIGN II","Devanagari"];
-names[2369]=["DEVANAGARI VOWEL SIGN U","Devanagari"];
-names[2370]=["DEVANAGARI VOWEL SIGN UU","Devanagari"];
-names[2371]=["DEVANAGARI VOWEL SIGN VOCALIC R","Devanagari"];
-names[2372]=["DEVANAGARI VOWEL SIGN VOCALIC RR","Devanagari"];
-names[2373]=["DEVANAGARI VOWEL SIGN CANDRA E","Devanagari"];
-names[2374]=["DEVANAGARI VOWEL SIGN SHORT E","Devanagari"];
-names[2375]=["DEVANAGARI VOWEL SIGN E","Devanagari"];
-names[2376]=["DEVANAGARI VOWEL SIGN AI","Devanagari"];
-names[2377]=["DEVANAGARI VOWEL SIGN CANDRA O","Devanagari"];
-names[2378]=["DEVANAGARI VOWEL SIGN SHORT O","Devanagari"];
-names[2379]=["DEVANAGARI VOWEL SIGN O","Devanagari"];
-names[2380]=["DEVANAGARI VOWEL SIGN AU","Devanagari"];
-names[2381]=["DEVANAGARI SIGN VIRAMA","Devanagari"];
-names[2382]=["DEVANAGARI VOWEL SIGN PRISHTHAMATRA E","Devanagari"];
-names[2383]=["DEVANAGARI VOWEL SIGN AW","Devanagari"];
-names[2384]=["DEVANAGARI OM","Devanagari"];
-names[2385]=["DEVANAGARI STRESS SIGN UDATTA","Devanagari"];
-names[2386]=["DEVANAGARI STRESS SIGN ANUDATTA","Devanagari"];
-names[2387]=["DEVANAGARI GRAVE ACCENT","Devanagari"];
-names[2388]=["DEVANAGARI ACUTE ACCENT","Devanagari"];
-names[2389]=["DEVANAGARI VOWEL SIGN CANDRA LONG E","Devanagari"];
-names[2390]=["DEVANAGARI VOWEL SIGN UE","Devanagari"];
-names[2391]=["DEVANAGARI VOWEL SIGN UUE","Devanagari"];
-names[2400]=["DEVANAGARI LETTER VOCALIC RR","Devanagari"];
-names[2401]=["DEVANAGARI LETTER VOCALIC LL","Devanagari"];
-names[2402]=["DEVANAGARI VOWEL SIGN VOCALIC L","Devanagari"];
-names[2403]=["DEVANAGARI VOWEL SIGN VOCALIC LL","Devanagari"];
-names[2404]=["DEVANAGARI DANDA","Devanagari"];
-names[2405]=["DEVANAGARI DOUBLE DANDA","Devanagari"];
-names[2406]=["DEVANAGARI DIGIT ZERO","Devanagari"];
-names[2407]=["DEVANAGARI DIGIT ONE","Devanagari"];
-names[2408]=["DEVANAGARI DIGIT TWO","Devanagari"];
-names[2409]=["DEVANAGARI DIGIT THREE","Devanagari"];
-names[2410]=["DEVANAGARI DIGIT FOUR","Devanagari"];
-names[2411]=["DEVANAGARI DIGIT FIVE","Devanagari"];
-names[2412]=["DEVANAGARI DIGIT SIX","Devanagari"];
-names[2413]=["DEVANAGARI DIGIT SEVEN","Devanagari"];
-names[2414]=["DEVANAGARI DIGIT EIGHT","Devanagari"];
-names[2415]=["DEVANAGARI DIGIT NINE","Devanagari"];
-names[2416]=["DEVANAGARI ABBREVIATION SIGN","Devanagari"];
-names[2417]=["DEVANAGARI SIGN HIGH SPACING DOT","Devanagari"];
-names[2418]=["DEVANAGARI LETTER CANDRA A","Devanagari"];
-names[2419]=["DEVANAGARI LETTER OE","Devanagari"];
-names[2420]=["DEVANAGARI LETTER OOE","Devanagari"];
-names[2421]=["DEVANAGARI LETTER AW","Devanagari"];
-names[2422]=["DEVANAGARI LETTER UE","Devanagari"];
-names[2423]=["DEVANAGARI LETTER UUE","Devanagari"];
-names[2424]=["DEVANAGARI LETTER MARWARI DDA","Devanagari"];
-names[2425]=["DEVANAGARI LETTER ZHA","Devanagari"];
-names[2426]=["DEVANAGARI LETTER HEAVY YA","Devanagari"];
-names[2427]=["DEVANAGARI LETTER GGA","Devanagari"];
-names[2428]=["DEVANAGARI LETTER JJA","Devanagari"];
-names[2429]=["DEVANAGARI LETTER GLOTTAL STOP","Devanagari"];
-names[2430]=["DEVANAGARI LETTER DDDA","Devanagari"];
-names[2431]=["DEVANAGARI LETTER BBA","Devanagari"];
-names[43232]=["COMBINING DEVANAGARI DIGIT ZERO","Devanagari Extended"];
-names[43233]=["COMBINING DEVANAGARI DIGIT ONE","Devanagari Extended"];
-names[43234]=["COMBINING DEVANAGARI DIGIT TWO","Devanagari Extended"];
-names[43235]=["COMBINING DEVANAGARI DIGIT THREE","Devanagari Extended"];
-names[43236]=["COMBINING DEVANAGARI DIGIT FOUR","Devanagari Extended"];
-names[43237]=["COMBINING DEVANAGARI DIGIT FIVE","Devanagari Extended"];
-names[43238]=["COMBINING DEVANAGARI DIGIT SIX","Devanagari Extended"];
-names[43239]=["COMBINING DEVANAGARI DIGIT SEVEN","Devanagari Extended"];
-names[43240]=["COMBINING DEVANAGARI DIGIT EIGHT","Devanagari Extended"];
-names[43241]=["COMBINING DEVANAGARI DIGIT NINE","Devanagari Extended"];
-names[43242]=["COMBINING DEVANAGARI LETTER A","Devanagari Extended"];
-names[43243]=["COMBINING DEVANAGARI LETTER U","Devanagari Extended"];
-names[43244]=["COMBINING DEVANAGARI LETTER KA","Devanagari Extended"];
-names[43245]=["COMBINING DEVANAGARI LETTER NA","Devanagari Extended"];
-names[43246]=["COMBINING DEVANAGARI LETTER PA","Devanagari Extended"];
-names[43247]=["COMBINING DEVANAGARI LETTER RA","Devanagari Extended"];
-names[43248]=["COMBINING DEVANAGARI LETTER VI","Devanagari Extended"];
-names[43249]=["COMBINING DEVANAGARI SIGN AVAGRAHA","Devanagari Extended"];
-names[43250]=["DEVANAGARI SIGN SPACING CANDRABINDU","Devanagari Extended"];
-names[43251]=["DEVANAGARI SIGN CANDRABINDU VIRAMA","Devanagari Extended"];
-names[43252]=["DEVANAGARI SIGN DOUBLE CANDRABINDU VIRAMA","Devanagari Extended"];
-names[43253]=["DEVANAGARI SIGN CANDRABINDU TWO","Devanagari Extended"];
-names[43254]=["DEVANAGARI SIGN CANDRABINDU THREE","Devanagari Extended"];
-names[43255]=["DEVANAGARI SIGN CANDRABINDU AVAGRAHA","Devanagari Extended"];
-names[43256]=["DEVANAGARI SIGN PUSHPIKA","Devanagari Extended"];
-names[43257]=["DEVANAGARI GAP FILLER","Devanagari Extended"];
-names[43258]=["DEVANAGARI CARET","Devanagari Extended"];
-names[43259]=["DEVANAGARI HEADSTROKE","Devanagari Extended"];
-names[8204]=["ZERO WIDTH NON-JOINER","General Punctuation",0];
-names[8205]=["ZERO WIDTH JOINER","General Punctuation",0];
+var charData = {
+"\0020":{n:"SPACE",m:0,g:"Basic Latin"},
+"\00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
+"\200C":{n:"ZERO WIDTH NON-JOINER",m:0,g:"General Punctuation"},
+"\200D":{n:"ZERO WIDTH JOINER",m:0,g:"General Punctuation"},
+"\200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
+
+"\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
+"\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
+"\u0023":{n:"NUMBER SIGN",m:0,g:"Basic Latin"},
+"\u0024":{n:"DOLLAR SIGN",m:0,g:"Basic Latin"},
+"\u0025":{n:"PERCENT SIGN",m:0,g:"Basic Latin"},
+"\u0026":{n:"AMPERSAND",m:0,g:"Basic Latin"},
+"\u0027":{n:"APOSTROPHE",m:0,g:"Basic Latin"},
+"\u0028":{n:"LEFT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u0029":{n:"RIGHT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u002A":{n:"ASTERISK",m:0,g:"Basic Latin"},
+"\u002B":{n:"PLUS SIGN",m:0,g:"Basic Latin"},
+"\u002C":{n:"COMMA",m:0,g:"Basic Latin"},
+"\u002D":{n:"HYPHEN-MINUS",m:0,g:"Basic Latin"},
+"\u002E":{n:"FULL STOP",m:0,g:"Basic Latin"},
+"\u002F":{n:"SOLIDUS",m:0,g:"Basic Latin"},
+"\u0030":{n:"DIGIT ZERO",m:0,g:"Basic Latin"},
+"\u0031":{n:"DIGIT ONE",m:0,g:"Basic Latin"},
+"\u0032":{n:"DIGIT TWO",m:0,g:"Basic Latin"},
+"\u0033":{n:"DIGIT THREE",m:0,g:"Basic Latin"},
+"\u0034":{n:"DIGIT FOUR",m:0,g:"Basic Latin"},
+"\u0035":{n:"DIGIT FIVE",m:0,g:"Basic Latin"},
+"\u0036":{n:"DIGIT SIX",m:0,g:"Basic Latin"},
+"\u0037":{n:"DIGIT SEVEN",m:0,g:"Basic Latin"},
+"\u0038":{n:"DIGIT EIGHT",m:0,g:"Basic Latin"},
+"\u0039":{n:"DIGIT NINE",m:0,g:"Basic Latin"},
+"\u003A":{n:"COLON",m:0,g:"Basic Latin"},
+"\u003B":{n:"SEMICOLON",m:0,g:"Basic Latin"},
+"\u003C":{n:"LESS-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003D":{n:"EQUALS SIGN",m:0,g:"Basic Latin"},
+"\u003E":{n:"GREATER-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003F":{n:"QUESTION MARK",m:0,g:"Basic Latin"},
+"\u0040":{n:"COMMERCIAL AT",m:0,g:"Basic Latin"},
+"\u0041":{n:"LATIN CAPITAL LETTER A",m:0,g:"Basic Latin"},
+"\u0042":{n:"LATIN CAPITAL LETTER B",m:0,g:"Basic Latin"},
+"\u0043":{n:"LATIN CAPITAL LETTER C",m:0,g:"Basic Latin"},
+"\u0044":{n:"LATIN CAPITAL LETTER D",m:0,g:"Basic Latin"},
+"\u0045":{n:"LATIN CAPITAL LETTER E",m:0,g:"Basic Latin"},
+"\u0046":{n:"LATIN CAPITAL LETTER F",m:0,g:"Basic Latin"},
+"\u0047":{n:"LATIN CAPITAL LETTER G",m:0,g:"Basic Latin"},
+"\u0048":{n:"LATIN CAPITAL LETTER H",m:0,g:"Basic Latin"},
+"\u0049":{n:"LATIN CAPITAL LETTER I",m:0,g:"Basic Latin"},
+"\u004A":{n:"LATIN CAPITAL LETTER J",m:0,g:"Basic Latin"},
+"\u004B":{n:"LATIN CAPITAL LETTER K",m:0,g:"Basic Latin"},
+"\u004C":{n:"LATIN CAPITAL LETTER L",m:0,g:"Basic Latin"},
+"\u004D":{n:"LATIN CAPITAL LETTER M",m:0,g:"Basic Latin"},
+"\u004E":{n:"LATIN CAPITAL LETTER N",m:0,g:"Basic Latin"},
+"\u004F":{n:"LATIN CAPITAL LETTER O",m:0,g:"Basic Latin"},
+"\u0050":{n:"LATIN CAPITAL LETTER P",m:0,g:"Basic Latin"},
+"\u0051":{n:"LATIN CAPITAL LETTER Q",m:0,g:"Basic Latin"},
+"\u0052":{n:"LATIN CAPITAL LETTER R",m:0,g:"Basic Latin"},
+"\u0053":{n:"LATIN CAPITAL LETTER S",m:0,g:"Basic Latin"},
+"\u0054":{n:"LATIN CAPITAL LETTER T",m:0,g:"Basic Latin"},
+"\u0055":{n:"LATIN CAPITAL LETTER U",m:0,g:"Basic Latin"},
+"\u0056":{n:"LATIN CAPITAL LETTER V",m:0,g:"Basic Latin"},
+"\u0057":{n:"LATIN CAPITAL LETTER W",m:0,g:"Basic Latin"},
+"\u0058":{n:"LATIN CAPITAL LETTER X",m:0,g:"Basic Latin"},
+"\u0059":{n:"LATIN CAPITAL LETTER Y",m:0,g:"Basic Latin"},
+"\u005A":{n:"LATIN CAPITAL LETTER Z",m:0,g:"Basic Latin"},
+"\u005B":{n:"LEFT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005C":{n:"REVERSE SOLIDUS",m:0,g:"Basic Latin"},
+"\u005D":{n:"RIGHT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005E":{n:"CIRCUMFLEX ACCENT",m:0,g:"Basic Latin"},
+"\u005F":{n:"LOW LINE",m:0,g:"Basic Latin"},
+"\u0060":{n:"GRAVE ACCENT",m:0,g:"Basic Latin"},
+"\u0061":{n:"LATIN SMALL LETTER A",m:0,g:"Basic Latin"},
+"\u0062":{n:"LATIN SMALL LETTER B",m:0,g:"Basic Latin"},
+"\u0063":{n:"LATIN SMALL LETTER C",m:0,g:"Basic Latin"},
+"\u0064":{n:"LATIN SMALL LETTER D",m:0,g:"Basic Latin"},
+"\u0065":{n:"LATIN SMALL LETTER E",m:0,g:"Basic Latin"},
+"\u0066":{n:"LATIN SMALL LETTER F",m:0,g:"Basic Latin"},
+"\u0067":{n:"LATIN SMALL LETTER G",m:0,g:"Basic Latin"},
+"\u0068":{n:"LATIN SMALL LETTER H",m:0,g:"Basic Latin"},
+"\u0069":{n:"LATIN SMALL LETTER I",m:0,g:"Basic Latin"},
+"\u006A":{n:"LATIN SMALL LETTER J",m:0,g:"Basic Latin"},
+"\u006B":{n:"LATIN SMALL LETTER K",m:0,g:"Basic Latin"},
+"\u006C":{n:"LATIN SMALL LETTER L",m:0,g:"Basic Latin"},
+"\u006D":{n:"LATIN SMALL LETTER M",m:0,g:"Basic Latin"},
+"\u006E":{n:"LATIN SMALL LETTER N",m:0,g:"Basic Latin"},
+"\u006F":{n:"LATIN SMALL LETTER O",m:0,g:"Basic Latin"},
+"\u0070":{n:"LATIN SMALL LETTER P",m:0,g:"Basic Latin"},
+"\u0071":{n:"LATIN SMALL LETTER Q",m:0,g:"Basic Latin"},
+"\u0072":{n:"LATIN SMALL LETTER R",m:0,g:"Basic Latin"},
+"\u0073":{n:"LATIN SMALL LETTER S",m:0,g:"Basic Latin"},
+"\u0074":{n:"LATIN SMALL LETTER T",m:0,g:"Basic Latin"},
+"\u0075":{n:"LATIN SMALL LETTER U",m:0,g:"Basic Latin"},
+"\u0076":{n:"LATIN SMALL LETTER V",m:0,g:"Basic Latin"},
+"\u0077":{n:"LATIN SMALL LETTER W",m:0,g:"Basic Latin"},
+"\u0078":{n:"LATIN SMALL LETTER X",m:0,g:"Basic Latin"},
+"\u0079":{n:"LATIN SMALL LETTER Y",m:0,g:"Basic Latin"},
+"\u007A":{n:"LATIN SMALL LETTER Z",m:0,g:"Basic Latin"},
+"\u007B":{n:"LEFT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007C":{n:"VERTICAL LINE",m:0,g:"Basic Latin"},
+"\u007D":{n:"RIGHT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007E":{n:"TILDE",m:0,g:"Basic Latin"},
+
+"\u0900":{n:"DEVANAGARI SIGN INVERTED CANDRABINDU",m:1,g:"Devanagari" },
+"\u0901":{n:"DEVANAGARI SIGN CANDRABINDU",m:1,g:"Devanagari" },
+"\u0902":{n:"DEVANAGARI SIGN ANUSVARA",m:1,g:"Devanagari" },
+"\u0903":{n:"DEVANAGARI SIGN VISARGA",m:1,g:"Devanagari" },
+"\u0904":{n:"DEVANAGARI LETTER SHORT A",m:0,g:"Devanagari" },
+"\u0905":{n:"DEVANAGARI LETTER A",m:0,g:"Devanagari" },
+"\u0906":{n:"DEVANAGARI LETTER AA",m:0,g:"Devanagari" },
+"\u0907":{n:"DEVANAGARI LETTER I",m:0,g:"Devanagari" },
+"\u0908":{n:"DEVANAGARI LETTER II",m:0,g:"Devanagari" },
+"\u0909":{n:"DEVANAGARI LETTER U",m:0,g:"Devanagari" },
+"\u090A":{n:"DEVANAGARI LETTER UU",m:0,g:"Devanagari" },
+"\u090B":{n:"DEVANAGARI LETTER VOCALIC R",m:0,g:"Devanagari" },
+"\u090C":{n:"DEVANAGARI LETTER VOCALIC L",m:0,g:"Devanagari" },
+"\u090D":{n:"DEVANAGARI LETTER CANDRA E",m:0,g:"Devanagari" },
+"\u090E":{n:"DEVANAGARI LETTER SHORT E",m:0,g:"Devanagari" },
+"\u090F":{n:"DEVANAGARI LETTER E",m:0,g:"Devanagari" },
+"\u0910":{n:"DEVANAGARI LETTER AI",m:0,g:"Devanagari" },
+"\u0911":{n:"DEVANAGARI LETTER CANDRA O",m:0,g:"Devanagari" },
+"\u0912":{n:"DEVANAGARI LETTER SHORT O",m:0,g:"Devanagari" },
+"\u0913":{n:"DEVANAGARI LETTER O",m:0,g:"Devanagari" },
+"\u0914":{n:"DEVANAGARI LETTER AU",m:0,g:"Devanagari" },
+"\u0915":{n:"DEVANAGARI LETTER KA",m:0,g:"Devanagari" },
+"\u0916":{n:"DEVANAGARI LETTER KHA",m:0,g:"Devanagari" },
+"\u0917":{n:"DEVANAGARI LETTER GA",m:0,g:"Devanagari" },
+"\u0918":{n:"DEVANAGARI LETTER GHA",m:0,g:"Devanagari" },
+"\u0919":{n:"DEVANAGARI LETTER NGA",m:0,g:"Devanagari" },
+"\u091A":{n:"DEVANAGARI LETTER CA",m:0,g:"Devanagari" },
+"\u091B":{n:"DEVANAGARI LETTER CHA",m:0,g:"Devanagari" },
+"\u091C":{n:"DEVANAGARI LETTER JA",m:0,g:"Devanagari" },
+"\u091D":{n:"DEVANAGARI LETTER JHA",m:0,g:"Devanagari" },
+"\u091E":{n:"DEVANAGARI LETTER NYA",m:0,g:"Devanagari" },
+"\u091F":{n:"DEVANAGARI LETTER TTA",m:0,g:"Devanagari" },
+"\u0920":{n:"DEVANAGARI LETTER TTHA",m:0,g:"Devanagari" },
+"\u0921":{n:"DEVANAGARI LETTER DDA",m:0,g:"Devanagari" },
+"\u0922":{n:"DEVANAGARI LETTER DDHA",m:0,g:"Devanagari" },
+"\u0923":{n:"DEVANAGARI LETTER NNA",m:0,g:"Devanagari" },
+"\u0924":{n:"DEVANAGARI LETTER TA",m:0,g:"Devanagari" },
+"\u0925":{n:"DEVANAGARI LETTER THA",m:0,g:"Devanagari" },
+"\u0926":{n:"DEVANAGARI LETTER DA",m:0,g:"Devanagari" },
+"\u0927":{n:"DEVANAGARI LETTER DHA",m:0,g:"Devanagari" },
+"\u0928":{n:"DEVANAGARI LETTER NA",m:0,g:"Devanagari" },
+"\u0929":{n:"DEVANAGARI LETTER NNNA",m:0,g:"Devanagari" },
+"\u092A":{n:"DEVANAGARI LETTER PA",m:0,g:"Devanagari" },
+"\u092B":{n:"DEVANAGARI LETTER PHA",m:0,g:"Devanagari" },
+"\u092C":{n:"DEVANAGARI LETTER BA",m:0,g:"Devanagari" },
+"\u092D":{n:"DEVANAGARI LETTER BHA",m:0,g:"Devanagari" },
+"\u092E":{n:"DEVANAGARI LETTER MA",m:0,g:"Devanagari" },
+"\u092F":{n:"DEVANAGARI LETTER YA",m:0,g:"Devanagari" },
+"\u0930":{n:"DEVANAGARI LETTER RA",m:0,g:"Devanagari" },
+"\u0931":{n:"DEVANAGARI LETTER RRA",m:0,g:"Devanagari" },
+"\u0932":{n:"DEVANAGARI LETTER LA",m:0,g:"Devanagari" },
+"\u0933":{n:"DEVANAGARI LETTER LLA",m:0,g:"Devanagari" },
+"\u0934":{n:"DEVANAGARI LETTER LLLA",m:0,g:"Devanagari" },
+"\u0935":{n:"DEVANAGARI LETTER VA",m:0,g:"Devanagari" },
+"\u0936":{n:"DEVANAGARI LETTER SHA",m:0,g:"Devanagari" },
+"\u0937":{n:"DEVANAGARI LETTER SSA",m:0,g:"Devanagari" },
+"\u0938":{n:"DEVANAGARI LETTER SA",m:0,g:"Devanagari" },
+"\u0939":{n:"DEVANAGARI LETTER HA",m:0,g:"Devanagari" },
+"\u093A":{n:"DEVANAGARI VOWEL SIGN OE",m:1,g:"Devanagari" },
+"\u093B":{n:"DEVANAGARI VOWEL SIGN OOE",m:1,g:"Devanagari" },
+"\u093C":{n:"DEVANAGARI SIGN NUKTA",m:1,g:"Devanagari" },
+"\u093D":{n:"DEVANAGARI SIGN AVAGRAHA",m:0,g:"Devanagari" },
+"\u093E":{n:"DEVANAGARI VOWEL SIGN AA",m:1,g:"Devanagari" },
+"\u093F":{n:"DEVANAGARI VOWEL SIGN I",m:1,g:"Devanagari" },
+"\u0940":{n:"DEVANAGARI VOWEL SIGN II",m:1,g:"Devanagari" },
+"\u0941":{n:"DEVANAGARI VOWEL SIGN U",m:1,g:"Devanagari" },
+"\u0942":{n:"DEVANAGARI VOWEL SIGN UU",m:1,g:"Devanagari" },
+"\u0943":{n:"DEVANAGARI VOWEL SIGN VOCALIC R",m:1,g:"Devanagari" },
+"\u0944":{n:"DEVANAGARI VOWEL SIGN VOCALIC RR",m:1,g:"Devanagari" },
+"\u0945":{n:"DEVANAGARI VOWEL SIGN CANDRA E",m:1,g:"Devanagari" },
+"\u0946":{n:"DEVANAGARI VOWEL SIGN SHORT E",m:1,g:"Devanagari" },
+"\u0947":{n:"DEVANAGARI VOWEL SIGN E",m:1,g:"Devanagari" },
+"\u0948":{n:"DEVANAGARI VOWEL SIGN AI",m:1,g:"Devanagari" },
+"\u0949":{n:"DEVANAGARI VOWEL SIGN CANDRA O",m:1,g:"Devanagari" },
+"\u094A":{n:"DEVANAGARI VOWEL SIGN SHORT O",m:1,g:"Devanagari" },
+"\u094B":{n:"DEVANAGARI VOWEL SIGN O",m:1,g:"Devanagari" },
+"\u094C":{n:"DEVANAGARI VOWEL SIGN AU",m:1,g:"Devanagari" },
+"\u094D":{n:"DEVANAGARI SIGN VIRAMA",m:1,g:"Devanagari" },
+"\u094E":{n:"DEVANAGARI VOWEL SIGN PRISHTHAMATRA E",m:1,g:"Devanagari" },
+"\u094F":{n:"DEVANAGARI VOWEL SIGN AW",m:1,g:"Devanagari" },
+"\u0950":{n:"DEVANAGARI OM",m:0,g:"Devanagari" },
+"\u0951":{n:"DEVANAGARI STRESS SIGN UDATTA",m:1,g:"Devanagari" },
+"\u0952":{n:"DEVANAGARI STRESS SIGN ANUDATTA",m:1,g:"Devanagari" },
+"\u0953":{n:"DEVANAGARI GRAVE ACCENT",m:1,g:"Devanagari" },
+"\u0954":{n:"DEVANAGARI ACUTE ACCENT",m:1,g:"Devanagari" },
+"\u0955":{n:"DEVANAGARI VOWEL SIGN CANDRA LONG E",m:1,g:"Devanagari" },
+"\u0956":{n:"DEVANAGARI VOWEL SIGN UE",m:1,g:"Devanagari" },
+"\u0957":{n:"DEVANAGARI VOWEL SIGN UUE",m:1,g:"Devanagari" },
+"\u0958":{n:"DEVANAGARI LETTER QA",m:0,g:"Devanagari" },
+"\u0959":{n:"DEVANAGARI LETTER KHHA",m:0,g:"Devanagari" },
+"\u095A":{n:"DEVANAGARI LETTER GHHA",m:0,g:"Devanagari" },
+"\u095B":{n:"DEVANAGARI LETTER ZA",m:0,g:"Devanagari" },
+"\u095C":{n:"DEVANAGARI LETTER DDDHA",m:0,g:"Devanagari" },
+"\u095D":{n:"DEVANAGARI LETTER RHA",m:0,g:"Devanagari" },
+"\u095E":{n:"DEVANAGARI LETTER FA",m:0,g:"Devanagari" },
+"\u095F":{n:"DEVANAGARI LETTER YYA",m:0,g:"Devanagari" },
+"\u0960":{n:"DEVANAGARI LETTER VOCALIC RR",m:0,g:"Devanagari" },
+"\u0961":{n:"DEVANAGARI LETTER VOCALIC LL",m:0,g:"Devanagari" },
+"\u0962":{n:"DEVANAGARI VOWEL SIGN VOCALIC L",m:1,g:"Devanagari" },
+"\u0963":{n:"DEVANAGARI VOWEL SIGN VOCALIC LL",m:1,g:"Devanagari" },
+"\u0964":{n:"DEVANAGARI DANDA",m:0,g:"Devanagari" },
+"\u0965":{n:"DEVANAGARI DOUBLE DANDA",m:0,g:"Devanagari" },
+"\u0966":{n:"DEVANAGARI DIGIT ZERO",m:0,g:"Devanagari" },
+"\u0967":{n:"DEVANAGARI DIGIT ONE",m:0,g:"Devanagari" },
+"\u0968":{n:"DEVANAGARI DIGIT TWO",m:0,g:"Devanagari" },
+"\u0969":{n:"DEVANAGARI DIGIT THREE",m:0,g:"Devanagari" },
+"\u096A":{n:"DEVANAGARI DIGIT FOUR",m:0,g:"Devanagari" },
+"\u096B":{n:"DEVANAGARI DIGIT FIVE",m:0,g:"Devanagari" },
+"\u096C":{n:"DEVANAGARI DIGIT SIX",m:0,g:"Devanagari" },
+"\u096D":{n:"DEVANAGARI DIGIT SEVEN",m:0,g:"Devanagari" },
+"\u096E":{n:"DEVANAGARI DIGIT EIGHT",m:0,g:"Devanagari" },
+"\u096F":{n:"DEVANAGARI DIGIT NINE",m:0,g:"Devanagari" },
+"\u0970":{n:"DEVANAGARI ABBREVIATION SIGN",m:0,g:"Devanagari" },
+"\u0971":{n:"DEVANAGARI SIGN HIGH SPACING DOT",m:0,g:"Devanagari" },
+"\u0972":{n:"DEVANAGARI LETTER CANDRA A",m:0,g:"Devanagari" },
+"\u0973":{n:"DEVANAGARI LETTER OE",m:0,g:"Devanagari" },
+"\u0974":{n:"DEVANAGARI LETTER OOE",m:0,g:"Devanagari" },
+"\u0975":{n:"DEVANAGARI LETTER AW",m:0,g:"Devanagari" },
+"\u0976":{n:"DEVANAGARI LETTER UE",m:0,g:"Devanagari" },
+"\u0977":{n:"DEVANAGARI LETTER UUE",m:0,g:"Devanagari" },
+"\u0978":{n:"DEVANAGARI LETTER MARWARI DDA",m:0,g:"Devanagari" },
+"\u0979":{n:"DEVANAGARI LETTER ZHA",m:0,g:"Devanagari" },
+"\u097A":{n:"DEVANAGARI LETTER HEAVY YA",m:0,g:"Devanagari" },
+"\u097B":{n:"DEVANAGARI LETTER GGA",m:0,g:"Devanagari" },
+"\u097C":{n:"DEVANAGARI LETTER JJA",m:0,g:"Devanagari" },
+"\u097D":{n:"DEVANAGARI LETTER GLOTTAL STOP",m:0,g:"Devanagari" },
+"\u097E":{n:"DEVANAGARI LETTER DDDA",m:0,g:"Devanagari" },
+"\u097F":{n:"DEVANAGARI LETTER BBA",m:0,g:"Devanagari" },
+
+"\uA8E0":{n:"COMBINING DEVANAGARI DIGIT ZERO",m:1,g:"Devanagari Extended" },
+"\uA8E1":{n:"COMBINING DEVANAGARI DIGIT ONE",m:1,g:"Devanagari Extended" },
+"\uA8E2":{n:"COMBINING DEVANAGARI DIGIT TWO",m:1,g:"Devanagari Extended" },
+"\uA8E3":{n:"COMBINING DEVANAGARI DIGIT THREE",m:1,g:"Devanagari Extended" },
+"\uA8E4":{n:"COMBINING DEVANAGARI DIGIT FOUR",m:1,g:"Devanagari Extended" },
+"\uA8E5":{n:"COMBINING DEVANAGARI DIGIT FIVE",m:1,g:"Devanagari Extended" },
+"\uA8E6":{n:"COMBINING DEVANAGARI DIGIT SIX",m:1,g:"Devanagari Extended" },
+"\uA8E7":{n:"COMBINING DEVANAGARI DIGIT SEVEN",m:1,g:"Devanagari Extended" },
+"\uA8E8":{n:"COMBINING DEVANAGARI DIGIT EIGHT",m:1,g:"Devanagari Extended" },
+"\uA8E9":{n:"COMBINING DEVANAGARI DIGIT NINE",m:1,g:"Devanagari Extended" },
+"\uA8EA":{n:"COMBINING DEVANAGARI LETTER A",m:1,g:"Devanagari Extended" },
+"\uA8EB":{n:"COMBINING DEVANAGARI LETTER U",m:1,g:"Devanagari Extended" },
+"\uA8EC":{n:"COMBINING DEVANAGARI LETTER KA",m:1,g:"Devanagari Extended" },
+"\uA8ED":{n:"COMBINING DEVANAGARI LETTER NA",m:1,g:"Devanagari Extended" },
+"\uA8EE":{n:"COMBINING DEVANAGARI LETTER PA",m:1,g:"Devanagari Extended" },
+"\uA8EF":{n:"COMBINING DEVANAGARI LETTER RA",m:1,g:"Devanagari Extended" },
+"\uA8F0":{n:"COMBINING DEVANAGARI LETTER VI",m:1,g:"Devanagari Extended" },
+"\uA8F1":{n:"COMBINING DEVANAGARI SIGN AVAGRAHA",m:1,g:"Devanagari Extended" },
+"\uA8F2":{n:"DEVANAGARI SIGN SPACING CANDRABINDU",m:0,g:"Devanagari Extended" },
+"\uA8F3":{n:"DEVANAGARI SIGN CANDRABINDU VIRAMA",m:0,g:"Devanagari Extended" },
+"\uA8F4":{n:"DEVANAGARI SIGN DOUBLE CANDRABINDU VIRAMA",m:0,g:"Devanagari Extended" },
+"\uA8F5":{n:"DEVANAGARI SIGN CANDRABINDU TWO",m:0,g:"Devanagari Extended" },
+"\uA8F6":{n:"DEVANAGARI SIGN CANDRABINDU THREE",m:0,g:"Devanagari Extended" },
+"\uA8F7":{n:"DEVANAGARI SIGN CANDRABINDU AVAGRAHA",m:0,g:"Devanagari Extended" },
+"\uA8F8":{n:"DEVANAGARI SIGN PUSHPIKA",m:0,g:"Devanagari Extended" },
+"\uA8F9":{n:"DEVANAGARI GAP FILLER",m:0,g:"Devanagari Extended" },
+"\uA8FA":{n:"DEVANAGARI CARET",m:0,g:"Devanagari Extended" },
+"\uA8FB":{n:"DEVANAGARI HEADSTROKE",m:0,g:"Devanagari Extended" },
+
+"\u20B9":{n:"INDIAN RUPEE SIGN",m:0,g:"Currency Symbols" },
+
+"\u0915\u093C":{n:"DEVANAGARI LETTER KA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u0916\u093C":{n:"DEVANAGARI LETTER KHA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u0917\u093C":{n:"DEVANAGARI LETTER GA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u0921\u093C":{n:"DEVANAGARI LETTER DDA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u0922\u093C":{n:"DEVANAGARI LETTER DDHA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u092F\u093C":{n:"DEVANAGARI LETTER YA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u092B\u093C":{n:"DEVANAGARI LETTER PHA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u091C\u093C":{n:"DEVANAGARI LETTER JA, DEVANAGARI SIGN NUKTA",m:0,g:"Devanagari" },
+"\u0930\u094D\u200D":{n:"DEVANAGARI LETTER RA, DEVANAGARI SIGN VIRAMA, ZERO WIDTH JOINER",m:0,g:"Devanagari" },
+
+end: {}
+}

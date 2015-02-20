@@ -1,142 +1,244 @@
-var names = new Array();
-names[32]=["SPACE","Basic Latin"];
-names[40]=["LEFT PARENTHESIS","Basic Latin"];
-names[41]=["RIGHT PARENTHESIS","Basic Latin"];
-names[45]=["HYPHEN-MINUS","Basic Latin"];
-names[46]=["FULL STOP","Basic Latin"];
-names[59]=["SEMICOLON","Basic Latin"];
-names[95]=["LOW LINE","Basic Latin"];
-names[183]=["MIDDLE DOT","Latin-1 Supplement"];
-names[697]=["MODIFIER LETTER PRIME","Spacing Modifier Letters"];
-names[880]=["GREEK CAPITAL LETTER HETA","Greek and Coptic"];
-names[881]=["GREEK SMALL LETTER HETA","Greek and Coptic"];
-names[882]=["GREEK CAPITAL LETTER ARCHAIC SAMPI","Greek and Coptic"];
-names[883]=["GREEK SMALL LETTER ARCHAIC SAMPI","Greek and Coptic"];
-names[885]=["GREEK LOWER NUMERAL SIGN","Greek and Coptic"];
-names[886]=["GREEK CAPITAL LETTER PAMPHYLIAN DIGAMMA","Greek and Coptic"];
-names[887]=["GREEK SMALL LETTER PAMPHYLIAN DIGAMMA","Greek and Coptic"];
-names[890]=["GREEK YPOGEGRAMMENI","Greek and Coptic"];
-names[891]=["GREEK SMALL REVERSED LUNATE SIGMA SYMBOL","Greek and Coptic"];
-names[892]=["GREEK SMALL DOTTED LUNATE SIGMA SYMBOL","Greek and Coptic"];
-names[893]=["GREEK SMALL REVERSED DOTTED LUNATE SIGMA SYMBOL","Greek and Coptic"];
-names[895]=["GREEK CAPITAL LETTER YOT","Greek and Coptic"];
-names[900]=["GREEK TONOS","Greek and Coptic"];
-names[901]=["GREEK DIALYTIKA TONOS","Greek and Coptic"];
-names[902]=["GREEK CAPITAL LETTER ALPHA WITH TONOS","Greek and Coptic"];
-names[904]=["GREEK CAPITAL LETTER EPSILON WITH TONOS","Greek and Coptic"];
-names[905]=["GREEK CAPITAL LETTER ETA WITH TONOS","Greek and Coptic"];
-names[906]=["GREEK CAPITAL LETTER IOTA WITH TONOS","Greek and Coptic"];
-names[908]=["GREEK CAPITAL LETTER OMICRON WITH TONOS","Greek and Coptic"];
-names[910]=["GREEK CAPITAL LETTER UPSILON WITH TONOS","Greek and Coptic"];
-names[911]=["GREEK CAPITAL LETTER OMEGA WITH TONOS","Greek and Coptic"];
-names[912]=["GREEK SMALL LETTER IOTA WITH DIALYTIKA AND TONOS","Greek and Coptic"];
-names[913]=["GREEK CAPITAL LETTER ALPHA","Greek and Coptic"];
-names[914]=["GREEK CAPITAL LETTER BETA","Greek and Coptic"];
-names[915]=["GREEK CAPITAL LETTER GAMMA","Greek and Coptic"];
-names[916]=["GREEK CAPITAL LETTER DELTA","Greek and Coptic"];
-names[917]=["GREEK CAPITAL LETTER EPSILON","Greek and Coptic"];
-names[918]=["GREEK CAPITAL LETTER ZETA","Greek and Coptic"];
-names[919]=["GREEK CAPITAL LETTER ETA","Greek and Coptic"];
-names[920]=["GREEK CAPITAL LETTER THETA","Greek and Coptic"];
-names[921]=["GREEK CAPITAL LETTER IOTA","Greek and Coptic"];
-names[922]=["GREEK CAPITAL LETTER KAPPA","Greek and Coptic"];
-names[923]=["GREEK CAPITAL LETTER LAMDA","Greek and Coptic"];
-names[924]=["GREEK CAPITAL LETTER MU","Greek and Coptic"];
-names[925]=["GREEK CAPITAL LETTER NU","Greek and Coptic"];
-names[926]=["GREEK CAPITAL LETTER XI","Greek and Coptic"];
-names[927]=["GREEK CAPITAL LETTER OMICRON","Greek and Coptic"];
-names[928]=["GREEK CAPITAL LETTER PI","Greek and Coptic"];
-names[929]=["GREEK CAPITAL LETTER RHO","Greek and Coptic"];
-names[931]=["GREEK CAPITAL LETTER SIGMA","Greek and Coptic"];
-names[932]=["GREEK CAPITAL LETTER TAU","Greek and Coptic"];
-names[933]=["GREEK CAPITAL LETTER UPSILON","Greek and Coptic"];
-names[934]=["GREEK CAPITAL LETTER PHI","Greek and Coptic"];
-names[935]=["GREEK CAPITAL LETTER CHI","Greek and Coptic"];
-names[936]=["GREEK CAPITAL LETTER PSI","Greek and Coptic"];
-names[937]=["GREEK CAPITAL LETTER OMEGA","Greek and Coptic"];
-names[938]=["GREEK CAPITAL LETTER IOTA WITH DIALYTIKA","Greek and Coptic"];
-names[939]=["GREEK CAPITAL LETTER UPSILON WITH DIALYTIKA","Greek and Coptic"];
-names[940]=["GREEK SMALL LETTER ALPHA WITH TONOS","Greek and Coptic"];
-names[941]=["GREEK SMALL LETTER EPSILON WITH TONOS","Greek and Coptic"];
-names[942]=["GREEK SMALL LETTER ETA WITH TONOS","Greek and Coptic"];
-names[943]=["GREEK SMALL LETTER IOTA WITH TONOS","Greek and Coptic"];
-names[944]=["GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND TONOS","Greek and Coptic"];
-names[945]=["GREEK SMALL LETTER ALPHA","Greek and Coptic"];
-names[946]=["GREEK SMALL LETTER BETA","Greek and Coptic"];
-names[947]=["GREEK SMALL LETTER GAMMA","Greek and Coptic"];
-names[948]=["GREEK SMALL LETTER DELTA","Greek and Coptic"];
-names[949]=["GREEK SMALL LETTER EPSILON","Greek and Coptic"];
-names[950]=["GREEK SMALL LETTER ZETA","Greek and Coptic"];
-names[951]=["GREEK SMALL LETTER ETA","Greek and Coptic"];
-names[952]=["GREEK SMALL LETTER THETA","Greek and Coptic"];
-names[953]=["GREEK SMALL LETTER IOTA","Greek and Coptic"];
-names[954]=["GREEK SMALL LETTER KAPPA","Greek and Coptic"];
-names[955]=["GREEK SMALL LETTER LAMDA","Greek and Coptic"];
-names[956]=["GREEK SMALL LETTER MU","Greek and Coptic"];
-names[957]=["GREEK SMALL LETTER NU","Greek and Coptic"];
-names[958]=["GREEK SMALL LETTER XI","Greek and Coptic"];
-names[959]=["GREEK SMALL LETTER OMICRON","Greek and Coptic"];
-names[960]=["GREEK SMALL LETTER PI","Greek and Coptic"];
-names[961]=["GREEK SMALL LETTER RHO","Greek and Coptic"];
-names[962]=["GREEK SMALL LETTER FINAL SIGMA","Greek and Coptic"];
-names[963]=["GREEK SMALL LETTER SIGMA","Greek and Coptic"];
-names[964]=["GREEK SMALL LETTER TAU","Greek and Coptic"];
-names[965]=["GREEK SMALL LETTER UPSILON","Greek and Coptic"];
-names[966]=["GREEK SMALL LETTER PHI","Greek and Coptic"];
-names[967]=["GREEK SMALL LETTER CHI","Greek and Coptic"];
-names[968]=["GREEK SMALL LETTER PSI","Greek and Coptic"];
-names[969]=["GREEK SMALL LETTER OMEGA","Greek and Coptic"];
-names[970]=["GREEK SMALL LETTER IOTA WITH DIALYTIKA","Greek and Coptic"];
-names[971]=["GREEK SMALL LETTER UPSILON WITH DIALYTIKA","Greek and Coptic"];
-names[972]=["GREEK SMALL LETTER OMICRON WITH TONOS","Greek and Coptic"];
-names[973]=["GREEK SMALL LETTER UPSILON WITH TONOS","Greek and Coptic"];
-names[974]=["GREEK SMALL LETTER OMEGA WITH TONOS","Greek and Coptic"];
-names[975]=["GREEK CAPITAL KAI SYMBOL","Greek and Coptic"];
-names[976]=["GREEK BETA SYMBOL","Greek and Coptic"];
-names[977]=["GREEK THETA SYMBOL","Greek and Coptic"];
-names[978]=["GREEK UPSILON WITH HOOK SYMBOL","Greek and Coptic"];
-names[979]=["GREEK UPSILON WITH ACUTE AND HOOK SYMBOL","Greek and Coptic"];
-names[980]=["GREEK UPSILON WITH DIAERESIS AND HOOK SYMBOL","Greek and Coptic"];
-names[981]=["GREEK PHI SYMBOL","Greek and Coptic"];
-names[982]=["GREEK PI SYMBOL","Greek and Coptic"];
-names[983]=["GREEK KAI SYMBOL","Greek and Coptic"];
-names[984]=["GREEK LETTER ARCHAIC KOPPA","Greek and Coptic"];
-names[985]=["GREEK SMALL LETTER ARCHAIC KOPPA","Greek and Coptic"];
-names[986]=["GREEK LETTER STIGMA","Greek and Coptic"];
-names[987]=["GREEK SMALL LETTER STIGMA","Greek and Coptic"];
-names[988]=["GREEK LETTER DIGAMMA","Greek and Coptic"];
-names[989]=["GREEK SMALL LETTER DIGAMMA","Greek and Coptic"];
-names[990]=["GREEK LETTER KOPPA","Greek and Coptic"];
-names[991]=["GREEK SMALL LETTER KOPPA","Greek and Coptic"];
-names[992]=["GREEK LETTER SAMPI","Greek and Coptic"];
-names[993]=["GREEK SMALL LETTER SAMPI","Greek and Coptic"];
-names[994]=["COPTIC CAPITAL LETTER SHEI","Greek and Coptic"];
-names[995]=["COPTIC SMALL LETTER SHEI","Greek and Coptic"];
-names[996]=["COPTIC CAPITAL LETTER FEI","Greek and Coptic"];
-names[997]=["COPTIC SMALL LETTER FEI","Greek and Coptic"];
-names[998]=["COPTIC CAPITAL LETTER KHEI","Greek and Coptic"];
-names[999]=["COPTIC SMALL LETTER KHEI","Greek and Coptic"];
-names[1000]=["COPTIC CAPITAL LETTER HORI","Greek and Coptic"];
-names[1001]=["COPTIC SMALL LETTER HORI","Greek and Coptic"];
-names[1002]=["COPTIC CAPITAL LETTER GANGIA","Greek and Coptic"];
-names[1003]=["COPTIC SMALL LETTER GANGIA","Greek and Coptic"];
-names[1004]=["COPTIC CAPITAL LETTER SHIMA","Greek and Coptic"];
-names[1005]=["COPTIC SMALL LETTER SHIMA","Greek and Coptic"];
-names[1006]=["COPTIC CAPITAL LETTER DEI","Greek and Coptic"];
-names[1007]=["COPTIC SMALL LETTER DEI","Greek and Coptic"];
-names[1008]=["GREEK KAPPA SYMBOL","Greek and Coptic"];
-names[1009]=["GREEK RHO SYMBOL","Greek and Coptic"];
-names[1010]=["GREEK LUNATE SIGMA SYMBOL","Greek and Coptic"];
-names[1011]=["GREEK LETTER YOT","Greek and Coptic"];
-names[1012]=["GREEK CAPITAL THETA SYMBOL","Greek and Coptic"];
-names[1013]=["GREEK LUNATE EPSILON SYMBOL","Greek and Coptic"];
-names[1014]=["GREEK REVERSED LUNATE EPSILON SYMBOL","Greek and Coptic"];
-names[1015]=["GREEK CAPITAL LETTER SHO","Greek and Coptic"];
-names[1016]=["GREEK SMALL LETTER SHO","Greek and Coptic"];
-names[1017]=["GREEK CAPITAL LUNATE SIGMA SYMBOL","Greek and Coptic"];
-names[1018]=["GREEK CAPITAL LETTER SAN","Greek and Coptic"];
-names[1019]=["GREEK SMALL LETTER SAN","Greek and Coptic"];
-names[1020]=["GREEK RHO WITH STROKE SYMBOL","Greek and Coptic"];
-names[1021]=["GREEK CAPITAL REVERSED LUNATE SIGMA SYMBOL","Greek and Coptic"];
-names[1022]=["GREEK CAPITAL DOTTED LUNATE SIGMA SYMBOL","Greek and Coptic"];
-names[1023]=["GREEK CAPITAL REVERSED DOTTED LUNATE SIGMA SYMBOL","Greek and Coptic"];
+var charData = {
+"\0020":{n:"SPACE",m:0,g:"Basic Latin"},
+"\00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
+"\200C":{n:"ZERO WIDTH NON-JOINER",m:0,g:"General Punctuation"},
+"\200D":{n:"ZERO WIDTH JOINER",m:0,g:"General Punctuation"},
+"\200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
+
+"\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
+"\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
+"\u0023":{n:"NUMBER SIGN",m:0,g:"Basic Latin"},
+"\u0024":{n:"DOLLAR SIGN",m:0,g:"Basic Latin"},
+"\u0025":{n:"PERCENT SIGN",m:0,g:"Basic Latin"},
+"\u0026":{n:"AMPERSAND",m:0,g:"Basic Latin"},
+"\u0027":{n:"APOSTROPHE",m:0,g:"Basic Latin"},
+"\u0028":{n:"LEFT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u0029":{n:"RIGHT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u002A":{n:"ASTERISK",m:0,g:"Basic Latin"},
+"\u002B":{n:"PLUS SIGN",m:0,g:"Basic Latin"},
+"\u002C":{n:"COMMA",m:0,g:"Basic Latin"},
+"\u002D":{n:"HYPHEN-MINUS",m:0,g:"Basic Latin"},
+"\u002E":{n:"FULL STOP",m:0,g:"Basic Latin"},
+"\u002F":{n:"SOLIDUS",m:0,g:"Basic Latin"},
+"\u0030":{n:"DIGIT ZERO",m:0,g:"Basic Latin"},
+"\u0031":{n:"DIGIT ONE",m:0,g:"Basic Latin"},
+"\u0032":{n:"DIGIT TWO",m:0,g:"Basic Latin"},
+"\u0033":{n:"DIGIT THREE",m:0,g:"Basic Latin"},
+"\u0034":{n:"DIGIT FOUR",m:0,g:"Basic Latin"},
+"\u0035":{n:"DIGIT FIVE",m:0,g:"Basic Latin"},
+"\u0036":{n:"DIGIT SIX",m:0,g:"Basic Latin"},
+"\u0037":{n:"DIGIT SEVEN",m:0,g:"Basic Latin"},
+"\u0038":{n:"DIGIT EIGHT",m:0,g:"Basic Latin"},
+"\u0039":{n:"DIGIT NINE",m:0,g:"Basic Latin"},
+"\u003A":{n:"COLON",m:0,g:"Basic Latin"},
+"\u003B":{n:"SEMICOLON",m:0,g:"Basic Latin"},
+"\u003C":{n:"LESS-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003D":{n:"EQUALS SIGN",m:0,g:"Basic Latin"},
+"\u003E":{n:"GREATER-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003F":{n:"QUESTION MARK",m:0,g:"Basic Latin"},
+"\u0040":{n:"COMMERCIAL AT",m:0,g:"Basic Latin"},
+"\u0041":{n:"LATIN CAPITAL LETTER A",m:0,g:"Basic Latin"},
+"\u0042":{n:"LATIN CAPITAL LETTER B",m:0,g:"Basic Latin"},
+"\u0043":{n:"LATIN CAPITAL LETTER C",m:0,g:"Basic Latin"},
+"\u0044":{n:"LATIN CAPITAL LETTER D",m:0,g:"Basic Latin"},
+"\u0045":{n:"LATIN CAPITAL LETTER E",m:0,g:"Basic Latin"},
+"\u0046":{n:"LATIN CAPITAL LETTER F",m:0,g:"Basic Latin"},
+"\u0047":{n:"LATIN CAPITAL LETTER G",m:0,g:"Basic Latin"},
+"\u0048":{n:"LATIN CAPITAL LETTER H",m:0,g:"Basic Latin"},
+"\u0049":{n:"LATIN CAPITAL LETTER I",m:0,g:"Basic Latin"},
+"\u004A":{n:"LATIN CAPITAL LETTER J",m:0,g:"Basic Latin"},
+"\u004B":{n:"LATIN CAPITAL LETTER K",m:0,g:"Basic Latin"},
+"\u004C":{n:"LATIN CAPITAL LETTER L",m:0,g:"Basic Latin"},
+"\u004D":{n:"LATIN CAPITAL LETTER M",m:0,g:"Basic Latin"},
+"\u004E":{n:"LATIN CAPITAL LETTER N",m:0,g:"Basic Latin"},
+"\u004F":{n:"LATIN CAPITAL LETTER O",m:0,g:"Basic Latin"},
+"\u0050":{n:"LATIN CAPITAL LETTER P",m:0,g:"Basic Latin"},
+"\u0051":{n:"LATIN CAPITAL LETTER Q",m:0,g:"Basic Latin"},
+"\u0052":{n:"LATIN CAPITAL LETTER R",m:0,g:"Basic Latin"},
+"\u0053":{n:"LATIN CAPITAL LETTER S",m:0,g:"Basic Latin"},
+"\u0054":{n:"LATIN CAPITAL LETTER T",m:0,g:"Basic Latin"},
+"\u0055":{n:"LATIN CAPITAL LETTER U",m:0,g:"Basic Latin"},
+"\u0056":{n:"LATIN CAPITAL LETTER V",m:0,g:"Basic Latin"},
+"\u0057":{n:"LATIN CAPITAL LETTER W",m:0,g:"Basic Latin"},
+"\u0058":{n:"LATIN CAPITAL LETTER X",m:0,g:"Basic Latin"},
+"\u0059":{n:"LATIN CAPITAL LETTER Y",m:0,g:"Basic Latin"},
+"\u005A":{n:"LATIN CAPITAL LETTER Z",m:0,g:"Basic Latin"},
+"\u005B":{n:"LEFT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005C":{n:"REVERSE SOLIDUS",m:0,g:"Basic Latin"},
+"\u005D":{n:"RIGHT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005E":{n:"CIRCUMFLEX ACCENT",m:0,g:"Basic Latin"},
+"\u005F":{n:"LOW LINE",m:0,g:"Basic Latin"},
+"\u0060":{n:"GRAVE ACCENT",m:0,g:"Basic Latin"},
+"\u0061":{n:"LATIN SMALL LETTER A",m:0,g:"Basic Latin"},
+"\u0062":{n:"LATIN SMALL LETTER B",m:0,g:"Basic Latin"},
+"\u0063":{n:"LATIN SMALL LETTER C",m:0,g:"Basic Latin"},
+"\u0064":{n:"LATIN SMALL LETTER D",m:0,g:"Basic Latin"},
+"\u0065":{n:"LATIN SMALL LETTER E",m:0,g:"Basic Latin"},
+"\u0066":{n:"LATIN SMALL LETTER F",m:0,g:"Basic Latin"},
+"\u0067":{n:"LATIN SMALL LETTER G",m:0,g:"Basic Latin"},
+"\u0068":{n:"LATIN SMALL LETTER H",m:0,g:"Basic Latin"},
+"\u0069":{n:"LATIN SMALL LETTER I",m:0,g:"Basic Latin"},
+"\u006A":{n:"LATIN SMALL LETTER J",m:0,g:"Basic Latin"},
+"\u006B":{n:"LATIN SMALL LETTER K",m:0,g:"Basic Latin"},
+"\u006C":{n:"LATIN SMALL LETTER L",m:0,g:"Basic Latin"},
+"\u006D":{n:"LATIN SMALL LETTER M",m:0,g:"Basic Latin"},
+"\u006E":{n:"LATIN SMALL LETTER N",m:0,g:"Basic Latin"},
+"\u006F":{n:"LATIN SMALL LETTER O",m:0,g:"Basic Latin"},
+"\u0070":{n:"LATIN SMALL LETTER P",m:0,g:"Basic Latin"},
+"\u0071":{n:"LATIN SMALL LETTER Q",m:0,g:"Basic Latin"},
+"\u0072":{n:"LATIN SMALL LETTER R",m:0,g:"Basic Latin"},
+"\u0073":{n:"LATIN SMALL LETTER S",m:0,g:"Basic Latin"},
+"\u0074":{n:"LATIN SMALL LETTER T",m:0,g:"Basic Latin"},
+"\u0075":{n:"LATIN SMALL LETTER U",m:0,g:"Basic Latin"},
+"\u0076":{n:"LATIN SMALL LETTER V",m:0,g:"Basic Latin"},
+"\u0077":{n:"LATIN SMALL LETTER W",m:0,g:"Basic Latin"},
+"\u0078":{n:"LATIN SMALL LETTER X",m:0,g:"Basic Latin"},
+"\u0079":{n:"LATIN SMALL LETTER Y",m:0,g:"Basic Latin"},
+"\u007A":{n:"LATIN SMALL LETTER Z",m:0,g:"Basic Latin"},
+"\u007B":{n:"LEFT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007C":{n:"VERTICAL LINE",m:0,g:"Basic Latin"},
+"\u007D":{n:"RIGHT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007E":{n:"TILDE",m:0,g:"Basic Latin"},
+
+"\u00B7":{n:"MIDDLE DOT",m:0,g:"Latin-1 Supplement"},
+"\u02B9":{n:"MODIFIER LETTER PRIME",m:0,g:"Spacing Modifier Letters"},
+
+
+"\u0370":{n:"GREEK CAPITAL LETTER HETA",m:0,g:"Greek and Coptic"},
+"\u0371":{n:"GREEK SMALL LETTER HETA",m:0,g:"Greek and Coptic"},
+"\u0372":{n:"GREEK CAPITAL LETTER ARCHAIC SAMPI",m:0,g:"Greek and Coptic"},
+"\u0373":{n:"GREEK SMALL LETTER ARCHAIC SAMPI",m:0,g:"Greek and Coptic"},
+"\u0374":{n:"GREEK NUMERAL SIGN",m:0,g:"Greek and Coptic"},
+"\u0375":{n:"GREEK LOWER NUMERAL SIGN",m:0,g:"Greek and Coptic"},
+"\u0376":{n:"GREEK CAPITAL LETTER PAMPHYLIAN DIGAMMA",m:0,g:"Greek and Coptic"},
+"\u0377":{n:"GREEK SMALL LETTER PAMPHYLIAN DIGAMMA",m:0,g:"Greek and Coptic"},
+"\u037A":{n:"GREEK YPOGEGRAMMENI",m:0,g:"Greek and Coptic"},
+"\u037B":{n:"GREEK SMALL REVERSED LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u037C":{n:"GREEK SMALL DOTTED LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u037D":{n:"GREEK SMALL REVERSED DOTTED LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u037E":{n:"GREEK QUESTION MARK",m:0,g:"Greek and Coptic"},
+"\u037F":{n:"GREEK CAPITAL LETTER YOT",m:0,g:"Greek and Coptic"},
+"\u0384":{n:"GREEK TONOS",m:0,g:"Greek and Coptic"},
+"\u0385":{n:"GREEK DIALYTIKA TONOS",m:0,g:"Greek and Coptic"},
+"\u0386":{n:"GREEK CAPITAL LETTER ALPHA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u0387":{n:"GREEK ANO TELEIA",m:0,g:"Greek and Coptic"},
+"\u0388":{n:"GREEK CAPITAL LETTER EPSILON WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u0389":{n:"GREEK CAPITAL LETTER ETA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u038A":{n:"GREEK CAPITAL LETTER IOTA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u038C":{n:"GREEK CAPITAL LETTER OMICRON WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u038E":{n:"GREEK CAPITAL LETTER UPSILON WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u038F":{n:"GREEK CAPITAL LETTER OMEGA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u0390":{n:"GREEK SMALL LETTER IOTA WITH DIALYTIKA AND TONOS",m:0,g:"Greek and Coptic"},
+"\u0391":{n:"GREEK CAPITAL LETTER ALPHA",m:0,g:"Greek and Coptic"},
+"\u0392":{n:"GREEK CAPITAL LETTER BETA",m:0,g:"Greek and Coptic"},
+"\u0393":{n:"GREEK CAPITAL LETTER GAMMA",m:0,g:"Greek and Coptic"},
+"\u0394":{n:"GREEK CAPITAL LETTER DELTA",m:0,g:"Greek and Coptic"},
+"\u0395":{n:"GREEK CAPITAL LETTER EPSILON",m:0,g:"Greek and Coptic"},
+"\u0396":{n:"GREEK CAPITAL LETTER ZETA",m:0,g:"Greek and Coptic"},
+"\u0397":{n:"GREEK CAPITAL LETTER ETA",m:0,g:"Greek and Coptic"},
+"\u0398":{n:"GREEK CAPITAL LETTER THETA",m:0,g:"Greek and Coptic"},
+"\u0399":{n:"GREEK CAPITAL LETTER IOTA",m:0,g:"Greek and Coptic"},
+"\u039A":{n:"GREEK CAPITAL LETTER KAPPA",m:0,g:"Greek and Coptic"},
+"\u039B":{n:"GREEK CAPITAL LETTER LAMDA",m:0,g:"Greek and Coptic"},
+"\u039C":{n:"GREEK CAPITAL LETTER MU",m:0,g:"Greek and Coptic"},
+"\u039D":{n:"GREEK CAPITAL LETTER NU",m:0,g:"Greek and Coptic"},
+"\u039E":{n:"GREEK CAPITAL LETTER XI",m:0,g:"Greek and Coptic"},
+"\u039F":{n:"GREEK CAPITAL LETTER OMICRON",m:0,g:"Greek and Coptic"},
+"\u03A0":{n:"GREEK CAPITAL LETTER PI",m:0,g:"Greek and Coptic"},
+"\u03A1":{n:"GREEK CAPITAL LETTER RHO",m:0,g:"Greek and Coptic"},
+"\u03A3":{n:"GREEK CAPITAL LETTER SIGMA",m:0,g:"Greek and Coptic"},
+"\u03A4":{n:"GREEK CAPITAL LETTER TAU",m:0,g:"Greek and Coptic"},
+"\u03A5":{n:"GREEK CAPITAL LETTER UPSILON",m:0,g:"Greek and Coptic"},
+"\u03A6":{n:"GREEK CAPITAL LETTER PHI",m:0,g:"Greek and Coptic"},
+"\u03A7":{n:"GREEK CAPITAL LETTER CHI",m:0,g:"Greek and Coptic"},
+"\u03A8":{n:"GREEK CAPITAL LETTER PSI",m:0,g:"Greek and Coptic"},
+"\u03A9":{n:"GREEK CAPITAL LETTER OMEGA",m:0,g:"Greek and Coptic"},
+"\u03AA":{n:"GREEK CAPITAL LETTER IOTA WITH DIALYTIKA",m:0,g:"Greek and Coptic"},
+"\u03AB":{n:"GREEK CAPITAL LETTER UPSILON WITH DIALYTIKA",m:0,g:"Greek and Coptic"},
+"\u03AC":{n:"GREEK SMALL LETTER ALPHA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u03AD":{n:"GREEK SMALL LETTER EPSILON WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u03AE":{n:"GREEK SMALL LETTER ETA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u03AF":{n:"GREEK SMALL LETTER IOTA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u03B0":{n:"GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND TONOS",m:0,g:"Greek and Coptic"},
+"\u03B1":{n:"GREEK SMALL LETTER ALPHA",m:0,g:"Greek and Coptic"},
+"\u03B2":{n:"GREEK SMALL LETTER BETA",m:0,g:"Greek and Coptic"},
+"\u03B3":{n:"GREEK SMALL LETTER GAMMA",m:0,g:"Greek and Coptic"},
+"\u03B4":{n:"GREEK SMALL LETTER DELTA",m:0,g:"Greek and Coptic"},
+"\u03B5":{n:"GREEK SMALL LETTER EPSILON",m:0,g:"Greek and Coptic"},
+"\u03B6":{n:"GREEK SMALL LETTER ZETA",m:0,g:"Greek and Coptic"},
+"\u03B7":{n:"GREEK SMALL LETTER ETA",m:0,g:"Greek and Coptic"},
+"\u03B8":{n:"GREEK SMALL LETTER THETA",m:0,g:"Greek and Coptic"},
+"\u03B9":{n:"GREEK SMALL LETTER IOTA",m:0,g:"Greek and Coptic"},
+"\u03BA":{n:"GREEK SMALL LETTER KAPPA",m:0,g:"Greek and Coptic"},
+"\u03BB":{n:"GREEK SMALL LETTER LAMDA",m:0,g:"Greek and Coptic"},
+"\u03BC":{n:"GREEK SMALL LETTER MU",m:0,g:"Greek and Coptic"},
+"\u03BD":{n:"GREEK SMALL LETTER NU",m:0,g:"Greek and Coptic"},
+"\u03BE":{n:"GREEK SMALL LETTER XI",m:0,g:"Greek and Coptic"},
+"\u03BF":{n:"GREEK SMALL LETTER OMICRON",m:0,g:"Greek and Coptic"},
+"\u03C0":{n:"GREEK SMALL LETTER PI",m:0,g:"Greek and Coptic"},
+"\u03C1":{n:"GREEK SMALL LETTER RHO",m:0,g:"Greek and Coptic"},
+"\u03C2":{n:"GREEK SMALL LETTER FINAL SIGMA",m:0,g:"Greek and Coptic"},
+"\u03C3":{n:"GREEK SMALL LETTER SIGMA",m:0,g:"Greek and Coptic"},
+"\u03C4":{n:"GREEK SMALL LETTER TAU",m:0,g:"Greek and Coptic"},
+"\u03C5":{n:"GREEK SMALL LETTER UPSILON",m:0,g:"Greek and Coptic"},
+"\u03C6":{n:"GREEK SMALL LETTER PHI",m:0,g:"Greek and Coptic"},
+"\u03C7":{n:"GREEK SMALL LETTER CHI",m:0,g:"Greek and Coptic"},
+"\u03C8":{n:"GREEK SMALL LETTER PSI",m:0,g:"Greek and Coptic"},
+"\u03C9":{n:"GREEK SMALL LETTER OMEGA",m:0,g:"Greek and Coptic"},
+"\u03CA":{n:"GREEK SMALL LETTER IOTA WITH DIALYTIKA",m:0,g:"Greek and Coptic"},
+"\u03CB":{n:"GREEK SMALL LETTER UPSILON WITH DIALYTIKA",m:0,g:"Greek and Coptic"},
+"\u03CC":{n:"GREEK SMALL LETTER OMICRON WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u03CD":{n:"GREEK SMALL LETTER UPSILON WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u03CE":{n:"GREEK SMALL LETTER OMEGA WITH TONOS",m:0,g:"Greek and Coptic"},
+"\u03CF":{n:"GREEK CAPITAL KAI SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D0":{n:"GREEK BETA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D1":{n:"GREEK THETA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D2":{n:"GREEK UPSILON WITH HOOK SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D3":{n:"GREEK UPSILON WITH ACUTE AND HOOK SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D4":{n:"GREEK UPSILON WITH DIAERESIS AND HOOK SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D5":{n:"GREEK PHI SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D6":{n:"GREEK PI SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D7":{n:"GREEK KAI SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03D8":{n:"GREEK LETTER ARCHAIC KOPPA",m:0,g:"Greek and Coptic"},
+"\u03D9":{n:"GREEK SMALL LETTER ARCHAIC KOPPA",m:0,g:"Greek and Coptic"},
+"\u03DA":{n:"GREEK LETTER STIGMA",m:0,g:"Greek and Coptic"},
+"\u03DB":{n:"GREEK SMALL LETTER STIGMA",m:0,g:"Greek and Coptic"},
+"\u03DC":{n:"GREEK LETTER DIGAMMA",m:0,g:"Greek and Coptic"},
+"\u03DD":{n:"GREEK SMALL LETTER DIGAMMA",m:0,g:"Greek and Coptic"},
+"\u03DE":{n:"GREEK LETTER KOPPA",m:0,g:"Greek and Coptic"},
+"\u03DF":{n:"GREEK SMALL LETTER KOPPA",m:0,g:"Greek and Coptic"},
+"\u03E0":{n:"GREEK LETTER SAMPI",m:0,g:"Greek and Coptic"},
+"\u03E1":{n:"GREEK SMALL LETTER SAMPI",m:0,g:"Greek and Coptic"},
+"\u03E2":{n:"COPTIC CAPITAL LETTER SHEI",m:0,g:"Greek and Coptic"},
+"\u03E3":{n:"COPTIC SMALL LETTER SHEI",m:0,g:"Greek and Coptic"},
+"\u03E4":{n:"COPTIC CAPITAL LETTER FEI",m:0,g:"Greek and Coptic"},
+"\u03E5":{n:"COPTIC SMALL LETTER FEI",m:0,g:"Greek and Coptic"},
+"\u03E6":{n:"COPTIC CAPITAL LETTER KHEI",m:0,g:"Greek and Coptic"},
+"\u03E7":{n:"COPTIC SMALL LETTER KHEI",m:0,g:"Greek and Coptic"},
+"\u03E8":{n:"COPTIC CAPITAL LETTER HORI",m:0,g:"Greek and Coptic"},
+"\u03E9":{n:"COPTIC SMALL LETTER HORI",m:0,g:"Greek and Coptic"},
+"\u03EA":{n:"COPTIC CAPITAL LETTER GANGIA",m:0,g:"Greek and Coptic"},
+"\u03EB":{n:"COPTIC SMALL LETTER GANGIA",m:0,g:"Greek and Coptic"},
+"\u03EC":{n:"COPTIC CAPITAL LETTER SHIMA",m:0,g:"Greek and Coptic"},
+"\u03ED":{n:"COPTIC SMALL LETTER SHIMA",m:0,g:"Greek and Coptic"},
+"\u03EE":{n:"COPTIC CAPITAL LETTER DEI",m:0,g:"Greek and Coptic"},
+"\u03EF":{n:"COPTIC SMALL LETTER DEI",m:0,g:"Greek and Coptic"},
+"\u03F0":{n:"GREEK KAPPA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03F1":{n:"GREEK RHO SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03F2":{n:"GREEK LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03F3":{n:"GREEK LETTER YOT",m:0,g:"Greek and Coptic"},
+"\u03F4":{n:"GREEK CAPITAL THETA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03F5":{n:"GREEK LUNATE EPSILON SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03F6":{n:"GREEK REVERSED LUNATE EPSILON SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03F7":{n:"GREEK CAPITAL LETTER SHO",m:0,g:"Greek and Coptic"},
+"\u03F8":{n:"GREEK SMALL LETTER SHO",m:0,g:"Greek and Coptic"},
+"\u03F9":{n:"GREEK CAPITAL LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03FA":{n:"GREEK CAPITAL LETTER SAN",m:0,g:"Greek and Coptic"},
+"\u03FB":{n:"GREEK SMALL LETTER SAN",m:0,g:"Greek and Coptic"},
+"\u03FC":{n:"GREEK RHO WITH STROKE SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03FD":{n:"GREEK CAPITAL REVERSED LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03FE":{n:"GREEK CAPITAL DOTTED LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+"\u03FF":{n:"GREEK CAPITAL REVERSED DOTTED LUNATE SIGMA SYMBOL",m:0,g:"Greek and Coptic"},
+
+end: {}
+}

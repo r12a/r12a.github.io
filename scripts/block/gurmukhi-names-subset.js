@@ -1,181 +1,195 @@
-var names = new Array();
-names[32]=["SPACE","Basic Latin",0];
-names[160]=["NO-BREAK SPACE","Latin-1 Supplement",0];
-names[33]=["EXCLAMATION MARK","Basic Latin",0];
-names[34]=["QUOTATION MARK","Basic Latin",0];
-names[35]=["NUMBER SIGN","Basic Latin",0];
-names[36]=["DOLLAR SIGN","Basic Latin",0];
-names[37]=["PERCENT SIGN","Basic Latin",0];
-names[38]=["AMPERSAND","Basic Latin",0];
-names[39]=["APOSTROPHE","Basic Latin",0];
-names[40]=["LEFT PARENTHESIS","Basic Latin",0];
-names[41]=["RIGHT PARENTHESIS","Basic Latin",0];
-names[42]=["ASTERISK","Basic Latin",0];
-names[43]=["PLUS SIGN","Basic Latin",0];
-names[44]=["COMMA","Basic Latin",0];
-names[45]=["HYPHEN-MINUS","Basic Latin",0];
-names[46]=["FULL STOP","Basic Latin",0];
-names[47]=["SOLIDUS","Basic Latin",0];
-names[48]=["DIGIT ZERO","Basic Latin",0];
-names[49]=["DIGIT ONE","Basic Latin",0];
-names[50]=["DIGIT TWO","Basic Latin",0];
-names[51]=["DIGIT THREE","Basic Latin",0];
-names[52]=["DIGIT FOUR","Basic Latin",0];
-names[53]=["DIGIT FIVE","Basic Latin",0];
-names[54]=["DIGIT SIX","Basic Latin",0];
-names[55]=["DIGIT SEVEN","Basic Latin",0];
-names[56]=["DIGIT EIGHT","Basic Latin",0];
-names[57]=["DIGIT NINE","Basic Latin",0];
-names[58]=["COLON","Basic Latin",0];
-names[59]=["SEMICOLON","Basic Latin",0];
-names[60]=["LESS-THAN SIGN","Basic Latin",0];
-names[61]=["EQUALS SIGN","Basic Latin",0];
-names[62]=["GREATER-THAN SIGN","Basic Latin",0];
-names[63]=["QUESTION MARK","Basic Latin",0];
-names[64]=["COMMERCIAL AT","Basic Latin",0];
-names[65]=["LATIN CAPITAL LETTER A","Basic Latin",0];
-names[66]=["LATIN CAPITAL LETTER B","Basic Latin",0];
-names[67]=["LATIN CAPITAL LETTER C","Basic Latin",0];
-names[68]=["LATIN CAPITAL LETTER D","Basic Latin",0];
-names[69]=["LATIN CAPITAL LETTER E","Basic Latin",0];
-names[70]=["LATIN CAPITAL LETTER F","Basic Latin",0];
-names[71]=["LATIN CAPITAL LETTER G","Basic Latin",0];
-names[72]=["LATIN CAPITAL LETTER H","Basic Latin",0];
-names[73]=["LATIN CAPITAL LETTER I","Basic Latin",0];
-names[74]=["LATIN CAPITAL LETTER J","Basic Latin",0];
-names[75]=["LATIN CAPITAL LETTER K","Basic Latin",0];
-names[76]=["LATIN CAPITAL LETTER L","Basic Latin",0];
-names[77]=["LATIN CAPITAL LETTER M","Basic Latin",0];
-names[78]=["LATIN CAPITAL LETTER N","Basic Latin",0];
-names[79]=["LATIN CAPITAL LETTER O","Basic Latin",0];
-names[80]=["LATIN CAPITAL LETTER P","Basic Latin",0];
-names[81]=["LATIN CAPITAL LETTER Q","Basic Latin",0];
-names[82]=["LATIN CAPITAL LETTER R","Basic Latin",0];
-names[83]=["LATIN CAPITAL LETTER S","Basic Latin",0];
-names[84]=["LATIN CAPITAL LETTER T","Basic Latin",0];
-names[85]=["LATIN CAPITAL LETTER U","Basic Latin",0];
-names[86]=["LATIN CAPITAL LETTER V","Basic Latin",0];
-names[87]=["LATIN CAPITAL LETTER W","Basic Latin",0];
-names[88]=["LATIN CAPITAL LETTER X","Basic Latin",0];
-names[89]=["LATIN CAPITAL LETTER Y","Basic Latin",0];
-names[90]=["LATIN CAPITAL LETTER Z","Basic Latin",0];
-names[91]=["LEFT SQUARE BRACKET","Basic Latin",0];
-names[92]=["REVERSE SOLIDUS","Basic Latin",0];
-names[93]=["RIGHT SQUARE BRACKET","Basic Latin",0];
-names[94]=["CIRCUMFLEX ACCENT","Basic Latin",0];
-names[95]=["LOW LINE","Basic Latin",0];
-names[96]=["GRAVE ACCENT","Basic Latin",0];
-names[97]=["LATIN SMALL LETTER A","Basic Latin",0];
-names[98]=["LATIN SMALL LETTER B","Basic Latin",0];
-names[99]=["LATIN SMALL LETTER C","Basic Latin",0];
-names[100]=["LATIN SMALL LETTER D","Basic Latin",0];
-names[101]=["LATIN SMALL LETTER E","Basic Latin",0];
-names[102]=["LATIN SMALL LETTER F","Basic Latin",0];
-names[103]=["LATIN SMALL LETTER G","Basic Latin",0];
-names[104]=["LATIN SMALL LETTER H","Basic Latin",0];
-names[105]=["LATIN SMALL LETTER I","Basic Latin",0];
-names[106]=["LATIN SMALL LETTER J","Basic Latin",0];
-names[107]=["LATIN SMALL LETTER K","Basic Latin",0];
-names[108]=["LATIN SMALL LETTER L","Basic Latin",0];
-names[109]=["LATIN SMALL LETTER M","Basic Latin",0];
-names[110]=["LATIN SMALL LETTER N","Basic Latin",0];
-names[111]=["LATIN SMALL LETTER O","Basic Latin",0];
-names[112]=["LATIN SMALL LETTER P","Basic Latin",0];
-names[113]=["LATIN SMALL LETTER Q","Basic Latin",0];
-names[114]=["LATIN SMALL LETTER R","Basic Latin",0];
-names[115]=["LATIN SMALL LETTER S","Basic Latin",0];
-names[116]=["LATIN SMALL LETTER T","Basic Latin",0];
-names[117]=["LATIN SMALL LETTER U","Basic Latin",0];
-names[118]=["LATIN SMALL LETTER V","Basic Latin",0];
-names[119]=["LATIN SMALL LETTER W","Basic Latin",0];
-names[120]=["LATIN SMALL LETTER X","Basic Latin",0];
-names[121]=["LATIN SMALL LETTER Y","Basic Latin",0];
-names[122]=["LATIN SMALL LETTER Z","Basic Latin",0];
-names[123]=["LEFT CURLY BRACKET","Basic Latin",0];
-names[124]=["VERTICAL LINE","Basic Latin",0];
-names[125]=["RIGHT CURLY BRACKET","Basic Latin",0];
-names[126]=["TILDE","Basic Latin",0];
-names[2404]=["DEVANAGARI DANDA","Devanagari",0];
-names[2405]=["DEVANAGARI DOUBLE DANDA","Devanagari",0];
-names[2561]=["GURMUKHI SIGN ADAK BINDI","Gurmukhi",1];
-names[2562]=["GURMUKHI SIGN BINDI","Gurmukhi",1];
-names[2563]=["GURMUKHI SIGN VISARGA","Gurmukhi",1];
-names[2565]=["GURMUKHI LETTER A","Gurmukhi",0];
-names[2566]=["GURMUKHI LETTER AA","Gurmukhi",0];
-names[2567]=["GURMUKHI LETTER I","Gurmukhi",0];
-names[2568]=["GURMUKHI LETTER II","Gurmukhi",0];
-names[2569]=["GURMUKHI LETTER U","Gurmukhi",0];
-names[2570]=["GURMUKHI LETTER UU","Gurmukhi",0];
-names[2575]=["GURMUKHI LETTER EE","Gurmukhi",0];
-names[2576]=["GURMUKHI LETTER AI","Gurmukhi",0];
-names[2579]=["GURMUKHI LETTER OO","Gurmukhi",0];
-names[2580]=["GURMUKHI LETTER AU","Gurmukhi",0];
-names[2581]=["GURMUKHI LETTER KA","Gurmukhi",0];
-names[2582]=["GURMUKHI LETTER KHA","Gurmukhi",0];
-names[2583]=["GURMUKHI LETTER GA","Gurmukhi",0];
-names[2584]=["GURMUKHI LETTER GHA","Gurmukhi",0];
-names[2585]=["GURMUKHI LETTER NGA","Gurmukhi",0];
-names[2586]=["GURMUKHI LETTER CA","Gurmukhi",0];
-names[2587]=["GURMUKHI LETTER CHA","Gurmukhi",0];
-names[2588]=["GURMUKHI LETTER JA","Gurmukhi",0];
-names[2589]=["GURMUKHI LETTER JHA","Gurmukhi",0];
-names[2590]=["GURMUKHI LETTER NYA","Gurmukhi",0];
-names[2591]=["GURMUKHI LETTER TTA","Gurmukhi",0];
-names[2592]=["GURMUKHI LETTER TTHA","Gurmukhi",0];
-names[2593]=["GURMUKHI LETTER DDA","Gurmukhi",0];
-names[2594]=["GURMUKHI LETTER DDHA","Gurmukhi",0];
-names[2595]=["GURMUKHI LETTER NNA","Gurmukhi",0];
-names[2596]=["GURMUKHI LETTER TA","Gurmukhi",0];
-names[2597]=["GURMUKHI LETTER THA","Gurmukhi",0];
-names[2598]=["GURMUKHI LETTER DA","Gurmukhi",0];
-names[2599]=["GURMUKHI LETTER DHA","Gurmukhi",0];
-names[2600]=["GURMUKHI LETTER NA","Gurmukhi",0];
-names[2602]=["GURMUKHI LETTER PA","Gurmukhi",0];
-names[2603]=["GURMUKHI LETTER PHA","Gurmukhi",0];
-names[2604]=["GURMUKHI LETTER BA","Gurmukhi",0];
-names[2605]=["GURMUKHI LETTER BHA","Gurmukhi",0];
-names[2606]=["GURMUKHI LETTER MA","Gurmukhi",0];
-names[2607]=["GURMUKHI LETTER YA","Gurmukhi",0];
-names[2608]=["GURMUKHI LETTER RA","Gurmukhi",0];
-names[2610]=["GURMUKHI LETTER LA","Gurmukhi",0];
-names[2611]=["GURMUKHI LETTER LLA","Gurmukhi",0];
-names[2613]=["GURMUKHI LETTER VA","Gurmukhi",0];
-names[2614]=["GURMUKHI LETTER SHA","Gurmukhi",0];
-names[2616]=["GURMUKHI LETTER SA","Gurmukhi",0];
-names[2617]=["GURMUKHI LETTER HA","Gurmukhi",0];
-names[2620]=["GURMUKHI SIGN NUKTA","Gurmukhi",1];
-names[2622]=["GURMUKHI VOWEL SIGN AA","Gurmukhi",1];
-names[2623]=["GURMUKHI VOWEL SIGN I","Gurmukhi",1];
-names[2624]=["GURMUKHI VOWEL SIGN II","Gurmukhi",1];
-names[2625]=["GURMUKHI VOWEL SIGN U","Gurmukhi",1];
-names[2626]=["GURMUKHI VOWEL SIGN UU","Gurmukhi",1];
-names[2631]=["GURMUKHI VOWEL SIGN EE","Gurmukhi",1];
-names[2632]=["GURMUKHI VOWEL SIGN AI","Gurmukhi",1];
-names[2635]=["GURMUKHI VOWEL SIGN OO","Gurmukhi",1];
-names[2636]=["GURMUKHI VOWEL SIGN AU","Gurmukhi",1];
-names[2637]=["GURMUKHI SIGN VIRAMA","Gurmukhi",1];
-names[2641]=["GURMUKHI SIGN UDAAT","Gurmukhi",1];
-names[2649]=["GURMUKHI LETTER KHHA","Gurmukhi",0];
-names[2650]=["GURMUKHI LETTER GHHA","Gurmukhi",0];
-names[2651]=["GURMUKHI LETTER ZA","Gurmukhi",0];
-names[2652]=["GURMUKHI LETTER RRA","Gurmukhi",0];
-names[2654]=["GURMUKHI LETTER FA","Gurmukhi",0];
-names[2662]=["GURMUKHI DIGIT ZERO","Gurmukhi",0];
-names[2663]=["GURMUKHI DIGIT ONE","Gurmukhi",0];
-names[2664]=["GURMUKHI DIGIT TWO","Gurmukhi",0];
-names[2665]=["GURMUKHI DIGIT THREE","Gurmukhi",0];
-names[2666]=["GURMUKHI DIGIT FOUR","Gurmukhi",0];
-names[2667]=["GURMUKHI DIGIT FIVE","Gurmukhi",0];
-names[2668]=["GURMUKHI DIGIT SIX","Gurmukhi",0];
-names[2669]=["GURMUKHI DIGIT SEVEN","Gurmukhi",0];
-names[2670]=["GURMUKHI DIGIT EIGHT","Gurmukhi",0];
-names[2671]=["GURMUKHI DIGIT NINE","Gurmukhi",0];
-names[2672]=["GURMUKHI TIPPI","Gurmukhi",1];
-names[2673]=["GURMUKHI ADDAK","Gurmukhi",1];
-names[2674]=["GURMUKHI IRI","Gurmukhi",0];
-names[2675]=["GURMUKHI URA","Gurmukhi",0];
-names[2676]=["GURMUKHI EK ONKAR","Gurmukhi",0];
-names[2677]=["GURMUKHI SIGN YAKASH","Gurmukhi",1];
-names[8204]=["ZERO WIDTH NON-JOINER","General Punctuation",0];
-names[8205]=["ZERO WIDTH JOINER","General Punctuation",0];
-names[9772]=["ADI SHAKTI","Miscellaneous Symbols",0];
+var charData = {
+"\0020":{n:"SPACE",m:0,g:"Basic Latin"},
+"\00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
+"\200C":{n:"ZERO WIDTH NON-JOINER",m:0,g:"General Punctuation"},
+"\200D":{n:"ZERO WIDTH JOINER",m:0,g:"General Punctuation"},
+"\200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
+
+"\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
+"\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
+"\u0023":{n:"NUMBER SIGN",m:0,g:"Basic Latin"},
+"\u0024":{n:"DOLLAR SIGN",m:0,g:"Basic Latin"},
+"\u0025":{n:"PERCENT SIGN",m:0,g:"Basic Latin"},
+"\u0026":{n:"AMPERSAND",m:0,g:"Basic Latin"},
+"\u0027":{n:"APOSTROPHE",m:0,g:"Basic Latin"},
+"\u0028":{n:"LEFT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u0029":{n:"RIGHT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u002A":{n:"ASTERISK",m:0,g:"Basic Latin"},
+"\u002B":{n:"PLUS SIGN",m:0,g:"Basic Latin"},
+"\u002C":{n:"COMMA",m:0,g:"Basic Latin"},
+"\u002D":{n:"HYPHEN-MINUS",m:0,g:"Basic Latin"},
+"\u002E":{n:"FULL STOP",m:0,g:"Basic Latin"},
+"\u002F":{n:"SOLIDUS",m:0,g:"Basic Latin"},
+"\u0030":{n:"DIGIT ZERO",m:0,g:"Basic Latin"},
+"\u0031":{n:"DIGIT ONE",m:0,g:"Basic Latin"},
+"\u0032":{n:"DIGIT TWO",m:0,g:"Basic Latin"},
+"\u0033":{n:"DIGIT THREE",m:0,g:"Basic Latin"},
+"\u0034":{n:"DIGIT FOUR",m:0,g:"Basic Latin"},
+"\u0035":{n:"DIGIT FIVE",m:0,g:"Basic Latin"},
+"\u0036":{n:"DIGIT SIX",m:0,g:"Basic Latin"},
+"\u0037":{n:"DIGIT SEVEN",m:0,g:"Basic Latin"},
+"\u0038":{n:"DIGIT EIGHT",m:0,g:"Basic Latin"},
+"\u0039":{n:"DIGIT NINE",m:0,g:"Basic Latin"},
+"\u003A":{n:"COLON",m:0,g:"Basic Latin"},
+"\u003B":{n:"SEMICOLON",m:0,g:"Basic Latin"},
+"\u003C":{n:"LESS-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003D":{n:"EQUALS SIGN",m:0,g:"Basic Latin"},
+"\u003E":{n:"GREATER-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003F":{n:"QUESTION MARK",m:0,g:"Basic Latin"},
+"\u0040":{n:"COMMERCIAL AT",m:0,g:"Basic Latin"},
+"\u0041":{n:"LATIN CAPITAL LETTER A",m:0,g:"Basic Latin"},
+"\u0042":{n:"LATIN CAPITAL LETTER B",m:0,g:"Basic Latin"},
+"\u0043":{n:"LATIN CAPITAL LETTER C",m:0,g:"Basic Latin"},
+"\u0044":{n:"LATIN CAPITAL LETTER D",m:0,g:"Basic Latin"},
+"\u0045":{n:"LATIN CAPITAL LETTER E",m:0,g:"Basic Latin"},
+"\u0046":{n:"LATIN CAPITAL LETTER F",m:0,g:"Basic Latin"},
+"\u0047":{n:"LATIN CAPITAL LETTER G",m:0,g:"Basic Latin"},
+"\u0048":{n:"LATIN CAPITAL LETTER H",m:0,g:"Basic Latin"},
+"\u0049":{n:"LATIN CAPITAL LETTER I",m:0,g:"Basic Latin"},
+"\u004A":{n:"LATIN CAPITAL LETTER J",m:0,g:"Basic Latin"},
+"\u004B":{n:"LATIN CAPITAL LETTER K",m:0,g:"Basic Latin"},
+"\u004C":{n:"LATIN CAPITAL LETTER L",m:0,g:"Basic Latin"},
+"\u004D":{n:"LATIN CAPITAL LETTER M",m:0,g:"Basic Latin"},
+"\u004E":{n:"LATIN CAPITAL LETTER N",m:0,g:"Basic Latin"},
+"\u004F":{n:"LATIN CAPITAL LETTER O",m:0,g:"Basic Latin"},
+"\u0050":{n:"LATIN CAPITAL LETTER P",m:0,g:"Basic Latin"},
+"\u0051":{n:"LATIN CAPITAL LETTER Q",m:0,g:"Basic Latin"},
+"\u0052":{n:"LATIN CAPITAL LETTER R",m:0,g:"Basic Latin"},
+"\u0053":{n:"LATIN CAPITAL LETTER S",m:0,g:"Basic Latin"},
+"\u0054":{n:"LATIN CAPITAL LETTER T",m:0,g:"Basic Latin"},
+"\u0055":{n:"LATIN CAPITAL LETTER U",m:0,g:"Basic Latin"},
+"\u0056":{n:"LATIN CAPITAL LETTER V",m:0,g:"Basic Latin"},
+"\u0057":{n:"LATIN CAPITAL LETTER W",m:0,g:"Basic Latin"},
+"\u0058":{n:"LATIN CAPITAL LETTER X",m:0,g:"Basic Latin"},
+"\u0059":{n:"LATIN CAPITAL LETTER Y",m:0,g:"Basic Latin"},
+"\u005A":{n:"LATIN CAPITAL LETTER Z",m:0,g:"Basic Latin"},
+"\u005B":{n:"LEFT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005C":{n:"REVERSE SOLIDUS",m:0,g:"Basic Latin"},
+"\u005D":{n:"RIGHT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005E":{n:"CIRCUMFLEX ACCENT",m:0,g:"Basic Latin"},
+"\u005F":{n:"LOW LINE",m:0,g:"Basic Latin"},
+"\u0060":{n:"GRAVE ACCENT",m:0,g:"Basic Latin"},
+"\u0061":{n:"LATIN SMALL LETTER A",m:0,g:"Basic Latin"},
+"\u0062":{n:"LATIN SMALL LETTER B",m:0,g:"Basic Latin"},
+"\u0063":{n:"LATIN SMALL LETTER C",m:0,g:"Basic Latin"},
+"\u0064":{n:"LATIN SMALL LETTER D",m:0,g:"Basic Latin"},
+"\u0065":{n:"LATIN SMALL LETTER E",m:0,g:"Basic Latin"},
+"\u0066":{n:"LATIN SMALL LETTER F",m:0,g:"Basic Latin"},
+"\u0067":{n:"LATIN SMALL LETTER G",m:0,g:"Basic Latin"},
+"\u0068":{n:"LATIN SMALL LETTER H",m:0,g:"Basic Latin"},
+"\u0069":{n:"LATIN SMALL LETTER I",m:0,g:"Basic Latin"},
+"\u006A":{n:"LATIN SMALL LETTER J",m:0,g:"Basic Latin"},
+"\u006B":{n:"LATIN SMALL LETTER K",m:0,g:"Basic Latin"},
+"\u006C":{n:"LATIN SMALL LETTER L",m:0,g:"Basic Latin"},
+"\u006D":{n:"LATIN SMALL LETTER M",m:0,g:"Basic Latin"},
+"\u006E":{n:"LATIN SMALL LETTER N",m:0,g:"Basic Latin"},
+"\u006F":{n:"LATIN SMALL LETTER O",m:0,g:"Basic Latin"},
+"\u0070":{n:"LATIN SMALL LETTER P",m:0,g:"Basic Latin"},
+"\u0071":{n:"LATIN SMALL LETTER Q",m:0,g:"Basic Latin"},
+"\u0072":{n:"LATIN SMALL LETTER R",m:0,g:"Basic Latin"},
+"\u0073":{n:"LATIN SMALL LETTER S",m:0,g:"Basic Latin"},
+"\u0074":{n:"LATIN SMALL LETTER T",m:0,g:"Basic Latin"},
+"\u0075":{n:"LATIN SMALL LETTER U",m:0,g:"Basic Latin"},
+"\u0076":{n:"LATIN SMALL LETTER V",m:0,g:"Basic Latin"},
+"\u0077":{n:"LATIN SMALL LETTER W",m:0,g:"Basic Latin"},
+"\u0078":{n:"LATIN SMALL LETTER X",m:0,g:"Basic Latin"},
+"\u0079":{n:"LATIN SMALL LETTER Y",m:0,g:"Basic Latin"},
+"\u007A":{n:"LATIN SMALL LETTER Z",m:0,g:"Basic Latin"},
+"\u007B":{n:"LEFT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007C":{n:"VERTICAL LINE",m:0,g:"Basic Latin"},
+"\u007D":{n:"RIGHT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007E":{n:"TILDE",m:0,g:"Basic Latin"},
+
+"\u0964":{n:"DEVANAGARI DANDA",m:0,g:"Devanagari" },
+"\u0965":{n:"DEVANAGARI DOUBLE DANDA",m:0,g:"Devanagari" },
+"\u262C":{n:"ADI SHAKTI",m:0,g:"Miscellaneous Symbols"},
+
+"\u0A01":{n:"GURMUKHI SIGN ADAK BINDI",m:1,g:"Gurmukhi"},
+"\u0A02":{n:"GURMUKHI SIGN BINDI",m:1,g:"Gurmukhi"},
+"\u0A03":{n:"GURMUKHI SIGN VISARGA",m:1,g:"Gurmukhi"},
+"\u0A05":{n:"GURMUKHI LETTER A",m:0,g:"Gurmukhi"},
+"\u0A06":{n:"GURMUKHI LETTER AA",m:0,g:"Gurmukhi"},
+"\u0A07":{n:"GURMUKHI LETTER I",m:0,g:"Gurmukhi"},
+"\u0A08":{n:"GURMUKHI LETTER II",m:0,g:"Gurmukhi"},
+"\u0A09":{n:"GURMUKHI LETTER U",m:0,g:"Gurmukhi"},
+"\u0A0A":{n:"GURMUKHI LETTER UU",m:0,g:"Gurmukhi"},
+"\u0A0F":{n:"GURMUKHI LETTER EE",m:0,g:"Gurmukhi"},
+"\u0A10":{n:"GURMUKHI LETTER AI",m:0,g:"Gurmukhi"},
+"\u0A13":{n:"GURMUKHI LETTER OO",m:0,g:"Gurmukhi"},
+"\u0A14":{n:"GURMUKHI LETTER AU",m:0,g:"Gurmukhi"},
+"\u0A15":{n:"GURMUKHI LETTER KA",m:0,g:"Gurmukhi"},
+"\u0A16":{n:"GURMUKHI LETTER KHA",m:0,g:"Gurmukhi"},
+"\u0A17":{n:"GURMUKHI LETTER GA",m:0,g:"Gurmukhi"},
+"\u0A18":{n:"GURMUKHI LETTER GHA",m:0,g:"Gurmukhi"},
+"\u0A19":{n:"GURMUKHI LETTER NGA",m:0,g:"Gurmukhi"},
+"\u0A1A":{n:"GURMUKHI LETTER CA",m:0,g:"Gurmukhi"},
+"\u0A1B":{n:"GURMUKHI LETTER CHA",m:0,g:"Gurmukhi"},
+"\u0A1C":{n:"GURMUKHI LETTER JA",m:0,g:"Gurmukhi"},
+"\u0A1D":{n:"GURMUKHI LETTER JHA",m:0,g:"Gurmukhi"},
+"\u0A1E":{n:"GURMUKHI LETTER NYA",m:0,g:"Gurmukhi"},
+"\u0A1F":{n:"GURMUKHI LETTER TTA",m:0,g:"Gurmukhi"},
+"\u0A20":{n:"GURMUKHI LETTER TTHA",m:0,g:"Gurmukhi"},
+"\u0A21":{n:"GURMUKHI LETTER DDA",m:0,g:"Gurmukhi"},
+"\u0A22":{n:"GURMUKHI LETTER DDHA",m:0,g:"Gurmukhi"},
+"\u0A23":{n:"GURMUKHI LETTER NNA",m:0,g:"Gurmukhi"},
+"\u0A24":{n:"GURMUKHI LETTER TA",m:0,g:"Gurmukhi"},
+"\u0A25":{n:"GURMUKHI LETTER THA",m:0,g:"Gurmukhi"},
+"\u0A26":{n:"GURMUKHI LETTER DA",m:0,g:"Gurmukhi"},
+"\u0A27":{n:"GURMUKHI LETTER DHA",m:0,g:"Gurmukhi"},
+"\u0A28":{n:"GURMUKHI LETTER NA",m:0,g:"Gurmukhi"},
+"\u0A2A":{n:"GURMUKHI LETTER PA",m:0,g:"Gurmukhi"},
+"\u0A2B":{n:"GURMUKHI LETTER PHA",m:0,g:"Gurmukhi"},
+"\u0A2C":{n:"GURMUKHI LETTER BA",m:0,g:"Gurmukhi"},
+"\u0A2D":{n:"GURMUKHI LETTER BHA",m:0,g:"Gurmukhi"},
+"\u0A2E":{n:"GURMUKHI LETTER MA",m:0,g:"Gurmukhi"},
+"\u0A2F":{n:"GURMUKHI LETTER YA",m:0,g:"Gurmukhi"},
+"\u0A30":{n:"GURMUKHI LETTER RA",m:0,g:"Gurmukhi"},
+"\u0A32":{n:"GURMUKHI LETTER LA",m:0,g:"Gurmukhi"},
+"\u0A33":{n:"GURMUKHI LETTER LLA",m:0,g:"Gurmukhi"},
+"\u0A35":{n:"GURMUKHI LETTER VA",m:0,g:"Gurmukhi"},
+"\u0A36":{n:"GURMUKHI LETTER SHA",m:0,g:"Gurmukhi"},
+"\u0A38":{n:"GURMUKHI LETTER SA",m:0,g:"Gurmukhi"},
+"\u0A39":{n:"GURMUKHI LETTER HA",m:0,g:"Gurmukhi"},
+"\u0A3C":{n:"GURMUKHI SIGN NUKTA",m:1,g:"Gurmukhi"},
+"\u0A3E":{n:"GURMUKHI VOWEL SIGN AA",m:1,g:"Gurmukhi"},
+"\u0A3F":{n:"GURMUKHI VOWEL SIGN I",m:1,g:"Gurmukhi"},
+"\u0A40":{n:"GURMUKHI VOWEL SIGN II",m:1,g:"Gurmukhi"},
+"\u0A41":{n:"GURMUKHI VOWEL SIGN U",m:1,g:"Gurmukhi"},
+"\u0A42":{n:"GURMUKHI VOWEL SIGN UU",m:1,g:"Gurmukhi"},
+"\u0A47":{n:"GURMUKHI VOWEL SIGN EE",m:1,g:"Gurmukhi"},
+"\u0A48":{n:"GURMUKHI VOWEL SIGN AI",m:1,g:"Gurmukhi"},
+"\u0A4B":{n:"GURMUKHI VOWEL SIGN OO",m:1,g:"Gurmukhi"},
+"\u0A4C":{n:"GURMUKHI VOWEL SIGN AU",m:1,g:"Gurmukhi"},
+"\u0A4D":{n:"GURMUKHI SIGN VIRAMA",m:1,g:"Gurmukhi"},
+"\u0A51":{n:"GURMUKHI SIGN UDAAT",m:1,g:"Gurmukhi"},
+"\u0A59":{n:"GURMUKHI LETTER KHHA",m:0,g:"Gurmukhi"},
+"\u0A5A":{n:"GURMUKHI LETTER GHHA",m:0,g:"Gurmukhi"},
+"\u0A5B":{n:"GURMUKHI LETTER ZA",m:0,g:"Gurmukhi"},
+"\u0A5C":{n:"GURMUKHI LETTER RRA",m:0,g:"Gurmukhi"},
+"\u0A5E":{n:"GURMUKHI LETTER FA",m:0,g:"Gurmukhi"},
+"\u0A66":{n:"GURMUKHI DIGIT ZERO",m:0,g:"Gurmukhi"},
+"\u0A67":{n:"GURMUKHI DIGIT ONE",m:0,g:"Gurmukhi"},
+"\u0A68":{n:"GURMUKHI DIGIT TWO",m:0,g:"Gurmukhi"},
+"\u0A69":{n:"GURMUKHI DIGIT THREE",m:0,g:"Gurmukhi"},
+"\u0A6A":{n:"GURMUKHI DIGIT FOUR",m:0,g:"Gurmukhi"},
+"\u0A6B":{n:"GURMUKHI DIGIT FIVE",m:0,g:"Gurmukhi"},
+"\u0A6C":{n:"GURMUKHI DIGIT SIX",m:0,g:"Gurmukhi"},
+"\u0A6D":{n:"GURMUKHI DIGIT SEVEN",m:0,g:"Gurmukhi"},
+"\u0A6E":{n:"GURMUKHI DIGIT EIGHT",m:0,g:"Gurmukhi"},
+"\u0A6F":{n:"GURMUKHI DIGIT NINE",m:0,g:"Gurmukhi"},
+"\u0A70":{n:"GURMUKHI TIPPI",m:1,g:"Gurmukhi"},
+"\u0A71":{n:"GURMUKHI ADDAK",m:1,g:"Gurmukhi"},
+"\u0A72":{n:"GURMUKHI IRI",m:0,g:"Gurmukhi"},
+"\u0A73":{n:"GURMUKHI URA",m:0,g:"Gurmukhi"},
+"\u0A74":{n:"GURMUKHI EK ONKAR",m:0,g:"Gurmukhi"},
+"\u0A75":{n:"GURMUKHI SIGN YAKASH",m:1,g:"Gurmukhi"},
+
+"\u0A16\u0A3C":{n:"GURMUKHI LETTER KHA, GURMUKHI SIGN NUKTA",m:0,g:"Gurmukhi"},
+"\u0A17\u0A3C":{n:"GURMUKHI LETTER GA, GURMUKHI SIGN NUKTA",m:0,g:"Gurmukhi"},
+"\u0A32\u0A3C":{n:"GURMUKHI LETTER LA, GURMUKHI SIGN NUKTA",m:0,g:"Gurmukhi"},
+"\u0A2B\u0A3C":{n:"GURMUKHI LETTER PHA, GURMUKHI SIGN NUKTA",m:0,g:"Gurmukhi"},
+"\u0A1C\u0A3C":{n:"GURMUKHI LETTER JA, GURMUKHI SIGN NUKTA",m:0,g:"Gurmukhi"},
+"\u0A38\u0A3C":{n:"GURMUKHI LETTER SA, GURMUKHI SIGN NUKTA",m:0,g:"Gurmukhi"},
+
+end: {}
+}

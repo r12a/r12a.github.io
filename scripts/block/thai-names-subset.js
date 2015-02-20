@@ -1,185 +1,194 @@
-var names = new Array();
-names[32]=["SPACE","Basic Latin"];
-names[160]=["NO-BREAK SPACE","Latin-1 Supplement",0];
-names[8203]=["ZERO WIDTH SPACE","General Punctuation",0];
-names[33]=["EXCLAMATION MARK","Basic Latin",0];
-names[34]=["QUOTATION MARK","Basic Latin",0];
-names[35]=["NUMBER SIGN","Basic Latin",0];
-names[36]=["DOLLAR SIGN","Basic Latin",0];
-names[37]=["PERCENT SIGN","Basic Latin",0];
-names[38]=["AMPERSAND","Basic Latin",0];
-names[39]=["APOSTROPHE","Basic Latin",0];
-names[40]=["LEFT PARENTHESIS","Basic Latin",0];
-names[41]=["RIGHT PARENTHESIS","Basic Latin",0];
-names[42]=["ASTERISK","Basic Latin",0];
-names[43]=["PLUS SIGN","Basic Latin",0];
-names[44]=["COMMA","Basic Latin",0];
-names[45]=["HYPHEN-MINUS","Basic Latin",0];
-names[46]=["FULL STOP","Basic Latin",0];
-names[47]=["SOLIDUS","Basic Latin",0];
-names[48]=["DIGIT ZERO","Basic Latin",0];
-names[49]=["DIGIT ONE","Basic Latin",0];
-names[50]=["DIGIT TWO","Basic Latin",0];
-names[51]=["DIGIT THREE","Basic Latin",0];
-names[52]=["DIGIT FOUR","Basic Latin",0];
-names[53]=["DIGIT FIVE","Basic Latin",0];
-names[54]=["DIGIT SIX","Basic Latin",0];
-names[55]=["DIGIT SEVEN","Basic Latin",0];
-names[56]=["DIGIT EIGHT","Basic Latin",0];
-names[57]=["DIGIT NINE","Basic Latin",0];
-names[58]=["COLON","Basic Latin",0];
-names[59]=["SEMICOLON","Basic Latin",0];
-names[60]=["LESS-THAN SIGN","Basic Latin",0];
-names[61]=["EQUALS SIGN","Basic Latin",0];
-names[62]=["GREATER-THAN SIGN","Basic Latin",0];
-names[63]=["QUESTION MARK","Basic Latin",0];
-names[64]=["COMMERCIAL AT","Basic Latin",0];
-names[65]=["LATIN CAPITAL LETTER A","Basic Latin",0];
-names[66]=["LATIN CAPITAL LETTER B","Basic Latin",0];
-names[67]=["LATIN CAPITAL LETTER C","Basic Latin",0];
-names[68]=["LATIN CAPITAL LETTER D","Basic Latin",0];
-names[69]=["LATIN CAPITAL LETTER E","Basic Latin",0];
-names[70]=["LATIN CAPITAL LETTER F","Basic Latin",0];
-names[71]=["LATIN CAPITAL LETTER G","Basic Latin",0];
-names[72]=["LATIN CAPITAL LETTER H","Basic Latin",0];
-names[73]=["LATIN CAPITAL LETTER I","Basic Latin",0];
-names[74]=["LATIN CAPITAL LETTER J","Basic Latin",0];
-names[75]=["LATIN CAPITAL LETTER K","Basic Latin",0];
-names[76]=["LATIN CAPITAL LETTER L","Basic Latin",0];
-names[77]=["LATIN CAPITAL LETTER M","Basic Latin",0];
-names[78]=["LATIN CAPITAL LETTER N","Basic Latin",0];
-names[79]=["LATIN CAPITAL LETTER O","Basic Latin",0];
-names[80]=["LATIN CAPITAL LETTER P","Basic Latin",0];
-names[81]=["LATIN CAPITAL LETTER Q","Basic Latin",0];
-names[82]=["LATIN CAPITAL LETTER R","Basic Latin",0];
-names[83]=["LATIN CAPITAL LETTER S","Basic Latin",0];
-names[84]=["LATIN CAPITAL LETTER T","Basic Latin",0];
-names[85]=["LATIN CAPITAL LETTER U","Basic Latin",0];
-names[86]=["LATIN CAPITAL LETTER V","Basic Latin",0];
-names[87]=["LATIN CAPITAL LETTER W","Basic Latin",0];
-names[88]=["LATIN CAPITAL LETTER X","Basic Latin",0];
-names[89]=["LATIN CAPITAL LETTER Y","Basic Latin",0];
-names[90]=["LATIN CAPITAL LETTER Z","Basic Latin",0];
-names[91]=["LEFT SQUARE BRACKET","Basic Latin",0];
-names[92]=["REVERSE SOLIDUS","Basic Latin",0];
-names[93]=["RIGHT SQUARE BRACKET","Basic Latin",0];
-names[94]=["CIRCUMFLEX ACCENT","Basic Latin",0];
-names[95]=["LOW LINE","Basic Latin",0];
-names[96]=["GRAVE ACCENT","Basic Latin",0];
-names[97]=["LATIN SMALL LETTER A","Basic Latin",0];
-names[98]=["LATIN SMALL LETTER B","Basic Latin",0];
-names[99]=["LATIN SMALL LETTER C","Basic Latin",0];
-names[100]=["LATIN SMALL LETTER D","Basic Latin",0];
-names[101]=["LATIN SMALL LETTER E","Basic Latin",0];
-names[102]=["LATIN SMALL LETTER F","Basic Latin",0];
-names[103]=["LATIN SMALL LETTER G","Basic Latin",0];
-names[104]=["LATIN SMALL LETTER H","Basic Latin",0];
-names[105]=["LATIN SMALL LETTER I","Basic Latin",0];
-names[106]=["LATIN SMALL LETTER J","Basic Latin",0];
-names[107]=["LATIN SMALL LETTER K","Basic Latin",0];
-names[108]=["LATIN SMALL LETTER L","Basic Latin",0];
-names[109]=["LATIN SMALL LETTER M","Basic Latin",0];
-names[110]=["LATIN SMALL LETTER N","Basic Latin",0];
-names[111]=["LATIN SMALL LETTER O","Basic Latin",0];
-names[112]=["LATIN SMALL LETTER P","Basic Latin",0];
-names[113]=["LATIN SMALL LETTER Q","Basic Latin",0];
-names[114]=["LATIN SMALL LETTER R","Basic Latin",0];
-names[115]=["LATIN SMALL LETTER S","Basic Latin",0];
-names[116]=["LATIN SMALL LETTER T","Basic Latin",0];
-names[117]=["LATIN SMALL LETTER U","Basic Latin",0];
-names[118]=["LATIN SMALL LETTER V","Basic Latin",0];
-names[119]=["LATIN SMALL LETTER W","Basic Latin",0];
-names[120]=["LATIN SMALL LETTER X","Basic Latin",0];
-names[121]=["LATIN SMALL LETTER Y","Basic Latin",0];
-names[122]=["LATIN SMALL LETTER Z","Basic Latin",0];
-names[123]=["LEFT CURLY BRACKET","Basic Latin",0];
-names[124]=["VERTICAL LINE","Basic Latin",0];
-names[125]=["RIGHT CURLY BRACKET","Basic Latin",0];
-names[126]=["TILDE","Basic Latin",0];
-names[3585]=["THAI CHARACTER KO KAI","Thai"];
-names[3586]=["THAI CHARACTER KHO KHAI","Thai"];
-names[3587]=["THAI CHARACTER KHO KHUAT","Thai"];
-names[3588]=["THAI CHARACTER KHO KHWAI","Thai"];
-names[3589]=["THAI CHARACTER KHO KHON","Thai"];
-names[3590]=["THAI CHARACTER KHO RAKHANG","Thai"];
-names[3591]=["THAI CHARACTER NGO NGU","Thai"];
-names[3592]=["THAI CHARACTER CHO CHAN","Thai"];
-names[3593]=["THAI CHARACTER CHO CHING","Thai"];
-names[3594]=["THAI CHARACTER CHO CHANG","Thai"];
-names[3595]=["THAI CHARACTER SO SO","Thai"];
-names[3596]=["THAI CHARACTER CHO CHOE","Thai"];
-names[3597]=["THAI CHARACTER YO YING","Thai"];
-names[3598]=["THAI CHARACTER DO CHADA","Thai"];
-names[3599]=["THAI CHARACTER TO PATAK","Thai"];
-names[3600]=["THAI CHARACTER THO THAN","Thai"];
-names[3601]=["THAI CHARACTER THO NANGMONTHO","Thai"];
-names[3602]=["THAI CHARACTER THO PHUTHAO","Thai"];
-names[3603]=["THAI CHARACTER NO NEN","Thai"];
-names[3604]=["THAI CHARACTER DO DEK","Thai"];
-names[3605]=["THAI CHARACTER TO TAO","Thai"];
-names[3606]=["THAI CHARACTER THO THUNG","Thai"];
-names[3607]=["THAI CHARACTER THO THAHAN","Thai"];
-names[3608]=["THAI CHARACTER THO THONG","Thai"];
-names[3609]=["THAI CHARACTER NO NU","Thai"];
-names[3610]=["THAI CHARACTER BO BAIMAI","Thai"];
-names[3611]=["THAI CHARACTER PO PLA","Thai"];
-names[3612]=["THAI CHARACTER PHO PHUNG","Thai"];
-names[3613]=["THAI CHARACTER FO FA","Thai"];
-names[3614]=["THAI CHARACTER PHO PHAN","Thai"];
-names[3615]=["THAI CHARACTER FO FAN","Thai"];
-names[3616]=["THAI CHARACTER PHO SAMPHAO","Thai"];
-names[3617]=["THAI CHARACTER MO MA","Thai"];
-names[3618]=["THAI CHARACTER YO YAK","Thai"];
-names[3619]=["THAI CHARACTER RO RUA","Thai"];
-names[3620]=["THAI CHARACTER RU","Thai"];
-names[3621]=["THAI CHARACTER LO LING","Thai"];
-names[3622]=["THAI CHARACTER LU","Thai"];
-names[3623]=["THAI CHARACTER WO WAEN","Thai"];
-names[3624]=["THAI CHARACTER SO SALA","Thai"];
-names[3625]=["THAI CHARACTER SO RUSI","Thai"];
-names[3626]=["THAI CHARACTER SO SUA","Thai"];
-names[3627]=["THAI CHARACTER HO HIP","Thai"];
-names[3628]=["THAI CHARACTER LO CHULA","Thai"];
-names[3629]=["THAI CHARACTER O ANG","Thai"];
-names[3630]=["THAI CHARACTER HO NOKHUK","Thai"];
-names[3631]=["THAI CHARACTER PAIYANNOI","Thai"];
-names[3632]=["THAI CHARACTER SARA A","Thai"];
-names[3633]=["THAI CHARACTER MAI HAN-AKAT","Thai"];
-names[3634]=["THAI CHARACTER SARA AA","Thai"];
-names[3635]=["THAI CHARACTER SARA AM","Thai"];
-names[3636]=["THAI CHARACTER SARA I","Thai"];
-names[3637]=["THAI CHARACTER SARA II","Thai"];
-names[3638]=["THAI CHARACTER SARA UE","Thai"];
-names[3639]=["THAI CHARACTER SARA UEE","Thai"];
-names[3640]=["THAI CHARACTER SARA U","Thai"];
-names[3641]=["THAI CHARACTER SARA UU","Thai"];
-names[3642]=["THAI CHARACTER PHINTHU","Thai"];
-names[3647]=["THAI CURRENCY SYMBOL BAHT","Thai"];
-names[3648]=["THAI CHARACTER SARA E","Thai"];
-names[3649]=["THAI CHARACTER SARA AE","Thai"];
-names[3650]=["THAI CHARACTER SARA O","Thai"];
-names[3651]=["THAI CHARACTER SARA AI MAIMUAN","Thai"];
-names[3652]=["THAI CHARACTER SARA AI MAIMALAI","Thai"];
-names[3653]=["THAI CHARACTER LAKKHANGYAO","Thai"];
-names[3654]=["THAI CHARACTER MAIYAMOK","Thai"];
-names[3655]=["THAI CHARACTER MAITAIKHU","Thai"];
-names[3656]=["THAI CHARACTER MAI EK","Thai"];
-names[3657]=["THAI CHARACTER MAI THO","Thai"];
-names[3658]=["THAI CHARACTER MAI TRI","Thai"];
-names[3659]=["THAI CHARACTER MAI CHATTAWA","Thai"];
-names[3660]=["THAI CHARACTER THANTHAKHAT","Thai"];
-names[3661]=["THAI CHARACTER NIKHAHIT","Thai"];
-names[3662]=["THAI CHARACTER YAMAKKAN","Thai"];
-names[3663]=["THAI CHARACTER FONGMAN","Thai"];
-names[3664]=["THAI DIGIT ZERO","Thai"];
-names[3665]=["THAI DIGIT ONE","Thai"];
-names[3666]=["THAI DIGIT TWO","Thai"];
-names[3667]=["THAI DIGIT THREE","Thai"];
-names[3668]=["THAI DIGIT FOUR","Thai"];
-names[3669]=["THAI DIGIT FIVE","Thai"];
-names[3670]=["THAI DIGIT SIX","Thai"];
-names[3671]=["THAI DIGIT SEVEN","Thai"];
-names[3672]=["THAI DIGIT EIGHT","Thai"];
-names[3673]=["THAI DIGIT NINE","Thai"];
-names[3674]=["THAI CHARACTER ANGKHANKHU","Thai"];
-names[3675]=["THAI CHARACTER KHOMUT","Thai"];
+var charData = {
+"\0020":{n:"SPACE",m:0,g:"Basic Latin"},
+"\00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
+"\200C":{n:"ZERO WIDTH NON-JOINER",m:0,g:"General Punctuation"},
+"\200D":{n:"ZERO WIDTH JOINER",m:0,g:"General Punctuation"},
+"\200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
+
+"\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
+"\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
+"\u0023":{n:"NUMBER SIGN",m:0,g:"Basic Latin"},
+"\u0024":{n:"DOLLAR SIGN",m:0,g:"Basic Latin"},
+"\u0025":{n:"PERCENT SIGN",m:0,g:"Basic Latin"},
+"\u0026":{n:"AMPERSAND",m:0,g:"Basic Latin"},
+"\u0027":{n:"APOSTROPHE",m:0,g:"Basic Latin"},
+"\u0028":{n:"LEFT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u0029":{n:"RIGHT PARENTHESIS",m:0,g:"Basic Latin"},
+"\u002A":{n:"ASTERISK",m:0,g:"Basic Latin"},
+"\u002B":{n:"PLUS SIGN",m:0,g:"Basic Latin"},
+"\u002C":{n:"COMMA",m:0,g:"Basic Latin"},
+"\u002D":{n:"HYPHEN-MINUS",m:0,g:"Basic Latin"},
+"\u002E":{n:"FULL STOP",m:0,g:"Basic Latin"},
+"\u002F":{n:"SOLIDUS",m:0,g:"Basic Latin"},
+"\u0030":{n:"DIGIT ZERO",m:0,g:"Basic Latin"},
+"\u0031":{n:"DIGIT ONE",m:0,g:"Basic Latin"},
+"\u0032":{n:"DIGIT TWO",m:0,g:"Basic Latin"},
+"\u0033":{n:"DIGIT THREE",m:0,g:"Basic Latin"},
+"\u0034":{n:"DIGIT FOUR",m:0,g:"Basic Latin"},
+"\u0035":{n:"DIGIT FIVE",m:0,g:"Basic Latin"},
+"\u0036":{n:"DIGIT SIX",m:0,g:"Basic Latin"},
+"\u0037":{n:"DIGIT SEVEN",m:0,g:"Basic Latin"},
+"\u0038":{n:"DIGIT EIGHT",m:0,g:"Basic Latin"},
+"\u0039":{n:"DIGIT NINE",m:0,g:"Basic Latin"},
+"\u003A":{n:"COLON",m:0,g:"Basic Latin"},
+"\u003B":{n:"SEMICOLON",m:0,g:"Basic Latin"},
+"\u003C":{n:"LESS-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003D":{n:"EQUALS SIGN",m:0,g:"Basic Latin"},
+"\u003E":{n:"GREATER-THAN SIGN",m:0,g:"Basic Latin"},
+"\u003F":{n:"QUESTION MARK",m:0,g:"Basic Latin"},
+"\u0040":{n:"COMMERCIAL AT",m:0,g:"Basic Latin"},
+"\u0041":{n:"LATIN CAPITAL LETTER A",m:0,g:"Basic Latin"},
+"\u0042":{n:"LATIN CAPITAL LETTER B",m:0,g:"Basic Latin"},
+"\u0043":{n:"LATIN CAPITAL LETTER C",m:0,g:"Basic Latin"},
+"\u0044":{n:"LATIN CAPITAL LETTER D",m:0,g:"Basic Latin"},
+"\u0045":{n:"LATIN CAPITAL LETTER E",m:0,g:"Basic Latin"},
+"\u0046":{n:"LATIN CAPITAL LETTER F",m:0,g:"Basic Latin"},
+"\u0047":{n:"LATIN CAPITAL LETTER G",m:0,g:"Basic Latin"},
+"\u0048":{n:"LATIN CAPITAL LETTER H",m:0,g:"Basic Latin"},
+"\u0049":{n:"LATIN CAPITAL LETTER I",m:0,g:"Basic Latin"},
+"\u004A":{n:"LATIN CAPITAL LETTER J",m:0,g:"Basic Latin"},
+"\u004B":{n:"LATIN CAPITAL LETTER K",m:0,g:"Basic Latin"},
+"\u004C":{n:"LATIN CAPITAL LETTER L",m:0,g:"Basic Latin"},
+"\u004D":{n:"LATIN CAPITAL LETTER M",m:0,g:"Basic Latin"},
+"\u004E":{n:"LATIN CAPITAL LETTER N",m:0,g:"Basic Latin"},
+"\u004F":{n:"LATIN CAPITAL LETTER O",m:0,g:"Basic Latin"},
+"\u0050":{n:"LATIN CAPITAL LETTER P",m:0,g:"Basic Latin"},
+"\u0051":{n:"LATIN CAPITAL LETTER Q",m:0,g:"Basic Latin"},
+"\u0052":{n:"LATIN CAPITAL LETTER R",m:0,g:"Basic Latin"},
+"\u0053":{n:"LATIN CAPITAL LETTER S",m:0,g:"Basic Latin"},
+"\u0054":{n:"LATIN CAPITAL LETTER T",m:0,g:"Basic Latin"},
+"\u0055":{n:"LATIN CAPITAL LETTER U",m:0,g:"Basic Latin"},
+"\u0056":{n:"LATIN CAPITAL LETTER V",m:0,g:"Basic Latin"},
+"\u0057":{n:"LATIN CAPITAL LETTER W",m:0,g:"Basic Latin"},
+"\u0058":{n:"LATIN CAPITAL LETTER X",m:0,g:"Basic Latin"},
+"\u0059":{n:"LATIN CAPITAL LETTER Y",m:0,g:"Basic Latin"},
+"\u005A":{n:"LATIN CAPITAL LETTER Z",m:0,g:"Basic Latin"},
+"\u005B":{n:"LEFT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005C":{n:"REVERSE SOLIDUS",m:0,g:"Basic Latin"},
+"\u005D":{n:"RIGHT SQUARE BRACKET",m:0,g:"Basic Latin"},
+"\u005E":{n:"CIRCUMFLEX ACCENT",m:0,g:"Basic Latin"},
+"\u005F":{n:"LOW LINE",m:0,g:"Basic Latin"},
+"\u0060":{n:"GRAVE ACCENT",m:0,g:"Basic Latin"},
+"\u0061":{n:"LATIN SMALL LETTER A",m:0,g:"Basic Latin"},
+"\u0062":{n:"LATIN SMALL LETTER B",m:0,g:"Basic Latin"},
+"\u0063":{n:"LATIN SMALL LETTER C",m:0,g:"Basic Latin"},
+"\u0064":{n:"LATIN SMALL LETTER D",m:0,g:"Basic Latin"},
+"\u0065":{n:"LATIN SMALL LETTER E",m:0,g:"Basic Latin"},
+"\u0066":{n:"LATIN SMALL LETTER F",m:0,g:"Basic Latin"},
+"\u0067":{n:"LATIN SMALL LETTER G",m:0,g:"Basic Latin"},
+"\u0068":{n:"LATIN SMALL LETTER H",m:0,g:"Basic Latin"},
+"\u0069":{n:"LATIN SMALL LETTER I",m:0,g:"Basic Latin"},
+"\u006A":{n:"LATIN SMALL LETTER J",m:0,g:"Basic Latin"},
+"\u006B":{n:"LATIN SMALL LETTER K",m:0,g:"Basic Latin"},
+"\u006C":{n:"LATIN SMALL LETTER L",m:0,g:"Basic Latin"},
+"\u006D":{n:"LATIN SMALL LETTER M",m:0,g:"Basic Latin"},
+"\u006E":{n:"LATIN SMALL LETTER N",m:0,g:"Basic Latin"},
+"\u006F":{n:"LATIN SMALL LETTER O",m:0,g:"Basic Latin"},
+"\u0070":{n:"LATIN SMALL LETTER P",m:0,g:"Basic Latin"},
+"\u0071":{n:"LATIN SMALL LETTER Q",m:0,g:"Basic Latin"},
+"\u0072":{n:"LATIN SMALL LETTER R",m:0,g:"Basic Latin"},
+"\u0073":{n:"LATIN SMALL LETTER S",m:0,g:"Basic Latin"},
+"\u0074":{n:"LATIN SMALL LETTER T",m:0,g:"Basic Latin"},
+"\u0075":{n:"LATIN SMALL LETTER U",m:0,g:"Basic Latin"},
+"\u0076":{n:"LATIN SMALL LETTER V",m:0,g:"Basic Latin"},
+"\u0077":{n:"LATIN SMALL LETTER W",m:0,g:"Basic Latin"},
+"\u0078":{n:"LATIN SMALL LETTER X",m:0,g:"Basic Latin"},
+"\u0079":{n:"LATIN SMALL LETTER Y",m:0,g:"Basic Latin"},
+"\u007A":{n:"LATIN SMALL LETTER Z",m:0,g:"Basic Latin"},
+"\u007B":{n:"LEFT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007C":{n:"VERTICAL LINE",m:0,g:"Basic Latin"},
+"\u007D":{n:"RIGHT CURLY BRACKET",m:0,g:"Basic Latin"},
+"\u007E":{n:"TILDE",m:0,g:"Basic Latin"},
+
+"\u0E01":{n:"THAI CHARACTER KO KAI",m:0,g:"Thai"},
+"\u0E02":{n:"THAI CHARACTER KHO KHAI",m:0,g:"Thai"},
+"\u0E03":{n:"THAI CHARACTER KHO KHUAT",m:0,g:"Thai"},
+"\u0E04":{n:"THAI CHARACTER KHO KHWAI",m:0,g:"Thai"},
+"\u0E05":{n:"THAI CHARACTER KHO KHON",m:0,g:"Thai"},
+"\u0E06":{n:"THAI CHARACTER KHO RAKHANG",m:0,g:"Thai"},
+"\u0E07":{n:"THAI CHARACTER NGO NGU",m:0,g:"Thai"},
+"\u0E08":{n:"THAI CHARACTER CHO CHAN",m:0,g:"Thai"},
+"\u0E09":{n:"THAI CHARACTER CHO CHING",m:0,g:"Thai"},
+"\u0E0A":{n:"THAI CHARACTER CHO CHANG",m:0,g:"Thai"},
+"\u0E0B":{n:"THAI CHARACTER SO SO",m:0,g:"Thai"},
+"\u0E0C":{n:"THAI CHARACTER CHO CHOE",m:0,g:"Thai"},
+"\u0E0D":{n:"THAI CHARACTER YO YING",m:0,g:"Thai"},
+"\u0E0E":{n:"THAI CHARACTER DO CHADA",m:0,g:"Thai"},
+"\u0E0F":{n:"THAI CHARACTER TO PATAK",m:0,g:"Thai"},
+"\u0E10":{n:"THAI CHARACTER THO THAN",m:0,g:"Thai"},
+"\u0E11":{n:"THAI CHARACTER THO NANGMONTHO",m:0,g:"Thai"},
+"\u0E12":{n:"THAI CHARACTER THO PHUTHAO",m:0,g:"Thai"},
+"\u0E13":{n:"THAI CHARACTER NO NEN",m:0,g:"Thai"},
+"\u0E14":{n:"THAI CHARACTER DO DEK",m:0,g:"Thai"},
+"\u0E15":{n:"THAI CHARACTER TO TAO",m:0,g:"Thai"},
+"\u0E16":{n:"THAI CHARACTER THO THUNG",m:0,g:"Thai"},
+"\u0E17":{n:"THAI CHARACTER THO THAHAN",m:0,g:"Thai"},
+"\u0E18":{n:"THAI CHARACTER THO THONG",m:0,g:"Thai"},
+"\u0E19":{n:"THAI CHARACTER NO NU",m:0,g:"Thai"},
+"\u0E1A":{n:"THAI CHARACTER BO BAIMAI",m:0,g:"Thai"},
+"\u0E1B":{n:"THAI CHARACTER PO PLA",m:0,g:"Thai"},
+"\u0E1C":{n:"THAI CHARACTER PHO PHUNG",m:0,g:"Thai"},
+"\u0E1D":{n:"THAI CHARACTER FO FA",m:0,g:"Thai"},
+"\u0E1E":{n:"THAI CHARACTER PHO PHAN",m:0,g:"Thai"},
+"\u0E1F":{n:"THAI CHARACTER FO FAN",m:0,g:"Thai"},
+"\u0E20":{n:"THAI CHARACTER PHO SAMPHAO",m:0,g:"Thai"},
+"\u0E21":{n:"THAI CHARACTER MO MA",m:0,g:"Thai"},
+"\u0E22":{n:"THAI CHARACTER YO YAK",m:0,g:"Thai"},
+"\u0E23":{n:"THAI CHARACTER RO RUA",m:0,g:"Thai"},
+"\u0E24":{n:"THAI CHARACTER RU",m:0,g:"Thai"},
+"\u0E25":{n:"THAI CHARACTER LO LING",m:0,g:"Thai"},
+"\u0E26":{n:"THAI CHARACTER LU",m:0,g:"Thai"},
+"\u0E27":{n:"THAI CHARACTER WO WAEN",m:0,g:"Thai"},
+"\u0E28":{n:"THAI CHARACTER SO SALA",m:0,g:"Thai"},
+"\u0E29":{n:"THAI CHARACTER SO RUSI",m:0,g:"Thai"},
+"\u0E2A":{n:"THAI CHARACTER SO SUA",m:0,g:"Thai"},
+"\u0E2B":{n:"THAI CHARACTER HO HIP",m:0,g:"Thai"},
+"\u0E2C":{n:"THAI CHARACTER LO CHULA",m:0,g:"Thai"},
+"\u0E2D":{n:"THAI CHARACTER O ANG",m:0,g:"Thai"},
+"\u0E2E":{n:"THAI CHARACTER HO NOKHUK",m:0,g:"Thai"},
+"\u0E2F":{n:"THAI CHARACTER PAIYANNOI",m:0,g:"Thai"},
+"\u0E30":{n:"THAI CHARACTER SARA A",m:0,g:"Thai"},
+"\u0E31":{n:"THAI CHARACTER MAI HAN-AKAT",m:1,g:"Thai"},
+"\u0E32":{n:"THAI CHARACTER SARA AA",m:0,g:"Thai"},
+"\u0E33":{n:"THAI CHARACTER SARA AM",m:0,g:"Thai"},
+"\u0E34":{n:"THAI CHARACTER SARA I",m:1,g:"Thai"},
+"\u0E35":{n:"THAI CHARACTER SARA II",m:1,g:"Thai"},
+"\u0E36":{n:"THAI CHARACTER SARA UE",m:1,g:"Thai"},
+"\u0E37":{n:"THAI CHARACTER SARA UEE",m:1,g:"Thai"},
+"\u0E38":{n:"THAI CHARACTER SARA U",m:1,g:"Thai"},
+"\u0E39":{n:"THAI CHARACTER SARA UU",m:1,g:"Thai"},
+"\u0E3A":{n:"THAI CHARACTER PHINTHU",m:1,g:"Thai"},
+"\u0E3F":{n:"THAI CURRENCY SYMBOL BAHT",m:0,g:"Thai"},
+"\u0E40":{n:"THAI CHARACTER SARA E",m:0,g:"Thai"},
+"\u0E41":{n:"THAI CHARACTER SARA AE",m:0,g:"Thai"},
+"\u0E42":{n:"THAI CHARACTER SARA O",m:0,g:"Thai"},
+"\u0E43":{n:"THAI CHARACTER SARA AI MAIMUAN",m:0,g:"Thai"},
+"\u0E44":{n:"THAI CHARACTER SARA AI MAIMALAI",m:0,g:"Thai"},
+"\u0E45":{n:"THAI CHARACTER LAKKHANGYAO",m:0,g:"Thai"},
+"\u0E46":{n:"THAI CHARACTER MAIYAMOK",m:0,g:"Thai"},
+"\u0E47":{n:"THAI CHARACTER MAITAIKHU",m:1,g:"Thai"},
+"\u0E48":{n:"THAI CHARACTER MAI EK",m:1,g:"Thai"},
+"\u0E49":{n:"THAI CHARACTER MAI THO",m:1,g:"Thai"},
+"\u0E4A":{n:"THAI CHARACTER MAI TRI",m:1,g:"Thai"},
+"\u0E4B":{n:"THAI CHARACTER MAI CHATTAWA",m:1,g:"Thai"},
+"\u0E4C":{n:"THAI CHARACTER THANTHAKHAT",m:1,g:"Thai"},
+"\u0E4D":{n:"THAI CHARACTER NIKHAHIT",m:1,g:"Thai"},
+"\u0E4E":{n:"THAI CHARACTER YAMAKKAN",m:1,g:"Thai"},
+"\u0E4F":{n:"THAI CHARACTER FONGMAN",m:0,g:"Thai"},
+"\u0E50":{n:"THAI DIGIT ZERO",m:0,g:"Thai"},
+"\u0E51":{n:"THAI DIGIT ONE",m:0,g:"Thai"},
+"\u0E52":{n:"THAI DIGIT TWO",m:0,g:"Thai"},
+"\u0E53":{n:"THAI DIGIT THREE",m:0,g:"Thai"},
+"\u0E54":{n:"THAI DIGIT FOUR",m:0,g:"Thai"},
+"\u0E55":{n:"THAI DIGIT FIVE",m:0,g:"Thai"},
+"\u0E56":{n:"THAI DIGIT SIX",m:0,g:"Thai"},
+"\u0E57":{n:"THAI DIGIT SEVEN",m:0,g:"Thai"},
+"\u0E58":{n:"THAI DIGIT EIGHT",m:0,g:"Thai"},
+"\u0E59":{n:"THAI DIGIT NINE",m:0,g:"Thai"},
+"\u0E5A":{n:"THAI CHARACTER ANGKHANKHU",m:0,g:"Thai"},
+"\u0E5B":{n:"THAI CHARACTER KHOMUT",m:0,g:"Thai"},
+
+"\u0E2F\u0E25\u0E2F":{n:"THAI CHARACTER PAIYANNOI, THAI CHARACTER LO LING, THAI CHARACTER PAIYANNOI",m:0,g:"Thai"},
+
+end: {}
+}
