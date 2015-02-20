@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'Noto Sans Ethiopic WF';
+    src: url('/webfonts/NotoSansEthiopic-Regularwebfont.woff2') format('woff2'),
+         url('/webfonts/NotoSansEthiopic-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#shape { display: none; }
+#alphabet { display: block; }
+
+
+
+
+#alphabet img { 
+	cursor: pointer; 
+	}
+span.hint {
+	margin-right: 2px;
+	}
+	
+#kbd { 	
+	margin-left: 0; 
+	}
+#kbd table {
+	margin:0;
+	}
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	font-size: 25px;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1;
+	}
+#kbd td.hint {  
+	font-size: 12px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	cursor:default;
+	}
+#kbd img {
+	vertical-align: top;
+	}
+
+
+#kbd #predisposed { 
+	width: 35px; 
+	border: dotted 1px #999; 
+	text-align: right; 
+	padding-right: 4px; 
+	vertical-align: middle; 
+	}
+
+
+#kbd #combining { 
+	margin-top: 20px; 
+	margin-bottom: 30px;
+	/* width: 260px; 
+	padding:5px 10px; */
+	border: dotted 1px #999; 
+	border-radius: 5px;
+	}
+#kbd #combining td {
+	padding: 8px 0;
+	}
+#kbd #combining td.hint {
+	padding: 5px 0;
+	}
+#kbd #moreconsonants {
+	margin: 0 10px;
+	}
+	
+#punctuation {
+	text-align:right;
+	}
+
+#kbd #numbers {
+	padding-left: 20px;
+	}
+
+#kbd #zwspcol {
+	padding-left: 20px; 
+	}
+
+#rare td {
+	text-align: left;
+	vertical-align: middle;
+	padding: 0;
+	}
+#rare td img {
+	vertical-align: middle;
+	margin: 0;
+	}
+.p {
+	padding: 0 5px;
+	}
+
+#phonic, #phonic2 { padding-left: 5px; padding-right: 5px; font-size: 15px; font-family: "Doulos SIL", sans-serif; }
+#phonic span, #phonic2 span { cursor:pointer; }
+.phonicspaces { padding-left: 10px; padding-right: 10px; width: 28px; }
+.uaplosives { white-space: nowrap; }
+.aspiratedplosives { white-space: nowrap; }
+.kbd td { vertical-align: top; }
+.vowels{ vertical-align: top; padding: 5px; margin-bottom: 5px; width: 750px; border: dotted 1px teal; }
+
+.sound {font-size: 130%; font-family: "Doulos SIL", "Charis SIL", Gentium, serif; color: #FF3333; cursor: default; white-space: nowrap; margin-right: 7px; }
+.sound span {font-size: 110%; font-family: "Doulos SIL", "Charis SIL", Gentium, serif; color: #FFF; cursor: default;  margin-right: 5px; background-color: #bbb; padding: 1px; padding-left:2px; background-image: url(images/topcorner.png); background-repeat:no-repeat; }
+.vowels .sound { color: #FF3333; }
+.vowels img {vertical-align: top; }
+.ph { border:0; }
+.soundselector { margin-bottom: 6px; line-height: 40px; }
+.soundselector img { margin-right: 5px; vertical-align: top; }
+.soundselector span { display:inline; }
+.soundselector img[title='+'] { height: 40px; }
+
+
+
+#shape { padding-left: 5px; padding-right: 5px; margin: 20px; }
+#shape li, #shape span, #shape img { border: 0; }
+#shape ul { margin:0; padding:0; }
+#shape span, #shape img { cursor:pointer; }
+.shapelist { margin-bottom: 10px; }
+.shapelist li { 
+	position:relative;
+	list-style-type: none;
+	display: inline; 
+	line-height: 48px;
+	}
+.shapelist .hidden { 
+	position: absolute;
+	top: 99%;
+	left: -20px;
+	width: 500px;
+	font-size: 20px;
+	line-height: 1.2em;
+	text-align: center;
+	z-index:1000;
+
+	background-color:white; 
+	border: 1px solid #CCC; 
+	box-shadow: 7px 7px 5px #888; 
+	padding: 5px 5px 5px 5px; 
+	border-radius: 10px; 
+	}
+
+.shapelist li:hover .hidden { display:block; }
+.shapelist li:hover .hidden img { display:inline; }
+
+.shapelist span {  font-family: 'doulos sil', gentiumplus, code2000, serif; font-size:26px; line-height: 1.2em; }
+/* #shape li {  padding-bottom:5px; } */
+
+
+#fontgrid { 
+	color: #808080; 
+	background: white; 
+	padding: 10px 20px;
+	font-size: 30px;
+	}
+#fontgrid span { 
+	cursor: pointer; 
+	margin-right: 10px; 
+	}
+#fontgrid span:after { 
+	content: '\200B ' ; /* zwsp */ 
+	}
+
