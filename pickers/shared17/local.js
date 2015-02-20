@@ -6,7 +6,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 	var name = charData[cp]['name']
 	var mark = charData[cp]['mark']
 	var cbase = ''
-	if (_combiningBase != '') cbase = '&amp;#x'+convertChar2CP(_combiningBase)+';'
+	if (defaults.ccbase != '') cbase = '&amp;#x'+convertChar2CP(defaults.ccbase)+';'
 
 	var out =  '<a href="/scripts/block/'+block+'#char'+hex+'"><span class="uname">U+'+hex+' '+name+'</span> <span lang="'+lang+'"'
 	if (direction == 'rtl') { out += ' dir="rtl"' }
