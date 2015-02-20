@@ -8,5 +8,6 @@ defaults.language = 'my'
 defaults.blocklocation= '/scripts/block/myanmar'
 defaults.uifont = 'Myanmar3 WF'; // font name per usage in CSS
 defaults.uisize = "28";  // number of pixels (just the number)
+defaults.ccbase = "";  // default base for combining characters
 
 

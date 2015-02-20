@@ -9,5 +9,6 @@ defaults.language = 'bn'
 defaults.blocklocation= '/scripts/block/bengali'
 defaults.uifont = 'Noto Sans Bengali WF'; // font name per usage in CSS
 defaults.uisize = "32";  // number of pixels (just the number)
+defaults.ccbase = "";  // default base for combining characters
 
 

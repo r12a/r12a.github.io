@@ -9,5 +9,6 @@ defaults.language = 'pa'
 defaults.blocklocation= '/scripts/block/gurmukhi'
 defaults.uifont = 'Noto Sans Gurmukhi WF'; // font name per usage in CSS
 defaults.uisize = "28";  // number of pixels (just the number)
+defaults.ccbase = "";  // default base for combining characters
 
 

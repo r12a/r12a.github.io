@@ -9,5 +9,6 @@ defaults.language = 'km'
 defaults.blocklocation= '/rishida/scripts/block/khmer'
 defaults.uifont = "Khmer OS Battambang WF"; // font name per usage in CSS
 defaults.uisize = "25";  // number of pixels (just the number)
+defaults.ccbase = "";  // default base for combining characters
 
 

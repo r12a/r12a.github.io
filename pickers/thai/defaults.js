@@ -9,5 +9,6 @@ defaults.language = 'th'
 defaults.blocklocation= '/scripts/block/thai'
 defaults.uifont = "Noto Serif Thai WF"; // font name per usage in CSS
 defaults.uisize = "32";  // number of pixels (just the number)
+defaults.ccbase = "-";  // default base for combining characters
 
 

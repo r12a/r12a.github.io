@@ -9,5 +9,6 @@ defaults.language = 'ug'
 defaults.blocklocation= '/scripts/block/arabic'
 defaults.uifont = '"Microsoft Uighur", "Scheherazade", "Geeza Pro", "Arabic Typesetting", "Traditional Arabic", "Noto Naskh Arabic", sans-serif'; // font name per usage in CSS
 defaults.uisize = "40";  // number of pixels (just the number)
+defaults.ccbase = "";  // default base for combining characters
 
 
