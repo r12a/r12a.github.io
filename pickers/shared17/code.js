@@ -140,25 +140,40 @@ function add(ch) {
 function selectFont ( newFont ) {
 	document.getElementById( 'output' ).style.fontFamily = newFont;
 	document.querySelector('#panel #title').style.fontFamily = newFont;
-	//for (i=0; i<_views.length; i++) {
-		//document.getElementById(_views[i]).style.fontFamily = newFont;
-		//}
 	document.getElementById('fontName').value="";
 	}
 	
 function customFont ( newFont ) { 
 	document.getElementById( 'output' ).style.fontFamily = newFont;
 	document.querySelector('#panel #title').style.fontFamily = newFont;
-	//for (i=0; i<_views.length; i++) {
-		//document.getElementById(_views[i]).style.fontFamily = newFont;
-		//}
 	document.getElementById('fontList').value='0';
+	addFontToLists(newFont, 'fontList,uiFont');
 	}
-	
+
 function changeFontSize ( newSize ) {
 	document.getElementById( 'output' ).style.fontSize = newSize + 'px';
 	}
+
+
+function setUIFont (font) {
+	chars = document.querySelectorAll('.c')
+	for (i=0;i<chars.length;i++) {
+		chars[i].style.fontFamily = font
+		}
+	document.querySelector('#extrashapes').style.fontFamily = font;
+	}
 	
+function setUIFontSize (size) {
+	chars = document.querySelectorAll('.c')
+	for (i=0;i<chars.length;i++) {
+		chars[i].style.fontSize = size+'px'
+		}
+	document.querySelector('#extrashapes').style.fontSize = size+'px';
+	}
+	
+
+
+
 
 function searchFor ( str, scriptname ) { 
 
@@ -314,12 +329,13 @@ function findShape (shapelist, extrashapes, show) {
 			span.onmouseover = event_mouseoverChar
 			span.onmouseout = event_mouseoutChar
 			span.onclick = event_clickOnChar
-			span.textContent = extrashapesarray[i]
+			if (charData[extrashapesarray[i]] && charData[extrashapesarray[i]].m) span.textContent  = defaults.ccbase + extrashapesarray[i]
+			else span.textContent = extrashapesarray[i]
 			document.getElementById('extrashapes').appendChild(span)
 			document.getElementById('extrashapes').appendChild(document.createTextNode(' '))
 			}
 		document.getElementById('extrashapes').style.fontFamily = document.getElementById('uiFont').value
-		document.getElementById('extrashapes').style.fontSize = defaults.uisize+'px'
+		document.getElementById('extrashapes').style.fontSize =  document.getElementById('uiFontSize').value+'px'
 		}
 	}
 
@@ -645,22 +661,6 @@ window.onload = function() {
 	//document.location = "#main"
 	};
 
-
-
-function setUIFont (font) {
-	chars = document.querySelectorAll('.c')
-	for (i=0;i<chars.length;i++) {
-		chars[i].style.fontFamily = font
-		}
-	}
-	
-function setUIFontSize (size) {
-	chars = document.querySelectorAll('.c')
-	for (i=0;i<chars.length;i++) {
-		chars[i].style.fontSize = size+'px'
-		}
-	}
-	
 
 
 function makeExample (str, lang, dir) {
