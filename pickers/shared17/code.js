@@ -269,24 +269,57 @@ function switchView (toView) {
 
 
 
-function findShape (shapelist, show) { 
+function findShape (shapelist, extrashapes, show) { 
 	// highlights characters that contain a given shape
 	// shapelist: string, comma-separated list of ids
+	// extrashapes: string, comma-separated list of characters to display below 
+	//						typically multiples, characters not in chart, or lookups for ethiopic, latin, etc
 	// status: boolean, indicates whether to highlight or remove highlighting
 
 	var shapelistarray = shapelist.split(',')
+	var extrashapesarray = extrashapes.split(',')
 
 	clearHighlights()
 
-	if (show) {
-		for (var i=0;i<shapelistarray.length;i++) { //alert(document.getElementById(shapelistarray[i]).textContent)
-			document.getElementById(shapelistarray[i]).style.backgroundColor = '#FFE6B2'
+	if (shapelist != '') {
+		if (show) {
+			for (var i=0;i<shapelistarray.length;i++) { 
+				document.getElementById(shapelistarray[i]).style.backgroundColor = '#FFE6B2'
+				}
+			}
+		else {
+			for (var i=0;i<shapelistarray.length;i++) {
+				document.getElementById(shapelistarray[i]).style.backgroundColor = 'transparent'
+				}
 			}
 		}
-	else {
-		for (var i=0;i<shapelistarray.length;i++) {
-			document.getElementById(shapelistarray[i]).style.backgroundColor = 'transparent'
+	
+	if (extrashapesarray.length > 0) {
+		document.getElementById('extrashapes').textContent = ''
+		for (i=0;i<extrashapesarray.length;i++) {
+			span = document.createElement('span')
+			prop = extrashapesarray[i]
+				var codepoint = ''
+				for (c=0; c<prop.length; c++) { 
+					cp = parseInt(prop.charCodeAt(c),10)
+					cp = cp.toString(16).toUpperCase()
+					while (cp.length < 4) cp = '0'+cp
+					cp = 'U+'+cp
+					if (c < prop.length-1) cp += ' '
+					codepoint += cp
+					}
+			if (charData[prop]) span.title = codepoint+': '+charData[prop].n
+			else span.title = codepoint
+				
+			span.onmouseover = event_mouseoverChar
+			span.onmouseout = event_mouseoutChar
+			span.onclick = event_clickOnChar
+			span.textContent = extrashapesarray[i]
+			document.getElementById('extrashapes').appendChild(span)
+			document.getElementById('extrashapes').appendChild(document.createTextNode(' '))
 			}
+		document.getElementById('extrashapes').style.fontFamily = document.getElementById('uiFont').value
+		document.getElementById('extrashapes').style.fontSize = defaults.uisize+'px'
 		}
 	}
 
@@ -582,6 +615,7 @@ window.onload = function() {
 	if (defaults.uifont) { 
 		document.getElementById( 'uiFont' ).value = defaults.uifont;  
 		setUIFont(defaults.uifont);
+		document.getElementById('extrashapes').style.fontFamily = defaults.uifont;
 		}
 	if (defaults.size) { 
 		document.getElementById( 'uiFontSize' ).value = defaults.uisize;  
