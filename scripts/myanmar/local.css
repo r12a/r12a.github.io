@@ -1,19 +1,19 @@
 @font-face {
-    font-family: 'notosansmyanmarWF';
+    font-family: 'noto sans myanmar WF';
     src: url('/webfonts/notosansmyanmar-regularwf.woff2') format('woff2'),
          url('/webfonts/notosansmyanmar-regularwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'myanmar3WF';
+    font-family: 'myanmar3 WF';
     src: url('/webfonts/mm3-multiwf.woff2') format('woff2'),
          url('/webfonts/mm3-multiwf.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'tharlonWF';
+    font-family: 'tharlon WF';
     src: url('/webfonts/tharlon-regularwf.woff2') format('woff2'),
          url('/webfonts/tharlon-regularwf.woff') format('woff');
     font-weight: normal;
@@ -48,9 +48,9 @@
 
 
 
-[lang|='my'] { font-family: myanmar3WF,tharlonWF,notosansmyanmarWF, Myanmar3, "Tharlon", 'Noto Sans Myanmar',Padauk, mm3, "Myanmar Text", "Myanmar Sangam MN", sans-serif; font-size: 22px; font-weight:400; }
+[lang|='my'] { font-family: "myanmar3 WF", "tharlon WF", "Noto Sans Myanmar WF", Myanmar3, "Tharlon", 'Noto Sans Myanmar',Padauk, mm3, "Myanmar Text", "Myanmar Sangam MN", sans-serif; font-size: 22px; font-weight:400; }
 
-#index td { font-family: myanmar3WF,tharlonWF,notosansmyanmarWF, Myanmar3, "Tharlon", 'Noto Sans Myanmar', Padauk, mm3, "Myanmar Text", "Myanmar Sangam MN", sans-serif; font-size: 26px; padding: 16px; text-align:left;  }
+#index td { font-family: "myanmar3 WF", "tharlon WF", "Noto Sans Myanmar WF", "Tharlon", 'Noto Sans Myanmar', Padauk, mm3, "Myanmar Text", "Myanmar Sangam MN", sans-serif; font-size: 26px; padding: 16px; text-align:left;  }
 
 #fontsetting { width: 270px; }
 #fontsetting.open { right: 0px; }
@@ -66,3 +66,7 @@
 
 
 span.ipa { font-family: 'gentium plus', 'doulos sil', 'myanmaripa', serif; }
+
+
+.charimg { font-size: 110px; min-width: 190px; min-height: 190px; text-align: center; vertical-align: middle; line-height: 190px; font-family: "myanmar3 wf","tharlon wf",Myanmar3, 'Noto Sans Myanmar', 'Noto Sans Myanmar WF', "Tharlon", Padauk, "Myanmar Text", "Myanmar Sangam MN", sans-serif; background-color: white; }
+
