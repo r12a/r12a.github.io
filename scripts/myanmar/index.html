@@ -4,12 +4,16 @@
 <meta charset="utf-8"/>
 <title>Myanmar script notes</title>
 <meta name="description" content="Notes about the Myanmar script as used for Burmese."/>
+    
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
 <link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
-<link rel="stylesheet" href="local.css" type="text/css" />
-<script src="/scripts/block/myanmar-names-subset.js" type="text/javascript"></script>
-<script src="/scripts/block/block-code.js" type="text/javascript"></script>
-<script src="/code/toc_section.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/scripts/block/myanmar-names-subset.js"></script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<script type="text/javascript" src="fonts.js"></script>
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/uniview/scriptGroups.js"></script>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -25,89 +29,53 @@
 
 <aside class="sidebar">
 <nav>
-<h2 class="notoc flush"><a id="tochead" tabindex="4">Contents</a></h2>
+<h2 class="notoc flush"><a id="tochead">Contents</a></h2>
 <div id="toc"><!-- placeholder --></div>
 <div class="noprint">
-  <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+  <h2 class="notoc"><a id="links">Related links</a></h2>
   <p><a href="/scripts/block/myanmar">Myanmar character notes</a></p>
   <p><a href="/scripts/links?script=myanmar">Myanmar script links</a></p>
   <p><a href="/pickers/myanmar/">Burmese character picker</a></p>
-  <p style="line-height: 1.3em"><a href="/uniview/?block=myanmar">Myanmar in UniView </a></p>
+  <p><a href="/uniview/?block=myanmar">Myanmar in UniView </a></p>
   </div>
   </nav>
+        
 <div id="fontsetting" class="closed">
-  <h2 class="notoc"><a id="fonts">Fonts</a></h2>
-  <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
-  <p>Set a font for Burmese text</p>
-  <p>
-  <select id="exfontswitchfont" 
+<h2 class="notoc"><a id="fonts">Fonts</a></h2>
+<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+<p>Set a font for Myanmar text</p>
+<p>
+<select id="exfontswitchfont" 
 onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'my');">
-  <optgroup label="Webfonts">
-  <option value="Myanmar3WF">Myanmar3</option>
-  <option value="TharlonWF">Tharlon</option>
-  <option value="NotoSansMyanmarWF">Noto Sans Myanmar</option>
-  </optgroup>
-  <optgroup label="Mac fonts">
-  <option value="Myanmar MN">Myanmar MN</option>
-  <option value="Myanmar Sangam MN">Myanmar Sangam MN</option>
-  </optgroup>
-  <optgroup label="Windows fonts">
-  <option value="Myanmar Text">Myanmar Text</option>
-  </optgroup>
-  <optgroup label="Google fonts">
-  <option value="Tharlon">Tharlon</option>
-  <option value="Noto Sans Myanmar">Noto Sans Myanmar</option>
-  <option value="Padauk">Padauk</option>
-  </optgroup>
-  <optgroup label="Other fonts">
-  <option value="Myanmar3">Myanmar3</option>
-  </optgroup>
-  </select>
-  <input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+</select> 
+<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
+<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
 onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'my');" />
-  </p>
-  <p>Set a font for the index</p>
-  <p>
-  <select  id="slfontswitchfont" 
-onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#exfontswitchsize').value, 'my');">
-  <optgroup label="Webfonts">
-  <option value="Myanmar3WF">Myanmar3</option>
-  <option value="TharlonWF">Tharlon</option>
-  <option value="NotoSansMyanmarWF">Noto Sans Myanmar</option>
-  </optgroup>
-  <optgroup label="Mac fonts">
-  <option value="Myanmar MN">Myanmar MN</option>
-  <option value="Myanmar Sangam MN">Myanmar Sangam MN</option>
-  </optgroup>
-  <optgroup label="Windows fonts">
-  <option value="Myanmar Text">Myanmar Text</option>
-  </optgroup>
-  <optgroup label="Google fonts">
-  <option value="Tharlon">Tharlon</option>
-  <option value="Noto Sans Myanmar">Noto Sans Myanmar</option>
-  <option value="Padauk">Padauk</option>
-  </optgroup>
-  <optgroup label="Other fonts">
-  <option value="Myanmar3">Myanmar3</option>
-  </optgroup>
-  </select>
-  <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+</p>
+<p>Set a font for the symbol list</p>
+<p>
+<select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'my');">
+</select> 
+<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
+<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'my');" />
-  </p>
-  <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+</p>
+<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
 </div>
 </aside>
 
 
 <p id="status">Updated Sun 15 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=burmese" title="Show all blog posts tagged with 'burmese'">burmese</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
 
-<div class="section"><a id="contentstart" tabindex="1"></a>
+<section>
   <p>In these notes I synthesize  information from various sources, encountered as I explore <span class="ex" lang="my">မြန်မာစာ</span> <span class="ipa">mjàɴmàzà</span>, and the  Myanmar script as used for Burmese. They may be updated from time to time. </p>
   <p>The page  contains brief notes on general script features. See also the companion document, <a href="/scripts/block/myanmar">Myanmar Character Notes</a>, which describes the characters used in Myanmar script one by one.</p>
   <p>For more detailed information, especially about the history and phonology of the Myanmar script, follow the links in the text and <a href="#endlinks">at the bottom of the page</a>, from which I took these notes. </p>
   <p>When you see red text (examples of Burmese) you can click on it to reveal the component characters.</p>
   <p>You can obtain  fonts for this page free from the Web, but <strong>you must use fonts compatible with the latest version of Unicode</strong>.   Click the blue vertical bar at the bottom right of the page to apply webfonts downloaded with this page, or other fonts, if you have them on your system. For the IPA transcriptions, I recommend downloading the free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=doulossil_download">Doulos Sil</a> or <a href="http://scripts.sil.org/gentium_download">Gentium Plus</a> fonts.</p>
-</div>
+</section>
+
 <section id="intro">
   <h2><a href="#intro">Brief script introduction</a></h2>
   <p> The script is an abugida, ie. consonants carry an inherent vowel sound that is overridden, where needed, using vowel signs.</p>
@@ -1308,14 +1276,11 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   </ol>
 </div>
 
-<div id="panel" style="display:none">
-  <div style="display:block">&nbsp;</div>
-  <p style="text-align:right;"></p>
-</div>
 
+<div id="panel" style="display:none"></div>
 
 <div class="smallprint"> <span id="version">First published  7 April, 2006.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-17  11:53<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-22  17:42<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
 
 
