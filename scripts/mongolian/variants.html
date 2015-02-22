@@ -1,0 +1,3723 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>Mongolian variant forms</title>
+<meta name="description" content="Notes about characters in the Unicode Mongolian script block."/>
+    
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/scripts/block/mongolian-names-subset.js"></script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<script type="text/javascript" src="fonts.js"></script>
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="/uniview/scriptGroups.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<script type="text/javascript">
+function changeConnector (newconnector) { 
+	var tds = document.querySelectorAll('td:lang(mn)')
+	console.log(newconnector,tds.length)
+	if (newconnector == 'zwj') {
+		for (i=0;i<tds.length;i++) {
+			tds[i].textContent = tds[i].textContent.replace(/᠊/g, '\u200D')
+			}
+		}
+	else {
+		for (i=0;i<tds.length;i++) {
+			tds[i].textContent = tds[i].textContent.replace(/\u200D/g, '᠊')
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Notes on Mongolian variant forms</h1>
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links">Related links</a></h2>
+    <!--p><a href="/scripts/mongolian">Mongolian script notes</a></p-->
+    <p><a href="block">Mongolian character notes</a></p>
+    <p><a href="/pickers/mongolian/">Mongolian character picker</a></p>
+    <p><a href="/uniview/?block=mongolian">Mongolian in UniView </a></p>
+    <p><a href="/scripts/links?script=mongolian">Mongolian script links</a></p>
+  </div>
+        
+        
+<div id="fontsetting" class="closed">
+<h2 class="notoc"><a id="fonts">Fonts</a></h2>
+<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+<p>Set a font for Mongolian text</p>
+<p>
+<select id="exfontswitchfont" 
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'mn');">
+</select> 
+<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
+<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'mn');" />
+</p>
+
+<p>Set a font for index characters</p>
+<p>
+<select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'mn');">
+</select> 
+<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
+<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'mn');" />
+</p>
+<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+
+<form onchange="changeConnector(this.connector.value); return false;">
+<p style="cursor:pointer;">Connectors<br/>
+Use <label><input type="radio" value="nirugu" checked="checked" name="connector"  onclick=""/> nirugu</label> <label><input type="radio" value="zwj" name="connector" onclick=""/> zwj</label></p>
+</form>
+</div>
+	</aside>
+
+<p id="status">Updated Wed 22 Feb 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=mongolian" title="Show all blog posts tagged with 'mongolian'">mongolian</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+
+<section>
+	<p>There is some confusion about which shapes should be produced by fonts for Mongolian characters. Most letters have at least one isolated, initial, medial and final shape, but other shapes are produced by contextual factors, such as vowel harmony. </p>
+	<p>Unicode <strong></strong>has a <a href="http://www.unicode.org/Public/UNIDATA/StandardizedVariants.html">list of standardised variant shapes</a>, dating from 27 November 2013, but that list is not complete and contains what are currently viewed by some as errors.</p>
+	<p>The original list of standardised variants was based on <a href="http://www.babelstone.co.uk/Mongolian/MGWBM.html">蒙古文编码</a> by Professor Quejingzhabu in 2000.</p>
+<p>A <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">new proposal</a> was published on 20 January 2014, which attempts to resolve the current issues.</p>
+<p>The other factor in this is what the actual fonts do. Sometimes they follow the Unicode standardised variants list, other times they diverge from it. Occasionally a majority of implementations appear to diverge in the same way, suggesting that the standardised list should be adapted to reality.</p>
+<p>In this document I map the changes between the various proposals, and compare to various font implementations.</p>
+<h3>How to use the document</h3>
+<p>For each Mongolian script letter, this page shows graphics to indicate the shape of a character in a given context (described in the left column). The graphics are standardised, and do not represent the actual font glyph shape.</p>
+<p>The columns to the left show the shapes expected in each of the three documents mentioned above. The columns to the right indicate the shapes produced by various fonts. See below for a key to the abbreviations used.</p>
+<p>The background of the left-most column is <span class="conflict">red</span> if there is a conflict between the shapes used for the various specification and <span class="fconflict">orange</span> if only one or more font implementations disagree with the specifications.</p>
+<p>The right column of the table contains a sequence of characters to allow you to check what glyphs are produced by fonts to which you have access. The vertical blue line at the bottom right of the window opens, when you click on it, to show a font control panel. When it is open, you can apply a specific font to the text in the right-hand column by selecting it from the top pull-down menu in this control panel. </p>
+<p>If the font you want to test is not available in the select list pull-down, click on 'Add a font' (below the two pull-down selectors in the control panel just mentioned) and enter the name of the font you want to add in the dialog box that appears. The font name will be added to the selection list menus. Open the top select list pull-down again, and click on the name of the font to apply it to the text in the right column. (Fonts you add to a pull-down list only stay on the select list for the duration of the session.)</p>
+<p>In the text column I use <span class="uname">U+180A MONGOLIAN NIRUGU</span> by default to establish the context for connecting characters. By clicking on the radio button in the font dialog box, you can change the connector to  <span class="uname">U+200D   ZERO WIDTH JOINER</span>. <strong>I experienced significant issues with ZWJ and the Mongolian Baiti font on Internet Explorer</strong>, so that is why the nirugu is used as the default. The results reported here for Mongolian Baiti are for display on IE, but with the nirugu to create the context.</p>
+<h3>Abbreviations and fonts tested</h3>
+<div style="margin-left: 30px;">
+<p><em>Q:</em> Prof Quejingzhabu's document</p>
+<p><em>USVL:</em> Unicode Standardised Variants list, v7</p>
+<p><em>NP:</em> New proposal, Jan 2014</p>
+<p><em>MB:</em> <strong>Mongolian Baiti</strong> font</p>
+<p><em>NSM:</em> <strong>Noto Sans Mongolian</strong> font</p>
+<p><em>MWc:</em> a collection of fonts from the same source that all behave in the same way, including the following: <strong>Mongolian White</strong>,  Mongolian<strong> Writing</strong>, <strong>Mongolian Title</strong>, <strong>Mongolian Art</strong>. If any of these fonts behaves differently from the others, I will add a column for it.</p>
+<p><em>fvs:</em> <strong>Free variant selector.</strong></p>
+<p><em>is, in, m, f:</em> <strong>Isolated, initial, medial, final, respectively.</strong></p>
+</div>
+</section>
+
+
+<section id="charlistsection">
+  <h2><a href="#charlistsection" id="characterlist">Index</a></h2>
+  <p>Click on a character in the table to jump to its description.</p>
+  <p>&nbsp;</p>
+</section>
+
+
+<table id="index" style="-webkit-writing-mode: vertical-lr;"><tbody>
+<tr><th><a href="#basic">Basic vowels</a></th><td>
+  <a href="#char1820" title="U+1820 MONGOLIAN LETTER A">&#x1820;</a> 
+  <a href="#char1821" title="U+1821 MONGOLIAN LETTER E">&#x1821;</a> 
+  <a href="#char1822" title="U+1822 MONGOLIAN LETTER I">&#x1822;</a> 
+  <a href="#char1823" title="U+1823 MONGOLIAN LETTER O">&#x1823;</a> 
+  <a href="#char1824" title="U+1824 MONGOLIAN LETTER U">&#x1824;</a> 
+  <a href="#char1825" title="U+1825 MONGOLIAN LETTER OE">&#x1825;</a> 
+  <a href="#char1826" title="U+1826 MONGOLIAN LETTER UE">&#x1826;</a> 
+  <a href="#char1827" title="U+1827 MONGOLIAN LETTER EE">&#x1827;</a> 
+</td></tr>
+
+<tr><th><a href="#basic">Basic consonants</a></th><td>
+<a href="#char1828" title="U+1828 MONGOLIAN LETTER NA">&#x1828;</a> 
+<a href="#char1829" title="U+1829 MONGOLIAN LETTER ANG">&#x1829;</a> 
+<a href="#char182A" title="U+182A MONGOLIAN LETTER BA">&#x182A;</a> 
+<a href="#char182B" title="U+182B MONGOLIAN LETTER PA">&#x182B;</a> 
+<a href="#char182C" title="U+182C MONGOLIAN LETTER QA">&#x182C;</a> 
+<a href="#char182D" title="U+182D MONGOLIAN LETTER GA">&#x182D;</a> 
+<a href="#char182E" title="U+182E MONGOLIAN LETTER MA">&#x182E;</a> 
+<a href="#char182F" title="U+182F MONGOLIAN LETTER LA">&#x182F;</a> 
+<a href="#char1830" title="U+1830 MONGOLIAN LETTER SA">&#x1830;</a> 
+<a href="#char1831" title="U+1831 MONGOLIAN LETTER SHA">&#x1831;</a> 
+<a href="#char1832" title="U+1832 MONGOLIAN LETTER TA">&#x1832;</a> 
+<a href="#char1833" title="U+1833 MONGOLIAN LETTER DA">&#x1833;</a> 
+<a href="#char1834" title="U+1834 MONGOLIAN LETTER CHA">&#x1834;</a> 
+<a href="#char1835" title="U+1835 MONGOLIAN LETTER JA">&#x1835;</a> 
+<a href="#char1836" title="U+1836 MONGOLIAN LETTER YA">&#x1836;</a> 
+<a href="#char1837" title="U+1837 MONGOLIAN LETTER RA">&#x1837;</a> 
+<a href="#char1838" title="U+1838 MONGOLIAN LETTER WA">&#x1838;</a> 
+<a href="#char1839" title="U+1839 MONGOLIAN LETTER FA">&#x1839;</a> 
+<a href="#char183A" title="U+183A MONGOLIAN LETTER KA">&#x183A;</a> 
+<a href="#char183B" title="U+183B MONGOLIAN LETTER KHA">&#x183B;</a> 
+<a href="#char183C" title="U+183C MONGOLIAN LETTER TSA">&#x183C;</a> 
+<a href="#char183D" title="U+183D MONGOLIAN LETTER ZA">&#x183D;</a> 
+<a href="#char183E" title="U+183E MONGOLIAN LETTER HAA">&#x183E;</a> 
+<a href="#char183F" title="U+183F MONGOLIAN LETTER ZRA">&#x183F;</a> 
+<a href="#char1840" title="U+1840 MONGOLIAN LETTER LHA">&#x1840;</a> 
+<a href="#char1841" title="U+1841 MONGOLIAN LETTER ZHI">&#x1841;</a> 
+<a href="#char1842" title="U+1842 MONGOLIAN LETTER CHI">&#x1842;</a> 
+</td></tr>
+
+<tr><th><a href="#todo">Todo letters</a></th><td>
+<a href="#char1843" title="U+1843 MONGOLIAN LETTER TODO LONG VOWEL SIGN">&#x1843;</a> 
+<a href="#char1844" title="U+1844 MONGOLIAN LETTER TODO E">&#x1844;</a> 
+<a href="#char1845" title="U+1845 MONGOLIAN LETTER TODO I">&#x1845;</a> 
+<a href="#char1846" title="U+1846 MONGOLIAN LETTER TODO O">&#x1846;</a> 
+<a href="#char1847" title="U+1847 MONGOLIAN LETTER TODO U">&#x1847;</a> 
+<a href="#char1848" title="U+1848 MONGOLIAN LETTER TODO OE">&#x1848;</a> 
+<a href="#char1849" title="U+1849 MONGOLIAN LETTER TODO UE">&#x1849;</a> 
+<a href="#char184A" title="U+184A MONGOLIAN LETTER TODO ANG">&#x184A;</a> 
+<a href="#char184B" title="U+184B MONGOLIAN LETTER TODO BA">&#x184B;</a> 
+<a href="#char184C" title="U+184C MONGOLIAN LETTER TODO PA">&#x184C;</a> 
+<a href="#char184D" title="U+184D MONGOLIAN LETTER TODO QA">&#x184D;</a> 
+<a href="#char184E" title="U+184E MONGOLIAN LETTER TODO GA">&#x184E;</a> 
+<a href="#char184F" title="U+184F MONGOLIAN LETTER TODO MA">&#x184F;</a> 
+<a href="#char1850" title="U+1850 MONGOLIAN LETTER TODO TA">&#x1850;</a> 
+<a href="#char1851" title="U+1851 MONGOLIAN LETTER TODO DA">&#x1851;</a> 
+<a href="#char1852" title="U+1852 MONGOLIAN LETTER TODO CHA">&#x1852;</a> 
+<a href="#char1853" title="U+1853 MONGOLIAN LETTER TODO JA">&#x1853;</a> 
+<a href="#char1854" title="U+1854 MONGOLIAN LETTER TODO TSA">&#x1854;</a> 
+<a href="#char1855" title="U+1855 MONGOLIAN LETTER TODO YA">&#x1855;</a> 
+<a href="#char1856" title="U+1856 MONGOLIAN LETTER TODO WA">&#x1856;</a> 
+<a href="#char1857" title="U+1857 MONGOLIAN LETTER TODO KA">&#x1857;</a> 
+<a href="#char1858" title="U+1858 MONGOLIAN LETTER TODO GAA">&#x1858;</a> 
+<a href="#char1859" title="U+1859 MONGOLIAN LETTER TODO HAA">&#x1859;</a> 
+<a href="#char185A" title="U+185A MONGOLIAN LETTER TODO JIA">&#x185A;</a> 
+<a href="#char185B" title="U+185B MONGOLIAN LETTER TODO NIA">&#x185B;</a> 
+<a href="#char185C" title="U+185C MONGOLIAN LETTER TODO DZA">&#x185C;</a> 
+</td></tr>
+
+<tr><th><a href="#sibe">Sibe letters</a></th><td>
+<a href="#char185D" title="U+185D MONGOLIAN LETTER SIBE E">&#x185D;</a> 
+<a href="#char185E" title="U+185E MONGOLIAN LETTER SIBE I">&#x185E;</a> 
+<a href="#char185F" title="U+185F MONGOLIAN LETTER SIBE IY">&#x185F;</a> 
+<a href="#char1860" title="U+1860 MONGOLIAN LETTER SIBE UE">&#x1860;</a> 
+<a href="#char1861" title="U+1861 MONGOLIAN LETTER SIBE U">&#x1861;</a> 
+<a href="#char1862" title="U+1862 MONGOLIAN LETTER SIBE ANG">&#x1862;</a> 
+<a href="#char1863" title="U+1863 MONGOLIAN LETTER SIBE KA">&#x1863;</a> 
+<a href="#char1864" title="U+1864 MONGOLIAN LETTER SIBE GA">&#x1864;</a> 
+<a href="#char1865" title="U+1865 MONGOLIAN LETTER SIBE HA">&#x1865;</a> 
+<a href="#char1866" title="U+1866 MONGOLIAN LETTER SIBE PA">&#x1866;</a> 
+<a href="#char1867" title="U+1867 MONGOLIAN LETTER SIBE SHA">&#x1867;</a> 
+<a href="#char1868" title="U+1868 MONGOLIAN LETTER SIBE TA">&#x1868;</a> 
+<a href="#char1869" title="U+1869 MONGOLIAN LETTER SIBE DA">&#x1869;</a> 
+<a href="#char186A" title="U+186A MONGOLIAN LETTER SIBE JA">&#x186A;</a> 
+<a href="#char186B" title="U+186B MONGOLIAN LETTER SIBE FA">&#x186B;</a> 
+<a href="#char186C" title="U+186C MONGOLIAN LETTER SIBE GAA">&#x186C;</a> 
+<a href="#char186D" title="U+186D MONGOLIAN LETTER SIBE HAA">&#x186D;</a> 
+<a href="#char186E" title="U+186E MONGOLIAN LETTER SIBE TSA">&#x186E;</a> 
+<a href="#char186F" title="U+186F MONGOLIAN LETTER SIBE ZA">&#x186F;</a> 
+<a href="#char1870" title="U+1870 MONGOLIAN LETTER SIBE RAA">&#x1870;</a> 
+<a href="#char1871" title="U+1871 MONGOLIAN LETTER SIBE CHA">&#x1871;</a> 
+<a href="#char1872" title="U+1872 MONGOLIAN LETTER SIBE ZHA">&#x1872;</a> 
+</td></tr>
+
+<tr><th><a href="#manchu">Manchu letters</a></th><td>
+<a href="#char1873" title="U+1873 MONGOLIAN LETTER MANCHU I">&#x1873;</a> 
+<a href="#char1874" title="U+1874 MONGOLIAN LETTER MANCHU KA">&#x1874;</a> 
+<a href="#char1875" title="U+1875 MONGOLIAN LETTER MANCHU RA">&#x1875;</a> 
+<a href="#char1876" title="U+1876 MONGOLIAN LETTER MANCHU FA">&#x1876;</a> 
+<a href="#char1877" title="U+1877 MONGOLIAN LETTER MANCHU ZHA">&#x1877;</a> 
+</td></tr>
+
+<tr><th><a href="#extensions">Extensions for Sanskrit and Tibetan</a></th><td>
+<a href="#char1880" title="U+1880 MONGOLIAN LETTER ALI GALI ANUSVARA ONE">&#x1880;</a> 
+<a href="#char1881" title="U+1881 MONGOLIAN LETTER ALI GALI VISARGA ONE">&#x1881;</a> 
+<a href="#char1882" title="U+1882 MONGOLIAN LETTER ALI GALI DAMARU">&#x1882;</a> 
+<a href="#char1883" title="U+1883 MONGOLIAN LETTER ALI GALI UBADAMA">&#x1883;</a> 
+<a href="#char1884" title="U+1884 MONGOLIAN LETTER ALI GALI INVERTED UBADAMA">&#x1884;</a> 
+<a href="#char1885" title="U+1885 MONGOLIAN LETTER ALI GALI BALUDA">&#x1885;</a> 
+<a href="#char1886" title="U+1886 MONGOLIAN LETTER ALI GALI THREE BALUDA">&#x1886;</a> 
+<a href="#char1887" title="U+1887 MONGOLIAN LETTER ALI GALI A">&#x1887;</a> 
+<a href="#char1888" title="U+1888 MONGOLIAN LETTER ALI GALI I">&#x1888;</a> 
+<a href="#char1889" title="U+1889 MONGOLIAN LETTER ALI GALI KA">&#x1889;</a> 
+<a href="#char188A" title="U+188A MONGOLIAN LETTER ALI GALI NGA">&#x188A;</a> 
+<a href="#char188B" title="U+188B MONGOLIAN LETTER ALI GALI CA">&#x188B;</a> 
+<a href="#char188C" title="U+188C MONGOLIAN LETTER ALI GALI TTA">&#x188C;</a> 
+<a href="#char188D" title="U+188D MONGOLIAN LETTER ALI GALI TTHA">&#x188D;</a> 
+<a href="#char188E" title="U+188E MONGOLIAN LETTER ALI GALI DDA">&#x188E;</a> 
+<a href="#char188F" title="U+188F MONGOLIAN LETTER ALI GALI NNA">&#x188F;</a> 
+<a href="#char1890" title="U+1890 MONGOLIAN LETTER ALI GALI TA">&#x1890;</a> 
+<a href="#char1891" title="U+1891 MONGOLIAN LETTER ALI GALI DA">&#x1891;</a> 
+<a href="#char1892" title="U+1892 MONGOLIAN LETTER ALI GALI PA">&#x1892;</a> 
+<a href="#char1893" title="U+1893 MONGOLIAN LETTER ALI GALI PHA">&#x1893;</a> 
+<a href="#char1894" title="U+1894 MONGOLIAN LETTER ALI GALI SSA">&#x1894;</a> 
+<a href="#char1895" title="U+1895 MONGOLIAN LETTER ALI GALI ZHA">&#x1895;</a> 
+<a href="#char1896" title="U+1896 MONGOLIAN LETTER ALI GALI ZA">&#x1896;</a> 
+<a href="#char1897" title="U+1897 MONGOLIAN LETTER ALI GALI AH">&#x1897;</a> 
+<a href="#char1898" title="U+1898 MONGOLIAN LETTER TODO ALI GALI TA">&#x1898;</a> 
+<a href="#char1899" title="U+1899 MONGOLIAN LETTER TODO ALI GALI ZHA">&#x1899;</a> 
+<a href="#char189A" title="U+189A MONGOLIAN LETTER MANCHU ALI GALI GHA">&#x189A;</a> 
+<a href="#char189B" title="U+189B MONGOLIAN LETTER MANCHU ALI GALI NGA">&#x189B;</a> 
+<a href="#char189C" title="U+189C MONGOLIAN LETTER MANCHU ALI GALI CA">&#x189C;</a> 
+<a href="#char189D" title="U+189D MONGOLIAN LETTER MANCHU ALI GALI JHA">&#x189D;</a> 
+<a href="#char189E" title="U+189E MONGOLIAN LETTER MANCHU ALI GALI TTA">&#x189E;</a> 
+<a href="#char189F" title="U+189F MONGOLIAN LETTER MANCHU ALI GALI DDHA">&#x189F;</a> 
+<a href="#char18A0" title="U+18A0 MONGOLIAN LETTER MANCHU ALI GALI TA">&#x18A0;</a> 
+<a href="#char18A1" title="U+18A1 MONGOLIAN LETTER MANCHU ALI GALI DHA">&#x18A1;</a> 
+<a href="#char18A2" title="U+18A2 MONGOLIAN LETTER MANCHU ALI GALI SSA">&#x18A2;</a> 
+<a href="#char18A3" title="U+18A3 MONGOLIAN LETTER MANCHU ALI GALI CYA">&#x18A3;</a> 
+<a href="#char18A4" title="U+18A4 MONGOLIAN LETTER MANCHU ALI GALI ZHA">&#x18A4;</a> 
+<a href="#char18A5" title="U+18A5 MONGOLIAN LETTER MANCHU ALI GALI ZA">&#x18A5;</a> 
+<a href="#char18A6" title="U+18A6 MONGOLIAN LETTER ALI GALI HALF U">&#x18A6;</a> 
+<a href="#char18A7" title="U+18A7 MONGOLIAN LETTER ALI GALI HALF YA">&#x18A7;</a> 
+<a href="#char18A8" title="U+18A8 MONGOLIAN LETTER MANCHU ALI GALI BHA">&#x18A8;</a> 
+<a href="#char18A9" title="U+18A9 MONGOLIAN LETTER ALI GALI DAGALGA">&#xA0;&#xA0;&#x18A9;</a> 
+<a href="#char18AA" title="U+18AA MONGOLIAN LETTER MANCHU ALI GALI LHA">&#x18AA;</a> 
+</td></tr>
+
+
+</tbody></table>
+<section id="basic"><h2><a href="#basic">Basic vowels</a></h2>
+<div class="character" id="char1820">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1820;</div>
+<p class="charname"><strong>U+1820</strong> <a href="/rishida/uniview/?char=1820">MONGOLIAN LETTER A</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter a - 0430)<br/>~ 1820 180B second form (isolate)<br/>~ 1820 180B second form (medial)<br/>~ 1820 180B second form (final)<br/>~ 1820 180C third form (medial)</div>
+<div class="notes">
+	<table class="formtable"><tbody>
+    <tr><th>form</th><th>Q</th><th>USVL</th><th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td>isolated</td>
+      <td><img src="/pickers/mongolian/v/1820s.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820s.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820s.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820s.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820s.png" alt=""/></td>
+      <td lang="mn"><div>&#x1820;&nbsp;</div></td>
+    </tr>
+    <tr>
+      <td>is+fvs1</td>
+      <td><img src="/pickers/mongolian/v/1820s1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820s1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820s1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820s1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820s1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820s1.gif" alt=""/></td>
+      <td lang="mn">&#x1820;&#x180B;</td>
+    </tr>
+    <tr>
+      <td>initial</td>
+      <td><img src="/pickers/mongolian/v/1820i.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820i.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820i.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820i.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820i.png" alt=""/></td>
+      <td lang="mn">&#x1820;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">in+fvs1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td lang="mn">&#x1820;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>medial</td>
+      <td><img src="/pickers/mongolian/v/1820m.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820m.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1820;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>m+fvs1</td>
+      <td><img src="/pickers/mongolian/v/1820m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1820;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class=fconflict>m+fvs2</td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820m.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1820;&#x180C;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td><img src="/pickers/mongolian/v/1820f.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820f.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820f.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1820;</td>
+    </tr>
+    <tr>
+      <td>f+fvs1</td>
+      <td><img src="/pickers/mongolian/v/1820f1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820f1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820f1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1820f1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820f1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1820f1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1820;&#x180B;</td>
+    </tr>
+    
+    </tbody>
+	</table>
+	<div class="letter mongolian">
+	  <p><span class="title">Notes</span></p>
+	  <p>None of the sources referenced include a 2nd initial form, but all the fonts tested support it, in the same way. This may be a candidate for inclusion in a future version of the spec, as a correction of the 3rd medial form.</p>
+	  <p>The glyph produced is the same as is produced for the suffix <span class="ex" lang="mn"> ᠠᠴᠠ</span> for all the fonts tested.</p>
+	</div>
+</div>
+</div>
+
+<div class="character" id="char1821">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1821;</div>
+<p class="charname"><strong>U+1821</strong> <a href="/rishida/uniview/?char=1821">MONGOLIAN LETTER E</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter e - 044D)<br/>~ 1821 180B second form (initial)<br/>~ 1821 180B second form (final)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>isolated</td>
+        <td><img src="/pickers/mongolian/v/1821s.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821s.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821s.png" alt=""/></td>
+        <td lang="mn"><div>&#x1821;&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1821i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821i.png" alt=""/></td>
+        <td lang="mn">&#x1821;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>in+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1821i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821i1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821i1.gif" alt=""/></td>
+        <td lang="mn">&#x1821;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1821m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1821;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1821f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1821;</td>
+      </tr>
+      <tr>
+        <td>f+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1820f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1821f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1821f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1821;&#x180B;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="character" id="char1822">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1822;</div>
+<p class="charname"><strong>U+1822</strong> <a href="/rishida/uniview/?char=1822">MONGOLIAN LETTER I</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter i - 0438)<br/>~ 1822 180B second form (medial)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>isolated</td>
+        <td><img src="/pickers/mongolian/v/1822s.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822s.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822s.png" alt=""/></td>
+        <td lang="mn"><div>&#x1822;&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1822i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822i.png" alt=""/></td>
+        <td lang="mn">&#x1822;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1822m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1822;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1822m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1822;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="fconflict">m+fvs2</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822m2.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1822;&#x180C;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1822f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1822f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1822f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1822;</td>
+      </tr>
+      </tbody>
+  </table>
+  <div class="letter mongolian">
+    <p><span class="title">Notes</span></p>
+    <p>None of the sources referenced include a 3rd medial form, but the Mongolian White et al fonts support a different shape. Mongolian Baiti also supports the same alternate shape in Firefox, and Chrome. This may be a candidate for inclusion in a future version of the spec.</p>
+  </div>
+</div>
+</div>
+
+<div class="character" id="char1823">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1823;</div>
+<p class="charname"><strong>U+1823</strong> <a href="/rishida/uniview/?char=1823">MONGOLIAN LETTER O</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter o - 043E)<br/>~ 1823 180B second form (medial)<br/>~ 1823 180B second form (final)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>isolated</td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td lang="mn"><div>&#x1823;&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td lang="mn">&#x1823;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1823;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1823;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1823;</td>
+      </tr>
+      <tr>
+        <td>f+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1823;&#x180B;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="character" id="char1824">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1824;</div>
+<p class="charname"><strong>U+1824</strong> <a href="/rishida/uniview/?char=1824">MONGOLIAN LETTER U</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter u - 0443)<br/>~ 1824 180B second form (medial)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>isolated</td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823s.png" alt=""/></td>
+        <td lang="mn"><div>&#x1824;&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823i.png" alt=""/></td>
+        <td lang="mn">&#x1824;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1824;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1824;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1824;</td>
+      </tr>
+      <tr>
+        <td class=fconflict>f+fvs1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1824;&#x180B;</td>
+      </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+
+<div class="character" id="char1825">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1825;</div>
+<p class="charname"><strong>U+1825</strong> <a href="/rishida/uniview/?char=1825">MONGOLIAN LETTER OE</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter barred o - 04E9)<br/>~ 1825 180B second form (medial)<br/>~ 1825 180B second form (final)<br/>~ 1825 180C third form (medial)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>isolated</td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td lang="mn"><div>&#x1825;&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td lang="mn">&#x1825;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1825;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1825;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs2</td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1825;&#x180C;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1825;</td>
+      </tr>
+      <tr>
+        <td>f+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1825;&#x180B;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="character" id="char1826">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1826;</div>
+<p class="charname"><strong>U+1826</strong> <a href="/rishida/uniview/?char=1826">MONGOLIAN LETTER UE</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter straight u - 04AF)<br/>~ 1826 180B second form (isolate)<br/>~ 1826 180B second form (medial)<br/>~ 1826 180B second form (final)<br/>~ 1826 180C third form (medial)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>isolated</td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825s.png" alt=""/></td>
+        <td lang="mn"><div>&#x1826;&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td>is+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1826s1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1826s1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1826s1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1826s1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1826s1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1826s1.gif" alt=""/></td>
+        <td lang="mn">&#x1826;&#x180B;</td>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825i.png" alt=""/></td>
+        <td lang="mn">&#x1826;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1826;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1826;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs2</td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825m2.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1826;&#x180C;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1823f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1826;</td>
+      </tr>
+      <tr>
+        <td>f+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1825f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1826;&#x180B;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="character" id="char1827">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1827;</div>
+<p class="charname"><strong>U+1827</strong> <a href="/rishida/uniview/?char=1827">MONGOLIAN LETTER EE</a></p>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>isolated</td>
+        <td><img src="/pickers/mongolian/v/1827s.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827s.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827s.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827s.png" alt=""/></td>
+        <td lang="mn"><div>&#x1827;&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1827i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827i.png" alt=""/></td>
+        <td lang="mn">&#x1827;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1827m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1827;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1827f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1827f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1827f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1827;</td>
+      </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+
+</section>
+
+<section id="basicconsonants"><h2><a href="#basicconsonants">Basic consonants</a></h2>
+<div class="character" id="char1828">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1828;</div>
+<p class="charname"><strong>U+1828</strong> <a href="/rishida/uniview/?char=1828">MONGOLIAN LETTER NA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter en - 043D)<br/>~ 1828 180B second form (initial)<br/>~ 1828 180B second form (medial)<br/>~ 1828 180C third form (medial)<br/>~ 1828 180D separate form (medial)</div>
+<div class="notes">
+<table class="formtable">
+  <tbody>
+    <tr>
+      <th>form</th>
+      <th>Q</th>
+      <th>USVL</th>
+      <th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td>initial</td>
+      <td><img src="/pickers/mongolian/v/1828i.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828i.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828i.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828i.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828i.png" alt=""/></td>
+      <td lang="mn">&#x1828;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>i+fvs1</td>
+      <td><img src="/pickers/mongolian/v/1828i1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828i1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828i1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828i1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828i1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828i1.gif" alt=""/></td>
+      <td lang="mn">&#x1828;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">medial</td>
+      <td><img src="/pickers/mongolian/v/1828m.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828m.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1828;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">m+fvs1</td>
+      <td><img src="/pickers/mongolian/v/1828m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828m1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1828;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="conflict">m+fvs2</td>
+      <td><img src="/pickers/mongolian/v/1828m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1828;&#x180C;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="conflict">m+fvs3</td>
+      <td><img src="/pickers/mongolian/v/1828m3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m3.gif" alt=""/></td>
+      <td>&nbsp;</td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1821m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1828;&#x180D;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td><img src="/pickers/mongolian/v/1828f.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828f.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828f.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1828;</td>
+    </tr>
+    <tr>
+      <td class=conflict>f+fvs1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828m2.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1828f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1828m2.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1828;&#x180B;</td>
+    </tr>
+  </tbody>
+</table>
+<div class="letter mongolian">
+  <p><span class="title">Notes</span></p>
+  <p>The 3rd medial form in <a href="http://www.unicode.org/Public/UNIDATA/StandardizedVariants.html">Standardised Variants</a> becomes the 2nd final form in the <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">2014 proposal</a>, however the latter shows the same glyph for 2nd and 3rd medial forms. It should show the slightly taller variant (used in Todo) as the 3rd medial form (shown as the 4th medial in the other docs). There is no 4th medial in the <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">2014 proposal</a>.</p>
+</div>
+</div>
+</div>
+
+<div class="character" id="char1829">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1829;</div>
+<p class="charname"><strong>U+1829</strong> <a href="/rishida/uniview/?char=1829">MONGOLIAN LETTER ANG</a></p>
+<div class="notes">
+<table class="formtable">
+  <tbody>
+    <tr>
+      <th>form</th>
+      <th>Q</th>
+      <th>USVL</th>
+      <th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td>initial</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td lang="mn">&#x1829;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>medial</td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1829m.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1829;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td><img src="/pickers/mongolian/v/1829f.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1829f.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/1829f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1829f.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/1829f.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x1829;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char182A">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x182A;</div>
+<p class="charname"><strong>U+182A</strong> <a href="/rishida/uniview/?char=182A">MONGOLIAN LETTER BA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter be - 0431)<br/>~ 182A 180B alternative form (final)</div>
+<div class="notes">
+<table class="formtable">
+  <tbody>
+    <tr>
+      <th>form</th>
+      <th>Q</th>
+      <th>USVL</th>
+      <th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td>initial</td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td lang="mn">&#x182A;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>medial</td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ai.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182A;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td><img src="/pickers/mongolian/v/182Af.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Af.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Af.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Af.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Af.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182A;</td>
+    </tr>
+    <tr>
+      <td>f+fvs1</td>
+      <td><img src="/pickers/mongolian/v/182Af1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Af1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Af1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Af1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Af1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Af1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182A;&#x180B;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char182B">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x182B;</div>
+<p class="charname"><strong>U+182B</strong> <a href="/rishida/uniview/?char=182B">MONGOLIAN LETTER PA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter pe - 043F)</div>
+<div class="notes">
+<table class="formtable">
+  <tbody>
+    <tr>
+      <th>form</th>
+      <th>Q</th>
+      <th>USVL</th>
+      <th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td>initial</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td lang="mn">&#x182B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>medial</td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Bm.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td><img src="/pickers/mongolian/v/182Bf.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Bf.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Bf.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Bf.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Bf.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182B;</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char182C">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x182C;</div>
+<p class="charname"><strong>U+182C</strong> <a href="/rishida/uniview/?char=182C">MONGOLIAN LETTER QA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ha - 0445)<br/>~ 182C 180B second form (initial)<br/>~ 182C 180B second form (medial)<br/>~ 182C 180B feminine second form (isolate)<br/>~ 182C 180C third form (medial)<br/>~ 182C 180D fourth form (medial)</div>
+<div class="notes">
+<table class="formtable">
+  <tbody>
+    <tr>
+      <th>form</th>
+      <th>Q</th>
+      <th>USVL</th>
+      <th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td class="conflict">is+fvs1</td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td lang="mn">&#x182C;&#x180B;</td>
+    </tr>
+    <tr>
+      <td class="conflict">is+fvs2</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ci.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td lang="mn">&#x182C;&#x180C;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">initial</td>
+      <td><img src="/pickers/mongolian/v/182Ci.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ci.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci.png" alt=""/></td>
+      <td lang="mn">&#x182C;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">i+fvs1</td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td lang="mn">&#x182C;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>medial</td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182C;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">m+fvs1</td>
+      <td><img src="/pickers/mongolian/v/182Cm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182C;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="conflict">m+fvs2</td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td>&nbsp;</td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182C;&#x180C;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="conflict">m+fvs3</td>
+      <td><img src="/pickers/mongolian/v/182Cm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm3.gif" alt=""/></td>
+      <td>&nbsp;</td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182C;&#x180D;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="conflict">final</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm3.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm3.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182C;</td>
+    </tr>
+    <tr>
+      <td class="conflict">f+fvs1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182C;&#x180B;</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char182D">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x182D;</div>
+<p class="charname"><strong>U+182D</strong> <a href="/rishida/uniview/?char=182D">MONGOLIAN LETTER GA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ghe - 0433)<br/>~ 182D 180B second form (initial)<br/>~ 182D 180B second form (medial)<br/>~ 182D 180B feminine form (final)<br/>~ 182D 180C third form (medial)<br/>~ 182D 180D feminine form (medial)</div>
+<div class="notes">
+<table class="formtable">
+  <tbody>
+    <tr>
+      <th>form</th>
+      <th>Q</th>
+      <th>USVL</th>
+      <th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td class="conflict">isolate</td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td lang="mn">&#x182D;</td>
+    </tr>
+    <tr>
+      <td class="conflict">is+fvs1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ci.png" alt=""/></td>
+      <td lang="mn">&#x182D;&#x180B;</td>
+    </tr>
+    <tr>
+      <td class="conflict">is+fvs2</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ci1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td lang="mn">&#x182D;&#x180C;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">initial</td>
+      <td><img src="/pickers/mongolian/v/182Di.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Di.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Di.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Di.png" alt=""/></td>
+      <td lang="mn">&#x182D;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>i+fvs1</td>
+      <td><img src="/pickers/mongolian/v/182Di1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Di1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Di1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Di1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Di1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Di1.gif" alt=""/></td>
+      <td lang="mn">&#x182D;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">i+fvs2</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td lang="mn">&#x182D;&#x180C;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">medial</td>
+      <td><img src="/pickers/mongolian/v/182Dm.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">m+fvs1</td>
+      <td><img src="/pickers/mongolian/v/182Dm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Dm1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;&#x180B;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="conflict">m+fvs2</td>
+      <td><img src="/pickers/mongolian/v/182Dm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td>&nbsp;</td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cs1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;&#x180C;&#x180A;</td>
+    </tr>
+    <tr>
+      <td class="fconflict">m+fvs3</td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Dm3.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;&#x180D;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;</td>
+    </tr>
+    <tr>
+      <td class="conflict">f+fvs1</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Df1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;&#x180B;</td>
+    </tr>
+    <tr>
+      <td>f+fvs2</td>
+      <td><img src="/pickers/mongolian/v/182Df1.gif" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Df1.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Df1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df1.gif" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df1.gif" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;&#x180C;</td>
+    </tr>
+    <tr>
+      <td class="conflict">f+fvs3</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Cm2.gif" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Df.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182D;&#x180D;</td>
+    </tr>
+  </tbody>
+</table>
+<div class="letter mongolian">
+  <p><span class="title">Notes</span></p>
+  <p>None of the sources referenced include a 3rd initial form, but all the fonts tested support the same alternative shape.   Mongolian Baiti produces this as the default initial as well, but the other fonts don't. This may be a candidate for inclusion in a future version of the spec.</p>
+</div>
+</div>
+</div>
+
+<div class="character" id="char182E">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x182E;</div>
+<p class="charname"><strong>U+182E</strong> <a href="/rishida/uniview/?char=182E">MONGOLIAN LETTER MA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter em - 043C)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+    <tr>
+      <th>form</th>
+      <th>Q</th>
+      <th>USVL</th>
+      <th>NP</th>
+      <th class="gap">&nbsp;</th>
+      <th>MB</th>
+      <th>NSM</th>
+      <th>MWc</th>
+      <th>Text</th>
+    </tr>
+    <tr>
+      <td>initial</td>
+      <td><img src="/pickers/mongolian/v/182Ei.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ei.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ei.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ei.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ei.png" alt=""/></td>
+      <td lang="mn">&#x182E;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>medial</td>
+      <td><img src="/pickers/mongolian/v/182Em.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Em.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Em.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Em.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Em.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182E;&#x180A;</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td><img src="/pickers/mongolian/v/182Ef.png" alt=""/></td>
+      <td>&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ef.png" alt=""/></td>
+      <td class="gap">&nbsp;</td>
+      <td><img src="/pickers/mongolian/v/182Ef.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ef.png" alt=""/></td>
+      <td><img src="/pickers/mongolian/v/182Ef.png" alt=""/></td>
+      <td lang="mn">&#x180A;&#x182E;</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char182F">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x182F;</div>
+<p class="charname"><strong>U+182F</strong> <a href="/rishida/uniview/?char=182F">MONGOLIAN LETTER LA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter el - 043B)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/182Fi.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/182Fi.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/182Fi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/182Fi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/182Fi.png" alt=""/></td>
+        <td lang="mn">&#x182F;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/182Fm.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/182Fm.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/182Fm.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/182Fm.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/182Fm.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x182F;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/182Ff.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/182Ff.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/182Ff.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/182Ff.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/182Ff.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x182F;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1830">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1830;</div>
+<p class="charname"><strong>U+1830</strong> <a href="/rishida/uniview/?char=1830">MONGOLIAN LETTER SA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter es - 0441)<br/>~ 1830 180B second form (final)<br/>~ 1830 180C third form (final)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1830i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830i.png" alt=""/></td>
+        <td lang="mn">&#x1830;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1830m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1830;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1830f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1830;</td>
+      </tr>
+      <tr>
+        <td>f+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1830f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1830;&#x180B;</td>
+      </tr>
+      <tr>
+        <td>f+fvs2</td>
+        <td><img src="/pickers/mongolian/v/1830f2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f2.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1830f2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f2.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1830f2.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1830;&#x180C;</td>
+      </tr>
+      </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1831">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1831;</div>
+<p class="charname"><strong>U+1831</strong> <a href="/rishida/uniview/?char=1831">MONGOLIAN LETTER SHA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter sha - 0448)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1831i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1831i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1831i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1831i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1831i.png" alt=""/></td>
+        <td lang="mn">&#x1831;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1831m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1831m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1831m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1831m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1831m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1831;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1831f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1831f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1831f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1831f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1831f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1831;</td>
+      </tr>
+      </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1832">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1832;</div>
+<p class="charname"><strong>U+1832</strong> <a href="/rishida/uniview/?char=1832">MONGOLIAN LETTER TA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter te - 0442)<br/>~ 1832 180B second form (medial)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1832i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1832i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1832i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832i.png" alt=""/></td>
+        <td lang="mn">&#x1832;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1832m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1832m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1832m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1832;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1832m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1832m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1832;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1832f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1832f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1832f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1832f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1832;</td>
+      </tr>
+      </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1833">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1833;</div>
+<p class="charname"><strong>U+1833</strong> <a href="/rishida/uniview/?char=1833">MONGOLIAN LETTER DA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter de - 0434)<br/>~ 1833 180B second form (initial)<br/>~ 1833 180B second form (medial)<br/>~ 1833 180B second form (final)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1833i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833i.png" alt=""/></td>
+        <td lang="mn">&#x1833;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>i+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1833i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833i1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833i1.gif" alt=""/></td>
+        <td lang="mn">&#x1833;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="fconflict">medial</td>
+        <td><img src="/pickers/mongolian/v/1833m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1833;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="fconflict">m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1833m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1833;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1833f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1833;</td>
+      </tr>
+      <tr>
+        <td>f+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1833f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1833f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1833f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1833;&#x180B;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1834">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1834;</div>
+<p class="charname"><strong>U+1834</strong> <a href="/rishida/uniview/?char=1834">MONGOLIAN LETTER CHA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter che - 0447)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1834i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1834i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1834i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1834i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1834i.png" alt=""/></td>
+        <td lang="mn">&#x1834;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1834m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1834m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1834m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1834m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1834m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1834;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1834f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1834f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1834f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1834f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1834f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1834;</td>
+      </tr>
+      </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1835">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1835;</div>
+<p class="charname"><strong>U+1835</strong> <a href="/rishida/uniview/?char=1835">MONGOLIAN LETTER JA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter zhe - 0436)<br/>~ 1835 180B second form (medial)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1835i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835i.png" alt=""/></td>
+        <td lang="mn">&#x1835;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1835m.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835m.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1835;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="fconflict">m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1835;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1835;</td>
+      </tr>
+      <tr>
+        <td class="fconflict">f+fvs1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1835;&#x180B;</td>
+      </tr>
+      </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1836">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1836;</div>
+<p class="charname"><strong>U+1836</strong> <a href="/rishida/uniview/?char=1836">MONGOLIAN LETTER YA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter short i - 0439)<br/>~ 1836 180B second form (initial)<br/>~ 1836 180B second form (medial)<br/>~ 1836 180C third form (medial)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td lang="mn">&#x1836;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>i+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td lang="mn">&#x1836;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="conflict">medial</td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1836;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="conflict">m+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1836;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="conflict">m+fvs2</td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td>&nbsp;</td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1836i.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1836;&#x180C;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class=conflict>final</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1835m1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1836;</td>
+      </tr>
+      </tbody>
+</table>
+  <div class="letter mongolian">
+    <p><span class="title">Notes</span></p>
+    <p>The <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">2014 proposal</a> proposes the  glyph with no upturn for 1st medial form and with upturn for the 2nd medial form. This is the other way around to the order for the initial forms, and is out of synch with all fonts tested for the 1st form, and out of synch for all fonts tested except Mongolian Baiti for the 2nd form.</p>
+    <p>Analysis for Professor Quejingzhabu's Mongolian Specification 9.0 and by Greg Eck suggest that the 2014 proposal is correct, and that therefore the fonts shown above will need to be changed.</p>
+    <p>Using version 5.41 of the Mongolian Baiti font and on the Windows 8.1 platform, I'm finding  behaviour when displayed on Internet Explorer 11 differs from that on Chrome. IE shows the turned up variant as 1st medial and straight as 2nd, whereas Chrome shows straight for both.</p>
+  </div>
+</div>
+</div>
+
+<div class="character" id="char1837">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1837;</div>
+<p class="charname"><strong>U+1837</strong> <a href="/rishida/uniview/?char=1837">MONGOLIAN LETTER RA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter er - 0440)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td lang="mn">&#x1837;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1837i.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1837;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1837f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1837f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1837f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1837f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1837f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1837;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1838">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1838;</div>
+<p class="charname"><strong>U+1838</strong> <a href="/rishida/uniview/?char=1838">MONGOLIAN LETTER WA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ve - 0432)<br/>~ 1838 180B second form (final)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td lang="mn">&#x1838;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="conflict">medial</td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838malt.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1838;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="conflict">m+fvs1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838i.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1838;&#x180B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class="conflict">final</td>
+        <td><img src="/pickers/mongolian/v/1838f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838f1.gif" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1838;</td>
+      </tr>
+      <tr>
+        <td class="conflict">f+fvs1</td>
+        <td><img src="/pickers/mongolian/v/1838f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1838f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838f1.gif" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1838f1.gif" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1838;&#x180B;</td>
+      </tr>
+    </tbody>
+</table>
+  <div class="letter mongolian">
+    <p><span class="title">Notes</span></p>
+    <p>All fonts tested produce the 1st medial form described by <a href="http://www.babelstone.co.uk/Mongolian/MGWBM.html">Professor Quejingzhabu</a>. The <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">2014 proposal</a> moves that glyph to the 2nd medial form due to research by the Professor that indicates, that according to syllable-forming rules, the medial loop so long considered to be a vowel, UE (U+1826), was determined to be the semi-vowel WA (U+1838) instead.</p>
+    <p>The same goes for the 1st and 2nd final glyphs.</p>
+    <p>This means that the fonts tested will need to change their behaviour.</p>
+  </div>
+</div>
+</div>
+
+<div class="character" id="char1839">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1839;</div>
+<p class="charname"><strong>U+1839</strong> <a href="/rishida/uniview/?char=1839">MONGOLIAN LETTER FA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ef - 0444)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td lang="mn">&#x1839;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1839i.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1839;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/1839f.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1839f.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1839f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1839f.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1839f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1839;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char183A">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x183A;</div>
+<p class="charname"><strong>U+183A</strong> <a href="/rishida/uniview/?char=183A">MONGOLIAN LETTER KA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ha - 0445)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td lang="mn">&#x183A;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ai.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183A;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/183Af.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Af.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Af.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Af.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Af.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183A;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char183B">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x183B;</div>
+<p class="charname"><strong>U+183B</strong> <a href="/rishida/uniview/?char=183B">MONGOLIAN LETTER KHA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ka - 043A)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td lang="mn">&#x183B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Bi.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183B;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/183Bf.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Bf.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Bf.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Bf.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Bf.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183B;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char183C">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x183C;</div>
+<p class="charname"><strong>U+183C</strong> <a href="/rishida/uniview/?char=183C">MONGOLIAN LETTER TSA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter tse - 0446)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/183Ci.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ci.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ci.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ci.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ci.png" alt=""/></td>
+        <td lang="mn">&#x183C;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/183Cm.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Cm.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Cm.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Cm.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Cm.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183C;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/183Cf.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Cf.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Cf.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Cf.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Cf.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183C;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char183D">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x183D;</div>
+<p class="charname"><strong>U+183D</strong> <a href="/rishida/uniview/?char=183D">MONGOLIAN LETTER ZA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ze - 0437)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/183Di.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Di.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Di.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Di.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Di.png" alt=""/></td>
+        <td lang="mn">&#x183D;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/183Dm.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Dm.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Dm.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Dm.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Dm.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183D;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/183Df.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Df.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Df.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Df.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Df.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183D;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char183E">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x183E;</div>
+<p class="charname"><strong>U+183E</strong> <a href="/rishida/uniview/?char=183E">MONGOLIAN LETTER HAA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter ha - 0445)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/183Ei.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ei.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ei.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ei.png" alt=""/></td>
+        <td lang="mn">&#x183E;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/183Em.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Em.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Em.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Em.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183E;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/183Ef.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ef.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ef.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ef.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183E;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char183F">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x183F;</div>
+<p class="charname"><strong>U+183F</strong> <a href="/rishida/uniview/?char=183F">MONGOLIAN LETTER ZRA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (cyrillic small letter zhe - 0436)</div>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td lang="mn">&#x183F;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Fi.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183F;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>final</td>
+        <td><img src="/pickers/mongolian/v/183Ff.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ff.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/183Ff.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ff.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/183Ff.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x183F;</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="character" id="char1840">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1840;</div>
+<p class="charname"><strong>U+1840</strong> <a href="/rishida/uniview/?char=1840">MONGOLIAN LETTER LHA</a></p>
+<div class="notes">
+  <div class="letter mongolian">
+    <table class="formtable">
+      <tbody>
+        <tr>
+          <th>form</th>
+          <th>Q</th>
+          <th>USVL</th>
+          <th>NP</th>
+          <th class="gap">&nbsp;</th>
+          <th>MB</th>
+          <th>NSM</th>
+          <th>MWc</th>
+          <th>Text</th>
+        </tr>
+        <tr>
+          <td>initial</td>
+          <td><img src="/pickers/mongolian/v/1840i.png" alt=""/></td>
+          <td>&nbsp;</td>
+          <td><img src="/pickers/mongolian/v/1840i.png" alt=""/></td>
+          <td class="gap">&nbsp;</td>
+          <td><img src="/pickers/mongolian/v/1840i.png" alt=""/></td>
+          <td><img src="/pickers/mongolian/v/1840i.png" alt=""/></td>
+          <td><img src="/pickers/mongolian/v/1840i.png" alt=""/></td>
+          <td lang="mn">&#x1840;&#x180A;</td>
+        </tr>
+        <tr>
+          <td>medial</td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td>&nbsp;</td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td class="gap">&nbsp;</td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td lang="mn">&#x180A;&#x1840;&#x180A;</td>
+        </tr>
+        <tr>
+          <td class=fconflict>final</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td class="gap">&nbsp;</td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td><img src="/pickers/mongolian/v/1840m.png" alt=""/></td>
+          <td><img src="/pickers/mongolian/v/1840f.png" alt=""/></td>
+          <td lang="mn">&#x180A;&#x1840;</td>
+        </tr>
+      </tbody>
+</table>
+    <div class="letter mongolian">
+      <p><span class="title">Notes</span></p>
+      <p>The medial and final shapes in the <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">2014 proposal</a> are the same. The Mongolian White et al fonts produce a more final-looking shape, which is the intention for the next draft of the 2014 proposal. The Mongolian Baiti and Noto Sans fonts will need to change their glyphs.</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="character" id="char1841">
+  <div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1841;</div>
+<p class="charname"><strong>U+1841</strong> <a href="/rishida/uniview/?char=1841">MONGOLIAN LETTER ZHI</a></p>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td lang="mn">&#x1841;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1841;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class=fconflict>final</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1841.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1841f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1841;</td>
+      </tr>
+    </tbody>
+</table>
+  <div class="letter mongolian">
+    <p><span class="title">Notes</span></p>
+    <p>The medial and final shapes in the <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">2014 proposal</a> are the same. The Mongolian White et al fonts produce a more final-looking shape, which is the intention for the next draft of the 2014 proposal. The Mongolian Baiti and Noto Sans fonts will need to change their glyphs.</p>
+    <p>Also note that Professor Quejingzhabu's document shows only a single glyph, and doesn't ascribe it to an initial, medial or final position.</p>
+  </div>
+</div>
+</div>
+
+<div class="character" id="char1842">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1842;</div>
+<p class="charname"><strong>U+1842</strong> <a href="/rishida/uniview/?char=1842">MONGOLIAN LETTER CHI</a></p>
+<div class="notes">
+  <table class="formtable">
+    <tbody>
+      <tr>
+        <th>form</th>
+        <th>Q</th>
+        <th>USVL</th>
+        <th>NP</th>
+        <th class="gap">&nbsp;</th>
+        <th>MB</th>
+        <th>NSM</th>
+        <th>MWc</th>
+        <th>Text</th>
+      </tr>
+      <tr>
+        <td>initial</td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td lang="mn">&#x1842;&#x180A;</td>
+      </tr>
+      <tr>
+        <td>medial</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1842;&#x180A;</td>
+      </tr>
+      <tr>
+        <td class=fconflict>final</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1842.png" alt=""/></td>
+        <td><img src="/pickers/mongolian/v/1842f.png" alt=""/></td>
+        <td lang="mn">&#x180A;&#x1842;</td>
+      </tr>
+    </tbody>
+</table>
+  <div class="letter mongolian">
+    <p><span class="title">Notes</span></p>
+    <p>The medial and final shapes in the <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">2014 proposal</a> are the same. The Mongolian White et al fonts produce a more final-looking shape, which is the intention for the next draft of the 2014 proposal. The Mongolian Baiti and Noto Sans fonts will need to change their glyphs.</p>
+    <p>Again, Professor Quejingzhabu's document shows only a single glyph, and doesn't ascribe it to an initial, medial or final position.</p>
+  </div>
+</div>
+</div>
+
+</section>
+
+<section id="todo"><h2><a href="#todo">Todo letters</a></h2>
+<div class="character" id="char1843">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1843;</div>
+<p class="charname"><strong>U+1843</strong> <a href="/rishida/uniview/?char=1843">MONGOLIAN LETTER TODO LONG VOWEL SIGN</a></p>
+</div>
+
+<div class="character" id="char1844">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1844;</div>
+<p class="charname"><strong>U+1844</strong> <a href="/rishida/uniview/?char=1844">MONGOLIAN LETTER TODO E</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1844 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char1845">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1845;</div>
+<p class="charname"><strong>U+1845</strong> <a href="/rishida/uniview/?char=1845">MONGOLIAN LETTER TODO I</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1845 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char1846">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1846;</div>
+<p class="charname"><strong>U+1846</strong> <a href="/rishida/uniview/?char=1846">MONGOLIAN LETTER TODO O</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1846 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char1847">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1847;</div>
+<p class="charname"><strong>U+1847</strong> <a href="/rishida/uniview/?char=1847">MONGOLIAN LETTER TODO U</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1847 180B second form (isolate)<br/>~ 1847 180B second form (medial)<br/>~ 1847 180B second form (final)<br/>~ 1847 180C third form (medial)</div>
+</div>
+
+<div class="character" id="char1848">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1848;</div>
+<p class="charname"><strong>U+1848</strong> <a href="/rishida/uniview/?char=1848">MONGOLIAN LETTER TODO OE</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1848 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char1849">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1849;</div>
+<p class="charname"><strong>U+1849</strong> <a href="/rishida/uniview/?char=1849">MONGOLIAN LETTER TODO UE</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1849 180B second form (isolate)<br/>~ 1849 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char184A">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x184A;</div>
+<p class="charname"><strong>U+184A</strong> <a href="/rishida/uniview/?char=184A">MONGOLIAN LETTER TODO ANG</a></p>
+</div>
+
+<div class="character" id="char184B">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x184B;</div>
+<p class="charname"><strong>U+184B</strong> <a href="/rishida/uniview/?char=184B">MONGOLIAN LETTER TODO BA</a></p>
+</div>
+
+<div class="character" id="char184C">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x184C;</div>
+<p class="charname"><strong>U+184C</strong> <a href="/rishida/uniview/?char=184C">MONGOLIAN LETTER TODO PA</a></p>
+</div>
+
+<div class="character" id="char184D">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x184D;</div>
+<p class="charname"><strong>U+184D</strong> <a href="/rishida/uniview/?char=184D">MONGOLIAN LETTER TODO QA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 184D 180B feminine form (initial)<br/>~ 184D 180B feminine form (medial)</div>
+</div>
+
+<div class="character" id="char184E">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x184E;</div>
+<p class="charname"><strong>U+184E</strong> <a href="/rishida/uniview/?char=184E">MONGOLIAN LETTER TODO GA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 184E 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char184F">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x184F;</div>
+<p class="charname"><strong>U+184F</strong> <a href="/rishida/uniview/?char=184F">MONGOLIAN LETTER TODO MA</a></p>
+</div>
+
+<div class="character" id="char1850">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1850;</div>
+<p class="charname"><strong>U+1850</strong> <a href="/rishida/uniview/?char=1850">MONGOLIAN LETTER TODO TA</a></p>
+</div>
+
+<div class="character" id="char1851">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1851;</div>
+<p class="charname"><strong>U+1851</strong> <a href="/rishida/uniview/?char=1851">MONGOLIAN LETTER TODO DA</a></p>
+</div>
+
+<div class="character" id="char1852">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1852;</div>
+<p class="charname"><strong>U+1852</strong> <a href="/rishida/uniview/?char=1852">MONGOLIAN LETTER TODO CHA</a></p>
+</div>
+
+<div class="character" id="char1853">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1853;</div>
+<p class="charname"><strong>U+1853</strong> <a href="/rishida/uniview/?char=1853">MONGOLIAN LETTER TODO JA</a></p>
+</div>
+
+<div class="character" id="char1854">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1854;</div>
+<p class="charname"><strong>U+1854</strong> <a href="/rishida/uniview/?char=1854">MONGOLIAN LETTER TODO TSA</a></p>
+</div>
+
+<div class="character" id="char1855">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1855;</div>
+<p class="charname"><strong>U+1855</strong> <a href="/rishida/uniview/?char=1855">MONGOLIAN LETTER TODO YA</a></p>
+</div>
+
+<div class="character" id="char1856">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1856;</div>
+<p class="charname"><strong>U+1856</strong> <a href="/rishida/uniview/?char=1856">MONGOLIAN LETTER TODO WA</a></p>
+</div>
+
+<div class="character" id="char1857">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1857;</div>
+<p class="charname"><strong>U+1857</strong> <a href="/rishida/uniview/?char=1857">MONGOLIAN LETTER TODO KA</a></p>
+</div>
+
+<div class="character" id="char1858">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1858;</div>
+<p class="charname"><strong>U+1858</strong> <a href="/rishida/uniview/?char=1858">MONGOLIAN LETTER TODO GAA</a></p>
+</div>
+
+<div class="character" id="char1859">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1859;</div>
+<p class="charname"><strong>U+1859</strong> <a href="/rishida/uniview/?char=1859">MONGOLIAN LETTER TODO HAA</a></p>
+</div>
+
+<div class="character" id="char185A">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x185A;</div>
+<p class="charname"><strong>U+185A</strong> <a href="/rishida/uniview/?char=185A">MONGOLIAN LETTER TODO JIA</a></p>
+</div>
+
+<div class="character" id="char185B">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x185B;</div>
+<p class="charname"><strong>U+185B</strong> <a href="/rishida/uniview/?char=185B">MONGOLIAN LETTER TODO NIA</a></p>
+</div>
+
+<div class="character" id="char185C">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x185C;</div>
+<p class="charname"><strong>U+185C</strong> <a href="/rishida/uniview/?char=185C">MONGOLIAN LETTER TODO DZA</a></p>
+</div>
+
+</section>
+
+<section id="sibe"><h2><a href="#sibe">Sibe letters</a></h2>
+<div class="character" id="char185D">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x185D;</div>
+<p class="charname"><strong>U+185D</strong> <a href="/rishida/uniview/?char=185D">MONGOLIAN LETTER SIBE E</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 185D 180B second form (medial)<br/>~ 185D 180B second form (final)</div>
+</div>
+
+<div class="character" id="char185E">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x185E;</div>
+<p class="charname"><strong>U+185E</strong> <a href="/rishida/uniview/?char=185E">MONGOLIAN LETTER SIBE I</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 185E 180B second form (medial)<br/>~ 185E 180B second form (final)<br/>~ 185E 180C third form (medial)<br/>~ 185E 180C third form (final)</div>
+</div>
+
+<div class="character" id="char185F">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x185F;</div>
+<p class="charname"><strong>U+185F</strong> <a href="/rishida/uniview/?char=185F">MONGOLIAN LETTER SIBE IY</a></p>
+</div>
+
+<div class="character" id="char1860">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1860;</div>
+<p class="charname"><strong>U+1860</strong> <a href="/rishida/uniview/?char=1860">MONGOLIAN LETTER SIBE UE</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1860 180B second form (medial)<br/>~ 1860 180B second form (final)</div>
+</div>
+
+<div class="character" id="char1861">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1861;</div>
+<p class="charname"><strong>U+1861</strong> <a href="/rishida/uniview/?char=1861">MONGOLIAN LETTER SIBE U</a></p>
+</div>
+
+<div class="character" id="char1862">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1862;</div>
+<p class="charname"><strong>U+1862</strong> <a href="/rishida/uniview/?char=1862">MONGOLIAN LETTER SIBE ANG</a></p>
+</div>
+
+<div class="character" id="char1863">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1863;</div>
+<p class="charname"><strong>U+1863</strong> <a href="/rishida/uniview/?char=1863">MONGOLIAN LETTER SIBE KA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1863 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char1864">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1864;</div>
+<p class="charname"><strong>U+1864</strong> <a href="/rishida/uniview/?char=1864">MONGOLIAN LETTER SIBE GA</a></p>
+</div>
+
+<div class="character" id="char1865">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1865;</div>
+<p class="charname"><strong>U+1865</strong> <a href="/rishida/uniview/?char=1865">MONGOLIAN LETTER SIBE HA</a></p>
+</div>
+
+<div class="character" id="char1866">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1866;</div>
+<p class="charname"><strong>U+1866</strong> <a href="/rishida/uniview/?char=1866">MONGOLIAN LETTER SIBE PA</a></p>
+</div>
+
+<div class="character" id="char1867">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1867;</div>
+<p class="charname"><strong>U+1867</strong> <a href="/rishida/uniview/?char=1867">MONGOLIAN LETTER SIBE SHA</a></p>
+</div>
+
+<div class="character" id="char1868">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1868;</div>
+<p class="charname"><strong>U+1868</strong> <a href="/rishida/uniview/?char=1868">MONGOLIAN LETTER SIBE TA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1868 180B second form (initial)<br/>~ 1868 180B second form (medial)<br/>~ 1868 180C third form (medial)</div>
+</div>
+
+<div class="character" id="char1869">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1869;</div>
+<p class="charname"><strong>U+1869</strong> <a href="/rishida/uniview/?char=1869">MONGOLIAN LETTER SIBE DA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1869 180B second form (initial)<br/>~ 1869 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char186A">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x186A;</div>
+<p class="charname"><strong>U+186A</strong> <a href="/rishida/uniview/?char=186A">MONGOLIAN LETTER SIBE JA</a></p>
+</div>
+
+<div class="character" id="char186B">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x186B;</div>
+<p class="charname"><strong>U+186B</strong> <a href="/rishida/uniview/?char=186B">MONGOLIAN LETTER SIBE FA</a></p>
+</div>
+
+<div class="character" id="char186C">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x186C;</div>
+<p class="charname"><strong>U+186C</strong> <a href="/rishida/uniview/?char=186C">MONGOLIAN LETTER SIBE GAA</a></p>
+</div>
+
+<div class="character" id="char186D">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x186D;</div>
+<p class="charname"><strong>U+186D</strong> <a href="/rishida/uniview/?char=186D">MONGOLIAN LETTER SIBE HAA</a></p>
+</div>
+
+<div class="character" id="char186E">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x186E;</div>
+<p class="charname"><strong>U+186E</strong> <a href="/rishida/uniview/?char=186E">MONGOLIAN LETTER SIBE TSA</a></p>
+</div>
+
+<div class="character" id="char186F">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x186F;</div>
+<p class="charname"><strong>U+186F</strong> <a href="/rishida/uniview/?char=186F">MONGOLIAN LETTER SIBE ZA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 186F 180B second form (initial)<br/>~ 186F 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char1870">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1870;</div>
+<p class="charname"><strong>U+1870</strong> <a href="/rishida/uniview/?char=1870">MONGOLIAN LETTER SIBE RAA</a></p>
+</div>
+
+<div class="character" id="char1871">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1871;</div>
+<p class="charname"><strong>U+1871</strong> <a href="/rishida/uniview/?char=1871">MONGOLIAN LETTER SIBE CHA</a></p>
+</div>
+
+<div class="character" id="char1872">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1872;</div>
+<p class="charname"><strong>U+1872</strong> <a href="/rishida/uniview/?char=1872">MONGOLIAN LETTER SIBE ZHA</a></p>
+</div>
+
+</section>
+
+<section id="manchu"><h2><a href="#manchu">Manchu letters</a></h2>
+<div class="character" id="char1873">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1873;</div>
+<p class="charname"><strong>U+1873</strong> <a href="/rishida/uniview/?char=1873">MONGOLIAN LETTER MANCHU I</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1873 180B second form (medial)<br/>~ 1873 180B second form (final)<br/>~ 1873 180C third form (medial)<br/>~ 1873 180C third form (final)<br/>~ 1873 180D fourth form (medial)</div>
+</div>
+
+<div class="character" id="char1874">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1874;</div>
+<p class="charname"><strong>U+1874</strong> <a href="/rishida/uniview/?char=1874">MONGOLIAN LETTER MANCHU KA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1874 180B second form (medial)<br/>~ 1874 180B feminine first final form (final)<br/>~ 1874 180C feminine first medial form (medial)<br/>~ 1874 180C feminine second final form (final)<br/>~ 1874 180D feminine second medial form (medial)</div>
+</div>
+
+<div class="character" id="char1875">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1875;</div>
+<p class="charname"><strong>U+1875</strong> <a href="/rishida/uniview/?char=1875">MONGOLIAN LETTER MANCHU RA</a></p>
+</div>
+
+<div class="character" id="char1876">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1876;</div>
+<p class="charname"><strong>U+1876</strong> <a href="/rishida/uniview/?char=1876">MONGOLIAN LETTER MANCHU FA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1876 180B second form (initial)<br/>~ 1876 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char1877">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1877;</div>
+<p class="charname"><strong>U+1877</strong> <a href="/rishida/uniview/?char=1877">MONGOLIAN LETTER MANCHU ZHA</a></p>
+</div>
+
+</section>
+
+<section id="extensions"><h2><a href="#extensions">Extensions for Sanskrit and Tibetan</a></h2>
+<div class="character" id="char1880">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1880;</div>
+<p class="charname"><strong>U+1880</strong> <a href="/rishida/uniview/?char=1880">MONGOLIAN LETTER ALI GALI ANUSVARA ONE</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (tibetan sign sna ldan - 0F83)<br/>~ 1880 180B second form</div>
+</div>
+
+<div class="character" id="char1881">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1881;</div>
+<p class="charname"><strong>U+1881</strong> <a href="/rishida/uniview/?char=1881">MONGOLIAN LETTER ALI GALI VISARGA ONE</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (tibetan sign rnam bcad - 0F7F)<br/>~ 1881 180B second form</div>
+</div>
+
+<div class="character" id="char1882">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1882;</div>
+<p class="charname"><strong>U+1882</strong> <a href="/rishida/uniview/?char=1882">MONGOLIAN LETTER ALI GALI DAMARU</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (tibetan sign lce tsa can - 0F88)</div>
+</div>
+
+<div class="character" id="char1883">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1883;</div>
+<p class="charname"><strong>U+1883</strong> <a href="/rishida/uniview/?char=1883">MONGOLIAN LETTER ALI GALI UBADAMA</a></p>
+</div>
+
+<div class="character" id="char1884">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1884;</div>
+<p class="charname"><strong>U+1884</strong> <a href="/rishida/uniview/?char=1884">MONGOLIAN LETTER ALI GALI INVERTED UBADAMA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (tibetan sign mchu can - 0F89)</div>
+</div>
+
+<div class="character" id="char1885">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1885;</div>
+<p class="charname"><strong>U+1885</strong> <a href="/rishida/uniview/?char=1885">MONGOLIAN LETTER ALI GALI BALUDA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">→ (tibetan mark paluta - 0F85)</div>
+</div>
+
+<div class="character" id="char1886">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1886;</div>
+<p class="charname"><strong>U+1886</strong> <a href="/rishida/uniview/?char=1886">MONGOLIAN LETTER ALI GALI THREE BALUDA</a></p>
+</div>
+
+<div class="character" id="char1887">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1887;</div>
+<p class="charname"><strong>U+1887</strong> <a href="/rishida/uniview/?char=1887">MONGOLIAN LETTER ALI GALI A</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1887 180B second form (isolate)<br/>~ 1887 180B second form (final)<br/>~ 1887 180C third form (final)<br/>~ 1887 180D fourth form (final)</div>
+</div>
+
+<div class="character" id="char1888">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1888;</div>
+<p class="charname"><strong>U+1888</strong> <a href="/rishida/uniview/?char=1888">MONGOLIAN LETTER ALI GALI I</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 1888 180B second form (final)</div>
+</div>
+
+<div class="character" id="char1889">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1889;</div>
+<p class="charname"><strong>U+1889</strong> <a href="/rishida/uniview/?char=1889">MONGOLIAN LETTER ALI GALI KA</a></p>
+</div>
+
+<div class="character" id="char188A">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x188A;</div>
+<p class="charname"><strong>U+188A</strong> <a href="/rishida/uniview/?char=188A">MONGOLIAN LETTER ALI GALI NGA</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">~ 188A 180B second form (initial)<br/>~ 188A 180B second form (medial)</div>
+</div>
+
+<div class="character" id="char188B">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x188B;</div>
+<p class="charname"><strong>U+188B</strong> <a href="/rishida/uniview/?char=188B">MONGOLIAN LETTER ALI GALI CA</a></p>
+</div>
+
+<div class="character" id="char188C">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x188C;</div>
+<p class="charname"><strong>U+188C</strong> <a href="/rishida/uniview/?char=188C">MONGOLIAN LETTER ALI GALI TTA</a></p>
+</div>
+
+<div class="character" id="char188D">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x188D;</div>
+<p class="charname"><strong>U+188D</strong> <a href="/rishida/uniview/?char=188D">MONGOLIAN LETTER ALI GALI TTHA</a></p>
+</div>
+
+<div class="character" id="char188E">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x188E;</div>
+<p class="charname"><strong>U+188E</strong> <a href="/rishida/uniview/?char=188E">MONGOLIAN LETTER ALI GALI DDA</a></p>
+</div>
+
+<div class="character" id="char188F">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x188F;</div>
+<p class="charname"><strong>U+188F</strong> <a href="/rishida/uniview/?char=188F">MONGOLIAN LETTER ALI GALI NNA</a></p>
+</div>
+
+<div class="character" id="char1890">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1890;</div>
+<p class="charname"><strong>U+1890</strong> <a href="/rishida/uniview/?char=1890">MONGOLIAN LETTER ALI GALI TA</a></p>
+</div>
+
+<div class="character" id="char1891">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1891;</div>
+<p class="charname"><strong>U+1891</strong> <a href="/rishida/uniview/?char=1891">MONGOLIAN LETTER ALI GALI DA</a></p>
+</div>
+
+<div class="character" id="char1892">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1892;</div>
+<p class="charname"><strong>U+1892</strong> <a href="/rishida/uniview/?char=1892">MONGOLIAN LETTER ALI GALI PA</a></p>
+</div>
+
+<div class="character" id="char1893">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1893;</div>
+<p class="charname"><strong>U+1893</strong> <a href="/rishida/uniview/?char=1893">MONGOLIAN LETTER ALI GALI PHA</a></p>
+</div>
+
+<div class="character" id="char1894">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1894;</div>
+<p class="charname"><strong>U+1894</strong> <a href="/rishida/uniview/?char=1894">MONGOLIAN LETTER ALI GALI SSA</a></p>
+</div>
+
+<div class="character" id="char1895">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1895;</div>
+<p class="charname"><strong>U+1895</strong> <a href="/rishida/uniview/?char=1895">MONGOLIAN LETTER ALI GALI ZHA</a></p>
+</div>
+
+<div class="character" id="char1896">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1896;</div>
+<p class="charname"><strong>U+1896</strong> <a href="/rishida/uniview/?char=1896">MONGOLIAN LETTER ALI GALI ZA</a></p>
+</div>
+
+<div class="character" id="char1897">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1897;</div>
+<p class="charname"><strong>U+1897</strong> <a href="/rishida/uniview/?char=1897">MONGOLIAN LETTER ALI GALI AH</a></p>
+</div>
+
+<div class="character" id="char1898">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1898;</div>
+<p class="charname"><strong>U+1898</strong> <a href="/rishida/uniview/?char=1898">MONGOLIAN LETTER TODO ALI GALI TA</a></p>
+</div>
+
+<div class="character" id="char1899">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x1899;</div>
+<p class="charname"><strong>U+1899</strong> <a href="/rishida/uniview/?char=1899">MONGOLIAN LETTER TODO ALI GALI ZHA</a></p>
+</div>
+
+<div class="character" id="char189A">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x189A;</div>
+<p class="charname"><strong>U+189A</strong> <a href="/rishida/uniview/?char=189A">MONGOLIAN LETTER MANCHU ALI GALI GHA</a></p>
+</div>
+
+<div class="character" id="char189B">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x189B;</div>
+<p class="charname"><strong>U+189B</strong> <a href="/rishida/uniview/?char=189B">MONGOLIAN LETTER MANCHU ALI GALI NGA</a></p>
+</div>
+
+<div class="character" id="char189C">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x189C;</div>
+<p class="charname"><strong>U+189C</strong> <a href="/rishida/uniview/?char=189C">MONGOLIAN LETTER MANCHU ALI GALI CA</a></p>
+</div>
+
+<div class="character" id="char189D">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x189D;</div>
+<p class="charname"><strong>U+189D</strong> <a href="/rishida/uniview/?char=189D">MONGOLIAN LETTER MANCHU ALI GALI JHA</a></p>
+</div>
+
+<div class="character" id="char189E">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x189E;</div>
+<p class="charname"><strong>U+189E</strong> <a href="/rishida/uniview/?char=189E">MONGOLIAN LETTER MANCHU ALI GALI TTA</a></p>
+</div>
+
+<div class="character" id="char189F">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x189F;</div>
+<p class="charname"><strong>U+189F</strong> <a href="/rishida/uniview/?char=189F">MONGOLIAN LETTER MANCHU ALI GALI DDHA</a></p>
+</div>
+
+<div class="character" id="char18A0">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A0;</div>
+<p class="charname"><strong>U+18A0</strong> <a href="/rishida/uniview/?char=18A0">MONGOLIAN LETTER MANCHU ALI GALI TA</a></p>
+</div>
+
+<div class="character" id="char18A1">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A1;</div>
+<p class="charname"><strong>U+18A1</strong> <a href="/rishida/uniview/?char=18A1">MONGOLIAN LETTER MANCHU ALI GALI DHA</a></p>
+</div>
+
+<div class="character" id="char18A2">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A2;</div>
+<p class="charname"><strong>U+18A2</strong> <a href="/rishida/uniview/?char=18A2">MONGOLIAN LETTER MANCHU ALI GALI SSA</a></p>
+</div>
+
+<div class="character" id="char18A3">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A3;</div>
+<p class="charname"><strong>U+18A3</strong> <a href="/rishida/uniview/?char=18A3">MONGOLIAN LETTER MANCHU ALI GALI CYA</a></p>
+</div>
+
+<div class="character" id="char18A4">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A4;</div>
+<p class="charname"><strong>U+18A4</strong> <a href="/rishida/uniview/?char=18A4">MONGOLIAN LETTER MANCHU ALI GALI ZHA</a></p>
+</div>
+
+<div class="character" id="char18A5">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A5;</div>
+<p class="charname"><strong>U+18A5</strong> <a href="/rishida/uniview/?char=18A5">MONGOLIAN LETTER MANCHU ALI GALI ZA</a></p>
+</div>
+
+<div class="character" id="char18A6">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A6;</div>
+<p class="charname"><strong>U+18A6</strong> <a href="/rishida/uniview/?char=18A6">MONGOLIAN LETTER ALI GALI HALF U</a></p>
+</div>
+
+<div class="character" id="char18A7">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A7;</div>
+<p class="charname"><strong>U+18A7</strong> <a href="/rishida/uniview/?char=18A7">MONGOLIAN LETTER ALI GALI HALF YA</a></p>
+</div>
+
+<div class="character" id="char18A8">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A8;</div>
+<p class="charname"><strong>U+18A8</strong> <a href="/rishida/uniview/?char=18A8">MONGOLIAN LETTER MANCHU ALI GALI BHA</a></p>
+</div>
+
+<div class="character" id="char18A9">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18A9;</div>
+<p class="charname"><strong>U+18A9</strong> <a href="/rishida/uniview/?char=18A9">MONGOLIAN LETTER ALI GALI DAGALGA</a></p>
+</div>
+
+<div class="character" id="char18AA">
+<div class="up"><a href="#index">⇧</a></div>
+<div class="charimg">&#x18AA;</div>
+<p class="charname"><strong>U+18AA</strong> <a href="/rishida/uniview/?char=18AA">MONGOLIAN LETTER MANCHU ALI GALI LHA</a></p>
+</div>
+
+</section>
+<section id="references">
+  <h2><a href="#references">Further reading</a></h2>
+  <ol>
+    <li>Quejingzhabu, <a href="http://www.babelstone.co.uk/Mongolian/MGWBM.html">蒙古文编码</a></li>
+    <li>Bell, Eck, Glass, <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">Proposal to update the code charts for Mongolian</a>. </li>
+    <li>Unicode Consortium, <a href="http://www.unicode.org/Public/UNIDATA/StandardizedVariants.html">Standardized Variants</a>. </li>
+  </ol>
+</section>
+
+
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  21 Sep 2014.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-22  17:12<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<script type="text/javascript">
+createtoc()
+initialiseShowNames()
+highlightIndexChars()
+</script>
+
+</body>
+</html>
