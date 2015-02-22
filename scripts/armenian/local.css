@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Nono Sans Armenian WF';
+    src: url('NotoSansArmenian-Regularwebfont.woff2') format('woff2'),
+         url('NotoSansArmenian-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+:lang(hy) {
+	font-family: Mshtakan, "Sylfaen", "Noto Sans Armenian", "Noto Serif Armenian", sans-serif;
+	font-size: 24px;
+	}
+#index td {
+	font-family: "Noto Serif Armenian", "Mshtakan", "Sylfaen", "Noto Sans Armenian", sans-serif;
+	font-size: 26px;
+	padding: 8px;
+	}
+.charimg {
+	font-size: 130px;
+	min-width: 190px;
+	min-height: 190px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 190px;
+	font-family: "Noto Serif Armenian", "Mshtakan", "Sylfaen", "Noto Sans Armenian", sans-serif;
+	background-color: white;
+	}
+#fontsetting {
+	width: 270px;
+	}
+#fontsetting.open {
+	right: 0px;
+	}
+#fontsetting.closed {
+	right: -258px;
+	}
+#fontsettingswitch {
+	height: 130px;
+	}
