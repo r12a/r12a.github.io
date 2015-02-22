@@ -34,3 +34,13 @@ td.gap { width: 30px; }
 #fontsettingswitch { height: 150px; }
 
         
+.charimg {
+	font-size: 130px;
+	min-width: 190px;
+	min-height: 190px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 190px;
+	font-family: 'Tibetan Machine Uni WF', "Tibetan Machine Uni", Kokonor, "Microsoft Himalaya", sans-serif;
+	background-color: white;
+}
