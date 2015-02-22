@@ -46,20 +46,20 @@
 <p>Set a font for Thai text</p>
 <p>
 <select id="exfontswitchfont" 
-onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'ta');">
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'th');">
 </select> 
 <script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
 <input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
-onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'ta');" />
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'th');" />
 </p>
 <p>Set a font for the symbol list</p>
 <p>
 <select  id="slfontswitchfont" 
-onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'ta');">
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'th');">
 </select> 
 <script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
 <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
-onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'ta');" />
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'th');" />
 </p>
 <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
 </div>
@@ -1346,7 +1346,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  3 Feb 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-22  18:17<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-22  18:20<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
