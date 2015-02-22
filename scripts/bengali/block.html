@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>Bengali character notes</title>
+<meta name="description" content="Notes about characters in the Unicode Bengali block."/>
+
+<link rel="stylesheet" type="text/css" href="/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="/scripts/block/block-style.css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/scripts/block/bengali-names-subset.js"></script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<script type="text/javascript" src="fonts.js"></script>
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="/uniview/scriptGroups.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Bengali character notes</h1>
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links">Related links</a></h2>
+    <p><a href="/scripts/bengali/">Bengali script notes</a></p>
+    <p><a href="/scripts/links?script=bengali">Bengali script links</a></p>
+    <p><a href="/pickers/bengali/">Bengali character picker</a></p>
+    <p><a href="/uniview/?block=bengali">UniView </a></p>
+  </div>
+        
+<div id="fontsetting" class="closed">
+<h2 class="notoc"><a id="fonts">Fonts</a></h2>
+<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+<p>Set a font for Bengali text</p>
+<p>
+<select id="exfontswitchfont" 
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'bn');">
+</select> 
+<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
+<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'bn');" />
+</p>
+<p>Set a font for the symbol list</p>
+<p>
+<select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'bn');">
+</select> 
+<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
+<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'bn');" />
+</p>
+<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+</div>
+</aside>
+
+<p id="status">Updated Sun 18 Jan 2015&bull; tags <a href="http://rishida.net/blog/index.php?tag=bengali" title="Show all blog posts tagged with 'bengali'">bengali</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<section>
+<p>This page lists characters in  Unicode's Bengali block and provides information about them. For information about Bengali script and its features in general, see the companion document <a href="/scripts/bengali/">Bengali Script Notes</a>.</p>
+<p>To view this page as intended, you  need a Bengali font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
+<p>The Bengali text transliterations follow a method used by Radice<sup>3</sup>, except that conjuncts are not underlined. This transcription method is slightly more indicative of pronunciation than the ISO method.</p>
+<p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
+<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
+</section>
+
+<section class="section" id="charlistsection">
+  <h2 id="characterlist"><a href="#characterlist">Index </a></h2>
+  <p>Click on a character in the table to jump to its description. Only characters with a line below have descriptive notes attached (apart from any descriptions in the Unicode database).</p>
+  <p>&nbsp;</p>
+</section>
+<table id="index">
+  <tbody>
+    <tr>
+      <th><a href="#varioussigns">Various signs</a></th>
+      <td><a href="#char0981" title="U+0981 BENGALI SIGN CANDRABINDU">&#xA0;&#x25CC;&#x0981;</a> <a href="#char0982" title="U+0982 BENGALI SIGN ANUSVARA">&#xA0;&#x25CC;&#x0982;</a> <a href="#char0983" title="U+0983 BENGALI SIGN VISARGA">&#xA0;&#x25CC;&#x0983;</a> <a href="#char09BC" title="U+09BC BENGALI SIGN NUKTA">&#xA0;&#x25CC;&#x09BC;</a> <a href="#char09BD" title="U+09BD BENGALI SIGN AVAGRAHA">&#x09BD;</a> <a href="#char09D7" title="U+09D7 BENGALI AU LENGTH MARK">&#xA0;&#x25CC;&#x09D7;</a> <a href="#char09FA" title="U+09FA BENGALI ISSHAR">&#x09FA;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#ivowels">Independent vowels</a></th>
+      <td><a href="#char0985" title="U+0985 BENGALI LETTER A">&#x0985;</a> <a href="#char0986" title="U+0986 BENGALI LETTER AA">&#x0986;</a> <a href="#char0987" title="U+0987 BENGALI LETTER I">&#x0987;</a> <a href="#char0988" title="U+0988 BENGALI LETTER II">&#x0988;</a> <a href="#char0989" title="U+0989 BENGALI LETTER U">&#x0989;</a> <a href="#char098A" title="U+098A BENGALI LETTER UU">&#x098A;</a> <a href="#char098B" title="U+098B BENGALI LETTER VOCALIC R">&#x098B;</a> <a href="#char098C" title="U+098C BENGALI LETTER VOCALIC L">&#x098C;</a> <a href="#char098F" title="U+098F BENGALI LETTER E">&#x098F;</a> <a href="#char0990" title="U+0990 BENGALI LETTER AI">&#x0990;</a> <a href="#char0993" title="U+0993 BENGALI LETTER O">&#x0993;</a> <a href="#char0994" title="U+0994 BENGALI LETTER AU">&#x0994;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#consonants">Consonants</a></th>
+      <td><a href="#char0995" title="U+0995 BENGALI LETTER KA">&#x0995;</a> <a href="#char0996" title="U+0996 BENGALI LETTER KHA">&#x0996;</a> <a href="#char0997" title="U+0997 BENGALI LETTER GA">&#x0997;</a> <a href="#char0998" title="U+0998 BENGALI LETTER GHA">&#x0998;</a> <a href="#char0999" title="U+0999 BENGALI LETTER NGA">&#x0999;</a> <a href="#char099A" title="U+099A BENGALI LETTER CA">&#x099A;</a> <a href="#char099B" title="U+099B BENGALI LETTER CHA">&#x099B;</a> <a href="#char099C" title="U+099C BENGALI LETTER JA">&#x099C;</a> <a href="#char099D" title="U+099D BENGALI LETTER JHA">&#x099D;</a> <a href="#char099E" title="U+099E BENGALI LETTER NYA">&#x099E;</a> <a href="#char099F" title="U+099F BENGALI LETTER TTA">&#x099F;</a> <a href="#char09A0" title="U+09A0 BENGALI LETTER TTHA">&#x09A0;</a> <a href="#char09A1" title="U+09A1 BENGALI LETTER DDA">&#x09A1;</a> <a href="#char09A2" title="U+09A2 BENGALI LETTER DDHA">&#x09A2;</a> <a href="#char09A3" title="U+09A3 BENGALI LETTER NNA">&#x09A3;</a> <a href="#char09A4" title="U+09A4 BENGALI LETTER TA">&#x09A4;</a> <a href="#char09A5" title="U+09A5 BENGALI LETTER THA">&#x09A5;</a> <a href="#char09A6" title="U+09A6 BENGALI LETTER DA">&#x09A6;</a> <a href="#char09A7" title="U+09A7 BENGALI LETTER DHA">&#x09A7;</a> <a href="#char09A8" title="U+09A8 BENGALI LETTER NA">&#x09A8;</a> <a href="#char09AA" title="U+09AA BENGALI LETTER PA">&#x09AA;</a> <a href="#char09AB" title="U+09AB BENGALI LETTER PHA">&#x09AB;</a> <a href="#char09AC" title="U+09AC BENGALI LETTER BA">&#x09AC;</a> <a href="#char09AD" title="U+09AD BENGALI LETTER BHA">&#x09AD;</a> <a href="#char09AE" title="U+09AE BENGALI LETTER MA">&#x09AE;</a> <a href="#char09AF" title="U+09AF BENGALI LETTER YA">&#x09AF;</a> <a href="#char09B0" title="U+09B0 BENGALI LETTER RA">&#x09B0;</a> <a href="#char09B2" title="U+09B2 BENGALI LETTER LA">&#x09B2;</a> <a href="#char09B6" title="U+09B6 BENGALI LETTER SHA">&#x09B6;</a> <a href="#char09B7" title="U+09B7 BENGALI LETTER SSA">&#x09B7;</a> <a href="#char09B8" title="U+09B8 BENGALI LETTER SA">&#x09B8;</a> <a href="#char09B9" title="U+09B9 BENGALI LETTER HA">&#x09B9;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#addcons">Additional consonants</a></th>
+      <td><a href="#char09CE" title="U+09CE BENGALI LETTER KHANDA TA">&#x09CE;</a> <a href="#char09DC" title="U+09DC BENGALI LETTER RRA">&#x09DC;</a> <a href="#char09DD" title="U+09DD BENGALI LETTER RHA">&#x09DD;</a> <a href="#char09DF" title="U+09DF BENGALI LETTER YYA">&#x09DF;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#dvowels">Dependent vowel signs</a></th>
+      <td><a href="#char09BE" title="U+09BE BENGALI VOWEL SIGN AA">&#xA0;&#x25CC;&#x09BE;</a> <a href="#char09BF" title="U+09BF BENGALI VOWEL SIGN I">&#xA0;&#x25CC;&#x09BF;</a> <a href="#char09C0" title="U+09C0 BENGALI VOWEL SIGN II">&#xA0;&#x25CC;&#x09C0;</a> <a href="#char09C1" title="U+09C1 BENGALI VOWEL SIGN U">&#xA0;&#x25CC;&#x09C1;</a> <a href="#char09C2" title="U+09C2 BENGALI VOWEL SIGN UU">&#xA0;&#x25CC;&#x09C2;</a> <a href="#char09C3" title="U+09C3 BENGALI VOWEL SIGN VOCALIC R">&#xA0;&#x25CC;&#x09C3;</a> <a href="#char09C4" title="U+09C4 BENGALI VOWEL SIGN VOCALIC RR">&#xA0;&#x25CC;&#x09C4;</a> <a href="#char09C7" title="U+09C7 BENGALI VOWEL SIGN E">&#xA0;&#x25CC;&#x09C7;</a> <a href="#char09C8" title="U+09C8 BENGALI VOWEL SIGN AI">&#xA0;&#x25CC;&#x09C8;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#twopart">Two-part dependent vowel signs</a></th>
+      <td><a href="#char09CB" title="U+09CB BENGALI VOWEL SIGN O">&#xA0;&#x25CC;&#x09CB;</a> <a href="#char09CC" title="U+09CC BENGALI VOWEL SIGN AU">&#xA0;&#x25CC;&#x09CC;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#virama">Virama</a></th>
+      <td><a href="#char09CD" title="U+09CD BENGALI SIGN VIRAMA">&#xA0;&#x25CC;&#x09CD;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#sanskrit">Additional vowels for Sanskrit</a></th>
+      <td><a href="#char09E0" title="U+09E0 BENGALI LETTER VOCALIC RR">&#x09E0;</a> <a href="#char09E1" title="U+09E1 BENGALI LETTER VOCALIC LL">&#x09E1;</a> <a href="#char09E2" title="U+09E2 BENGALI VOWEL SIGN VOCALIC L">&#xA0;&#x25CC;&#x09E2;</a> <a href="#char09E3" title="U+09E3 BENGALI VOWEL SIGN VOCALIC LL">&#xA0;&#x25CC;&#x09E3;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#assamese">Additions for Assamese</a></th>
+      <td><a href="#char09F0" title="U+09F0 BENGALI LETTER RA WITH MIDDLE DIAGONAL">&#x09F0;</a> <a href="#char09F1" title="U+09F1 BENGALI LETTER RA WITH LOWER DIAGONAL">&#x09F1;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#digits">Digits</a></th>
+      <td><a href="#char09E6" title="U+09E6 BENGALI DIGIT ZERO">&#x09E6;</a> <a href="#char09E7" title="U+09E7 BENGALI DIGIT ONE">&#x09E7;</a> <a href="#char09E8" title="U+09E8 BENGALI DIGIT TWO">&#x09E8;</a> <a href="#char09E9" title="U+09E9 BENGALI DIGIT THREE">&#x09E9;</a> <a href="#char09EA" title="U+09EA BENGALI DIGIT FOUR">&#x09EA;</a> <a href="#char09EB" title="U+09EB BENGALI DIGIT FIVE">&#x09EB;</a> <a href="#char09EC" title="U+09EC BENGALI DIGIT SIX">&#x09EC;</a> <a href="#char09ED" title="U+09ED BENGALI DIGIT SEVEN">&#x09ED;</a> <a href="#char09EE" title="U+09EE BENGALI DIGIT EIGHT">&#x09EE;</a> <a href="#char09EF" title="U+09EF BENGALI DIGIT NINE">&#x09EF;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#fractions">Historic symbols for fractional values</a></th>
+      <td><a href="#char09F4" title="U+09F4 BENGALI CURRENCY NUMERATOR ONE">&#x09F4;</a> <a href="#char09F5" title="U+09F5 BENGALI CURRENCY NUMERATOR TWO">&#x09F5;</a> <a href="#char09F6" title="U+09F6 BENGALI CURRENCY NUMERATOR THREE">&#x09F6;</a> <a href="#char09F7" title="U+09F7 BENGALI CURRENCY NUMERATOR FOUR">&#x09F7;</a> <a href="#char09F8" title="U+09F8 BENGALI CURRENCY NUMERATOR ONE LESS THAN THE DENOMINATOR">&#x09F8;</a> <a href="#char09F9" title="U+09F9 BENGALI CURRENCY DENOMINATOR SIXTEEN">&#x09F9;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#currency">Currency signs</a></th>
+      <td><a href="#char09F2" title="U+09F2 BENGALI RUPEE MARK">&#x09F2;</a> <a href="#char09F3" title="U+09F3 BENGALI RUPEE SIGN">&#x09F3;</a> <a href="#char09FB" title="U+09FB BENGALI GANDA MARK">&#x09FB;</a></td>
+    </tr>
+  </tbody>
+</table>
+<section id='varioussigns'>
+  <h2><a href='#varioussigns'>Various signs</a></h2>
+  <div class='character' id='char0981'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0981;</div>
+    <p class='charname'><strong>U+0981</strong> <a href='/rishida/scripts/uniview/?codepoints=0981'>BENGALI SIGN CANDRABINDU</a></p>
+    <div class='notes'>
+       <p><span class="trans">ṃ</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>~</span>, <span class="name">cɔndrôbindu</span> <span class='ex' lang='bn' >চন্দ্রবিন্দু</span></p>
+        <p>Vowel nasalisation marker. This appears over the top of an independent vowel, but over the basic consonant when a vowel sign is attached, not over the vowel sign, eg. <span class="ex" lang="bn">হ্যাঁ</span> <span class="ipa">hyã</span> <span class="meaning">yes</span>, <span class="ex" lang="bn">হাঁপান</span> <span class="ipa">hãpanô</span> <span class="meaning">to pant</span><span class="meaning">.</span></p>
+        <p>In the sequence of characters, this should occur after any combining vowel sign associated with the same syllable.</p>
+        <p><span class="name">cɔndrôbindu</span> means <span class="meaning">moon dot</span>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p19-20; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0982'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0982;</div>
+    <p class='charname'><strong>U+0982</strong> <a href='/rishida/scripts/uniview/?codepoints=0982'>BENGALI SIGN ANUSVARA</a></p>
+    <div class='notes'>
+      <p><span class="trans">ṁ</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class="trans">ɱ</span>, <span class='name'>ônusvar</span> <span class='ex' lang='bn' >অনুস্বার</span> or <span class="name">ônusvôr</span> <span class='ex' lang='bn' >অনুস্বর</span></p>
+        <p><span class="ipa">ŋ</span>, eg. <span class="ex" lang="bn">বাংলা</span> <span class='trans'>baɱla</span> <span class="ipa">baŋla</span> <span class="meaning">Bengali [language]</span>.</p>
+        <p>Never has a vowel sign.</p>
+        <p>Sometimes spelling is inconsistent, especially when this or <span class="ex" lang="bn">ঙ</span> are used in a conjunct, eg. <span class="ex" lang="bn">সাঙঘাতিক</span> or <span class="ex" lang="bn">সাংঘাতিক</span> (<span class="meaning">terrible, tremendous</span>); <span class="ex" lang="bn">রঙ</span> or <span class="ex" lang="bn">রং</span> (<span class="meaning">colour</span>).</p>
+        <p>In certain words the spelling is fixed, however. <span class="ex" lang="bn">বাংলা</span> is one such word.  However, since this cannot support vowel signs, the word for Bengali nation (rather than language) has to be spelled with <span class="ex" lang="bn">ঙ</span>, ie. <span class="ex" lang="bn">বাঙালী</span> <span class='trans'>baŋalī</span>.</p>
+        <p>In the sequence of characters, this should occur after any combining vowel sign associated with the same syllable.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p13-14; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0983'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0983;</div>
+    <p class='charname'><strong>U+0983</strong> <a href='/rishida/scripts/uniview/?codepoints=0983'>BENGALI SIGN VISARGA</a></p>
+    <div class='notes'>
+      <p><span class="trans">ḥ</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class="trans">ḥ</span>, <span class="name">bisɔrgô</span> <span class='ex' lang='bn' >বিসর্গ</span></p>
+        <p>This sign has two different effects:</p>
+        <ul>
+          <li><span class="ex" lang="bn">নিঃশব্দ</span> <span class="ipa">niʃʃɔbdô</span>, here the <span class="name">bisɔrgô</span> lengthens the following consonant. There is no aspiration.</li>
+          <li><span class="ex" lang="bn">বাঃ</span> <span class="ipa">baːɦ</span> (<span class="meaning">left</span>), here it is pronounced with vigorous final aspiration.</li>
+        </ul>
+        <p>The only common colloquial words containing this sign are <span class="ex" lang="bn">বাঃ</span> <span class="ipa">baːɦ</span> (<span class="meaning">left</span>) and <span class="ex" lang="bn">দুঃখ</span> <span class="ipa">dukkʰô</span> (<span class="meaning">sorrow</span>).</p>
+        <p>In the sequence of characters, this should occur after any combining vowel sign associated with the same syllable.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p255; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09BC'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09BC;</div>
+    <p class='charname'><strong>U+09BC</strong> <a href='/rishida/scripts/uniview/?codepoints=09BC'>BENGALI SIGN NUKTA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• for extending the alphabet to new letters</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> mark, <span class="name">nukta</span></p>
+        <p>For extending the alphabet to create more characters.</p>
+        <p>In the sequence of characters in a syllable, this comes <em>before</em> any combining vowel sign.</p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09BD'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09BD;</div>
+    <p class='charname'><strong>U+09BD</strong> <a href='/rishida/scripts/uniview/?codepoints=09BD'>BENGALI SIGN AVAGRAHA</a></p>
+    <div class='notes'>
+      <p><span class="trans">'</span> in ISO 15919</p>
+    </div>
+  </div>
+  <div class='character' id='char09D7'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09D7;</div>
+    <p class='charname'><strong>U+09D7</strong> <a href='/rishida/scripts/uniview/?codepoints=09D7'>BENGALI AU LENGTH MARK</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> mark, <span class="name">length mark</span> </p>
+        <p><strong>Should not be used</strong>. Provided for compatibility with character sets that represent <a href="#char09CC"><span class="uname">U+09CC BENGALI VOWEL SIGN AU</span> <span lang="bn">&#x09CC;</span></a>  as two characters.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">The Unicode Standard 5.2</a> p313</p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09FA'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09FA;</div>
+    <p class='charname'><strong>U+09FA</strong> <a href='/rishida/scripts/uniview/?codepoints=09FA'>BENGALI ISSHAR</a></p>
+    <p class="subtitle">Description in the Unicode standard:</p>
+    <div class="unicodenotes">= ishvar<br/>
+      • represents the name of a deity<br/>
+      = svargiya<br/>
+      • written before the name of a deceased person</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> symbol</p>
+        <p>Placed before a dead person's name.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">Correspondence [Bhattacharya]</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='ivowels'>
+  <h2><a href='#ivowels'>Independent vowels</a></h2>
+  <div class='character' id='char0985'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0985;</div>
+    <p class='charname'><strong>U+0985</strong> <a href='/rishida/scripts/uniview/?codepoints=0985'>BENGALI LETTER A</a></p>
+    <div class='notes'>
+      <p><span class="trans">a</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> independent vowel, <span class="trans">ɔ</span> or <span class="trans">ô</span>, <span class="name">ɔ-kar</span></p>
+        <p><span class="ipa">ɔ</span>, eg. <span class="ex" lang="bn">অঙ্ক</span> <span class="trans">ɔŋkô</span> <span class="meaning">mathematics.</span></p>
+        <p><span class="ipa">o</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">i</span> or <span class="ipa">u</span>, eg. <span class="ex" lang="bn">অভিধান</span> <span class="trans">ôbhidhan</span> <span class="meaning">dictionary</span>.</p>
+        <p>There is no equivalent vowel sign, since this equates to the inherent vowel when preceded by a consonant.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp9, 275; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0986'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0986;</div>
+    <p class='charname'><strong>U+0986</strong> <a href='/rishida/scripts/uniview/?codepoints=0986'>BENGALI LETTER AA</a></p>
+    <div class='notes'>
+      <p><span class="trans">ā</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> independent vowel, <span class="trans">a</span>, <span class="name">a-kar</span></p>
+        <p><span class="ipa">ɑ</span>, eg. <span class="ex" lang="bn">আকাশ</span> <span class="trans">akaʃ</span> <span class="meaning">sky.</span></p>
+        <p>See also <a href="#char09BE"><span class="uname">U+09BE BENGALI VOWEL SIGN AA</span> <span lang="bn">&#x09BE;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2-4; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0987'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0987;</div>
+    <p class='charname'><strong>U+0987</strong> <a href='/rishida/scripts/uniview/?codepoints=0987'>BENGALI LETTER I</a></p>
+    <div class='notes'>
+      <p><span class="trans">i</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> independent vowel, <span class="trans">i</span>, <span class="name">hrɔsvô i</span> <span class='ex' lang='bn' >হ্রস্ব ই</span> </p>
+        <p><span class="ipa">i</span>, eg. <span class="ex" lang="bn">ইংরেজ</span> <span class="trans">iɱrej</span> <span class="meaning">English, <span class="ex" lang="bn">ভাই</span> <span class="trans">bhai</span> <span class="meaning">brother.</span></span></p>
+        <p><span class="ipa">e</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">ɔ o e</span> or <span class="ipa">a</span>.</p>
+        <p>See also <a href="#char09BF"><span class="uname">U+09BF BENGALI VOWEL SIGN I</span> <span lang="bn">&#x09BF;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 4-5; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0988'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0988;</div>
+    <p class='charname'><strong>U+0988</strong> <a href='/rishida/scripts/uniview/?codepoints=0988'>BENGALI LETTER II</a></p>
+    <div class='notes'>
+      <p><span class="trans">ī</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> independent vowel, <span class="trans">ī</span>, <span class="name">dīrghô ī</span> <span class='ex' lang='bn' >দীর্ঘ ঈ</span></p>
+        <p><span class="ipa">i</span>, eg. <span class="ex" lang="bn">ঈদ</span> <span class="trans">īd</span> <span class="meaning">Eid</span>.</p>
+        <p>Bengali has lost the distinction between short and long i vowels in pronunciation, but retains the difference in spelling.</p>
+        <p>See also <a href="#char09C0"><span class="uname">U+09C0 BENGALI VOWEL SIGN II</span> <span lang="bn">&#x09C0;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 4-5; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0989'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0989;</div>
+    <p class='charname'><strong>U+0989</strong> <a href='/rishida/scripts/uniview/?codepoints=0989'>BENGALI LETTER U</a></p>
+    <div class='notes'>
+      <p><span class="trans">u</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> independent vowel, <span class="trans">u</span>, <span class="name">hrɔsvô u</span> <span class='ex' lang='bn' >হ্রস্ব উ</span></p>
+        <p><span class="ipa">u</span> pronounced with the lips very rounded, eg. <span class="ex" lang="bn">উঁচু</span> <span class="trans">ũcu</span> <span class="meaning">height.</span></p>
+        <p><span class="ipa">o</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">ɔ o e a</span>, , eg. <span class="ex" lang="bn">উচ্চারন</span> <span class="trans">uccarɔn</span> <span class="meaning">pronunciation.</span></p>
+        <p>See also <a href="#char09C1"><span class="uname">U+09C1 BENGALI VOWEL SIGN U</span> <span lang="bn">&#x09C1;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 5, 11, 275; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char098A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x098A;</div>
+    <p class='charname'><strong>U+098A</strong> <a href='/rishida/scripts/uniview/?codepoints=098A'>BENGALI LETTER UU</a></p>
+    <div class='notes'>
+      <p><span class="trans">ū</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> independent vowel, <span class="trans">ū</span>, <span class="name">dīrghô ū</span> <span class='ex' lang='bn' >দীর্ঘ ঊ</span></p>
+        <p><span class="ipa">u</span> pronounced with the lips very rounded.</p>
+        <p>Bengali has lost the distinction between short and long u vowels in pronunciation, but retains the difference in spelling.</p>
+        <p>See also <a href="#char09C2" class="uname">09C2 BENGALI VOWEL SIGN UU</a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 5, 11, 275; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char098B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x098B;</div>
+    <p class='charname'><strong>U+098B</strong> <a href='/rishida/scripts/uniview/?codepoints=098B'>BENGALI LETTER VOCALIC R</a></p>
+    <div class='notes'>
+      <p><span class="trans">r̥</span> in ISO 15919</p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> independent vowel, <span class="trans">ṛ</span>, <span class="name">vocalic r</span></p>
+        <p><span class="ipa">ri</span> pronounced with the lips very rounded, eg. <span class="ex" lang="bn">ঋতু</span> <span class="trans">ṛtu</span> <span class="meaning">season.</span></p>
+        <p>See also <a href="#char09C3"><span class="uname">U+09C3 BENGALI VOWEL SIGN VOCALIC R</span> <span lang="bn">&#xA0;&#x09C3;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p41; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char098C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x098C;</div>
+    <p class='charname'><strong>U+098C</strong> <a href='/rishida/scripts/uniview/?codepoints=098C'>BENGALI LETTER VOCALIC L</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vocalic</p>
+        <p>Historic character, only used to write Sanskrit in Bengali.</p>
+        <p>See also <a href="#char09E2"><span class="uname">U+09E2 BENGALI VOWEL SIGN VOCALIC L</span> <span lang="bn">&#xA0;&#x09E2;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">Unicode Standard 5.2</a> p279</p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char098F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x098F;</div>
+    <p class='charname'><strong>U+098F</strong> <a href='/rishida/scripts/uniview/?codepoints=098F'>BENGALI LETTER E</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>e</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> indepent vowel, <span class='trans'>e</span> or <span class='trans'>æ</span>, <span class="name">e-kar</span> </p>
+<p><span class="ipa">e</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">i u</span>, eg. <span class="ex" lang="bn">একটু</span> <span class="trans">ekʈu</span> <span class="meaning">a little</span>.</p>
+        <p><span class="ipa">æ</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">ɔ o e a</span>, eg. <span class="ex" lang="bn">একবার</span> <span class="trans">ækbar</span> <span class="meaning">once.</span></p>
+        <p>See also <a href="#char09C7"><span class="uname">U+09C7 BENGALI VOWEL SIGN E</span> <span lang="bn">&#xA0;&#x09C7;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p12-13, 16-17; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0990'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0990;</div>
+    <p class='charname'><strong>U+0990</strong> <a href='/rishida/scripts/uniview/?codepoints=0990'>BENGALI LETTER AI</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ai</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> indepent vowel, <span class='trans'>oǐ</span>, <span class="name">oǐ-kar</span></p>
+        <p><span class="ipa">oj</span> diphthong.</p>
+        <p>See also <a href="#char09C8"><span class="uname">U+09C8 BENGALI VOWEL SIGN AI</span> <span lang="bn">&#xA0;&#x09C8;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p35; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0993'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0993;</div>
+    <p class='charname'><strong>U+0993</strong> <a href='/rishida/scripts/uniview/?codepoints=0993'>BENGALI LETTER O</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ō</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> indepent vowel, <span class='trans'>o</span>, <span class="name">o-kar</span></p>
+        <p><span class="ipa">o</span> pronounced with the lips very rounded.</p>
+        <p><span class="ipa">u</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">i u</span>, eg. <span class="ex" lang="bn">ওদিকে</span> <span class="trans">odike</span> <span class="meaning">in that direction.</span></p>
+        <p><span class="ipa">ɔ</span> if the vowel in the following syllable is one of <span class="ipa">ɔ o e a</span>, eg. <span class="ex" lang="bn">ওড়া</span> <span class="trans">oɽa</span> <span class="meaning">to fly.</span></p>
+        <p>See also <a href="#char09CB"><span class="uname">U+09CB BENGALI VOWEL SIGN O</span> <span lang="bn">&#xA0;&#x09CB;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p8, 10, 275; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0994'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0994;</div>
+    <p class='charname'><strong>U+0994</strong> <a href='/rishida/scripts/uniview/?codepoints=0994'>BENGALI LETTER AU</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>au</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> indepent vowel, <span class='trans'>oǔ</span>, <span class="name">oǔ-kar</span></p>
+        <p><span class="ipa">ow</span> diphthong, eg. <span class="ex" lang="bn">ঔষুধ</span> <span class="trans">oŭʂɔdh</span> <span class="meaning">medecine.</span></p>
+        <p>See also <a href="#char09CC"><span class="uname">U+09CC BENGALI VOWEL SIGN AU</span> <span lang="bn">&#xA0;&#x09CC;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p17; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='consonants'>
+  <h2><a href='#consonants'>Consonants</a></h2>
+  <div class='character' id='char0995'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0995;</div>
+    <p class='charname'><strong>U+0995</strong> <a href='/rishida/scripts/uniview/?codepoints=0995'>BENGALI LETTER KA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>k</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>k</span>, <span class="name">kɔ</span></p>
+        <p><span class="ipa">k</span>, eg. <span class="ex" lang="bn">কলম</span> <span class="trans">kɔlôm</span> <span class="meaning">pen.</span></p>
+        <p><span class="leadin">Conjuncts with unusual pronunciations:</span></p>
+        <p><span class='ex' lang='bn' >ক্ষ</span> <span class='trans'>kʂ</span>, <span class='ipa'>kʰ</span> when initial, <span class='ipa'>kːʰ</span> in the middle of a word. Note: this conjunct is called <span class='name'>khiyɔ</span> and is often treated as a letter of the alphabet in that some dictionaries give it it's own section, eg. <span class="ex" lang="bn">ক্ষুদ্র</span> <span class="trans">kʂudrô</span> <span class="meaning">small, trifling.</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্ন</span> <span class="trans">kʂn</span>, <span class="ipa">kkʰn</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্ম</span> <span class="trans">kʂm</span>, <span class="ipa">kkʰ</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্য</span> <span class="trans">kʂy̌</span>, <span class="ipa">kkʰ</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp16, 17, 32, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0996'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0996;</div>
+    <p class='charname'><strong>U+0996</strong> <a href='/rishida/scripts/uniview/?codepoints=0996'>BENGALI LETTER KHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>kh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>kh</span>, <span class="name">khɔ</span></p>
+        <p><span class="ipa">kʰ</span>, eg. <span class="ex" lang="bn">খবর</span> <span class="trans">khɔbôr</span> <span class="meaning">news.</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp12-13; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0997'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0997;</div>
+    <p class='charname'><strong>U+0997</strong> <a href='/rishida/scripts/uniview/?codepoints=0997'>BENGALI LETTER GA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>g</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>g</span>, <span class="name">gɔ</span> </p>
+        <p><span class="ipa">ɡ</span>, eg. <span class="ex" lang="bn">গতকাল</span> <span class="trans">gɔtôkal</span> <span class="meaning">yesterday.</span></p>
+        <p><span class="leadin">Shape variants.</span> When combined with <span class="ex" lang="bn">ু</span> the form <span class="ex" lang="bn">গু</span> is common in handwriting and older typefaces. The <span class="name">u</span> can also be written below the consonant, especially in newspapers.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp3,4; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0998'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0998;</div>
+    <p class='charname'><strong>U+0998</strong> <a href='/rishida/scripts/uniview/?codepoints=0998'>BENGALI LETTER GHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>gh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>gh</span>, <span class="name">ghɔ</span></p>
+        <p><span class="ipa">ɡʰ</span>, eg. <span class="ex" lang="bn">ঘর</span> <span class="trans">ghɔr</span> <span class="meaning">room, house.</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p42; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0999'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0999;</div>
+    <p class='charname'><strong>U+0999</strong> <a href='/rishida/scripts/uniview/?codepoints=0999'>BENGALI LETTER NGA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ṅ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ŋ</span>, <span class="name">uŋɔ</span></p>
+        <p><span class="ipa">ŋ</span> or <span class="ipa">ŋɡ</span></p>
+        <p>Some speakers will pronounce a hard <span class="ipa">ɡ</span> in a word like <span class="ex" lang="bn">বাঙালী</span> <span class="ipa">baŋɡali</span> (<span class="meaning">Bengali</span>), while others will either soften it or omit it.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp9, 10; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char099A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x099A;</div>
+    <p class='charname'><strong>U+099A</strong> <a href='/rishida/scripts/uniview/?codepoints=099A'>BENGALI LETTER CA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>c</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>c</span>, <span class="name">cɔ</span> </p>
+        <p><span class="ipa">c</span>, eg. <span class="ex" lang="bn">চক্র</span> <span class="trans">cɔkrô</span> <span class="meaning">wheel.</span></p>
+        <p><span class="leadin">Conjuncts with unusual pronunciations:</span></p>
+        <p><span class="ex" lang="bn">চ্ছ্ব</span> <span class="trans">cchb</span>, <span class="ipa">ccʰ</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp35, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char099B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x099B;</div>
+    <p class='charname'><strong>U+099B</strong> <a href='/rishida/scripts/uniview/?codepoints=099B'>BENGALI LETTER CHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ch</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ch</span>, <span class="name">chɔ</span> </p>
+        <p><span class="ipa">cʰ</span>, eg. <span class="ex" lang="bn">ছাতা</span> <span class="trans">chata</span> <span class="meaning">umbrella.</span></p>
+        <p>Aspiration is stronger at the beginning of a word than in the middle or at the end.</p>
+        <p><span class='ipa'>s</span> when pronounced by some people.</p>
+        <p><span class="leadin">Conjuncts with unusual pronunciations:</span></p>
+        <p><span class="ex" lang="bn">চ্ছ্ব</span> <span class="trans">cchb</span>, <span class="ipa">ccʰ</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp19-20, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char099C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x099C;</div>
+    <p class='charname'><strong>U+099C</strong> <a href='/rishida/scripts/uniview/?codepoints=099C'>BENGALI LETTER JA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>j</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>j</span>, <span class="name">bôr͟gīyô jɔ</span> <span class='ex' lang='bn' >বর্গীয় জ</span></p>
+        <p><span class="ipa">ʤ</span>, eg. <span class="ex" lang="bn">জগৎ</span> <span class="trans">jɔgôṯ</span> <span class="meaning">world.</span></p>
+        <p><span class="ipa">z</span> In Bangladesh this can sound more like <span class="ipa">z</span>, especially in words of Perso-Arabic origin, eg. <span class="ex" lang="bn">নামাজ</span> <span class="trans">namaj</span>, <span class="meaning">prayers</span>, pronounced <span class="ipa">namaz</span>.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations:</span></p>
+        <p><span class="ex" lang="bn">জ্ঞ</span> <span class="trans">jñ</span>, <span class="ipa">ɡ</span> at the beginning of a word, eg. <span class="ex" lang="bn">জ্ঞান</span> <span class="trans">jñan</span>, <span class="meaning">knowledge</span>, pronounced <span class="ipa">ɡæn</span>, or <span class="ipa">ɡɡ</span> between vowels, eg. <span class="ex" lang="bn">বিজ্ঞান</span> <span class="trans">bijñan</span>, <span class="meaning">science</span>, pronounced <span class="ipa">biɡɡæn</span>. (Note how it also changes a following <span class="trans">a</span> to <span class="ipa">æ</span>.)</p>
+        <p><span class="ex" lang="bn">জ্জ্ব</span> <span class="trans">jjb</span>, <span class="ipa">jj</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp 25, 26, 82, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char099D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x099D;</div>
+    <p class='charname'><strong>U+099D</strong> <a href='/rishida/scripts/uniview/?codepoints=099D'>BENGALI LETTER JHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>jh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>jh</span>, <span class="name">jhɔ</span> </p>
+        <p><span class="ipa">ʤʰ</span>, eg. <span class="ex" lang="bn">ঝড়</span> <span class="trans">jhɔɽ</span> <span class="meaning">storm.</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp 38; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char099E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x099E;</div>
+    <p class='charname'><strong>U+099E</strong> <a href='/rishida/scripts/uniview/?codepoints=099E'>BENGALI LETTER NYA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ñ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ñ</span>, <span class="name">niyô / iyô </span></p>
+        <p><span class="ipa">n</span> It is pronounced the same as <span class="name">nɔ</span>.</p>
+        <p>Its use independently, in words like <span class="ex" lang="bn">গাঞি</span> <span class="trans">gañi</span>, is very rare <sup>4</sup>. Usually only used in conjuncts such as <span class="trans">ñc</span>, <span class="trans">ñj</span>, <span class="trans">ñjh</span>, <span class="trans">jñ</span>, etc.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations:</span></p>
+        <p><span class="ex" lang="bn">জ্ঞ</span> <span class="trans">jñ</span>, <span class="ipa">ɡ</span> at the beginning of a word, eg. <span class="ex" lang="bn">জ্ঞান</span> <span class="trans">jñan</span>, <span class="meaning">knowledge</span>, pronounced <span class="ipa">ɡæn</span>, or <span class="ipa">ɡɡ</span> between vowels, eg. <span class="ex" lang="bn">বিজ্ঞান</span> <span class="trans">bijñan</span>, <span class="meaning">science</span>, pronounced <span class="ipa">biɡɡæn</span>. (Note how it also changes a following <span class="trans">a</span> to <span class="ipa">æ</span>.)</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp 44, 82; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a>; [4] <a href="/rishida/scripts/references">Correspondance [Bhattacharya]</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char099F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x099F;</div>
+    <p class='charname'><strong>U+099F</strong> <a href='/rishida/scripts/uniview/?codepoints=099F'>BENGALI LETTER TTA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ṭ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ʈ</span>, <span class="name">ʈɔ</span></p>
+        <p><span class="ipa">ʈ</span>, eg. <span class="ex" lang="bn">টাকা</span> <span class="trans">ʈaka</span> <span class="meaning">money.</span></p>
+        <p>Note that Bengali retroflex consonants do not involve the tongue being curled around or pointed vertically upwards, as in other Indic languages. The tip of the tongue is touched against the alveolar ridge.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p 23; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A0'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A0;</div>
+    <p class='charname'><strong>U+09A0</strong> <a href='/rishida/scripts/uniview/?codepoints=09A0'>BENGALI LETTER TTHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ṭh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ʈh</span>, <span class="name">ʈhɔ</span></p>
+        <p><span class="ipa">ʈʰ</span>, eg. <span class="ex" lang="bn">ঠাণ্ডা</span> <span class="trans">ʈhaɳɖa</span> <span class="meaning">cold.</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p38; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A1'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A1;</div>
+    <p class='charname'><strong>U+09A1</strong> <a href='/rishida/scripts/uniview/?codepoints=09A1'>BENGALI LETTER DDA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ḍ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ɖ</span>, <span class="name">ɖɔ</span></p>
+        <p><span class="ipa">ɖ</span>, eg. <span class="ex" lang="bn">ডাক্তার</span> <span class="trans">ɖaktar</span> <span class="meaning">doctor.</span></p>
+        <p><span class="leadin">With nukta.</span> <span class="ipa">ɽ</span> with <a href="#char09BC"><span class="uname">U+09BC BENGALI SIGN NUKTA</span> <span lang="bn">&#xA0;&#x09BC;</span></a>, ie.  <span class='ex' lang='bn' >ড়</span> (ISO 15919 <span class='trans'>ṛ</span>; here <span class='trans'>ɽ</span>) is a retroflex flap, eg. <span class="ex" lang="bn">ওড়া</span> <span class="trans">oɽa</span> <span class="meaning">to fly</span>. Curl tongue as if for <span class="ipa">ɖ</span> but before making contact with the alveolar ridge flap the tongue down smartly to make audible contact with the bottom of the mouth.</p>
+        <p>In Sanskrit this was merely an allophone of <span class="ex" lang="bn">ড</span> between vowels. The distinguishing dot was added to the Bengali script in the 19th century. Now it is regarded as a letter of the alphabet.</p>
+        <p>The precomposed character <a href="#char09DC"><span class="uname">U+09DC BENGALI LETTER RRA</span> <span lang="bn">&#xA0;&#x09DC;</span></a> is equivalent to this decomposed sequence, but the decomposed sequence is produced by NFC, so should be used in preference.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a>; [3] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p28, 29 </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A2'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A2;</div>
+    <p class='charname'><strong>U+09A2</strong> <a href='/rishida/scripts/uniview/?codepoints=09A2'>BENGALI LETTER DDHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ḍh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ɖh</span>, <span class="name">ɖhɔ</span> <span class='trans'>ɖh</span></p>
+        <p><span class="ipa">ɖʰ</span>, eg. <span class="ex" lang="bn">ঢেউ</span> <span class="trans">ɖheu</span> <span class="meaning">wave.</span></p>
+        <p>Rather uncommon, even though it is used in the name of the Bangladeshi capital, <span class='ex' lang='bn' >ঢাকা</span> <span class='trans'>ɖhaka</span> <span class='ipa'>ɖʱaka</span>, and some other quite common words<sup>4</sup>.</p>
+        <p><span class="leadin">With nukta.</span> <span class="ipa">ɽ</span> or <span class="ipa">ɽh</span> with <a href="#char09BC"><span class="uname">U+09BC BENGALI SIGN NUKTA</span></a> <span class="ex" lang="bn">ঢ়</span>  (ISO 15919 <span class='trans'>ṛh</span>; here <span class='trans'>ɽh</span>), eg. <span class="ex" lang="bn">আষাঢ়</span> <span class="trans">aʂaɽh</span> <span class="meaning">June-July</span>. Theoretically this is the aspirated version of <span class="name">ɽɔ</span>, but in practice not normally pronounced with aspiration,  although it occasionally may be, as in <span class="ex" lang="bn">রাঢ়</span>. A very rare letter, the only common word in which it appears is the Bengali month given in the example above.</p>
+        <p>The precomposed character <a href="#char09DD"><span class="uname">U+09DD BENGALI LETTER RHA</span> <span lang="bn">&#xA0;&#x09DD;</span></a> is equivalent to this decomposed sequence, but the decomposed sequence is produced by NFC, and so should be used in preference. </p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp38, 39; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a>; [4] <a href="/rishida/scripts/references">Correspondance [Bhattacharya]</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A3'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A3;</div>
+    <p class='charname'><strong>U+09A3</strong> <a href='/rishida/scripts/uniview/?codepoints=09A3'>BENGALI LETTER NNA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ṇ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ɳ</span>, <span class="name">mūrdhônyô ɳɔ</span> <span class='ex' lang='bn' >মূর্ধন্য ণ</span></p>
+        <p><span class="ipa">n</span>, eg. <span class="ex" lang="bn">হরিণ</span> <span class="trans">hôriɳ</span> <span class="meaning">deer</span>. This is pronounced exactly the same as <span class="name">dɔntyô nɔ</span>.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations:</span></p>
+        <p><span class="ex" lang="bn">হ্ণ</span> <span class="trans">hɳ</span>, <span class="ipa">nh</span> or <span class="ipa">nn</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p32; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A4'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A4;</div>
+    <p class='charname'><strong>U+09A4</strong> <a href='/rishida/scripts/uniview/?codepoints=09A4'>BENGALI LETTER TA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>t</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>t</span>, <span class="name">tɔ</span></p>
+        <p><span class="ipa">t</span>, eg. <span class="ex" lang="bn">তারা</span> <span class="trans">tara</span> <span class="meaning">star. </span>The tongue is further forward than the English t.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations:</span></p>
+        <p><span class="ex" lang="bn">ত্ম</span> <span class="trans">tm</span>, <span class="ipa">tː</span></p>
+        <p><span class="ex" lang="bn">ত্ব</span> <span class="trans">tb</span>, <span class="ipa">tː</span></p>
+        <p><span class="ex" lang="bn">ত্ম্য</span> <span class="trans">tmy̌</span>, <span class="ipa">tː</span></p>
+        <p><span class="ex" lang="bn">স্ত্য</span> <span class="trans">sty̌</span>, <span class="ipa">stː</span></p>
+        <p><span class="leadin">Special vowel combinations:</span> The syllable <span class="trans">ntu</span> can be written in modern typefaces with the <span class="name">u</span> below the <span class="trans">nt</span> conjunct, but in older print a special arrangement incorporates all three sounds together, eg. <span class="ex" lang="bn">কিন্তু</span> <span class="trans">kintu</span> <span class="meaning">but</span>.</p>
+        <p>The combination <span class="trans">tru</span> is represented by <span class="ex" lang="bn">ত্রু</span>.</p>
+        <p><span class="leadin">Khanda ta</span> In some words a <span class="name">tɔ</span> that has no following inherent or other vowel may have a shape like <span class="ex" lang="bn">ৎ</span>. It is called <span class="ex" lang="bn">খণ্ড ত</span> <span class="name">khɔɳɖô tɔ</span>. It either comes at the end of words, eg. <span class="ex" lang="bn">হঠাৎ</span> <span class="trans">hɔʈhaṯ</span> <span class="meaning">suddenly</span>, or before a consonant that doesn't naturally combine with <span class="name">tɔ</span>, eg. <span class="ex" lang="bn">উৎসব</span> <span class="trans">uṯsɔb</span> <span class="meaning">festival</span>. Many such words, however, use <span class="ex" lang="bn">ত</span>. It's not possible to say which will be used.</p>
+        <p>Unicode 4.1 added a separate character for <span class="name">khɔɳɖȏ tɔ</span>, <a href="#char09CE"><span class="uname">U+09CE BENGALI LETTER KHANDA TA</span> <span lang="bn">&#x09CE;</span></a>,  which should be used when this shape is needed. (This replaces a previous approach that required the use of <a href="#char09A4"><span class="uname">U+09A4 BENGALI LETTER TA</span> <span lang="bn">&#x09A4;</span></a> + <a href="#char09CD"><span class="uname">U+09CD BENGALI SIGN VIRAMA</span> <span lang="bn">&#xA0;&#x09CD;</span></a> + <a href="#char200D"><span class="uname">U+200D ZERO WIDTH JOINER</span></a>.)</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp23, 39; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A5'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A5;</div>
+    <p class='charname'><strong>U+09A5</strong> <a href='/rishida/scripts/uniview/?codepoints=09A5'>BENGALI LETTER THA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>th</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>th</span>, <span class="name">thɔ</span></p>
+        <p><span class="ipa">tʰ</span>, eg. <span class="ex" lang="bn">থামা</span> <span class="trans">thama</span> <span class="meaning">to stop.</span></p>
+        <p>When the English sound 'th' as in 'thin' is transliterated into Bengali, this is the sound that is used.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations:</span></p>
+        <p><span class="ex" lang="bn">থ্ব</span> <span class="trans">thb</span>, <span class="ipa">ttʰ</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp28, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A6'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A6;</div>
+    <p class='charname'><strong>U+09A6</strong> <a href='/rishida/scripts/uniview/?codepoints=09A6'>BENGALI LETTER DA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>d</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>d</span>, <span class="name">dɔ</span></p>
+        <p><span class="ipa">d</span>, eg. <span class="ex" lang="bn">দাদী</span> <span class="trans">dadī</span> <span class="meaning">grandmother. </span>Produced with the teeth firmly against the top front teeth.</p>
+        <p>When the English sound 'th' as in 'then' is transliterated into Bengali, this is the sound that is used.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">দ্ম</span> <span class="trans">dm</span>, <span class="ipa">dd</span></p>
+        <p><span class="ex" lang="bn">দ্ব</span> <span class="trans">db</span>, <span class="ipa">dd</span></p>
+        <p><span class="ex" lang="bn">দ্ব্য</span> <span class="trans">dby̌</span>, <span class="ipa">dd</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp9,10, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A7'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A7;</div>
+    <p class='charname'><strong>U+09A7</strong> <a href='/rishida/scripts/uniview/?codepoints=09A7'>BENGALI LETTER DHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>dh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>dh</span>, <span class="name">dhɔ</span></p>
+        <p><span class="ipa">dʰ</span>, eg. <span class="ex" lang="bn">ধন্যবাদ</span> <span class="trans">dhônyôbad</span> <span class="meaning">thank you.</span></p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">ধ্ব</span> <span class="trans">dhb</span>, <span class="ipa">ddʰ</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp42, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09A8'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09A8;</div>
+    <p class='charname'><strong>U+09A8</strong> <a href='/rishida/scripts/uniview/?codepoints=09A8'>BENGALI LETTER NA</a></p>
+    <div class='notes'>
+      <p><span class="leadin">Transcriptions.</span> ISO 15919 <span class='trans'>n</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>n</span>, <span class="name">dɔntyô nɔ</span> <span class='ex' lang='bn' >দন্ত্য ন</span> </p>
+        <p><span class="ipa">n</span>, eg. <span class="ex" lang="bn">নদী</span> <span class="trans">nôdī</span> <span class="meaning">river.</span></p>
+        <p><span class="leadin">Special vowel combinations.</span> The syllable <span class="trans">ntu</span> can be written in modern typefaces with the <span class="name">u</span> below the <span class="trans">nt</span> conjunct, but in older print a special arrangement incorporates all three sounds together, eg. <span class="ex" lang="bn">কিন্তু</span> <span class="trans">kintu</span> (<span class="meaning">but</span>).</p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">হ্ণ</span> <span class="trans">hɳ</span>, <span class="ipa">nh</span> or <span class="ipa">nn</span></p>
+        <p><span class="ex" lang="bn">হ্ন</span> <span class="trans">hn</span>, <span class="ipa">nh</span> or <span class="ipa">nn</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp3, 4, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09AA'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09AA;</div>
+    <p class='charname'><strong>U+09AA</strong> <a href='/rishida/scripts/uniview/?codepoints=09AA'>BENGALI LETTER PA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>p</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>p</span>, <span class="name">pɔ</span> </p>
+        <p><span class="ipa">p</span>, eg. <span class="ex" lang="bn">পথ</span> <span class="trans">pɔth</span> <span class="meaning">path, road.</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p31; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09AB'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09AB;</div>
+    <p class='charname'><strong>U+09AB</strong> <a href='/rishida/scripts/uniview/?codepoints=09AB'>BENGALI LETTER PHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ph</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ph</span>, <span class="name">phɔ</span> </p>
+        <p><span class="ipa">pf</span> or <span class="ipa">pʰ</span> or <span class="ipa">f</span>, eg. <span class="ex" lang="bn">ফটো</span> <span class="trans">phôʈo</span> <span class="meaning">photo.</span></p>
+        <p>Some pronounce as <span class="ipa">pʰ</span> with aspiration, but many (especially in Bangladesh) pronounce more like <span class="ipa">f</span>. In West Bengal it is more like the <span class="ipa">pf</span> in the German 'pfennig', and this is a fairly standard rendering.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p28; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09AC'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09AC;</div>
+    <p class='charname'><strong>U+09AC</strong> <a href='/rishida/scripts/uniview/?codepoints=09AC'>BENGALI LETTER BA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= Bengali va, wa</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>b</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>b</span> or <span class='trans'>v</span>, <span class="name">bɔ</span> </p>
+        <p><span class="ipa">b</span> when not in a conjunct, eg. <span class="ex" lang="bn">বড়</span> <span class="trans">bɔɽô</span> <span class="meaning">big</span>. The <span class="ipa">v</span> in Sanskrit has disappeared in Bengali, to be replaced by <span class="ipa">b</span>, eg. <span class="ex" lang="bn">বিষ্ণু</span> <span class="trans">biʂɳu</span>, <span class="meaning">Vishnu</span>.</p>
+        <p>Called <span class='name'>bɔ phɔla</span> <span class='ex' lang='bn' >ব-ফলা</span> when non-initial in conjuncts, when it has one of the following two pronunciations.</p>
+        <p><span class='ipa'>∅</span> in word initial in a conjunct, eg. <span class="ex" lang="bn">স্বামী</span> <span class="trans">svamī</span>, <span class="meaning">husband</span>, pronounced <span class="ipa">ʃamiː</span>; <span class="ex" lang="bn">জ্বর</span> <span class="trans">jvɔr</span>, <span class="meaning">fever</span>, pronounced <span class="ipa">ʤɔr</span>.</p>
+        <p>Lengthens consonants in conjuncts between vowels, eg. <span class="ex" lang="bn">বিশ্ব</span> <span class="trans">biʃvô</span>, <span class="meaning">universe</span>, pronounced <span class="ipa">biʃʃo</span>.</p>
+        <p>Note that it is still pronounced <span class='ipa'>b</span> sometimes in <span class='ex' lang='bn' >ম্ব</span> conjuncts in words of English or Sanskrit origin, eg. <span class="ex" lang="bn">নম্বর</span> <span class="trans">nɔmbôr</span>, <span class="meaning">number</span>, pronounced <span class="ipa">nɔmbor</span>.  By contrast, the Bengali word <span class='ex' lang='bn' >সম্বন্ধে</span> <span class='trans'>sɔmbɔndhe</span> <span class='meaning'>about</span> is  pronounced <span class='ipa'>sɔmmɔndʰe</span>.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">চ্ছ্ব</span> <span class="trans">cchb</span>, <span class="ipa">ccʰ</span></p>
+        <p><span class="ex" lang="bn">জ্জ্ব</span> <span class="trans">jjb</span>, <span class="ipa">jj</span></p>
+        <p><span class="ex" lang="bn">ত্ব</span> <span class="trans">tb</span>, <span class="ipa">tt</span></p>
+        <p><span class="ex" lang="bn">থ্ব</span> <span class="trans">thb</span>, <span class="ipa">ttʰ</span></p>
+        <p><span class="ex" lang="bn">দ্ব</span> <span class="trans">db</span>, <span class="ipa">dd</span></p>
+        <p><span class="ex" lang="bn">দ্ব্য</span> <span class="trans">dby̌</span>, <span class="ipa">dd</span></p>
+        <p><span class="ex" lang="bn">ধ্ব</span> <span class="trans">dhb</span>, <span class="ipa">ddʰ</span></p>
+        <p><span class="ex" lang="bn">ম্ব</span> <span class="trans">mb</span>, <span class="ipa">mm</span> or <span class="ipa">mb</span></p>
+        <p><span class="ex" lang="bn">শ্ব</span> <span class="trans">ʃb</span>, <span class="ipa">ʃʃ</span></p>
+        <p><span class="ex" lang="bn">হ্ব</span> <span class="trans">hb</span>, <span class="ed">don't quite understand this - seems to be 'v'</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp3, 4, 26, 249, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09AD'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09AD;</div>
+    <p class='charname'><strong>U+09AD</strong> <a href='/rishida/scripts/uniview/?codepoints=09AD'>BENGALI LETTER BHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>bh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>bh</span>, <span class="name">bhɔ</span> </p>
+        <p><span class="ipa">bʰ</span>, eg. <span class="ex" lang="bn">ভাল</span> <span class="trans">bhalô</span> <span class="meaning">good.</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p35; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09AE'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09AE;</div>
+    <p class='charname'><strong>U+09AE</strong> <a href='/rishida/scripts/uniview/?codepoints=09AE'>BENGALI LETTER MA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>m</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>m</span>, <span class="name">mɔ</span> </p>
+        <p><span class="ipa">m</span>, eg. <span class="ex" lang="bn">মজার</span> <span class="trans">mɔjar</span> <span class="meaning">funny.</span></p>
+        <p>Lengthens consonants as the final letter in a conjunct.</p>
+        <p><span class='ipa'>mh</span> or <span class='ipa'>mm</span> in the conjunct <span class="ex" lang="bn">হ্ম</span> <span class="trans">hm</span>.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্ম</span> <span class="trans">kʂm</span>, <span class="ipa">kkʰ</span></p>
+        <p><span class="ex" lang="bn">ত্ম</span> <span class="trans">tm</span>, <span class="ipa">tt</span></p>
+        <p><span class="ex" lang="bn">ত্ম্য</span> <span class="trans">tmy̌</span>, <span class="ipa">tt</span></p>
+        <p><span class="ex" lang="bn">দ্ম</span> <span class="trans">dm</span>, <span class="ipa">dd</span></p>
+        <p><span class="ex" lang="bn">ম্ব</span> <span class="trans">mb</span>, <span class="ipa">mm</span> or <span class="ipa">mb</span></p>
+        <p><span class="ex" lang="bn">ল্ম</span> <span class="trans">lm</span>, <span class="ipa">ll</span></p>
+        <p><span class="ex" lang="bn">শ্ম</span> <span class="trans">ʃm</span>, <span class="ipa">ʃʃ</span></p>
+        <p><span class="ex" lang="bn">ষ্ম</span> <span class="trans">ʂm</span>, <span class="ipa">ʃʃ</span></p>
+        <p><span class="ex" lang="bn">স্ম</span> <span class="trans">sm</span>, <span class="ipa">ʃʃ</span> with perhaps some nasalisation of the preceding vowel, eg. <span class="ex" lang="bn">ভস্ম</span>, <span class="ipa">bʰɔ̃ʃʃo</span>; or with a vocalic r vowel sign <span class="ipa">s</span>, eg. <span class="ex" lang="bn">স্মৃতি</span>, <span class="ipa">sriti</span></p>
+        <p><span class="ex" lang="bn">হ্ম</span> <span class="trans">hm</span>, <span class="ipa">mh</span> or <span class="ipa">mm</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp3, 4, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09AF'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09AF;</div>
+    <p class='charname'><strong>U+09AF</strong> <a href='/rishida/scripts/uniview/?codepoints=09AF'>BENGALI LETTER YA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>y</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>y̌</span>, <span class="name">ɔntɔḥsthô y̌ɔ</span> <span class='ex' lang='bn' >অন্তঃস্থ য</span></p>
+        <p><span class="ipa">ʤ</span> at the beginning of a word, eg. <span class="ex" lang="bn">যখন</span> <span class="trans">y̌ɔkhôn</span> <span class="meaning">when</span>.  In Bangladesh this can sound more like z, especially in words of Perso-Arabic origin.</p>
+        <p>When it occurs as the last member of a consonant cluster it has a special shape <img src="/rishida/scripts/pickers/bengali/images/yaphala.png" alt="yaphala" />, and is called <span class="name">y̌ɔ-phɔla</span> <span class='ex' lang='bn' >য-ফলা</span>. </p>
+        <p><span class="leadin">Conjunct pronunciations.</span></p>
+        <ul>
+          <li>Lengthens consonants when non-initial in a cluster, eg. <span class="ex" lang="bn">জন্য</span> <span class="trans">jôny̌ô</span>, pronounced <span class="ipa">ʤonno</span>. </li>
+          <li><span class="ipa">æ</span> when followed by the vowel sign <span class='name'>a-kar</span>, eg. <span class="ex" lang="bn">হ্যাঁ</span> <span class="trans">hyæ̃</span> (<span class="meaning">yes</span>), pronounced <span class="ipa">hæ̃</span>; <span class="ex" lang="bn">ব্যাঙ্ক</span> <span class="trans">byæŋk</span> (<span class="meaning">bank</span>), pronounced <span class="ipa">bæŋk</span>. There are exceptions to the previous rule, when the <span class='name'>a-kar</span> produces its normal value, eg. <span class="ex" lang="bn">ব্যাখ্যা</span> <span class="trans">byækhya</span> (<span class="meaning">explanation</span>); another exception would be a word like <span class="ex" lang="bn">সন্ধ্যা</span> <span class="trans">sôndhya</span> (<span class="meaning">evening</span>).</li>
+          <li><span class="ipa">æ</span> when there is no vowel sign and the following syllable is not <span class="trans">i</span>, eg. <span class="ex" lang="bn">ব্যথা</span> <span class="trans">bytha</span> (<span class="meaning">pain</span>), pronounced <span class="ipa">bætʰa</span>.</li>
+          <li><span class="ipa">e</span> when there is no vowel sign and the following syllable is <span class="trans">i</span>, eg. <span class="ex" lang="bn">ব্যক্তি</span> <span class="trans">bykti</span> (<span class="meaning">pain</span>), pronounced <span class="ipa">bekti</span>.</li>
+        </ul>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্য</span> <span class="trans">kʂy̌</span>, <span class="ipa">kkʰ</span></p>
+        <p><span class="ex" lang="bn">ত্ম্য</span> <span class="trans">tmy̌</span>, <span class="ipa">tt</span></p>
+        <p><span class="ex" lang="bn">দ্ব্য</span> <span class="trans">dby̌</span>, <span class="ipa">dd</span></p>
+        <p><span class="ex" lang="bn">স্ত্য</span> <span class="trans">sty̌</span>, <span class="ipa">stt</span></p>
+        <p><span class="ex" lang="bn">হ্য</span> <span class="trans">hy̌</span>, <span class="ipa">jj</span></p>
+        <p>Conjuncts formed with <span class="name">y̌ɔ-phɔla</span> are unusual because the <span class='name'>y̌ɔ-phɔla</span> is reduced but not the preceding base, eg. <span class="ex" lang="bn">ক</span> + <span class="ex" lang="bn">য</span> = <span class="ex" lang="bn">ক্য</span>. This is the default form when <span class='name'>y̌ɔ-phɔla</span> follows <span class="uname"><a href="#char09CD"><span class="uname">U+09CD BENGALI SIGN VIRAMA</span> <span lang="bn">&#xA0;&#x09CD;</span></a></span>.</p>
+        <p>An exception to the rule for shaping of <span class="name">y̌ɔ-phɔla</span> can occur when <a href="#char09B0"><span class="uname">U+09B0 BENGALI LETTER RA</span> <span lang="bn">&#x09B0;</span></a> is the first letter in the conjunct. This combination is typically rendered using the <span class="name">reph</span> and a full <span class="name">ɔntɔḥsthô y̌ɔ</span>, ie. <span class="ex" lang="bn">র্য</span>, but may be rendered using the ordinary <span class="name">y̌ɔ-phɔla</span> form after a full form <span class="name">rɔ</span>, ie.</p>
+        <p><span class='ex' lang='bn' >র</span> + <span class="ex" lang="bn">য</span> = <span class="ex" lang="bn">র্য</span> or <span class='ex' lang='bn' >র‌্য</span></p>
+        <p>Unicode 4.01 clarified how to address this.  Use <a href="#char200C"><span class="uname">U+200C ZERO WIDTH NON-JOINER</span></a> to consistently produce the desired form, as shown below:</p>
+        <p><span class='ex' lang='bn' >র</span> + virama + <span class="ex" lang="bn">য</span> = <span class="ex" lang="bn">র্য</span></p>
+        <p><span class='ex' lang='bn' >র</span> + zwnj + virama + <span class="ex" lang="bn">য</span> = <span class='ex' lang='bn' >র‌্য</span></p>
+        <p><span class="name">y̌ɔ-phɔla</span> can also be used after independent vowels <span>though this doesn't appear to be common</span>.</p>
+        <p><span class="leadin">With nukta.</span> When followed by a <a href="#char09BC"><span class="uname">U+09BC BENGALI SIGN NUKTA</span> <span lang="bn">&#xA0;&#x09BC;</span></a>, ie.  <span class='ex' lang='bn' >য়</span>, this letter becomes <span class="name">ɔntɔḥsthô ɔ</span> <span class='ex' lang='bn' >অন্তঃস্থ য়</span>, which represents one of the following sounds. It is transcribed in ISO 15919 as <span class="trans">ẏ</span>; here <span class="trans">y</span>.</p>
+        <p><span class="ipa">j</span> between <span class='ipa'>i...e</span>, <span class='ipa'>a...u</span>, or <span class='ipa'>e...e</span>. </p>
+        <p><span class="ipa">e</span> after another vowel, particularly after <span class="ipa">ɔ</span>, <span class="ipa">a</span> or <span class="ipa">o</span>, eg. <span class="ex" lang="bn">ভয়</span> <span class="ipa">bʰɔe</span> (<span>fear</span>).</p>
+        <p><span class="ipa">w</span> (light, like French 'oui') between <span class='ipa'>o...a</span> , eg. <span class="ex" lang="bn">খাওয়া</span> <span class="ipa">kʰaowa</span> (<span class="meaning">to eat, drink</span>).</p>
+        <p>Sometimes it is scarcely pronounced at all, eg. <span class="ex" lang="bn">মেয়ে</span> <span class="ipa">mee</span> (<span class="meaning">girl, woman</span>).</p>
+        <p>The dot was added in the 19th century, to contrast this with <span class="name">ɔntɔḥsthô y̌ɔ</span>.</p>
+        <p>The precomposed character <a href="#char09DF"><span class="uname">U+09DF BENGALI LETTER YYA</span> <span lang="bn">&#x09DF;</span></a> is equivalent to this decomposed sequence, but the decomposed sequence is produced by NFC, so should be used in preference.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp13, 25-26, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09B0'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09B0;</div>
+    <p class='charname'><strong>U+09B0</strong> <a href='/rishida/scripts/uniview/?codepoints=09B0'>BENGALI LETTER RA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>r</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>r</span>, <span class="name">rɔ</span></p>
+        <p><span class="ipa">r</span>, eg. <span class="ex" lang="bn">রওয়া</span> <span class="trans">rɔoya</span> <span class="meaning">to remain. </span>Rolled, but at the end of a word in particular the tongue only flaps once or twice.</p>
+        <p><span class="leadin">Conjunct appearance.</span> When it occurs as the second element in a conjunct it is typically written as a wavy horizontal line, so <span class="ex" lang="bn">ব</span> + <span class="ex" lang="bn">র</span> = <span class="ex" lang="bn">ব্র</span>, eg. <span class="ex" lang="bn">যাত্রা</span> <span class="trans">y̌atra</span> <span class="meaning">journey</span>. This mark is called <span class="name">rɔ-phɔla</span> <span class='ex' lang='bn' >র-ফলা</span>.</p>
+        <p>When it occurs as the first element in a conjunct it is typically written as a diagonal stroke above the consonant that follows it, so <span class="ex" lang="bn">র</span> + <span class="ex" lang="bn">য</span> = <span class="ex" lang="bn">র্য</span>, eg. <span class="ex" lang="bn">বর্ণ</span> <span class="trans">bɔrɳô</span> <span class="meaning">colour</span>. This mark is called <span class="name">reph</span> <span class='ex' lang='bn' >রেফ</span>.</p>
+        <p><span class="leadin">Unusual vowel combinations.</span> To avoid clashing with the dot, the vowel sign for <span class="name">u</span> appears to the side when attached to <span class="name">rɔ</span>, ie. <span class="ex" lang="bn">রু</span>. Similarly, the vowel sign for <span class="name">ū</span> appears to the side when attached to <span class="name">rɔ</span>, ie. <span class="ex" lang="bn">রূ</span>. Eg. <span class="ex" lang="bn">ভুরু</span> <span class="trans">bhuru</span> <span class="meaning">eyebrow.</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp3, 4, 33, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09B2'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09B2;</div>
+    <p class='charname'><strong>U+09B2</strong> <a href='/rishida/scripts/uniview/?codepoints=09B2'>BENGALI LETTER LA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>l</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>l</span>, <span class="name">lɔ</span></p>
+        <p><span class="ipa">l</span>, eg. <span class="ex" lang="bn">লওয়া</span> <span class="trans">lɔoya</span> <span class="meaning">to take. </span>Never a dark l.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">ল্ম</span> <span class="trans">lm</span>, <span class="ipa">ll</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp3, 4, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09B6'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09B6;</div>
+    <p class='charname'><strong>U+09B6</strong> <a href='/rishida/scripts/uniview/?codepoints=09B6'>BENGALI LETTER SHA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ś</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ʃ</span>, <span class="name">talôbyô ʃɔ</span> <span class='ex' lang='bn' >তালব্য শ</span></p>
+        <p><span class="ipa">ʃ</span>, eg. <span class="ex" lang="bn">শাপ</span> <span class="trans">ʃap</span> <span class="meaning">curse.</span></p>
+        <p><span class="ipa">s</span> possible in Bangladesh, or in English words that use the sound <span class="ipa">s</span>.</p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">শ্ম</span> <span class="trans">ʃm</span>, <span class="ipa">ʃʃ</span></p>
+        <p><span class="ex" lang="bn">শ্র</span> <span class="trans">ʃr</span>, <span class="ipa">sr</span></p>
+        <p><span class="ex" lang="bn">শ্ব</span> <span class="trans">ʃb</span>, <span class="ipa">ʃʃ</span></p>
+        <p><span class="leadin">Unusual vowel combinations.</span> When combining <span class="ex" lang="bn">শ</span> with <span class="name">u</span> the form <span class="ex" lang="bn">শু</span> is common in handwriting and older typefaces, eg. <span class="ex" lang="bn">শুধু</span> <span class="trans">ʃudhu</span> <span class="meaning">only</span>. The <span class="name">u</span> can also be written below the consonant, especially in newspapers.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp9,10, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09B7'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09B7;</div>
+    <p class='charname'><strong>U+09B7</strong> <a href='/rishida/scripts/uniview/?codepoints=09B7'>BENGALI LETTER SSA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ṣ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ʂ</span>, <span class="name">mūrdhnyô ʂɔ</span> <span class='ex' lang='bn' >মূর্ধন্য ষ</span></p>
+        <p><span class="ipa">ʃ</span>, eg. <span class="ex" lang="bn">ষড়যন্ত্র</span> <span class="trans">ʂɔɽôy̌ɔntrô</span> <span class="meaning">conspiracy.</span></p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">ক্ষ</span> <span class="trans">kʂ</span>, <span class="ipa">kkʰ</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্ন</span> <span class="trans">kʂn</span>, <span class="ipa">kkʰn</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্ম</span> <span class="trans">kʂm</span>, <span class="ipa">kkʰ</span></p>
+        <p><span class="ex" lang="bn">ক্ষ্য</span> <span class="trans">kʂy̌</span>, <span class="ipa">kkʰ</span></p>
+        <p><span class="ex" lang="bn">ষ্ম</span> <span class="trans">ʂm</span>, <span class="ipa">ʃʃ</span></p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp9,10, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09B8'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09B8;</div>
+    <p class='charname'><strong>U+09B8</strong> <a href='/rishida/scripts/uniview/?codepoints=09B8'>BENGALI LETTER SA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>s</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>s</span>, <span class="name">dɔntyô sɔ</span> <span class='ex' lang='bn' >দন্ত্য স</span> <span class='trans'>s</span></p>
+        <p><span class="ipa">ʃ</span>, eg. <span class="ex" lang="bn">সকাল</span> <span class="trans">sɔkal</span> <span class="meaning">morning.</span></p>
+        <p><span class="ipa">s</span> possible in Bangladesh, or in English words that use the sound <span class="ipa">s</span>.</p>
+        <p><span class="leadin">Conjunct pronunciations.</span> Typically pronounced <span class="ipa">s</span> in the following conjuncts:</p>
+        <p><span class="ex" lang="bn">স্ত</span> <span class="trans">st</span>, <span class="ipa">st</span></p>
+        <p><span class="ex" lang="bn">স্থ</span> <span class="trans">sth</span>, <span class="ipa">stʰ</span></p>
+        <p><span class="ex" lang="bn">স্ন</span> <span class="trans">sn</span>, <span class="ipa">sn</span></p>
+        <p><span class="ex" lang="bn">স্ত্র</span> <span class="trans">str</span>, <span class="ipa">str</span></p>
+        <p><span class="ex" lang="bn">স্ম</span> <span class="trans">sm</span>, <span class="ipa">ʃʃ</span> may involve some nasalisation of the preceding vowel, eg. <span class="ex" lang="bn">ভস্ম</span>, <span class="ipa">bʰɔ̃ʃʃo</span>; but <span class="ipa">s</span> when this conjunct is followed by a vocalic r vowel sign , eg. <span class="ex" lang="bn">স্মৃতি</span> <span class="ipa">sriti</span> <span class="meaning">memory</span>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> pp9,10, 265-270; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09B9'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09B9;</div>
+    <p class='charname'><strong>U+09B9</strong> <a href='/rishida/scripts/uniview/?codepoints=09B9'>BENGALI LETTER HA</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>h</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>h</span>, <span class="name">hɔ</span></p>
+        <p><span class="ipa">h</span>, eg. <span class="ex" lang="bn">হল</span> <span class="trans">hɔl</span> <span class="meaning">(student) hall.</span></p>
+        <p><span class="leadin">Unusual conjunct pronunciations.</span></p>
+        <p><span class="ex" lang="bn">হ্ণ</span> <span class="trans">hɳ</span>, <span class="ipa">nh</span> or <span class="ipa">nn</span></p>
+        <p><span class="ex" lang="bn">হ্ন</span> <span class="trans">hn</span>, <span class="ipa">nh</span> or <span class="ipa">nn</span></p>
+        <p><span class="ex" lang="bn">হ্ম</span> <span class="trans">hm</span>, <span class="ipa">mh</span> or <span class="ipa">mm</span></p>
+        <p><span class="ex" lang="bn">হ্য</span> <span class="trans">hy̌</span>, <span class="ipa">jj</span></p>
+        <p><span class="ex" lang="bn">হ্ব</span> <span class="trans">hb</span>, <span class='ipa'>hu</span> or <span class='ipa'>ho</span> or <span class='ipa'>hb</span>, depending on the speaker.</p>
+        <p><span class="leadin">Shape variants.</span> <span class="trans">hṛ</span> traditionally looks like <span class="ex" lang="bn">হৃ</span>, although modern computer typefaces tend to put the normal vowel sign under the consonant, eg. <span class="ex" lang="bn">হৃদয়</span> <span class="trans">hṛdɔy</span> <span class="meaning">heart.</span></p>
+        <p>Also, <span class="trans">hu</span> traditionally looks like <span class="ex" lang="bn">হু</span>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p400; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p25; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a>; [4] <a href="/rishida/scripts/references">Corrrespondance [Bhattacharya]</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='addcons'>
+  <h2><a href='#addcons'>Additional consonants</a></h2>
+  <div class='character' id='char09CE'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09CE;</div>
+    <p class='charname'><strong>U+09CE</strong> <a href='/rishida/scripts/uniview/?codepoints=09CE'>BENGALI LETTER KHANDA TA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• a dead consonant form of ta, without implicit vowel, used in some sequences</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>t</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ṯ</span>, <span class="name">khɔɳɖȏ tɔ</span> <span class='ex' lang='bn' >খণ্ড ত্‌</span></p>
+        <p><span class="ipa">t</span> The tongue is further forward than the English t.</p>
+        <p>This is a variant form of <span class="ex" lang="bn">ত</span> that was added to Unicode 4.1 as a separate character and  should be used when this shape is needed. (This replaces an earlier approach that required the use of <a href="#char09A4"><span class="uname">U+09A4 BENGALI LETTER TA</span> <span lang="bn">&#x09A4;</span></a> + <a href="#char09CD"><span class="uname">U+09CD BENGALI SIGN VIRAMA</span> <span lang="bn">&#xA0;&#x09CD;</span></a> + <a href="#char200D"><span class="uname">U+200D ZERO WIDTH JOINER</span></a>.)</p>
+        <p>In some words a <span class="name">tɔ</span> that has no following inherent or other vowel may have this shape. It either comes at the end of words, eg. <span class="ex" lang="bn">হঠাৎ</span> <span class="trans">hɔʈhaṯ</span> <span class="meaning">suddenly</span>, or before a consonant that doesn't naturally combine with <span class="name">tɔ</span>, eg. <span class="ex" lang="bn">উৎসব</span> <span class="trans">uṯsɔb</span> <span class="meaning">festival</span> or <span class='ex' lang='bn' >সৎমা</span> <span class='trans'>sɔṯma</span> <span class='meaning'>step-mother</span>. Many such words, however, use <span class="ex" lang="bn">ত</span>, eg. <span class='ex' lang='bn' >সদাত্মা</span>. It's not possible to say which will be used.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">The Unicode Standard 5.2</a> p281; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p39; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a>; [4] <a href="/rishida/scripts/references">Correspondence [Bhattacharya]</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09DC'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09DC;</div>
+    <p class='charname'><strong>U+09DC</strong> <a href='/rishida/scripts/uniview/?codepoints=09DC'>BENGALI LETTER RRA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>≡ 09A1 09BC</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ṛ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ɽ</span>, <span class="name">ɽɔ</span></p>
+        <p><strong>It is recommended that you use the NFC form of this letter, which is the decomposed sequence <a href="#char09A1"><span class="uname">U+09A1 BENGALI LETTER DDA</span> <span lang="bn">&#x09A1;</span></a> + <a href="#char09BC"><span class="uname">U+09BC BENGALI SIGN NUKTA</span> <span lang="bn">&#xA0;&#x09BC;</span></a>. </strong></p>
+        <p><span class="ipa">ɽ</span> retroflex flap, eg. <span class="ex" lang="bn">ওড়া</span> <span class="trans">oɽa</span> <span class="meaning">to fly</span>. Curl tongue as if for <span class="ipa">ɖ</span> but before making contact with the alveolar ridge flap the tongue down smartly to make audible contact with the bottom of the mouth.</p>
+        <p>In Sanskrit this was merely an allophone of <a href="#char09A1"><span class="uname">U+09A1 BENGALI LETTER DDA</span> <span lang="bn">&#x09A1;</span></a> between vowels. The distinguishing dot was added to the Bengali script in the 19th century.  Now it is regarded as a letter of the alphabet.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p29; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09DD'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09DD;</div>
+    <p class='charname'><strong>U+09DD</strong> <a href='/rishida/scripts/uniview/?codepoints=09DD'>BENGALI LETTER RHA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>≡ 09A2 09BC</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ṛh</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>ɽh</span>, <span class="name">ɽhɔ</span></p>
+        <p><strong>It is recommended that you use the NFC form of this letter, which is the decomposed sequence <a href="#char09A2"><span class="uname">U+09A2 BENGALI LETTER DDHA</span> <span lang="bn">&#x09A2;</span></a> + <a href="#char09BC"><span class="uname">U+09BC BENGALI SIGN NUKTA</span> <span lang="bn">&#xA0;&#x09BC;</span></a>. </strong></p>
+        <p><span class="ipa">ɽ</span>, eg. <span class="ex" lang="bn">আষাঢ়</span> <span class="trans">aʂaɽh</span> <span class="meaning">June-July</span>.</p>
+        <p>Theoretically the aspirated version of <span class="name">ɽɔ</span>, but in practice not normally pronounced with aspiration,  although it occasionally may be, as in <span class="ex" lang="bn">রাঢ়</span>. A very rare letter, the only common word in which it appears is the Bengali month shown in the example above.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p39; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a>; [4] <a href="/rishida/scripts/references">Correspondence [Bhattacharya]</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09DF'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09DF;</div>
+    <p class='charname'><strong>U+09DF</strong> <a href='/rishida/scripts/uniview/?codepoints=09DF'>BENGALI LETTER YYA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>≡ 09AF 09BC</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ẏ</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> consonant, <span class='trans'>y</span>, <span class="name">ɔntɔḥsthô ɔ</span> <span class='ex' lang='bn' >অন্তঃস্থ য়</span></p>
+        <p><strong>It is recommended that you use the NFC form of this letter, which is the decomposed sequence <a href="#char09AF" class="uname">09AF BENGALI LETTER YA</a> + <a href="#char09BC" class="uname">09BC BENGALI SIGN NUKTA</a>. </strong></p>
+        <p>This represents one of the following sounds.</p>
+        <p><span class="ipa">j</span> between <span class='ipa'>i...e</span>, <span class='ipa'>a...u</span>, or <span class='ipa'>e...e</span>. </p>
+        <p><span class="ipa">e</span> after another vowel, particularly after <span class="ipa">ɔ</span>, <span class="ipa">a</span> or <span class="ipa">o</span>, eg. <span class="ex" lang="bn">ভয়</span> <span class="ipa">bʰɔe</span> (<span>fear</span>).</p>
+        <p><span class="ipa">w</span> (light, like French 'oui') between <span class='ipa'>o...a</span> , eg. <span class="ex" lang="bn">খাওয়া</span> <span class="ipa">kʰaowa</span> (<span class="meaning">to eat, drink</span>).</p>
+        <p>Sometimes it is scarcely pronounced at all, eg. <span class="ex" lang="bn">মেরে</span> <span class="ipa">mee</span> (<span class="meaning">girl, woman</span>).</p>
+        <p>The dot was added in the 19th century, to contrast this with <span class="name">ɔntɔḥsthô y̌ɔ</span> (<a href="#char09AF"><span class="uname">U+09AF BENGALI LETTER YA</span> <span lang="bn">&#x09AF;</span></a>).</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p13, 26; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='dvowels'>
+  <h2><a href='#dvowels'>Dependent vowel signs</a></h2>
+  <div class='character' id='char09BE'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09BE;</div>
+    <p class='charname'><strong>U+09BE</strong> <a href='/rishida/scripts/uniview/?codepoints=09BE'>BENGALI VOWEL SIGN AA</a></p>
+    <div class='notes'>
+      <p>ISO 15919 <span class="trans">ā</span>      </p>
+      <div class='letter'>
+  <p><span class="title">Bengali</span> vowel sign, <span class="trans">a</span>, <span class="name">a-kar</span></p>
+        <p><span class="ipa">ɑ</span>, eg. <span class="ex" lang="bn">কাটা</span> <span class="trans">kaʈa</span> <span class="meaning">to cut.</span></p>
+        <p><span class="ipa">æ</span> after <span class="ex" lang="bn">জ্ঞ</span> <span class="trans">jñ</span>, eg. <span class="ex" lang="bn">জ্ঞান</span> <span class="trans">jñan</span> <span class="meaning">knowledge</span>, pronounced <span class="ipa">ɡæn</span>; <span class="ex" lang="bn">বিজ্ঞান</span> <span class="trans">bijñan</span> <span class="meaning">science</span>, pronounced <span class="ipa">biɡɡæn</span>.</p>
+        <p><span class="ipa">æ</span> when following <span class='name'>y̌ɔ-phɔla</span>, eg. <span class="ex" lang="bn">হ্যাঁ</span> <span class="trans">hyæ̃</span> (<span class="meaning">yes</span>), pronounced <span class="ipa">hæ̃</span>; <span class="ex" lang="bn">ব্যাঙ্ক</span> <span class="trans">byæŋk</span> <span class="meaning">bank</span>, pronounced <span class="ipa">bæŋk</span>.</p>
+        <p>There are exceptions to the previous rule, when the <span class="name">a-kar</span> produces its normal value, eg. <span  class="ex" lang="bn">ব্যাখ্যা</span> <span class="trans">byækhya</span> <span class="meaning">explanation</span>; another exception would be a word like <span class="ex" lang="bn">সন্ধ্যা</span> <span class="trans">sôndhya</span> <span class="meaning">evening</span>.</p>
+        <p>See also <a href="#char0986"><span class="uname">U+0986 BENGALI LETTER AA</span> <span lang="bn">&#x0986;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2-4, 26, 82; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+    </div>
+    </div>
+  </div>
+  <div class='character' id='char09BF'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09BF;</div>
+    <p class='charname'><strong>U+09BF</strong> <a href='/rishida/scripts/uniview/?codepoints=09BF'>BENGALI VOWEL SIGN I</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• stands to the left of the consonant</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>i</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>i</span>, <span class="name">hrɔsvô i</span></p>
+        <p><span class="ipa">i</span>, eg. <span class="ex" lang="bn">বিড়ি</span> <span class="trans">biɽi</span> <span class="meaning">cigarette.</span></p>
+        <p><span class="ipa">e</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">ɔ o e</span> or <span class="ipa">a</span>, <span class="ex" lang="bn">বিড়াল</span> <span class="trans">biɽal</span> <span class="meaning">cat</span>.</p>
+        <p>This vowel sign appears to the left of the base consonant.</p>
+        <p>See also <a href="#char0987"><span class="uname">U+0987 BENGALI LETTER I</span> <span lang="bn">&#x0987;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 4-5; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09C0'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09C0;</div>
+    <p class='charname'><strong>U+09C0</strong> <a href='/rishida/scripts/uniview/?codepoints=09C0'>BENGALI VOWEL SIGN II</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ī</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>ī</span>, <span class="name">dīrghô ī</span> </p>
+        <p><span class="ipa">ī</span>, eg. <span class="ex" lang="bn">বীর</span> <span class="trans">bīr</span> <span class="meaning">hero.</span></p>
+        <p>Bengali has lost the distinction between short and long i vowels in pronunciation, but retains the difference in spelling.</p>
+        <p>See also <a href="#char0988"><span class="uname">U+0988 BENGALI LETTER II</span> <span lang="bn">&#x0988;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 4-5; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09C1'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09C1;</div>
+    <p class='charname'><strong>U+09C1</strong> <a href='/rishida/scripts/uniview/?codepoints=09C1'>BENGALI VOWEL SIGN U</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>u</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>u</span>, <span class="name">hrɔsvô u</span></p>
+        <p><span class="ipa">u</span> pronounced with the lips very rounded, eg. <span class="ex" lang="bn">বুক</span> <span class="trans">buk</span> <span class="meaning">breast, chest</span>.</p>
+        <p><span class="ipa">o</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">ɔ o e a</span>, eg. <span class="ex" lang="bn">বুড়ো</span> <span class="trans">buɽo</span> <span class="meaning">old man</span>.</p>
+        <p><span class="leadin">Shape variants.</span> To avoid clashing with the dot, this vowel sign appears to the side when attached to <span class="name">rɔ</span>, ie. <span class="ex" lang="bn">রু</span>, eg. <span class="ex" lang="bn">রুগী</span> <span class="trans">rugī</span> <span class="meaning">ill, sick.</span></p>
+        <p>When combining with  <a href="#char09B6"><span class="uname">U+09B6 BENGALI LETTER SHA</span> <span lang="bn">&#x09B6;</span></a> the form <span class="ex" lang="bn">শু</span> is common in handwriting and older typefaces. The <span class="name">hrɔsvô u</span> can also be written below the consonant, especially in newspapers. A similar phenomenon occurs with the letter  <a href="#char0997"><span class="uname">U+0997 BENGALI LETTER GA</span> <span lang="bn">&#x0997;</span></a>, ie. <span class="ex" lang="bn">গু</span>.</p>
+        <p>Also, <span class="trans">hu</span> traditionally looks like <span class="ex" lang="bn">হু</span>.</p>
+        <p>See also <a href="#char0989"><span class="uname">U+0989 BENGALI LETTER U</span> <span lang="bn">&#x0989;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 5, 6, 275; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09C2'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09C2;</div>
+    <p class='charname'><strong>U+09C2</strong> <a href='/rishida/scripts/uniview/?codepoints=09C2'>BENGALI VOWEL SIGN UU</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ū</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>ū</span>, <span class="name">dīrghô ū</span></p>
+        <p><span class="ipa">u</span> pronounced with the lips very rounded, eg. <span class="ex" lang="bn">মূল</span> <span class="trans">mūl</span> <span class="meaning">root</span>.</p>
+        <p>Bengali has lost the distinction between short and long u vowels in pronunciation, but retains the difference in spelling.</p>
+        <p><span class="leadin">Shape variants.</span> To avoid clashing with the dot, this vowel sign appears to the side when attached to <span class='name'>rɔ</span>, ie. <span class='ex' lang='bn' >রূ</span>, eg. <span class="ex" lang="bn">রূপ</span> <span class="trans">rūp</span> <span class="meaning">figure, form.</span></p>
+        <p>See also <a href="#char098A"><span class="uname">U+098A BENGALI LETTER UU</span> <span lang="bn">&#x098A;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p2, 5, 11, 275; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09C3'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09C3;</div>
+    <p class='charname'><strong>U+09C3</strong> <a href='/rishida/scripts/uniview/?codepoints=09C3'>BENGALI VOWEL SIGN VOCALIC R</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>r̥</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>ṛ</span>, <span class="name">vocalic r</span> </p>
+        <p><span class="ipa">ri</span> pronounced with the lips very rounded, eg. <span class="ex" lang="bn">বৃহৎ</span> <span class="trans">bṛhɔṯ</span> <span class="meaning">huge, large</span>.</p>
+        <p><span class="leadin">Shape variants.</span> The vowel sign is attached to the bottom of the consonant, but some computer typefaces position it slightly to the right.</p>
+        <p><span class="trans">hṛ</span> traditionally looks like <span class="ex" lang="bn">হৃ</span>, although modern computer typefaces tend to put the normal vowel sign under the consonant, eg. <span class="ex" lang="bn">হৃদয়</span> <span class="trans">hṛdɔy</span> <span class="meaning">heart</span>.</p>
+        <p>See also <a href="#char098B"><span class="uname">U+098B BENGALI LETTER VOCALIC R</span> <span lang="bn">&#x098B;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p41; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09C4'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09C4;</div>
+    <p class='charname'><strong>U+09C4</strong> <a href='/rishida/scripts/uniview/?codepoints=09C4'>BENGALI VOWEL SIGN VOCALIC RR</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>r̥̄</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vocalic</p>
+        <p>Historic character, only used to write Sanskrit in Bengali.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">Unicode Standard 5.2</a> p279</p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09C7'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09C7;</div>
+    <p class='charname'><strong>U+09C7</strong> <a href='/rishida/scripts/uniview/?codepoints=09C7'>BENGALI VOWEL SIGN E</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• stands to the left of the consonant</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>e</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>e</span>, <span class="name">e-kar</span></p>
+        <p><span class="ipa">e</span>, eg. <span class="ex" lang="bn">বেগ</span> <span class="trans">beg</span> <span class="meaning">speed.</span></p>
+        <p><span class="ipa">e</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">i u</span>, eg. <span class="ex" lang="bn">বেগুন</span> <span class="trans">begun</span> <span class="meaning">brinjal</span>.</p>
+        <p><span class="ipa">æ</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">ɔ o e a, eg. <span class="ex" lang="bn">বেলা</span> <span class="trans">bæla</span> <span class="meaning">time of day</span></span>.</p>
+        <p>The pronounciation <span class="ipa">æ</span> is generally used in common words such as <span class="ex" lang="bn">কেন</span> <span class="trans">kænô</span> <span class="meaning">why</span> or <span class="ex" lang="bn">কেমন</span> <span class="trans">kæmôn</span> <span class="meaning">how</span>, and certain verb forms. Some speakers in Bangladesh may not clearly distinguish between the <span class="ipa">æ</span> and <span class="ipa">e</span>, but they do know which is appropriate if asked.</p>
+        <p><span class="leadin">Shape variants.</span> In higher quality printing the horizontal line may be omitted at the beginning of a word.</p>
+        <p>This vowel sign is written before its base.</p>
+        <p>See also <a href="#char098F"><span class="uname">U+098F BENGALI LETTER E</span> <span lang="bn">&#x098F;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p12-13, 16-17; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09C8'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09C8;</div>
+    <p class='charname'><strong>U+09C8</strong> <a href='/rishida/scripts/uniview/?codepoints=09C8'>BENGALI VOWEL SIGN AI</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• stands to the left of the consonant</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>ai</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>oǐ</span>, <span class="name">oǐ-kar</span> </p>
+        <p><span class="ipa">oj</span> diphthong, eg. <span class="ex" lang="bn">তৈরি</span> <span class="trans">toĭri</span> <span class="meaning">to make</span>.</p>
+        <p>Note that the sound can also be represented by the inherent vowel plus <span class="name">hrɔsvô i</span>, eg. <span class="ex" lang="bn">বই</span> <span class="ipa">bôi</span> <span class="meaning">book</span>. The combination of <span class="name">o-kar</span> plus <span class="name">hrɔsvô i</span> can also occur, eg. <span class="ex" lang="bn">ওই</span> <span class="ipa">oi</span> <span class="meaning">demonstrative</span>.</p>
+        <p>This vowel sign is written before its base.</p>
+        <p>See also <a href="#char0990"><span class="uname">U+0990 BENGALI LETTER AI</span> <span lang="bn">&#x0990;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p35; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='twopart'>
+  <h2><a href='#twopart'>Two-part dependent vowel signs</a></h2>
+  <div class='character' id='char09CB'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09CB;</div>
+    <p class='charname'><strong>U+09CB</strong> <a href='/rishida/scripts/uniview/?codepoints=09CB'>BENGALI VOWEL SIGN O</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>≡ 09C7 09BE</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>o</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vowel sign, <span class='trans'>o</span>, <span class="name">o-kar</span></p>
+        <p><span class="ipa">o</span> pronounced with the lips very rounded, eg. <span class="ex" lang="bn">বোন</span> <span class="trans">bon</span> <span class="meaning">sister</span>.</p>
+        <p><span class="ipa">u</span> where the vowel harmony effect applies, if the vowel in the following syllable is one of <span class="ipa">i u</span>, eg. <span class="ex" lang="bn">কোকিল</span> <span class="trans">kokil</span> <span class="meaning">cuckoo</span>.</p>
+        <p><span class="ipa">ɔ</span> if the vowel in the following syllable is one of <span class="ipa">ɔ o e a, eg. <span class="ex" lang="bn">বোকা</span> <span class="trans">boka</span> <span class="meaning">stupid</span></span>.</p>
+        <p>Inconsistent spellings sometimes arise with this letter due to the sound <span class="ipa">o</span> being also an inherent vowel sound.</p>
+        <p><span class="leadin">Alternative code points.</span> The vowel sign appears on both sides of the base. The vowel sign can also be represented in Unicode by <a href="#char09C7"><span class="uname">U+09C7 BENGALI VOWEL SIGN E</span> <span lang="bn">&#xA0;&#x09C7;</span></a> + <a href="#char09BE"><span class="uname">U+09BE BENGALI VOWEL SIGN AA</span> <span lang="bn">&#xA0;&#x09BE;</span></a>, but this is for compatibility with encodings that represent the vowel in this way. Normally you should not use that approach.</p>
+        <p>See also <a href="#char0993"><span class="uname">U+0993 BENGALI LETTER O</span> <span lang="bn">&#x0993;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p8, 10, 275; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09CC'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09CC;</div>
+    <p class='charname'><strong>U+09CC</strong> <a href='/rishida/scripts/uniview/?codepoints=09CC'>BENGALI VOWEL SIGN AU</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>≡ 09C7 09D7</div>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>au</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> indepent vowel, <span class='trans'>oǔ</span>, <span class="name">oǔ-kar</span></p>
+        <p><span class="ipa">ow</span> diphthong, eg. <span class="ex" lang="bn">নৌকো</span> <span class="trans">noŭko</span> <span class="meaning">boat</span>.</p>
+        <p><span class="leadin">Alternative code points.</span> The vowel sign appears on both sides of the base. The vowel sign can also be represented in Unicode by <a href="#char09C7"><span class="uname">U+09C7 BENGALI VOWEL SIGN E</span> <span lang="bn">&#xA0;&#x09C7;</span></a> + <a href="#char09D7"><span class="uname">U+09D7 BENGALI AU LENGTH MARK</span> <span lang="bn">&#xA0;&#x09D7;</span></a>, but this is for compatibility with encodings that represent the vowel in this way. Normally you should not use that approach.</p>
+        <p>See also <a href="#char0994"><span class="uname">U+0994 BENGALI LETTER AU</span> <span lang="bn">&#x0994;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p17; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='virama'>
+  <h2><a href='#virama'>Virama</a></h2>
+  <div class='character' id='char09CD'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09CD;</div>
+    <p class='charname'><strong>U+09CD</strong> <a href='/rishida/scripts/uniview/?codepoints=09CD'>BENGALI SIGN VIRAMA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= hasant (Bengali term for halant)</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> mark, <span class="name">bisɔrgô</span> <span class='ex' lang='bn' >বিসর্গ</span></p>
+        <p>Used between two consonants in a conjunct, in which case it is usually invisible, but sometimes not.  Where not, it is usually because the font doesn't have a particular conjunct ligature, but it may also be visible in places where the phonology is unusual, eg. <span class="ex" lang="bn">ফ্‌ল্যাট</span> <span class="trans">phlæʈ</span> <span class="meaning">flat</span>; <span class="ex" lang="bn">লান্‌চ</span> <span class="trans">lanc</span> <span class="meaning">lunch</span> (though these may also be spelled with conjuncts, eg. <span class="ex" lang="bn">ফ্ল্যাট</span> <span class="trans">phlæʈ</span> <span class="meaning">flat</span>). It is also quite common to see <span class='ex' lang='bn' >উদ্‌যাপন</span> to distinguish it from words like <span class='ex' lang='bn' >উদ্যান</span>. These words are etymologically related, but distinct phonetically.</p>
+        <p>This character should always be positioned before any combining vowel mark in memory.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="/rishida/scripts/references">The World's Writing Systems [Daniels]</a> p399-402; [2] <a href="/rishida/scripts/references">Teach Yourself Bengali [Radice]</a> p95; [3] <a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a>; [4] <a href="/rishida/scripts/references">Correspondence [Bhattacharya]</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='sanskrit'>
+  <h2><a href='#sanskrit'>Additional vowels for Sanskrit</a></h2>
+  <div class='character' id='char09E0'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E0;</div>
+    <p class='charname'><strong>U+09E0</strong> <a href='/rishida/scripts/uniview/?codepoints=09E0'>BENGALI LETTER VOCALIC RR</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>r̥̄</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vocalic</p>
+        <p>Historic character, only used to write Sanskrit in Bengali.</p>
+        <p>See also <a href="#char09C4"><span class="uname">U+09C4 BENGALI VOWEL SIGN VOCALIC RR</span> <span lang="bn">&#xA0;&#x09C4;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">Unicode Standard 5.2</a> p279</p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09E1'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E1;</div>
+    <p class='charname'><strong>U+09E1</strong> <a href='/rishida/scripts/uniview/?codepoints=09E1'>BENGALI LETTER VOCALIC LL</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>l̥̄</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vocalic</p>
+        <p>Historic character, only used to write Sanskrit in Bengali.</p>
+        <p>See also <a href="#char09E3"><span class="uname">U+09E3 BENGALI VOWEL SIGN VOCALIC LL</span> <span lang="bn">&#xA0;&#x09E3;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">Unicode Standard 5.2</a> p279</p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09E2'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E2;</div>
+    <p class='charname'><strong>U+09E2</strong> <a href='/rishida/scripts/uniview/?codepoints=09E2'>BENGALI VOWEL SIGN VOCALIC L</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>l̥</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vocalic</p>
+        <p>Historic character, only used to write Sanskrit in Bengali.</p>
+        <p>See also <a href="#char098C"><span class="uname">U+098C BENGALI LETTER VOCALIC L</span> <span lang="bn">&#x098C;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">Unicode Standard 5.2</a> p279</p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09E3'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E3;</div>
+    <p class='charname'><strong>U+09E3</strong> <a href='/rishida/scripts/uniview/?codepoints=09E3'>BENGALI VOWEL SIGN VOCALIC LL</a></p>
+    <div class='notes'>
+      <p> ISO 15919 <span class='trans'>l̥̄</span></p>
+      <div class='letter'>
+<p><span class="title">Bengali</span> vocalic</p>
+        <p>Historic character, only used to write Sanskrit in Bengali.</p>
+        <p>See also <a href="#char09E1"><span class="uname">U+09E1 BENGALI LETTER VOCALIC LL</span> <span lang="bn">&#x09E1;</span></a>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">Unicode Standard 5.2</a> p279</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='assamese'>
+  <h2><a href='#assamese'>Additions for Assamese</a></h2>
+  <div class='character' id='char09F0'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F0;</div>
+    <p class='charname'><strong>U+09F0</strong> <a href='/rishida/scripts/uniview/?codepoints=09F0'>BENGALI LETTER RA WITH MIDDLE DIAGONAL</a></p>
+    <p class="subtitle">Description in the Unicode standard:</p>
+    <div class="unicodenotes">= Assamese letter ra</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Assamese</span> consonant</p>
+        <p>Assamese version of Bengali <a href="#char09B0"><span class="uname">U+09B0 BENGALI LETTER RA</span> <span lang="bn">&#x09B0;</span></a>. Not used in Bengali.</p>
+        <p class="ref"><a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09F1'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F1;</div>
+    <p class='charname'><strong>U+09F1</strong> <a href='/rishida/scripts/uniview/?codepoints=09F1'>BENGALI LETTER RA WITH LOWER DIAGONAL</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">= Assamese letter wa<br/>= bengali letter va with lower diagonal (1.0)</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Assamese</span> consonant</p>
+        <p>Assamese version of Bengali <a href="#char09AC"><span class="uname">U+09AC BENGALI LETTER BA</span> <span lang="bn">&#x09AC;</span></a>. Not used in Bengali.</p>
+        <p class="ref"><a href="http://en.wikipedia.org/wiki/Bengali_script">Wikipedia: Bengali Script</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='digits'>
+  <h2><a href='#digits'>Digits</a></h2>
+  <div class='character' id='char09E6'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E6;</div>
+    <p class='charname'><strong>U+09E6</strong> <a href='/rishida/scripts/uniview/?codepoints=09E6'>BENGALI DIGIT ZERO</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">sɪfar</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09E7'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E7;</div>
+    <p class='charname'><strong>U+09E7</strong> <a href='/rishida/scripts/uniview/?codepoints=09E7'>BENGALI DIGIT ONE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">æk</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09E8'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E8;</div>
+    <p class='charname'><strong>U+09E8</strong> <a href='/rishida/scripts/uniview/?codepoints=09E8'>BENGALI DIGIT TWO</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">dui</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09E9'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09E9;</div>
+    <p class='charname'><strong>U+09E9</strong> <a href='/rishida/scripts/uniview/?codepoints=09E9'>BENGALI DIGIT THREE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">tin</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09EA'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09EA;</div>
+    <p class='charname'><strong>U+09EA</strong> <a href='/rishida/scripts/uniview/?codepoints=09EA'>BENGALI DIGIT FOUR</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">car</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09EB'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09EB;</div>
+    <p class='charname'><strong>U+09EB</strong> <a href='/rishida/scripts/uniview/?codepoints=09EB'>BENGALI DIGIT FIVE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">pãc</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09EC'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09EC;</div>
+    <p class='charname'><strong>U+09EC</strong> <a href='/rishida/scripts/uniview/?codepoints=09EC'>BENGALI DIGIT SIX</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">chɔy</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09ED'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09ED;</div>
+    <p class='charname'><strong>U+09ED</strong> <a href='/rishida/scripts/uniview/?codepoints=09ED'>BENGALI DIGIT SEVEN</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">sat</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09EE'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09EE;</div>
+    <p class='charname'><strong>U+09EE</strong> <a href='/rishida/scripts/uniview/?codepoints=09EE'>BENGALI DIGIT EIGHT</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">aʈ</span> </p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09EF'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09EF;</div>
+    <p class='charname'><strong>U+09EF</strong> <a href='/rishida/scripts/uniview/?codepoints=09EF'>BENGALI DIGIT NINE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> digit, <span class="name">nɔy</span> </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='fractions'>
+  <h2><a href='#fractions'>Historic symbols for fractional values</a></h2>
+  <div class='character' id='char09F4'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F4;</div>
+    <p class='charname'><strong>U+09F4</strong> <a href='/rishida/scripts/uniview/?codepoints=09F4'>BENGALI CURRENCY NUMERATOR ONE</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• not in current usage</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> currency symbol</p>
+        <p>Part of an additive/subtractive system for specifying the number of <span class='name'>ānā</span> in the Bengali notation for currency used up to 1957, eg. <span class='ex' lang='bn' >৷৷৴৹</span> <span class='trans'>9 ānā</span> (<span class='meaning'>9 ana</span>); <span class='ex' lang='bn' >৸৴৹</span> <span class='trans'>13 ānā</span> (<span class='meaning'>13 ana</span>).  There are 16 ana in one rupee, and the system works in multiples of 4. For a detailed explanation of usage, see reference <sup>1</sup>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://std.dkuug.dk/JTC1/SC2/wg2/docs/n3311.pdf">Proposal to Encode the Ganda Currency Mark for Bengali</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09F5'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F5;</div>
+    <p class='charname'><strong>U+09F5</strong> <a href='/rishida/scripts/uniview/?codepoints=09F5'>BENGALI CURRENCY NUMERATOR TWO</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• not in current usage</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> currency symbol</p>
+        <p>Part of an additive/subtractive system for specifying the number of <span class='name'>ānā</span> in the Bengali notation for currency used up to 1957, eg. <span class='ex' lang='bn' >৷৵৹</span> <span class='trans'>6 ānā</span> (<span class='meaning'>6 ana</span>); <span class='ex' lang='bn' >৸৵৹</span> <span class='trans'>14 ānā</span> (<span class='meaning'>14 ana</span>).  There are 16 ana in one rupee, and the system works in multiples of 4. For a detailed explanation of usage, see reference <sup>1</sup>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://std.dkuug.dk/JTC1/SC2/wg2/docs/n3311.pdf">Proposal to Encode the Ganda Currency Mark for Bengali</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09F6'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F6;</div>
+    <p class='charname'><strong>U+09F6</strong> <a href='/rishida/scripts/uniview/?codepoints=09F6'>BENGALI CURRENCY NUMERATOR THREE</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• not in current usage</div>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> currency symbol</p>
+        <p>Part of an additive/subtractive system for specifying the number of <span class='name'>ānā</span> in the Bengali notation for currency used up to 1957, eg. <span class='ex' lang='bn' >৷৷৶৹</span> <span class='trans'>11 ānā</span> (<span class='meaning'>11 ana</span>); <span class='ex' lang='bn' >৸৶৹</span> <span class='trans'>15 ānā</span> (<span class='meaning'>15 ana</span>).  There are 16 ana in one rupee, and the system works in multiples of 4. For a detailed explanation of usage, see reference <sup>1</sup>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://std.dkuug.dk/JTC1/SC2/wg2/docs/n3311.pdf">Proposal to Encode the Ganda Currency Mark for Bengali</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09F7'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F7;</div>
+    <p class='charname'><strong>U+09F7</strong> <a href='/rishida/scripts/uniview/?codepoints=09F7'>BENGALI CURRENCY NUMERATOR FOUR</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> currency symbol</p>
+        <p>Part of an additive/subtractive system for specifying the number of <span class='name'>ānā</span> in the Bengali notation for currency used up to 1957, eg. <span class='ex' lang='bn' >৷৹</span> <span class='trans'>4 ānā</span> (<span class='meaning'>4 ana</span>); <span class='ex' lang='bn' >৷৷৴৹</span> <span class='trans'>9 ānā</span> (<span class='meaning'>9 ana</span>).  There are 16 ana in one rupee, and the system works in multiples of 4. For a detailed explanation of usage, see reference <sup>1</sup>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://std.dkuug.dk/JTC1/SC2/wg2/docs/n3311.pdf">Proposal to Encode the Ganda Currency Mark for Bengali</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09F8'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F8;</div>
+    <p class='charname'><strong>U+09F8</strong> <a href='/rishida/scripts/uniview/?codepoints=09F8'>BENGALI CURRENCY NUMERATOR ONE LESS THAN THE DENOMINATOR</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> currency symbol</p>
+        <p>Part of an additive/subtractive system for specifying the number of <span class='name'>ānā</span> in the Bengali notation for currency used up to 1957, eg. <span class='ex' lang='bn' >৸৹</span> <span class='trans'>12 ānā</span> (<span class='meaning'>12 ana</span>); <span class='ex' lang='bn' >৸৵৹</span> <span class='trans'>14 ānā</span> (<span class='meaning'>14 ana</span>).  There are 16 ana in one rupee, and the system works in multiples of 4. For a detailed explanation of usage, see reference <sup>1</sup>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://std.dkuug.dk/JTC1/SC2/wg2/docs/n3311.pdf">Proposal to Encode the Ganda Currency Mark for Bengali</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09F9'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F9;</div>
+    <p class='charname'><strong>U+09F9</strong> <a href='/rishida/scripts/uniview/?codepoints=09F9'>BENGALI CURRENCY DENOMINATOR SIXTEEN</a></p>
+    <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> currency symbol</p>
+        <p>Part of an additive/subtractive system for specifying the number of <span class='name'>ānā</span> in the Bengali notation for currency used up to 1957, eg. <span class='ex' lang='bn' >৴৹</span> <span class='trans'>1 ānā</span> (<span class='meaning'>1 ana</span>); <span class='ex' lang='bn' >৸৶৹</span> <span class='trans'>15 ānā</span> (<span class='meaning'>15 ana</span>).  There are 16 ana in one rupee, and the system works in multiples of 4. For a detailed explanation of usage, see reference <sup>1</sup>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://std.dkuug.dk/JTC1/SC2/wg2/docs/n3311.pdf">Proposal to Encode the Ganda Currency Mark for Bengali</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id='currency'>
+  <h2><a href='#currency'>Currency signs</a></h2>
+  <div class='character' id='char09F2'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F2;</div>
+    <p class='charname'><strong>U+09F2</strong> <a href='/rishida/scripts/uniview/?codepoints=09F2'>BENGALI RUPEE MARK</a></p>
+ <p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">= taka<br/>• historic currency sign</div>
+   <div class='notes'>
+      <div class='letter'>
+<p><span class="title">Bengali</span> currency symbol</p>
+        <p>Denotes rupees in the Bengali notation for currency used up to 1957, eg. <span class='ex' lang='bn' >১৲</span> <span class='trans'>1 rupayā</span> (<span class='meaning'>1 rupee</span>).  For a detailed explanation of usage, see reference <sup>1</sup>.</p>
+        <p class="ref"><a href="/rishida/scripts/bengali/">Notes</a>. Refs:  [1] <a href="http://std.dkuug.dk/JTC1/SC2/wg2/docs/n3311.pdf">Proposal to Encode the Ganda Currency Mark for Bengali</a></p>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char09F3'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09F3;</div>
+    <p class='charname'><strong>U+09F3</strong> <a href='/rishida/scripts/uniview/?codepoints=09F3'>BENGALI RUPEE SIGN</a></p>
+<p class="subtitle">Description in the Unicode standard:</p>
+<div class="unicodenotes">= Bangladeshi taka</div>
+  </div>
+  <div class='character' id='char09FB'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x09FB;</div>
+    <p class='charname'><strong>U+09FB</strong> <a href='/rishida/scripts/uniview/?codepoints=09FB'>BENGALI GANDA MARK</a></p>
+  </div>
+</section>
+
+<section id="references"> 
+
+		<h2><a href="#endlinks" id="endlinks">Further reading</a></h2>
+		<ol>
+		  <li> Peter T. Daniels and William Bright, <span class="title">The World's Writing Systems</span>, Oxford University Press, ISBN
+		    0-19-507993-0</li>
+		  <li> Wikipedia, <a href="http://en.wikipedia.org/wiki/Bengali_script">Bengali Script</a></li>
+		  <li>William Radice, <span class="doctitle">Teach Yourself Bengali</span>, Hodder &amp; Shoughton, ISBN 0-340-86029-4</li>
+		  <li><a href="http://www.unicode.org/versions/Unicode5.2.0/ch09.pdf">The Unicode Standard v5.2</a></li>
+		  <li>Private correspondance with Tanmoy Bhattacharya, July 2004. </li>
+  </ol>
+</section>
+
+
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  3 Feb 2014.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-22  9:04<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<!-- Uncomment this code to get a list of all character names for the file names-subset.js  
+<div id=charliststr></div>
+<div><span class="ex" lang="bn">ঀঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহ়ঽািীুূৃৄেৈোৌ্ৎৗড়ঢ়য়ৠৡৢৣ০১২৩৪৫৬৭৮৯ৰৱ৲৳৴৵৶৷৸৹৺৻</span></div>
+<div id="listofchars"></div>
+<script type="text/javascript" src="/rishida/javascript/showcharacters/names.js"></script>
+<script src="data-extraction.js" type="text/javascript">//</script>
+<script>document.getElementById('listofchars').innerHTML = getlistofchars();
+listCharsWithNotes();
+</script>
+--> 
+
+<!--
+Various signs;varioussigns;0981-0983 09BC-09BD 09D7-09D7 09FA-09FA 
+Independent vowels;ivowels;0985-0994
+Consonants;consonants;0995-09B9
+Additional consonants;addcons;09CE-09CE 09DC-09DF
+Dependent vowel signs;dvowels;09BE-09C8
+Two-part dependent vowel signs;twopart;09CB-09CC
+Virama;virama;09CD-09CD
+Additional vowels for Sanskrit;sanskrit;09E0-09E3
+Additions for Assamese;assamese;09F0-09F1
+Digits;digits;09E6-09EF
+Historic symbols for fractional values;fractions;09F4-09F9
+Currency signs;currency;09F2-09F3 09FB-09FB
+
+--> 
+
+<script type="text/javascript">
+createtoc();
+initialiseShowNames();
+highlightIndexChars()
+</script>
+</body>
+</html>
