@@ -1,5 +1,5 @@
  var fontSelection = '<optgroup label="Webfont">\
-        <option value="Noto Sans Tamil WF">Noto Sans Tifinagh WF</option>\
+        <option value="Noto Sans Tifinagh WF">Noto Sans Tifinagh WF</option>\
         </optgroup>\
         <option value="0">Select...</option>\
 		   <optgroup label="Windows fonts">\
