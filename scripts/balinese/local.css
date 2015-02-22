@@ -1,17 +1,49 @@
 @font-face {
-    font-family: 'Noto Sans Balinese WF';
-    src: url('/webfonts/notosansbalinese-regularwebfont.woff2') format('woff2'),
-         url('/webfonts/notosansbalinese-regularwebfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Noto Sans Balinese WF';
+	src: 	local('Noto Sans Balinese'),
+			url('/webfonts/notosansbalinese-regularwebfont.woff2') format('woff2'),  
+			url('/webfonts/notosansbalinese-regularwebfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+	
+[lang|='ban'] {
+	font-family: 'aksara bali', 'noto sans balinese wf', 'noto sans balinese', serif;
+	}
+	
+#charlistsection img {
+	vertical-align: top;
+	}
+#charlistsection p {
+	line-height: 1.2;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-style: italic;
+	}
+.character {
+	margin-left: 7%;
+	margin-right: 28%;
+	}
+a img {
+	vertical-align: middle;
+	}
+img.ex {
+	vertical-align: middle;
 	}
 
-:lang(ban) {
-	font-family: 'aksara bali',  'noto sans balinese wf', 'noto sans balinese',serif;
-	}
-#charlistsection img { vertical-align: top; }
-#charlistsection p { line-height: 1.2; margin-top:0;  margin-bottom: 0; font-style: italic; }
-.character { margin-left: 7%; margin-right: 28%; }
 
-a img { vertical-align:middle; }
-img.ex { vertical-align: middle; }
+#fontsetting { width: 270px; }
+#fontsetting.open { right: 0px; }
+#fontsetting.closed { right: -258px; }
+#fontsettingswitch { height: 130px; }
+
+.charimg {
+	font-size: 110px;
+	min-width: 190px;
+	min-height: 190px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 190px;
+	font-family: "Akshara Bali", "Noto Sans Balinese WF",  serif;
+	background-color: white;
+	}

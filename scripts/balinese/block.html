@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>Balinese character notes</title>
+<meta name="description" content="Notes about Unicode Balinese characters."/>
+<style type="text/css"></style>
+
+<link rel="stylesheet" type="text/css" href="/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="/scripts/block/block-style.css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/scripts/block/balinese-names-subset.js"></script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<script type="text/javascript" src="fonts.js"></script>
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="/uniview/scriptGroups.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1> Balinese character notes</h1>
+
+<aside class="sidebar">
+<h2 class="notoc flush"><a id="tochead" name="tochead" tabindex="4">Contents</a></h2>
+<div id="toc"><!-- placeholder --></div>
+<div class="noprint">
+  <h2 class="notoc"><a id="links" name="links" tabindex="5">Related links</a></h2>
+  <p><a href="/scripts/balinese">Balinese script notes</a></p>
+  <p><a href="/scripts/links?script=balinese">Balinese script links</a></p>
+  <p><a href="/pickers/balinese/">Balinese character picker</a></p>
+  <p><a href="/scripts/uniview/?block=balinese">UniView </a></p>
+</div>
+
+<div id="fontsetting" class="closed">
+<h2 class="notoc"><a id="fonts">Fonts</a></h2>
+<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+<p>Set a font for Balinese text</p>
+<p>
+<select id="exfontswitchfont" 
+onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'ta');">
+</select> 
+<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
+<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'ta');" />
+</p>
+<p>Set a font for the symbol list</p>
+<p>
+<select  id="slfontswitchfont" 
+onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'ta');">
+</select> 
+<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
+<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'ta');" />
+</p>
+<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+</div>
+</aside>
+
+<p id="status">Updated Mon 13 Oct 2014  &bull; tags <a href="http:/.net/blog/index.php?tag=balinese" title="Show all blog posts tagged with 'balinese'">balinese</a>, <a href="http:/.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<section>
+<p>This page lists characters in  Unicode's Balinese block and provides information about them that I have gleaned from the <a href="#references">sources below</a>. For information about Tamil script and its features in general, see the companion document <a href="/scripts/balinese/">Balinese Script Notes</a>.</p>
+<p>To view this page as intended, you  need a Tamil font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
+<p>To ensure that you see what is intended, and given the rarity of Balinese fonts, the Balinese text on this page is presented using graphics. I may change that at some point and use a webfont.</p>
+<p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
+<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
+</section>
+
+<section class="section" id="charlistsection">
+  <h2><a href="#characterlist" id="characterlist">Index </a></h2>
+  <p>Click on a character in the table to jump to its description. Only characters with a line below have descriptive notes attached (apart from any descriptions in the Unicode database).</p>
+  <p>&nbsp;</p>
+</section>
+
+<table id="index">
+  <tbody>
+    <tr>
+      <th><a href='#varioussigns'>Various signs</a></th>
+      <td><a href='#char1B00'><img src='/c/Balinese/1B00' alt='' title='1B00' /></a> <a href='#char1B01'><img src='/c/Balinese/1B01' alt='' title='1B01' /></a> <a href='#char1B02'><img src='/c/Balinese/1B02' alt='' title='1B02' /></a> <a href='#char1B03'><img src='/c/Balinese/1B03' alt='' title='1B03' /></a> <a href='#char1B04'><img src='/c/Balinese/1B04' alt='' title='1B04' /></a> <a href='#char1B34'><img src='/c/Balinese/1B34' alt='' title='1B34' /></a> <a href='#char1B44'><img src='/c/Balinese/1B44' alt='' title='1B44' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#ivowels'>Independent vowels</a></th>
+      <td><a href='#char1B05'><img src='/c/Balinese/1B05' alt='' title='1B05' /></a> <a href='#char1B06'><img src='/c/Balinese/1B06' alt='' title='1B06' /></a> <a href='#char1B07'><img src='/c/Balinese/1B07' alt='' title='1B07' /></a> <a href='#char1B08'><img src='/c/Balinese/1B08' alt='' title='1B08' /></a> <a href='#char1B09'><img src='/c/Balinese/1B09' alt='' title='1B09' /></a> <a href='#char1B0A'><img src='/c/Balinese/1B0A' alt='' title='1B0A' /></a> <a href='#char1B0B'><img src='/c/Balinese/1B0B' alt='' title='1B0B' /></a> <a href='#char1B0C'><img src='/c/Balinese/1B0C' alt='' title='1B0C' /></a> <a href='#char1B0D'><img src='/c/Balinese/1B0D' alt='' title='1B0D' /></a> <a href='#char1B0E'><img src='/c/Balinese/1B0E' alt='' title='1B0E' /></a> <a href='#char1B0F'><img src='/c/Balinese/1B0F' alt='' title='1B0F' /></a> <a href='#char1B10'><img src='/c/Balinese/1B10' alt='' title='1B10' /></a> <a href='#char1B11'><img src='/c/Balinese/1B11' alt='' title='1B11' /></a> <a href='#char1B12'><img src='/c/Balinese/1B12' alt='' title='1B12' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#consonants'>Consonants</a></th>
+      <td><a href='#char1B13'><img src='/c/Balinese/1B13' alt='' title='1B13' /></a> <a href='#char1B14'><img src='/c/Balinese/1B14' alt='' title='1B14' /></a> <a href='#char1B15'><img src='/c/Balinese/1B15' alt='' title='1B15' /></a> <a href='#char1B16'><img src='/c/Balinese/1B16' alt='' title='1B16' /></a> <a href='#char1B17'><img src='/c/Balinese/1B17' alt='' title='1B17' /></a> <a href='#char1B18'><img src='/c/Balinese/1B18' alt='' title='1B18' /></a> <a href='#char1B19'><img src='/c/Balinese/1B19' alt='' title='1B19' /></a> <a href='#char1B1A'><img src='/c/Balinese/1B1A' alt='' title='1B1A' /></a> <a href='#char1B1B'><img src='/c/Balinese/1B1B' alt='' title='1B1B' /></a> <a href='#char1B1C'><img src='/c/Balinese/1B1C' alt='' title='1B1C' /></a> <a href='#char1B1D'><img src='/c/Balinese/1B1D' alt='' title='1B1D' /></a> <a href='#char1B1E'><img src='/c/Balinese/1B1E' alt='' title='1B1E' /></a> <a href='#char1B1F'><img src='/c/Balinese/1B1F' alt='' title='1B1F' /></a> <a href='#char1B20'><img src='/c/Balinese/1B20' alt='' title='1B20' /></a> <a href='#char1B21'><img src='/c/Balinese/1B21' alt='' title='1B21' /></a> <a href='#char1B22'><img src='/c/Balinese/1B22' alt='' title='1B22' /></a> <a href='#char1B23'><img src='/c/Balinese/1B23' alt='' title='1B23' /></a> <a href='#char1B24'><img src='/c/Balinese/1B24' alt='' title='1B24' /></a> <a href='#char1B25'><img src='/c/Balinese/1B25' alt='' title='1B25' /></a> <a href='#char1B26'><img src='/c/Balinese/1B26' alt='' title='1B26' /></a> <a href='#char1B27'><img src='/c/Balinese/1B27' alt='' title='1B27' /></a> <a href='#char1B28'><img src='/c/Balinese/1B28' alt='' title='1B28' /></a> <a href='#char1B29'><img src='/c/Balinese/1B29' alt='' title='1B29' /></a> <a href='#char1B2A'><img src='/c/Balinese/1B2A' alt='' title='1B2A' /></a> <a href='#char1B2B'><img src='/c/Balinese/1B2B' alt='' title='1B2B' /></a> <a href='#char1B2C'><img src='/c/Balinese/1B2C' alt='' title='1B2C' /></a> <a href='#char1B2D'><img src='/c/Balinese/1B2D' alt='' title='1B2D' /></a> <a href='#char1B2E'><img src='/c/Balinese/1B2E' alt='' title='1B2E' /></a> <a href='#char1B2F'><img src='/c/Balinese/1B2F' alt='' title='1B2F' /></a> <a href='#char1B30'><img src='/c/Balinese/1B30' alt='' title='1B30' /></a> <a href='#char1B31'><img src='/c/Balinese/1B31' alt='' title='1B31' /></a> <a href='#char1B32'><img src='/c/Balinese/1B32' alt='' title='1B32' /></a> <a href='#char1B33'><img src='/c/Balinese/1B33' alt='' title='1B33' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#additional'>Additional consonants</a></th>
+      <td><a href='#char1B45'><img src='/c/Balinese/1B45' alt='' title='1B45' /></a> <a href='#char1B46'><img src='/c/Balinese/1B46' alt='' title='1B46' /></a> <a href='#char1B47'><img src='/c/Balinese/1B47' alt='' title='1B47' /></a> <a href='#char1B48'><img src='/c/Balinese/1B48' alt='' title='1B48' /></a> <a href='#char1B49'><img src='/c/Balinese/1B49' alt='' title='1B49' /></a> <a href='#char1B4A'><img src='/c/Balinese/1B4A' alt='' title='1B4A' /></a> <a href='#char1B4B'><img src='/c/Balinese/1B4B' alt='' title='1B4B' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#dvowels'>Dependent vowel signs</a></th>
+      <td><a href='#char1B35'><img src='/c/Balinese/1B35' alt='' title='1B35' /></a> <a href='#char1B36'><img src='/c/Balinese/1B36' alt='' title='1B36' /></a> <a href='#char1B37'><img src='/c/Balinese/1B37' alt='' title='1B37' /></a> <a href='#char1B38'><img src='/c/Balinese/1B38' alt='' title='1B38' /></a> <a href='#char1B39'><img src='/c/Balinese/1B39' alt='' title='1B39' /></a> <a href='#char1B3A'><img src='/c/Balinese/1B3A' alt='' title='1B3A' /></a> <a href='#char1B3B'><img src='/c/Balinese/1B3B' alt='' title='1B3B' /></a> <a href='#char1B3C'><img src='/c/Balinese/1B3C' alt='' title='1B3C' /></a> <a href='#char1B3D'><img src='/c/Balinese/1B3D' alt='' title='1B3D' /></a> <a href='#char1B3E'><img src='/c/Balinese/1B3E' alt='' title='1B3E' /></a> <a href='#char1B3F'><img src='/c/Balinese/1B3F' alt='' title='1B3F' /></a> <a href='#char1B40'><img src='/c/Balinese/1B40' alt='' title='1B40' /></a> <a href='#char1B41'><img src='/c/Balinese/1B41' alt='' title='1B41' /></a> <a href='#char1B42'><img src='/c/Balinese/1B42' alt='' title='1B42' /></a> <a href='#char1B43'><img src='/c/Balinese/1B43' alt='' title='1B43' /></a> <a href='#char1B44'><img src='/c/Balinese/1B44' alt='' title='1B44' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#digits'>Digits</a></th>
+      <td><a href='#char1B50'><img src='/c/Balinese/1B50' alt='' title='1B50' /></a> <a href='#char1B51'><img src='/c/Balinese/1B51' alt='' title='1B51' /></a> <a href='#char1B52'><img src='/c/Balinese/1B52' alt='' title='1B52' /></a> <a href='#char1B53'><img src='/c/Balinese/1B53' alt='' title='1B53' /></a> <a href='#char1B54'><img src='/c/Balinese/1B54' alt='' title='1B54' /></a> <a href='#char1B55'><img src='/c/Balinese/1B55' alt='' title='1B55' /></a> <a href='#char1B56'><img src='/c/Balinese/1B56' alt='' title='1B56' /></a> <a href='#char1B57'><img src='/c/Balinese/1B57' alt='' title='1B57' /></a> <a href='#char1B58'><img src='/c/Balinese/1B58' alt='' title='1B58' /></a> <a href='#char1B59'><img src='/c/Balinese/1B59' alt='' title='1B59' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#punctuation'>Punctuation</a></th>
+      <td><a href='#char1B5A'><img src='/c/Balinese/1B5A' alt='' title='1B5A' /></a> <a href='#char1B5B'><img src='/c/Balinese/1B5B' alt='' title='1B5B' /></a> <a href='#char1B5C'><img src='/c/Balinese/1B5C' alt='' title='1B5C' /></a> <a href='#char1B5D'><img src='/c/Balinese/1B5D' alt='' title='1B5D' /></a> <a href='#char1B5E'><img src='/c/Balinese/1B5E' alt='' title='1B5E' /></a> <a href='#char1B5F'><img src='/c/Balinese/1B5F' alt='' title='1B5F' /></a> <a href='#char1B60'><img src='/c/Balinese/1B60' alt='' title='1B60' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#musicnotes'>Musical symbols for notes</a></th>
+      <td><a href='#char1B61'><img src='/c/Balinese/1B61' alt='' title='1B61' /></a> <a href='#char1B62'><img src='/c/Balinese/1B62' alt='' title='1B62' /></a> <a href='#char1B63'><img src='/c/Balinese/1B63' alt='' title='1B63' /></a> <a href='#char1B64'><img src='/c/Balinese/1B64' alt='' title='1B64' /></a> <a href='#char1B65'><img src='/c/Balinese/1B65' alt='' title='1B65' /></a> <a href='#char1B66'><img src='/c/Balinese/1B66' alt='' title='1B66' /></a> <a href='#char1B67'><img src='/c/Balinese/1B67' alt='' title='1B67' /></a> <a href='#char1B68'><img src='/c/Balinese/1B68' alt='' title='1B68' /></a> <a href='#char1B69'><img src='/c/Balinese/1B69' alt='' title='1B69' /></a> <a href='#char1B6A'><img src='/c/Balinese/1B6A' alt='' title='1B6A' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#musicdiacr'>Diacritical marks for musical symbols</a></th>
+      <td><a href='#char1B6B'><img src='/c/Balinese/1B6B' alt='' title='1B6B' /></a> <a href='#char1B6C'><img src='/c/Balinese/1B6C' alt='' title='1B6C' /></a> <a href='#char1B6D'><img src='/c/Balinese/1B6D' alt='' title='1B6D' /></a> <a href='#char1B6E'><img src='/c/Balinese/1B6E' alt='' title='1B6E' /></a> <a href='#char1B6F'><img src='/c/Balinese/1B6F' alt='' title='1B6F' /></a> <a href='#char1B70'><img src='/c/Balinese/1B70' alt='' title='1B70' /></a> <a href='#char1B71'><img src='/c/Balinese/1B71' alt='' title='1B71' /></a> <a href='#char1B72'><img src='/c/Balinese/1B72' alt='' title='1B72' /></a> <a href='#char1B73'><img src='/c/Balinese/1B73' alt='' title='1B73' /></a></td>
+    </tr>
+    <tr>
+      <th><a href='#musicsymbols'>Musical symbols</a></th>
+      <td><a href='#char1B74'><img src='/c/Balinese/1B74' alt='' title='1B74' /></a> <a href='#char1B75'><img src='/c/Balinese/1B75' alt='' title='1B75' /></a> <a href='#char1B76'><img src='/c/Balinese/1B76' alt='' title='1B76' /></a> <a href='#char1B77'><img src='/c/Balinese/1B77' alt='' title='1B77' /></a> <a href='#char1B78'><img src='/c/Balinese/1B78' alt='' title='1B78' /></a> <a href='#char1B79'><img src='/c/Balinese/1B79' alt='' title='1B79' /></a> <a href='#char1B7A'><img src='/c/Balinese/1B7A' alt='' title='1B7A' /></a> <a href='#char1B7B'><img src='/c/Balinese/1B7B' alt='' title='1B7B' /></a> <a href='#char1B7C'><img src='/c/Balinese/1B7C' alt='' title='1B7C' /></a></td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <h2><a id='varioussigns'>Various signs</a></h2>
+  <div class='character' id='char1B00'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B00;</div>
+    <p class='charname'><strong>U+1B00</strong> <a href='/scripts/uniview/?codepoints=1B00'>BALINESE SIGN ULU RICEM</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ardhacandra</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> combining character, <span class="name">ulu ricem</span> </p>
+          <p><span class="ipa">-m</span></p>
+          <p>When combined with certain syllables this sign becomes part of the Aksara Modre, or holy letters, which are used to write words in Sanskrit, usually part of prayers. This character only appears in Sanskrit texts, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/siddham.png" alt="ᬰᬶᬤ᭄ᬥᬀ" /> <span class="trans">siddham</span>.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B01'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B01;</div>
+    <p class='charname'><strong>U+1B01</strong> <a href='/scripts/uniview/?codepoints=1B01'>BALINESE SIGN ULU CANDRA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= candrabindu</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> combining character, <span class="name">ulu candra</span> </p>
+          <p><span class="ipa">-ŋ</span></p>
+          <p>When combined with certain syllables this sign becomes part of the Aksara Modre, or holy letters, which are used to write words in Sanskrit, usually part of prayers, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/mang.png" alt="ᬫᬁ" /> <span class="trans">mang</span> (<span class="meaning">holy letter</span>).</p>
+          <p><span class="ipa">-m</span> Over <span class="name">ulu candra</span> this creates the letter <span class="name">ongkara</span>, which is the symbol of God, <img class="exi"  lang="ban" src="/c/Balinese/examples/om.png" alt="ᬒᬁ" /> and is transcribed <span class="trans">om</span>, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/omswastiastu.png" alt="ᬒᬁᬲ᭄ᬯᬲ᭄ᬢ᭄ᬬᬲ᭄ᬢᬸ" /> <span class="trans">om swastiastu</span> (<span class="meaning">God bless you</span>).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B02'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B02;</div>
+    <p class='charname'><strong>U+1B02</strong> <a href='/scripts/uniview/?codepoints=1B02'>BALINESE SIGN CECEK</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= anusvara</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> combining character, <span class="name">cecek</span> </p>
+          <p><span class="ipa">ŋ</span></p>
+          <p>Only appears at the end of a word, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/bangkung.png" alt="ᬩᬗ᭄ᬓᬸᬂ" /> <span class="trans">bangkung</span> (<span class="meaning">pig</span>), unless the word involves repetition, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/cengceng.png" alt="ᬘᬾᬂᬘᬾᬂ" /> <span class="trans">cengceng</span> (<span class="meaning">musical instrument</span>).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B03'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B03;</div>
+    <p class='charname'><strong>U+1B03</strong> <a href='/scripts/uniview/?codepoints=1B03'>BALINESE SIGN SURANG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= repha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> combining character, <span class="name">surang</span> </p>
+          <p><span class="ipa">-r</span></p>
+          <p>Unlike most Brahmi-derived scripts, to represent a Balinese ra that starts a sequence of consonants without intervening vowels  this character is used over the <em>preceding</em> syllable, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/karna.png" alt="ᬓᬃᬡ" /> <span class="trans">karna</span> (<span class="meaning">ear</span>). </p>
+          <p>The Kawi form of the script used a repha glyph in the same way as many Brahmic scripts do.  However, because many syllables end in -r in the Balinese language, this written form was changed. </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B04'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B04;</div>
+    <p class='charname'><strong>U+1B04</strong> <a href='/scripts/uniview/?codepoints=1B04'>BALINESE SIGN BISAH</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= visarga</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> combining character, <span class="name">bisah</span> </p>
+          <p><span class="ipa">h</span></p>
+          <p>Only appears at the end of a word, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/manah.png" alt="ᬫᬦᬄ" /> <span class="trans">manah</span> (<span class="meaning">logic</span>), unless the word involves repetition.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B34'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B34;</div>
+    <p class='charname'><strong>U+1B34</strong> <a href='/scripts/uniview/?codepoints=1B34'>BALINESE SIGN REREKAN</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= nukta</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> combining character, <span class="name">rerekan</span> </p>
+          <p>The combining mark <span class="name">rerekan</span> <a href="#char1B34"> <img src="/scripts/pickers/Balinese/images/1B34.png" alt="᬴" title="1B34: BALINESE SIGN REREKAN" /></a> is used, as is a similar sign in Javanese, to extend the character repertoire for foreign sounds. Attested in Library of Congress transliterations and in earlier Sasak orthography are: <img src="/c/Balinese/examples/rerekanka.png" class="exi"  lang="ban"alt="ᬓ᬴" /> <span class="ipa">x</span>, <img src="/c/Balinese/examples/rerekanga.png" class="exi"  lang="ban"alt="ᬕ᬴" /> <span class="ipa">ɣ</span>, <img src="/c/Balinese/examples/rerekannga.png" class="exi"  lang="ban"alt="ᬗ᬴" /> <span class="ipa">ʕ</span>, <img src="/c/Balinese/examples/rerekanja.png" class="exi"  lang="ban"alt="ᬚ᬴" /> <span class="ipa">z</span>, <img src="/c/Balinese/examples/rerekanpa.png" class="exi"  lang="ban"alt="ᬧ᬴" /> <span class="ipa">f</span>, <img src="/c/Balinese/examples/rerekanwa.png" class="exi"  lang="ban"alt="ᬯ᬴" /> <span class="ipa">v</span>, and <img src="/c/Balinese/examples/rerekanha.png" class="exi"  lang="ban"alt="ᬳ᬴" /> <span class="ipa">ħ</span>. <img src="/c/Balinese/examples/rerekanda.png" class="exi"  lang="ban"alt="ᬤ᬴" /> could be used for one-to-one transliteration for Javanese <span class="ipa">d̠</span>. </p>
+          <p class="ref">Refs:  [1] <a href="http://std.dkuug.dk/JTC1/sc2/WG2/docs/n2908.pdf">Proposal for encoding the Balinese script in the UCS [Everson et al.]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B44'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B44;</div>
+    <p class='charname'><strong>U+1B44</strong> <a href='/scripts/uniview/?codepoints=1B44'>BALINESE ADEG ADEG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= virama</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> virama, <span class="name">adegadeg</span></p>
+          <p>This is the Balinese virama. It is usually invisible when used between two characters to indicate an absence of intervening vowels. It is visible, however, at the end of a word that does not finish with a vowel and is not followed by anything else, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/kapal.png" alt="ᬓᬧᬮ᭄" /><span class="trans">kapal</span> (<span class="meaning">ship</span>), or sometimes to clarify the distinction between a word-final consonant and a medial consonant, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/pakraman.png" alt="ᬧᬓ᭄ᬭᬫᬦ᭄" /><span class="trans">pakraman</span> (<span class="meaning">membership</span>) vs. eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/pakzwnjraman.png" alt="ᬧᬓ᭄‌ᬭᬫᬦ᭄" /><span class="trans">Pak Raman</span> (<span class="meaning">Mr. Raman</span>).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h2><a id='ivowels'>Independent vowels</a></h2>
+  <div class='character' id='char1B05'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B05;</div>
+    <p class='charname'><strong>U+1B05</strong> <a href='/scripts/uniview/?codepoints=1B05'>BALINESE LETTER AKARA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= a</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">a kara</span></p>
+          <p><span class="ipa">a</span> </p>
+          <p>This represents the same sound that is the inherent vowel.</p>
+          <p>Sometimes this vowel can be found as a support for vowel signs, but this is incorrect usage according to Sudewa, and should be avoided.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B06'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B06;</div>
+    <p class='charname'><strong>U+1B06</strong> <a href='/scripts/uniview/?codepoints=1B06'>BALINESE LETTER AKARA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= aa<br />
+      ≡ 1B05 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">a kara tedong</span></p>
+          <p><span class="ipa">ɑː</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B07'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B07;</div>
+    <p class='charname'><strong>U+1B07</strong> <a href='/scripts/uniview/?codepoints=1B07'>BALINESE LETTER IKARA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= i</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">i kara</span></p>
+          <p><span class="ipa">i</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B08'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B08;</div>
+    <p class='charname'><strong>U+1B08</strong> <a href='/scripts/uniview/?codepoints=1B08'>BALINESE LETTER IKARA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ii<br />
+      ≡ 1B07 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">i kara tedong</span></p>
+          <p><span class="ipa">iː</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B09'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B09;</div>
+    <p class='charname'><strong>U+1B09</strong> <a href='/scripts/uniview/?codepoints=1B09'>BALINESE LETTER UKARA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= u</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">u kara</span></p>
+          <p><span class="ipa">u</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B0A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B0A;</div>
+    <p class='charname'><strong>U+1B0A</strong> <a href='/scripts/uniview/?codepoints=1B0A'>BALINESE LETTER UKARA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= uu<br />
+      ≡ 1B09 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">u kara tedong</span></p>
+          <p><span class="ipa">uː</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B0B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B0B;</div>
+    <p class='charname'><strong>U+1B0B</strong> <a href='/scripts/uniview/?codepoints=1B0B'>BALINESE LETTER RA REPA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic r</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">ra repa</span></p>
+          <p><span class="ipa">rə</span></p>
+          <p>Balinese does not use <em>ra + pepet</em> to represent the sound <span class="ipa">rə</span>. Instead it uses <span class="name">ra repa</span> <img src="/c/Balinese/examples/rarepa.png" class="exi"  lang="ban"alt="ᬋ" />. <span class="uname">U+1B0B BALINESE LETTER RA REPA</span> at the beginning of a syllable, such as in <img src="/c/Balinese/examples/kereng.png" alt="ᬓᭂᬋᬂ" class="exi"  lang="ban"/> <span class="trans">kěrěng</span> (<span class="meaning">eat a lot</span>), is treated as a consonant.</p>
+          <p><em>Ra repa</em> has a postfixed form and a subjoined form. The postfixed form <img src="/c/Balinese/examples/rarepa-postfixed.png" class="exi"  lang="ban"alt="◌᭄ᬭᭂ" /> is seen where the consonant form of <em>ra repa</em> follows a word which ends in a consonant, such as <img src="/c/Balinese/examples/pakrereh.png" alt="ᬧᬓ᭄ᬋᬋᬄ" class="exi"  lang="ban"/> <span class="trans">Pak Rěrěh</span> (<span class="meaning">Mr Rereh</span>). The sequence of characters to be used for this is <em>&lt;consonant, adeg-adeg, ra repa&gt;</em> (ie. not using <span class="uname">U+1B3A BALINESE VOWEL SIGN RA REPA</span>).</p>
+          <p>The subjoined form <img src="/c/Balinese/examples/rarepa-subjoined.png" class="exi"  lang="ban"alt="◌ᬺ" /> is used to represent the  original <em>vocalic r</em>. In such cases, it   follows a syllable-initial consonant, as in <img src="/c/Balinese/examples/kresna.png" alt="ᬓᬺᬰ᭄ᬡ" class="exi"  lang="ban"/> <span class="trans">Krěsna</span> (<span class="meaning">Krishna</span>). This is where <span class="uname">U+1B3A BALINESE VOWEL SIGN RA REPA</span> is used. The sequence of characters to be used here is <em>&lt;consonant, vowel sign ra repa&gt;</em>.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a> [3] <a href="http://www.unicode.org/versions/Unicode6.0.0/ch11.pdf"> Southeast Asian Scripts [Unicode]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B0C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B0C;</div>
+    <p class='charname'><strong>U+1B0C</strong> <a href='/scripts/uniview/?codepoints=1B0C'>BALINESE LETTER RA REPA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic rr<br />
+      ≡ 1B0B 1B35</div>
+  </div>
+  <div class='character' id='char1B0D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B0D;</div>
+    <p class='charname'><strong>U+1B0D</strong> <a href='/scripts/uniview/?codepoints=1B0D'>BALINESE LETTER LA LENGA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic l</div>
+  </div>
+  <div class='character' id='char1B0E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B0E;</div>
+    <p class='charname'><strong>U+1B0E</strong> <a href='/scripts/uniview/?codepoints=1B0E'>BALINESE LETTER LA LENGA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic ll<br />
+      ≡ 1B0D 1B35</div>
+  </div>
+  <div class='character' id='char1B0F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B0F;</div>
+    <p class='charname'><strong>U+1B0F</strong> <a href='/scripts/uniview/?codepoints=1B0F'>BALINESE LETTER EKARA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= e</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">e kara</span></p>
+          <p><span class="ipa">e, ɛ</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B10'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B10;</div>
+    <p class='charname'><strong>U+1B10</strong> <a href='/scripts/uniview/?codepoints=1B10'>BALINESE LETTER AIKARA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ai</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">airsania</span></p>
+          <p><span class="ipa">aːi</span> </p>
+          <p>Sudewa says that this is identical to the consonant <span class="name">jha</span>, but in the Unicode charts and elsewhere the top right of <span class="name">airsania</span> <img src="/c/Balinese/examples/ai.png" class="exi"  lang="ban"alt="ᬐ" /> and <span class="name">jha</span> <img src="/c/Balinese/examples/jha.png" class="exi"  lang="ban"alt="ᬛ" /> is slightly different.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B11'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B11;</div>
+    <p class='charname'><strong>U+1B11</strong> <a href='/scripts/uniview/?codepoints=1B11'>BALINESE LETTER OKARA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= o</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">o kara</span></p>
+          <p><span class="ipa">o, ɔ</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B12'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B12;</div>
+    <p class='charname'><strong>U+1B12</strong> <a href='/scripts/uniview/?codepoints=1B12'>BALINESE LETTER OKARA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= au<br />
+      ≡ 1B11 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> independent vowel, <span class="name">o kara tedong</span></p>
+          <p><span class="ipa">aːu</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h2><a id='consonants'>Consonants</a></h2>
+  <div class='character' id='char1B13'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B13;</div>
+    <p class='charname'><strong>U+1B13</strong> <a href='/scripts/uniview/?codepoints=1B13'>BALINESE LETTER KA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ka</span> </p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptka.png" alt="◌᭄ᬓ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B14'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B14;</div>
+    <p class='charname'><strong>U+1B14</strong> <a href='/scripts/uniview/?codepoints=1B14'>BALINESE LETTER KA MAHAPRANA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= kha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">?</span> </p>
+          <p>Very rare in Balinese. This letter is apparently borrowed from Javanese.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptkha.png" alt="◌᭄ᬔ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B15'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B15;</div>
+    <p class='charname'><strong>U+1B15</strong> <a href='/scripts/uniview/?codepoints=1B15'>BALINESE LETTER GA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ga</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptga.png" alt="◌᭄ᬕ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B16'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B16;</div>
+    <p class='charname'><strong>U+1B16</strong> <a href='/scripts/uniview/?codepoints=1B16'>BALINESE LETTER GA GORA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= gha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">ga gora</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptgagora.png" alt="◌᭄ᬖ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B17'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B17;</div>
+    <p class='charname'><strong>U+1B17</strong> <a href='/scripts/uniview/?codepoints=1B17'>BALINESE LETTER NGA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ŋa</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptnga.png" alt="◌᭄ᬗ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B18'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B18;</div>
+    <p class='charname'><strong>U+1B18</strong> <a href='/scripts/uniview/?codepoints=1B18'>BALINESE LETTER CA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ca</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptca.png" alt="◌᭄ᬘ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B19'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B19;</div>
+    <p class='charname'><strong>U+1B19</strong> <a href='/scripts/uniview/?codepoints=1B19'>BALINESE LETTER CA LACA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= cha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">?</span> </p>
+          <p>Very rare in Balinese. This letter is apparently borrowed from Javanese. Only the subjoined form of this letter is used, and it is always paired with the normal form of ca.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptcalaca.png" alt="◌᭄ᬙ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B1A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B1A;</div>
+    <p class='charname'><strong>U+1B1A</strong> <a href='/scripts/uniview/?codepoints=1B1A'>BALINESE LETTER JA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ʤa</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptja.png" alt="◌᭄ᬚ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B1B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B1B;</div>
+    <p class='charname'><strong>U+1B1B</strong> <a href='/scripts/uniview/?codepoints=1B1B'>BALINESE LETTER JA JERA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= jha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ʤa</span></p>
+          <p>Seems to be known from only one word, <img src="/c/Balinese/examples/nirjhara.png" class="exi"  lang="ban"alt="ᬦᬶᬃᬛᬭ" /> <span class="trans">nirjhara</span> (<span class="meaning">pond</span>). (It is possible that an original <span class="name">ai</span> may have been lost in Balinese, to be replaced by the glyph for  this character.) </p>
+          <p>Sudewa says that this is identical to the independent vowel <span class="name">airsania</span>, but in the Unicode charts and elsewhere the top right of <span class="name">airsania</span> <img src="/c/Balinese/examples/ai.png" class="exi"  lang="ban"alt="ᬐ" /> and <span class="name">jha</span> <img src="/c/Balinese/examples/jha.png" class="exi"  lang="ban"alt="ᬛ" /> is slightly different.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B1C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B1C;</div>
+    <p class='charname'><strong>U+1B1C</strong> <a href='/scripts/uniview/?codepoints=1B1C'>BALINESE LETTER NYA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ɲa</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptnya.png" alt="◌᭄ᬜ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B1D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B1D;</div>
+    <p class='charname'><strong>U+1B1D</strong> <a href='/scripts/uniview/?codepoints=1B1D'>BALINESE LETTER TA LATIK</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= tta</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">ta latik</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscripttalatik.png" alt="◌᭄ᬝ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B1E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B1E;</div>
+    <p class='charname'><strong>U+1B1E</strong> <a href='/scripts/uniview/?codepoints=1B1E'>BALINESE LETTER TA MURDA MAHAPRANA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ttha</div>
+  </div>
+  <div class='character' id='char1B1F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B1F;</div>
+    <p class='charname'><strong>U+1B1F</strong> <a href='/scripts/uniview/?codepoints=1B1F'>BALINESE LETTER DA MURDA ALPAPRANA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= dda</div>
+  </div>
+  <div class='character' id='char1B20'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B20;</div>
+    <p class='charname'><strong>U+1B20</strong> <a href='/scripts/uniview/?codepoints=1B20'>BALINESE LETTER DA MURDA MAHAPRANA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ddha</div>
+  </div>
+  <div class='character' id='char1B21'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B21;</div>
+    <p class='charname'><strong>U+1B21</strong> <a href='/scripts/uniview/?codepoints=1B21'>BALINESE LETTER NA RAMBAT</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= nna</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">na rambat</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptnarambat.png" alt=" ◌᭄ᬡ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B22'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B22;</div>
+    <p class='charname'><strong>U+1B22</strong> <a href='/scripts/uniview/?codepoints=1B22'>BALINESE LETTER TA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ta</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptta.png" alt="◌᭄ᬢ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B23'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B23;</div>
+    <p class='charname'><strong>U+1B23</strong> <a href='/scripts/uniview/?codepoints=1B23'>BALINESE LETTER TA TAWA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= tha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">ta tawa</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscripttatawa.png" alt="◌᭄ᬣ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B24'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B24;</div>
+    <p class='charname'><strong>U+1B24</strong> <a href='/scripts/uniview/?codepoints=1B24'>BALINESE LETTER DA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">da</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptda.png" alt="◌᭄ᬤ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B25'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B25;</div>
+    <p class='charname'><strong>U+1B25</strong> <a href='/scripts/uniview/?codepoints=1B25'>BALINESE LETTER DA MADU</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= dha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">da madu</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptdamadu.png" alt="◌᭄ᬥ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B26'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B26;</div>
+    <p class='charname'><strong>U+1B26</strong> <a href='/scripts/uniview/?codepoints=1B26'>BALINESE LETTER NA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">na</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptna.png" alt="◌᭄ᬦ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B27'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B27;</div>
+    <p class='charname'><strong>U+1B27</strong> <a href='/scripts/uniview/?codepoints=1B27'>BALINESE LETTER PA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">pa</span> </p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptpa.png" alt="◌᭄ᬧ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B28'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B28;</div>
+    <p class='charname'><strong>U+1B28</strong> <a href='/scripts/uniview/?codepoints=1B28'>BALINESE LETTER PA KAPAL</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= pha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">pa kapal</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptpakapal.png" alt="◌᭄ᬨ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B29'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B29;</div>
+    <p class='charname'><strong>U+1B29</strong> <a href='/scripts/uniview/?codepoints=1B29'>BALINESE LETTER BA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptba.png" alt="◌᭄ᬩ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B2A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B2A;</div>
+    <p class='charname'><strong>U+1B2A</strong> <a href='/scripts/uniview/?codepoints=1B2A'>BALINESE LETTER BA KEMBANG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= bha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">ba kembang</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptbakembang.png" alt="◌᭄ᬪ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B2B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B2B;</div>
+    <p class='charname'><strong>U+1B2B</strong> <a href='/scripts/uniview/?codepoints=1B2B'>BALINESE LETTER MA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ma</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptma.png" alt="◌᭄ᬫ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B2C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B2C;</div>
+    <p class='charname'><strong>U+1B2C</strong> <a href='/scripts/uniview/?codepoints=1B2C'>BALINESE LETTER YA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ja</span> </p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptya.png" alt="◌᭄ᬬ" /></p>
+          <p>This character is also used for the semi-vowel / medial consonant <span class="name">nania</span>.</p>
+          <p>When used medially, it can also follow another medial ra or la, eg. <img src="/c/Balinese/examples/briag.png" alt="ᬩ᭄ᬭ᭄ᬬᬕ᭄" class="exi"  lang="ban"/> <span class="trans">briag</span> (<span class="meaning">laughter</span>).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B2D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B2D;</div>
+    <p class='charname'><strong>U+1B2D</strong> <a href='/scripts/uniview/?codepoints=1B2D'>BALINESE LETTER RA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant/semi vowel/medial consonant, <span class="name">ra / guwung</span></p>
+          <p><span class="ipa">ra</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptra.png" alt="◌᭄ᬭ" />.</p>
+          <p>This character is also used for the semi-vowel / medial consonant <span class="name">guwung</span>,  eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/cakra.png" alt="ᬘᬓ᭄ᬭ" /> <span class="trans">cakra</span> (<span class="meaning">disk</span>).</p>
+          <p>When used medially, it can also be followed by another medial ya or wa, eg. <img src="/c/Balinese/examples/briag.png" alt="ᬩ᭄ᬭ᭄ᬬᬕ᭄" class="exi"  lang="ban"/> <span class="trans">briag</span> (<span class="meaning">laughter</span>).</p>
+          <p>Ra is not used with  U+1B42   BALINESE VOWEL SIGN PEPET or U+1B43   BALINESE VOWEL SIGN PEPET TEDUNG. Instead use  U+1B0B BALINESE LETTER RA REPA <img class="exi"  lang="ban"src="/c/Balinese/examples/rarepa.png" alt="ᬋ" />, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/kereng.png" alt="ᬓᭂᬋᬂ" />, <span class="trans">kereng</span> (<span class="meaning">eat a lot</span>), or U+1B0C   BALINESE LETTER RA REPA TEDUNG <img class="exi"  lang="ban"src="/c/Balinese/examples/rarepatedung.png" alt="ᬌ" />, respectively.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B2E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B2E;</div>
+    <p class='charname'><strong>U+1B2E</strong> <a href='/scripts/uniview/?codepoints=1B2E'>BALINESE LETTER LA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">la</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptla.png" alt="◌᭄ᬮ" /></p>
+          <p>This character is also used for the semi-vowel / medial consonant <span class="name">gantungan la</span>.</p>
+          <p>When used medially, it can also be followed by another medial ya or wa.</p>
+          <p>La is not used with  U+1B42   BALINESE VOWEL SIGN PEPET or U+1B43   BALINESE VOWEL SIGN PEPET TEDUNG. Instead use  U+1B0B BALINESE LETTER LA LENGA <img class="exi"  lang="ban"src="/c/Balinese/examples/lalenga.png" alt="ᬍ" />, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/taler.png" alt="ᬢᬍᬃ" />, <span class="trans">taler</span> (<span class="meaning">therefore</span>), or U+1B0C   BALINESE LETTER LA LENGA TEDUNG <img class="exi"  lang="ban"src="/c/Balinese/examples/lalengatedung.png" alt="ᬎ" />, respectively.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B2F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B2F;</div>
+    <p class='charname'><strong>U+1B2F</strong> <a href='/scripts/uniview/?codepoints=1B2F'>BALINESE LETTER WA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">wa</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptwa.png" alt="◌᭄ᬯ" /></p>
+          <p>This character is also used for the semi-vowel / medial consonant <span class="name">suku kembung</span>.</p>
+          <p>When used medially, it can follow another medial ra or la.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B30'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B30;</div>
+    <p class='charname'><strong>U+1B30</strong> <a href='/scripts/uniview/?codepoints=1B30'>BALINESE LETTER SA SAGA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= sha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">sa saga</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptsasaga.png" alt="◌᭄ᬰ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B31'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B31;</div>
+    <p class='charname'><strong>U+1B31</strong> <a href='/scripts/uniview/?codepoints=1B31'>BALINESE LETTER SA SAPA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ssa</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant, <span class="name">sa sapa</span> </p>
+          <p><span class="ipa">?</span></p>
+          <p>Used for writing Kawi, rather than ordinary Balinese words.</p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptsasapa.png" alt="◌᭄ᬱ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B32'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B32;</div>
+    <p class='charname'><strong>U+1B32</strong> <a href='/scripts/uniview/?codepoints=1B32'>BALINESE LETTER SA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">sa</span></p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptsa.png" alt="◌᭄ᬲ" />,  eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/paksa.png" alt="ᬧᬓ᭄ᬲ" /> <span class="trans">paksa</span> (<span class="meaning">force</span>).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B33'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B33;</div>
+    <p class='charname'><strong>U+1B33</strong> <a href='/scripts/uniview/?codepoints=1B33'>BALINESE LETTER HA</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> consonant</p>
+          <p><span class="ipa">ha</span> </p>
+          <p><span class="ipa">-</span> when used as a support for a vowel. It is used as a support for a vowel sign when an independent vowel is used within a word, eg. <img src="/c/Balinese/examples/daerah.png" alt="ᬤᬳᬾᬭᬄ" class="exi"  lang="ban"/> <span class="trans">daerah</span> (<span class="meaning">development</span>). The vowels <span class="name">pepet</span> and <span class="name">pepet tedong</span> have no independent form, so they are represented with <span class="name">ha</span> plus vowel sign at the start of a word, too. </p>
+          <p>Conjunct form: <img class="exi"  lang="ban" src="/c/Balinese/examples/subscriptha.png" alt="◌᭄ᬳ" /></p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h2><a id='additional'>Additional consonants</a></h2>
+  <div class='character' id='char1B45'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B45;</div>
+    <p class='charname'><strong>U+1B45</strong> <a href='/scripts/uniview/?codepoints=1B45'>BALINESE LETTER KAF SASAK</a></p>
+  </div>
+  <div class='character' id='char1B46'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B46;</div>
+    <p class='charname'><strong>U+1B46</strong> <a href='/scripts/uniview/?codepoints=1B46'>BALINESE LETTER KHOT SASAK</a></p>
+  </div>
+  <div class='character' id='char1B47'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B47;</div>
+    <p class='charname'><strong>U+1B47</strong> <a href='/scripts/uniview/?codepoints=1B47'>BALINESE LETTER TZIR SASAK</a></p>
+  </div>
+  <div class='character' id='char1B48'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B48;</div>
+    <p class='charname'><strong>U+1B48</strong> <a href='/scripts/uniview/?codepoints=1B48'>BALINESE LETTER EF SASAK</a></p>
+  </div>
+  <div class='character' id='char1B49'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B49;</div>
+    <p class='charname'><strong>U+1B49</strong> <a href='/scripts/uniview/?codepoints=1B49'>BALINESE LETTER VE SASAK</a></p>
+  </div>
+  <div class='character' id='char1B4A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B4A;</div>
+    <p class='charname'><strong>U+1B4A</strong> <a href='/scripts/uniview/?codepoints=1B4A'>BALINESE LETTER ZAL SASAK</a></p>
+  </div>
+  <div class='character' id='char1B4B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B4B;</div>
+    <p class='charname'><strong>U+1B4B</strong> <a href='/scripts/uniview/?codepoints=1B4B'>BALINESE LETTER ASYURA SASAK</a></p>
+  </div>
+</div>
+<div>
+  <h2><a id='dvowels'>Dependent vowel signs</a></h2>
+  <div class='character' id='char1B35'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B35;</div>
+    <p class='charname'><strong>U+1B35</strong> <a href='/scripts/uniview/?codepoints=1B35'>BALINESE VOWEL SIGN TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= aa</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">tedong</span></p>
+          <p><span class="ipa">ɑː</span> </p>
+          <p>Pronounced longer than the inherent vowel. It is often used with prefixes, eg. ‘ma’ + ‘adep’ becoming mādep. If it appears in the holy texts, that are meant to be recited, this vowel can be pronounced even longer than the normal reading.</p>
+          <p>This vowel sign typically ligates with the preceding consonant, eg. <span class="name">ha, tedong</span> is <img class="exi"  lang="ban" src="/c/Balinese/examples/haa.png" alt="ᬳᬵ" /> and <span class="name">consonant, adeg-adeg, ya, tedong</span> is <img class="exi"  lang="ban" src="/c/Balinese/examples/yaa.png" alt="◌᭄ᬬᬵ" />.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B36'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B36;</div>
+    <p class='charname'><strong>U+1B36</strong> <a href='/scripts/uniview/?codepoints=1B36'>BALINESE VOWEL SIGN ULU</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= i</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">ulu</span></p>
+          <p><span class="ipa">i</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B37'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B37;</div>
+    <p class='charname'><strong>U+1B37</strong> <a href='/scripts/uniview/?codepoints=1B37'>BALINESE VOWEL SIGN ULU SARI</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ii</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">ulu-sari</span></p>
+          <p><span class="ipa">iː</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B38'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B38;</div>
+    <p class='charname'><strong>U+1B38</strong> <a href='/scripts/uniview/?codepoints=1B38'>BALINESE VOWEL SIGN SUKU</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= u</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">suku</span></p>
+          <p><span class="ipa">u</span> </p>
+          <p>The glyph changes when this appears after conjoined consonants, eg. <span class="trans">kyu</span> looks like <img class="exi"  lang="ban"src="/c/Balinese/examples/kyu.png" alt="ᬓ᭄ᬬᬸ " />.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B39'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B39;</div>
+    <p class='charname'><strong>U+1B39</strong> <a href='/scripts/uniview/?codepoints=1B39'>BALINESE VOWEL SIGN SUKU ILUT</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= uu</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">suku-ilut</span></p>
+          <p><span class="ipa">uː</span> </p>
+          <p>The glyph changes when this appears after conjoined consonants, eg. <span class="trans">kyū</span> looks like <img class="exi"  lang="ban"src="/c/Balinese/examples/kyuu.png" alt="ᬓ᭄ᬬᬹ " />.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B3A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B3A;</div>
+    <p class='charname'><strong>U+1B3A</strong> <a href='/scripts/uniview/?codepoints=1B3A'>BALINESE VOWEL SIGN RA REPA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic r</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign/semi-vowel/medial consonant, <span class="name">guwung macelek</span></p>
+          <p><span class="ipa">rə</span> </p>
+          <p>In Balinese the combination U+1B2D BALINESE LETTER RA + U+1B42 BALINESE VOWEL SIGN PEPET  is not used. Instead U+1B0B BALINESE LETTER RA REPA <img class="exi"  lang="ban"src="/c/Balinese/examples/rarepa.png" alt="ᬋ" /> is used. This can be used for what was originally a vocalic r.</p>
+          <p>This subjoined form  of <span class="name">ra repa</span> follows a syllable-initial consonant, as in <img src="/c/Balinese/examples/kresna.png" alt="ᬓᬺᬰ᭄ᬡ" class="exi"  lang="ban"/> <span class="trans">Krěsna</span> (<span class="meaning">Krishna</span>). </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B3B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B3B;</div>
+    <p class='charname'><strong>U+1B3B</strong> <a href='/scripts/uniview/?codepoints=1B3B'>BALINESE VOWEL SIGN RA REPA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic rr<br />
+      ≡ 1B3A 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign/semi-vowel/medial consonant, <span class="name">guwung macelek tedong</span></p>
+          <p><span class="ipa">rəː</span> </p>
+          <p>In Balinese the combination U+1B2D BALINESE LETTER RA + U+1B42 BALINESE VOWEL SIGN PEPET TEDUNG  is not used. Instead U+1B0B BALINESE LETTER RA REPA TEDUNG <img class="exi"  lang="ban"src="/c/Balinese/examples/rarepatedung.png" alt="ᬌ" /> is used.</p>
+          <p>This subjoined form  of <span class="name">ra repa tedong</span> follows a syllable-initial consonant. </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B3C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B3C;</div>
+    <p class='charname'><strong>U+1B3C</strong> <a href='/scripts/uniview/?codepoints=1B3C'>BALINESE VOWEL SIGN LA LENGA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic l</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign</p>
+          <p><span class="ipa">lə</span> </p>
+          <p>In Balinese the combination U+1B2D BALINESE LETTER LA + U+1B42 BALINESE VOWEL SIGN PEPET  is not used. Instead U+1B0B BALINESE LETTER LA LENGA <img class="exi"  lang="ban"src="/c/Balinese/examples/lalenga.png" alt="ᬍ" /> is used.</p>
+          <p>This subjoined form  of <span class="name">la lenga</span> follows a syllable-initial consonant. </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B3D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B3D;</div>
+    <p class='charname'><strong>U+1B3D</strong> <a href='/scripts/uniview/?codepoints=1B3D'>BALINESE VOWEL SIGN LA LENGA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= vocalic ll<br />
+      ≡ 1B3C 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign</p>
+          <p><span class="ipa">ləː</span> </p>
+          <p>In Balinese the combination U+1B2D BALINESE LETTER LA + U+1B42 BALINESE VOWEL SIGN PEPET TEDUNG  is not used. Instead U+1B0B BALINESE LETTER LA LENGA TEDUNG <img class="exi"  lang="ban"src="/c/Balinese/examples/lalengatedung.png" alt="ᬎ" /> is used.</p>
+          <p>This subjoined form  of <span class="name">la lenga tedong</span> follows a syllable-initial consonant. </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B3E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B3E;</div>
+    <p class='charname'><strong>U+1B3E</strong> <a href='/scripts/uniview/?codepoints=1B3E'>BALINESE VOWEL SIGN TALING</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= e</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">taleng</span></p>
+          <p><span class="ipa">e, ɛ</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B3F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B3F;</div>
+    <p class='charname'><strong>U+1B3F</strong> <a href='/scripts/uniview/?codepoints=1B3F'>BALINESE VOWEL SIGN TALING REPA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ai</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">taleng-repa</span></p>
+          <p><span class="ipa">aːi</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B40'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B40;</div>
+    <p class='charname'><strong>U+1B40</strong> <a href='/scripts/uniview/?codepoints=1B40'>BALINESE VOWEL SIGN TALING TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= o<br />
+      ≡ 1B3E 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">taleng tedong</span></p>
+          <p><span class="ipa">o, ɔ</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B41'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B41;</div>
+    <p class='charname'><strong>U+1B41</strong> <a href='/scripts/uniview/?codepoints=1B41'>BALINESE VOWEL SIGN TALING REPA TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= au<br />
+      ≡ 1B3F 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">taleng-repa tedong</span></p>
+          <p><span class="ipa">aːu</span> </p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B42'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B42;</div>
+    <p class='charname'><strong>U+1B42</strong> <a href='/scripts/uniview/?codepoints=1B42'>BALINESE VOWEL SIGN PEPET</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ae</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">pepet</span></p>
+          <p><span class="ipa">ə</span> </p>
+          <p>This vowel sign is not used with  U+1B2D BALINESE LETTER RA or U+1B2D BALINESE LETTER LA. Instead use  U+1B0B BALINESE LETTER RA REPA <img class="exi"  lang="ban"src="/c/Balinese/examples/rarepa.png" alt="ᬋ" />, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/kereng.png" alt="ᬓᭂᬋᬂ" />, <span class="trans">kereng</span> (<span class="meaning">eat a lot</span>), or U+1B0B BALINESE LETTER LA LENGA <img class="exi"  lang="ban"src="/c/Balinese/examples/lalenga.png" alt="ᬍ" />, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/taler.png" alt="ᬢᬍᬃ" />, <span class="trans">taler</span> (<span class="meaning">therefore</span>).</p>
+          <p>There is no independent vowel corresponding to this. Instead use pepet with U+1B33   BALINESE LETTER HA <img class="exi"  lang="ban" src="/c/Balinese/examples/e.png" alt="ᬳᭂ" />.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B43'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B43;</div>
+    <p class='charname'><strong>U+1B43</strong> <a href='/scripts/uniview/?codepoints=1B43'>BALINESE VOWEL SIGN PEPET TEDUNG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= oe<br />
+      ≡ 1B42 1B35</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> vowel sign, <span class="name">pepet  tedong</span></p>
+          <p><span class="ipa">əː</span> </p>
+          <p>This vowel sign is not used with  U+1B2D BALINESE LETTER RA or U+1B42 BALINESE VOWEL SIGN PEPET TEDUNG. Instead use U+1B0B BALINESE LETTER RA REPA TEDUNG <img class="exi"  lang="ban"src="/c/Balinese/examples/rarepatedung.png" alt="ᬌ" /> or U+1B0B BALINESE LETTER LA LENGA TEDUNG <img class="exi"  lang="ban"src="/c/Balinese/examples/lalengatedung.png" alt="ᬎ" />, respectively.</p>
+          <p>There is no independent vowel corresponding to this. Instead use pepet tedong with U+1B33   BALINESE LETTER HA <img class="exi"  lang="ban" src="/c/Balinese/examples/o.png" alt="ᬳᭃ" />.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B44'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B44;</div>
+    <p class='charname'><strong>U+1B44</strong> <a href='/scripts/uniview/?codepoints=1B44'>BALINESE ADEG ADEG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= virama</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> virama, <span class="name">adegadeg</span></p>
+          <p>This is the Balinese virama. It is usually invisible when used between two characters to indicate an absence of intervening vowels. It is visible, however, at the end of a word that does not finish with a vowel and is not followed by anything else, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/kapal.png" alt="ᬓᬧᬮ᭄" /><span class="trans">kapal</span> (<span class="meaning">ship</span>), or sometimes to clarify the distinction between a word-final consonant and a medial consonant, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/pakraman.png" alt="ᬧᬓ᭄ᬭᬫᬦ᭄" /><span class="trans">pakraman</span> (<span class="meaning">membership</span>) vs. eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/pakzwnjraman.png" alt="ᬧᬓ᭄‌ᬭᬫᬦ᭄" /><span class="trans">Pak Raman</span> (<span class="meaning">Mr. Raman</span>).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h2><a id='digits'>Digits</a></h2>
+  <div class='character' id='char1B50'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B50;</div>
+    <p class='charname'><strong>U+1B50</strong> <a href='/scripts/uniview/?codepoints=1B50'>BALINESE DIGIT ZERO</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">bindu/windu</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B51'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B51;</div>
+    <p class='charname'><strong>U+1B51</strong> <a href='/scripts/uniview/?codepoints=1B51'>BALINESE DIGIT ONE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">siki/besik</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B52'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B52;</div>
+    <p class='charname'><strong>U+1B52</strong> <a href='/scripts/uniview/?codepoints=1B52'>BALINESE DIGIT TWO</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">kalih/dua</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B53'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B53;</div>
+    <p class='charname'><strong>U+1B53</strong> <a href='/scripts/uniview/?codepoints=1B53'>BALINESE DIGIT THREE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">tiga/telu</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B54'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B54;</div>
+    <p class='charname'><strong>U+1B54</strong> <a href='/scripts/uniview/?codepoints=1B54'>BALINESE DIGIT FOUR</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">papat</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B55'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B55;</div>
+    <p class='charname'><strong>U+1B55</strong> <a href='/scripts/uniview/?codepoints=1B55'>BALINESE DIGIT FIVE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">lima</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B56'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B56;</div>
+    <p class='charname'><strong>U+1B56</strong> <a href='/scripts/uniview/?codepoints=1B56'>BALINESE DIGIT SIX</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">nem</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B57'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B57;</div>
+    <p class='charname'><strong>U+1B57</strong> <a href='/scripts/uniview/?codepoints=1B57'>BALINESE DIGIT SEVEN</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">pitu</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B58'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B58;</div>
+    <p class='charname'><strong>U+1B58</strong> <a href='/scripts/uniview/?codepoints=1B58'>BALINESE DIGIT EIGHT</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">kutus</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B59'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B59;</div>
+    <p class='charname'><strong>U+1B59</strong> <a href='/scripts/uniview/?codepoints=1B59'>BALINESE DIGIT NINE</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> digit, <span class="name">sanga/sia</span></p>
+          <p class="ref">Refs:  [1] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h2><a id='punctuation'>Punctuation</a></h2>
+  <div class='character' id='char1B5A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B5A;</div>
+    <p class='charname'><strong>U+1B5A</strong> <a href='/scripts/uniview/?codepoints=1B5A'>BALINESE PANTI</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= section</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> punctuation, <span class="name">panten</span></p>
+          <p>Used at the beginning of a letter, story or verse.</p>
+          <p>(At the end of a letter, story or verse you find <span class="name">pasalinan</span> <img class="exi"  lang="ban" src="/c/Balinese/examples/pasalinan.png" alt="᭟᭜᭟" />.)</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B5B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B5B;</div>
+    <p class='charname'><strong>U+1B5B</strong> <a href='/scripts/uniview/?codepoints=1B5B'>BALINESE PAMADA</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= honorific section</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> punctuation, <span class="name">pamada</span></p>
+          <p>Used at the beginning of religious texts. This symbol is a ligature of the letters in the word <span class="trans">mangajapa</span>, which roughly means "<span class="meaning">praying for safety</span>".</p>
+          <p>Also used at the end of the same text as part of <span class="name">carik agung</span> <img class="exi"  lang="ban" src="/c/Balinese/examples/carikagung.png" alt="᭛᭜᭛" />.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B5C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B5C;</div>
+    <p class='charname'><strong>U+1B5C</strong> <a href='/scripts/uniview/?codepoints=1B5C'>BALINESE WINDU</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= punctuation ring</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> punctuation</p>
+          <p>Used at the end of religious texts as part of <span class="name">carik agung</span> <img class="exi"  lang="ban" src="/c/Balinese/examples/carikagung.png" alt="᭛᭜᭛" /> and at the end of letters, stories and verse as part of <span class="name">pasalinan</span> <img class="exi"  lang="ban" src="/c/Balinese/examples/pasalinan.png" alt="᭟᭜᭟" />.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B5D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B5D;</div>
+    <p class='charname'><strong>U+1B5D</strong> <a href='/scripts/uniview/?codepoints=1B5D'>BALINESE CARIK PAMUNGKAH</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= colon</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> punctuation, <span class="name">carik pamungkah</span></p>
+          <p>Equivalent to a colon.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B5E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B5E;</div>
+    <p class='charname'><strong>U+1B5E</strong> <a href='/scripts/uniview/?codepoints=1B5E'>BALINESE CARIK SIKI</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= danda<br />
+      → (devanagari danda - 0964)</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> punctuation, <span class="name">carik</span></p>
+          <p>Equivalent to a comma.</p>
+          <p>This is also used for acronyms, eg. <span class="trans">Bank Pembangunan Daerah Bali</span> (<span class="meaning">Development Bank of Bali Province</span>) can be abbreviated to <img class="exi"  lang="ban" src="/c/Balinese/examples/bpdbali.png" alt="ᬩ᭞ᬧᭂ᭞ᬤ᭞ᬩᬮᬶ" /><span class="trans">ba pe da bali</span>.</p>
+          <p>It is also used to surround numbers, since many digits cannot be distinguished from letters, eg. <img class="exi"  lang="ban" src="/c/Balinese/examples/date.png" alt="ᬩᬮᬶ᭞᭓᭞ᬚᬸᬮᬶ᭞᭑᭙᭘᭒᭟" /> (<span class="meaning">Bali, 3 July 1982</span>).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B5F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B5F;</div>
+    <p class='charname'><strong>U+1B5F</strong> <a href='/scripts/uniview/?codepoints=1B5F'>BALINESE CARIK PAREREN</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= double danda<br />
+      → (devanagari double danda - 0965)</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> punctuation, <span class="name">carik pareren</span></p>
+          <p>Equivalent to a period.</p>
+          <p>Also used as part of <span class="name">pasalinan</span> <img class="exi"  lang="ban" src="/c/Balinese/examples/pasalinan.png" alt="᭟᭜᭟" /> which indicates the end of a letter, story or verse that began with <span class="name">panten</span> (U+1B5A   BALINESE PANTI).</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char1B60'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B60;</div>
+    <p class='charname'><strong>U+1B60</strong> <a href='/scripts/uniview/?codepoints=1B60'>BALINESE PAMENENG</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= line-breaking hyphen</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="balinese">
+          <p><span class="title">Balinese</span> punctuation, <span class="name">pameneng</span></p>
+          <p>In lontar texts where a word must be broken at the end of a line (always after a full syllable), the sign <span class="name">pameneng</span> is inserted. This sign is not used as a word-joining hyphen; it is used only in linebreaking.</p>
+          <p class="ref">Refs:  [1] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet [Sudewa]</a> [2] <a href="http://en.wikipedia.org/wiki/Balinese_script"> Balinese Script [Wikipedia]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h2><a id='musicnotes'>Musical symbols for notes</a></h2>
+  <div class='character' id='char1B61'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B61;</div>
+    <p class='charname'><strong>U+1B61</strong> <a href='/scripts/uniview/?codepoints=1B61'>BALINESE MUSICAL SYMBOL DONG</a></p>
+  </div>
+  <div class='character' id='char1B62'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B62;</div>
+    <p class='charname'><strong>U+1B62</strong> <a href='/scripts/uniview/?codepoints=1B62'>BALINESE MUSICAL SYMBOL DENG</a></p>
+  </div>
+  <div class='character' id='char1B63'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B63;</div>
+    <p class='charname'><strong>U+1B63</strong> <a href='/scripts/uniview/?codepoints=1B63'>BALINESE MUSICAL SYMBOL DUNG</a></p>
+  </div>
+  <div class='character' id='char1B64'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B64;</div>
+    <p class='charname'><strong>U+1B64</strong> <a href='/scripts/uniview/?codepoints=1B64'>BALINESE MUSICAL SYMBOL DANG</a></p>
+  </div>
+  <div class='character' id='char1B65'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B65;</div>
+    <p class='charname'><strong>U+1B65</strong> <a href='/scripts/uniview/?codepoints=1B65'>BALINESE MUSICAL SYMBOL DANG SURANG</a></p>
+  </div>
+  <div class='character' id='char1B66'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B66;</div>
+    <p class='charname'><strong>U+1B66</strong> <a href='/scripts/uniview/?codepoints=1B66'>BALINESE MUSICAL SYMBOL DING</a></p>
+  </div>
+  <div class='character' id='char1B67'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B67;</div>
+    <p class='charname'><strong>U+1B67</strong> <a href='/scripts/uniview/?codepoints=1B67'>BALINESE MUSICAL SYMBOL DAENG</a></p>
+  </div>
+  <div class='character' id='char1B68'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B68;</div>
+    <p class='charname'><strong>U+1B68</strong> <a href='/scripts/uniview/?codepoints=1B68'>BALINESE MUSICAL SYMBOL DEUNG</a></p>
+  </div>
+  <div class='character' id='char1B69'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B69;</div>
+    <p class='charname'><strong>U+1B69</strong> <a href='/scripts/uniview/?codepoints=1B69'>BALINESE MUSICAL SYMBOL DAING</a></p>
+  </div>
+  <div class='character' id='char1B6A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B6A;</div>
+    <p class='charname'><strong>U+1B6A</strong> <a href='/scripts/uniview/?codepoints=1B6A'>BALINESE MUSICAL SYMBOL DANG GEDE</a></p>
+  </div>
+</div>
+<div>
+  <h2><a id='musicdiacr'>Diacritical marks for musical symbols</a></h2>
+  <div class='character' id='char1B6B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B6B;</div>
+    <p class='charname'><strong>U+1B6B</strong> <a href='/scripts/uniview/?codepoints=1B6B'>BALINESE MUSICAL SYMBOL COMBINING TEGEH</a></p>
+  </div>
+  <div class='character' id='char1B6C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B6C;</div>
+    <p class='charname'><strong>U+1B6C</strong> <a href='/scripts/uniview/?codepoints=1B6C'>BALINESE MUSICAL SYMBOL COMBINING ENDEP</a></p>
+  </div>
+  <div class='character' id='char1B6D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B6D;</div>
+    <p class='charname'><strong>U+1B6D</strong> <a href='/scripts/uniview/?codepoints=1B6D'>BALINESE MUSICAL SYMBOL COMBINING KEMPUL</a></p>
+  </div>
+  <div class='character' id='char1B6E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B6E;</div>
+    <p class='charname'><strong>U+1B6E</strong> <a href='/scripts/uniview/?codepoints=1B6E'>BALINESE MUSICAL SYMBOL COMBINING KEMPLI</a></p>
+  </div>
+  <div class='character' id='char1B6F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B6F;</div>
+    <p class='charname'><strong>U+1B6F</strong> <a href='/scripts/uniview/?codepoints=1B6F'>BALINESE MUSICAL SYMBOL COMBINING JEGOGAN</a></p>
+  </div>
+  <div class='character' id='char1B70'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B70;</div>
+    <p class='charname'><strong>U+1B70</strong> <a href='/scripts/uniview/?codepoints=1B70'>BALINESE MUSICAL SYMBOL COMBINING KEMPUL WITH JEGOGAN</a></p>
+  </div>
+  <div class='character' id='char1B71'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B71;</div>
+    <p class='charname'><strong>U+1B71</strong> <a href='/scripts/uniview/?codepoints=1B71'>BALINESE MUSICAL SYMBOL COMBINING KEMPLI WITH JEGOGAN</a></p>
+  </div>
+  <div class='character' id='char1B72'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B72;</div>
+    <p class='charname'><strong>U+1B72</strong> <a href='/scripts/uniview/?codepoints=1B72'>BALINESE MUSICAL SYMBOL COMBINING BENDE</a></p>
+  </div>
+  <div class='character' id='char1B73'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B73;</div>
+    <p class='charname'><strong>U+1B73</strong> <a href='/scripts/uniview/?codepoints=1B73'>BALINESE MUSICAL SYMBOL COMBINING GONG</a></p>
+  </div>
+</div>
+<div>
+  <h2><a id='musicsymbols'>Musical symbols</a></h2>
+  <div class='character' id='char1B74'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B74;</div>
+    <p class='charname'><strong>U+1B74</strong> <a href='/scripts/uniview/?codepoints=1B74'>BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DUG</a></p>
+  </div>
+  <div class='character' id='char1B75'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B75;</div>
+    <p class='charname'><strong>U+1B75</strong> <a href='/scripts/uniview/?codepoints=1B75'>BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DAG</a></p>
+  </div>
+  <div class='character' id='char1B76'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B76;</div>
+    <p class='charname'><strong>U+1B76</strong> <a href='/scripts/uniview/?codepoints=1B76'>BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TUK</a></p>
+  </div>
+  <div class='character' id='char1B77'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B77;</div>
+    <p class='charname'><strong>U+1B77</strong> <a href='/scripts/uniview/?codepoints=1B77'>BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TAK</a></p>
+  </div>
+  <div class='character' id='char1B78'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B78;</div>
+    <p class='charname'><strong>U+1B78</strong> <a href='/scripts/uniview/?codepoints=1B78'>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PANG</a></p>
+  </div>
+  <div class='character' id='char1B79'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B79;</div>
+    <p class='charname'><strong>U+1B79</strong> <a href='/scripts/uniview/?codepoints=1B79'>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PUNG</a></p>
+  </div>
+  <div class='character' id='char1B7A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B7A;</div>
+    <p class='charname'><strong>U+1B7A</strong> <a href='/scripts/uniview/?codepoints=1B7A'>BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLAK</a></p>
+  </div>
+  <div class='character' id='char1B7B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B7B;</div>
+    <p class='charname'><strong>U+1B7B</strong> <a href='/scripts/uniview/?codepoints=1B7B'>BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLUK</a></p>
+  </div>
+  <div class='character' id='char1B7C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x1B7C;</div>
+    <p class='charname'><strong>U+1B7C</strong> <a href='/scripts/uniview/?codepoints=1B7C'>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PING</a></p>
+  </div>
+</div>
+<section id="references">
+  <h2><a href="#references" id="endlinks">Further reading</a></h2>
+  <ol>
+    <!--li>[Daniels] Peter T. Daniels and William Bright, <span class="title">The World's Writing Systems</span>, Oxford University Press, ISBN
+				0-19-507993-0</li-->
+    <li>[Sudewa] <a href="http://www.babadbali.com/aksarabali/alphabet.htm">The Balinese Alphabet</a></li>
+    <li>[Everson et al.] <a href="http://std.dkuug.dk/JTC1/sc2/WG2/docs/n2908.pdf">Proposal for encoding the Balinese script in the UCS</a></li>
+    <li>[Wikipedia] <a href="http://en.wikipedia.org/wiki/Balinese_script">Balinese script</a></li>
+    <li>[Unicode] <a href="http://www.unicode.org/versions/Unicode6.0.0/ch11.pdf">The Unicode Standard v6.0</a></li>
+    <li>[Omniglot] <a href="http://scriptsource.org/cms/scripts/page.php?item_id=source_detail&amp;uid=nrgqwv9x7a">Balinese</a></li>
+    <li>[ScriptSource] <a href="http://scriptsource.org/cms/scripts/page.php?item_id=script_detail&amp;uid=aggc6af8cc">Balinese</a></li>
+  </ol>
+</section>
+
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  3 Feb 2014.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-22  7:07<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<!-- Uncomment this code to get a list of all character names for the file names-subset.js 
+<div id=charliststr></div>
+<div><span class="ex" lang="ban">ᬀᬁᬂᬃᬄᬅᬆᬇᬈᬉᬊᬋᬌᬍᬎᬏᬐᬑᬒᬓᬔᬕᬖᬗᬘᬙᬚᬛᬜᬝᬞᬟᬠᬡᬢᬣᬤᬥᬦᬧᬨᬩᬪᬫᬬᬭᬮᬯᬰᬱᬲᬳ᬴ᬵᬶᬷᬸᬹᬺᬻᬼᬽᬾᬿᭀᭁᭂᭃ᭄ᭅᭆᭇᭈᭉᭊᭋ᭐᭑᭒᭓᭔᭕᭖᭗᭘᭙᭚᭛᭜᭝᭞᭟᭠᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭬᭫᭭᭮᭯᭰᭱᭲᭳᭴᭵᭶᭷᭸᭹᭺᭻᭼</span></div>
+<div id="listofchars"></div>
+<script type="text/javascript" src="/javascript/showcharacters/names.js"></script>
+<script src="data-extraction.js" type="text/javascript">//</script>
+<script>document.getElementById('listofchars').innerHTML = getlistofchars();
+listCharsWithNotes();
+</script>
+ --> 
+
+<script type="text/javascript">
+createtoc();
+initialiseShowNames();
+</script>
+</body>
+</html>
