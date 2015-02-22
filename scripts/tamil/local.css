@@ -16,3 +16,14 @@
 #fontsetting.closed { right: -258px; }
 #fontsettingswitch { height: 130px; }
 
+.charimg {
+	font-size: 130px;
+	min-width: 190px;
+	min-height: 190px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 190px;
+	font-family: "Noto Sans Tamil", "Tamil MN", InaiMathi, Latha, sans-serif;
+	background-color: white;
+}
+

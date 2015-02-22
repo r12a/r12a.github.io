@@ -6,12 +6,13 @@
 <title>Tamil script notes</title>
 <meta name="description" content="Notes about the Tamil script as used for Tamil."/>
 
-<link rel="stylesheet" href="/style/docs.css" type="text/css" />
-<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
-<link rel="stylesheet" href="local.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="/scripts/block/block-style.css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
 	
-<script src="/scripts/block/tamil-names-subset.js" type="text/javascript"></script>
-<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+<script type="text/javascript" src="/scripts/block/tamil-names-subset.js"></script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<script type="text/javascript" src="fonts.js"></script>
 
 <script src="/code/toc_section.js" type="text/javascript"></script>
 <script src="/code/boilerplate.js" type="text/javascript"></script>
@@ -29,6 +30,7 @@
 <h1>Tamil script notes</h1>
 
 <aside class="sidebar">
+<nav>
   <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
   <nav id="toc"><!-- placeholder --></nav>
   <div class="noprint">
@@ -37,8 +39,8 @@
         <p><a href="/pickers/tamil/">Tamil character picker</a></p>
         <p><a href="/uniview/?block=tamil">Tamil in UniView </a></p>
 	<p><a href="/scripts/links?script=tamil">Tamil script links</a></p>
-      </div>
-
+    </div>
+	</nav>
         
 <div id="fontsetting" class="closed">
 <h2 class="notoc"><a id="fonts">Fonts</a></h2>
@@ -46,56 +48,16 @@
 <p>Set a font for Tamil text</p>
 <p>
 <select id="exfontswitchfont" onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'ta');">
-         <optgroup label="Webfont">
-        <option value="Noto Sans Tamil WF">Noto Sans Tamil</option>
-        </optgroup>
-        <optgroup label="Mac fonts">
-        <option value="InaiMathi">InaiMathi</option>
-        <option value="Tamil MN">Tamil MN</option>
-        <option value="Tamil Sangam MN">Tamil Sangam MN</option>
-        </optgroup>
-        
-        <optgroup label="Windows fonts">
-        <option value="Latha">Latha</option>
-        <option value="Vijaya">Vijaya</option>
-        </optgroup>
-        
-        <optgroup label="Google fonts">
-        <option value="Droid Sans Tamil">Droid Sans Tamil</option>
-        <option value="Karla Tamil Inclined">Karla Tamil Inclined</option>
-        <option value="Karla Tamil Upright">Karla Tamil Upright</option>
-        <option value="Lohit Tamil">Lohit Tamil</option>
-        <option value="Noto Sans Tamil">Noto Sans Tamil</option>
-        </optgroup>
 </select> 
+<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
 <input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
 onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'ta');" />
 </p>
 <p>Set a font for the symbol list</p>
 <p>
 <select  id="slfontswitchfont" onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'ta');">
-         <optgroup label="Webfont">
-        <option value="Noto Sans Tamil WF">Noto Sans Tamil</option>
-        </optgroup>
-        <optgroup label="Mac fonts">
-        <option value="InaiMathi">InaiMathi</option>
-        <option value="Tamil MN">Tamil MN</option>
-        <option value="Tamil Sangam MN">Tamil Sangam MN</option>
-        </optgroup>
-        
-        <optgroup label="Windows fonts">
-        <option value="Latha">Latha</option>
-        <option value="Vijaya">Vijaya</option>
-        </optgroup>
-        
-        <optgroup label="Google fonts">
-        <option value="Droid Sans Tamil">Droid Sans Tamil</option>
-        <option value="Karla Tamil Inclined">Karla Tamil Inclined</option>
-        <option value="Karla Tamil Upright">Karla Tamil Upright</option>
-        <option value="Lohit Tamil">Lohit Tamil</option>
-        <option value="Noto Sans Tamil">Noto Sans Tamil</option>
-        </optgroup>
 </select> 
+<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
 <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'ta');" />
 </p>
@@ -399,7 +361,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <div id="panel" style="display:none"><div style="display:block">&nbsp;</div><p style="text-align:right;"></p></div>
 
 <div class="smallprint"> <span id="version">First published  3 February, 2010.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-17  9:26<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-02-22  17:45<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
   
 <!-- Uncomment this code to get a list of all character names for the file names-subset.js 
