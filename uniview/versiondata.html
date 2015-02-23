@@ -4,12 +4,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>UniView Version History</title>
-		<meta name="keywords" content="i18n internationalisation internationalization localisation localization translation Unicode database"/>
 		<meta name="description" content="User guide and help for the UniView Unicode viewing tool."/>
 
-		<link rel="stylesheet" href="/rishida/style/leveltwo.css" type="text/css" />
-		<link rel="stylesheet" href="/rishida/style/levelthree.css" type="text/css" />
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
 
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<style type="text/css" media="all">
 h3 a:link { color: gray; text-decoration: none; }
 h3 a:visited { color: gray; text-decoration: none; }
@@ -21,37 +22,31 @@ div.topic p { margin-left: 12%; }
 .version { color: brown; font-weight: bold; }
 .new1 {color: red; }
 		</style>
-
-		<script type="text/javascript" src="/rishida/images/randomcharacters.js">//</script>
-		<script type="text/javascript" language="JavaScript" src="/rishida/javascript/expand-collapse-content.js">//</script>
-
-<script type="text/javascript" src="../javascript/level3-docs.js"></script>
 </head>
 
 <body>
+<header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/rishida/i/world.gif');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
 
-		<div class="sidebar noprint"> 
-			<h2>Quick links</h2>
-			<p><a href="/rishida/uniview/" style="font-size: 200%;">Start</a></p>
-	</div>
+<h1>UniView version history</h1>
+
+<aside class="sidebar">
+<nav>
+  <h2 class="notoc flush"><a id="tochead">On this page</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links">Related links</a></h2>
+    <p><a href="/uniview/">UniView</a></p>
+  </div>
+  </nav>
+  </aside>
 
 
-	<h1>UniView Version History</h1>
-		
-<div id="navigation"> 
-			<p><a name="internal-links" id="internal-links">on this page:&nbsp;</a> <a href="#uniview" title="With UniView you can..."
-				accesskey="n">with UniView</a>&nbsp;- <a href="#matrix" title="While looking at a matrix of characters (on the left) you can...">matrix</a> &nbsp;-
-				<a href="#matrix" title="While looking at a list (on the left) you can...">list</a> &nbsp;-
-				<a href="#matrix" title="While looking at the detailed information (on the right) you can...">detail</a> &nbsp;-
-				<a href="#characterarea" title="Working with the character area">character area</a> &nbsp;-
-				<a href="#tailor" title="You can tailor the program by...">tailoring</a> &nbsp;- <a href="#versions" title="Change history">release
-				notes</a><br/><a>what's new:&nbsp;</a>
-				<a href="http://people.w3.org/rishida/blog/index.php?s=uniview" title="Show the utilities category of the r12a blog">UniView</a>&nbsp;-
-				<a href="http://people.w3.org/rishida/blog/index.php?cat=2" title="Show the utilities category of the r12a blog">utilities</a>&nbsp;-
-				<a href="http://people.w3.org/rishida/blog/" title="Show the r12a blog">site</a></p>
-		</div>
+<p id="status">Updated Thu 31 Jul 2014 &bull; tags <a href="http://rishida.net/blog/index.php?tag=uniview" title="Show all blog posts tagged with 'uniview'">uniview</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+
+
 		<div class="section"> 
 			<p> UniView is an HTML-based application for working with Unicode characters. You can look up  or find characters (using graphics or fonts) and related information, view whole character blocks or custom ranges, select characters to paste into your document, paste in and discover unknown characters, search for characters using regular expressions, do hex/dec/ncr conversions, highlight character types, etc. etc. It supports Unicode 7.0 and is
 			  written with Web Standards to work on a variety of browsers.</p>
@@ -362,22 +357,15 @@ you to keep your place while briefly looking something up.</p>-->
 			<p>Options for displaying in page descriptions of script blocks have been disabled. Open the files in a separate tab or window as a
 				standalone file.</p>
 		</div>
-		<div id="author"> 
-			<p>Author: <a href="http://rishida.net/">Richard Ishida</a>.</p>
-		</div>
-		<div class="smallprint"> 
-			<p id="version">Last update <span id="version-info"><!-- #BeginDate format:IS1m -->2014-07-31  20:04<!-- #EndDate --></span> GMT</p>
-			<p class="copyright">Copyright © 2004-2013 Richard Ishida.</p>
-		</div>
-		<script type="text/javascript">if (document.getElementById) {choosePicture(); }</script>
+
+
+<div class="smallprint"> <span id="version">This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-23  9:08<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
+  
 
 		<script type="text/javascript">
-		if (document.getElementById) { 
-			openIMG='/rishida/icons/open.gif';
-			closeIMG='/rishida/icons/close.gif';
-			initialhide('H3', 'collapse');
-			document.getElementById('expandCollapseAll').style.display = 'block';
-			}
+		createtoc();
 		</script>
 
 	</body>
