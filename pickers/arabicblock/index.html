@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Arabic block character picker 17</title>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+<script type="text/javascript" src="/scripts/arabic/fonts.js"></script>
+
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="/scripts/block/arabic-names-subset.js"></script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<!--script type="text/javascript" src="localtranscription.js">  </script-->
+</head>
+
+<body class="app">
+<header>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Arabic block character picker','v17');</script> 
+</header>
+
+
+<div id="main">
+  <button type="button" onclick="selectAll(); return false;">Select all</button>
+  <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
+  <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
+  <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+  <button type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'bn','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+</div>
+
+
+<div id="outputDiv" dir=rtl>
+  <textarea rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+<div id="transcriptionWrapper">
+  <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
+  <div id="closeTranscription" onclick="closeTranscription()">X</div>
+  <div id="transcription"></div>
+</div>
+
+
+<div id="autofocusswitch">Autofocus: <span id="afon" class="on" 
+    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> <span id="afoff" class="off" 
+    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+<div id="phonemelist" style="position:relative;">
+
+
+  <div id="transcriptionChoice"></div>
+  <div id=latintranscript class=transcript style="display:none;"></div>
+</div>
+
+
+<div id="chardata"><span id="charname">Click on characters  to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+<!--div style="position:relative;">
+  <div id=vertical-menu>
+    <div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
+menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = '';_showISOTrans = '';_showRadiceTrans = '';
+document.getElementById('shapelist').style.display = 'none';
+document.getElementById('latintranscript').style.display = 'none';
+document.getElementById('isotranscript').style.display = 'none';
+document.getElementById('radicetranscript').style.display = 'none';
+ return false;">D</div>
+    <div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
+  </div-->
+  
+  
+  <div id="tables">
+    <div id="transcriptionChoice2" style="position:absolute;left:40px; font-size: 60px; background-color: #FFFACD; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
+    
+    <!-- SHAPE -->
+    <div id="alphabet" class="default" dir=rtl style="text-align:right;">
+      <table id="kbd">
+        <tr>
+          <td colspan="3" dir=rtl>
+          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> 
+          <span style="margin: 0x; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">ZWJ</span> 
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">ZWNJ</span> 
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">RLI</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">LRI</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">FSI</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">PDI</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">RLE</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">LRE</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">PDF</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">RLO</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">LRO</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">RLM</span>
+          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">LRM</span>
+          </td>
+        </tr>
+      </table>
+      <div dir=rtl style="margin-right:20px;"> 
+      <img alt=" " src="images/shape01.png" onclick="findShape('','\u0621,\u06FD,\u0674',false)" /> 
+      <img alt=" " src="images/shape02.png" onclick="findShape('','\u0645,\u0765,\u0766',false)" /> 
+      <img alt=" " src="images/shape03.png" onclick="findShape('','\u0647,\u06C1,\u06D5,\u06BE,\u0629,\u06C0,\u06C2,\u06C3,\u06FF,\u06FE',true)" /> 
+      <img alt=" " src="images/shape04.png" onclick="findShape('','\u0627,\u0622,\u0623,\u0675,\u0671,\u0672,\u0773,\u0774,\u0625,\u0673',true)" />
+      <img alt=" " src="images/shape05.png" onclick="findShape('','\u0644,\u06B6,\u06B7,\u06B5,\u06B8,\u076A',true)" /> 
+      <img alt=" " src="images/shape06.png" onclick="findShape('','\u0643,\u06AC,\u06AD,\u06AE,\u077F',true)" /> 
+      <img alt=" " src="images/shape07.png" onclick="findShape('','\u06A9,\u06AA,\u0762,\u063B,\u0763,\u06AB,\u063C,\u0764,\u06AF,\u06B0,\u06B1,\u06B2,\u06B3,\u06B4',true)" /> 
+      <img alt=" " src="images/shape12.png" onclick="findShape('','\u0649,\u06CC,\u06CD,\u0626,\u0678,\u06CE,\u063D,\u063E,\u063F,\u0775,\u0776,\u064A,\u06D0,\u06D1,\u0777',true)" /> 
+      <img alt=" " src="images/shape08.png" onclick="findShape('','\u062D,\u062C,\u0683,\u0684,\u0686,\u0758,\u0687,\u076E,\u076F,\u077C,\u062E,\u0757,\u06BF,\u0682,\u0685,\u0681,\u0772',true)" /> 
+      <img alt=" " src="images/shape09.png" onclick="findShape('','\u0639,\u063A,\u075D,\u075F,\u06A0,\u075E,\u06FC',true)" /> 
+      <img alt=" " src="images/shape10.png" onclick="findShape('','\u0633,\u0634,\u075C,\u0770,\u077D,\u077E,\u069B,\u069A,\u069C,\u06FA,\u06E3',true)" /> 
+      <img alt=" " src="images/shape11.png" onclick="findShape('','\u0635,\u0636,\u069E,\u069D,\u06FB ',true)" /> 
+      <img alt=" " src="images/shape14.png" onclick="findShape('','\u062F,\u0630,\u068C,\u068E,\u068F,\u0690,\u0688,\u06EE,\u068A,\u068D,\u075A,\u0689,\u068B,\u0759',true)" /> 
+      <img alt=" " src="images/shape15.png" onclick="findShape('','\u0631,\u066B,\u0632,\u076D,\u0697,\u076B,\u0698,\u0699,\u076C,\u0691,\u0771,\u06EF,\u0692,\u0694,\u0693,\u0695,\u075B,\u0696',true)" /> 
+      <img alt=" " src="images/shape16.png" onclick="findShape('','\u0648,\u06CF,\u06CA,\u06CB,\u0624,\u0676,\u06C9,\u06C6,\u06C7,\u0677,\u06C8,\u0778,\u0779,\u06C4,\u06C5,\u060B,\u0608,\u06E5',true)" /> 
+      <img alt=" " src="images/shape17.png" onclick="findShape('','\u066F,\u06A7,\u0642,\u06A8,\u06A1,\u0641,\u06A4,\u06A6,\u06A2,\u0760,\u06A5,\u0761,\u06A3',true)" /> 
+      <img alt=" " src="images/shape18.png" onclick="findShape('','\u066E,\u062A,\u067A,\u062B,\u067D,\u067F,\u0756,\u0679,\u0628,\u067B,\u067E,\u0752,\u0750,\u0680,\u0755,\u0754,\u067C,\u0753,\u0751',true)" /> 
+      <img alt=" " src="images/shape19.png" onclick="findShape('','\u06BA,\u0646,\u06BD,\u06BB,\u0768,\u0769,\u06B9,\u06BC,\u0767',true)" /> 
+      <img alt=" " src="images/shape20.png" onclick="findShape('','\u0637,\u0638,\u069F',true)" /> 
+      <img alt=" " src="images/shape21.png" onclick="findShape('','\u06D2,\u06D3,\u077A,\u077B,\u06E6',true)" /> 
+      <img alt=" " src="images/shape22.png" onclick="findShape('','\u064E,\u065E,\u064B,\u064F,\u065D,\u064C,\u0651,\u065A,\u065B,\u0658,\u0652,\u0654,\u0657,\u0670,\u06DF,\u06E0,\u06EC,\u06EB,\u0659,\u06E4,\u0653,\u06D8,\u0610,\u0611,\u0612,\u0613,\u0614,\u0615,\u06D6,\u06D7,\u0616,\u06D9,\u06DA,\u06DB,\u06DC,\u06E1,\u06E7,\u06E8,\u0617,\u0618,\u0619,\u06E2',true)" /> 
+      <img alt=" " src="images/shape23.png" onclick="findShape('','\u0650,\u064D,\u0655,\u0656,\u065C,\u06EA,\u061A,\u06ED,\u06E2',true)" /> 
+      <img alt=" " src="images/shape24.png" onclick="findShape('','\u0660,\u0661,\u0662,\u0663,\u0664,\u0665,\u0666,\u0667,\u0668,\u0669,\u06F0,\u06F1,\u06F2,\u06F3,\u06F4,\u06F5,\u06F6,\u06F7,\u06F8,\u06F9',true)" /> 
+      <img alt=" " src="images/shape25.png" onclick="findShape('','\u060D,\u061B,\u060C,\u061F,\u066A,\u0609,\u060A,\u0606,\u0607,\u066D,\u066C,\u061E,\u00AB,\u00BB,\u060F,\u06DD,\u06DE,\u06E9,\u06D4,\u0640,\u0600,\u0601,\u0602,\u060E,\u0603',true)" /> 
+      </div>
+    </div>
+
+    
+  </div>
+  <!-- end of tables --> 
+     <div id="extrashapes" dir=rtl></div>
+ 
+</div>
+<!-- end of wrapper round tables and vertical menu -->
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+    </select>
+<script>document.getElementById('fontList').innerHTML = fontSelection</script>
+  </div>
+  
+  <div class="control">Custom font:<br />
+    <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" />
+    </form>
+  </div>
+  
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+    <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+    <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+    <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+  </div>
+  
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'bengali'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'bengali');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+</div>
+
+
+<div id="extracontrols">
+  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="/pickers/images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers/images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers/images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+                            
+  <div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+    <script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+    <input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />
+    px</div>
+    
+  <div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+      <option value="0">Select...</option>
+      <option value="">none</option>
+      <option value="&#x00A0;">NBSP</option>
+      <option value=" ">SP</option>
+      <option value="◌">◌</option>
+      <option value="-">-</option>
+    </select>
+  </div>
+  
+  <div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+</div>
+
+
+
+<div id="showNotes" onclick="toggleNotes()">show notes</div>
+
+<!--div id="notes">
+</div-->
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p>
+  <aside class="sidebar">
+    <div class="noprint">
+      <h2 class="notoc flush"><a id="links">Related links</a></h2>
+      <!--p><a href="/scripts/arabic/">Arabic script notes</a></p-->
+      <p><a href="/scripts/arabic/block">Arabic character notes</a></p>
+      <p><a href="/scripts/links?script=arabic">Arabic script links</a></p>
+      <p><a href="/uniview/?block=arabic">Arabic in UniView </a></p>
+      <p><a href="/pickers/">Other pickers </a></p>
+    </div>
+  </aside>
+  
+  <p id="status">Updated Sun 22 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
+
+  <p>This Unicode character picker allows you to produce or analyse runs of text using the Arabic script. It is not language-specific, but rather gives access to all Arabic characters in the Unicode Arabic block, in a way that makes it easy to find the character you are looking for. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+  <p>You must have JavaScript enabled. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+  <p>To properly display the text you will need to choose a font that is loaded on your system or device or use one of the  web fonts downloaded with the page. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7, as well as which are the web fonts. Note that fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="//fontlist/#arabic">standard OS fonts in Mac and Windows</a>.</p>
+  <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
+  <dl>
+    <dt>Mobile devices</dt>
+    <dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
+    <dt>About the chart</dt>
+    <dd>Includes all the characters in the Unicode <a href="/uniview/?block=arabic">Arabic</a> block.</dd>
+    <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</dd>
+    <dt>Input options</dt>
+    <dd>Because the are a large number of characters in the repertoire of this picker, the default option requires a two-stage look-up.  <!--You can start up directly in one of the  views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>default</code>, <code>shape</code>, <code>transcription</code>, <code>phones</code> or <code>fontgrid</code>.-->First click on the  row of orange pictures that represent basic shapes associated with the Arabic  characters. This will then display second row of characters. Click on one of these to add the character to the output area.</dd>
+    <dt>Notes on controls</dt>
+    <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+    <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <em>Add codepoint</em> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+    <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use '\bha\b' (or the shortcut, ':b:').</dd>
+    <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
+    <dt>If something is missing/broken</dt>
+    <dd>... <a href="mailto:rishida@w3.org?subject=[Arabic%20picker]%20">let me know</a>.</dd>
+  </dl>
+</div>
+
+
+<div id="panel" style="display:none">
+  <div id="title" class="ex" lang="bn"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"> </p>
+</div>
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+</body>
+</html>
