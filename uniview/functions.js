@@ -2393,7 +2393,7 @@ function printProperties ( codepoint ) {
 			if (blockfile) {
 				p.appendChild( document.createElement( 'br' ));
 				a = p.appendChild( document.createElement('a'));
-					a.href = '/scripts/block/'+blockfile+'#char'+cRecord[0];
+					a.href = '/scripts/'+blockfile+'/block#char'+cRecord[0];
 					a.target = 'blockdata';
 				a.appendChild( document.createTextNode('See character notes'));
 				a.className = 'noteslink'
