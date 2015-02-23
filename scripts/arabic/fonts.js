@@ -1,10 +1,9 @@
  var fontSelection = '<option value="0">Select...</option>\
             <optgroup label="Web fonts ">\
-            <option value="Scheherazade WF">Scheherazade WF</option>\
             <option value="Nafees Nastaliq WF">Nafees Nastaliq WF</option>\
+            <option value="Scheherazade WF">Scheherazade WF</option>\
             </optgroup>\
             \
-          <option value="0">Select...</option>\
             <optgroup label="Mac fonts ">\
             <option value="Al Bayan">Al Bayan</option>\
             <option value="Baghdad">Baghdad</option>\
@@ -60,8 +59,6 @@
             <optgroup label="General fonts ">\
             <option value="Arial">Arial</option>\
             <option value="Arial Unicode MS">Arial Unicode MS</option>\
-            <option value="Bitstream Cyberbase">Bitstream Cyberbase</option>\
-            <option value="Bitstream Cyberbit">Bitstream Cyberbit</option>\
             <option value="Code2000">Code2000</option>\
             <option value="Courier New">Courier New</option>\
             <option value="DejaVu Sans">DejaVu Sans</option>\
