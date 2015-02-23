@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>An Introduction to Writing Systems</title>
+<meta name="description"
+	  content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>An Introduction to Writing Systems &amp; Unicode</h1>
+
+<aside class="sidebar">
+<nav>
+  <h2 class="notoc flush"><a id="tochead">On this page</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links">Related links</a></h2>
+    <p><a href="/scripts/summaries/">Script summaries</a></p>
+    <p><a href="/scripts/featurelist/">Script features by language</a></p>
+	<p><a href="/scripts/links">Script links</a></p>
+    <p><a href="/uniview/">UniView</a></p>
+	<p><a href="http://www.unicode.org">Unicode Consortium</a></p>
+  </div>
+  </nav>
+  </aside>
+
+
+<nav>
+<p class="short-toc"><a href="index">Introduction</a></p>
+<p class="short-toc"><a href="part2">Large character sets</a></p>
+<p class="partname">Complex script rendering</p>
+<p class="short-toc"><a href="part4">Text direction</a></p>
+<p class="short-toc"><a href="part5">Text boundaries &amp; wrapping</a></p>
+<p class="short-toc"><a href="part6">Typographic differences</a></p>
+<p class="short-toc"><a href="part7">Sorting & case conversion</a></p>
+</nav>
+
+<section id="definitions">
+  <h2><a href="#definitions">Definitions</a></h2>
+  <div class="slide-pic"> <img src="images/complex/definitions.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Before getting into this section it is important to draw attention to the difference between characters and glyphs.</p>
+    <p>A <span class="newterm">character</span> is a semantic unit representing an indivisible unit of text in memory.</p>
+    <p>A <span class="newterm">glyph</span> is the visual representation of a character or sequence of characters.</p>
+    <p>The example on the slide shows two glyphs for a single ASCII character, and two glyphs for a single character Han character. This
+      distinction will become very important in this section. For more information about the distinction between characters and glyphs, see <a href="http://www.unicode.org/reports/tr17/">Unicode Technical Report #17</a>.</p>
+    <p>A <span class="newterm">font</span>, by the way, is a collection of glyphs. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>  
+  
+<section id="combining">
+  <h2><a href="#combining">Combining characters</a></h2>
+
+<section id="short-vowels" class="slide">
+    <h3><a href="short-vowels">Arabic &amp; Hebrew short vowels</a></h3>
+  <div class="slide-pic"> <img src="images/complex/short-vowels1.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Arabic and Hebrew scripts usually do not represent short vowel sounds. The languages are so heavily pattern based that readers can
+      adequately guess at the pronunciation of the words. </p>
+    <p>In circumstances where ambiguity appears, such as the name of the German town Mainz in the example on the slide, short vowels are
+      represented as diacritics attached to the base consonants. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"> <img src="images/complex/short-vowels.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Here, for example, the slide shows the Arabic word for engineer, pronounced ‘muhandis’.</p>
+    <p>It is actually written, ‘mhnds’.</p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"> <img src="images/complex/short-vowels3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>If needed, the short vowels (there are only 3 in Arabic) are represented as shown on the lower line of the slide. Note that the small
+      circle diacritic indicates NO intervening vowel. (Sequences of code points in Arabic and Hebrew on this and following slides will be shown in left to
+      right order, to emphasise that the underlying order is logical.) </p>
+    <p>These short vowels are separate <span class="newterm">combining characters</span> in the text stream that are displayed in the same
+      two-dimensional visual space with the base character. Combining characters do not generally appear without a base character. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="diacritic-context" class="slide">
+    <h3><a href="diacritic-context">Context-sensitive placement of diacritics</a></h3>
+  <div class="slide-pic"> <img src="images/complex/context-sensitive.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>When displaying combining characters, care has to be given to appropriate positioning. In the Thai example on the slide, the <em>same</em> character code is used to represent both the tone mark glyphs that are circled. There are not two different characters based on the desired visual
+      position. The font has to work out the best position for the glyph according to the run-time visual context. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/context-sensitive2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide provides another example of context-sensitive positioning of combining characters.</p>
+    <p>The short vowel ‘i’ in Arabic is usually drawn below the base character. This is normally the only way of distinguishing it from the short
+      vowel ‘a’, which is displayed above the base character.</p>
+    <p>In this example, however, an additional <span class="newterm">shadda</span> diacritic is introduced. The shadda is used to lengthen the
+      consonant it is attached to. In that context it is common (though not mandatory) for the ‘i’ vowel diacritic to appear <em>above</em> the base
+      character, but <em>below</em> the shadda so you can still tell it apart from ‘a’.</p>
+    <p>Note also that this example introduces the idea that you can have more than one combining character associated with a base character. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="vowel-signs" class="slide">
+    <h3><a href="vowel-signs">Vowel signs</a></h3>
+  <div class="slide-pic"><img src="images/complex/vowel-signs.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>In Indic scripts and scripts derived from them a consonant character carries with it an <span class="newterm">inherent vowel</span>. The
+      character on the top line on the slide is transcribed ‘ka’, not just ‘k’.</p>
+    <p>If you want to follow the ‘k’ sound with a different vowel, you append a <span class="newterm">vowel sign</span> to the consonant
+      character. This vowel sign overrides the inherent vowel with a different sound.</p>
+    <p>In Indic scripts vowel signs are all combining characters. Unlike the Arabic and Hebrew short vowels, however, some of these combining
+      characters may also take up additional space on a line (see the example ‘kii’ on the slide). They are referred to as <span class="newterm">spacing
+      combining characters</span>. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/vowel-signs2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Thai, being derived from Indic scripts, also has vowel signs, although they are used in a slightly more complex way.</p>
+    <p>In the example on this slide, three vowel signs surround the consonant <span lang="th" xml:lang="th">พ</span> to produce the desired
+      effect.</p>
+    <p>Whereas in the Indic scripts all vowel signs are combining characters, only one of the vowel signs in this example is combining. The other
+      two (indicated by arrows) are normal spacing characters. This is a distinction introduced to Unicode at the request of the Thai national standards
+      body. </p>
+    <p>This means that Thai follows a visual, rather than logical, model for positioning of some characters.</p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="predecomposed" class="slide">
+    <h3><a href="predecomposed">Precomposed vs. decomposed</a></h3>
+  <div class="slide-pic"><img src="images/complex/coding-combining3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>There are many <span class="newterm">precomposed</span> characters in Unicode that have an accent or diacritic already combined with a
+      base character (such as a-acute above). It is however also possible to represent this character using a simple ‘a’ followed by a combining acute
+      accent. This is referred to as a <span class="newterm">decomposed</span> character sequence.</p>
+    <p>The Unicode Standard states that both of these approaches must be considered <span class="newterm">canonically equivalent</span>. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="coding" class="slide">
+    <h3><a href="coding">Coding combining characters</a></h3>
+  <div class="slide-pic"><img src="images/complex/coding-combining.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>When it comes to implementing combining characters, an important question to ask is what order should be applied to them and the base
+      character. Unless you have agreement on this, you can have serious problems when passing data between systems.</p>
+    <p>The Unicode Standard requires that all combining characters <em>follow</em> the base consonant in a Unicode string. (So the example to the
+      left on the slide is correct.) </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/coding-combining2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Each combining character has a combining class property expressed as a numeric value. Combining characters that appear in the same
+      location relative to the base character when displayed will typically share the same combining class. For example acute, grave and circumflex accents
+      all appear above the base character and all share the same combining class.</p>
+    <p>Multiple combining characters do not have to be in any particular order unless they are in one of the <span class="newterm">Unicode
+      normalisation forms</span>. The standard requires that sequences of combining characters should be treated as equivalent if they all have different
+      combining classes.</p>
+    <p>Unicode normalisation, however, applies a canonical ordering to multiple combining characters.</p>
+    <p>If characters have the same combining class they are likely to interact typographically to produce different possible results, as in the
+      case above. In this case the <span class="newterm">‘inside-out’ rule</span> is applied. This rule states that the proximity of the combining character in the text stream must
+      match the visual proximity. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="normalization" class="slide">
+    <h3><a href="normalization">Normalization</a></h3>
+  <div class="slide-pic"><img src="images/complex/normalization.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>To facilitate the process of string comparison for operations such as searching, sorting and comparison it is helpful to adopt a standard
+      policy with regard to precomposed versus decomposed variants of a character sequence, and the order in which multiple combining characters appear.
+      This can be achieved by applying an appropriate <span class="newterm">normalization form</span>. The Unicode Standard provides a normalization form
+      called <span class="newterm">NFD</span> that represents all character sequences in maximally decomposed form. In addition to decomposition, NFD applies a standard order to
+      multiple composing characters attached to a base character. As an alternative, the Unicode Standard offers NFC. <span class="newterm">NFC</span> is achieved by applying NFD to
+      the text, then re-composing characters for which precomposed forms exist in version 3.0 of the standard.</p>
+    <p>Note that there are actually some precomposed forms in the Unicode character set that are <em>not</em> generated by NFC, for reasons we
+      will not go into here. In addition, where there is no precomposed form, a character sequence is left decomposed, but canonical ordering is still
+      applied to all combining characters.</p>
+    <!--<p>The World Wide Web Consortium is recommending that all Web content be stored in NFC, to assist in efficient and correct processing.</p>-->
+    <p>The Unicode Standard also offers two more normalization forms, <span class="newterm">NFKD</span> and <span class="newterm">NFKC</span>, where K stands for ‘kompatibility’. These forms are provided
+      because the Unicode character set includes many characters merely to provide round-trip compatibility with other character sets. Such characters
+      represent such things as glyph variants, shaped forms, alternative compositions, and so on, but can be represented by other ‘canonical’ versions of
+      the character or characters already in Unicode. Ideally, such compatibility variants should not be used. The NFKD and NFKC normalization forms
+      replace them with more appropriate characters or character sequences. (This, of course, can cause a problem if you intend to convert data back into
+      its original encoding, because you lose the original information.) </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+</section>
+
+
+
+<section id="context-sensitive">
+  <h2><a href="#context-sensitive">Context-sensitive glyph shaping</a></h2>
+
+<section id="word-final" class="slide">
+    <h3><a href="word-final">Word final glyph variants</a></h3>
+  <div class="slide-pic"><img src="images/complex/word-final.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>In Hebrew and Greek there are certain characters (only a small number) that look different in the middle of a word and at the end. Two
+      examples are shown on the slide. In each example, the same consonant appears in the middle of a word and at the end of a word in the sample text, and
+      has a different appearance.</p>
+    <p>Due to traditional approaches, these shapes are encoded separately and are typed in using distinct keys on the keyboard. This is
+      manageable because there are so few such characters.</p>
+    <p>In other scripts a very different approach has to be taken. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="cursive" class="slide">
+    <h3><a href="cursive">Cursive script</a></h3>
+  <div class="slide-pic"><img src="images/complex/cursive.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Arabic is often referred to as a <span class="newterm">cursive</span> script with the meaning that letters in a word are usually joined to
+      each other – whether handwritten or printed.</p>
+    <p>The slide shows the unjoined form of the letter AIN at the top right, and, at the bottom, three joined examples of of the same letter. As
+      you can see, the shape changes quite dramatically. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/cursive2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide shows some more examples of un-joined Arabic letters (right column) and their various joining forms (to the left).</p>
+    <p>It is important to understand that there is only ONE code point here for each letter. The various different visual forms are only
+      font-based glyphs chosen to suit the run-time visual context.</p>
+    <p>(There are compatibility characters encoded in Unicode for specific joining forms, but these should not be used for storing Arabic text
+      edited in Unicode. They are only provided to allow round-trip conversions between Unicode and legacy character encodings. In Unicode normalized text
+      these are all mapped to the main Unicode Arabic block.)</p>
+    <p>The shapes on the slide can be referred to (from right to left) as <span class="newterm">independent</span>, <span
+			 class="newterm">initial</span>, <span class="newterm">medial</span> and <span class="newterm">final</span>. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="cursive-input" class="slide">
+    <h3><a href="cursive-input">Inputting cursive glyphs</a></h3>
+  <div class="slide-pic"><img src="images/complex/cursive3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>On previous slides I mentioned the ‘run-time’ context. This is quite important. If I type in the Arabic letter HEH shown at the top of the
+      slide it will initially be in an independent glyph form. If I press exactly the same key on the keyboard and insert exactly the same character
+      alongside it in memory, however, the original letter HEH will be expected to join with the second HEH. The shape of the first HEH will therefore
+      change to ‘initial’, and the second HEH will be in ‘final’ shape. Type another HEH and the second will become ‘medial’, and so on.</p>
+    <p>In this way Arabic text is constantly changing as you type. The editing application also has to adapt these glyphs as you do things such
+      as backspace, insert or delete text. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="conjuncts" class="slide">
+    <h3><a href="conjuncts">Conjunct consonants</a></h3>
+  <div class="slide-pic"><img src="images/complex/conjuncts.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>When two Indic consonants appear together without any intervening vowel sound they may form a <span class="newterm">conjunct</span>, ie.
+      the consonant cluster is rendered as a composite shape. This composite shape may show a vertical or horizontal mixture of the base shapes. In some
+      cases the original constituents of a conjunct may not be recognizable.</p>
+    <p>One approach that is very common is the use of a <span class="newterm">half-form</span> to represent the initial consonant in the cluster.
+      An example of this is shown on the bottom line of the slide.</p>
+    <p>It is important to bear in mind, once again, that this is all glyph magic. The individual consonants are all still represented using the
+      regular code points in memory, it is only the visual appearance that changes. There are no special code points for half-form glyphs. The appropriate
+      glyph is simply applied at display time according to the rendering rules of the script. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/conjuncts2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>In actual fact, there is a vital ingredient to a conjunct form that we have not yet discussed. It is called a <span
+			 class="newterm">virama</span>. The virama is often called ‘vowel killer’.</p>
+    <p>If you simply put two consonants side by side in Unicode, as in the top line on the slide, you will get two separate consonants displayed
+      (with the assumption on the part of the reader that there is an inherent vowel between them).</p>
+    <p>It is only when you put a virama character between them that they combine to form a conjunct. So the conjunct glyph shown middle right
+      actually represents three underlying characters.</p>
+    <p>The number of conjunct forms can vary from font to font. Some fonts will be capable of rendering more than others. So what happens if the
+      font you are using doesn’t have a conjunct glyph for the combination you want to create?</p>
+    <p>In this case the virama is shown visually as a combining mark – see the last line on the slide. (In fact, in modern Tamil this is the
+      default approach.) </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+</section>
+
+
+
+<section id="more-rendering">
+  <h2><a href="#more-rendering">More character to glyph rendering</a></h2>
+
+<section id="joining-forms" class="slide">
+    <h3><a href="joining-forms">Special joining forms</a></h3>
+  <div class="slide-pic"><img src="images/complex/joining.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>The concepts we have discussed so far in this section on combining characters and glyph shaping have shown that there is no one-to-one
+      correspondence, as there usually is in English, between the characters in memory and the glyphs displayed on screen. Indeed, sometimes complex rules
+      are needed to determine the displayed result.</p>
+    <p>We have seen some of the more basic transformation cases, but over the next few slides we will take a quick look at some additional
+      possibilities. This is by no means intended to give you all the information you need to implement these scripts – merely expose you to some slightly
+      more advanced behavior.</p>
+    <p>First out we look at some font-dependent alternatives for joining Arabic glyphs. Arabic glyphs typically join along the baseline, but in
+      some (typically more classical) fonts, specific pairings join above the baseline as shown in the top left example on the slide. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/joining2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>The use of half-forms in Indic scripts could also be seen as a kind of special joining form. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="positional" class="slide">
+    <h3><a href="positional">Positional variation</a></h3>
+  <div class="slide-pic"><img src="images/complex/positional.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Spacing combining characters to the left of the base consonant are common in Indic scripts. Here what is important to bear in mind is that
+      the Unicode rule about combining characters following the base character still applies. It is only as part of the rendering process that the glyph
+      for the combining character is made to appear to the left.</p>
+    <p>The example on this slide shows how the Hindi word for ‘Hindi’ would normally be displayed, but on the second line shows the order of the
+      characters in memory.</p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/positional2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>The example text from the Thai sample shown on this slide illustrates the same effect in Thai. This word is pronounced very much like
+      ‘program’, and the vowel sign at the far left is actually pronounced after the third character (ie. it is the ‘o’ sound after ‘pr’).</p>
+    <p>We have already seen, however, that vowel signs are not necessarily combining in Thai, so no reordering is actually needed in this case.
+      The characters displayed are actually stored in the same order in memory. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/positional3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide shows some additional examples of reordering during display.</p>
+    <p>The top example shows a Tamil combining character that appears on <em>both</em> sides of the base consonant when
+      displayed.</p>
+    <p>The bottom example shows the Devanagari <span class="newterm">repha</span> in a consonant cluster. The RA code that appears at the
+      beginning of the cluster in memory is rendered as a diacritic above the vowel sign that completes the syllabic cluster. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="ligatures" class="slide">
+    <h3><a href="ligatures">Ligatures</a></h3>
+  <div class="slide-pic"><img src="images/complex/ligatures.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p><span class="newterm">Ligatures</span> are very common. Essentially a ligature is a single glyph that represents more than one underlying
+      character.</p>
+    <p>The example shown here is of a mandatory ligature in Arabic. An ALEF character followed by a LAM character must always be displayed as a
+      single lam-alef glyph. Note carefully, however, that you should continue to use two characters in memory to represent this sequence: an ALEF and a LAM.</p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/ligatures2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>The top line on this next slide shows another Arabic ligature. This ligature is optional and will only be displayed if the font developers
+      included it. In other words, the number of ligatures available will generally vary with the font being used.</p>
+    <p>The second line shows that ligatures in Arabic also have joining forms when they occur alongside other characters. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/ligatures3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide shows some ligatures used to render Indic consonant clusters. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/ligatures4.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Again, the number of ligatures available in a font varies. In some fonts the lower example may simply be rendered using a visible virama. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/ligatures5.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Ligatures are not only used for combining consonants. This slide shows the effect of combining a single vowel sign with various consonants
+      in Tamil. As you can see, the combinations produced some complex and vary varied results. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="joiner-nonjoiner" class="slide">
+    <h3><a href="joiner-nonjoiner">Joiner &amp; non-joiner control characters</a></h3>
+  <div class="slide-pic"><img src="images/complex/joiners.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>We have seen how Arabic glyphs join up with each other when juxtaposed. Unicode provides some special characters, invisible to the naked
+      eye and to processing algorithms, to help control joining behaviour manually.</p>
+    <p>The <span class="newterm">zero-width non-joiner character</span> (U+200C) can be inserted between the three characters LHM to create the
+      effect on the second line. Here the three characters are not separated by spaces, but the glyphs no longer join.</p>
+    <p>The <span class="newterm">zero-width joiner character</span> (U+200D), on the other hand, has the opposite effect. The three characters on
+      the third line have spaces between them, but the joiner character is used to produce the joining forms of the glyphs. This behaviour is occasionally
+      needed for correctly rendering Arabic text. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/joiners2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Unicode allows you to force a consonant + virama sequence to display the virama where the font would otherwise have used a half-form – add
+      a zero width non-joiner immediately after the virama of the dead consonant.</p>
+    <p>Unicode allows you to force a dead consonant to assume a half-form rather than combine as part of a ligature – place a zero width joiner
+      immediately after the virama. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+<section id="graphemes" class="slide">
+    <h3><a href="graphemes">Grapheme clusters</a></h3>
+  <div class="slide-pic"><img src="images/complex/grapheme-cluster.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>What a user thinks of as a "character"—a basic unit of a writing system for a language—may not be just a single Unicode code point. Instead, that basic unit may be made up of multiple Unicode code points. This called a user-perceived character. The a-acute shown on the slide it is typically thought of as a single character by users, yet it may actually be represented by two Unicode code points.</p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/grapheme-cluster2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>These user-perceived characters are approximated by what is called a <span class="newterm">grapheme cluster</span>, which can be determined programmatically. </p>
+    <p>Unicode Standard Annex #29 says: </p>
+    <blockquote>&quot;Grapheme cluster boundaries are important for collation, regular expressions, UI interactions (such as mouse selection, arrow key movement, backspacing), segmentation for vertical text, identification of boundaries for first-letter styling, and counting “character” positions within text. Word boundaries, line boundaries, and sentence boundaries should not occur within a grapheme cluster: in other words, a grapheme cluster should be an atomic unit with respect to the process of determining these other boundaries.&quot; </blockquote>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/grapheme-cluster3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>The definition of grapheme cluster was expanded in 2008 to cover some additional combinations.  If your application stills follows the old model, it works with what are now called <span class="newterm">legacy grapheme clusters</span>. The new version (which subsumes and extends legacy grapheme clusters) is referred to as <span class="newterm">extended grapheme clusters</span>. </p>
+    <p>The current definition  of grapheme cluster incorporates accented characters and other combining characters, including spacing combining characters. It also includes some other characters.  Significantly, some of these are non-combining  characters used for Thai vowel signs. </p>
+  </div>
+</section>
+<section class="slide">
+  <div class="slide-pic"><img src="images/complex/grapheme-cluster4.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>There are still some combinations of glyphs that users may consider a single unit, but which are not currently covered by the concept of grapheme cluster.  Many Indic languages other than Tamil have syllabic groupings of glyphs that interact in a complicated way.  In the word on the slide, the first syllable would be considered two grapheme clusters, although the first (the orange one) is embedded inside the second, visually. </p>
+    <p>UAX #29 describes the notion of tailored grapheme clusters for this.  The problem being that such a combination of characters is not always rendered in way that looks like a single character.  Sometimes a virama may be used, rather than a ligature. So tailorings for conjuncts may need to be script-, language-, font-, or context-specific to be useful. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</section>
+</section>
+
+
+<nav>
+<p class="siblings-bottom"><a href="part2">&lt;&lt; Large character sets </a> &bull; <a href="#topbar">Top of page</a> &bull; <a href="part4"> Text direction &gt;&gt;</a></p>
+</nav>
+
+
+<div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-23  7:29<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<script type="text/javascript">
+createtoc();
+</script>
+</body>
+</html>

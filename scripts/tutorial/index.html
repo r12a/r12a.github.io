@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>An Introduction to Writing Systems &amp; Unicode</title>
+<meta name="description" content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>An Introduction to Writing Systems &amp; Unicode</h1>
+
+<aside class="sidebar">
+<nav>
+  <h2 class="notoc flush"><a id="tochead">On this page</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links">Related links</a></h2>
+    <p><a href="/scripts/summaries/">Script summaries</a></p>
+    <p><a href="/scripts/featurelist/">Script features by language</a></p>
+	<p><a href="/scripts/links">Script links</a></p>
+    <p><a href="/uniview/">UniView</a></p>
+	<p><a href="http://www.unicode.org">Unicode Consortium</a></p>
+  </div>
+  </nav>
+  </aside>
+
+
+<nav>
+<p class="partname">Introduction</p>
+<p class="short-toc"><a href="part2">Large character sets</a></p>
+<p class="short-toc"><a href="part3">Complex script rendering</a></p>
+<p class="short-toc"><a href="part4">Text direction</a></p>
+<p class="short-toc"><a href="part5">Text boundaries &amp; wrapping</a></p>
+<p class="short-toc"><a href="part6">Typographic differences</a></p>
+<p class="short-toc"><a href="part7">Sorting & case conversion</a></p>
+</nav>
+
+
+<section id="intro">
+  <h2><a href="#intro">About the tutorial</a></h2>
+  <section class="slide" id="audience">
+    <h3><a href="audience">Intended audience</a></h3>
+    <p>Anyone who wants to better understand how scripts work in computerised environments, and more particularly with regards to Unicode. The
+      material should be accessible for a wide audience, from software engineers to managers. </p>
+    <div class="sidenoteGroup">
+      <p>While the tutorial is perfectly accessible to beginners, it has also attracted very good reviews from people at an intermediate and
+        advanced level, due to the breadth of scripts discussed. No previous knowledge is assumed.</p>
+      <div class="sidenote"><img src="images/makingworldwide.png" title="Making the world wide web worldwide!" alt="Making the world wide web worldwide!" /></div>
+    </div>
+    <div class="slide" id="whyread">
+      <h3><a href="#whyread">Why should you read this?</a></h3>
+      <p>When planning to introduce products into new markets it is important to understand the impact of having to support different scripts. The
+        tutorial will make clear that this is not usually a trivial issue, and if you need to implement support, it may involve decisions at a very early
+        stage in the design process.</p>
+      <p>This tutorial is particularly useful for people who are new to Unicode, in that it provides an overview of the basics in the context of real world examples. </p>
+    </div>
+  </section>
+  <div class="slide" id="Slide0020">
+    <h3><a href="#Slide0020">Objectives</a></h3>
+    <div class="speaker-notes">
+      <p>This material was initially developed for delivery as a regularly-featured tutorial at Internationalization &amp; Unicode Conferences.</p>
+      <p>The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology.  It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support. </p>
+      <p>It will also  introduce many of the key terms used to describe script features or characters in the Unicode Standard. When a slide introduces a particular concept, relevant terms are shown under the slide title.</p>
+      <p>The tutorial does not provide detailed coding advice, but does provide the essential background information you need to understand the fundamental issues. It will also constitute an excellent orientation for newcomers to the topic, providing a wide-ranging framework that assists in assimilating further, more detailed and specific information. </p>
+      <p>Naturally, given the tutorial format this is an ambitious approach, and it will mean that we cannot go into great detail on any particular topic.  If you would like to understand a topic better, there are a couple of excellent resources cited at the end of the tutorial, one of which is the very readable Unicode Standard itself. </p>
+    </div>
+    
+  </div>
+  <div class="slide" id="Slide0030">
+    <h3><a href="#Slide0030">Scripts addressed and conventions</a></h3>
+    <div class="speaker-notes">
+      <p>We will organize the material in the tutorial by concept, rather than by script. To help you, the script or scripts to which the concept
+        applies will always be listed at the top right of the slide.</p>
+      <p>The main scripts we will use as examples include:</p>
+      <ul>
+        <li>Greek</li>
+        <li>Cyrillic</li>
+        <li>Japanese</li>
+        <li>Han (Simplified &amp; Traditional)</li>
+        <li>Hangul</li>
+        <li>Arabic</li>
+        <li>Hebrew</li>
+        <li>Indic (represents North &amp; South Indian scripts)</li>
+        <li>Thai</li>
+      </ul>
+      <p>The tutorial covers most of the key features of each of these scripts.</p>
+      <p>An objective of the tutorial is to introduce a number of terms used to describe script features or characters. These terms are called out under the slide title on slides where they are introduced.</p>
+    </div>
+  </div>
+  <div class="slide" id="scriptsummary">
+    <h3><a href="#scriptsummary">Supporting pages</a></h3>
+    <div class="speaker-notes">
+      <p> There is a set of <a href="/rishida/scripts/samples/">web pages with sample text in each of the main scripts we will
+        address</a>. We will use these samples to illustrate as many of the points made as possible. That way you will be able to experiment with the examples yourself. </p>
+      <p>In fact, where I have taken an example from a sample page I have typically included the text of that sample on the slide to help you locate real
+        instances more easily.</p>
+      <p>In addition, there is <a href="/rishida/scripts/featurelist/">a table summarising script information for many additional scripts</a>, organized by language, which may be of interest.</p>
+      <p>Feel free to use these examples for your own material. If you would like to supply a translation of <a href="/rishida/scripts/samples/english">this English text</a> for a script I have not yet summarised, please send it to ishida@w3.org.</p>
+      <p>Finally, if you want to explore the Unicode character set there are various tools available. The one I use during the tutorial is called <a href="/rishida/uniview/">UniView</a>. It allows you to look up and see characters (using graphics or fonts) and property information, view whole character blocks or custom ranges, select characters to paste into your document, paste in and discover unknown characters, search for characters, highlight character types, etc. etc.</p>
+    </div>
+  </div>
+</section>
+<section id="sources">
+  <h2><a href="#sources">Key sources</a></h2>
+  <div class="speaker-notes">
+    <p>The top two sources provide very accessible information if you wish to delve deeper into most of the topics covered in this tutorial. </p>
+    <ul>
+      <li>The Unicode Consortium, <em><a href="http://www.unicode.org/versions/Unicode7.0.0/">The Unicode Standard</a>, Version 7.0</em>.</li>
+      <li>Richard Gillam, <em>Unicode Demystified</em>, ISBN 0-201-70052-2.</li>
+      <li>Richard Ishida, <em>Non-Latin Writing Systems, Characteristics &amp; Impact on Product Design</em>, Proceedings of the 21st
+        International Unicode Conference, May 2002.</li>
+    </ul>
+  </div>
+</section>
+
+<nav>
+<p class="siblings-bottom"><a href="#topbar">Top of page </a> &bull; <a href="part2">Large character sets &gt;&gt;</a></p>
+</nav>
+
+<div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-23  7:29<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<script type="text/javascript">
+createtoc();
+</script>
+</body>
+</html>

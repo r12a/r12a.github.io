@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>An Introduction to Writing Systems</title>
+<meta name="description"
+	  content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>An Introduction to Writing Systems &amp; Unicode</h1>
+
+<aside class="sidebar">
+<nav>
+  <h2 class="notoc flush"><a id="tochead">On this page</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links">Related links</a></h2>
+    <p><a href="/scripts/summaries/">Script summaries</a></p>
+    <p><a href="/scripts/featurelist/">Script features by language</a></p>
+	<p><a href="/scripts/links">Script links</a></p>
+    <p><a href="/uniview/">UniView</a></p>
+	<p><a href="http://www.unicode.org">Unicode Consortium</a></p>
+  </div>
+  </nav>
+  </aside>
+
+
+<nav>
+<p class="short-toc"><a href="index">Introduction</a></p>
+<p class="short-toc"><a href="part2">Large character sets</a></p>
+<p class="short-toc"><a href="part3">Complex script rendering</a></p>
+<p class="short-toc"><a href="part4">Text direction</a></p>
+<p class="short-toc"><a href="part5">Text boundaries &amp; wrapping</a></p>
+<p class="short-toc"><a href="part6">Typographic differences</a></p>
+<p class="partname">Sorting & case conversion</p>
+</nav>
+
+
+<section id="sorting">
+  <h2><a href="#sorting">Sorting</a></h2>
+
+<div id="latin" class="slide">
+    <h3><a href="#latin">Basic Latin</a></h3>
+  <div class="slide-pic"><img src="images/sorting/sorting.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Unicode based text cannot be sorted by simply comparing code point values, any more than English in ASCII given its separation of upper
+      and lower case.</p>
+    <p>A typical approach to sorting text will make several passes on the data – commonly three or four. This and following slides introduce the
+      basic concept at a high level for Latin text, as a base for discussion of non-Latin text later.</p>
+    <p>Prior to the initial collation pass, the data may need to be pre-processed, for example to resolve the underlying order of
+      abbreviations.</p>
+    <p>In the initial pass accents are typically ignored in favor of a sort based on the primary letters of the alphabet. In certain cases,
+      however, accents may be an integral part of the primary letters or other criteria may become important. The slide illustrates some examples.</p>
+    <p>In Swedish, accents create letters that are seen as independent letters of the alphabet. These letters appear after z in the sorted
+      order.</p>
+    <p>In Czech the sequence of two letters ‘ch’ is treated as a single, primary unit for sorting. Words starting with ch sort after h, not after
+      c.</p>
+    <p>In German the a-umlaut may be sorted as if it represented two primary letters ae, with no umlaut at all.</p>
+    <p>Also German provides an example of a primary sort letter than has no equivalent in upper-case. The ß and ss are treated as equivalent for
+      sorting.</p>
+    <p>Even within a single script these common differences cause the appropriate alphabetic order of letters to vary from language to language. </p>
+  </div>
+</div>
+<div id="Slide1480" class="slide">
+  <div class="slide-pic"> <img src="images/sorting/sorting2.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>In the second pass accents are typically addressed for entries that would otherwise be the same.</p>
+    <p>The preferred order of diacritics may vary from language to language, and to some extent from application to application.</p>
+    <p>The normal way to address ordering is to apply the rules for accent order from the front of the word towards the back. French, however,
+      does the opposite, resulting in the different sequence illustrated on the slide. </p>
+  </div>
+</div>
+<div class="slide">
+  <div class="slide-pic"> <img src="images/sorting/sorting3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>When accents have been dealt with, any differences in case may be addressed in a third pass. Whether upper-cased letters are sorted first
+      or second varies from application to application and platform to platform. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+<div id="arabic" class="slide">
+    <h3><a href="#arabic">Arabic</a></h3>
+  <div class="slide-pic"> <img src="images/sorting/sorting4.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>A language written with Arabic script will also need to initially ignore diacritics such as the short vowels so that the two versions of
+      the word above sort in the same place.</p>
+    <p>Note that, whereas most of the examples on the previous slides typically involve precomposed characters, here we are dealing with one
+      string that has 5 characters and another that has 9 characters. </p>
+  </div>
+</div>
+<div class="slide">
+  <div class="slide-pic"> <img src="images/sorting/sorting5.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Whereas for most languages using the Arabic script sorting follows the kinds of alphabetic principles already discussed, sorting of words
+      for the Arabic language often uses a much more complicated approach.</p>
+    <p>If you look for the word pronounced ‘maktaba’ in a dictionary you are not likely to find it in the normal phonetic ordering of entries.
+      This is because Arabic sorting makes use of the fact that Arabic words are commonly based on letter patterns or roots (usually of three letters), and
+      groups words that are based on the same pattern together. In this case the underlying pattern we need to look for is k‑t‑b. </p>
+  </div>
+</div>
+<div class="slide">
+  <div class="slide-pic"> <img src="images/sorting/sorting6.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>When we look up ‘kataba’ (to write) we will find words such as those shown on this slide as sub-entries, including the word we were
+      looking for, ‘maktab’. </p>
+  </div>
+</div>
+<div class="slide">
+  <div class="slide-pic"> <img src="images/sorting/sorting7.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide shows the meaning rather than the pronunciation of the words on the previous slide. Note how they are all related in meaning
+      because they share the same root. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+<div id="thai" class="slide">
+    <h3><a href="#thai">Thai</a></h3>
+  <div class="slide-pic"> <img src="images/sorting/sorting9.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>A sort key for Thai begins with the Thai consonants, then continues with the vowel signs. Thus all consonants without vowel signs come
+      before those with vowel signs. In addition, we have seen how there is often more than one vowel sign associated with a base consonant in Thai. Each
+      of these groups of vowel signs sorts in a unique position.</p>
+    <p>The slide illustrates an additional phenomenon. Vowel signs that are displayed before the base consonant are sorted as if they appeared
+      after it, ie. following the pronunciation. Because these vowel signs are not combining characters but just ordinary spacing characters in Thai, this
+      means that some pre-processing is typically required before sorting can begin. It also means that words beginning with a vowel sign appearing to the
+      left of its base consonant will appear in many different places in a list of words, as shown above. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+<div id="korean" class="slide">
+    <h3><a href="#korean">Korean</a></h3>
+  <div class="slide-pic"> <img src="images/sorting/sorting10.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Korean is very simple to sort in Unicode if you are only dealing with hangul characters, since they are all already in sorted order in the
+      character set.</p>
+    <p>Of course embedded hanja, Latin text, punctuation and the like introduce additional complexity. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+<div id="cj" class="slide">
+    <h3><a href="#cj">Chinese &amp; Japanese</a></h3>
+  <div class="slide-pic"> <img src="images/sorting/sorting11.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Chinese and Japanese can be sorted in a number of ways that use a radically different approach. These different sort methods may be
+      application dependent. For example, a bilingual dictionary, an on-line help index, a telephone book, and a kanji lookup table may all sort in
+      different ways.</p>
+    <p>The slide shows possible orderings for a number of Japanese words.</p>
+    <p>A typical sort order for a bilingual dictionary would be based on the underlying sound. The order would be based on syllabic sounds, not
+      characters, the same as the traditional ordering of kana syllables (a, i, u, e, o, ka, ki, ku, ke, ko, … ). Because most kanji characters have at
+      least two possible pronunciations, this means that words beginning with a character such as that seen in ‘mottomo’ and ‘saigo’ on the slide sort in
+      different places in the list.</p>
+    <p>A JIS sort just arranges the characters in order they appear in the JIS coded character set. Common characters in the JIS character set
+      are arranged according to one (usually Chinese-derived) possible pronunciation for that character. You just have to know which sound it is. Less
+      common characters are sorted further down the list by radical (see the next slide). This means that you need to know how common the character is to
+      know where to look for it in the list. All words starting with the same character do, however, sort together.</p>
+  </div>
+</div>
+<div class="slide">
+  <div class="slide-pic"> <img src="images/sorting/sorting12.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Radical and stroke ordered lists ignore pronunciation altogether and sort characters on the basis of their shape.</p>
+    <p>In the former case, the first sort pass uses the radical of each character to sort text according to the traditional position of that
+      radical in the historical list of 214 radicals. (The 214 radicals are grouped by number of strokes, but for radicals with the same number of strokes
+      the order just has to be known. Note that the radical for the character representing the word ‘umi’ is classed as a four-stroke radical, although
+      when the radical appears in the variant form used here the radical is drawn using only three strokes.) Characters that share the same radical are
+      sorted in a second pass on the basis of the total number of remaining strokes in the character. If the radical and the number of remaining strokes is
+      the same for more than one character, you just need to scan the list (entries that start with the same character(s) are grouped together).</p>
+    <p>Stroke-based sorting starts by ordering according to the total number of strokes in the character. Where there is a tie, the rules of the
+      radical stroke sort are applied. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+<div id="multilingual" class="slide">
+    <h3><a href="#multilingual">Multilingual text</a></h3>
+  <div class="slide-pic"> <img src="images/sorting/sorting14.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide introduces an additional issue when sorting. If you have text in a number of different scripts and/or languages, how do you
+      order them?</p>
+    <p>The Unicode Consortium has developed the <span class="newterm">Unicode Collation Algorithm (UCA)</span> to provide a default ordering for multilingual text that is
+      consistent and predictable. This algorithm addresses all the characters in the Unicode repertoire. Note, however, that this is only a default
+      ordering. Language-specific tailoring should be applied to the UCA to help users find text.</p>
+    <p>Often the most appropriate order may depend on who is reading the list. If a Kazakh is reading the list they may expect to see the
+      Cyrillic entries at the top of the list, not the bottom as shown here. Then one needs to decide how to accommodate any differences between the Kazakh
+      preference for sorting and those for the Russian shown on the slide – both use variants of the Cyrillic alphabet, but you can only sort in the way
+      required by one language at a time.</p>
+    <p>To achieve true usability, you typically have to know exactly who the user is, and what their expectation would therefore be. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+<div id="indexing" class="slide">
+    <h3><a href="#indexing">Indexing &amp; alphabetic ordering</a></h3>
+  <div class="slide-pic"> <img src="images/sorting/sorting15.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>The implications of different sort orders mean that a presentation such as that shown on the slide needs significant work during
+      localization. The alphabet at the top and the links need to be changed and the order of all elements in the index needs to be changed.</p>
+    <p>It is important to ensure that this can be accomplished as easily as possible.</p>
+    <p>Also, consider the potential cost implications of sorting, say, entries in a reference book alphabetically. The order of the material in
+      the book will need to change during translation.</p>
+    <p>Content developers should wherever possible use automation to create indices and sorted lists, but those automated tools, of course, need
+      to be able to cope with the necessary range of language- and script-specific tailorings. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+</section>
+
+
+<section id="case">
+  <h2><a href="#case">Case conversion</a></h2>
+
+<div class="slide">
+  <div class="slide-pic"> <img src="images/sorting/case.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>A distinction between upper and lower case applies to Latin, Cyrillic, Greek and Armenian scripts. (Georgian makes a distinction between
+      two variants of a character that has been compared to a case distinction, but in modern Georgian is not used.)</p>
+    <p>Like sorting, case conversion in Unicode cannot be achieved by simply adding or subtracting an offset to a code value. In different
+      Unicode blocks the arrangement of upper and lower case variants is different. Also, mappings are not always straightforward and repeatable, as shown
+      in the Turkish example on the top line of the slide.</p>
+    <p>Case conversion, like sorting, is also subject to different rules according to the language or dialect in question. The second line
+      alludes to rules for accentuation of upper case letters that differ between European French and Canadian French. In Greek, syntactic differences
+      affect the choice.</p>
+    <p>The third line shows mappings that are not one to one in German and French.</p>
+    <p>The fourth line shows an alternate mapping based on the distinction between lower case, upper case and title case in Serbian.</p>
+    <p>The Unicode database provides semantic information to assist in converting characters between upper and lower case. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+</section>
+
+
+<nav>
+<p class="siblings-bottom"><a href="part6">&lt;&lt; Typographic differences</a> &bull; <a href="#topbar">Top of  page</a></p>
+</nav>
+
+<div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-02-23  7:27<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<script type="text/javascript">
+createtoc();
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+table.inband { margin-right: 32%; }
+table.inband td { text-align: left; }
+table.inband th { text-align: left; }
+th.bytes { font-size: 20px; }
+table#sqmode td { border: 0; }
+
+
+h1 { margin-bottom: 90px;  } 
+.partname { 
+	margin-left: 7.5%; 
+	margin-right: 32%; 	
+	color: #005a9c;
+	text-align: left;
+	font-size: 200%;
+	font-weight: normal;
+	color: #005a9c; color:#C00;
+	margin-top: 15px; 
+	margin-bottom: 15px; 
+	line-height: 1.2;
+ }
+.short-toc { 
+	line-height: 1.3; 
+	margin-top: 0; 
+	margin-bottom: 0;  
+	}
+
+.short-toc +  h2 { margin-top: 100px; }
+
+
+h2 + div > h3 {
+	margin-top: 2em;
+	}
+
+
+.slide-pic { 
+	margin-left: 7.5%;
+	margin-bottom: 20px;
+	margin-top: 2em;
+	margin-right: 32%;
+	}
+.slide-pic img { 
+	width: 100%;
+	}
+div.speaker-notes {
+	/* border-bottom: 1px solid #eee; */
+}
+
+/*h3 { 
+	border: 0; 
+	font-size: 140%;
+	color: #600;
+	} */
+h2 { 
+	margin-top: 5em;
+	text-transform: none;
+	font-size: 160%;
+}
+#toc-slide ol, .slide li l{ margin: 0; padding: 0; padding-left: 3em; }
+#toc-slide ol.level1 { margin-left: 7%; font-weight: bold; font-size: 110%; }
+#toc-slide ol.level2 { font-weight: normal; font-size: 90%; }
+
+.slide-bottom { 
+	/*text-align:center; 
+	border-bottom: 1px solid #eee; 
+	border-left: 1px solid #eee; */
+	margin-top: 0; 
+	line-height: 100%; 
+	padding-top:0; 
+	
+	text-align: right;
+	font-size: 10px;
+	}
+.slide-bottom a { 
+	color: gray; 
+	border-bottom: 1px solid #eee; 
+	padding-left: 40px; 	
+	}
+.slide-bottom img { float: right;  }
+
+table.siblings {
+	margin-top: 2em;
+	margin-left: 7.5%;
+	max-width: 55%;
+	text-align: left;
+	}
+
+table.siblings td {
+	border: 0;
+	line-height: 1.2;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 90%; 
+	}
+
+table.siblings-bottom {
+	margin-left: 7.5%;
+	max-width: 80%;
+	margin-top: 3em;
+	}
+
+table.siblings-bottom td {
+	border: 0;
+	line-height: 1.2;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 100%; 
+	}
+
+p.siblings-bottom {
+	margin-top: 2em;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	text-align: left;
+	}
