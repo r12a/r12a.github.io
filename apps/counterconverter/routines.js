@@ -164,7 +164,6 @@ function produceAdditive (numList, symbolList, llimit, ulimit) {
 	// numList, str, space-separated list of numbers to convert
 	// symbolList, array, integer followed by character for each pair from high to low
 	// limit, int, upper limit of the system
-	console.log('prodAdd',numList)
 	
 	var out = ''
 	var numbers = numList.split(' ')
