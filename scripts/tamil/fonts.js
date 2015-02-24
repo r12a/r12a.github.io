@@ -1,5 +1,5 @@
  var fontSelection = '<optgroup label="Webfont">\
-        <option value="Noto Sans Tamil WF">Noto Sans Tamil</option>\
+        <option value="Noto Sans Tamil WF">Noto Sans Tamil WF</option>\
         </optgroup>\
         <optgroup label="Mac fonts">\
         <option value="InaiMathi">InaiMathi</option>\
@@ -12,7 +12,7 @@
         <option value="Vijaya">Vijaya</option>\
         </optgroup>\
         \
-        <optgroup label="Google fonts YEH">\
+        <optgroup label="Google fonts">\
         <option value="Droid Sans Tamil">Droid Sans Tamil</option>\
         <option value="Karla Tamil Inclined">Karla Tamil Inclined</option>\
         <option value="Karla Tamil Upright">Karla Tamil Upright</option>\
