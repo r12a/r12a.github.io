@@ -30,6 +30,9 @@ function convertCSS2Char ( str ) {
 function parseRule (rule, numbers) {
 	// find out which system this is
 	
+	// tidy the input
+	numbers = numbers.replace(/\s+/g,' ').trim()
+	
 	if (rule == 'ethiopic-numeric') return doEthiopicNumeric(numbers)
 	if (rule == 'simp-chinese-formal') return simpchineseformal(numbers)
 	if (rule == 'simp-chinese-informal') return simpchineseinformal(numbers)
@@ -161,9 +164,9 @@ function produceAdditive (numList, symbolList, llimit, ulimit) {
 	// numList, str, space-separated list of numbers to convert
 	// symbolList, array, integer followed by character for each pair from high to low
 	// limit, int, upper limit of the system
+	console.log('prodAdd',numList)
 	
 	var out = ''
-	numList = numList.replace(/[\s]+/g,' ').trim()
 	var numbers = numList.split(' ')
 	var ok = true
 	for (i=0;i<numbers.length;i++) if (parseInt(numbers[i]) < 0) ok = false
@@ -191,9 +194,10 @@ function displayResult (numberlist, result) {
 	// numberlist, the original, space-separated sequence of ASCII numbers input by the user
 	// result, space-separated string of numbers in native format
 	
+	numberlist = numberlist.replace(/[\s]+/g,' ').trim()
 	var numbers = numberlist.split(' ');
 	var results = result.split(' ');
-	
+
 	
 	// output the numbers horizontally with ascii originals in title attribute
 	var out = '<div id="horizresults">'
