@@ -28,25 +28,29 @@ function convertCSS2Char ( str ) {
 
 
 function parseRule (rule, numbers) {
-	// find out which system this is
+	// figures out the sytem and symbols and selects the appropriate processing algorithm
+	// returns a space-separated list of numbers
 	
 	// tidy the input
 	numbers = numbers.replace(/\s+/g,' ').trim()
 	
+	// deal with the special algorithms
 	if (rule == 'ethiopic-numeric') return doEthiopicNumeric(numbers)
 	if (rule == 'simp-chinese-formal') return simpchineseformal(numbers)
 	if (rule == 'simp-chinese-informal') return simpchineseinformal(numbers)
 	if (rule == 'trad-chinese-formal') return tradchineseformal(numbers)
 	if (rule == 'trad-chinese-informal') return tradchineseinformal(numbers)
-		
+	
+	// identify the system	
 	var ruleType = rule.match(/system:[\s]*([^\s]+)[\s]*;/)[1]
-	if (ruleType==null) { alert('System not recognised.'); return }
-	else if (debug) console.log('ruleType', ruleType)
+	if (ruleType==null) { alert('System not recognised.'); return numbers }
+	else if (ruleType != 'numeric' && ruleType != 'alphabetic' && ruleType != 'fixed' && ruleType != 'additive')  { alert('System not recognised: '+ruleType); return numbers }
 	
 	// get the symbols
-	var symbolList = rule.match(/symbols:([^;]+);/)[1]
-	if (symbolList==null) { alert('Symbols not found.'); return }
+	var symbolMatch = rule.match(/symbols:([^;]+);/)
+	if (symbolMatch==null) { alert('Symbols not found. (Check you added a semi-colon after.)'); return numbers }
 	else {
+		symbolList = symbolMatch[1]
 		symbolList = convertCSS2Char(symbolList)
 		symbolList = symbolList.replace(/'|,/g,' ').replace(/[\s]+/g,' ').trim()
 		symbolArray = symbolList.split(' ')
