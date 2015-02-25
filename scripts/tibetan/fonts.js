@@ -1,8 +1,7 @@
  var fontSelection = '<optgroup label="Webfont">\
-        <option value="Noto Serif Thai">Tibetan Machine Uni WF</option>\
+        <option value="Tibetan Machine Uni WF">Tibetan Machine Uni WF</option>\
         </optgroup>\
         \
-        <option value="0">Select...</option>\
 		<optgroup label="Mac fonts ">\
 		<option value="Kailasa">Kailasa</option>\
 		<option value="Kokonor">Kokonor</option>\
