@@ -1,5 +1,37 @@
-var _local = true;
-if (window.location.href.match('r12a.github.io')) _local = false
+function setLocalButtons () {
+	// turns on buttons for document work only if this is not the production site
+	
+	var _local = true;
+	if (window.location.href.match('r12a.github.io')) {
+		 _local = false
+		 if (document.getElementById('makeExample') != null) document.getElementById('makeExample').style.display = 'none'
+		 if (document.getElementById('makeCharLink') != null) document.getElementById('makeCharLink').style.display = 'none'
+		}
+	else {
+		 if (document.getElementById('makeExample') != null) document.getElementById('makeExample').style.display = 'inline'
+		 if (document.getElementById('makeCharLink') != null) document.getElementById('makeCharLink').style.display = 'inline'
+		}
+	}
+
+function makeExample (str, lang, dir) {
+	parts = str.split('/')
+	var out = ''
+	out += '<span class="ex" lang="'+lang+'"'
+	if (dir=='rtl') { out += ' dir="rtl"' }
+	out += '>'+parts[0]+'</span> '
+	if (parts[1]) {
+		out += '<span class="ipa">'+parts[1]+'</span> '
+		}
+	if (parts[2]) {
+		out += '<span class="trans">'+parts[2]+'</span> '
+		}
+	if (parts[3]) {
+		out += '<span class="meaning">'+parts[3]+'</span> '
+		}
+	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').textContent = out.trim()
+	}
+
 
 function makeCharacterLink (cp, block, lang, direction) { 
 	var hex = convertChar2CP(cp)

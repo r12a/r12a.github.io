@@ -526,8 +526,6 @@ function titleSort (a, b) {
 function initialise() { 
 	// _views: array, listing ids of all view divs
 	
-	//document.getElementById('output').contentEditable = 'true';
-	
 	// set up a list of all views in global _views variable
 	var viewnodes = document.getElementById('tables').childNodes;
 	var count = 0;
@@ -540,6 +538,7 @@ function initialise() {
 	//	document.getElementById('alphabet').onselectstart = function () { return false };
 	//	}
 	
+
 
 	// set ids to codepoint values of character sequence (with no leading zeros)
 	node = document.querySelectorAll( '.c' ); 
@@ -657,30 +656,9 @@ window.onload = function() {
 		if (pairs[0] == 'ccbase') { if (pairs[1]) { if (pairs[1]=='none'){pairs[1]=''}; selectCCBase(decodeURI(pairs[1])) } }
 		}
 
-
-	//document.location = "#main"
+	setLocalButtons()
 	};
 
-
-
-function makeExample (str, lang, dir) {
-	parts = str.split('/')
-	var out = ''
-	out += '<span class="ex" lang="'+lang+'"'
-	if (dir=='rtl') { out += ' dir="rtl"' }
-	out += '>'+parts[0]+'</span> '
-	if (parts[1]) {
-		out += '<span class="ipa">'+parts[1]+'</span> '
-		}
-	if (parts[2]) {
-		out += '<span class="trans">'+parts[2]+'</span> '
-		}
-	if (parts[3]) {
-		out += '<span class="meaning">'+parts[3]+'</span> '
-		}
-	document.getElementById('transcription').style.display = 'block'
-	document.getElementById('transcription').textContent = out.trim()
-	}
 
 
 function closeTranscriptionChoice () {
