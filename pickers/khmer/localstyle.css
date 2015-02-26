@@ -12,8 +12,6 @@
 	src: url('/webfonts/notosanskhmer-regularwebfont.woff'); 
 	} 
 
-#phonic { display: none; }
-#phonic2 { display: none; }
 #shape { display: none; }
 #rare { display:none; }
 #alphabet { display: block; }
@@ -21,6 +19,8 @@
 #fontgrid { display: none; }
 
 
+#kbd td.fullchar { text-align: right; }
+#kbd td.subjoinedchar { text-align: left; }
 
 
 #alphabet { 
