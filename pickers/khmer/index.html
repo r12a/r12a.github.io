@@ -37,7 +37,8 @@
     
     <button type="button" onclick="add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();" title="Remove spaces and hyphens.">condense</button>
 
-    <button type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'th','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+    <button type="button" id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'th','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+    <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'lisu','my','ltr');" title="Create an character link.">charLink</button>
 </div>
 
 
