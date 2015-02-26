@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Lisu WF';
-    src: 	local ('Noto Sans Lisu'),
-			url('/webfonts/NotoSansLisu-Regularwebfont.woff2') format('woff2'),
+    src: 	url('/webfonts/NotoSansLisu-Regularwebfont.woff2') format('woff2'),
          	url('/webfonts/NotoSansLisu-Regularwebfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
