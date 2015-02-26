@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Noto Sans Armenian WF';
+    src: url('/webfonts/NotoSansArmenian-Regularwebfont.woff2') format('woff2'),
+         url('/webfonts/NotoSansArmenian-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#alphabet { display: block; }
+#phonelist { display: none; }
+
+
+
+#alphabet td span.c { 
+	cursor: pointer; 
+	font-family: "Noto Sans Armenian WF", "Noto Sans Armenian", "Noto Serif Armenian", Sylfaen, Mshtakan, sans-serif;
+	font-size: 24px;
+	padding: 1px;
+	min-width: 18px;
+	}
+
+
+#alphabet td.hint {  
+	font-size: 14px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	}
+	
+#kbd { 	
+	margin-left: 0; 
+	}
+#kbd table {
+	margin:0;
+	}
+	
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1.2;
+	}
+#kbd #consonants {
+	margin-left: 20px; 
+	}
+
+#kbd #vowels {
+	margin-left: 20px;
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	}
+	
+#kbd #ligatures td {
+	line-height: 1.35;
+	}
+#kbd #ligatures {
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	}
+
+
+#kbd #punctuation {
+	margin-left: 20px;
+	}
+#kbd #punctuation td {
+	min-width: 30px;
+	}
+
+
+#toggleRare {
+	font-size: 12px;
+	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif;
+	}
+
+
+
+.key span { 
+	font-size: 20px; 
+	color: gray; 
+	font-weight: normal; 
+	font-family:  "Mongolian White",  "mongolian writing",sans-serif;  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	}
+.key .s { position:absolute; bottom: 10px; left: 20px; }
+.key .n { position:absolute; bottom: 10px; right: 8px;  }
+
+
+
+
+
