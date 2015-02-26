@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Noto Sans Lisu WF';
+    src: url('/webfonts/NotoSansLisu-Regularwebfont.woff2') format('woff2'),
+         url('/webfonts/NotoSansLisu-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#alphabet { display: block; }
+#keyboard { display: none; }
+
+#kbd { margin: 0; }
+#kbd table { margin: 0 10px 10px 0; border: 1px solid #ccc; border-collapse:collapse; padding: 0; border-radius: 10px; }
+#kbd td { padding: 0 5px; }
+.key { 	height: 34px; width: 56px;	}
+
+#punc1 span, #punc2 span {
+	padding: 4px; 
+	}
+
+.keyboardrow img+img {
+	margin-left: 0;
+	}
+
+
+.key span { 
+	font-size: 20px; 
+	color: #494848; 
+	font-weight: normal; 
+	font-family:  "Noto Sans Lisu WF";  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	}
+.key .s { position:absolute; bottom: 5px; left: 15px; }
+.key .n { position:absolute; bottom: 5px; right: 5px;  }
+
+

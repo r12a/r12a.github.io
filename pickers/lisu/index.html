@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Lisu character picker 17</title>
+<link rel="stylesheet" type="text/css" href="/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="/code/boilerplate.js"> </script>
+<script type="text/javascript" src="/scripts/lisu/fonts.js"> </script>
+
+<script type="text/javascript" src="defaults.js"> </script>
+<script type="text/javascript" src="/pickers/shared17/code.js"> </script>
+<script type="text/javascript" src="localcode.js"> </script>
+<script type="text/javascript" src="/pickers/shared17/local.js"> </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js"> </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js"> </script>
+<script type="text/javascript" src="/scripts/block/lisu-names-subset.js"> </script>
+<script type="text/javascript" src="/scripts/block/block-code.js"> </script>
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Lisu character picker','v17');</script>
+</header>
+
+
+
+<div id="main">
+  <button type="button" onclick="selectAll(); return false;">Select all</button>
+    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
+    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
+    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+    <button  id="makeExample" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'my','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+    <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'lisu','my','ltr');" title="Create an character link.">charLink</button>
+</div>
+
+<div id="outputDiv">
+  <textarea rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+
+
+<div id="transcriptionWrapper">
+<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
+<div id="closeTranscription" onclick="closeTranscription()">X</div>
+<div id="transcription"></div>
+</div>
+
+
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    <span id="afoff" class="off" 
+    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id=latintranscript class=transcript style="display:none;">
+	    </div> 
+
+
+<div id=mlctranscript class=transcript style="display:none;">
+</div>
+
+
+
+</div>
+
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div style="position:relative;">
+<div id=vertical-menu>
+<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
+menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = ''; _showKeyboard = ''; 
+document.getElementById('keyboard').style.display = 'none';
+ return false;">D</div>
+ 
+<div class="vmtab" onmouseover="this.textContent='Keyboard'+_showKeyboard" onmouseout="this.textContent='K'"  onclick="if (_showKeyboard) {_showKeyboard = ''; this.textContent ='Keyboard'; this.style.color='white'; document.getElementById('keyboard').style.display = 'none';} else {_showKeyboard = ' ✓'; this.textContent='Keyboard'+_showKeyboard; this.style.color='orange'; document.getElementById('keyboard').style.display = 'block';} return false;">K</div>
+
+</div>
+
+
+
+
+<div id="tables">
+ 
+ 	<div dir="ltr" id="keyboard"></div>
+
+
+<div id="alphabet" class="default">
+  <table id="kbd">
+    <tr>
+      <td><table style="float:left;">
+        <tr>
+          <td><span class="c">ꓐ</span></td>
+          <td><span class="c">ꓑ</span></td>
+          <td><span class="c">ꓒ</span></td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓖ</span></td>
+          <td><span class="c">ꓗ</span></td>
+          <td><span class="c">ꓘ</span></td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓜ</span></td>
+          <td><span class="c">ꓝ</span></td>
+          <td><span class="c">ꓞ</span></td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓢ</span></td>
+          <td><span class="c">ꓣ</span></td>
+          <td><span class="c">ꓤ</span></td>
+        </tr>
+      </table>
+      <div style="clear:both;"><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 10px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span></div>
+      </td>
+      <td><table>
+        <tr>
+          <td><span class="c">ꓓ</span></td>
+          <td><span class="c">ꓔ</span></td>
+          <td><span class="c">ꓕ</span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓙ</span></td>
+          <td><span class="c">ꓚ</span></td>
+          <td><span class="c">ꓛ</span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓟ</span></td>
+          <td><span class="c">ꓠ</span></td>
+          <td><span class="c">ꓡ</span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓥ</span></td>
+          <td><span class="c">ꓦ</span></td>
+          <td><span class="c">ꓧ</span></td>
+          <td><span class="c">ꓨ</span></td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓩ</span></td>
+          <td><span class="c">ꓪ</span></td>
+          <td><span class="c">ꓫ</span></td>
+          <td><span class="c">ꓬ</span></td>
+        </tr>
+      </table></td>
+      <td><table style="float:left;">
+        <tr>
+          <td><span class="c">ꓮ</span></td>
+          <td><span class="c">ꓯ</span></td>
+          <td><span class="c">ˍ</span></td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓰ</span></td>
+          <td><span class="c">ꓱ</span></td>
+          <td><span class="c">ʼ</span></td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓲ</span></td>
+          <td><span class="c">ꓳ</span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓴ</span></td>
+          <td><span class="c">ꓵ</span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><span class="c">ꓶ</span></td>
+          <td><span class="c">ꓷ</span></td>
+          <td><span class="c">ꓭ</span></td>
+        </tr>
+      </table></td>
+      <td><table id="punc1">
+        <tr>
+          <td><span class="c">ꓸ</span></td>
+          <td><span class="c">ꓹ</span></td>
+          <td><span class="c">ꓺ</span></td>
+          <td><span class="c">ꓻ</span></td>
+          <td><span class="c">ꓽ</span></td>
+          <td><span class="c">ꓼ</span></td>
+          </tr>
+        </table>
+        <table id="punc2">
+          <tr>
+            <td><span class="c">ꓸꓽ</span></td>
+            <td><span class="c">ꓹꓽ</span></td>
+            <td><span class="c">ꓺꓽ</span></td>
+            <td><span class="c">ꓻꓽ</span></td>
+            </tr>
+          <tr>
+            <td><span class="c">ꓸꓼ</span></td>
+            <td><span class="c">ꓹꓼ</span></td>
+            <td><span class="c">ꓺꓼ</span></td>
+            <td><span class="c">ꓻꓼ</span></td>
+            </tr>
+          </table>
+        <table>
+          <tr>
+            <td><span class="c">-</span></td>
+            <td><span class="c">꓾</span></td>
+            <td><span class="c">꓿</span></td>
+            <td><span class="c">《</span></td>
+            <td><span class="c">》</span></td>
+            <td><span class="c">…</span></td>
+            </tr>
+        </table></td>
+      </tr>
+  </table>
+
+</div>
+
+
+
+ <div id=shapelist style="display:none">
+ <div>
+<img alt="shape1" src="images/shape1.png" onclick="findShape('101D,1040,1011,1010,103D,1037,1036,102D,102E,1013,1005,1008','ွှ,စျ',true)" /> 
+<img alt="shape2" src="images/shape2.png" onclick="findShape('1002,1050,1000,100F,1023,1024','',true)" /> 
+<img alt="shape3" src="images/shape3.png" onclick="findShape('1004,104E,1044,100B,100C,1020,101C,103A','',true)" /> 
+<img alt="shape4" src="images/shape4.png" onclick="findShape('1041,102C,1018,101E,103F,1043,100A,1009,1025,1026,100D,104C,1029,102A,1031102C,1031102C103A','',true)" /> 
+<img alt="shape5" src="images/shape5.png" onclick="findShape('1015,101A,1003,101F,1051,1019,1017,101A103A','',true)" /> 
+<img alt="shape6" src="images/shape6.png" onclick="findShape('100E,1053,1003','',true)" /> 
+<img alt="shape7" src="images/shape7.png" onclick="findShape('1031,102A,1031102C,1031102B,1031102C103A,1031102B103A','',true)" /> 
+<img alt="shape8" src="images/shape8.png" onclick="findShape('1001,1006','',true)" /> 
+<img alt="shape9" src="images/shape9.png" onclick="findShape('1054,1055,1058,1059,1007','',true)" /> 
+<img alt="shape10" src="images/shape10.png" onclick="findShape('1016,1048,101B,104D,1045','',true)" /> 
+<img alt="shape11" src="images/shape11.png" onclick="findShape('1027,104F','',true)" /> 
+<img alt="shape12" src="images/shape12.png" onclick="findShape('1012,1021,1004103A1039','',true)" /> 
+<img alt="shape14" src="images/shape14.png" onclick="findShape('103C,1029,102A','',true)" /> 
+<img alt="shape15" src="images/shape15.png" onclick="findShape('103E,102F,1030,103B,1008','ျှ,စျ',true)" /> 
+<img alt="shape16" src="images/shape16.png" onclick="findShape('102B,1047,101B,104D,1031102B,1031102B103A','ါ်',true)" /> 
+</div>
+
+<div id="extrashapes"></div>
+
+</div>
+
+
+
+
+</div><!-- end of tables -->
+
+
+</div><!-- end of wrapper round tables and vertical menu -->
+
+
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+	    </select>
+  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
+</div>
+  <div class="control">Custom font:<br />
+    <form action="none"
+						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
+    </form>
+  </div>
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+  </div>
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'lisu'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'lisu');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+</div>
+
+
+
+<div id="extracontrols">
+  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+
+
+
+<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+
+<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">none</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+
+
+
+<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+</div>
+
+
+
+<div id="showNotes" onclick="toggleNotes()">show notes</div>
+
+<!--div id="notes">
+</div-->
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+  
+<aside class="sidebar">
+  <nav class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <!--p><a href="/scripts/lisu">Lisu script notes</a></p-->
+        <p><a href="/scripts/lisu/block">Lisu character notes</a></p>
+        <p><a href="/scripts/links?script=lisu">Lisu script links</a></p>
+        <p><a href="/uniview/?block=lisu">Lisu in UniView </a></p>
+        <p><a href="/pickers">Other pickers </a></p>
+  </nav>
+</aside>     
+
+
+<p id="status">Updated Sun 15 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=lisu" title="Show all blog posts tagged with 'lisu'">lisu</a>, <a href="http://rishida.net/blog/index.php?tag=lisu" title="Show all blog posts tagged with 'lisu'">lisu</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
+
+<p>This Unicode character picker allows you to produce or analyse runs of Lisu text using the Lisu script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+
+<p>You must have JavaScript enabled. Choose view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+    <p>To properly display the text you will need to choose a font that is loaded on your system or device, or use the  web font downloaded with the page (Noto Sans Lisu).</p>
+   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
+    <dl>
+      <dt>Mobile devices</dt>
+   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
+        
+      <dt>About the chart</dt>
+				<dd>Includes  characters in the Unicode <a href="/uniview/?block=lisu">7.0 Lisu </a> block used for writing Lisu.</dd>
+      <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
+      
+      <dt>Input options</dt>
+      <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area. </dd>
+      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section.</dd>
+		<dd> Characters are arranged to simplify entry, with consonants to the left, vowels to their right, and tone marks to their right.</dd>
+                
+      <dd><strong class="leadin">Keyboard</strong> Shows characters in a standard keyboard arrangement. This does not map the characters to the physical keyboard – you still have to type on-screen.</dd>
+      <dd>Many of the positions of characters are based on keyboard layouts I have seen. Those keyboards, however, tended to use some ASCII characters for punctuation, when the Unicode Standard recommends other characters (in particular, MODIFIER LETTER LOW MACRON and MODIFIER LETTER APOSTROPHE), or they omit some punctuation characters mentioned in the Unicode Standard. The current version of this keyboard, therefore adds some extra characters.</dd>
+      <dd>The layout is adequate, given that pickers assume availability of a QWERTY keyboard, however if a real standardised keyboard layout is to be made, it should involve some further changes since a number of useful ASCII characters are missing from this layout.</dd>
+           
+      <dt>Notes on other controls</dt>
+      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
+      <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
+      <dt>If something is missing</dt>
+      <dd>... <a href="mailto:r12a@w3.org?subject=[lisu picker]">let me know</a>.</dd>
+    </dl>
+</div>
+
+
+<div id="panel" style="display:none">
+	<div id="title" class="ex" lang="my"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"></p>
+</div>
+
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+
+</body>
+</html>
