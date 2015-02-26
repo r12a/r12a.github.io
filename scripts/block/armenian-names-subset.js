@@ -98,6 +98,9 @@ var charData = {
 "\u007D":{n:"RIGHT CURLY BRACKET",m:0,g:"Basic Latin"},
 "\u007E":{n:"TILDE",m:0,g:"Basic Latin"},
 
+"\u00AB":{n:"LEFT-POINTING DOUBLE ANGLE QUOTATION MARK",m:0,g:"Latin-1 Supplement"},
+"\u00BB":{n:"RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK",m:0,g:"Latin-1 Supplement"},
+
 "\u0531":{n:"ARMENIAN CAPITAL LETTER AYB",m:0,g:"Armenian"},
 "\u0532":{n:"ARMENIAN CAPITAL LETTER BEN",m:0,g:"Armenian"},
 "\u0533":{n:"ARMENIAN CAPITAL LETTER GIM",m:0,g:"Armenian"},
@@ -187,6 +190,12 @@ var charData = {
 "\u058D":{n:"RIGHT-FACING ARMENIAN ETERNITY SIGN",m:0,g:"Armenian"},
 "\u058E":{n:"LEFT-FACING ARMENIAN ETERNITY SIGN",m:0,g:"Armenian"},
 "\u058F":{n:"ARMENIAN DRAM SIGN",m:0,g:"Armenian"},
+
+"\u0574\u0576":{n:"ARMENIAN SMALL LETTER MEN, ARMENIAN SMALL LETTER NOW",m:0,g:"Armenian"},
+"\u0574\u0565":{n:"ARMENIAN SMALL LETTER MEN, ARMENIAN SMALL LETTER ECH",m:0,g:"Armenian"},
+"\u0574\u056B":{n:"ARMENIAN SMALL LETTER MEN, ARMENIAN SMALL LETTER INI",m:0,g:"Armenian"},
+"\u057E\u0576":{n:"ARMENIAN SMALL LETTER VEW, ARMENIAN SMALL LETTER NOW",m:0,g:"Armenian"},
+"\u0574\u056D":{n:"ARMENIAN SMALL LETTER MEN, ARMENIAN SMALL LETTER XEH",m:0,g:"Armenian"},
 
 end: {}
 }
