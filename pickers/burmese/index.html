@@ -7,16 +7,17 @@
 <link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="/scripts/myanmar/fonts.js"> </script>
 
-<script src="defaults.js" type="text/javascript">  </script>
-<script src="/pickers/shared17/code.js" type="text/javascript">  </script>
-<script src="localcode.js" type="text/javascript">  </script>
-<script src="/pickers/shared17/local.js" type="text/javascript">  </script>
-<script src="/code/normalization/js/n11n.js" type="text/javascript">  </script>
-<script src="/code/normalization/js/n11ndata-lite.js" type="text/javascript">  </script>
-<script src="/scripts/block/myanmar-names-subset.js" type="text/javascript"></script>
-<script src="/scripts/block/block-code.js" type="text/javascript"></script>
-<script src="localtranscription.js" type="text/javascript">  </script>
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="/scripts/block/myanmar-names-subset.js"></script>
+<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<script type="text/javascript" src="localtranscription.js">  </script>
 </head>
 
 <body class="app">
@@ -275,9 +276,11 @@
 <div id=vertical-menu>
 <div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
 menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = '';
-document.getElementById('shapelist').style.display = 'none';
-document.getElementById('latintranscript').style.display = 'none';
+_showShapeHints = '';
+document.getElementById('shapelist').style.display = 'none'; _showShapeLookup = '';
+document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
+document.getElementById('mlctranscript').style.display = 'none'; _showISOTrans = '';
+document.getElementById('meshertranscript').style.display = 'none'; _showMesherTrans = '';
  return false;">D</div>
  
 <div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
@@ -494,9 +497,9 @@ document.getElementById('latintranscript').style.display = 'none';
 <img alt="shape16" src="images/shape16.png" onclick="findShape('102B,1047,101B,104D,1031102B,1031102B103A','ါ်',true)" /> 
 </div>
 
-<div id="extrashapes"></div>
-
 </div>
+
+<div id="extrashapes"></div>
 
 
 
@@ -511,38 +514,8 @@ document.getElementById('latintranscript').style.display = 'none';
 <div id="controls">
   <div class="control">Font list:<br />
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
-        <option value="0">Select...</option>
-        <optgroup label="Webfonts">
-        <option value="Myanmar3 WF">Myanmar3 WF</option>
-        <option value="Tharlon WF">Tharlon WF</option>
-        <option value="Noto Sans Myanmar WF">Noto Sans Myanmar WF</option>
-        </optgroup>
-        <optgroup label="Mac fonts">
-        <option value="Myanmar MN">Myanmar MN</option>
-        <option value="Myanmar Sangam MN">Myanmar Sangam MN</option>
-        </optgroup>
-        
-        <optgroup label="Windows fonts">
-        <option value="Myanmar Text">Myanmar Text</option>
-        </optgroup>
-        
-        <optgroup label="Google fonts">
-        <option value="Tharlon">Tharlon</option>
-        <option value="Noto Sans Myanmar">Noto Sans Myanmar</option>
-        <option value="Padauk">Padauk</option>
-        </optgroup>
-        
-        <optgroup label="Other fonts">
-        <option value="Myanmar3">Myanmar3</option>
-       </optgroup>
-    
-        <optgroup label="General fonts">
-        <option value="Arial Unicode MS">Arial Unicode MS</option>
-        <option value="Code2000">Code2000</option>
-        <option value="sans-serif">sans-serif</option>
-        <option value="serif">serif</option>
-        </optgroup>
 	    </select>
+  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
   </div>
   <div class="control">Custom font:<br />
     <form action="none"
@@ -620,7 +593,7 @@ document.getElementById('latintranscript').style.display = 'none';
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
         <p><a href="/scripts/myanmar">Myanmar script notes</a></p>
         <p><a href="/scripts/myanmar/block">Myanmar character notes</a></p>
-        <p><a href="/scriptlinks?script=myanmar">Myanmar script links</a></p>
+        <p><a href="/scripts/links?script=myanmar">Myanmar script links</a></p>
         <p><a href="/uniview/?block=myanmar">Myanmar in UniView </a></p>
         <p><a href="/pickers">Other pickers </a></p>
   </nav>
