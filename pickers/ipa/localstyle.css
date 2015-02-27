@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Doulos SIL WF';
+    src: url('/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
+         url('/webfonts/DoulosSIL-R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#alphabet { 
+	display: block; 
+	color: #999;
+	}
+
+span.hint { 
+	margin-right: 3px;
+	}
+
+
+#kbd { 	
+	margin-left: 0; 
+	}
+#kbd table {
+	margin:0;
+	}
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	font-size: 25px;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1.4;
+	}
+#kbd td.hint {  
+	font-size: 12px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	}
+#kbd img {
+	vertical-align: top;
+	}
+
+
+#alphabet { display: block; }
+#keyboard { display: block; }
+
+.key { 	height: 32px; width: 60px;	}
+
+#consonants { border: 1px solid  #ccc; padding-bottom: 10px;   padding-top: 8px; border-radius: 8px;  }
+#consonants td {  padding: 0;  white-space: nowrap; height: 30px; line-height: 1.1;}
+#consonants span { padding: 0 3px; }
+#vowels { margin-left: 20px; border: 1px solid #ccc; background: url(vowelgrid.gif) top left no-repeat; white-space: nowrap; border-radius: 8px;  }
+#vowels td { padding: 0px; margin: 0; border: 0; text-align: center; vertical-align: top;   padding-bottom: 10px; }
+#vowels img { padding: 0px; margin: 0; }
+#vowels div { height: 38px; }
+#vowels span { background-color: white; padding: 2px; }
+#bottomphones td { padding: 0; margin: 0; }
+#bottomphones  { margin-bottom: 10px;   line-height: 1;}
+#bottomphones .bottomrighttop span { padding: 0 3px; }
+#other2 {  line-height: 1; }
+#other2 img { padding: 0; margin: 0; }
+#tones {
+	line-height: 1;	padding-left: 5px;
+	}
+#tones td { padding-left: 5px; }
+
+#alphabet table {
+	margin:0;
+	}
+table td {
+	text-align: left;
+	}
+
+.key span { 
+	font-size: 20px; 
+	color: #494848; 
+	font-weight: normal; 
+	font-family:  "Doulos SIL WF";  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	padding: 0 2px;
+	}
+.key .s { position:absolute; bottom: 5px; left: 6px; }
+.key .n { position:absolute; bottom: 5px; right: 22px;  }
+.key .a { position:absolute; bottom: 5px; right: 5px;  }
+
+
+/*
+.key { 	float: left; border: 1px solid #aaa; padding: 2px 0 2px 0; margin: 2px; 
+	height: 35px;
+	width: 57px;
+	text-align: center;
+	
+	box-shadow: 2px 2px 5px #888; 
+	border-radius: 4px; 
+	}
+.keyboardrow {
+	white-space:nowrap;
+	clear:both;
+	}
+.keyboardrow img+img {
+	margin-left: 4px;
+	}
+*/

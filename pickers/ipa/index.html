@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>IPA character picker 17</title>
+<link rel="stylesheet" type="text/css" href="/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="/scripts/latin/ipafonts.js"> </script>
+
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="/scripts/block/ipa-names-subset.js"></script>
+<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','IPA character picker','v17');</script>
+</header>
+
+
+
+<div id="main">
+  <button type="button" onclick="selectAll(); return false;">Select all</button>
+    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
+    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
+    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'en-fonipa','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'ipa','en-fonipa','ltr');" title="Create an character link.">charLink</button>
+</div>
+
+<div id="outputDiv">
+  <textarea rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+
+
+<div id="transcriptionWrapper">
+<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
+<div id="closeTranscription" onclick="closeTranscription()">X</div>
+<div id="transcription"></div>
+</div>
+
+
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    <span id="afoff" class="off" 
+    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id=latintranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ɕ')">ɕ</span>
+<span class="t" onclick="dotrans('ð')">ð</span>
+<span class="t" onclick="dotrans('ʝ')">ʝ</span>
+<span class="t" onclick="dotrans('ɟ')">ɟ</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɴ')">ɴ</span>
+<span class="t" onclick="dotrans('ʃ')">ʃ</span>
+<span class="t" onclick="dotrans('ʨ')">ʨ</span>
+<span class="t" onclick="dotrans('ʑ')">ʑ</span>
+<span class="t" onclick="dotrans('θ')">θ</span>
+&nbsp;&nbsp;
+<span class="t" onclick="dotrans('à')">à</span>
+<span class="t" onclick="dotrans('á')">á</span>
+<span class="t" onclick="dotrans('ã')">ã</span>
+<span class="t" onclick="dotrans('ɑ')">ɑ</span>
+<span class="t" onclick="dotrans('è')">è</span>
+<span class="t" onclick="dotrans('é')">é</span>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('ɛ')">ɛ</span>
+<span class="t" onclick="dotrans('ì')">ì</span>
+<span class="t" onclick="dotrans('í')">í</span>
+<span class="t" onclick="dotrans('ɪ')">ɪ</span>
+<span class="t" onclick="dotrans('ò')">ò</span>
+<span class="t" onclick="dotrans('ó')">ó</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('ù')">ù</span>
+<span class="t" onclick="dotrans('ú')">ú</span>
+<span class="t" onclick="dotrans('ʊ')">ʊ</span>
+<span class="t" onclick="dotrans('ʔ')">ʔ</span>
+<span class="t" onclick="dotrans('ː')">ː</span>
+&nbsp;&nbsp;
+<span class="t" onclick="dotrans('ʰ')">ʰ</span>
+<span class="t" onclick="dotrans('\u0303')">&#x0303;</span>
+<span class="t" onclick="dotrans('\u0330')">&#x0330;</span>
+<span class="t" onclick="dotrans('\u0300')">ˋ</span>
+<span class="t" onclick="dotrans('\u0302')">ˆ</span>
+<span class="t" onclick="dotrans('\u0301')">ˊ</span>
+<span class="t" onclick="dotrans('\u030C')">ˇ</span>
+	    </div> 
+
+
+<div id=mlctranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ဗ')">b</span>
+<span class="t" onclick="dotrans('ဘ')">bh</span>
+<span class="t" onclick="dotrans('စ')">c</span>
+<span class="t" onclick="dotrans('ဆ')">hc</span>
+<span class="t" onclick="dotrans('ဍ,ဒ')">d</span>
+<span class="t" onclick="dotrans('ဎ,ဓ')">dh</span>
+<span class="t" onclick="dotrans('ဂ')">g</span>
+<span class="t" onclick="dotrans('ဃ')">gh</span>
+<span class="t" onclick="dotrans('ဟ')">h</span>
+<span class="t" onclick="dotrans('ဇ')">j</span>
+<span class="t" onclick="dotrans('ဈ')">jh</span>
+<span class="t" onclick="dotrans('က')">k</span>
+<span class="t" onclick="dotrans('ခ')">hk</span>
+<span class="t" onclick="dotrans('လ,ဠ')">l</span>
+<span class="t" onclick="dotrans('မ')">m</span>
+<span class="t" onclick="dotrans('ဏ,န')">n</span>
+<span class="t" onclick="dotrans('င')">ng</span>
+<span class="t" onclick="dotrans('ည')">ny</span>
+<span class="t" onclick="dotrans('ပ')">p</span>
+<span class="t" onclick="dotrans('ဖ')">hp</span>
+<span class="t" onclick="dotrans('ရ')">r</span>
+<span class="t" onclick="dotrans('သ')">s</span>
+<span class="t" onclick="dotrans('ဋ,တ')">t</span>
+<span class="t" onclick="dotrans('ဌ,ထ')">ht</span>
+<span class="t" onclick="dotrans('ဝ')">w</span>
+<span class="t" onclick="dotrans('ယ')">y</span>
+<span class="t" onclick="dotrans('အ')">a</span>
+<span class="t" style="border-radius:7px; border: solid #ccc 1px; font-size: 80%;padding:0 2px;" onclick="dotrans('\u103A')">asat</span>
+<span class="t" style="border-radius:7px; border: solid #ccc 1px; font-size: 80%;padding:0 2px;" onclick="dotrans('\u1039')">virama</span>
+<br/>
+<span class="t" onclick="dotrans('ဗ္ဗ')">bb</span>
+<span class="t" onclick="dotrans('ဗ္ဘ')">bbh</span>
+<span class="t" onclick="dotrans('စ္စ')">cc</span>
+<span class="t" onclick="dotrans('စ္ဆ')">chc</span>
+<span class="t" onclick="dotrans('ဒ္ဒ,ဍ္ဍ')">dd</span>
+<span class="t" onclick="dotrans('ဍ္ဎ')">ddh</span>
+<span class="t" onclick="dotrans('ဂ္ဂ')">gg</span>
+<span class="t" onclick="dotrans('ဂ္ဃ')">ggh</span>
+<span class="t" onclick="dotrans('ထ္ထ')">htht</span>
+<span class="t" onclick="dotrans('ဇ္ဇ')">jj</span>
+<span class="t" onclick="dotrans('ဇ္ဈ')">jjh</span>
+<span class="t" onclick="dotrans('က္ခ')">khk</span>
+<span class="t" onclick="dotrans('က္က')">kk</span>
+<span class="t" onclick="dotrans('လ္လ')">ll</span>
+<span class="t" onclick="dotrans('မ္ဗ')">mb</span>
+<span class="t" onclick="dotrans('မ္ဘ')">mbh</span>
+<span class="t" onclick="dotrans('မ္မ')">mm</span>
+<span class="t" onclick="dotrans('မ္ပ')">mp</span>
+<span class="t" onclick="dotrans('န္ဒ,ဏ္ဍ')">nd</span>
+<span class="t" onclick="dotrans('န္ဓ')">ndh</span>
+<span class="t" onclick="dotrans('င်္ဂ')">ng g</span>
+<span class="t" onclick="dotrans('န္ထ')">nht</span>
+<span class="t" onclick="dotrans('န္န')">nn</span>
+<span class="t" onclick="dotrans('န္တ')">nt</span>
+<span class="t" onclick="dotrans('ဉ္စ')">nyc</span>
+<span class="t" onclick="dotrans('ဉ္ဇ')">nyj</span>
+<span class="t" onclick="dotrans('ပ္ပ')">pp</span>
+<span class="t" onclick="dotrans('ဿ')">ss</span>
+<span class="t" onclick="dotrans('ဋ္ဌ')">tht</span>
+<span class="t" onclick="dotrans('တ္တ,ဋ္ဋ')">tt</span>
+&nbsp;&nbsp;&nbsp; medials:
+<span class="t" onclick="dotrans('ျ')">-y-</span>
+<span class="t" onclick="dotrans('ြ')">-r-</span>
+<span class="t" onclick="dotrans('ွ')">-w-</span>
+<span class="t" onclick="dotrans('ှ')">h-</span>
+<br/>
+<span class="t" onclick="dotrans('ာ')">a</span>
+<span class="t" onclick="dotrans('ား')">a:</span>
+<span class="t" onclick="dotrans('-')">a.</span>
+<span class="t" onclick="dotrans('ယ်‌')">ai</span>
+<span class="t" onclick="dotrans('ဲ')">ai:</span>
+<span class="t" onclick="dotrans('ဲ့')">ai.</span>
+<span class="t" onclick="dotrans('ော်‌')">au</span>
+<span class="t" onclick="dotrans('ော')">au:</span>
+<span class="t" onclick="dotrans('ော့')">au.</span>
+<span class="t" onclick="dotrans('ူ')">u</span>
+<span class="t" onclick="dotrans('ူး')">u:</span>
+<span class="t" onclick="dotrans('ု')">u.</span>
+<span class="t" onclick="dotrans('ို')">ui</span>
+<span class="t" onclick="dotrans('ိုး')">ui:</span>
+<span class="t" onclick="dotrans('ို့')">ui.</span>
+<span class="t" onclick="dotrans('ီ')">i</span>
+<span class="t" onclick="dotrans('ီး')">i:</span>
+<span class="t" onclick="dotrans('ိ')">i.</span>
+<span class="t" onclick="dotrans('ေ')">e</span>
+<span class="t" onclick="dotrans('ေး')">e:</span>
+<span class="t" onclick="dotrans('ေ့')">e.</span>
+</div>
+
+
+
+<div id=meshertranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ဗ,ဘ,ပ,ဖ')">b</span>
+<span class="t" onclick="dotrans('ချ,ခြ')">ch</span>
+<span class="t" onclick="dotrans('ဒ,ဓ,ဍ,ဎ,တ,ထ')">d</span>
+<span class="t" onclick="dotrans('သ')">dh</span>
+<span class="t" onclick="dotrans('ဂ,ဃ,က,ခ')">g</span>
+<span class="t" onclick="dotrans('ဟ')">h</span>
+<span class="t" onclick="dotrans('ကျ,ကြ')">j</span>
+<span class="t" onclick="dotrans('ချ,ခြ,ဂျ,ဂြ,ကျ,ကြ')">ʝ</span>
+<span class="t" onclick="dotrans('က')">k</span>
+<span class="t" onclick="dotrans('খ')">kh</span>
+<span class="t" onclick="dotrans('လ')">l</span>
+<span class="t" onclick="dotrans('မ')">m</span>
+<span class="t" onclick="dotrans('န,ဏ')">n</span>
+<span class="t" onclick="dotrans('ည,ဉ')">ny</span>
+<span class="t" onclick="dotrans('င,င်္')">ng</span>
+<span class="t" onclick="dotrans('ပ')">p</span>
+<span class="t" onclick="dotrans('ရ')">r</span>
+<span class="t" onclick="dotrans('စ')">s</span>
+<span class="t" onclick="dotrans('ရှ,လျှ')">sh</span>
+<span class="t" onclick="dotrans('တ,ဋ,ဌ')">t</span>
+<span class="t" onclick="dotrans('သ,ဿ')">th</span>
+<span class="t" onclick="dotrans('ဗ,ဗွ')">v</span>
+<span class="t" onclick="dotrans('ဝ,ွ')">w</span>
+<span class="t" onclick="dotrans('ယ,ရ,ြ,ျ')">y</span>
+<span class="t" onclick="dotrans('ဇ,စ,စျ,ဈ,ဆ')">z</span>
+<br/>
+<span class="t" onclick="dotrans('ှ')">ʰ</span>
+<span class="t" onclick="dotrans('ခ')">hk</span>
+<span class="t" onclick="dotrans('လှ')">hl</span>
+<span class="t" onclick="dotrans('မှ')">hm</span>
+<span class="t" onclick="dotrans('နှ')">hn</span>
+<span class="t" onclick="dotrans('ညှ')">hny</span>
+<span class="t" onclick="dotrans('ငှ')">hng</span>
+<span class="t" onclick="dotrans('ဖ,ဘ')">hp</span>
+<span class="t" onclick="dotrans('ဆ')">hs</span>
+<span class="t" onclick="dotrans('ထ')">ht</span>
+<span class="t" onclick="dotrans('ဝှ')">hw</span>
+<span class="t" style="border-radius:7px; border: solid #ccc 1px; font-size: 80%;padding:0 2px;" onclick="dotrans('\u103A')">asat</span>
+<span class="t" style="border-radius:7px; border: solid #ccc 1px; font-size: 80%;padding:0 2px;" onclick="dotrans('\u1039')">virama</span>
+<span class="t" onclick="dotrans('့')">့</span>
+<span class="t" onclick="dotrans('း')">း</span>
+<br/>
+<span class="t" onclick="dotrans('-,ာ,ါ,အ')">a</span>
+<span class="t" onclick="dotrans('ို')">ai</span>
+<span class="t" onclick="dotrans('ော,ေါ')">au</span>
+<span class="t" onclick="dotrans('ဲ,အ,ယ်,အည်')">e</span>
+<span class="t" onclick="dotrans('ေ,ဧ')">ei</span>
+<span class="t" onclick="dotrans('ိ')">ei-</span>
+<span class="t" onclick="dotrans('-,အ')">ə</span>
+<span class="t" onclick="dotrans('-,အ')">ɪ</span>
+<span class="t" onclick="dotrans('ိ,ီ,ဣ,ဤ')">i</span>
+<span class="t" onclick="dotrans('ို')">o</span>
+<span class="t" onclick="dotrans('ု')">o-</span>
+<span class="t" onclick="dotrans('ော,ေါ,ဩ,ဪ')">ɔ</span>
+<span class="t" onclick="dotrans('ု,ူ,ဥ,ဦ')">u</span>
+
+&nbsp;&nbsp;finals:
+<span class="t" onclick="dotrans('အ်,က်,စ်,တ်,ပ်')">-'</span>
+<span class="t" onclick="dotrans('ံ,မ်,န်,ဉ်,င်')">-n</span>
+</div>
+</div>
+
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div style="position:relative;">
+<div id=vertical-menu>
+<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
+menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = ''; _showKeyboard = ''; 
+document.getElementById('keyboard').style.display = 'none';
+ return false;">D</div>
+ 
+<div class="vmtab" onmouseover="this.textContent='Keyboard'+_showKeyboard" onmouseout="this.textContent='K'"  onclick="if (_showKeyboard) {_showKeyboard = ''; this.textContent ='Keyboard'; this.style.color='white'; document.getElementById('keyboard').style.display = 'none';} else {_showKeyboard = ' ✓'; this.textContent='Keyboard'+_showKeyboard; this.style.color='orange'; document.getElementById('keyboard').style.display = 'block';} return false;">K</div>
+
+</div>
+
+
+
+
+<div id="tables">
+  
+<div dir="ltr" id="keyboard"></div>
+
+
+<div id="alphabet" class="default">
+  <table id="kbd">
+    <tr>
+      <td><table id="consonants">
+        <tr>
+          <td><span class="c" title="Unvoiced bilabial plosive">&#x0070;</span><span class="c" title="Voiced bilabial plosive">&#x0062;</span></td>
+          <td></td>
+          <td></td>
+          <td><span class="c" title="Unvoiced dental plosive">&#x0074;</span><span class="c" title="Voiced dental plosive">&#x0064;</span></td>
+          <td></td>
+          <td><span class="c" title="Unvoiced retroflex plosive">&#x0288;</span><span class="c" title="Voiced retroflex plosive">&#x0256;</span></td>
+          <td><span class="c" title="Unvoiced palatal plosive">&#x0063;</span><span class="c" title="Voiced palatal plosive">&#x025F;</span></td>
+          <td><span class="c" title="Unvoiced velar plosive">&#x006B;</span><span class="c" title="Voiced velar plosive">&#x0261;</span></td>
+          <td><span class="c" title="Unvoiced uvular plosive">&#x0071;</span><span class="c" title="Voiced uvular plosive">&#x0262;</span></td>
+          <td></td>
+          <td><span class="c" title="Glottal plosive">&#x0294;</span></td>
+        </tr>
+        <tr>
+          <td><span class="c" title="Bilabial nasal">&#x006D;</span></td>
+          <td><span class="c" title="Labiodental nasal">&#x0271;</span></td>
+          <td></td>
+          <td><span class="c" title="Alveolar nasal">&#x006E;</span></td>
+          <td></td>
+          <td><span class="c" title="Retroflex nasal">&#x0273;</span></td>
+          <td><span class="c" title="Palatal nasal">&#x0272;</span></td>
+          <td><span class="c" title="Velar nasal">&#x014B;</span></td>
+          <td><span class="c" title="Uvular nasal">&#x0274;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="c" title="Bilabial trill">&#x0299;</span></td>
+          <td><span class="c" title="Labiodental tap or flap">&#x2C71;</span></td>
+          <td></td>
+          <td><span class="c" title="Alveolar trill">&#x0072;</span><span class="c" title="Alveolar tap or flap">&#x027E;</span></td>
+          <td></td>
+          <td><span class="c" title="Retroflex tap or flap">&#x027D;</span></td>
+          <td></td>
+          <td></td>
+          <td><span class="c" title="Uvular trill">&#x0280;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="c" title="Unvoiced bilabial fricative">&#x0278;</span><span class="c" title="Voiced bilabial fricative">&#x03B2;</span></td>
+          <td><span class="c" title="Unvoiced labiodental fricative">&#x0066;</span><span class="c" title="Voiced labiodental fricative">&#x0076;</span></td>
+          <td><span class="c" title="Unvoiced dental fricative">&#x03B8;</span><span class="c" title="Voiced dental fricative">&#x00F0;</span></td>
+          <td><span class="c" title="Unvoiced alveolar fricative">&#x0073;</span><span class="c" title="Voiced alveolar fricative">&#x007A;</span></td>
+          <td><span class="c" title="Unvoiced postalveolar fricative">&#x0283;</span><span class="c" title="Voiced postalveolar fricative">&#x0292;</span></td>
+          <td><span class="c" title="Unvoiced retroflex fricative">&#x0282;</span><span class="c" title="Voiced retroflex fricative">&#x0290;</span></td>
+          <td><span class="c" title="Unvoiced palatal fricative">&#x00E7;</span><span class="c" title="Voiced palatal fricative">&#x029D;</span></td>
+          <td><span class="c" title="Unvoiced velar fricative">&#x0078;</span><span class="c" title="Voiced velar fricative">&#x0263;</span></td>
+          <td><span class="c" title="Unvoiced uvular fricative">&#x03C7;</span><span class="c" title="Voiced uvular fricative">&#x0281;</span></td>
+          <td><span class="c" title="Unvoiced pharyngeal fricative">&#x0127;</span><span class="c" title="Voiced pharyngeal fricative">&#x0295;</span></td>
+          <td><span class="c" title="Unvoiced glottal fricative">&#x0068;</span><span class="c" title="Voiced glottal fricative">&#x0266;</span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><span class="c" title="Labiodental approximant">&#x028B;</span></td>
+          <td></td>
+          <td><span class="c" title="Alveolar approximant">&#x0279;</span></td>
+          <td></td>
+          <td><span class="c" title="Retroflex approximant">&#x027B;</span></td>
+          <td><span class="c" title="Palatal approximant">&#x006A;</span></td>
+          <td><span class="c" title="Velar approximant">&#x0270;</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>&nbsp;</td>
+          <td><span class="c" title="Unvoiced alveolar lateral fricative">&#x026C;</span><span class="c" title="Voiced alveolar lateral fricative">&#x026E;</span></td>
+          <td><span class="c" title="Alveolar lateral approximant">&#x006C;</span></td>
+          <td></td>
+          <td><span class="c" title="Retroflex lateral approximant">&#x026D;</span></td>
+          <td><span class="c" title="Palatal lateral approximant">&#x028E;</span></td>
+          <td><span class="c" title="Velar lateral approximant">&#x029F;</span><span class="c" title="Velarized voiced alveolar lateral approximant">&#x026B;</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="c" title="Unvoiced bilabial implosive">&#x01A5;</span><span class="c" title="Voiced bilabial implosive">&#x0253;</span></td>
+          <td></td>
+          <td></td>
+          <td><span class="c" title="Unvoiced alveolar implosive">&#x01AD;</span><span class="c" title="Voiced alveolar implosive">&#x0257;</span></td>
+          <td></td>
+          <td></td>
+          <td><span class="c" title="Unvoiced palatal implosive">&#x0188;</span><span class="c" title="Voiced palatal implosive">&#x0284;</span></td>
+          <td><span class="c" title="Unvoiced velar implosive">&#x0199;</span><span class="c" title="Voiced velar implosive">&#x0260;</span></td>
+          <td><span class="c" title="Unvoiced uvular implosive">&#x02A0;</span><span class="c" title="Voiced uvular implosive">&#x029B;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="c" title="Bilabial click">&#x0298;</span></td>
+          <td><span class="c" title="Dental click">&#x01C0;</span></td>
+          <td></td>
+          <td><span class="c" title="Alveolar lateral click">&#x01C1;</span></td>
+          <td><span class="c" title="(Post) alveolar click">&#x01C3;</span></td>
+          <td><span class="c" title="Palato alveolar click">&#x01C2;</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table></td>
+      <td><div id="vowels" style="width: 270px;">
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left: 2px;" title="High front vowel unrounded">i</span>
+        <span class="c" style="position:absolute; left: 30px;" title="High front vowel rounded">y</span>
+        <span class="c" style="position:absolute; left: 104px;" title="High central vowel unrounded">ɨ</span>
+        <span class="c" style="position:absolute; left: 132px;" title="High central vowel rounded">ʉ</span>
+        <span class="c" style="position:absolute; left: 198px;" title="High back vowel unrounded">ɯ</span>
+        <span class="c" style="position:absolute; left: 238px;" title="High back vowel rounded">u</span>
+        </div>
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left:  56px;" title="Semi-high front vowel unrounded">ɪ</span>
+        <span class="c" style="position:absolute; left: 80px;" title="Semi-high front vowel rounded">ʏ</span>
+        <span class="c" style="position:absolute; left:  180px;" title="Semi-high back vowel rounded">ʊ</span>
+        </div>
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left:  32px;" title="Upper mid front vowel unrounded">e</span>
+        <span class="c" style="position:absolute; left:  65px;" title="Upper mid front vowel rounded">ø</span>
+        <span class="c" style="position:absolute; left:  120px;" title="Upper-mid central unrounded vowel">ɘ</span>
+        <span class="c" style="position:absolute; left:  154px;" title="Mid central vowel rounded">ɵ</span>
+        <span class="c" style="position:absolute; left:  200px;" title="Upper mid back vowel unrounded">ɤ</span>
+        <span class="c" style="position:absolute; left:  238px;" title="Upper mid back vowel rounded">o</span>
+        </div>
+        <div style="position:relative;"> 
+        <span class="c" style="position:absolute; left: 145px;" title="Mid central vowel unrounded">ə</span>
+        </div>
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left: 70px;" title="Lower mid front vowel unrounded">ɛ</span>
+        <span class="c" style="position:absolute; left: 104px;" title="Lower mid front vowel rounded">œ</span>
+        <span class="c" style="position:absolute; left: 136px;" title="Lower-mid central unrounded vowel">ɜ</span>
+        <span class="c" style="position:absolute; left: 170px;" title="Lower-mid central rounded vowel">ɞ</span>
+        <span class="c" style="position:absolute; left: 200px;" title="Lower mid back vowel unrounded">ʌ</span>
+        <span class="c" style="position:absolute; left: 238px;" title="Lower mid back vowel rounded">ɔ</span>
+        </div>
+        <div style="position:relative;"> 
+        <span class="c" style="position:absolute; left: 82px;" title="Lower mid front vowel">æ</span>
+        <span class="c" style="position:absolute; left: 166px;" title="Lower central vowel rounded">ɐ</span>
+        </div>
+        <div style="position:relative;"> 
+        <span class="c" style="position:absolute; left: 108px;" title="Low front vowel unrounded">a</span>
+         <span class="c" style="position:absolute; left: 142px;" title="Low front vowel rounded">ɶ</span>
+         <span class="c" style="position:absolute; left: 200px;" title="Low back vowel unrounded">ɑ</span>
+         <span class="c" style="position:absolute; left: 238px;" title="Low back vowel rounded">ɒ</span>
+        </div>
+      </div>
+        <!--img title="25CC: DOTTED CIRCLE" src="images/25CC.png" alt="◌" id="dottedcircle" /--></td>
+      <td><!-- TONES -->
+        <table id="tones">
+          <tbody>
+            <tr>
+              <td><span class="c" title="Extra high tone">&#x030B;</span></td>
+              <td><span class="c" title="Extra high tone bar">&#x02E5;</span></td>
+              <td><span class="c" title="Rising contour">&#x030C;</span></td>
+              <td><span class="c" title="Rising contour">&#x02E9;&#x02E5;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="High tone">&#x0301;</span></td>
+              <td><span class="c" title="High tone bar">&#x02E6;</span></td>
+              <td><span class="c" title="Falling contour">&#x0302;</span></td>
+              <td><span class="c" title="Falling contour">&#x02E5;&#x02E9;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Mid tone">&#x0304;</span></td>
+              <td><span class="c" title="Mid tone bar">&#x02E7;</span></td>
+              <td><span class="c" title="High rising contour">&#x1DC4;</span></td>
+              <td><span class="c" title="High rising contour">&#x02E6;&#x02E5;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Low tone">&#x0300;</span></td>
+              <td><span class="c" title="Low tone bar">&#x02E8;</span></td>
+              <td><span class="c" title="Low rising contour">&#x1DC5;</span></td>
+              <td><span class="c" title="Low rising contour">&#x02E9;&#x02E8;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Extra low tone">&#x030F;</span></td>
+              <td><span class="c" title="Extra low tone bar">&#x02E9;</span></td>
+              <td><span class="c" title="Rising-falling contour">&#x1DC8;</span></td>
+              <td><span class="c" title="Rising-falling contour">&#x02E7;&#x02E6;&#x02E7;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Downstep">&#x2193;</span></td>
+              <td></td>
+              <td><span class="c" title="Global rise">&#x2197;</span></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Upstep">&#x2191;</span></td>
+              <td></td>
+              <td><span class="c" title="Global fall">&#x2198;</span></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+  </table>
+  <table id="bottomphones">
+    <tr>
+      <td><div id="other2"> <span class="c" title="Voiceless labial velar plosive">&#x028D;</span> <span class="c" title="Voiced labial velar approximant">&#x0077;</span> <span class="c" title="Voiced labial palatal approximant">&#x0265;</span> <span class="c" title="Voiceless epiglottal fricative">&#x029C;</span> <span class="c" title="Voiced epiglottal fricative">&#x02A2;</span> <span class="c" title="Epiglottal plosive">&#x02A1;</span> <span class="c" title="Voiceless alveolo-palatal fricative">&#x0255;</span> <span class="c" title="Voiced alveolo-palatal fricative">&#x0291;</span> <span class="c" title="Simultaneous unvoiced postalveolar &amp; velar fricative">&#x0267;</span> <span class="c" title="Voiced alveolar lateral flap">&#x027A;</span> <span class="c" title="Voiceless dental affricate">&#x02A6;</span> <span class="c" title="Voiced dental affricate">&#x02A3;</span> <span class="c" title="Voiceless postalveolar affricate">&#x02A7;</span> <span class="c" title="Voiced postalveolar affricate">&#x02A4;</span> <span class="c" title="Voiceless alveolo-palatal affricate">&#x02A8;</span> <span class="c" title="Voiced alveolo-palatal affricate">&#x02A5;</span> <span class="c" title="Rhoticised schwa">&#x025A;</span> <span class="c" title="Rhoticised lower mid central vowel">&#x025D;</span></div></td>
+      <td  class="bottomrighttop"><div><span class="c" style="padding-left:10px;" title="">&#x002F;</span> <span class="c" title="">&#x005B;</span> <span style="margin-right:20px;" class="c" title="">&#x005D;</span>  <span class="c" title="Long">&#x02D0;</span> <span class="c" title="Half-long">&#x02D1;</span> <span class="c" title="Extra short diacritic">&#x0306;</span> <span class="c" title="Primary stress">&#x02C8;</span> <span class="c" title="Secondary stress">&#x02CC;</span> <span class="c" title="Minor (foot) group">&#x007C;</span> <span class="c" title="Major (intonation) group">&#x2016;</span>  <span class="c" title="Syllable break">&#x002E;</span> <span class="c" title="Linking (absence of a break)">&#x203F;</span> <span class="c"  style="margin-left: 10px" title="Prosodic phrase">&#x03C6;</span> <span class="c" title="Prosodic word">&#x03C9;</span> <span class="c" title="Syllable">&#x03C3;</span> <span class="c" title="Mora">&#x03BC;</span></div></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div> <span class="c" title="Voiceless diacritic">&#x0325;</span> <span class="c" title="Voiceless diacritic">&#x030A;</span> <span class="c" title="Voiced diacritic">&#x032C;</span> <span class="c" title="Breathy voiced diacritic">&#x0324;</span> <span class="c" title="Creaky voiced diacritic">&#x0330;</span> <span class="c" title="Frictionalised diacritic">&#x0353;</span> <span class="c" title="Linguolabial diacritic">&#x033C;</span> <span class="c" title="Dental diacritic">&#x032A;</span> <span class="c" title="Apical diacritic">&#x033A;</span> <span class="c" title="Laminal diacritic">&#x033B;</span> <span class="c" title="More rounded diacritic">&#x0339;</span> <span class="c" title="Less rounded diacritic">&#x031C;</span> <span class="c" title="Advanced diacritic">&#x031F;</span> <span class="c" title="Retracted diacritic">&#x0320;</span> <span class="c" title="Centralised diacritic">&#x0308;</span> <span class="c" title="Mid-centralised diacritic">&#x033D;</span> <span class="c" title="Syllabic diacritic">&#x0329;</span> <span class="c" title="Non-syllabic diacritic">&#x032F;</span> <span class="c" title="Rhoticity diacritic">&#x02DE;</span> <span class="c" title="Derhoticised diacritic">&#x032E;</span> <span class="c" title="Retracted tongue root diacritic">&#x0319;</span> <span class="c" title="Advanced tongue root diacritic">&#x0318;</span> <span class="c" title="Lowered diacritic">&#x031E;</span> <span class="c" title="Raised diacritic">&#x031D;</span> <span class="c" title="Velarised or pharyngealised diacritic">&#x0334;</span> <span class="c" title="Nasalised diacritic">&#x0303;</span>  <span class="c" title="Alternate nasalised diacritic">&#x0328;</span> <span class="c" title="Denasalised diacritic">&#x034A;</span> <span class="c" title="Nasal emission">&#x034B;</span> <span class="c" title="No audible release diacritic">&#x031A;</span> <span class="c" title="Ejective diacritic">&#x02BC;</span> <span class="c" title="Aspirated diacritic">&#x02B0;</span> <span class="c" title="Unaspirated diacritic">&#x02ED;</span> <span class="c" title="Nasal release">&#x207F;</span> <span class="c" title="Lateral release">&#x02E1;</span> <span class="c" title="Pharyngealised diacritic">&#x02E4;</span> <span class="c" title="Velarised diacritic">&#x02E0;</span> <span class="c" title="Palatalised diacritic">&#x02B2;</span> <span class="c" title="Labialised diacritic">&#x02B7;</span>  <span class="c" title="">&#x1D4A;</span> <span class="c" title="Upper ligature tie">&#x0361;</span> <span class="c" title="Lower ligature tie">&#x035C;</span></div></td>
+    </tr>
+  </table>
+
+</div>
+
+
+
+ <div id=shapelist style="display:none">
+ <div>
+</div>
+
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+
+</div><!-- end of tables -->
+
+
+</div><!-- end of wrapper round tables and vertical menu -->
+
+
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+	    </select>
+  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
+  </div>
+  <div class="control">Custom font:<br />
+    <form action="none"
+						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
+    </form>
+  </div>
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+  </div>
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'ipa'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'ipa');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+</div>
+
+
+
+<div id="extracontrols">
+  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+
+
+
+<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+
+<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">none</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+
+
+
+<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+</div>
+
+
+
+<div id="showNotes" onclick="toggleNotes()">show notes</div>
+
+<!--div id="notes">
+</div-->
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+  
+<aside class="sidebar">
+  <nav class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <!--p><a href="/scripts/latin/block">IPA character notes</a></p-->
+        <p><a href="/scripts/links?script=latin">Latin script links</a></p>
+        <p><a href="/uniview/?block=ipa_extensions">IPA in UniView </a></p>
+        <p><a href="/pickers">Other pickers </a></p>
+  </nav>
+</aside>     
+
+
+<p id="status">Updated Thu 26 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a>, <a href="http://rishida.net/blog/index.php?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
+
+<p>This Unicode character picker allows you to produce or analyse runs of IPA text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If you prefer the older version of this picker, which uses graphics, you can find it <a href="http://rishida.net/scripts/pickers/ipa/">here</a>.
+
+<p>You must have JavaScript enabled. Choose view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+    <p>To properly display the text you will need to choose a font that is loaded on your system or device, or use one the  web font downloaded with the page (Doulos SIL).  I recommend the following fonts which are free to download: Doulos SIL, Gentium Plus, Gentium, Charis SIL.</p>
+   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
+    <dl>
+    
+      <dt>Mobile devices</dt>
+   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
+      <dt>About the chart</dt>
+		<dd>Includes all the symbols in  <a href="http://www.arts.gla.ac.uk/IPA/IPA_chart_(C)2005.pdf">the standard IPA chart.</a> The table draws together characters from several Unicode blocks.</dd>
+		<dd>I also added a number of additional diacritics and symbols requested by phoneticians using the chart.</dd>
+		<dd>NOTE: You can use phonetic terminology when searching (eg. 'affricate', 'palatal','lower', etc) in this picker, in addition to Unicode character names.</dd>
+      <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
+      
+      <dt>Input options</dt>
+      <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area. </dd>
+      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of IPA.</dd>
+				<dd>Many characters are arranged similarly to the standard IPA chart. The trill and tap or flap rows of the standard  chart have been merged to save space. The same applies to the  approximant and lateral approximant rows. Non-pulmonic symbols were also added to the last two rows of the table for the same reason.</dd>
+				<dd>Other characters are available below and to the right of the main charts.</dd>
+                
+        <dd><strong>Keyboard</strong> A subset of the characters in the default view are arranged as per the <a href="http://www.phon.ucl.ac.uk/resource/phonetics/">Unicode Phonetic Keyboard (UCL)</a> v1.01 designed by Mark Huckvale. On any given key, the left-to-right order of characters corresponds to normal, shift and altgr.</dd>
+                
+      
+      <dt>Notes on other controls</dt>
+      <dd>The <code class="button" translate="no">Split syllables</code> button adds a copy of the text to the cursor position that has been split apart at syllable boundaries. Syllables joined by subjoining consonants do not have a space inserted. As with other controls, this works on a subset of the text if it is highlighted, and replaces any highlighted text.</dd>
+      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+      
+      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      
+      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
+
+      <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
+      <dt>If something is missing</dt>
+
+      <dt>More information about IPA</dt>
+        <dd>Descriptions of the symbols <a href="http://www.answers.com/topic/list-of-consonants">http://www.answers.com/topic/list-of-consonants</a></dd>
+        <dd><a href="http://www.langsci.ucl.ac.uk/ipa/">IPA Home page</a> and <a href="http://www.langsci.ucl.ac.uk/ipa/ipachart.html">list of symbols.</a></dd>
+        <dd>Recommended (free) fonts: <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=CharisSILfont">Charis SIL</a>, <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=DoulosSILfont">Doulos SIL</a> or <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=Gentium">Gentium</a></dd>
+
+      <dd>... <a href="mailto:r12a@w3.org?subject=[ipa picker]">let me know</a>.</dd>
+    </dl>
+</div>
+
+
+<div id="panel" style="display:none">
+	<div id="title" class="ex" lang="my"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"></p>
+</div>
+
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+
+</body>
+</html>
