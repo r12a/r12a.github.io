@@ -1,5 +1,6 @@
  var fontSelection = '     <option value="0">Select...</option>\
              <optgroup label="Web font">\
+            <option value="Aksara Bali WF">Aksara Bali WF</option>\
             <option value="Noto Sans Balinese WF">Noto Sans Balinese WF</option>\
             </optgroup>\
             \
