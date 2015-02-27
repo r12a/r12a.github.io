@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Balinese character picker 17</title>
+<link rel="stylesheet" type="text/css" href="/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="/scripts/balinese/fonts.js"> </script>
+
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="/scripts/block/balinese-names-subset.js"></script>
+<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Balinese character picker','v17');</script>
+</header>
+
+
+
+
+<div id="main">
+  <button type="button" onclick="selectAll(); return false;">Select all</button>
+    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
+    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
+    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'ban','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'balinese','ban','ltr');" title="Create an character link.">charLink</button>
+</div>
+
+
+<div id="outputDiv">
+  <textarea rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+
+<div id="transcriptionWrapper">
+<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
+<div id="closeTranscription" onclick="closeTranscription()">X</div>
+<div id="transcription"></div>
+</div>
+
+
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    <span id="afoff" class="off" 
+    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id=latintranscript class=transcript style="display:none;">
+<span class="t" onclick="dotrans('ā')">ā</span>
+<span class="t" onclick="dotrans('aːi')">aːi</span>
+<span class="t" onclick="dotrans('aːu')">aːu</span>
+<span class="t" onclick="dotrans('ɑː')">ɑː</span>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('é')">é</span>
+<span class="t" onclick="dotrans('ě')">ě</span>
+<span class="t" onclick="dotrans('ɛ')">ɛ</span>
+<span class="t" onclick="dotrans('ī')">ī</span>
+<span class="t" onclick="dotrans('iː')">iː</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('ū')">ū</span>
+<span class="t" onclick="dotrans('uː')">uː</span>
+<span class="t" onclick="dotrans('ḍ')">ḍ</span>
+<span class="t" onclick="dotrans('gʰ')">gʰ</span>
+<span class="t" onclick="dotrans('kʰ')">kʰ</span>
+<span class="t" onclick="dotrans('ḷ')">ḷ</span>
+<span class="t" onclick="dotrans('ḹ')">ḹ</span>
+<span class="t" onclick="dotrans('l̩')">l̩</span>
+<span class="t" onclick="dotrans('l̩ː')">l̩ː</span>
+<span class="t" onclick="dotrans('ṇ')">ṇ</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('ṛ')">ṛ</span>
+<span class="t" onclick="dotrans('ṝ')">ṝ</span>
+<span class="t" onclick="dotrans('ɹ̩')">ɹ̩</span>
+<span class="t" onclick="dotrans('ɹ̩ː')">ɹ̩ː</span>
+<span class="t" onclick="dotrans('ṣ')">ṣ</span>
+<span class="t" onclick="dotrans('ś')">ś</span>
+<span class="t" onclick="dotrans('ṭ')">ṭ</span>
+<span class="t" onclick="dotrans('ʋ')">ʋ</span>
+    </div> 
+</div>
+
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div style="position:relative;">
+<div id=vertical-menu>
+<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
+menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+_showShapeHints = '';
+document.getElementById('shapelist').style.display = 'none'; _showShapeLookup = '';
+document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
+ return false;">D</div>
+ 
+<!--div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div-->
+
+<!--div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div-->
+
+<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
+
+</div>
+
+
+
+
+<div id="tables">
+  
+  <div id="alphabet" class="default">
+    <table id="kbd">
+      <tr>
+        <td id="indpendentvowels"><table>
+          <tr>
+            <td class="hint">a</td>
+            <td><span class="c">&#x1B05;</span></td>
+            <td><span class="c">&#x1B06;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">i</td>
+            <td><span class="c">&#x1B07;</span></td>
+            <td><span class="c">&#x1B08;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">u</td>
+            <td><span class="c">&#x1B09;</span></td>
+            <td><span class="c">&#x1B0A;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">rr</td>
+            <td><span class="c">&#x1B0B;</span></td>
+            <td><span class="c">&#x1B0C;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">ll</td>
+            <td><span class="c">&#x1B0D;</span></td>
+            <td><span class="c">&#x1B0E;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">e</td>
+            <td class="divider"><span class="c">&#x1B0F;</span></td>
+            <td class="divider"><span class="c">&#x1B10;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">o</td>
+            <td><span class="c">&#x1B11;</span></td>
+            <td><span class="c">&#x1B12;</span></td>
+          </tr>
+        </table></td>
+        <td id="adegadeg" style="vertical-align:middle;"><span class="c" style="padding: 75px 2px;">&#x1B44;</span></td>
+        <td><table id="consonants">
+          <tr>
+            <td class="hint">k</td>
+            <td><span class="c">&#x1B13;</span></td>
+            <td class="hint">kh</td>
+            <td><span class="c">&#x1B14;</span></td>
+            <td class="hint">g</td>
+            <td><span class="c">&#x1B15;</span></td>
+            <td class="hint">gh</td>
+            <td><span class="c">&#x1B16;</span></td>
+            <td class="hint">ŋ</td>
+            <td><span class="c">&#x1B17;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">c</td>
+            <td><span class="c">&#x1B18;</span></td>
+            <td class="hint">chl</td>
+            <td><span class="c">&#x1B19;</span></td>
+            <td class="hint">ʤ</td>
+            <td><span class="c">&#x1B1A;</span></td>
+            <td class="hint">ʤh</td>
+            <td><span class="c">&#x1B1B;</span></td>
+            <td class="hint">ɲ</td>
+            <td><span class="c">&#x1B1C;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">tt</td>
+            <td><span class="c">&#x1B1D;</span></td>
+            <td class="hint">tth</td>
+            <td><span class="c">&#x1B1E;</span></td>
+            <td class="hint">dd</td>
+            <td><span class="c">&#x1B1F;</span></td>
+            <td class="hint">ddh</td>
+            <td><span class="c">&#x1B20;</span></td>
+            <td class="hint">nn</td>
+            <td><span class="c">&#x1B21;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">t</td>
+            <td><span class="c">&#x1B22;</span></td>
+            <td class="hint">tt</td>
+            <td><span class="c">&#x1B23;</span></td>
+            <td class="hint">d</td>
+            <td><span class="c">&#x1B24;</span></td>
+            <td class="hint">dm</td>
+            <td><span class="c">&#x1B25;</span></td>
+            <td class="hint">n</td>
+            <td><span class="c">&#x1B26;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">p</td>
+            <td><span class="c">&#x1B27;</span></td>
+            <td class="hint">ph</td>
+            <td><span class="c">&#x1B28;</span></td>
+            <td class="hint">b</td>
+            <td><span class="c">&#x1B29;</span></td>
+            <td class="hint">bh</td>
+            <td><span class="c">&#x1B2A;</span></td>
+            <td class="hint">m</td>
+            <td><span class="c">&#x1B2B;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">y</td>
+            <td><span class="c">&#x1B2C;</span></td>
+            <td class="hint">r</td>
+            <td><span class="c">&#x1B2D;</span></td>
+            <td class="hint">l</td>
+            <td><span class="c">&#x1B2E;</span></td>
+            <td class="hint">w</td>
+            <td><span class="c">&#x1B2F;</span></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="hint">sh</td>
+            <td><span class="c">&#x1B30;</span></td>
+            <td class="hint">s</td>
+            <td><span class="c">&#x1B32;</span></td>
+            <td class="hint">ss</td>
+            <td><span class="c">&#x1B31;</span></td>
+            <td class="hint">h</td>
+            <td><span class="c">&#x1B33;</span></td>
+            <td>&nbsp;</td>
+            <td><span class="c">&#x1B34;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#x1B00;</span></td>
+            <td>&nbsp;</td>
+            <td><span class="c">&#x1B01;</span></td>
+            <td>&nbsp;</td>
+            <td><span class="c">&#x1B02;</span></td>
+            <td>&nbsp;</td>
+            <td><span class="c">&#x1B03;</span></td>
+            <td>&nbsp;</td>
+            <td><span class="c">&#x1B04;</span></td>
+          </tr>
+        </table></td>
+        <td><div id="vowelsigns">
+          <div><span class="hint">aa</span><span class="c">&#x1B35;</span> <span class="hint">i</span><span class="c">&#x1B36;</span> <span class="hint">ii</span><span class="c">&#x1B37;</span> <span class="hint">u</span><span class="c">&#x1B38;</span> <span class="hint">uu</span><span class="c">&#x1B39;</span></div>
+          <div><span class="hint">r</span><span class="c">&#x1B3A;</span> <span class="hint">rr</span><span class="c">&#x1B3B;</span> <span class="hint">-r</span><span class="c">&#x1B44;&#x1B0B;</span> <span class="hint">-rr</span><span class="c">&#x1B44;&#x1B0C;</span></div>
+          <div><span class="hint">l</span><span class="c">&#x1B3C;</span> <span class="hint">ll</span><span class="c">&#x1B3D;</span> <span class="hint">e</span><span class="c">&#x1B3E;</span> <span class="hint">ai</span><span class="c">&#x1B3F;</span></div>
+          <div><span class="hint">o</span><span class="c">&#x1B40;</span> <span class="hint">au</span><span class="c">&#x1B41;</span> <span class="hint">ə</span><span class="c">&#x1B42;</span> <span class="hint">əə</span><span class="c">&#x1B43;</span></div>
+        </div>
+          <table id="digits">
+            <tr>
+              <td><span class="hint">0</span><span class="c">&#x1B50;</span></td>
+              <td><span class="hint">1</span><span class="c">&#x1B51;</span></td>
+              <td><span class="hint">2</span><span class="c">&#x1B52;</span></td>
+              <td><span class="hint">3</span><span class="c">&#x1B53;</span></td>
+              <td><span class="hint">4</span><span class="c">&#x1B54;</span></td>
+            </tr>
+            <tr>
+              <td><span class="hint">5</span><span class="c">&#x1B55;</span></td>
+              <td><span class="hint">6</span><span class="c">&#x1B56;</span></td>
+              <td><span class="hint">7</span><span class="c">&#x1B57;</span></td>
+              <td><span class="hint">8</span><span class="c">&#x1B58;</span></td>
+              <td><span class="hint">9</span><span class="c">&#x1B59;</span></td>
+            </tr>
+          </table></td>
+        <td><table id="punctuation">
+          <tr>
+            <td><span class="c">&#x1B5A;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1B5B;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1B5C;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1B5D;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1B5E;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1B5F;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1B60;</span></td>
+          </tr>
+        </table></td>
+          </td>
+        </tr>
+      <tr>
+        <td colspan="4" id="spaceetc">
+        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span>
+    <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200B');">ZWSP</span>
+    <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span>
+    <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span>
+    <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200C');">ZWNJ</span>
+        </td>
+        <td>&nbsp;</td>
+        <td>        
+      </tr>
+        </table>
+    </td>
+      </tr>
+    </table>
+ <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide sasak characters</p>
+ <table id="rare" style="display:none;"><tbody>
+        <tr><td>
+            <span class="c">&#x1B45;</span> <span class="c">&#x1B46;</span> <span class="c">&#x1B47;</span>
+              </td>
+              <td><span class="c">&#x1B48;</span> <span class="c">&#x1B49;</span> <span class="c">&#x1B4A;</span> <span class="c">&#x1B4B;</span></td>
+          </tr>
+</tbody></table> 
+  </div>
+
+
+ <div id=shapelist style="display:none">
+ <div>
+</div>
+
+</div>
+
+<div id="extrashapes"></div>
+
+</div><!-- end of tables -->
+
+
+</div><!-- end of wrapper round tables and vertical menu -->
+
+
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+	    </select>
+  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
+  </div>
+  <div class="control">Custom font:<br />
+    <form action="none"
+						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
+    </form>
+  </div>
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+  </div>
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'balinese'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'balinese');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+</div>
+
+
+
+
+<div id="extracontrols">
+  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+
+
+
+<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+
+<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">none</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+
+
+
+<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+</div>
+
+
+
+
+
+<div id="showNotes" onclick="toggleNotes()">show notes</div>
+
+<div id="detailednotes" style="display:none">
+  <p><strong>Notes:</strong></p> 
+<aside class="sidebar">
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/balinese">Balinese script notes</a></p>
+        <p><a href="/scripts/links?script=balinese">Balinese script links</a></p>
+        <p><a href="/uniview/?block=balinese">Balinese in UniView </a></p>
+        <p><a href="/pickers/">Other pickers </a></p>
+  </div>
+</aside>     
+
+<p id="status">Updated Fri 27 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=balinese" title="Show all blog posts tagged with 'balinese'">balinese</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
+
+<p>This Unicode character picker allows you to produce or analyse runs of Burmese text using the Balinese script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+    <p>To properly display the text you will need to choose a font that is loaded on your system or device, or use the web fonts downloaded with the page (Aksara Bali WF, and Noto Sans Balinese WF). </p>
+    <p><strong>Browser support for the Askara Bali and Noto Sans Balinese fonts varies!</strong> Examples: <strong>Internet Explorer 11</strong> doesn't hide adeg-adeg in consonant clusters and doesn't correctly join vowel signs with the preceding consonant. <strong>Firefox</strong> and <strong>Chrome</strong> fail to produce the post-fixed form of ra repa in the sequence &lt;consonant, adeg-adeg, ra repa&gt;. <strong>Chrome</strong> on iOS does this correctly, however. <strong>Safari</strong> seems to work well on the Mac and iOS. </p>
+    
+    <p>The following words illustrate the issues. In Bali Aksara webfont: <span style="font-family: 'Aksara Bali WF';"><span lang="ban">ᬧᬓ᭄ᬋᬋᬄ</span>, <span lang="ban">ᬓᬺᬰ᭄ᬡ</span>, and <span lang="ban">ᬩᬸᬤ᭄ᬟ</span></span>. In Noto Sans Balinese webfont: <span style="font-family: 'Noto Sans Balinese WF';"><span lang="ban">ᬧᬓ᭄ᬋᬋᬄ</span>, <span lang="ban">ᬓᬺᬰ᭄ᬡ</span>, and <span lang="ban">ᬩᬸᬤ᭄ᬟ</span></span>.</p>
+    
+    <p>You will also find that support for combining characters varies. You can change the appearance of combining characters in the picker table using <code class="kw" translate="no">more controls > CC base</code>.  By default there is no base. For some browsers you will need to set it to the dotted circle. (You can set this in your bookmark by adding <code>?ccbase=%E2%97%8C</code> to the end of the URL.)</p>
+
+     <p>You must have JavaScript enabled. Choose a view from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+
+   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
+    <dl>
+    
+      <dt>Mobile devices</dt>
+   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
+        
+      <dt>About the chart</dt>
+      <dd>Includes  characters in the Unicode <a href="/uniview/?block=balinese">Balinese</a> block used for writing Balinese. Musical symbols are not included. Symbols used for Sasak are included in the advanced section.</dd>
+      <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
+      
+      <dt>Input options</dt>
+      <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
+
+      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Burmese.</dd>
+      <dd><em>Characters have been arranged so that is easy to input them, and especially to ensure that multiple combining characters are input in the right normalised order</em>. Independent vowels are at the far left. To their right are the consonants,  in a Brahmi articulatory arrangement. Combining marks appear below the consonants. To their right are  the vowel signs(top) and digits (bottom).  In the right half, characters on the upper lines are input before the combining characters below them. The right-most column of characters contains  punctuation.</dd>
+
+				<!--dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd-->
+                
+				<!--dd><strong class="leadin">Shape lookup</strong> This adds a row of orange pictures that represent basic shapes associated with the Myanmar characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</dd>
+				<dd>The orange shapes  typically indicate the left-most or top-most part of a character shape; characters and combinations that start with that shape are highlighted together. </dd-->
+                
+				<dd><strong class="leadin">Transcriptions</strong> There is one transcription panel available in this picker: Latin. </dd>
+				<dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+
+      <dt>Notes on other controls</dt>
+      
+      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+      
+      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      
+      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
+      
+      <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
+      
+      <dt>If something is missing</dt>
+      <dd>... <a href="mailto:rishida@w3.org">let me know</a>.</dd>
+    </dl>
+</div>
+
+
+<div id="panel" style="display:none">
+	<div id="title" class="ex" lang="km"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"></p>
+</div>
+
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+
+
+</body>
+</html>
