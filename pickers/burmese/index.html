@@ -583,8 +583,6 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
 
 <div id="showNotes" onclick="toggleNotes()">show notes</div>
 
-<!--div id="notes">
-</div-->
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
   
@@ -642,11 +640,18 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
       <dd>The <code class="button" translate="no">toIPA</code> button produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation. It will work reasonably well but it doesn't take into account sandhi (voicing of non-voiced consonants) or vowel reduction (which means that many vowels are just pronounced <span class="ipa">ə</span>).</dd>
       
       <dt>Notes on other controls</dt>
+      
       <dd>The <code class="button" translate="no">Split syllables</code> button adds a copy of the text to the cursor position that has been split apart at syllable boundaries. Syllables joined by subjoining consonants do not have a space inserted. As with other controls, this works on a subset of the text if it is highlighted, and replaces any highlighted text.</dd>
+      
       <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
+      
       <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      
       <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
-      <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
+      
+      <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
+      
+      
       <dt>If something is missing</dt>
       <dd>... <a href="mailto:r12a@w3.org?subject=[burmese picker]">let me know</a>.</dd>
     </dl>
