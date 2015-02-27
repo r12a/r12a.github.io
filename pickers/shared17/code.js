@@ -69,7 +69,6 @@ function toggleNotes () {
 
 
 var _view = 'alphabet';
-var _views = new Array; // holds the id values for each div containing a table of characters
 var _n11n = 'nfc';
 var _refocus = true;
 var _showShapeHints = ''   // indicates whether or not to show shape hinting
@@ -457,12 +456,31 @@ function makeKeyboard () {
 			normalkey.onmouseout = event_mouseoutChar
 			normalkey.onclick = event_clickOnSpanChar
 			normalkey.appendChild(document.createTextNode(chars[1]))
+			if (chars.length == 3) {
+				thirdkey = document.createElement('span')
+				thirdkey.className = 'a'
+				thirdkey.onmouseover = event_mouseoverChar
+				thirdkey.onmouseout = event_mouseoutChar
+				thirdkey.onclick = event_clickOnSpanChar
+				thirdkey.appendChild(document.createTextNode(chars[2]))
+				}
 			keynode.appendChild(shiftkey)
 			keynode.appendChild(normalkey)
+			if (chars.length == 3) {
+				keynode.appendChild(thirdkey)
+				}
 			
 			keyrownode.appendChild(keynode)
 			}
 		theKeyboard.appendChild(keyrownode)
+		}
+	// add base for combining characters
+	node = theKeyboard.querySelectorAll( '.s, .n, .a' ); 
+	for (var n = 0; n < node.length; n++ ) { 
+		prop = node[n].textContent
+		if (charData[prop] && charData[prop].m) { 
+			node[n].textContent = defaults.ccbase+node[n].textContent
+			}
 		}
 	}
 	
@@ -524,15 +542,7 @@ function titleSort (a, b) {
 
 	
 function initialise() { 
-	// _views: array, listing ids of all view divs
-	
-	// set up a list of all views in global _views variable
-	var viewnodes = document.getElementById('tables').childNodes;
-	var count = 0;
-	for (i=0; i<viewnodes.length; i++) {
-		if (viewnodes[i].nodeName == 'DIV' || viewnodes[i].nodeName == 'div') { _views[count] = viewnodes[i].id; count++; }
-		}
-		
+
 	// stop IE changing the focus when clicking on an img
 	//if (document.all && document.getElementById('alphabet')) {  
 	//	document.getElementById('alphabet').onselectstart = function () { return false };
@@ -555,38 +565,37 @@ function initialise() {
 
 	//  SET MOUSEOVERS
 	// set mouseover/mouseout functions for all imgs in all views except class:ph and class:noMouseover
-	for (i=0; i<_views.length; i++) {
-		var node = document.querySelectorAll( '.c' ); 
-		for (var j = 0; j < node.length; j++ ) { 
-			prop = node[j].textContent
-			if (charData[prop]) { // temporary while we populate the thing
-				var codepoint = ''
-				for (c=0; c<prop.length; c++) { 
-					cp = parseInt(prop.charCodeAt(c),10)
-					cp = cp.toString(16).toUpperCase()
-					while (cp.length < 4) cp = '0'+cp
-					cp = 'U+'+cp
-					if (c < prop.length-1) cp += ' '
-					codepoint += cp
-					}
-				node[j].title = codepoint+': '+charData[prop].n
-				//node[j].title = charData[prop].cp+': '+charData[prop].name
+	var node = document.querySelectorAll( '.c' ); 
+	for (var j = 0; j < node.length; j++ ) { 
+		prop = node[j].textContent
+		previoustitle = ''
+		if (node[j].title) previoustitle = node[j].title // pick up any title information available
+		if (charData[prop]) { // temporary while we populate the thing
+			var codepoint = ''
+			for (c=0; c<prop.length; c++) { 
+				cp = parseInt(prop.charCodeAt(c),10)
+				cp = cp.toString(16).toUpperCase()
+				while (cp.length < 4) cp = '0'+cp
+				cp = 'U+'+cp
+				if (c < prop.length-1) cp += ' '
+				codepoint += cp
 				}
-			else console.log('failed to find data for codepoint',prop)
-			node[j].onmouseover = event_mouseoverChar;
-			node[j].onmouseout = event_mouseoutChar;
+			node[j].title = codepoint+': '+charData[prop].n
+			//node[j].title = charData[prop].cp+': '+charData[prop].name
+			if (previoustitle) node[j].title += ', '+previoustitle
 			}
+		else console.log('failed to find data for codepoint',prop)
+		node[j].onmouseover = event_mouseoverChar;
+		node[j].onmouseout = event_mouseoutChar;
 		}
 
 	// SET ONCLICKS
-	for (i=0; i<_views.length; i++) {
-		var node = document.querySelectorAll( '.c' ); 
-		for (var j = 0; j < node.length; j++ ) { 
-			prop = node[j].textContent
-			if (charData[prop]) { // temporary while we populate the thing
-				if(! node[j].className.match(/noOnclick/)) { 
-					node[j].onclick = event_clickOnChar;
-					}
+	var node = document.querySelectorAll( '.c' ); 
+	for (var j = 0; j < node.length; j++ ) { 
+		prop = node[j].textContent
+		if (charData[prop]) { // temporary while we populate the thing
+			if(! node[j].className.match(/noOnclick/)) { 
+				node[j].onclick = event_clickOnChar;
 				}
 			}
 		}
