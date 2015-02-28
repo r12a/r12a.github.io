@@ -17,25 +17,6 @@ function openEscapeWindow () {
 	}
 
 
-function toggleExtraControlsold () {
-	var normalise = document.getElementById('normaliseControl')
-	var uifont = document.getElementById('uiFontControl')
-	//var shapehints = document.getElementById('shapehintControl')
-	var toggle = document.getElementById('showMoreControls')
-	if (normalise.style.display == 'none') { 
-		normalise.style.display = 'block'
-		uifont.style.display = 'block'
-		//shapehints.style.display = 'block'
-		toggle.textContent = '\u00A0 << hide'
-		}
-	else {  
-		normalise.style.display = 'none' 
-		uifont.style.display = 'none'
-		//shapehints.style.display = 'none'
-		toggle.textContent = 'more controls'
-		}
-	}
-
 
 function toggleExtraControls () {
 	var divs = document.getElementById('extracontrols').querySelectorAll('.control')
@@ -160,6 +141,7 @@ function setUIFont (font) {
 		chars[i].style.fontFamily = font
 		}
 	document.querySelector('#extrashapes').style.fontFamily = font;
+	document.querySelector('#transcriptionChoice').style.fontFamily = font;
 	}
 	
 function setUIFontSize (size) {
@@ -640,6 +622,7 @@ window.onload = function() {
 		document.getElementById( 'uiFont' ).value = defaults.uifont;  
 		setUIFont(defaults.uifont);
 		document.getElementById('extrashapes').style.fontFamily = defaults.uifont;
+		document.querySelector('#transcriptionChoice').style.fontFamily = defaults.uifont;
 		}
 	if (defaults.size) { 
 		document.getElementById( 'uiFontSize' ).value = defaults.uisize;  
