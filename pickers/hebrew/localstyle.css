@@ -1,0 +1,61 @@
+
+#alphabet { 
+	display: block; 
+	color: #999;
+	margin-right: 20px;
+	}
+
+
+#kbd { 	
+	margin-left: 0; 
+	}
+#kbd table {
+	margin:0;
+	}
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	font-size: 25px;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1.4;
+	}
+#kbd td.hint {  
+	font-size: 12px;
+	color: #ccc;
+	text-align: right;
+	text-align: start;
+	vertical-align: top;
+	}
+
+
+#kbd #consonants td { 
+	}
+#kbd #consonants td.hint { 
+	padding: 0; 
+	}
+#kbd #points { 
+	margin-left: 40px; 
+	margin-right: 40px; 
+	}
+#kbd #points td { 
+	padding-left: 10px; 
+	}
+
+#kbd #punctuation { 
+	margin-left: 40px; 
+	}
+
+#kbd .padding {
+	width: 10px;
+	}
+
+#rare td {
+	text-align: start;
+	line-height: 1;
+	}
+
+
+
