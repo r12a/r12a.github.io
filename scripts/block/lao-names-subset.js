@@ -168,5 +168,7 @@ var charData = {
 "\u0EDE":{n:"LAO LETTER KHMU GO",m:0,g:"Lao"},
 "\u0EDF":{n:"LAO LETTER KHMU NYO",m:0,g:"Lao"},
 
+"\u0EC6\u0EA5\u0EC6":{n:"LAO KO LA, LAO LETTER LO LOOT, LAO KO LA",m:0,g:"Lao"},
+
 end: {}
 }
