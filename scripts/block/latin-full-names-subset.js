@@ -1556,5 +1556,8 @@ var charData = {
 "\u02FE":{n:"MODIFIER LETTER OPEN SHELF",m:0,g:"Spacing Modifier Letters"},
 "\u02FF":{n:"MODIFIER LETTER LOW LEFT ARROW",m:0,g:"Spacing Modifier Letters"},
 
+"\u004E\u0047":{n:"LATIN CAPITAL LETTER N, LATIN CAPITAL LETTER G",m:0,g:"Basic Latin"},
+"\u006E\u0067":{n:"LATIN SMALL LETTER N, LATIN SMALL LETTER G",m:0,g:"Basic Latin"},
+
 end: {}
 }
