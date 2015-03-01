@@ -6,6 +6,7 @@
 <meta name="description" content="Pickers allow you to quickly create phrases in a script by clicking on Unicode characters arranged in a way that aids their identification. The phrase appears at the bottom of the screen and you can easily cut and paste the result into your own document. They're written in XHTML with a small amount of JavaScript."/>
 <link rel="stylesheet" href="../style/docs.css" type="text/css" />
 <script src="/code/boilerplate.js" type="text/javascript"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
 <body>
@@ -15,8 +16,8 @@
 </header>
 
 
-<div class="sidebar">
-  <div class="noprint">
+<aside class="sidebar">
+  <nav class="noprint">
     <h2><a id="contents" name="contents" accesskey="1">Pickers</a></h2>
     <!--p><a href="arabic-basic/">Arabic, Persian</a></p-->
     <p><a href="arabicblock/">Arabic block</a></p>
@@ -43,34 +44,29 @@
     <!--p><a href="tlicho/">Tlicho (Dogrib) </a></p-->
     <p><a href="uighur/">Uighur</a></p>
     <p><a href="http://rishida.net/scripts/pickers/urdu/">Urdu</a></p>
-    <p><a href="http://rishida.net/scripts/pickers/vietnamese/">Vietnamese</a></p>
-  </div>
-  <div class="noprint">
-    <h2><a id="note" name="note" accesskey="2">Note</a></h2>
-    <p class="notes">Please contact me (<a href="mailto:ishida@w3.org">ishida@w3.org</a>) if you feel I should add other characters or fonts, and
-      I will consider it.</p>
-    <p>For latest additions see my <a href="http://rishida.net/blog/index.php?cat=2">blog</a>.</p>
-  </div>
-  <div class="noprint">
+    <p><a href="vietnamese/">Vietnamese</a></p>
+  </nav>
+  <nav class="noprint">
     <h2><a id="links" name="links" accesskey="2">Related links</a></h2>
     <p class="notes"><a href="/scripts/tutorial/" title="A tutorial on writing systems characteristics">Writing systems
       tutorial</a></p>
     <p><a href="http://www.w3.org/International" title="Home of the Unicode Consortium.">Unicode</a></p>
     <p><a href="http://www.w3.org/International" title="The Internationalization Activity of the World Wide Web Consortium.">W3C i18n
       activity</a></p>
-  </div>
-</div>
+  </nav>
+</aside>
+
 <h1>Unicode character pickers</h1>
-<div id="navigation">
-  <p> <a>what's new:&nbsp;</a> <a href="http://rishida.net/blog/index.php?s=picker"
-				title="Search the r12a blog for 'picker'">pickers</a>&nbsp;- <a href="http://rishida.net/blog/index.php?cat=2" title="Show the utilities category of the r12a blog">apps</a>&nbsp;- <a href="http://rishida.net/blog/" title="Show the r12a blog">site</a></p>
-</div>
+
+<p id="status">Updated Sun 1 Mar 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+
 <div class="section">
-  <p><a id="contentstart" name="contentstart" accesskey="3"></a> The Unicode character pickers allow you to produce or analyse runs of  text for a language or script that uses non-Latin characters. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification and input (unlike a regular character map). </p>
+  <p>The Unicode character pickers allow you to produce or analyse runs of  text for a language or script that uses non-Latin characters. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification and input (unlike a regular character map). </p>
   <p>You can easily cut and paste the
     result into your own document. The pickers are written in HTML and JavaScript, so no need to download anything – just use any browser. </p>
-  <p>See <a href="http://rishida.net/blog/index.php?s=picker"
-				title="Search the r12a blog for 'picker'">this list of blog posts</a> for the latest developments.</p>
+    <p class="notes">Please contact me (<a href="mailto:ishida@w3.org">ishida@w3.org</a>) if you feel I should add other characters or fonts, and
+      I will consider it.</p>
+
 </div>
 <div class="section">
   <h2><a id="howto" name="howto" accesskey="4" href="#howto">How to use</a></h2>
@@ -84,12 +80,9 @@
   <p>Some pickers have additional buttons to do such things as automatically produce transcriptions, break text into syllables, transpose characters, etc.</p>
   <p>Use the controls on the yellow background to set preferences, or search for a character by name or code point value (regular expressions allowed), or enter a character by code point value (hex). You can also set preferences for Unicode normalization of the text.</p>
 </div>
-<div id="author">
-  <p>Available at: /scripts/pickers/<!-- [Translator: ___NAME, ____ORGANISATION.]--></p>
-</div>
-<div class="smallprint">
-  <p id="version">First published 2004. Last update <span id="version-info"><!-- #BeginDate format:IS1m -->2015-02-28  10:19<!-- #EndDate --></span> GMT</p>
-  <p class="copyright">Copyright © 2004-2015 Richard Ishida, All Rights Reserved.</p>
-</div>
+
+<div class="smallprint"> <span id="version">First published  2004.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-03-01  6:49<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
 </body>
 </html>
