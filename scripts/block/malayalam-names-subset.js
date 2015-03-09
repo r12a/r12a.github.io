@@ -200,5 +200,9 @@ var charData = {
 "\u0D7E":{n:"MALAYALAM LETTER CHILLU LL",m:0,g:"Malayalam"},
 "\u0D7F":{n:"MALAYALAM LETTER CHILLU K",m:0,g:"Malayalam"},
 
+"\u0D15\u0D4D\u0D37":{n:"MALAYALAM LETTER KA, MALAYALAM SIGN VIRAMA, MALAYALAM LETTER SSA",m:0,g:"Malayalam"},
+"\u0964":{n:"DEVANAGARI DANDA",m:0,g:"Devanagari" },
+"\u0965":{n:"DEVANAGARI DOUBLE DANDA",m:0,g:"Devanagari" },
+
 end: {}
 }
