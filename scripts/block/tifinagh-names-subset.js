@@ -160,6 +160,8 @@ var charData = {
 "\u2D70":{n:"TIFINAGH SEPARATOR MARK",m:0,g:"Tifinagh"},
 "\u2D7F":{n:"TIFINAGH CONSONANT JOINER",m:1,g:"Tifinagh"},
 
+"\u00AB":{n:"LEFT-POINTING DOUBLE ANGLE QUOTATION MARK",m:0,g:"Latin-1 Supplement"},
+"\u00BB":{n:"RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK",m:0,g:"Latin-1 Supplement"},
 
 end: {}
 }
