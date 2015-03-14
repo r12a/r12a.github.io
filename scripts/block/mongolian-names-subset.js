@@ -257,5 +257,10 @@ var charData = {
 "\u18A9":{n:"MONGOLIAN LETTER ALI GALI DAGALGA",m:1,g:"Mongolian"},
 "\u18AA":{n:"MONGOLIAN LETTER MANCHU ALI GALI LHA",m:0,g:"Mongolian"},
 
+"\u180E\u1820":{n:"MONGOLIAN VOWEL SEPARATOR, MONGOLIAN LETTER A",m:0,g:"Mongolian"},
+"\u180E\u1821":{n:"MONGOLIAN VOWEL SEPARATOR, MONGOLIAN LETTER E",m:0,g:"Mongolian"},
+"\u300A":{n:"LEFT DOUBLE ANGLE BRACKET",m:0,g:"CJK Symbols and Punctuation"},
+"\u300B":{n:"RIGHT DOUBLE ANGLE BRACKET",m:0,g:"CJK Symbols and Punctuation"},
+
 end: {}
 }
