@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Noto Sans Mongolian WF';
+    src: url('/webfonts/notosansmongolian-regular-webfont.woff2') format('woff2'),
+         url('/webfonts/notosansmongolian-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#alphabet { 
+	display: block; 
+	color: #999;
+	}
+
+#kbd { 	
+	margin-left: 0; 
+	}
+#kbd table {
+	margin:0;
+	}
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	font-size: 25px;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1.4;
+	min-width: 30px;
+	}
+#kbd td.hint {  
+	font-size: 14px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	}
+#kbd img {
+	vertical-align: top;
+	}
+#kbd td.hint {
+	min-width: 5px; 
+	}
+
+form#buttonform { margin: 0; padding: 0; border: 0;  line-height: normal; }
+dt { color: #FF6600; }
+
+
+/* #consonants { border: 2px dotted #005a9c; } */
+#consonants td {  padding: 0;  white-space: nowrap; }
+#kbd { margin-left: 0; }
+#alphabet { padding-left: 5px; padding-right: 5px; }
+#consonants td { margin: 0; padding: 0; padding-bottom: 3px; }
+#subscripts td { margin: 0; padding: 0;  padding-bottom: 3px;  }
+#subscripts, #consonants { border-collapse:collapse; font-family: }
+
+
+#variantshapes { 
+	width: 75px; 
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	}
+#variantshapes div img {
+	vertical-align: top;
+	}
+#variantshapes div.hint {
+	font-size: 16px;
+	color: #aaa;
+	text-align: center;
+	vertical-align: middle;
+	}
+
+#commonvowels { width: 95px; border: 1px solid #ccc; border-radius: 10px; vertical-align: middle; }
+#commonvowels img { margin-top: 2px; }
+#translitvowels { width: 55px; vertical-align: middle; }
+#translitvowels img { margin-top: 4px; }
+#kbd #punctuation { text-align: center; padding: 0 20px; vertical-align: middle; }
+#spaces { padding: 0 8px; }
+#spaces img { margin-top: 1px; }
+#consonants img { margin-top: 5px; }
+#kbd td.variantImage { text-align: center; }
+
+#numbers {
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	}
+
+#output { /* position: absolute; top:100px; right: 10px; */ 
+	padding: 8px;
+	-moz-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+	-webkit-writing-mode: vertical-lr;
+	-o-writing-mode: vertical-lr;
+	-ms-writing-mode: tb-lr;
+	writing-mode: tb-lr;
+	-webkit-text-orientation: sideways-right;
+	height: 300px; 
+	width:600px; 
+	clear:both;
+ }
+ 
+.c, .s, .n { 
+	-moz-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+	-webkit-writing-mode: vertical-lr;
+	-o-writing-mode: vertical-lr;
+	-ms-writing-mode: tb-lr;
+	writing-mode: tb-lr;
+	-webkit-text-orientation: sideways-right;
+ 	}
+ 
+
+.key span { 
+	font-size: 24px; 
+	color: gray; 
+	font-weight: normal; 
+	font-family:  "Mongolian White",  "Noto Sans Mongolian WF",  sans-serif;  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	}
+.key .s { position:absolute; bottom: 5px; left: 15px; }
+.key .n { position:absolute; bottom: 5px; right: 5px;  }
+
