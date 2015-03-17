@@ -98,7 +98,8 @@
 menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
 _showShapeHints = '';
 document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
- return false;">D</div>
+ document.getElementById('keyboard').style.display = 'none';  _showKeyboard = ''; 
+return false;">D</div>
  
 <div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
 
