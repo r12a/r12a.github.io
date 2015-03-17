@@ -1,0 +1,73 @@
+body { color: white; background-color: black; font-family: sans-serif; }
+h1 { color: #76933C; }
+#selector { float:left; margin-right: 20px; }
+ul li { list-style-type: none; margin: 0 0 5px 0; }
+ul { margin: 0 0 20px 0; padding: 0; }
+.move { font-size: 54px; color: #CCC; text-align: center; cursor: pointer; padding-top: 25px; }
+.moveEnd { font-size: 54px; color: #333; text-align: center; cursor: pointer; padding-top: 25px;  }
+td { vertical-align:top; }
+#score { font-size: 300%; color: #76933C; margin-top: 0; margin-bottom: 0; }
+#gnas { font-size: 100%; color: #76933C; margin-top: 0; margin-bottom: 0; }
+#handicap { font-size: 100%; color: #76933C; margin-top: 10px; margin-bottom: 10px; }
+
+.bar { float:left; background-color:red; margin-right: 3px; }
+#barchart { vertical-align:bottom; margin-top: 10px; margin-left: 10px; }
+#barchartresults { font-size: 80%; color: #CCC; margin-top: 2px; margin-left: 10px; }
+#barchartcell { vertical-align: bottom; }
+#classification td { width: 3.5em; text-align: left; }
+.maxclass { font-size: 80%; color: #76933C; color:red; margin-left: 2px; font-weight:bold; }
+
+
+
+#chart_div iframe { border-radius: 10px; }
+
+.scoretable { font-size: 11px; color: white; border-collapse: collapse; }
+.scoretable td { width: 26px; line-height: 1em; text-align: right; vertical-align: middle; padding-top: 3px; }
+.scoretable th { color: #a1a6a2; font-weight: normal; text-align:right; }
+td.endscore { width: 40px; text-align:center; }
+td.dozscore { width: 50px; text-align:center; }
+th.dozscore { width: 50px; text-align:center; }
+td.targettotal { background-color: #76933c; font-size: 16px; padding: 2px; text-align: center; vertical-align: bottom; line-height: 1.2em; border-radius: 5px; }
+td.subtotals { color: #76933c;  }
+.s10 { background-color: yellow; color: red; font-weight:  bold; }
+.s9 { background-color: yellow; color: #ffd300; }
+.s8 { background-color: #f80200; color: #980000; }
+.s7 { background-color: #f96500; color: #980000; }
+.s6 { background-color: #5083c5; color: #980000; }
+.s5 { background-color: #5083c5; color: #980000; }
+.s4 { background-color: black; color: white; }
+.s3 { background-color: #000000; color: #ffffff; }
+.s2 { background-color: #ffffff; color: #000000; }
+.s1 { background-color: #ffffff; color: #000000; }
+.s0 { background-color: #999; color: #999; }
+.scoreline { height: 10px; font-size: 10px; float:left; margin-top: 12px; margin-bottom: 20px; cursor:pointer; }
+#tally { height: 10px; font-size: 10px; float:left; margin-top: 12px; margin-bottom: 20px; }
+
+td.localendave { color: #999; font-size: 9px; padding-right: 5px; padding-top: 5px; vertical-align: bottom; text-align: center; color: #C30;  } 
+td.localarrowave { color: #999; font-size: 9px; padding-right: 5px; padding-top: 5px; vertical-align: bottom; text-align: right; color: #C30; text-align:left; } 
+.roundname { color: #999; font-size: 24px; }
+#roundnametitle { font-size: 36px; color: gray; }
+h1 { font-size: 36px; font-weight: normal; }
+#round1, #round2, #round3, #round4 { float: left; }
+
+#handicapinfo { font-size: 90%; color:gray;  }
+#chandicap { font-size: 180%; color: #76933C; margin-top: 15px; }
+
+#about a { color: gray; font-size: 90%; text-decoration:none; border: 1px solid #555; border-radius: 10px; padding: 3px 5px; }
+#about a:active { color: gray; }
+#about a:visited { color: gray; }
+#about a:hover { color: #76933c; border: 1px solid #76933c; }
+
+.scoretable .runningtotal { padding: 3px 6px 0 10px; color:gray; text-align: left; vertical-align: middle; }
+
+#ranking { padding: 10px; background-color:black; }
+#ranking td { padding: 2px 5px; }
+
+.topscorelink { cursor: pointer; }
+.mbclass { color: green; cursor:pointer; }
+.bclass { color: yellow; cursor:pointer; }
+.firstclass { color: red; cursor:pointer; }
+.secondclass { color: #00b1ec; cursor:pointer; }
+.thirdclass { color: white; cursor:pointer; }
+
+label { cursor:pointer; }

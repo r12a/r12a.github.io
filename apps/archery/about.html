@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>About Archery Log</title>
+
+
+<link rel="stylesheet" href="style.css" />
+<style>
+body { margin: 40px; font-size: 14px; line-height: 1.4em; }
+h2 { color: #76933C; font-size: 18px; font-weight:normal; }
+a { color: white; text-decoration: none; border-bottom: 1px dotted gray; }
+#main {
+       column-count: 2;
+       column-gap: 20px;
+       -moz-column-count: 2;
+       -moz-column-gap: 30px;
+       -webkit-column-count: 2;
+       -webkit-column-gap: 30px;
+   -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+	   }
+#main p {
+		   text-align: justify; 
+}
+</style>
+</head>
+
+<body>
+
+
+<h1>About Archery Log</h1>
+
+<div id="main">
+<p>The Archery Log displays scores and other data for archery rounds. This page describes how I use it.</p>
+<p>In my case, the data was captured using finger-pointing on the Android app called Archery Score, but, all the data you need other than the picture of arrow distribution can also be created by hand in the data.txt text file.</p>
+
+<p>I choose to use Archery Log to show the highest score per month for a given round+bowstyle combination, although additional scores may be recorded in a given month for reasons outlined below. However, nothing constrains how many or few rounds you display.</p>
+<p>If you select a round type from the pull-down menu at the top of the page, the most recently shot round will be displayed.</p>
+<p>For a given round type, you can select a particular round from the histogram at the top left, or the pull-down select control to its right. The histogram shows an orange box for the currently displayed data. You can also move between rounds by clicking on the triangles just below the select control. </p>
+<h2>Which rounds are displayed?</h2>
+<p>As mentioned earlier, you can display data for as many or as few rounds as you like using Archery Log.  I use the app  to show the following:</p>
+
+<ol>
+<li>Initially, the first three scores in the season. This is in order to establish an initial handicap prediction.</li>
+<li>The page always shows the three highest scores in the season. This and the following points mean that there may be more than one score shown per month.</li>
+<li>Once the handicap has been established, and higher scores are achieved, the chart shows just the highest score in each month. The first three scores may be progressively removed as higher scores are recorded. </li>
+<li>The page also shows all league match scores and club record scores, whether or not they are the highest score in the month. </li>
+<li>The page also shows the three rounds submitted for a GNAS classification.</li>
+</ol>
+<h2 id="handicapexpl">Handicap information and official and 'equivalent' classifications</h2>
+<p>GNAS has tables that show how the actual score for any round you shoot maps to a handicap score.  Handicap scores are not only useful for competitions, but, due to the way they are worked out, the handicap score for a particular round allows you to see how well you are shooting. The handicap score for a given round is like a percentage figure that can be compared with handicap scores for other rounds, regardless of actual scores, number of arrows shot, distance, etc. The lower the handicap score, the better you have shot. If you have the same handicap score for both a FITA70 and a Short Metric round, you basically achieved the same average spread of arrows on both targets.</p>
+<p>GNAS uses the handicap tables to set cut-off points for the various classifications you can earn during a season: 3rd-1st class, bowman, master bowman and grand master bowman. These cut-off points are different for longbow, recurve, barebow and compound bow styles, since they reflect the level of difficulty involved. However, since they are based on  handicap scores, classifications gained from shooting different rounds within the same bowstyle are comparable.</p>
+<p>To qualify for one of the higher official GNAS classifications you also have to shoot at a given distance. For example, only rounds shot at 100yds or 90m will get you an official GNAS Bowman qualification. If you are shooting way above the official classification levels for a round at a nearer distance, the handicap score is a good way to measure your progress.  GNAS doesn't award, say, 1st class  for Short Metric rounds (maximum GNAS classification for that round is 3rd class). However, because the classification scheme is mapped to the handicap table, you can use the handicap score  to figure out that a score of 507 in recurve would be equivalent to 1st Class (all other things being equal). </p>
+<p>Since they help to measure progress, this Archery Log shows these unofficial <em>'equivalent classifications'</em> where an official GNAS classification doesn't apply. </p>
+<p>Archery Log does not show the alternative (A, B, C...) classification scheme usually used for indoor rounds, such as the Portsmouth. Instead, it applies the previously mentioned equivalent classifications to these rounds.</p>
+<h2>Finding handicap and classification information</h2>
+<p>In the left column, below the histogram, you will find the total score for a round, and the date. Below that, you will find average end and arrow scores, and a handicap score for that round. </p>
+<p>The colour of the handicap information and the initials to the right of the handicap score help you to determine the <em><a href="#handicapexpl">equivalent classification</a></em> level: <span style="color:#00FF00;">master bowman</span>, <span style="color:yellow;">bowman</span>, <span style="color:red;">1st class</span>, <span style="color:#00b1ec">2nd class</span>, and 3rd class.  </p>
+<p>If an official GNAS classification is available for this round, it will be displayed immediately below the total score (the large green figures slightly higher up the column).</p>
+<p>A little further down the left column you can find a table that shows what scores have to be attained for that particular round to reach one of the classification levels. Any scores in parentheses reflect equivalent classifications. Those without parentheses are the only ones for which you can get the official GNAS classification.</p>
+<p>In addition, a predicted end-of-season handicap score is displayed for each bowstyle (longbow, recurve, barebow) that reflects the best scores during the<em> latest </em>season (eg. the summer season just past, and the current winter season, or vice versa).  Rather than track the mid-season handicap score evolution, the page shows the predicted end-of-season handicap score based on the results so far (ie. the average of the highest three scores of the season). Note that these calculations do not take into account the handicap scores of rounds shot during previous seasons, even though a normal handicap score is displayed when you look at the data for that round. </p>
+<p>In the data.txt file you can set the default season  for which the end-of-season score is predicted (separately for indoor and outdoor rounds). You can also override these settings temporarily using the command 'Set season' from the •&nbsp;•&nbsp;• pull-down menu.</p>
+<p>If three rounds have not yet been shot for a given bowstyle+indoor/outdoor combination, the predicted score will be undefined.</p>
+<h2>Ranked lists</h2>
+
+<p>Under each bow-style pull-down in the menu there are sub-items that allow you to rank either the indoor or outdoor rounds shot<em>. </em> For example, you can list all outdoor rounds shot with a recurve bow. You can set the default date for the start of the indoor and outdoor lists individually in the data.txt file. You can temporarily override those settings using the command 'Set list start' on the •&nbsp;•&nbsp;• pull-down menu.</p>
+<p>The rounds are sorted, by default, with the highest handicap scores at the top, and the lowest at the bottom. The table also shows total score, GNAS classfication, if any, <em><a href="#handicapexpl">equivalent classification</a></em>, and the date.</p>
+<p>You can sort the data by date, round or handicap score by clickingo on the column header.</p>
+<p>You can display the data for a given round in this list by clicking on that round in the table.</p>
+<p>In addition to giving a useful overview of the shooting for the latest season, this also allows you to quickly identify how many rounds you have shot for a particular classification.</p>
+<h2>Additional stuff</h2>
+<p>The sub-items on the •&nbsp;•&nbsp;• pull-down allow you to do various additional things.</p>
+<p>'Show RT' shows running totals for the score tables. This is useful when filling in slips for the records officer.</p>
+<p>'Large target' doubles the size of the target picture.</p>
+<p>In some cases only the scores were recorded and not the positions of the arrows. For these rounds the target will be blank.</p>
+</div>
+
+<p style="font-style:italic;">This is Archery Log version  <!-- #BeginDate format:IS1m -->2014-01-06  8:27<!-- #EndDate -->
+</p>
+</body>
+</html>

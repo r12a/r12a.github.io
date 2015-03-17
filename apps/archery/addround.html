@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>About Archery Log</title>
+
+
+<link rel="stylesheet" href="style.css" />
+<style>
+body { margin: 40px; font-size: 14px; line-height: 1.4em; }
+h2 { color: #76933C; font-size: 18px; font-weight:normal; }
+a { color: white; text-decoration: none; border-bottom: 1px dotted gray; }
+#main {
+       column-count: 2;
+       column-gap: 20px;
+       -moz-column-count: 2;
+       -moz-column-gap: 30px;
+       -webkit-column-count: 2;
+       -webkit-column-gap: 30px;
+   -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+	   }
+#main p {
+		   text-align: justify; 
+}
+</style>
+</head>
+
+<body>
+
+
+<h1>Adding a round to Archery Log</h1>
+
+<div id="main">
+<p>This page tells you how I add data for a round I shot to Archery Log. If you can't use exactly the same method, you should be able to do something similar.</p>
+<p>Although it takes a while to initially read and digest this page, it only takes a minute or two to actually add a new round.</p>
+<p>(If you want to add data for a round that is not already supported, you will need to update the roundinfo.js file first. Currently supported rounds include recurve, longbow and barebow instances of the following rounds: Portsmouth, Frostbite, Short Metric, Albion, Long National, National, Windsor, FITA70. Compound rounds are not supported at the moment.)</p>
+<h2>Get the files</h2>
+<p>You can upload Archery Score to a server, or you can use it locally on your machine. Ask me for the files. You'll get a zip containing a bunch of program files and a subdirectory called 'data', which contains a bunch of target pictures and the data.txt file. </p>
+<p>To start Archery Log, open 'index.html' in your browser. </p>
+<p>The initial data will be mine, to give you an idea of how things work, but you will replace the pictures in the data subdirectory with your own, and replace the information in the data.txt file with your own. This should be all you need to alter, unless you need to add a new round type. In that case, just ask me for an update. (I will update the round-info.js file to enable this.)</p>
+<p>Archery Log will only show pull-down menus for the bowstyles and round types for which you have information in the data.txt file.</p>
+<h2>Capture the score while shooting</h2>
+<p>I use an Android app called Archery Score. It shows you a picture of a target, and you use your finger to point at the location of each arrow before you remove the arrows from the target.</p>
+<p>Note that GNAS has recently banned the use of electronic devices during scoring of competition rounds (sigh...). When I can't use the Android app I mark the locations on <a href="scoresheet.pdf">a piece of paper</a>, and transfer them to the app later.</p>
+<p>You only need to add basic information to the app. The app automatically works out the score and various other information for each end and round.</p>
+<h2 id="handicapexpl">Send the score data and target picture from the mobile device</h2>
+<p>I have another (free) app on my Android phone called Evernote. Once I finish a round, I save it in Archery Score, then 'send' to Evernote. A new note is created, containing a picture of the target and all arrow hits, plus a table of scores showing subtotals for each round.</p>
+<p>I usually synch this with my desktop version of Evernote when I get home. Really easy.</p>
+<p>If you don't use this approach, you could take a screen snap off the picture on your mobile device (typically hold the off switch and press the home button). It will be a little more difficult to manipulate the picture to something to incorporate into Archery Log, but this was what I did prior to the current arrangement.</p>
+<p>Alternatively, you could just use Archery Log without the  picture of the target - you can still produce the table and all the other information.</p>
+<p>If you can't transfer the score data automatically, you will be able to just type that in later, instead. (I did this too in the early days.)</p>
+<h2>Prepare the target picture for Archery Log</h2>
+<p>Open the Evernote note on your computer and drag the picture to the desktop. (This is a .png file, and you may need to add the .png extension to the file name if using a recent version of Evernote.) </p>
+<p>Open with PhotoShop (or similar). </p>
+<p>Remove the white background. (In PhotoShop just select with the Magic Wand Tool and hit delete.)</p>
+<p>Resize to 360x360 pixels.</p>
+<p>Save as a .gif file.</p>
+<p>Name the file using the following pattern: YYYY-MM-DD-score, where score is the total score for that round. If this round is shot at more than one range, add '-1', '-2', etc to this filename for the appropriate picture. Then drag all pictures to the subdirectory called 'data'.</p>
+<h2>Prepare the score data for Archery Log</h2>
+
+<p>You need to add some minimal information to the data.txt file in the data subdirectory. </p>
+<p><strong>By far the easiest way to do this is to use  <a href="formatdata"> the formatting app</a>.</strong> It will generate the scores in a format you can simply cut and paste into the line. Just add the scores for each end of 6 arrows to a separate line. (You can copy the lines containing end scores directly from the Evernote app export data, and it will ignore the irrelevant information automatically.) For a round with ranges at more than one distance, you can add all scores at once if you leave a blank line at the end of each distance.</p>
+<p>You need to end up with one line per round. For a given round, the oldest lines should be nearest to the top of the page. It's easiest to explain this using examples. (Look in the data.txt file for more examples.) Here is an example of a Portsmouth round:</p>
+<p>rounds[rounds.length] = 'p; ;2014-01-01;541;X 10 9 9 9 9  X 10 9 8 8 7  X X X 9 9 8  10 10 9 9 9 8  10 10 9 9 9 8  X 10 10 10 9 8  X 10 9 9 8 5  10 10 10 9 9 8  9 9 9 8 8 7  X 10 10 9 8 6;Club shoot, New Years Day';</p>
+<p>Fields are separated by semi-colons, and there must be a semi-colon at the end of the line. Single quotes surround the data. This means that you shouldn't use either ' or ; in the data itself). Notes are optional, but you must have the semi-colon followed by the final quote mark if you have no note.</p>
+<p>For rounds shot at more than one distance, include the subtotal for each distance before the raw data, and separate the scores for each distance with a semi-colon. Here is an example of an Albion longbow round:</p>
+<p>rounds[rounds.length] = 'albion; ;2013-07-04;190;252;246;9 7 5 3 1 0  9 9 7 7 5 5  9 9 7 7 5 3  9 5 3 3 1 0  9 9 5 5 3 3  9 7 7 3 1 1;9 9 7 5 5 5  9 9 7 7 7 5  9 7 7 7 7 5  9 7 7 5 5 3  9 7 7 7 7 5  9 9 9 7 7 7;7 7 7 5 5 3  9 9 9 7 7 3  9 7 7 7 5 5  9 9 7 5 5 1  9 7 7 7 7 5  9 9 9 9 7 7;';</p>
+<p>The first item after the opening quote has to be an identifier for the type of round. It must be one of the following (case-sensitive!):</p>
+<ol>
+<li>p, plb or pbb for Portsmouth recurve, longbow or barebow rounds, respectively</li>
+<li>fb, flb or pbb for Frostbite recurve or longbow, respectively</li>
+<li>sm, smlb or smbb for Short Metric ...</li>
+<li>albion, albionlb or albionbb for Albion rounds</li>
+<li>longnat, longnatlb or longnatbb for Long National rounds</li>
+<li>nat, natlb or natbb for National rounds</li>
+<li>fita70, fita70lb or fita70bb for FITA70 rounds (note that it's lower case)</li>
+<li>windsor, windsorlb or windsorbb for Windsor rounds</li>
+<li>stg, stglb or stgbb for St George rounds</li>
+<li>neww, newwlb or newwbb for New Western rounds</li>
+<li>newn, newnlb or newnbb for New National rounds</li>
+<li>lmg, lmglb or lmgbb for Long Metric (Gents) rounds</li>
+</ol>
+<p>Immediately after the name of the round is a field that indicates whether or not there is a picture of the arrow placements. Put any character in here to say 'yes' (I typically use a tab). Leave it empty (eg. ...p;;2014...) to indicate that there is no picture.</p>
+<p>If you need to record a different type of round, the code will need to be updated. Ask me.</p>
+<h2>And then</h2>
+<p>Once you have the picture in place (if you want pictures) and have added a line to the data.txt file and saved it, just refresh the Archery Log page in your browser, and you will see the new information.</p>
+<h2>Ladies vs Gents</h2>
+<p>If you are a Lady, rather than a Gent, you will need to open the round-info.js file and uncomment the Ladies classification scores and comment out the Gents scores. </p> 
+<p>For example, remove the &quot;// &quot; from the start of the line: </p>
+<p>// roundInfo.smlb.classifications = [60,138]; // ladies</p>
+<p>and add &quot;// &quot; to the start of the line that precedes it. Do this for all such pairs of lines.</p>
+<h2>A couple more tips</h2>
+<p>To set the season for which the default end-of-season handicap prediction will apply, change the date values for the variables at the top of the data.txt file. The relevant variables are iSeasonStart, iSeasonEnd, oSeasonStart, oSeasonEnd, for indoor and outdoor seasons respectively.</p>
+<p>To change how many rounds appear by default in a ranked list, change the variables at the top of the data.txt file. The variables indicate the earliest date from which to list files, and they are iListStart and oListStart for indoor and outdoor seasons respectively.</p>
+<p>I currently have Archery Log set up to open at the latest Longbow Portsmouth data. If you want the default to be something else, just add the round identifier (see above) as the value of the initialRoundToDisplay variable at the top of the data.txt file.</p>
+</div>
+
+<p style="font-style:italic;">This is file was last changed on <!-- #BeginDate format:IS1m -->2014-01-14  9:44<!-- #EndDate -->
+</p>
+</body>
+</html>
