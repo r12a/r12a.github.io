@@ -126,9 +126,8 @@
 <div id=vertical-menu>
 <div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
 menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = ''; _showLatinTrans = ''; _showKeyboard = ''; 
-document.getElementById('latintranscript').style.display = 'none';
-document.getElementById('keyboard').style.display = 'none';
+document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
+document.getElementById('keyboard').style.display = 'none'; _showKeyboard = ''; 
  return false;">D</div>
 
 <div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
@@ -145,10 +144,9 @@ document.getElementById('keyboard').style.display = 'none';
 
 <div id="tables">
   
-	<div dir="ltr" id="keyboard"></div>
-  <!-- SHAPE -->
-  <div id="alphabet" class="default"
-  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyana, 'Noto Sans Lao', sans-serif; font-size: 32px;clear:both;">
+<div dir="ltr" id="keyboard"></div>
+
+  <div id="alphabet" class="default">
     <table id="kbd">
       <tr>
         <td><table id="consonants">
