@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Doulos SIL WF';
+    src: url('/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
+         url('/webfonts/DoulosSIL-R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#alphabet { 
+	display: block; 
+	color: #999;
+	}
+
+span.hint { 
+	margin-right: 3px;
+	}
+
+
+#kbd { 	
+	margin-left: 0; 
+	}
+#kbd table {
+	margin:0;
+	}
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	font-size: 25px;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1.4;
+	}
+#kbd td.hint {  
+	font-size: 12px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	}
+
+
+
+
+
+
+
+.key span { 
+	font-size: 24px; 
+	color: gray; 
+	font-weight: normal; 
+	font-family:  "Doulos SIL", "Noto Sans",  serif;  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	padding: 0 2px; 
+	}
+.key .s { position:absolute; bottom: 5px; left: 15px; }
+.key .n { position:absolute; bottom: 5px; right: 5px;  }
+
+
