@@ -303,6 +303,7 @@ var charData = {
 "\u2197":{n:"NORTH EAST ARROW",m:0,g:"Arrows"},
 "\u2191":{n:"UPWARDS ARROW",m:0,g:"Arrows"},
 "\u2198":{n:"SOUTH EAST ARROW",m:0,g:"Arrows"},
+"\u2192":{n:"RIGHTWARDS ARROW",m:0,g:"Arrows"},
 
 end: {}
 }
