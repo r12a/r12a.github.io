@@ -389,14 +389,29 @@ function clearHighlights () {
 
 // INITIALISATION
 
-
+function getTitle (textcontent) {
+		if (charData[textcontent]) { 
+			var codepoint = ''
+			for (c=0; c<textcontent.length; c++) { 
+				cp = parseInt(textcontent.charCodeAt(c),10)
+				cp = cp.toString(16).toUpperCase()
+				while (cp.length < 4) cp = '0'+cp
+				cp = 'U+'+cp
+				if (c < textcontent.length-1) cp += ' '
+				codepoint += cp
+				}
+			return codepoint+': '+charData[textcontent].n
+			}
+	}
+	
+	
 function makeKeyboard () { 
 
 	var keyboardguide = [
 	"1,2,3,4,5,6,7,8,9,0,-,=",
-	"q,w,e,r,t,y,u,i,o,p,[,]",
+	"q,w,e,r,t,y,u,i,o,p,[,],",
 	"a,s,d,f,g,h,j,k,l,;,',\\",
-	"`,z,x,c,v,b,n,m,,.,/"
+	"z,x,c,v,b,n,m,,.,/,"
 	]
 
 	if (typeof keyboarddef == 'undefined' || document.getElementById('keyboard') == null) 
@@ -431,12 +446,14 @@ function makeKeyboard () {
 			shiftkey.onmouseover = event_mouseoverChar
 			shiftkey.onmouseout = event_mouseoutChar
 			shiftkey.onclick = event_clickOnSpanChar
+			shiftkey.title = getTitle(chars[0])
 			shiftkey.appendChild(document.createTextNode(chars[0]))
 			normalkey = document.createElement('span')
 			normalkey.className = 'n'
 			normalkey.onmouseover = event_mouseoverChar
 			normalkey.onmouseout = event_mouseoutChar
 			normalkey.onclick = event_clickOnSpanChar
+			normalkey.title = getTitle(chars[1])
 			normalkey.appendChild(document.createTextNode(chars[1]))
 			if (chars.length == 3) {
 				thirdkey = document.createElement('span')
@@ -444,6 +461,7 @@ function makeKeyboard () {
 				thirdkey.onmouseover = event_mouseoverChar
 				thirdkey.onmouseout = event_mouseoutChar
 				thirdkey.onclick = event_clickOnSpanChar
+				thirdkey.title = getTitle(chars[2])
 				thirdkey.appendChild(document.createTextNode(chars[2]))
 				}
 			keynode.appendChild(shiftkey)
