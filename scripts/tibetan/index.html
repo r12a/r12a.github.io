@@ -84,8 +84,8 @@ for (i=0;i<imgs.length; i++) {
 	imgs[i].title = 'U+'+imgs[i].title+' '+Unames[parseInt(imgs[i].title, 16)];
 	}
 </script-->
-<section>
-  <h2><a id="intro" href="#intro">Brief script introduction</a></h2>
+<section id="intro">
+  <h2><a href="#intro">Brief script introduction</a></h2>
 <p>Tibetan  is an abugida, ie. consonants carry an inherent vowel sound <span class="ipa">a</span> that is overridden using vowel signs. Text runs from left to right.</p>
 <p>There are various different Tibetan scripts, of two basic types: <span class="ex" lang="bo">དབུ་ཅན་</span> <span class="trans">dbu-can</span>, pronounced <span class="ipa">uchen</span> (<span class="meaning">with a head</span>), and <span class="ex" lang="bo">དབུ་མེད་</span> <span class="trans">dbu-med</span>, pronounced <span class="ipa">ume</span> (<span class="meaning">headless</span>). This page concentrates on the former. Pronunciations are based on the central, Lhasa dialect.</p>
 <p>Traditional Tibetan text was written on <a href="http://en.wikipedia.org/wiki/Pecha">pechas</a> (<span class="trans">dpe-cha</span> <span class="ex" lang="bo">དཔེ་ཆ་</span>), loose-leaf sheets. Some of the characters used and formatting approaches are different in books and pechas.</p>
@@ -93,11 +93,11 @@ for (i=0;i<imgs.length; i++) {
 		<p lang="bo" class="ex" style="color:black; line-height:2em; text-align: left;">འགྲོ་བ་མིའི་རིགས་རྒྱུད་ཡོངས་ལ་སྐྱེས་ཙམ་ཉིད་ནས་ཆེ་མཐོངས་དང༌། ཐོབ་ཐངགི་རང་དབང་འདྲ་མཉམ་དུ་ཡོད་ལ། ཁོང་ཚོར་རང་བྱུང་གི་བློ་རྩལ་དང་བསམ་ཚུལ་བཟང་པོ་འདོན་པའི་འོས་བབས་ཀྱང་ཡོད། དེ་བཞིན་ཕན་ཚུན་གཅིག་གིས་གཅིག་ལ་བུ་སྤུན་གྱི་འདུ་ཤེས་འཛིན་པའི་བྱ་སྤྱོད་ཀྱང་ལག་ལེན་བསྟར་དགོས་པ་ཡིན༎</p>
 </section>
 
-<section>
+<section id="tibetanchars" >
   	<div class="up"><a href="#tochead">⇧</a></div>
-	<h2><a id="tibetanchars"  href="#tibetanchars">Tibetan script used for Tibetan</a></h2>
-	<section>
-	  <h3><a id="consonantintro"  href="#consonantintro">Consonants</a></h3>
+	<h2><a href="#tibetanchars">Tibetan script used for Tibetan</a></h2>
+	<section id="consonantintro">
+	  <h3><a  href="#consonantintro">Consonants</a></h3>
 		<p> Native Tibetan words use  30 consonants, but the Tibetan block contains many more. Many of the extra consonants (and other characters) are used for transliteration of other languages, principally Sanskrit and Chinese. These include the retroflex and voiced aspirated consonants. A couple of characters are extensions for Balti.</p>
 	  <p>The pronunciation of Tibetan words is typically much simpler than the orthography, which involves patterns of consonants. These reduce ambiguity and can affect pronunciation and tone. </p>
 	  <p>The primary consonant is called the root consonant (or radical), and the other consonants in the syllable (which normally has up to 6 consonants in total) annotate or modify it. The following rules help identify the root:</p>
@@ -369,9 +369,11 @@ for (i=0;i<imgs.length; i++) {
 		<p>Finally, <span class="name">'a-chung</span> can be used to disambiguate the location of an inherent vowel in a syllable. The sequence <span class="ex" lang="bo">དག་</span> <span class="trans">dag</span> <span class="ipa">dàg</span> (<span class="meaning">I</span>) is interpreted as CVC. To express CCV add <span class="name">'a-chung</span>, eg. <span class="ex" lang="bo">དགའ་</span> <span class="trans">dga'</span> <span class="ipa">gà</span> (<span class="meaning">virtue</span>).</p>
 		<p><a class="leadin" href="#irregpron"  id="irregpron">Irregular pronunciations.</a> Most consonants translate to the same basic sound unless they are modified by surrounding letters as mentioned above. In some cases, however, the pronunciation of a consonant is irregular. In particular, <span class="trans">b</span> is sometimes pronounced <span class="trans">w</span>, eg. <span class="ex" lang="bo"  >རེ་བ་</span> <span class="trans">re-ba</span> <span class="ipa">re-wa	</span> (<span class="meaning">hope</span>), <span class="ex" lang="bo"  >དབང་ཆ་</span> <span class="trans">dbang-ca</span> <span class="ipa">wang-ʧa</span> (<span class="meaning">power</span>), and some words have an additional nasalisation which is not shown, eg. <span class="ex" lang="bo"  >ད་ལྟ་</span> <span class="trans">da-lta</span> <span class="ipa">dan-ta</span> (<span class="meaning">now</span>).</p>
   </section>
-	<section>
+  
+  
+	<section id="vowels">
   	<div class="up"><a href="#tochead">⇧</a></div>
-		<h3><a id="vowels"  href="#vowels">Vowels and tones</a></h3>
+		<h3><a  href="#vowels">Vowels and tones</a></h3>
 		<p>Standard Tibetan has five vowels, for which there are four characters, since one vowel, <span class="ipa">a</span>, is inherent in the consonant. Non-inherent vowels are indicated by a single mark attached to and typed after a consonant or consonant stack. In the example  <span class="ex" lang="bo"  >སྤྱིར་</span> <span class="ipa">ʧí</span> (general) the vowel sign that appears above the stack is typed after the three consonants that make up the stack.</p>
         
        <figure>
@@ -392,9 +394,11 @@ for (i=0;i<imgs.length; i++) {
 		<figcaption>Tibetan vowel signs.</figcaption>
       </figure>
 	</section>
-  <section>
+    
+    
+  <section id="headmark">
    	<div class="up"><a href="#tochead">⇧</a></div>
-   <h3><a id="headmark"  href="#headmark">Head marks</a></h3>
+   <h3><a  href="#headmark">Head marks</a></h3>
 	  <p>In traditional, loose-leaf Tibetan pechas a head mark or <span class="name">yig-mgo</span> (<span class="ipa">yig go</span>) is used at the beginning of the front of the folio so that you can tell which is the front. </p>
 	  <p>Head marks are also used in both pechas and books to indicate the start of a headline or the start of the first paragraph in a longer text.</p>
 	  <p>Head marks differ from text to text. The Unicode Standard provides a number of characters to give some basic coverage, but may not meet all needs.</p>
@@ -404,9 +408,11 @@ for (i=0;i<imgs.length; i++) {
       <a href="/scripts/block/tibetan#char0F02" target="c"><span class="uname">U+0F02 TIBETAN MARK GTER YIG MGO -UM RNAM BCAD MA</span> <span lang="bo">&#x0F02;</span></a><br>
     <a href="/scripts/block/tibetan#char0F03" target="c"><span class="uname">U+0F03 TIBETAN MARK GTER YIG MGO -UM GTER TSHEG MA</span> <span lang="bo">&#x0F03;</span></a></p>
   </section>
-  <section>
+  
+  
+  <section id="transliteration">
   	<div class="up"><a href="#tochead">⇧</a></div>
-    <h3><a id="transliteration"  href="#transliteration">Transliteration</a></h3>
+    <h3><a  href="#transliteration">Transliteration</a></h3>
 	  <p>Many of the characters in the Tibetan block are there for transcribing or transliterating non-Tibetan text. The Tibetan script provides for perfect mappings between Sanskrit and Tibetan, but Tibetan is also used to transliterate other languages, such as Chinese, Mongolian and English.</p>
 	  <p>There are a number of consonants, including a range of aspirated consonants, and the following range of retroflex consonants. </p>
       <figure>
@@ -528,9 +534,9 @@ for (i=0;i<imgs.length; i++) {
   </section>
   
   
-<section>
+<section id="numbers">
   <div class="up"><a href="#tochead">⇧</a></div>
-  <h3><a id="numbers" href="#numbers">Numbers</a></h3>
+  <h3><a href="#numbers">Numbers</a></h3>
   <p>Tibetan has its own set of numbers. My Chinese publication, however, uses european digits.</p>
   <table>
     <tr>
@@ -588,9 +594,9 @@ for (i=0;i<imgs.length; i++) {
   </section>
 </section>
     
-	<section>
+	<section id="formatting">
   	<div class="up"><a href="#tochead">⇧</a></div>
-	  <h2><a id="formatting"  href="#formatting">Text formatting</a></h2>
+	  <h2><a  href="#formatting">Text formatting</a></h2>
 	  <p>In pechas, Tibetan text is written inside a visible box which defines the margin of the page. In more recent publications this box may be invisible. Modern publications also use paragraphs. The initial line of a new paragraph may be indented.</p>
 	  <div class="sidenoteGroup">
 	  <p>Key divisions of the text are sections (or expressions (<span class="name">brjod-pa</span>)) and topics (<span class="name">don-tshan</span>), which do not necessarily equate to English phrases, sentences and paragraphs. Sections normally end with a shay, <a href="/scripts/block/tibetan#char0F0D"><span class="uname">U+0F0D TIBETAN MARK SHAD</span> <span lang="bo">&#x0F0D;</span></a>, followed by a space. Topics (eg. headlines, verses, and longer paragraphs) are often terminated or separated with shay+space+shay.</p>
@@ -624,9 +630,11 @@ for (i=0;i<imgs.length; i++) {
 	    <figcaption>Example of U+0F0C being used between NGA and shay.</figcaption>
       </figure>
 	  <p>Whitespace in Tibetan text should use U+00A0   NO-BREAK SPACE. Spaces in Tibetan text are usually wider than spaces in English text, and typically only occur after one of the following: <span class="ex" lang="bo">&#x0F0D;</span>, <span class="ex" lang="bo">༑</span>, <span class="ex" lang="bo">&#x0F14;</span> or <span class="ex" lang="bo">&#x0F7F;</span>. However, numbers and embedded Western text are surrounded by smaller spaces, eg. <span class="ex" lang="bo">ལོ་ ༢༠༠༡ ཤིང་བྱ་ཟླ་ ༩ ཚེས་ ༥ ཉིན་</span>. <span class="ednote">Looks like this is also something that the application needs to take care of.</span></p>
-      <section>
+      
+      
+      <section id="linebreak">
   	<div class="up"><a href="#tochead">⇧</a></div>
-	  <h3><a id="linebreak"  href="#linebreak">Line breaks</a></h3>
+	  <h3><a  href="#linebreak">Line breaks</a></h3>
 	  <p> Normally, Tibetan only breaks after the tsek, and doesn't break after spaces.</p>
 	  <p>Line breaks do not occur after a tsek
 	    when it follows <a href="/scripts/block/tibetan#char0F44"><span class="uname">U+0F44 TIBETAN LETTER NGA</span> <span lang="bo">&#x0F44;</span></a> (with or without a vowel sign) and precedes a shay, <a href="/scripts/block/tibetan#char0F0D"><span class="uname">U+0F0D TIBETAN MARK SHAD</span> <span lang="bo">&#x0F0D;</span></a>. <span class="ednote">The Unicode Standard also talks of other instances where Tibetan grammatical rules do not permit a break, but it isn't clear what those are.</span></p>
@@ -653,9 +661,9 @@ for (i=0;i<imgs.length; i++) {
 	  <p>The Unicode Standard adds: &quot;Not only is rin-chen-spungs-shad used as the replacement for the shay but a whole class of “ornamental shays ” are used for the same purpose. All are scribal variants on a rin-chen-spungs-shad, which is correctly written with three dots above it.&quot;</p>
       </section>
       
-      <section>
+      <section id="justification">
   	<div class="up"><a href="#tochead">⇧</a></div>
-	  <h3><a id="justification"  href="#justification">Justification</a></h3>
+	  <h3><a  href="#justification">Justification</a></h3>
 	  <p> There appear to be two alternative methods of justification.</p>
 	  <p> <a class="leadin" href="#icspacing"  id="icspacing">Method 1: inter-character spacing.</a> Spacing between all characters should be adapted equally. Note that the width of the white-space character should not be changed significantly, so Tibetan texts use the non-breaking space mentioned above, which doesn't change width on justification.</p>
 	  <p> <a class="leadin"  id="icspacing2">Method 2: tsek padding.</a> While hand writing, authors add small spaces across the text to get the line end as near as possible to the right margin. Where space remains at the margin, it may be left as is, if it is short. Otherwise, the remaining space will be filled with tseks to make the line as flush as possible with the right margin (there will usually still be a slight raggedness to the right edge of the text).</p>
@@ -666,9 +674,9 @@ for (i=0;i<imgs.length; i++) {
 	  <figure><img src="images/shay-justification.jpeg" width="600" height="440" alt="" /><figcaption>Booklet pages showing double shay usage at the end of a line.</figcaption></figure>
   </section>
   
-	<section>
+	<section id="punctuation">
   	<div class="up"><a href="#tochead">⇧</a></div>
-	  <h3><a id="punctuation"  href="#punctuation">Other punctuation and signs</a></h3>
+	  <h3><a  href="#punctuation">Other punctuation and signs</a></h3>
 	  <p>Over and above that described in the previous section, traditional Tibetan text uses very little punctuation, but there a number of signs and symbols to choose from.</p>
 	  <p><a href="/scripts/block/tibetan#char0F08" target="c"><span class="uname">U+0F08 TIBETAN MARK SBRUL SHAD</span> <span lang="bo">&#x0F08;</span></a> is used to separate texts that are equivalent to topics and subtopics, such as the start of a smaller text, the start of a prayer, a chapter boundary, or to mark the beginning and end of insertions into text in pechas.</p>
 	  <p>This <span class="name">drul-shay</span> is usually surrounded on both sides by the equivalent of about three non-breaking spaces (though no rule is specified). The <span class="name">drul-shay</span> should not appear at the beginning of a new line and the whole structure of spacing-plus- shay needs to be kept together.</p>
@@ -680,9 +688,9 @@ for (i=0;i<imgs.length; i++) {
 	  <p><a href="/scripts/block/tibetan#char2638" target="c"><span class="uname">U+2638   WHEEL OF DHARMA</span> <span lang="bo">&#x2638;</span></a> which occurs sometimes in Tibetan texts is encoded in the Miscellaneous Symbols block.</p>
     </section>
 
-	<section>
+	<section id="emphasis">
   	<div class="up"><a href="#tochead">⇧</a></div>
-	  <h3><a id="emphasis"  href="#emphasis">Text emphasis and highlighting</a></h3>
+	  <h3><a  href="#emphasis">Text emphasis and highlighting</a></h3>
 	  <p><a href="/scripts/block/tibetan#char0F35" target="c"><span class="uname">U+0F35 TIBETAN MARK NGAS BZUNG NYI ZLA</span> <span lang="bo">&#xA0;&#x0F35;</span></a> and <a href="/scripts/block/tibetan#char0F37" target="c"><span class="uname">U+0F37 TIBETAN MARK NGAS BZUNG SGOR RTAGS</span> <span lang="bo">&#xA0;&#x0F37;</span></a> can be used to create a similar effect to underlining or to mark emphasis.</p>
 	  <p>The use of these marks is not straightforward, since they attach to a syllable rather than a character and therefore to place them correctly the application needs to take syllable boundary positions into account. If entered as combining characters they can be added after the vowel-sign in a stack.</p>
 	  <p>Application software  has to ignore these characters for text processing, such as search and collation.</p>
@@ -699,8 +707,8 @@ for (i=0;i<imgs.length; i++) {
 	  <p>Modern texts appear to use bolding on text.</p>
 	</section>
     
-    	<section>
-	  <h3><a id="alignment"  href="#alignment">Text alignment</a></h3>
+    	<section id="alignment">
+	  <h3><a  href="#alignment">Text alignment</a></h3>
 	<p>When text in smaller annotations or larger heading text is mixed with normal text, the letter-heads of all characters should align to the same height.
 	</section>
 </section>
@@ -920,7 +928,7 @@ for (i=0;i<imgs.length; i++) {
 </section>
 	<section id="references"> 
   	<div class="up"><a href="#tochead">⇧</a></div>
-	  <h2><a href="#endlinks"  id="endlinks">Further reading</a></h2>
+	  <h2><a href="#references">Further reading</a></h2>
 		<ol>
 			<li>[Daniels] Peter T. Daniels and William Bright, <span class="title">The World's Writing Systems</span>, Oxford University Press, ISBN
 				0-19-507993-0</li>
@@ -933,7 +941,7 @@ for (i=0;i<imgs.length; i++) {
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  7 Apr 2006.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-16  18:00<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-03-17  9:00<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">
