@@ -196,6 +196,7 @@ var charData = {
 
 "\u0964":{n:"DEVANAGARI DANDA",m:0,g:"Devanagari" },
 "\u0965":{n:"DEVANAGARI DOUBLE DANDA",m:0,g:"Devanagari" },
+"\u02BC":{n:"MODIFIER LETTER APOSTROPHE",m:0,g:"Latin" },
 
 "\u0995\u09CD\u09B7":{n:"BENGALI LETTER KA, BENGALI SIGN VIRAMA, BENGALI LETTER SSA",m:0,g:"Bengali" },
 "\u09A1\u09BC":{n:"BENGALI LETTER DDA, BENGALI SIGN NUKTA",m:0,g:"Bengali" },
