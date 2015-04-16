@@ -3,5 +3,7 @@
 <option value="Mongolian Baiti">Mongolian Baiti</option>\
 <option value="Noto Sans Mongolian">Noto Sans Mongolian</option>\
 <option value="Noto Sans Mongolian WF">Noto Sans Mongolian WF</option>\
-							<option value="sans-serif">sans-serif</option>\
-							<option value="serif">serif</option>'
+<option value="Mongolian Title">Mongolian Title</option>\
+<option value="Mongolian Art">Mongolian Art</option>\
+<option value="sans-serif">sans-serif</option>\
+<option value="serif">serif</option>'
