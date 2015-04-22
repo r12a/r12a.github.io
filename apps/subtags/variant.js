@@ -42,6 +42,7 @@ var variant = [{type:"variant",subtag:"1606nict",description:"Late Middle French
 {type:"variant",subtag:"njiva",description:"The Gniva dialect of Resian, The Njiva dialect of Resian",added:"2007-07-05",prefix:"sl-rozaj",comments:"The dialect of Gniva/Njiva is one of the four major local dialects of Resian"},
 {type:"variant",subtag:"nulik",description:"Volapük nulik, Volapük perevidöl, Volapük nulädik, de Jong's Volapük, New Volapük, Revised Volapük, Modern Volapük",added:"2012-01-28",prefix:"vo"},
 {type:"variant",subtag:"osojs",description:"The Oseacco dialect of Resian, The Osojane dialect of Resian",added:"2007-07-05",prefix:"sl-rozaj",comments:"The dialect of Oseacco/Osojane is one of the four major local dialects of Resian"},
+{type:"variant",subtag:"oxendict",description:"Oxford English Dictionary spelling",added:"2015-04-17",prefix:"en"},
 {type:"variant",subtag:"pamaka",description:"Pamaka dialect",added:"2009-09-05",prefix:"djk",comments:"Pamaka dialect of the 'Busi Nenge Tongo' English-based Creole continuum in Eastern Suriname and Western French Guiana"},
 {type:"variant",subtag:"petr1708",description:"Petrine orthography",added:"2010-10-10",prefix:"ru",comments:"Russian orthography from the Petrine orthographic reforms of 1708 to the 1917 orthographic reform"},
 {type:"variant",subtag:"pinyin",description:"Pinyin romanization",added:"2008-10-14",prefix:"zh-Latn, bo-Latn"},

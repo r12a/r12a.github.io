@@ -1,6 +1,6 @@
 var grandfathered = [{type:"grandfathered",tag:"art-lojban",description:"Lojban",added:"2001-11-11",deprecated:"2003-09-02",preferredvalue:"jbo",subtag:"art-lojban"},
 {type:"grandfathered",tag:"cel-gaulish",description:"Gaulish",added:"2001-05-25",deprecated:"2015-03-29",comments:"see xcg, xga, xtg",subtag:"cel-gaulish"},
-{type:"grandfathered",tag:"en-GB-oed",description:"English, Oxford English Dictionary spelling",added:"2003-07-09",subtag:"en-GB-oed"},
+{type:"grandfathered",tag:"en-GB-oed",description:"English, Oxford English Dictionary spelling",added:"2003-07-09",deprecated:"2015-04-17",preferredvalue:"en-GB-oxendict",subtag:"en-GB-oed"},
 {type:"grandfathered",tag:"i-ami",description:"Amis",added:"1999-05-25",deprecated:"2009-07-29",preferredvalue:"ami",subtag:"i-ami"},
 {type:"grandfathered",tag:"i-bnn",description:"Bunun",added:"1999-05-25",deprecated:"2009-07-29",preferredvalue:"bnn",subtag:"i-bnn"},
 {type:"grandfathered",tag:"i-default",description:"Default Language",added:"1998-03-10",subtag:"i-default"},
