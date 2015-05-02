@@ -17,6 +17,12 @@
 	text-align: left;
 }
 
+img { 
+	vertical-align: top;
+	}
+img.conflict { border: 3px solid red; }
+img.fconflict { border: 3px solid orange; }
+
 #fontsetting { width: 270px; }
 #fontsetting.open { right: 0px; }
 #fontsetting.closed { right: -258px; }
