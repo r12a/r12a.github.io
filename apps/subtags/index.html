@@ -80,7 +80,7 @@ one or more subtags <a href="#note3" class="explanation">See note&#xA0;3.</a><br
         <input onclick="showList(document.getElementById('listselect').value); displayResults('list');" type="submit" value="List" name="submit" />
       </p>
   </div>
-  <br clear="left" />
+  <br style="clear:left" />
 </div>
 
 <div id="errors"></div>
@@ -97,11 +97,11 @@ one or more subtags <a href="#note3" class="explanation">See note&#xA0;3.</a><br
     <p><a target="_blank" href="http://www.w3.org/International/articles/language-tags/">About language subtags</a></p>
     <p><a target="_blank" href="http://www.iana.org/assignments/language-subtag-registry">IANA subtag registry</a></p>
     <h2>Version information</h2>
-    <p>Currently supports the IANA Subtag registry of 2015-04-21.  The tool currently reports subtags for 8,092  languages, 229 extlangs, 174 scripts, 301 regions, 69 variants, and 26 grandfathered subtags. Please report any bugs to <a href="mailto:ishida@w3.org">me</a>.</p>
+    <p>Currently supports the IANA Subtag registry of 2015-05-03.  The tool currently reports subtags for 8,093  languages, 230 extlangs, 174 scripts, 301 regions, 69 variants, and 26 grandfathered subtags. Please report any bugs to <a href="mailto:ishida@w3.org">me</a>.</p>
   </div>
 </aside>
 
-<p id="status">Updated Wed 22 April 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=subtags" title="Show all blog posts tagged with 'subtags'">subtags</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+<p id="status">Updated Wed 5 May 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=subtags" title="Show all blog posts tagged with 'subtags'">subtags</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
 
 <div class="section">
   <p>BCP 47 language tags are built from subtags in the IANA Subtag Registry. This tool helps you find or look up subtags and check for errors in language tags.</p>
@@ -109,7 +109,7 @@ one or more subtags <a href="#note3" class="explanation">See note&#xA0;3.</a><br
     <h2>Usage notes</h2>
     <p><strong><span class="notenumber">1</span> Raw data. </strong>Click on the results with a coloured background to see the raw IANA data for a subtag.</p>
     <p><strong><span class="notenumber" id="note2">2</span> Find.</strong> The description is  the name of the subtag, ie. the language, region, etc. You can search on any part of a description (eg. <a href="/apps/subtags/?find=eng">eng</a> gives results that include B<strong>eng</strong>ali, <strong>Eng</strong>lish and T<strong>eng</strong>war). Note that some languages may be spelled differently, eg. <a href="/apps/subtags/?find=panjabi">Panjabi</a> yields three results, but <a href="/apps/subtags/?find=punjabi">Punjabi</a> only one.</p>
-    <p><strong><span id="note3" class="notenumber">3</span> Look up. </strong> Looks up all forms of all subtags in the list, eg. it returns both a language and extlang subtag for <a href="/apps/subtags/?lookup=cmn">cmn</a>. Subtags can be separated by commas, semicolons, hyphens, or spaces, eg. <a href="/apps/subtags/?lookup=en%3B%20fr%2C%20ca%2C%20Bali-1901&amp">en; fr, ca, Bali-1901</a>.<br />
+    <p><strong><span id="note3" class="notenumber">3</span> Look up. </strong> Looks up all forms of all subtags in the list, eg. it returns both a language and extlang subtag for <a href="/apps/subtags/?lookup=cmn">cmn</a>. Subtags can be separated by commas, semicolons, hyphens, or spaces, eg. <a href="/apps/subtags/?lookup=en%3B%20fr%2C%20ca%2C%20Bali-1901">en; fr, ca, Bali-1901</a>.<br />
       Only exact matches of subtags are returned, ie. <a href="/apps/subtags/?lookup=ak">ak</a> doesn't match <a href="/apps/subtags/?lookup=akk">akk</a>. <br />
       If there is no output for a tag,  it was not a valid tag in the registry.</p>
     <p><strong><span id="note4" class="notenumber">4</span> Check.</strong> Looks up all subtags in a language tag (ie. a hyphen-separated list of subtags) and reports problems, if there are any, eg. <a href="/apps/subtags/?check=de-419-DE-alt">de-419-DE-alt</a> and <a href="/apps/subtags/?check=ms-cmn">ms-cmn</a>.<br />
@@ -126,10 +126,11 @@ one or more subtags <a href="#note3" class="explanation">See note&#xA0;3.</a><br
       combining separate subtags from the current registry. They do not show up in search results.</p>
 
 </div>
-<div class="smallprint"><span id="version">First published 1 Apr 2007.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-04-22  9:09<!-- #EndDate --> 
-  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GNU-GPL (see source).</span></div>
+</div>
 
+<div class="smallprint"><span id="version">First published 1 Apr 2007.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-05-05  11:39<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GNU-GPL (see source code).</span></div>
 
 <script type="text/javascript">
 // check for parameters and take appropriate action

@@ -7740,6 +7740,7 @@ var languages = [{type:"language",subtag:"aa",description:"Afar",added:"2005-10-
 {type:"language",subtag:"yha",description:"Baha Buyang",added:"2009-07-29"},
 {type:"language",subtag:"yhd",description:"Judeo-Iraqi Arabic",added:"2009-07-29",macrolanguage:"jrb"},
 {type:"language",subtag:"yhl",description:"Hlepho Phowa",added:"2009-07-29"},
+{type:"language",subtag:"yhs",description:"Yan-nhaŋu Sign Language",added:"2015-04-17"},
 {type:"language",subtag:"yia",description:"Yinggarda",added:"2009-07-29"},
 {type:"language",subtag:"yif",description:"Ache",added:"2009-07-29"},
 {type:"language",subtag:"yig",description:"Wusa Nasu",added:"2009-07-29"},

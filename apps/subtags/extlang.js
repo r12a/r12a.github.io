@@ -220,6 +220,7 @@ var extlang = [{type:"extlang",subtag:"aao",description:"Algerian Saharan Arabic
 {type:"extlang",subtag:"xms",description:"Moroccan Sign Language",added:"2009-07-29",preferredvalue:"xms",prefix:"sgn"},
 {type:"extlang",subtag:"yds",description:"Yiddish Sign Language",added:"2009-07-29",deprecated:"2015-02-12",prefix:"sgn"},
 {type:"extlang",subtag:"ygs",description:"Yolŋu Sign Language",added:"2014-02-28",preferredvalue:"ygs",prefix:"sgn"},
+{type:"extlang",subtag:"yhs",description:"Yan-nhaŋu Sign Language",added:"2015-04-17",preferredvalue:"yhs",prefix:"sgn"},
 {type:"extlang",subtag:"ysl",description:"Yugoslavian Sign Language",added:"2009-07-29",preferredvalue:"ysl",prefix:"sgn"},
 {type:"extlang",subtag:"yue",description:"Yue Chinese, Cantonese",added:"2009-07-29",preferredvalue:"yue",prefix:"zh",macrolanguage:"zh"},
 {type:"extlang",subtag:"zib",description:"Zimbabwe Sign Language",added:"2009-07-29",preferredvalue:"zib",prefix:"sgn"},
