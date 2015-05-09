@@ -123,7 +123,8 @@ td.vright, th.vright {
 
 
 table.formtable { clear: both; }
-table.formtable td[lang='mn'] { color: red;
+table td { background-color: white; }
+table.formtable td[lang='mn'] { color: black;
 	-moz-writing-mode: vertical-lr;
 	writing-mode: vertical-lr;
 	-webkit-writing-mode: vertical-lr;
@@ -131,8 +132,11 @@ table.formtable td[lang='mn'] { color: red;
 	-ms-writing-mode: tb-lr;
 	writing-mode: tb-lr;
 	-webkit-text-orientation: sideways-right;  
+	font-size: 40px;
+	background-color: #FDFADF;
+	padding: 8px;
 	}
-.gap { border: 0px; width: 10px; }
+.gap { border: 0px; width: 10px; background-color: #FDFADF;}
 .conflict { background-color: red; background-color: brown; color: white; font-weight: 500; }
 .fconflict { background-color: #F6A355; color: white; font-weight: 500; }
 .okdiff { background-color: #6F9; color: gray; font-weight: 500; }
