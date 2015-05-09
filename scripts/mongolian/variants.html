@@ -107,7 +107,7 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
 <h3>How to use the document</h3>
 <p>For each Mongolian script letter, this page shows graphics to indicate the shape of a character in a given context (described in the left column). The graphics are standardised, and do not represent the actual font glyph shape.</p>
 <p>The columns to the left show the shapes expected in each of the three documents mentioned above. The columns to the right indicate the shapes produced by various fonts. See below for a key to the abbreviations used.</p>
-<p>A glyph image is shown with a  <span class="conflict">red</span> border if it is in one of the spec columns and doesn't match the NP column. It has an <span class="fconflict">orange</span> border if it is in the font columns and the glyph doesn't match that in the NP column. To help spot divergences, the background of the left-most column is <span class="conflict">red</span> if any cells on that row have red borders, or <span class="fconflict">orange</span> if there are cells with orange borders but no red.</p>
+<p>A glyph image is shown with a  <span class="conflict">brown</span> border if it is in one of the spec columns and doesn't match the NP column. It has an <span class="fconflict">orange</span> border if it is in the font columns and the glyph doesn't match that in the NP column. If, however, the glyph choice is thought to be a design decision because the letter is not actually used in a particular position, then shapes diverging from the NP column are coloured <span class="okdiff">green</span>. This indicates that there is a difference, but it is probably not an issue. To help spot divergences, the background of the left-most column is also coloured. It is <span class="conflict">brown</span> if any cells on that row have brown borders, or <span class="fconflict">orange</span> if there are cells with orange borders but no brown.</p>
 <p>The right column of the table contains a sequence of characters to allow you to check what glyphs are produced by fonts to which you have access. The vertical blue line at the bottom right of the window opens, when you click on it, to show a font control panel. When it is open, you can apply a specific font to the text in the right-hand column by selecting it from the top pull-down menu in this control panel. </p>
 <p>If the font you want to test is not available in the list selector, click on 'Add a font to these lists' (found below the two list selectors in the control panel just mentioned) and enter the name of the font you want to add in the dialog box that appears. The font name will be added to the selection  controls. Open the top list selector again, and click on the name of the font to apply it to the text in the right column. (Fonts you add to a list selector only stay on the  list for the duration of the session.)</p>
 <p>In the text column I use <span class="uname">U+180A MONGOLIAN NIRUGU</span> by default to establish the context for connecting characters. By clicking on the radio button in the font dialog box, you can change the connector to  <span class="uname">U+200D   ZERO WIDTH JOINER</span>. <strong>I experienced significant issues with ZWJ and the Mongolian Baiti font on Internet Explorer</strong>, so that is why the nirugu is used as the default. The results reported here for Mongolian Baiti are for display on IE, but with the nirugu to create the context.</p>
@@ -3689,16 +3689,16 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
       <td lang="mn">&#x180A;&#x1840;&#x180A;</td>
       </tr>
     <tr>
-      <td class=fconflict>final</td>
+      <td class=okdiff>final</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><img src="/pickers/mongolian/v/1840f.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
       <td><img src="/pickers/mongolian/v/1840m.png" alt=""/> ≫ <img src="/pickers/mongolian/v/1840f.png" alt=""/></td>
-      <td><img src="/pickers/mongolian/v/1840m.png" alt="" class="fconflict"/></td>
-      <td><img src="/pickers/mongolian/v/1840m.png" alt="" class="fconflict"/></td>
+      <td><img src="/pickers/mongolian/v/1840m.png" alt="" class="okdiff"/></td>
+      <td><img src="/pickers/mongolian/v/1840m.png" alt="" class="okdiff"/></td>
       <td><img src="/pickers/mongolian/v/1840f.png" alt=""/></td>
-      <td><img src="/pickers/mongolian/v/1840m.png" alt="" class="fconflict"/></td>
+      <td><img src="/pickers/mongolian/v/1840m.png" alt="" class="okdiff"/></td>
       <td lang="mn">&#x180A;&#x1840;</td>
       </tr>
     </tbody>
@@ -4590,13 +4590,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
             <td lang="mn">&#x184A;</td>
           </tr>
           <tr>
-            <td class="fconflict">initial</td>
+            <td class="okdiff">initial</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td><img src="/pickers/mongolian/v/184Am.png" alt=""></td>
             <td class="gap">&nbsp;</td>
             <td><img src="/pickers/mongolian/v/184Am.png" alt=""></td>
-            <td><img src="/pickers/mongolian/v/184Af.png" alt="" class="fconflict"></td>
+            <td><img src="/pickers/mongolian/v/184Af.png" alt="" class="okdiff"></td>
             <td><img src="/pickers/mongolian/v/184Am.png" alt=""></td>
             <td>&nbsp;</td>
             <td><img src="/pickers/mongolian/v/184Am.png" alt=""></td>
@@ -6669,13 +6669,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x1862;</td>
       </tr>
           <tr>
-        <td class="fconflict">**initial</td>
+        <td class="okdiff">**initial</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1862m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1862m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/1862f.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/1862f.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/1862m.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x1862;&#x180A;</td>
@@ -6879,13 +6879,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x1864;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1864m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1864m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/1864i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/1864i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/1864m.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x180A;&#x1864;</td>
@@ -6967,13 +6967,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x1865;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1865m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1865m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/1865i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/1865i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/1865m.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x180A;&#x1865;</td>
@@ -7319,13 +7319,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x1869;&#x180B;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1869m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1869m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/1869i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/1869i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/1869m.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x180A;&#x1869;</td>
@@ -7463,13 +7463,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x186B;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/186Bm.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/186Bm.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/186Bi.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/186Bi.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/186Bm.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x180A;&#x186B;</td>
@@ -7687,13 +7687,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x186E;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/186Em.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/186Em.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/186Ei.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/186Ei.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/186Em.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x180A;&#x186E;</td>
@@ -7785,13 +7785,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x186F;&#x180B;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">**final</td>
+        <td class="okdiff">**final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/186Ff.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/186Ff.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/186Fi.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/186Fi.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/186Ff.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x180A;&#x186F;</td>
@@ -8574,13 +8574,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x1877;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1877m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1877m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/1877i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/1877i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/1877m.png" alt=""></td>
         <td></td>
         <td lang="mn">&#x180A;&#x1877;</td>
@@ -9185,16 +9185,16 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x1889;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1889i.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/1889i.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/1889s.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/1889s.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/1889i.png" alt=""></td>
         <td></td>
-        <td><img src="/pickers/mongolian/v/1889s.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/1889s.png" alt="" class="okdiff"></td>
         <td lang="mn">&#x180A;&#x1889;</td>
       </tr>
     </tbody>
@@ -9290,13 +9290,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x188A;&#x180B;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/188Am.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/188Am.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/188Ai.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/188Ai.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/188Am.png" alt=""></td>
         <td></td>
         <td>?</td>
@@ -10522,13 +10522,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x189A;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Am.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Am.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/189Ai.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/189Ai.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/189Am.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/189Am.png" alt=""></td>
@@ -10599,13 +10599,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x189B;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Bm.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Bm.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/189Bi.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/189Bi.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/189Bm.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/189Bm.png" alt=""></td>
@@ -10676,13 +10676,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x189C;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Cm.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Cm.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/189Ci.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/189Ci.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/189Cm.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/189Cm.png" alt=""></td>
@@ -10907,13 +10907,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x189F;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Fm.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/189Fm.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/189Fi.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/189Fi.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/189Fm.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/189Fm.png" alt=""></td>
@@ -11177,13 +11177,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x18A2;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A2m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A2m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/18A2i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/18A2i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/18A2m.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/18A2m.png" alt=""></td>
@@ -11254,13 +11254,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x18A3;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A3m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A3m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/18A3i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/18A3i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/18A3m.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/18A3m.png" alt=""></td>
@@ -11331,13 +11331,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x18A4;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A4m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A4m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/18A4i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/18A4i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/18A4m.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/18A4m.png" alt=""></td>
@@ -11408,13 +11408,13 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x18A5;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A5m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18A5m.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/18A5i.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/18A5i.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/18A5m.png" alt=""></td>
         <td></td>
         <td><img src="/pickers/mongolian/v/18A5m.png" alt=""></td>
@@ -11715,16 +11715,16 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
         <td lang="mn">&#x180A;&#x18AA;&#x180A;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td class="okdiff">final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18AAm.png" alt=""></td>
         <td class="gap">&nbsp;</td>
         <td><img src="/pickers/mongolian/v/18AAm.png" alt=""></td>
-        <td><img src="/pickers/mongolian/v/18AAi.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/18AAi.png" alt="" class="okdiff"></td>
         <td><img src="/pickers/mongolian/v/18AAm.png" alt=""></td>
         <td>&nbsp;</td>
-        <td><img src="/pickers/mongolian/v/18AAi.png" alt="" class="fconflict"></td>
+        <td><img src="/pickers/mongolian/v/18AAi.png" alt="" class="okdiff"></td>
         <td lang="mn">&#x180A;&#x18AA;</td>
       </tr>
     </tbody>
@@ -11744,7 +11744,7 @@ Use <label><input id="niruguSwitch" type="radio" value="nirugu" checked="checked
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  21 Sep 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-05-08  15:23<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-05-09  8:38<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">
