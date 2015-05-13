@@ -97,9 +97,8 @@ function lookup (str) {
 	str = str.replace(/,/g,'-')
 	str = str.replace(/ /g,'-')
 	str = str.replace(/-[-]+/g,'-')
-console.log(str)
 	str = removeExtensions(str)
-
+	document.getElementById('lookupinput').value = str.replace('-', ', ')
 	subtags = str.split('-');
 	
 
@@ -111,36 +110,30 @@ console.log(str)
 				found = true
 				}
 			}
-		if (found) continue
 		for (i=0;i<scripts.length;i++) {
 			if (scripts[i]['subtag'] && scripts[i]['subtag'].toLowerCase() == subtags[s]) {
 				_scriptList += makeListItem(scripts[i], 'lookup');
 				found = true
 				}
 			}
-		if (found) continue
 		for (i=0;i<regions.length;i++) {
 			if (regions[i]['subtag'] && regions[i]['subtag'].toLowerCase() == subtags[s]) {
 				_regionsList += makeListItem(regions[i], 'lookup');
 				found = true
-				continue
 				}
 			}
-		if (found) continue
 		for (i=0;i<variant.length;i++) {
 			if (variant[i]['subtag'] && variant[i]['subtag'].toLowerCase() == subtags[s]) {
 				_variantList += makeListItem(variant[i], 'lookup');
 				found = true
 				}
 			}
-		if (found) continue
 		for (i=0;i<grandfathered.length;i++) {
 			if (grandfathered[i]['tag'] && grandfathered[i]['tag'].toLowerCase() == subtags[s]) {
 				_grandList += makeListItem(grandfathered[i], 'lookup');
 				found = true
 				}
 			}
-		if (found) continue
 		for (i=0;i<extlang.length;i++) {
 			if (extlang[i]['subtag'] && extlang[i]['subtag'].toLowerCase() == subtags[s]) {
 				_extlangList += makeListItem(extlang[i], 'lookup');
