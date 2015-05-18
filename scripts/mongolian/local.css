@@ -8,7 +8,7 @@
 
 [lang|="mn"] {
 	font-family: "Mongolian White", "Mongolian Baiti", "Noto Sans Mongolian", "Noto Sans Mongolian WF", sans-serif;
-	font-size: 30px;
+	font-size: 40px;
 }
 #index td {
 	font-family: "Mongolian White", "Mongolian Baiti", "Noto Sans Mongolian", "Noto Sans Mongolian WF", sans-serif;
@@ -48,46 +48,6 @@ img.okdiff { border: 3px solid #6F9; }
 	}
 
 
-.forms {  margin-bottom: 10px; -webkit-writing-mode: vertical-lr; }
-.forms td:lang(mn) { font-family: "Mongolian White", 'Mongolian Baiti', 'Noto Sans Mongolian', noto_sans_mongolian, serif; font-size: 36px; line-height: 36px;}
-.forms td { 	
-	-moz-writing-mode: vertical-lr;
-	writing-mode: vertical-lr;
-	-webkit-writing-mode: vertical-lr;
-	-o-writing-mode: vertical-lr;
-	-ms-writing-mode: tb-lr;
-	writing-mode: tb-lr;
-	-webkit-text-orientation: sideways-right; 
-	border: 1px solid #ccc;
-	}
-.forms th:lang(mn) { font-size: 10px; font-weight:normal; color:gray; text-align:left; }
-.forms th { text-align:center; }
-
-.syllables {  
-	-moz-writing-mode: vertical-lr; 
-	-moz-writing-mode: vertical-lr;
-	writing-mode: vertical-lr;
-	-webkit-writing-mode: vertical-lr;
-	-o-writing-mode: vertical-lr;
-	-ms-writing-mode: tb-lr;
-	writing-mode: tb-lr;
-	-webkit-text-orientation: sideways-right; 
-	}
-.syllables td { width: 3em; text-align: center; vertical-align: middle; border: 0; }
-.syllables td span:lang(mn) { 	
-	font-family: 'Mongolian White', 'Mongolian Writing', 'Mongolian Baiti', noto_sans_mongolian, serif; 
-	font-size: 30px;
-	}
-.syllables th { 
-	-webkit-writing-mode: horizontal-tb;	
-	writing-mode: horizontal-tb;
-	-webkit-text-orientation: upright; 
-	font-family: 'Doulos SIL', Arial, sans-serif; 
-	font-size: 20px; 
-	font-weight: normal; 
-	}
-.syllables td span[title] { color:gray; }
-
 #fontsetting { width: 250px; }
 #fontsetting.open { right: 0px; }
 #fontsetting.closed { right: -238px; }
@@ -95,48 +55,33 @@ img.okdiff { border: 3px solid #6F9; }
 
 .smallnotes { font-size: 80%; line-height: 1.4; }
 
-.syllables .black { color: #ccc; }
+.black { color: #ccc; }
 
 td.vright, th.vright {
 	width: 10em;
 	text-align: left;
 	padding-left: 20px;
 	}
-.syllables1 {	-moz-writing-mode: vertical-lr; 
-	-moz-writing-mode: vertical-lr;
-	writing-mode: vertical-lr;
-	-webkit-writing-mode: vertical-lr;
-	-o-writing-mode: vertical-lr;
-	-ms-writing-mode: tb-lr;
-	writing-mode: tb-lr;
-	-webkit-text-orientation: sideways-right; 
-}
-.syllables2 {	-moz-writing-mode: vertical-lr; 
-	-moz-writing-mode: vertical-lr;
-	writing-mode: vertical-lr;
-	-webkit-writing-mode: vertical-lr;
-	-o-writing-mode: vertical-lr;
-	-ms-writing-mode: tb-lr;
-	writing-mode: tb-lr;
-	-webkit-text-orientation: sideways-right; 
-}
-
 
 table.formtable { clear: both; }
 table td { background-color: white; }
-table.formtable td[lang='mn'] { color: black;
+.formtable td { border: 1px solid #ddd; }
+.formtable td.gap { border: 0; }
+.formtable th { text-align:center; }
+table.formtable td[lang='mn'] { 
+	color: black;
 	-moz-writing-mode: vertical-lr;
 	writing-mode: vertical-lr;
 	-webkit-writing-mode: vertical-lr;
 	-o-writing-mode: vertical-lr;
 	-ms-writing-mode: tb-lr;
-	writing-mode: tb-lr;
 	-webkit-text-orientation: sideways-right;  
 	font-size: 40px;
-	background-color: #FDFADF;
+	/*background-color: #FDFADF;*/
 	padding: 8px;
+	text-align: start;
 	}
-.gap { border: 0px; width: 10px; background-color: #FDFADF;}
+.gap { border: 0px; width: 10px; background-color: #FDFADF; border: 0; }
 .conflict { background-color: red; background-color: brown; color: white; font-weight: 500; }
 .fconflict { background-color: #F6A355; color: white; font-weight: 500; }
 .okdiff { background-color: #6F9; color: gray; font-weight: 500; }

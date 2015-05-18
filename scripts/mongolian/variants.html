@@ -38,6 +38,41 @@ function changeConnector (newconnector) {
 			}
 		}
 	}
+
+function changeDirection (newconnector) { 
+	var tds = document.querySelectorAll('td:lang(mn)')
+	var charimgs = document.querySelectorAll('.charimg')
+	if (typeof newconnector == 'undefined') {
+		if (document.getElementById('dirnSwitch').checked) newconnector = 'horizontal'
+		else newconnector = 'vertical'
+		}
+	//console.log(newconnector,tds.length)
+	if (newconnector == 'vertical') {
+		for (i=0;i<tds.length;i++) {
+			tds[i].style.writingMode = 'vertical-lr'
+			tds[i].style.WebkitWritingMode = 'vertical-lr'
+			//tds[i].style.WebkitTextOrientation = 'sideways-right'
+			//tds[i].style.lineHeight = '1.75'
+			}
+		for (i=0;i<charimgs.length;i++) {
+			charimgs[i].style.writingMode = 'vertical-lr'
+			charimgs[i].style.WebkitWritingMode = 'vertical-lr'
+			//charimgs[i].style.lineHeight = '1.75'
+			}
+		}
+	else {
+		for (i=0;i<tds.length;i++) {
+			tds[i].style.writingMode = 'horizontal-tb'
+			tds[i].style.WebkitWritingMode = 'horizontal-tb'
+			//tds[i].style.lineHeight = '1.75'
+			}
+		for (i=0;i<charimgs.length;i++) {
+			charimgs[i].style.writingMode = 'horizontal-tb'
+			charimgs[i].style.WebkitWritingMode = 'horizontal-tb'
+			//charimgs[i].style.lineHeight = '1.75'
+			}
+		}
+	}
 </script>
 
 </head>
@@ -91,6 +126,10 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <p style="cursor:pointer;">Connectors<br/>
 Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> zwj</label> <label><input id="niruguSwitch" type="radio" value="nirugu" name="connector"/> nirugu</label></p>
 </form>
+
+<form onchange="changeDirection(this.dirn.value); return false;">
+<p style="cursor:pointer;">Direction<br/><label><input type="radio" value="vertical" checked="checked" name="dirn"/> vertical</label> <label><input id="Switchdirn" type="radio" value="horizontal" name="dirn"/> horizontal</label></p>
+</form>
 </div>
 	</aside>
 
@@ -109,10 +148,11 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 <p>The columns to the left show the shapes expected in each of the three documents mentioned above. The columns to the right indicate the shapes produced by various fonts. See below for a key to the abbreviations used.</p>
 <p>A glyph image is shown with a  <span class="conflict">brown</span> border if it is in one of the spec columns and doesn't match the NP column. It has an <span class="fconflict">orange</span> border if it is in the font columns and the glyph doesn't match that in the NP column. If, however, the glyph choice is thought to be a design decision because the letter is not actually used in a particular position, then shapes diverging from the NP column are coloured <span class="okdiff">green</span>. This indicates that there is a difference, but it is probably not an issue. To help spot divergences, the background of the left-most column is also coloured. It is <span class="conflict">brown</span> if any cells on that row have brown borders, or <span class="fconflict">orange</span> if there are cells with orange borders but no brown.</p>
 <p>The right column of the table contains a sequence of characters to allow you to check what glyphs are produced by fonts to which you have access. The vertical blue line at the bottom right of the window opens, when you click on it, to show a font control panel. When it is open, you can apply a specific font to the text in the right-hand column by selecting it from the top pull-down menu in this control panel. </p>
-<p>If the font you want to test is not available in the list selector, click on 'Add a font to these lists' (found below the two list selectors in the control panel just mentioned) and enter the name of the font you want to add in the dialog box that appears. The font name will be added to the selection  controls. Open the top list selector again, and click on the name of the font to apply it to the text in the right column. (Fonts you add to a list selector only stay on the  list for the duration of the session.)</p>
-<p>In the text column I use <span class="uname">U+200D   ZERO WIDTH JOINER</span> by default to establish the context for connecting characters. By clicking on the radio button in the font dialog box, you can change the connector to  <span class="uname">U+180A MONGOLIAN NIRUGU</span>. </p>
+<p>If the font you want to test is not available in the list selector, click on 'Add a font to these lists' (found below the two list selectors in the control panel just mentioned) and <strong>enter the name of the font</strong> you want to add in the dialog box that appears. The font name will be added to the selection  controls. Open the top list selector again, and click on the name of the font to apply it to the text in the right column. (Fonts you add to a list selector only stay on the  list for the duration of the session.)</p>
+<p>In the text column I use <span class="uname">U+200D   ZERO WIDTH JOINER</span> by default to establish the context for connecting characters. By clicking on the radio button in the font dialog box, you can <strong>change the connector</strong> to <span class="uname">U+180A MONGOLIAN NIRUGU</span>. </p>
+<p>The CSS for the text column also attempts to apply <strong>vertical text orientation</strong> to the characters. In some Firefox v38 the resulting display may clip some glyphs. By clicking on the radio button in the font dialog box, you can change the direction to horizontal. This may resolve the display problem. The switch only works for Firefox and Chrome browsers.</p>
 <p>NOTE: The shapes shown as text will vary, depending on which operating system and which browser you are using. In particular,  I found a lot of issues with Internet Explorer 11 on Windows7 with the Mongolian Baiti font version 5.0.1. These issues appear to go away on Windows8 with the 5.4.1 version of the font. Also Safari on the Mac performs badly in nearly all cases. Chrome appears to work well on both Windows and OS X, but not on the iPad.</p>
-<p>I used Firefox on Mac OS X 10.10 for all results except those for Mongolian Baiti, for which I used Internet Explorer 11 on Windows8 with version 5.4.1 of the font.</p>
+<p>I used Firefox on Mac OS X 10.10 for all results except those for Mongolian Baiti, for which I used Internet Explorer 11 on Windows8 with version 5.4.1 of the font. See above for issues with Firefox v38 and vertical display.</p>
 <h3>Abbreviations and fonts tested</h3>
 <div style="margin-left: 30px;">
 <p><em>Q:</em> <strong>Prof Quejingzhabu's</strong> document</p>
@@ -429,7 +469,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 	<div class="letter mongolian">
 	  <p><span class="title">Notes</span></p>
 	  <p>The glyph produced is the same as is produced for the suffix <span class="ex" lang="mn"> ᠠᠴᠠ</span> for all the fonts tested.</p>
-	  <p>Notes from Greg Eck about m+fvs2: &quot;The only place where the single tooth initial 1820 is used is with the masculine ablative suffix . Given the standard NNBSP model, this is an initial position and not a medial position. My thoughts here are similar to the 1836 final situation – the spec called for a medial. Font implementers created the 1820 medial+fvs. The display at standalone produced the desired effect – you could view the single tooth initial. Implementation went on to test in context. The implementation did not work. The contextual implementation was placed at initial position. The fvs stand-alone display was left at the medial position resulting in a mis-match of the stand-alone with the contextual implementation. If this is correct, then I suggest that the medial+fvs2 spec be dropped and the initial+fvs1 spec be added for the single tooth initial  <img src="v/1820i1.png" alt=""/>.&quot;.</p>
+	  <p>Notes from Greg Eck about m+fvs2: &quot;The only place where the single tooth initial 1820 is used is with the masculine ablative suffix . Given the standard NNBSP model, this is an initial position and not a medial position. My thoughts here are similar to the 1836 final situation – the spec called for a medial. Font implementers created the 1820 medial+fvs. The display at standalone produced the desired effect – you could view the single tooth initial. Implementation went on to test in context. The implementation did not work. The contextual implementation was placed at initial position. The fvs stand-alone display was left at the medial position resulting in a mis-match of the stand-alone with the contextual implementation. If this is correct, then I suggest that the medial+fvs2 spec be dropped and the initial+fvs1 spec be added for the single tooth initial  <img src="v/1820i1.png" alt=""/>.&quot;</p>
 	</div>
 </div>
 </div>
@@ -11771,7 +11811,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  21 Sep 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-05-18  6:57<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-05-18  10:18<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">
