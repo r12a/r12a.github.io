@@ -47,6 +47,11 @@ img.okdiff { border: 3px solid #6F9; }
 	-webkit-text-orientation: sideways-right;
 	}
 
+#abbrevs em {
+	font-style: italic;
+	font-size: 120%;
+	font-weight: bold;
+	}
 
 #fontsetting { width: 250px; }
 #fontsetting.open { right: 0px; }
