@@ -1358,6 +1358,10 @@ function showAge () {
 					case '5.2': c = 'c5-2'; break;
 					case '6.0': c = 'c6-0'; break;
 					case '6.1': c = 'c6-1'; break;
+					case '6.2': c = 'c6-2'; break;
+					case '6.3': c = 'c6-3'; break;
+					case '7.0': c = 'c7-0'; break;
+					case '8.0': c = 'c8-0'; break;
 					}
 				nodeArray[i].className += ' '+c;
 				}
@@ -1384,6 +1388,10 @@ function showAge () {
 					case '5.2': c = 'c5-2'; break;
 					case '6.0': c = 'c6-0'; break;
 					case '6.1': c = 'c6-1'; break;
+					case '6.2': c = 'c6-2'; break;
+					case '6.3': c = 'c6-3'; break;
+					case '7.0': c = 'c7-0'; break;
+					case '8.0': c = 'c8-0'; break;
 					}
 				nodeArray[i].className += ' '+c;
 				}

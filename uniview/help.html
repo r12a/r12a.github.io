@@ -67,16 +67,16 @@ div.topic p {
   </aside>
 
 
-<p id="status">Updated Thu 31 Jul 2014 &bull; tags <a href="http://rishida.net/blog/index.php?tag=uniview" title="Show all blog posts tagged with 'uniview'">uniview</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+<p id="status">Updated Sat 6 Jun 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=uniview" title="Show all blog posts tagged with 'uniview'">uniview</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
 
 
 <section>
-          <p> UniView is an HTML-based application for working with Unicode characters. You can look up  or find characters (using graphics or fonts) and related information, view whole character blocks or custom ranges, select characters to paste into your document, paste in and discover unknown characters, search for characters using regular expressions, do hex/dec/ncr conversions, highlight character types, etc. etc. It supports Unicode 7.0 and is
+          <p> UniView is an HTML-based application for working with Unicode characters. You can look up  or find characters (using graphics or fonts) and related information, view whole character blocks or custom ranges, select characters to paste into your document, paste in and discover unknown characters, search for characters using regular expressions, do hex/dec/ncr conversions, highlight character types, etc. etc. It supports Unicode 8.0 and is
     written with Web Standards to work on a variety of browsers.</p>
-          <p>This help file relates to Version 7.0.0 of UniView. The main changes in this version, compared to the 7beta version that preceded it, is the update to the released version of the Unicode 7 spec. This involved one or two corrections to data and graphics. In addition, some work went into refreshing the initial help information, and links were added to the detailed notes for characters where they exist. For details of  this and other changes see
+          <p>This help file relates to Version 8.0.0 of UniView. The only changes in this version are the addition of new Unicode 8.0 codepoints, and fixes for the <span class="onscreen">Show Age</span> filter.  For details of  this and other changes see
     the <a href="#versions" title="Change history">change history</a>.</p>
           <p>The first three digits of the UniView version number reflect the version of Unicode that it supports. This version therefore supports
-    Unicode version 7.0.0.</p>
+    Unicode version 8.0.0.</p>
           <!--<p>If you select the icon <img border="0" src="images/gotowin.gif" width="17" height="15" /> the results will be displayed in a separate window.&nbsp; This is to allow   
 you to keep your place while briefly looking something up.</p>--> 
         </section>
@@ -174,7 +174,7 @@ you to keep your place while briefly looking something up.</p>-->
     <p>To remove the information, click on <img src="images/clearpicker.png" alt="icon with an X" title="Clear the  character area" /> alongside <span class="onscreen">Show age</span>.</p>
   </section>
           <section class="topic" id="canscriptinfo">
-    <h3 class="collapse"><a href="#canscriptinfo">Find information about a script</a> <span class="new">NEW</span></h3>
+    <h3 class="collapse"><a href="#canscriptinfo">Find information about a script</a></h3>
     <p>When you display a Unicode block in the lower left panel you will see the name of the block appear near the top right of the page, followed by the icon <img src="/uniview/images/info.gif" alt="I icon"/>. Click on the icon to open a page of resource links in a separate window.</p>
   </section>
         </section>
@@ -356,7 +356,7 @@ you to keep your place while briefly looking something up.</p>-->
     <h3><a href="#showage">Filter &gt; Show age</a></h3>
     <p>This control allows you to see when a character was added to Unicode (This currently only works when characters are displayed in a table.) It shows version numbers for characters added after Unicode version 1.1.</p>
     <p>You can also find the same information on a character-by-character basis in the detailed information for that character (displayed bottom right in UniView).</p>
-    <p>To remove the information, click on the <img src="images/clearpicker.png" alt="X" /> icon alongside.</p>
+    <p>To remove the information, click on the <img src="images/clearpicker.png" alt="X" /> icon alongside, or display  new  data in the left panel.</p>
   </section>
           <section id="graphicscontrol">
     <h3><a href="#graphicscontrol">Look up &gt; Use graphics</a></h3>
@@ -464,7 +464,14 @@ you to keep your place while briefly looking something up.</p>-->
         </section>
 <section id="versions">
           <h2><a href="#versions">Change history</a></h2>
-          <section id="v700">
+        </section>
+<section id="v800">
+  <h3><a href="#v800">Changes in version 8.0.0</a></h3>
+  <p>This version adds   1,945 new non-ideographic characters  encoded in  Unicode 8.0.0&nbsp;(including 6 new scripts).</p>
+  <p>I also finally fixed the <span class="onscreen">Show Age</span> filter, and brought it up to date.</p>
+</section>
+<section>
+  <section id="v700">
     <h3><a href="#v700">Changes in version 7.0.0</a></h3>
     <p>This version updates the app per the changes during  beta phase of the specification, so that it now reflects the finalised Unicode 7.0.0.</p>
     <p>The initial in-app help information displayed for new users was significantly updated, and the help tab now links directly to the help page.</p>
@@ -472,7 +479,7 @@ you to keep your place while briefly looking something up.</p>-->
     <p>Rather than pull the data into the page, the link opens a new window containing the appropriate information. This has advantages for comparing data, but it was also the best solution I could find without using PHP (which is no longer available on the server I use). It also makes it easier to edit the character notes, so the amount of such detail should grow faster. In fact, some additional pages of notes were added along with this upgrade.</p>
     <p>A pop-up window containing resource information used to appear when you used the query to show a block. This no longer happens.</p>
   </section>
-          <section id="v7beta">
+  <section id="v7beta">
     <h3><a href="#v7beta">Changes in version 7beta</a></h3>
     <p>This version adds the 2,834 new characters  encoded in the Unicode 7.0.0 beta, including characters for 23 new scripts. It also simplified the user interface, and eliminated most of the bugs introduced in the quick port to JavaScript that was the previous version.</p>
     <p>Some features that were available in version 6.1.0a are still not available, but they are minor.</p>
@@ -480,16 +487,16 @@ you to keep your place while briefly looking something up.</p>-->
     <p>In addition, the buttons that used to appear when you select a Unicode block have changed. Now the block name appears near the top right of the page with a <img src="images/info.gif" alt="I icon"/> icon. Clicking on the icon takes you to a page listing resources for that block, rather than listing the resources in the lower right part of UniView's interface.</p>
     <p>UniView no longer uses a database to display additional notes about characters. Instead, the information is being added to HTML files. When one of these files contains information for a particular block, you'll see a link to it from the detailed information for a particular character. At some future point, I may pull the information for that character into UniView, as before, but for the time being clicking on the <span class="onscreen">Character notes</span> link opens the page in a separate window. Initially such a link is only available for Tibetan, but I will add more from time to time.</p>
   </section>
-          <section id="prevversions">
+  <section id="prevversions">
     <h3><a href="#prevversions">Previous versions</a></h3>
     <p>Version history for previous versions of UniView can be found <a href="versiondata">here</a>.</p>
   </section>
-        </section>
+</section>
 
 
 
 <div class="smallprint"> <span id="version">This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-23  9:04<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-06-06  17:27<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
   
 

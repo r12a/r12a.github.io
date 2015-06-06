@@ -330,41 +330,68 @@ span[lang|='ur'] {
 
 .c1-1 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c2-0 { background-image: url(images/2-0.png); background-repeat: no-repeat; background-position: center; }
+.c2-0 { background-image: url(images/2-0.png); background-repeat: no-repeat; background-position: top left; background-color: #d5d5d5; }
+#chart td.c2-0 { padding-top: 10px; }  div.c2-0 { padding-left: 20px; }
 .c2-0 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c2-1 { background-image: url(images/2-1.png); background-repeat: no-repeat; background-position: center; }
+.c2-1 { background-image: url(images/2-1.png); background-repeat: no-repeat; background-position: top left; }
 .c2-1 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c3-0 { background-image: url(images/3-0.png); background-repeat: no-repeat; background-position: center; }
+.c3-0 { background-image: url(images/3-0.png); background-repeat: no-repeat; background-position: top left; background-color: #008000; }
+#chart td.c3-0 { padding-top: 10px; }  div.c3-0 { padding-left: 20px; }
 .c3-0 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c3-1 { background-image: url(images/3-1.png); background-repeat: no-repeat; background-position: center; }
+.c3-1 { background-image: url(images/3-1.png); background-repeat: no-repeat; background-position: top left; background-color: #77b277; }
+#chart td.c3-1 { padding-top: 10px; }  div.c3-1 { padding-left: 20px; }
 .c3-1 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c3-2 { background-image: url(images/3-2.png); background-repeat: no-repeat; background-position: center; }
+.c3-2 { background-image: url(images/3-2.png); background-repeat: no-repeat; background-position: top left; background-color: #bbd8bb; }
+#chart td.c3-2 { padding-top: 10px; }  div.c3-2 { padding-left: 20px; }
 .c3-2 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c4-0 { background-image: url(images/4-0.png); background-repeat: no-repeat; background-position: center; }
+.c4-0 { background-image: url(images/4-0.png); background-repeat: no-repeat; background-position: top left; background-color: #bf80ff;  }
+#chart td.c4-0 { padding-top: 10px; }  div.c4-0 { padding-left: 20px; }
 .c4-0 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c4-1 { background-image: url(images/4-1.png); background-repeat: no-repeat; background-position: center; }
+.c4-1 { background-image: url(images/4-1.png); background-repeat: no-repeat; background-position: top left; background-color: #dfbfff; }
+#chart td.c4-1 { padding-top: 10px; }   div.c4-1 { padding-left: 20px; }
 .c4-1 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c5-0 { background-image: url(images/5-0.png); background-repeat: no-repeat; background-position: center; }
+.c5-0 { background-image: url(images/5-0.png); background-repeat: no-repeat; background-position: top left; background-color: #f14043; }
+#chart td.c5-0 { padding-top: 10px; }   div.c5-0 { padding-left: 20px; }
 .c5-0 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c5-1 { background-image: url(images/5-1.png); background-repeat: no-repeat; background-position: center; }
+.c5-1 { background-image: url(images/5-1.png); background-repeat: no-repeat; background-position: top left; background-color: #f0a8a8; background-color: #f89fa1; }
+#chart td.c5-1 { padding-top: 10px; }  div.c5-1 { padding-left: 20px; }
 .c5-1 img { opacity:0.7; filter:alpha(opacity=70); }
 
-.c5-2 { background-image: url(images/5-2.png); background-repeat: no-repeat; background-position: center; }
+.c5-2 { background-color: #ff0000;  background-image: url(images/5-2.png); background-repeat: no-repeat; background-position: top left;  color:#F14043; background-color: #fce2e2; }
+#chart td.c5-2 { padding-top: 10px; }  div.c5-2 { padding-left: 20px; }
 .c5-2 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c6-0 { background-image: url(images/6-0.png); background-repeat: no-repeat; background-position: center; }
+.c6-0 { background-image: url(images/6-0.png); background-repeat: no-repeat; background-position: top left; background-color: #ff00ff; }
+#chart td.c6-0 { padding-top: 10px; }  div.c6-0 { padding-left: 20px; }
 .c6-0 img { opacity:0.5; filter:alpha(opacity=50); }
 
-.c6-1 { background-image: url(images/6-1.png); background-repeat: no-repeat; background-position: center; }
+.c6-1 { background-image: url(images/6-1.png); background-repeat: no-repeat; background-position: top left; background-color: #ff80ff; }
+#chart td.c6-1 { padding-top: 10px; }  div.c6-1 { padding-left: 20px; }
 .c6-1 img { opacity:0.5; filter:alpha(opacity=50); }
+
+.c6-2 { background-image: url(images/6-2.png); background-repeat: no-repeat; background-position: top left; background-color: #ffbfff; }
+#chart td.c6-2 { padding-top: 10px; }  div.c6-2 { padding-left: 20px; }
+.c6-2 img { opacity:0.5; filter:alpha(opacity=50); }
+
+.c6-3 { background-image: url(images/6-3.png); background-repeat: no-repeat; background-position: top left; background-color: #ffbfff; }
+#chart td.c6-3 { padding-top: 10px; }  div.c6-3 { padding-left: 20px; }
+.c6-3 img { opacity:0.5; filter:alpha(opacity=50); }
+
+.c7-0 { background-image: url(images/7-0.png); background-repeat: no-repeat; background-position: top left; background-color: #c99969; }
+#chart td.c7-0 { padding-top: 10px; }  div.c7-0 { padding-left: 20px; }
+.c7-0 img { opacity:0.5; filter:alpha(opacity=50); }
+
+.c8-0 { background-image: url(images/8-0.png); background-repeat: no-repeat; background-position: top left; background-color: #e58152; }
+#chart td.c8-0 { padding-top: 10px; }  div.c8-0 { padding-left: 20px; }
+.c8-0 img { opacity:0.5; filter:alpha(opacity=50); }
 
 
 .quickstartmsg { color: #666; margin-top: 4em; font-size: 100%; line-height: 1.4em;  }
