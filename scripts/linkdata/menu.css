@@ -17,7 +17,7 @@ ul#css3menu>li,ul#css3menu li{ margin:0;}
 ul#css3menu a:active, ul#css3menu a:focus{ outline-style:none;}
 ul#css3menu a{ 	vertical-align:bottom;text-align:left;text-decoration:none;font:normal 14px Arial;color:#999; padding:10px;background-color:#eee; border-width:0 0 0 1px;border-style:solid;border-color:#eee; padding:10px 10px; border-radius: 6px; }
 ul#css3menu ul li{
-	float:none;margin:10px 0 0;}
+	float:none;margin:5px 0 0;}
 ul#css3menu ul a{
 	text-align:left; padding:4px;background-color:#eee;border-width:0;font:14px Arial;color:#999;text-decoration:none;}
 ul#css3menu li:hover>a{
