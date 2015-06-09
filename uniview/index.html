@@ -82,6 +82,7 @@ NEW STUFF
                 <option value="10330:1034F">Gothic</option>
                 <option value="0370:03FF">Greek and Coptic</option>
                 <option value="1F00:1FFF">Greek Extended</option>
+                <option value="10140:1018F">Ancient Greek Numbers</option>
                 <option value="0020:00FF">Latin, Basic &amp; Latin-1 Supplement</option>
                 <option value="0100:017F">Latin Extended-A</option>
                 <option value="0180:024F">Latin Extended-B</option>
@@ -91,10 +92,14 @@ NEW STUFF
                 <option value="1E00:1EFF">Latin Extended Additional</option>
                 <option value="FB00:FB06" class="pb">Latin ligatures</option>
                 <option value="FF00:FF5E" class="pb">Fullwidth Latin letters</option>
+                <option value="0250:02AF">IPA Extensions</option>
+                <option value="1D00:1D7F">Phonetic Extensions</option>
+                <option value="1D80:1DBF">Phonetic Extensions Supplement</option>
                 <option value="10600:1077F">Linear A</option>
                 <option value="10000:1007F">Linear B Syllabary</option>
                 <option value="10080:100FF">Linear B Ideograms</option>
-                <option value="1680:169F">Ogham</option>
+                 <option value="10100:1013F">Aegean Numbers</option>
+                 <option value="1680:169F">Ogham</option>
  <option value="10C80:10CFF">Old Hungarian *</option>
                <option value="10300:1032F">Old Italic</option>
                 <option value="10350:1037F">Old Permic</option>
@@ -102,21 +107,16 @@ NEW STUFF
                 <option value="16A0:16FF">Runic</option>
                 <option value="10450:1047F">Shavian</option>
                 </optgroup>
-                <optgroup label="Phonetic &amp; Shorthand Symbols">
-                <option value="1BC00:1BC9F">Duployan</option>
-                <option value="0250:02AF">IPA Extensions</option>
-                <option value="1D00:1D7F">Phonetic Extensions</option>
-                <option value="1D80:1DBF">Phonetic Extensions Supplement</option>
+                <optgroup label="Modifier Letters">
                 <option value="A700:A71F">Modifier Tone Letters</option>
-                <option value="1BCA0:1BCAF">Shorthand Format Controls</option>
                 <option value="02B0:02FF">Spacing Modifier Letters</option>
                 <option value="2070:209F">Superscripts and Subscripts</option>
                 </optgroup>
                 <optgroup label="Combining Diacritics">
                 <option value="0300:036F">Combining Diacritical Marks</option>
                 <option value="1AB0:1AFF">Combining Diacritical Marks Extended</option>
-                <option value="20D0:20FF">Combining Diacritical Marks for Symbols</option>
                 <option value="1DC0:1DFF">Combining Diacritical Marks Supplement</option>
+                <option value="20D0:20FF">Combining Diacritical Marks for Symbols</option>
                 <option value="FE20:FE2F">Combining Half Marks</option>
                 </optgroup>
                 <optgroup label="African Scripts">
@@ -163,8 +163,8 @@ NEW STUFF
                 <option value="10880:108AF">Nabataean</option>
                 <option value="10A80:10A9F">Old North Arabian</option>
                 <option value="103A0:103DF">Old Persian</option>
-                <option value="10860:1087F">Palmyrene</option>
                 <option value="10A60:10A7F">Old South Arabian</option>
+                <option value="10860:1087F">Palmyrene</option>
                 <option value="10900:1091F">Phoenician</option>
                 <option value="10B80:10BAF">Psalter Pahlavi</option>
                 <option value="0800:083F">Samaritan</option>
@@ -205,10 +205,10 @@ NEW STUFF
                 <option value="1C50:1C7F">Ol Chiki</option>
                 <option value="0B00:0B7F">Oriya</option>
                 <option value="A880:A8DF">Saurashtra</option>
+                <option value="11180:111DF">Sharada</option>
                 <option value="11580:115FF">Siddham</option>
                 <option value="0D80:0DFF">Sinhala</option>
                 <option value="111E0:111FF">Sinhala Archaic Numbers</option>
-                <option value="11180:111DF">Sharada</option>
                 <option value="110D0:110FF">Sora Sompeng</option>
                 <option value="A800:A82F">Syloti Nagri</option>
                 <option value="11680:116CF">Takri</option>
@@ -257,7 +257,7 @@ NEW STUFF
                 <option value="20000:2A6DF">CJK Unified Ideographs Extension B (big!)</option>
                 <option value="2A700:2B73F">CJK Unified Ideographs Extension C (big!)</option>
                 <option value="2B740:2B81F">CJK Unified Ideographs Extension D</option>
-<option value="2B820:2CEA1">CJK Unified Ideographs Extension E *</option>
+<option value="2B820:2CEA1">CJK Unified Ideographs Extension E (big!) *</option>
                 <option value="F900:FAFF">CJK Compatibility Ideographs</option>
                 <option value="2F800:2FA1F">CJK Compatibility Ideographs Supplement</option>
                 <option value="2F00:2FDF">Kangxi Radicals</option>
@@ -291,15 +291,26 @@ NEW STUFF
                 <optgroup label="Other">
                 <option value="FB00:FB4F">Alphabetic Presentation Forms</option>
                 <option value="FF00:FFEF">Halfwidth and Fullwidth Forms</option>
-<option value="1D800:1DAAF">Sutton SignWriting *</option>
                 </optgroup>
+                <optgroup label="Notational Systems">
+                  <option value="2800:28FF">Braille Patterns</option>
+               <option value="1D100:1D1FF">Musical Symbols</option>
+                <option value="2669:266F" class="pb">More Musical Symbols</option>
+                <option value="1D200:1D24F">Ancient Greek Musical Notation</option>
+                <option value="1D000:1D0FF">Byzantine Musical Symbols</option>
+               <option value="1BC00:1BC9F">Duployan</option>
+                <option value="1BCA0:1BCAF">Shorthand Format Controls</option>
+  <option value="1D800:1DAAF">Sutton SignWriting *</option>
+              </optgroup>
                 <optgroup label="Punctuation">
                 <option value="2000:206F">General Punctuation</option>
                 <option value="0021:007F" class="pb">ASCII Punctuation</option>
                 <option value="00A1:00BF" class="pb">Latin-1 Punctuation</option>
-                <option value="FE50:FE6F">Small Form Variants</option>
                 <option value="2E00:2E7F">Supplemental Punctuation</option>
                 <option value="3000:303F">CJK Symbols and Punctuation</option>
+              </optgroup>
+                <optgroup label="Compatibility punctuation">
+                <option value="FE50:FE6F">Small Form Variants</option>
                 <option value="FE30:FE4F">CJK Compatibility Forms</option>
                 <option value="FF01:FF60" class="pb">Fullwidth ASCII Punctuation</option>
                 <option value="FE10:FE1F">Vertical Forms</option>
@@ -316,13 +327,11 @@ NEW STUFF
                 <option value="3300:33FF">CJK Compatibility</option>
                 </optgroup>
                 <optgroup label="Technical Symbols">
-                <option value="2300:23FF">Miscellaneous Technical</option>
                 <option value="2400:243F">Control Pictures</option>
+                <option value="2300:23FF">Miscellaneous Technical</option>
                 <option value="2440:245F">Optical Character Recognition</option>
                 </optgroup>
                 <optgroup label="Numbers and Digits">
-                <option value="10100:1013F">Aegean Numbers</option>
-                <option value="10140:1018F">Ancient Greek Numbers</option>
                 <option value="A830:A83F">Common Indic Number Forms</option>
                 <option value="1D360:1D37F">Counting Rod Numerals</option>
                 <option value="12400:1247F">Cuneiform Numbers and Punctuation</option>
@@ -350,12 +359,14 @@ NEW STUFF
                 <option value="2500:257F">Box Drawing</option>
                 <option value="2580:259F">Block Elements</option>
                 </optgroup>
-                <optgroup label="Musical Symbols">
-                <option value="1D100:1D1FF">Musical Symbols</option>
-                <option value="2669:266F" class="pb">More Musical Symbols</option>
-                <option value="1D200:1D24F">Ancient Greek Musical Notation</option>
-                <option value="1D000:1D0FF">Byzantine Musical Symbols</option>
-                </optgroup>
+                <optgroup label="Emoji & Pictographs">
+                  <option value="2700:27BF">Dingbats</option>
+                <option value="1F650:1F67F">Ornamental Dingbats</option>
+                <option value="1F600:1F64F">Emoticons</option>
+                <option value="1F300:1F5FF">Miscellaneous Symbols And Pictographs</option>
+ <option value="1F900:1F9FF">Supplemental Symbols &amp; Pictographs *</option>
+                <option value="1F680:1F6FF">Transport And Map Symbols</option>
+              </optgroup>
                 <optgroup label="Game Symbols">
                 <option value="2654:265F" class="pb">Chess</option>
                 <option value="1F030:1F09F">Domino Tiles</option>
@@ -368,20 +379,13 @@ NEW STUFF
                 <optgroup label="Other Symbols">
                 <option value="1F700:1F77F">Alchemical Symbols</option>
                 <option value="10190:101CF">Ancient Symbols</option>
-                <option value="2800:28FF">Braille Patterns</option>
                 <option value="20A0:20CF">Currency Symbols</option>
-                <option value="2700:27BF">Dingbats</option>
-                <option value="1F650:1F67F">Ornamental Dingbats</option>
-                <option value="1F600:1F64F">Emoticons</option>
                 <option value="2600:26FF">Miscellaneous Symbols</option>
                 <option value="2B00:2BFF">Miscellaneous Symbols and Arrows</option>
-                <option value="1F300:1F5FF">Miscellaneous Symbols And Pictographs</option>
- <option value="1F900:1F9FF">Supplemental Symbols &amp; Pictographs *</option>
                <option value="4DC0:4DFF">Yijing Hexagram Symbols</option>
                 <option value="268A:268F" class="pb">Yijing Mono and Digrams</option>
                 <option value="2630:2637" class="pb">Yijing Trigrams</option>
                 <option value="1D300:1D35F">Tai Xuan Jing Symbols</option>
-                <option value="1F680:1F6FF">Transport And Map Symbols</option>
                 </optgroup>
                 <optgroup label="Other">
                 <option value="FFF0:FFFF">Specials</option>
