@@ -249,7 +249,7 @@ var titles = new Array(
 "127136¶127231¶Playing Cards¶¶",
 "127232¶127487¶Enclosed Alphanumeric Supplement¶¶",
 "127488¶127743¶Enclosed Ideographic Supplement¶¶",
-"127744¶128511¶Miscellaneous Symbols And Pictographs¶¶",
+"127744¶128511¶Miscellaneous Symbols and Pictographs¶¶",
 "128512¶128591¶Emoticons¶¶",
 "128592¶128639¶Ornamental Dingbats¶¶",
 "128640¶128767¶Transport And Map Symbols¶¶",
