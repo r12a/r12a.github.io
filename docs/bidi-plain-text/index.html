@@ -44,7 +44,7 @@
 	<p>Increasingly, questions are arising at the W3C about how to specify bidi handling for plain text environments. Most recently this includes JSON formats and CSV formats.</p>
 	<p>My aim in this page is to provide background information that can help with those discussions, and carry useful ideas from one discussion to the next. <!--p>When you see red text (examples of bopomofo) you can click on it to reveal the component characters.</p>
 		<p> Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p--> I also add some personal thoughts on implementation alternatives, given current data.</p>
-	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-06-19  13:50<!-- #EndDate -->.</strong></p>
+	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-06-19  13:58<!-- #EndDate -->.</strong></p>
 </section>
 	
 <section id="base_direction">
@@ -94,11 +94,13 @@
 <p>It is possible that what is needed for these cases can be achieved much of the time by setting the direction for the column, such that it is inherited by those cells. This is based on the assumption that all cells in a column contain the same type of information in the same format.</p>
 <p>There may also be some linguistic variations for things like equations and ranges: for example, in Arabic a range of 'ten to twenty' is likely to be expressed visually as &quot;20-10&quot; (ie. base direction needs to be rtl), whereas in Hebrew you may see &quot;10-20&quot; (base direction ltr). (As always, the underlying sequence of codepoints should be the same.)</p>
 <p>The bottom line seems to be that, unless you take drastic action and fill the file with directional control codes, CSV files containing bidi text or RTL text with numbers are  likely to not always be human readable.&nbsp; They should, however, be machine readable, as long as the data is in logical, rather than <a href="http://www.w3.org/International/questions/qa-visual-vs-logical">visual</a>, order.</p>
+<p>The next questions to be answered are what direction information is needed for machines to correctly display results, eg. on a web page, in a spreadsheet, etc? And how is it best to provide that information?</p>
+<p>tbc...</p>
 </section>
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  3 Dec 2010.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-06-19  13:50<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-06-19  13:58<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
