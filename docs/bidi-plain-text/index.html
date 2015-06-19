@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="utf-8"/>
+<title>Bidi in plain text</title>
+<meta name="description" content="Notes about how to handle bopomofo (zhuyin fuhao) on the Web."/>
+
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+	
+<script src="/scripts/block/bopomofo-names-subset.js" type="text/javascript"></script>
+<script src="/scripts/block/block-code.js" type="text/javascript"></script>
+
+<script src="/code/toc_section.js" type="text/javascript"></script>
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+<script src="/uniview/scriptGroups.js" type="text/javascript"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>Bidi in plain text (draft!)</h1>
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead" tabindex="4">Contents</a></h2>
+  <nav id="toc"><!-- placeholder --></nav>
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+	<p><a href="http://www.w3.org/International/articles/inline-bidi-markup/uba-basics">Unicode Bidirectional Algorithm basics</a></p>
+        <p><a href="http://www.w3.org/International/articles/inline-bidi-markup/">Inline markup and bidirectional text in HTML </a></p>
+      </div>
+</aside>
+
+
+<p id="status">Updated Fri 19 Jun 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=bopomofo" title="Show all blog posts tagged with 'bidi'">bidi</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<section>
+	<p>Increasingly, questions are arising at the W3C about how to specify bidi handling for plain text environments. Most recently this includes JSON formats and CSV formats.</p>
+	<p>My aim in this page is to provide background information that can help with those discussions, and carry useful ideas from one discussion to the next. <!--p>When you see red text (examples of bopomofo) you can click on it to reveal the component characters.</p>
+		<p> Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p--> I also add some personal thoughts on implementation alternatives, given current data.</p>
+	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-06-19  13:50<!-- #EndDate -->.</strong></p>
+</section>
+	
+<section id="base_direction">
+<h2><a href="#base_direction">Establishing base direction</a></h2>
+<p>If you are not familiar with what the Unicode Bidirectional Algorithm (UBA) does and doesn't do, <a href="http://www.w3.org/International/articles/inline-bidi-markup/uba-basics">read this first</a>.</p>
+<p>A <dfn>base direction</dfn> needs to be determined (ie. directional context) in order to display bidirectional text correctly.  That will determine the order of runs of ltr and runs of rtl text, and the location of punctuation. By hook or by crook this will be set, whether explicitly or by default (in which case it will be ltr).</p>
+<p>In what follows, the word <dfn>paragraph</dfn> indicates a run of text followed by a hard line-break in plain text, but may signify different things in other situations. In CSV it equates to 'cell', so a single line of comma-separated items is actually a set of comma-separated paragraphs.&nbsp; In HTML it equates to the lowest level of block element, which is often a <code class="kw" translate="no">p</code> element, but may be things such as <code class="kw" translate="no">div</code>, <code class="kw" translate="no">li</code>, etc., if they only contain text. In JSON, it equates to a quoted string value.</p>
+<p>There are a number of possible ways of determining the base direction.  In an attempt to keep this from being overly abstract, I'll use HTML to illustrate the alternatives. When I say <dfn>metadata</dfn> I mean information which could be an annotation associated with the data, could be markup in scenarios that allow that, could be a higher-level protocol such as HTTP in theory, etc.</p>
+<ol>
+  <li>the base direction may be set by the application applying  metadata. (This is what happens when you set the <code class="kw" translate="no">dir</code> attribute on the <code class="kw" translate="no">html</code> tag or some other tag in HTML.)  If the base direction is set by metadata, there is no need to look for the first-strong character to determine the base direction – it is already determined. </li>
+  <li>the metadata may specifically indicate that first-strong heuristics should be used. Then you <em>would</em> expect to consider the actual characters used in order to determine the base direction. (This is what happens if you set <code>dir=auto</code> on an HTML element.)</li>
+  <li>the application may expect metadata, but there may be no such information provided.  In this case you would usually expect there to be a default direction specified, and the base direction for a cell would be set to that default.  The default is usually ltr. (This is what happens if you have no <code class="kw" translate="no">dir</code> attributes in your HTML file.)</li>
+  <li>if the application expects no metadata it should look for the first-strong character for each paragraph/cell.  (This doesn't apply to HTML, since HTML specifies a default direction. It is likely to apply if you are looking at plain text files that are not expected to be associated with metadata.)</li>
+  <li>if there is or is not any metadata specified, but the paragraph contains a string that starts with one of the unicode bidi control characters  RLI, LRI, FSI, LRE, RLE, LRO, or RLO and ends with PDF, these characters will determine the base direction for the contained string. These characters, when placed in the content, explicitly override any previously set direction by creating an inline range and assigning a base direction to it.  (The effect of such characters does not extend past paragraph boundaries, but the range ought to be explicitly ended using the PDF control character.)</li>
+  </ol>
+<p>Where there is a possibility to use metadata rather than control codes, it is advisable to use it – particularly for content that is created by an author, and especially for structural components, down to the paragraph level.  It is not possible to use these characters to define direction for entities that contain more than one paragraph, since the effect is terminated by a paragraph end.</p>
+<p>Reasons to avoid relying on  control characters to set direction  include the following:</p>
+<ol>
+  <li>they are invisible in most editors are are therefore difficult to work with.</li>
+  <li>a choice of which to use is often required (ltr/rtl?), and this means that the content author typically needs to provide the control codes – specifying control codes for all paragraphs is time-consuming and error-prone.</li>
+  <li>processors that extract parts of the data, add to it or reuse in combination with other text it may incorrectly handle the control codes</li>
+  <li>search and comparison algorithms should ignore these characters, but typically don't.</li>
+</ol>
+<p>Note that there may also be embedded ranges of text that need to have a different base direction <em>within</em> a single paragraph. For example, &quot;The title was '!AT NOITASILANOITANRETNI'.&quot;, where the span within the single quotes is in Hebrew/Arabic/Divehi, etc., and needs to have a different base direction than the rest of the paragraph to place the exclamation mark correctly. </p>
+<p>Again, it's typically easier and safer for authors to use markup to indicate such inline ranges. In HTML you would usually use an inline element with <code class="kw" translate="no">dir</code> attribute to establish the base direction for such runs of text.  If you can't mark up the text, such as in HTML's <code class="kw" translate="no">title</code> element, or any environment that handles only plain text content, you have to resort to Unicode's paired control characters to establish the base direction for such an internal range.</p>
+</section>
+
+<section id="csv">
+  <h2><a href="#csv">Implications for CSV data</a></h2>
+  <p>It's worth noting that the order in which columns in a plain-text csv file are displayed will be affected by the contents, and bidirectional or rtl+numeric data will be hard for humans to read unless unicode control characters are used in abundance.  For example, without any additional information over and above the UBA, take the following data:</p>
+  <ol>
+    <li>col 1 (region code): EG</li>
+    <li>col 2 (per capita GDP): $3.724</li>
+    <li>col 3 (country name): مصر</li>
+    <li>col 4 (capital): القاهرة</li>
+    <li>col 5 (population): &quot;88,978,000&quot;</li>
+    <li>col 6 (gps):  30°2′N 31°13′E</li>
+  </ol>
+<p>If we put that data into a single line, separated by commas, and opened it in a simple text editor, we would see the following if the base direction is LTR:</p>
+<p><img src="images/csv-ltr.png" width="782" height="37" alt=""/></p>
+<p>If the base direction is RTL, we would see:</p>
+<p><img src="images/csv-rtl.png" width="782" height="40" alt=""/></p>
+<p>Note how there are different problems in each case, and that some of the values appear to be different from what was intended.&nbsp;Don't overlook, by the way, that although the order of the arabic text looks the same, the items appear to be in the wrong columns, respectively, in the LTR version.</p>
+<p>Of course, the above is only smoke and mirrors: the underlying order of characters is accurate, and readable by an application, and starts always with column 1.</p>
+<p>If most of the content of a csv file should be treated as rtl, it is easiest to indicate this in the table metadata, and allow it to be inherited by all cells.</p>
+<p>However, certain cells may need to have a specific direction in order for the data to be readable, and it's not always easy to detect for which cells that applies. For example, cells in a rtl table that contains mac address numbers, equations, negative signs, telephone numbers, and such may need to be given a LTR direction within an overall RTL dataset in order to be comprehensible to the end user. Consider <a href="http://www.w3.org/International/articles/inline-bidi-markup/Overview#usecase7">these examples</a>, which show how, in some cases, such as Mac addressses, the user could actually be completely unaware that the data they are seeing is incorrect if the appropriate base direction setting was missing.</p>
+<p>It is possible that what is needed for these cases can be achieved much of the time by setting the direction for the column, such that it is inherited by those cells. This is based on the assumption that all cells in a column contain the same type of information in the same format.</p>
+<p>There may also be some linguistic variations for things like equations and ranges: for example, in Arabic a range of 'ten to twenty' is likely to be expressed visually as &quot;20-10&quot; (ie. base direction needs to be rtl), whereas in Hebrew you may see &quot;10-20&quot; (base direction ltr). (As always, the underlying sequence of codepoints should be the same.)</p>
+<p>The bottom line seems to be that, unless you take drastic action and fill the file with directional control codes, CSV files containing bidi text or RTL text with numbers are  likely to not always be human readable.&nbsp; They should, however, be machine readable, as long as the data is in logical, rather than <a href="http://www.w3.org/International/questions/qa-visual-vs-logical">visual</a>, order.</p>
+</section>
+<div id="panel" style="display:none"></div>
+
+<div class="smallprint"><span id="version">First published  3 Dec 2010.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2015-06-19  13:50<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<script type="text/javascript">
+createtoc();
+//initialiseShowNames('/scripts/block/bopomofo', 'c');
+//highlightIndexChars()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+:lang(zh) { font-family: sans-serif; font-size: 100%; }
+
+
+#fontsetting { width: 270px; }
+#fontsetting.open { right: 0px; }
+#fontsetting.closed { right: -258px; }
+#fontsettingswitch { height: 130px; }
+
+
+table { margin-left: 7.5%; }
+table td { border: 1px solid #F6F6F6; text-align: left; padding: 0 1em; }
+
+
+body {
+	counter-reset:figure;
+	}
+figure {
+	counter-increment:figure;
+	}
+figcaption:before {
+	content: 'Figure ' counter(figure) '. ';
+	}
+
+figure p {
+	text-align:center;
+	}
