@@ -93,6 +93,50 @@ roundInfo.fbb.eqclass = [125,180,234,269,285]; // gents
 handicapscores.f = new Array(); 
 
 
+// 252
+roundData.tft = new Array();
+roundData.tftlb = new Array();
+roundData.tftbb = new Array();
+
+roundInfo.tft = new Object();
+roundInfo.tft.name = "tft";
+roundInfo.tft.hcTable = "tft";
+roundInfo.tft.fullname = "252 (recurve)";
+roundInfo.tft.rounds = 1;
+roundInfo.tft.description = 'i;3,0,122';
+roundInfo.tft.array = roundData.tft;
+roundInfo.tft.type = 'irc';
+roundInfo.tft.classifications = [];
+roundInfo.tft.eqclass = [252,252,252,252,252]; // gents
+//roundInfo.tft.eqclass = [172,228,265,298,319]; // ladies
+
+roundInfo.tftlb = new Object();
+roundInfo.tftlb.name = "tftlb";
+roundInfo.tftlb.hcTable = "tft";
+roundInfo.tftlb.fullname = "252 (longbow)";
+roundInfo.tftlb.rounds = 1;
+roundInfo.tftlb.description = 'i;3,0,122';
+roundInfo.tftlb.array = roundData.tftlb;
+roundInfo.tftlb.type = 'ilb';
+roundInfo.tftlb.classifications = [];
+roundInfo.tftlb.eqclass = [160,160,160,160,160]; // gents
+//roundInfo.tftlb.eqclass = [52,110,133,172,195]; // ladies
+
+roundInfo.tftbb = new Object();
+roundInfo.tftbb.name = "tftbb";
+roundInfo.tftbb.hcTable = "tft";
+roundInfo.tftbb.fullname = "252 (barebow)";
+roundInfo.tftbb.rounds = 1;
+roundInfo.tftbb.description = 'i;3,0,122';
+roundInfo.tftbb.array = roundData.tftbb;
+roundInfo.tftbb.type = 'ibb';
+roundInfo.tftbb.classifications = [];
+roundInfo.tftbb.eqclass = [182,182,182,182,182]; // gents
+//roundInfo.tftbb.eqclass = [75,125,180,228,260]; // ladies
+
+handicapscores.tft = new Array(); 
+
+
 // Short metric
 roundData.sm = new Array();
 roundData.smlb = new Array();
@@ -601,7 +645,7 @@ handicapscores.lmg = new Array();
 
 
 
-var roundNames = ['p','f','sm','fita70','albion','longnat','newn','nat','windsor','stg','neww','lmg'];
+var roundNames = ['p','tft','f','sm','fita70','albion','longnat','newn','nat','windsor','stg','neww','lmg'];
 
 function concatenateRounds (roundType) {
 	// this function groups various types of round for handicap calculations and ranking lists
@@ -611,9 +655,9 @@ function concatenateRounds (roundType) {
 		case 'olb': return emptyArray.concat(roundData.smlb, roundData.fita70lb, roundData.albionlb, roundData.longnatlb, roundData.newnlb, roundData.natlb, roundData.windsorlb, roundData.stglb, roundData.newwlb, roundData.lmglb); break;
 		case 'orc': return emptyArray.concat(roundData.sm, roundData.fita70, roundData.albion, roundData.longnat, roundData.newn, roundData.nat, roundData.windsor, roundData.stg, roundData.neww, roundData.lmg); break;
 		case 'obb': return emptyArray.concat(roundData.smbb, roundData.fita70bb, roundData.albionbb, roundData.longnatbb, roundData.newnbb, roundData.natbb, roundData.windsorbb, roundData.stgbb, roundData.newwbb, roundData.lmgbb); break;
-		case 'ilb': return emptyArray.concat(roundData.plb, roundData.flb); break;
-		case 'irc': return emptyArray.concat(roundData.p, roundData.f); break;
-		case 'ibb': return emptyArray.concat(roundData.pbb, roundData.fbb);
+		case 'ilb': return emptyArray.concat(roundData.plb, roundData.flb, roundData.tftlb); break;
+		case 'irc': return emptyArray.concat(roundData.p, roundData.f, roundData.tft); break;
+		case 'ibb': return emptyArray.concat(roundData.pbb, roundData.fbb, roundData.tftbb);
 		}	
 	}
 

@@ -144,7 +144,8 @@ function getHandicap ( cRound, score) {
 function addscore (thisRound) {
 	// adds information to an array of data for a particular round
 	cRound = thisRound.split(';');
-	roundName = cRound[0]; //alert(roundName);
+	roundName = cRound[0]; 
+	//console.log(roundName);
 	newRound = roundData[roundName];
 	q = newRound.length;
 	newRound[q] = new Object();
