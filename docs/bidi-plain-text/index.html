@@ -44,7 +44,7 @@
 	<p>Increasingly, questions are arising at the W3C about how to specify bidi handling for plain text environments. Most recently this includes JSON formats and CSV formats.</p>
 	<p>My aim in this page is to provide background information that can help with those discussions, and carry useful ideas from one discussion to the next. <!--p>When you see red text (examples of bopomofo) you can click on it to reveal the component characters.</p>
 		<p> Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p--> I also add some personal thoughts on implementation alternatives, given current data.</p>
-	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-06-19  14:29<!-- #EndDate -->.</strong></p>
+	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-06-25  11:58<!-- #EndDate -->.</strong></p>
 </section>
 	
 <section id="base_direction">
@@ -74,6 +74,20 @@
 <p>Again, it's typically easier and safer for authors to use markup to indicate such inline ranges. In HTML you would usually use an inline element with <code class="kw" translate="no">dir</code> attribute to establish the base direction for such runs of text.  If you can't mark up the text, such as in HTML's <code class="kw" translate="no">title</code> element, or any environment that handles only plain text content, you have to resort to Unicode's paired control characters to establish the base direction for such an internal range.</p>
 <p>Furthermore, inline ranges where the base direction is changed should be isolated from surrounding text, so that the UBA doesn't produce incorrect results due to interference across boundaries. <a href="http://www.w3.org/International/articles/inline-bidi-markup/#uc5">See an&nbsp;example</a> of how this can produce incorrect ordering of things such&nbsp;as text followed by numbers in HTML, or <a href="http://www.w3.org/International/articles/inline-bidi-markup/#usecase3">another example</a> of how it can affect lists.</p>
 <p>This means that if you are using Unicode control codes you should use RLI/LRI...PDI rather than RLE/LRE...PDF.&nbsp; These isolating codes are fairly new, and applications may not yet support them.</p>
+
+<section id="rlmlrm">
+<h3><a href="#rlmlrm">RLM and LRM</a></h3>
+<p>A word about the Unicode characters <span class="uname">U+200F   RIGHT-TO-LEFT MARK (</span>RLM) and <span class="uname">U+200E   LEFT-TO-RIGHT MARK (</span>LRM) is warranted at this point.</p>
+<p>The first point to be clear about is that neither RLM nor LRM establish the base direction for a range of text.&nbsp; They are simply invisible characters with strong directional properties.</p>
+<p>This means that you cannot use RLM for example, to make the exclamation mark appear to the left of the Arabic text in the following example.</p>
+<p>the title is "<span dir="rtl">نشاط التدويل!</span>".</p>
+<p>For this you can only use metadata or the paired control characters.</p>
+<p>Of course, if you are detecting base direction using first-strong heuristics then RLM and LRM can be useful for setting the base direction where the text in question begins with something that would otherwise give the wrong result, eg. </p>
+<p>"<span dir="rtl">نشاط التدويل</span>" is how you say "i18n Activity" in Arabic.</p>
+<p>Here an LRM could be placed at the start of the text, before the strong RTL Arabic characters, to prevent the algorithm from assuming that the text should be right-to-left. (Remember that if metadata is used to set the base direction, that character is ignored, unless the metadata specifically says that first-strong heuristics should be used.)</p>
+
+</section>
+
 </section>
 
 <section id="csv">
@@ -104,7 +118,7 @@
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  3 Dec 2010.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-06-19  14:29<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-06-25  11:58<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
