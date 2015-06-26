@@ -654,10 +654,10 @@ function concatenateRounds (roundType) {
 	switch (roundType) {
 		case 'olb': return emptyArray.concat(roundData.smlb, roundData.fita70lb, roundData.albionlb, roundData.longnatlb, roundData.newnlb, roundData.natlb, roundData.windsorlb, roundData.stglb, roundData.newwlb, roundData.lmglb, roundData.tftlb); break;
 		case 'orc': return emptyArray.concat(roundData.sm, roundData.fita70, roundData.albion, roundData.longnat, roundData.newn, roundData.nat, roundData.windsor, roundData.stg, roundData.neww, roundData.lmg, roundData.tft); break;
-		case 'obb': return emptyArray.concat(roundData.smbb, roundData.fita70bb, roundData.albionbb, roundData.longnatbb, roundData.newnbb, roundData.natbb, roundData.windsorbb, roundData.stgbb, roundData.newwbb, roundData.lmgbb, roundData.tftbb)); break;
+		case 'obb': return emptyArray.concat(roundData.smbb, roundData.fita70bb, roundData.albionbb, roundData.longnatbb, roundData.newnbb, roundData.natbb, roundData.windsorbb, roundData.stgbb, roundData.newwbb, roundData.lmgbb, roundData.tftbb); break;
 		case 'ilb': return emptyArray.concat(roundData.plb, roundData.flb); break;
 		case 'irc': return emptyArray.concat(roundData.p, roundData.f); break;
-		case 'ibb': return emptyArray.concat(roundData.pbb, roundData.fbb;
+		case 'ibb': return emptyArray.concat(roundData.pbb, roundData.fbb);
 		}	
 	}
 
