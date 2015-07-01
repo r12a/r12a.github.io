@@ -44,7 +44,7 @@
 	<p>Increasingly, questions are arising at the W3C about how to specify bidi handling for plain text environments. Most recently this includes JSON formats and CSV formats.</p>
 	<p>My aim in this page is to provide background information that can help with those discussions, and carry useful ideas from one discussion to the next. <!--p>When you see red text (examples of bopomofo) you can click on it to reveal the component characters.</p>
 		<p> Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p--> I also add some personal thoughts on implementation alternatives, given current data.</p>
-	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-06-25  11:58<!-- #EndDate -->.</strong></p>
+	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-07-01  20:12<!-- #EndDate -->.</strong></p>
 </section>
 	
 <section id="base_direction">
@@ -52,25 +52,26 @@
 <p>If you are not familiar with what the Unicode Bidirectional Algorithm (UBA) does and doesn't do, <a href="http://www.w3.org/International/articles/inline-bidi-markup/uba-basics">read this first</a>.</p>
 <p>A <dfn>base direction</dfn> needs to be determined (ie. directional context) in order to display bidirectional text correctly.  That will determine the order of runs of ltr and runs of rtl text, and the location of punctuation. By hook or by crook this will be set, whether explicitly or by default (in which case it will depend on the direction of the environment in which you are viewing it).</p>
 <p>In what follows, the word <dfn>paragraph</dfn> indicates a run of text followed by a hard line-break in plain text, but may signify different things in other situations. In CSV it equates to 'cell', so a single line of comma-separated items is actually a set of comma-separated paragraphs.&nbsp; In HTML it equates to the lowest level of block element, which is often a <code class="kw" translate="no">p</code> element, but may be things such as <code class="kw" translate="no">div</code>, <code class="kw" translate="no">li</code>, etc., if they only contain text. In JSON, it equates to a quoted string value.</p>
-<p>There are a number of possible ways of determining the base direction.  In an attempt to keep this from being overly abstract, I'll use HTML to illustrate the alternatives. When I say <dfn>metadata</dfn> I mean information which could be an annotation associated with the data, could be markup in scenarios that allow that, could be a higher-level protocol such as HTTP in theory, etc.</p>
+<p>There are a number of possible ways of determining the base direction.  In an attempt to keep this from being overly abstract, I'll use HTML to illustrate the alternatives. When I say <dfn>metadata</dfn> I mean information which could be an annotation associated with the data, could be markup in scenarios that allow that, could be a higher-level protocol such as HTTP (in theory), etc.</p>
 <ol>
-  <li>the base direction may be set by the application applying  metadata. (This is what happens when you set the <code class="kw" translate="no">dir</code> attribute on the <code class="kw" translate="no">html</code> tag or some other tag in HTML.)  If the base direction is set by metadata, there is no need to look for the first-strong character to determine the base direction – it is already determined. </li>
+  <li>the base direction of a paragraph may be set by the application applying metadata to the paragraph. (This is what happens when you set the <code class="kw" translate="no">dir</code> attribute on the <code class="kw" translate="no">html</code> tag or some other tag in HTML.)  If the base direction is set by metadata, there is no need to look for the first-strong character to determine the base direction – it is already determined. </li>
   <li>the metadata may specifically indicate that first-strong heuristics should be used. Then you <em>would</em> expect to consider the actual characters used in order to determine the base direction. (This is what happens if you set <code>dir=auto</code> on an HTML element.)</li>
   <li>the application may expect metadata, but there may be no such information provided.  In this case you would usually expect there to be a default direction specified, and the base direction for a cell would be set to that default.  The default is usually ltr. (This is what happens if you have no <code class="kw" translate="no">dir</code> attributes in your HTML file.)</li>
-  <li>if the application expects no metadata it should look for the first-strong character for each paragraph/cell.  (This doesn't apply to HTML, since HTML specifies a default direction. It is likely to apply if you are looking at plain text files that are not expected to be associated with metadata.)</li>
+  <li>if the application expects no metadata it should use heuristics to determine the base direction for each paragraph/cell. A typical solution, and one described by UAX	9 <cite>Unicode Bidirectional Algorithm</cite>, is to look for the first-strong character in the paragraph/cell.  (This doesn't apply to HTML, since HTML specifies a default direction. It is likely to apply if you are looking at plain text files that are not expected to be associated with metadata.)</li>
   <li>if there is or is not any metadata specified, but the paragraph contains a string that starts with one of the unicode bidi control characters  RLI, LRI, FSI, LRE, RLE, LRO, or RLO and ends with PDF/PDI, these characters will determine the base direction for the contained string. These characters, when placed in the content, explicitly override any previously set direction by creating an inline range and assigning a base direction to it.  (The effect of such characters does not extend past paragraph boundaries, but the range ought to be explicitly ended using the PDF/PDI control character, especially if a paragraph end is not easily detectable by the application.)</li>
   </ol>
-<p>Where there is a possibility to use metadata rather than control codes, it is advisable to use it – particularly for content that is created by an author, and especially for structural components, down to the paragraph level.  It is not possible to use these characters to define direction for entities that contain more than one paragraph, since the effect is terminated by a paragraph end.</p>
-<p>Reasons to avoid relying on  control characters to set direction  include the following:</p>
+<p>Where there is a possibility to use metadata rather than control codes, it is advisable to use it – particularly for content that is created by an author.</p>
+<p>In fact, for structural components, above the paragraph level, it is not possible to use the Unicode bidi control characters to define direction for the paragraphs it contains, since the effect is terminated by a paragraph end.</p>
+<p>Reasons to avoid relying on  control characters at the paragraph level to set direction  include the following:</p>
 <ol>
   <li>they are invisible in most editors and are therefore difficult to work with.</li>
-  <li>it is sometimes necessary to choice which to use based on context or the type of the data, and this means that a content author typically needs to choose the control codes – specifying control codes for all paragraphs is time-consuming and error-prone.</li>
+  <li>it is sometimes necessary to choose which to use based on context or the type of the data, and this means that a content author typically needs to select the control codes – specifying control codes in this way for all paragraphs is time-consuming and error-prone.</li>
   <li>processors that extract parts of the data, add to it or reuse in combination with other text it may incorrectly handle the control codes</li>
   <li>search and comparison algorithms should ignore these characters, but typically don't.</li>
 </ol>
-<p>Note that there may also be embedded ranges of text that need to have a different base direction <em>within</em> a single paragraph. For example, </p>
+<p>There may also be embedded ranges of text <em>within</em> a single paragraph that need to have a different base direction. For example, </p>
 <p>&quot;The title was '!NOITASILANOITANRETNI'.&quot;</p>
-<p>where the span within the single quotes is in Hebrew/Arabic/Divehi, etc., and needs to have a different base direction than the rest of the paragraph to place the exclamation mark correctly. </p>
+<p>where the span within the single quotes is in Hebrew/Arabic/Divehi, etc., and needs to have a RTL base direction, instead of the LTR base direction of the surrounding paragraph, in order to place the exclamation mark correctly. </p>
 <p>Again, it's typically easier and safer for authors to use markup to indicate such inline ranges. In HTML you would usually use an inline element with <code class="kw" translate="no">dir</code> attribute to establish the base direction for such runs of text.  If you can't mark up the text, such as in HTML's <code class="kw" translate="no">title</code> element, or any environment that handles only plain text content, you have to resort to Unicode's paired control characters to establish the base direction for such an internal range.</p>
 <p>Furthermore, inline ranges where the base direction is changed should be isolated from surrounding text, so that the UBA doesn't produce incorrect results due to interference across boundaries. <a href="http://www.w3.org/International/articles/inline-bidi-markup/#uc5">See an&nbsp;example</a> of how this can produce incorrect ordering of things such&nbsp;as text followed by numbers in HTML, or <a href="http://www.w3.org/International/articles/inline-bidi-markup/#usecase3">another example</a> of how it can affect lists.</p>
 <p>This means that if you are using Unicode control codes you should use RLI/LRI...PDI rather than RLE/LRE...PDF.&nbsp; These isolating codes are fairly new, and applications may not yet support them.</p>
@@ -101,13 +102,14 @@
     <li>col 5 (population): &quot;88,978,000&quot;</li>
     <li>col 6 (gps):  30°2′N 31°13′E</li>
   </ol>
-<p>If we put that data into a single line, separated by commas, and opened it in a simple text editor, we would see the following if the base direction is LTR:</p>
+<p>If we put that data into a single line, separated by commas, and opened it in a simple text editor that supports the Unicode bidi algorithm, we would see the following if the base direction is LTR:</p>
 <p><img src="images/csv-ltr.png" width="782" height="37" alt=""/></p>
 <p>If the base direction is RTL, we would see:</p>
 <p><img src="images/csv-rtl.png" width="782" height="40" alt=""/></p>
 <p>Note how there are different problems in each case, and that some of the values appear to be different from what was intended.&nbsp;Don't overlook, by the way, that although the order of the arabic text looks the same, the items appear to be in the wrong columns, respectively, in the LTR version.</p>
 <p>Of course, the above is only smoke and mirrors: the underlying order of characters is accurate, and readable by an application, and starts always with column 1.</p>
-<p>If most of the content of a csv file should be treated as rtl, it is easiest to indicate this in the table metadata, and allow it to be inherited by all cells.</p>
+<p>Now lets look at what's possible if we can associate metadata with the table, columns, cells, etc.</p>
+<p>If most of the content of a csv file should be treated as rtl, it is easiest to indicate this in the table metadata, and allow it to be inherited by all cells.  It's also worth specifying a default direction, ie. for the case where no metadata is provided.</p>
 <p>However, certain cells may need to have a specific direction in order for the data to be readable, and it's not always easy to detect for which cells that applies. For example, cells in a rtl table that contains mac address numbers, equations, negative signs, telephone numbers, and such may need to be given a LTR direction within an overall RTL dataset in order to be comprehensible to the end user. Consider <a href="http://www.w3.org/International/articles/inline-bidi-markup/Overview#usecase7">these examples</a>, which show how, in some cases, such as Mac addressses, the user could actually be completely unaware that the data they are seeing is incorrect if the appropriate base direction setting was missing.</p>
 <p>It is possible that what is needed for these cases can be achieved much of the time by setting the direction for the column, such that it is inherited by those cells. This is based on the assumption that all cells in a column contain the same type of information in the same format.</p>
 <p>There may also be some linguistic variations for things like equations and ranges: for example, in Arabic a range of 'ten to twenty' is likely to be expressed visually as &quot;20-10&quot; (ie. base direction needs to be rtl), whereas in Hebrew you may see &quot;10-20&quot; (base direction ltr). (As always, the underlying sequence of codepoints should be the same.)</p>
@@ -115,10 +117,16 @@
 <p>The next questions to be answered are what direction information is needed for machines to correctly display results, eg. on a web page, in a spreadsheet, etc? And how is it best to provide that information?</p>
 <p>tbc...</p>
 </section>
-<div id="panel" style="display:none"></div>
+
+<section id="webvtt">
+<h2><a href="#webvtt">Implications for WebVTT data</a></h2>
+<p>If a WebVTT script is in a language such as Arabic, Hebrew, Divehi, Persian, Urdu, etc., then most, if not all, of the cue text will need to have a base direction of RTL. The easiest way to achieve this would be to declare the direction at the top of the file, and have it inherited as the default direction for the content of each cue.</p>
+<p>This base direction would only be applied to the content of the cue, not to any of the additional information in the file, such as time settings, ids, etc.&nbsp; Unless you have a clever editor, it would also not be applied to the display of the cue text in the raw text file, either.&nbsp; This may produce occasional difficulties for editing of bidirectional text&nbsp;in the source.</p>
+</section>
+<!--div id="panel" style="display:none"></div-->
 
 <div class="smallprint"><span id="version">First published  3 Dec 2010.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-06-25  11:58<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-07-01  20:12<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
