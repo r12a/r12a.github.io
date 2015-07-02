@@ -38,19 +38,19 @@
 </aside>
 
 
-<p id="status">Updated Fri 19 Jun 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=bopomofo" title="Show all blog posts tagged with 'bidi'">bidi</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+<p id="status">Updated Thu 2 Jul 2015  • tags <a href="http://rishida.net/blog/index.php?tag=bopomofo" title="Show all blog posts tagged with 'bidi'">bidi</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
 
 <section>
-	<p>Increasingly, questions are arising at the W3C about how to specify bidi handling for plain text environments. Most recently this includes JSON formats and CSV formats.</p>
+  <p>Increasingly, questions are arising at the W3C about how to specify bidi handling for plain text environments. Most recently this includes JSON formats and CSV formats.</p>
 	<p>My aim in this page is to provide background information that can help with those discussions, and carry useful ideas from one discussion to the next. <!--p>When you see red text (examples of bopomofo) you can click on it to reveal the component characters.</p>
 		<p> Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p--> I also add some personal thoughts on implementation alternatives, given current data.</p>
-	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-07-01  20:12<!-- #EndDate -->.</strong></p>
+	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-07-02  10:39<!-- #EndDate -->.</strong></p>
 </section>
 	
 <section id="base_direction">
 <h2><a href="#base_direction">Establishing base direction</a></h2>
 <p>If you are not familiar with what the Unicode Bidirectional Algorithm (UBA) does and doesn't do, <a href="http://www.w3.org/International/articles/inline-bidi-markup/uba-basics">read this first</a>.</p>
-<p>A <dfn>base direction</dfn> needs to be determined (ie. directional context) in order to display bidirectional text correctly.  That will determine the order of runs of ltr and runs of rtl text, and the location of punctuation. By hook or by crook this will be set, whether explicitly or by default (in which case it will depend on the direction of the environment in which you are viewing it).</p>
+<p>A <dfn>base direction</dfn> needs to be determined (ie. directional context) in order to display bidirectional text correctly.  That will determine the order of runs of ltr and runs of rtl text, and the location of punctuation. By hook or by crook this will be set, whether explicitly or by default.</p>
 <p>In what follows, the word <dfn>paragraph</dfn> indicates a run of text followed by a hard line-break in plain text, but may signify different things in other situations. In CSV it equates to 'cell', so a single line of comma-separated items is actually a set of comma-separated paragraphs.&nbsp; In HTML it equates to the lowest level of block element, which is often a <code class="kw" translate="no">p</code> element, but may be things such as <code class="kw" translate="no">div</code>, <code class="kw" translate="no">li</code>, etc., if they only contain text. In JSON, it equates to a quoted string value.</p>
 <p>There are a number of possible ways of determining the base direction.  In an attempt to keep this from being overly abstract, I'll use HTML to illustrate the alternatives. When I say <dfn>metadata</dfn> I mean information which could be an annotation associated with the data, could be markup in scenarios that allow that, could be a higher-level protocol such as HTTP (in theory), etc.</p>
 <ol>
@@ -80,8 +80,8 @@
 <h3><a href="#rlmlrm">RLM and LRM</a></h3>
 <p>A word about the Unicode characters <span class="uname">U+200F   RIGHT-TO-LEFT MARK (</span>RLM) and <span class="uname">U+200E   LEFT-TO-RIGHT MARK (</span>LRM) is warranted at this point.</p>
 <p>The first point to be clear about is that neither RLM nor LRM establish the base direction for a range of text.&nbsp; They are simply invisible characters with strong directional properties.</p>
-<p>This means that you cannot use RLM for example, to make the exclamation mark appear to the left of the Arabic text in the following example.</p>
-<p>the title is "<span dir="rtl">نشاط التدويل!</span>".</p>
+<p>This means that you cannot use RLM for example, to make the text W3C appear to the left of the Hebrew text in the following example.</p>
+<p>The title is "<span dir="rtl">פעילות הבינאום, W3C</span>".</p>
 <p>For this you can only use metadata or the paired control characters.</p>
 <p>Of course, if you are detecting base direction using first-strong heuristics then RLM and LRM can be useful for setting the base direction where the text in question begins with something that would otherwise give the wrong result, eg. </p>
 <p>"<span dir="rtl">نشاط التدويل</span>" is how you say "i18n Activity" in Arabic.</p>
@@ -126,7 +126,7 @@
 <!--div id="panel" style="display:none"></div-->
 
 <div class="smallprint"><span id="version">First published  3 Dec 2010.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-07-01  20:12<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-07-02  10:39<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
