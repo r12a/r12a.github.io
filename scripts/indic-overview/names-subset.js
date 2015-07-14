@@ -33,7 +33,7 @@ var charData = {
 "\u0936":{n:"DEVANAGARI LETTER SHA",m:0,g:"Devanagari"},
 "\u0937":{n:"DEVANAGARI LETTER SSA",m:0,g:"Devanagari"},
 "\u0938":{n:"DEVANAGARI LETTER SA",m:0,g:"Devanagari"},
-"\u03AB":{n:"DEVANAGARI LETTER HA",m:0,g:"Devanagari"},
+"\u0939":{n:"DEVANAGARI LETTER HA",m:0,g:"Devanagari"},
 "\u093C":{n:"DEVANAGARI SIGN NUKTA",m:1,g:"Devanagari"},
 "\u093E":{n:"DEVANAGARI VOWEL SIGN AA",m:1,g:"Devanagari"},
 "\u093F":{n:"DEVANAGARI VOWEL SIGN I",m:1,g:"Devanagari"},
