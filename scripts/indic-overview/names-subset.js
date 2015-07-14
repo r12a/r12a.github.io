@@ -1,262 +1,265 @@
-var names = new Array();
-names[2305]=["DEVANAGARI SIGN CANDRABINDU","Devanagari"];
-names[2306]=["DEVANAGARI SIGN ANUSVARA","Devanagari"];
-names[2307]=["DEVANAGARI SIGN VISARGA","Devanagari"];
-names[2309]=["DEVANAGARI LETTER A","Devanagari"];
-names[2310]=["DEVANAGARI LETTER AA","Devanagari"];
-names[2312]=["DEVANAGARI LETTER II","Devanagari"];
-names[2325]=["DEVANAGARI LETTER KA","Devanagari"];
-names[2326]=["DEVANAGARI LETTER KHA","Devanagari"];
-names[2327]=["DEVANAGARI LETTER GA","Devanagari"];
-names[2328]=["DEVANAGARI LETTER GHA","Devanagari"];
-names[2329]=["DEVANAGARI LETTER NGA","Devanagari"];
-names[2330]=["DEVANAGARI LETTER CA","Devanagari"];
-names[2332]=["DEVANAGARI LETTER JA","Devanagari"];
-names[2333]=["DEVANAGARI LETTER JHA","Devanagari"];
-names[2334]=["DEVANAGARI LETTER NYA","Devanagari"];
-names[2335]=["DEVANAGARI LETTER TTA","Devanagari"];
-names[2337]=["DEVANAGARI LETTER DDA","Devanagari"];
-names[2340]=["DEVANAGARI LETTER TA","Devanagari"];
-names[2342]=["DEVANAGARI LETTER DA","Devanagari"];
-names[2343]=["DEVANAGARI LETTER DHA","Devanagari"];
-names[2344]=["DEVANAGARI LETTER NA","Devanagari"];
-names[2345]=["DEVANAGARI LETTER NNNA","Devanagari"];
-names[2346]=["DEVANAGARI LETTER PA","Devanagari"];
-names[2347]=["DEVANAGARI LETTER PHA","Devanagari"];
-names[2348]=["DEVANAGARI LETTER BA","Devanagari"];
-names[2350]=["DEVANAGARI LETTER MA","Devanagari"];
-names[2351]=["DEVANAGARI LETTER YA","Devanagari"];
-names[2352]=["DEVANAGARI LETTER RA","Devanagari"];
-names[2353]=["DEVANAGARI LETTER RRA","Devanagari"];
-names[2354]=["DEVANAGARI LETTER LA","Devanagari"];
-names[2356]=["DEVANAGARI LETTER LLLA","Devanagari"];
-names[2358]=["DEVANAGARI LETTER SHA","Devanagari"];
-names[2359]=["DEVANAGARI LETTER SSA","Devanagari"];
-names[2360]=["DEVANAGARI LETTER SA","Devanagari"];
-names[2361]=["DEVANAGARI LETTER HA","Devanagari"];
-names[2364]=["DEVANAGARI SIGN NUKTA","Devanagari"];
-names[2366]=["DEVANAGARI VOWEL SIGN AA","Devanagari"];
-names[2367]=["DEVANAGARI VOWEL SIGN I","Devanagari"];
-names[2368]=["DEVANAGARI VOWEL SIGN II","Devanagari"];
-names[2369]=["DEVANAGARI VOWEL SIGN U","Devanagari"];
-names[2370]=["DEVANAGARI VOWEL SIGN UU","Devanagari"];
-names[2375]=["DEVANAGARI VOWEL SIGN E","Devanagari"];
-names[2379]=["DEVANAGARI VOWEL SIGN O","Devanagari"];
-names[2381]=["DEVANAGARI SIGN VIRAMA","Devanagari"];
-names[2392]=["DEVANAGARI LETTER QA","Devanagari"];
-names[2404]=["DEVANAGARI DANDA","Devanagari"];
-names[2405]=["DEVANAGARI DOUBLE DANDA","Devanagari"];
-names[2406]=["DEVANAGARI DIGIT ZERO","Devanagari"];
-names[2407]=["DEVANAGARI DIGIT ONE","Devanagari"];
-names[2408]=["DEVANAGARI DIGIT TWO","Devanagari"];
-names[2409]=["DEVANAGARI DIGIT THREE","Devanagari"];
-names[2410]=["DEVANAGARI DIGIT FOUR","Devanagari"];
-names[2411]=["DEVANAGARI DIGIT FIVE","Devanagari"];
-names[2412]=["DEVANAGARI DIGIT SIX","Devanagari"];
-names[2413]=["DEVANAGARI DIGIT SEVEN","Devanagari"];
-names[2414]=["DEVANAGARI DIGIT EIGHT","Devanagari"];
-names[2415]=["DEVANAGARI DIGIT NINE","Devanagari"];
-names[2453]=["BENGALI LETTER KA","Bengali"];
-names[2487]=["BENGALI LETTER SSA","Bengali"];
-names[2509]=["BENGALI SIGN VIRAMA","Bengali"];
-names[2534]=["BENGALI DIGIT ZERO","Bengali"];
-names[2535]=["BENGALI DIGIT ONE","Bengali"];
-names[2536]=["BENGALI DIGIT TWO","Bengali"];
-names[2537]=["BENGALI DIGIT THREE","Bengali"];
-names[2538]=["BENGALI DIGIT FOUR","Bengali"];
-names[2539]=["BENGALI DIGIT FIVE","Bengali"];
-names[2540]=["BENGALI DIGIT SIX","Bengali"];
-names[2541]=["BENGALI DIGIT SEVEN","Bengali"];
-names[2542]=["BENGALI DIGIT EIGHT","Bengali"];
-names[2543]=["BENGALI DIGIT NINE","Bengali"];
-names[2562]=["GURMUKHI SIGN BINDI","Gurmukhi"];
-names[2565]=["GURMUKHI LETTER A","Gurmukhi"];
-names[2566]=["GURMUKHI LETTER AA","Gurmukhi"];
-names[2567]=["GURMUKHI LETTER I","Gurmukhi"];
-names[2568]=["GURMUKHI LETTER II","Gurmukhi"];
-names[2569]=["GURMUKHI LETTER U","Gurmukhi"];
-names[2570]=["GURMUKHI LETTER UU","Gurmukhi"];
-names[2575]=["GURMUKHI LETTER EE","Gurmukhi"];
-names[2576]=["GURMUKHI LETTER AI","Gurmukhi"];
-names[2579]=["GURMUKHI LETTER OO","Gurmukhi"];
-names[2580]=["GURMUKHI LETTER AU","Gurmukhi"];
-names[2581]=["GURMUKHI LETTER KA","Gurmukhi"];
-names[2584]=["GURMUKHI LETTER GHA","Gurmukhi"];
-names[2593]=["GURMUKHI LETTER DDA","Gurmukhi"];
-names[2596]=["GURMUKHI LETTER TA","Gurmukhi"];
-names[2602]=["GURMUKHI LETTER PA","Gurmukhi"];
-names[2606]=["GURMUKHI LETTER MA","Gurmukhi"];
-names[2608]=["GURMUKHI LETTER RA","Gurmukhi"];
-names[2610]=["GURMUKHI LETTER LA","Gurmukhi"];
-names[2611]=["GURMUKHI LETTER LLA","Gurmukhi"];
-names[2616]=["GURMUKHI LETTER SA","Gurmukhi"];
-names[2620]=["GURMUKHI SIGN NUKTA","Gurmukhi"];
-names[2622]=["GURMUKHI VOWEL SIGN AA","Gurmukhi"];
-names[2625]=["GURMUKHI VOWEL SIGN U","Gurmukhi"];
-names[2635]=["GURMUKHI VOWEL SIGN OO","Gurmukhi"];
-names[2652]=["GURMUKHI LETTER RRA","Gurmukhi"];
-names[2662]=["GURMUKHI DIGIT ZERO","Gurmukhi"];
-names[2663]=["GURMUKHI DIGIT ONE","Gurmukhi"];
-names[2664]=["GURMUKHI DIGIT TWO","Gurmukhi"];
-names[2665]=["GURMUKHI DIGIT THREE","Gurmukhi"];
-names[2666]=["GURMUKHI DIGIT FOUR","Gurmukhi"];
-names[2667]=["GURMUKHI DIGIT FIVE","Gurmukhi"];
-names[2668]=["GURMUKHI DIGIT SIX","Gurmukhi"];
-names[2669]=["GURMUKHI DIGIT SEVEN","Gurmukhi"];
-names[2670]=["GURMUKHI DIGIT EIGHT","Gurmukhi"];
-names[2671]=["GURMUKHI DIGIT NINE","Gurmukhi"];
-names[2672]=["GURMUKHI TIPPI","Gurmukhi"];
-names[2673]=["GURMUKHI ADDAK","Gurmukhi"];
-names[2674]=["GURMUKHI IRI","Gurmukhi"];
-names[2675]=["GURMUKHI URA","Gurmukhi"];
-names[2709]=["GUJARATI LETTER KA","Gujarati"];
-names[2719]=["GUJARATI LETTER TTA","Gujarati"];
-names[2720]=["GUJARATI LETTER TTHA","Gujarati"];
-names[2751]=["GUJARATI VOWEL SIGN I","Gujarati"];
-names[2765]=["GUJARATI SIGN VIRAMA","Gujarati"];
-names[2790]=["GUJARATI DIGIT ZERO","Gujarati"];
-names[2791]=["GUJARATI DIGIT ONE","Gujarati"];
-names[2792]=["GUJARATI DIGIT TWO","Gujarati"];
-names[2793]=["GUJARATI DIGIT THREE","Gujarati"];
-names[2794]=["GUJARATI DIGIT FOUR","Gujarati"];
-names[2795]=["GUJARATI DIGIT FIVE","Gujarati"];
-names[2796]=["GUJARATI DIGIT SIX","Gujarati"];
-names[2797]=["GUJARATI DIGIT SEVEN","Gujarati"];
-names[2798]=["GUJARATI DIGIT EIGHT","Gujarati"];
-names[2799]=["GUJARATI DIGIT NINE","Gujarati"];
-names[2817]=["ORIYA SIGN CANDRABINDU","Oriya"];
-names[2818]=["ORIYA SIGN ANUSVARA","Oriya"];
-names[2821]=["ORIYA LETTER A","Oriya"];
-names[2822]=["ORIYA LETTER AA","Oriya"];
-names[2837]=["ORIYA LETTER KA","Oriya"];
-names[2850]=["ORIYA LETTER DDHA","Oriya"];
-names[2876]=["ORIYA SIGN NUKTA","Oriya"];
-names[2878]=["ORIYA VOWEL SIGN AA","Oriya"];
-names[2908]=["ORIYA LETTER RRA","Oriya"];
-names[2918]=["ORIYA DIGIT ZERO","Oriya"];
-names[2919]=["ORIYA DIGIT ONE","Oriya"];
-names[2920]=["ORIYA DIGIT TWO","Oriya"];
-names[2921]=["ORIYA DIGIT THREE","Oriya"];
-names[2922]=["ORIYA DIGIT FOUR","Oriya"];
-names[2923]=["ORIYA DIGIT FIVE","Oriya"];
-names[2924]=["ORIYA DIGIT SIX","Oriya"];
-names[2925]=["ORIYA DIGIT SEVEN","Oriya"];
-names[2926]=["ORIYA DIGIT EIGHT","Oriya"];
-names[2927]=["ORIYA DIGIT NINE","Oriya"];
-names[2947]=["TAMIL SIGN VISARGA","Tamil"];
-names[2951]=["TAMIL LETTER I","Tamil"];
-names[2965]=["TAMIL LETTER KA","Tamil"];
-names[2970]=["TAMIL LETTER CA","Tamil"];
-names[2972]=["TAMIL LETTER JA","Tamil"];
-names[2980]=["TAMIL LETTER TA","Tamil"];
-names[2984]=["TAMIL LETTER NA","Tamil"];
-names[2985]=["TAMIL LETTER NNNA","Tamil"];
-names[2986]=["TAMIL LETTER PA","Tamil"];
-names[2990]=["TAMIL LETTER MA","Tamil"];
-names[2992]=["TAMIL LETTER RA","Tamil"];
-names[3000]=["TAMIL LETTER SA","Tamil"];
-names[3001]=["TAMIL LETTER HA","Tamil"];
-names[3006]=["TAMIL VOWEL SIGN AA","Tamil"];
-names[3007]=["TAMIL VOWEL SIGN I","Tamil"];
-names[3008]=["TAMIL VOWEL SIGN II","Tamil"];
-names[3009]=["TAMIL VOWEL SIGN U","Tamil"];
-names[3014]=["TAMIL VOWEL SIGN E","Tamil"];
-names[3016]=["TAMIL VOWEL SIGN AI","Tamil"];
-names[3018]=["TAMIL VOWEL SIGN O","Tamil"];
-names[3020]=["TAMIL VOWEL SIGN AU","Tamil"];
-names[3021]=["TAMIL SIGN VIRAMA","Tamil"];
-names[3031]=["TAMIL AU LENGTH MARK","Tamil"];
-names[3046]=["TAMIL DIGIT ZERO","Tamil"];
-names[3047]=["TAMIL DIGIT ONE","Tamil"];
-names[3048]=["TAMIL DIGIT TWO","Tamil"];
-names[3049]=["TAMIL DIGIT THREE","Tamil"];
-names[3050]=["TAMIL DIGIT FOUR","Tamil"];
-names[3051]=["TAMIL DIGIT FIVE","Tamil"];
-names[3052]=["TAMIL DIGIT SIX","Tamil"];
-names[3053]=["TAMIL DIGIT SEVEN","Tamil"];
-names[3054]=["TAMIL DIGIT EIGHT","Tamil"];
-names[3055]=["TAMIL DIGIT NINE","Tamil"];
-names[3056]=["TAMIL NUMBER TEN","Tamil"];
-names[3057]=["TAMIL NUMBER ONE HUNDRED","Tamil"];
-names[3058]=["TAMIL NUMBER ONE THOUSAND","Tamil"];
-names[3077]=["TELUGU LETTER A","Telugu"];
-names[3078]=["TELUGU LETTER AA","Telugu"];
-names[3079]=["TELUGU LETTER I","Telugu"];
-names[3080]=["TELUGU LETTER II","Telugu"];
-names[3081]=["TELUGU LETTER U","Telugu"];
-names[3082]=["TELUGU LETTER UU","Telugu"];
-names[3083]=["TELUGU LETTER VOCALIC R","Telugu"];
-names[3086]=["TELUGU LETTER E","Telugu"];
-names[3087]=["TELUGU LETTER EE","Telugu"];
-names[3088]=["TELUGU LETTER AI","Telugu"];
-names[3090]=["TELUGU LETTER O","Telugu"];
-names[3091]=["TELUGU LETTER OO","Telugu"];
-names[3092]=["TELUGU LETTER AU","Telugu"];
-names[3093]=["TELUGU LETTER KA","Telugu"];
-names[3134]=["TELUGU VOWEL SIGN AA","Telugu"];
-names[3135]=["TELUGU VOWEL SIGN I","Telugu"];
-names[3136]=["TELUGU VOWEL SIGN II","Telugu"];
-names[3137]=["TELUGU VOWEL SIGN U","Telugu"];
-names[3138]=["TELUGU VOWEL SIGN UU","Telugu"];
-names[3139]=["TELUGU VOWEL SIGN VOCALIC R","Telugu"];
-names[3142]=["TELUGU VOWEL SIGN E","Telugu"];
-names[3143]=["TELUGU VOWEL SIGN EE","Telugu"];
-names[3144]=["TELUGU VOWEL SIGN AI","Telugu"];
-names[3146]=["TELUGU VOWEL SIGN O","Telugu"];
-names[3147]=["TELUGU VOWEL SIGN OO","Telugu"];
-names[3148]=["TELUGU VOWEL SIGN AU","Telugu"];
-names[3149]=["TELUGU SIGN VIRAMA","Telugu"];
-names[3174]=["TELUGU DIGIT ZERO","Telugu"];
-names[3175]=["TELUGU DIGIT ONE","Telugu"];
-names[3176]=["TELUGU DIGIT TWO","Telugu"];
-names[3177]=["TELUGU DIGIT THREE","Telugu"];
-names[3178]=["TELUGU DIGIT FOUR","Telugu"];
-names[3179]=["TELUGU DIGIT FIVE","Telugu"];
-names[3180]=["TELUGU DIGIT SIX","Telugu"];
-names[3181]=["TELUGU DIGIT SEVEN","Telugu"];
-names[3182]=["TELUGU DIGIT EIGHT","Telugu"];
-names[3183]=["TELUGU DIGIT NINE","Telugu"];
-names[3202]=["KANNADA SIGN ANUSVARA","Kannada"];
-names[3203]=["KANNADA SIGN VISARGA","Kannada"];
-names[3205]=["KANNADA LETTER A","Kannada"];
-names[3221]=["KANNADA LETTER KA","Kannada"];
-names[3223]=["KANNADA LETTER GA","Kannada"];
-names[3236]=["KANNADA LETTER TA","Kannada"];
-names[3240]=["KANNADA LETTER NA","Kannada"];
-names[3242]=["KANNADA LETTER PA","Kannada"];
-names[3247]=["KANNADA LETTER YA","Kannada"];
-names[3248]=["KANNADA LETTER RA","Kannada"];
-names[3250]=["KANNADA LETTER LA","Kannada"];
-names[3256]=["KANNADA LETTER SA","Kannada"];
-names[3257]=["KANNADA LETTER HA","Kannada"];
-names[3262]=["KANNADA VOWEL SIGN AA","Kannada"];
-names[3263]=["KANNADA VOWEL SIGN I","Kannada"];
-names[3265]=["KANNADA VOWEL SIGN U","Kannada"];
-names[3275]=["KANNADA VOWEL SIGN OO","Kannada"];
-names[3277]=["KANNADA SIGN VIRAMA","Kannada"];
-names[3285]=["KANNADA LENGTH MARK","Kannada"];
-names[3294]=["KANNADA LETTER FA","Kannada"];
-names[3302]=["KANNADA DIGIT ZERO","Kannada"];
-names[3303]=["KANNADA DIGIT ONE","Kannada"];
-names[3304]=["KANNADA DIGIT TWO","Kannada"];
-names[3305]=["KANNADA DIGIT THREE","Kannada"];
-names[3306]=["KANNADA DIGIT FOUR","Kannada"];
-names[3307]=["KANNADA DIGIT FIVE","Kannada"];
-names[3308]=["KANNADA DIGIT SIX","Kannada"];
-names[3309]=["KANNADA DIGIT SEVEN","Kannada"];
-names[3310]=["KANNADA DIGIT EIGHT","Kannada"];
-names[3311]=["KANNADA DIGIT NINE","Kannada"];
-names[3349]=["MALAYALAM LETTER KA","Malayalam"];
-names[3405]=["MALAYALAM SIGN VIRAMA","Malayalam"];
-names[3430]=["MALAYALAM DIGIT ZERO","Malayalam"];
-names[3431]=["MALAYALAM DIGIT ONE","Malayalam"];
-names[3432]=["MALAYALAM DIGIT TWO","Malayalam"];
-names[3433]=["MALAYALAM DIGIT THREE","Malayalam"];
-names[3434]=["MALAYALAM DIGIT FOUR","Malayalam"];
-names[3435]=["MALAYALAM DIGIT FIVE","Malayalam"];
-names[3436]=["MALAYALAM DIGIT SIX","Malayalam"];
-names[3437]=["MALAYALAM DIGIT SEVEN","Malayalam"];
-names[3438]=["MALAYALAM DIGIT EIGHT","Malayalam"];
-names[3439]=["MALAYALAM DIGIT NINE","Malayalam"];
-names[8204]=["ZERO WIDTH NON-JOINER","General Punctuation"];
-names[8205]=["ZERO WIDTH JOINER","General Punctuation"];
+var charData = {
+"\u0901":{n:"DEVANAGARI SIGN CANDRABINDU",m:1,g:"Devanagari"},
+"\u0902":{n:"DEVANAGARI SIGN ANUSVARA",m:1,g:"Devanagari"},
+"\u0903":{n:"DEVANAGARI SIGN VISARGA",m:1,g:"Devanagari"},
+"\u0905":{n:"DEVANAGARI LETTER A",m:0,g:"Devanagari"},
+"\u0906":{n:"DEVANAGARI LETTER AA",m:0,g:"Devanagari"},
+"\u0908":{n:"DEVANAGARI LETTER II",m:0,g:"Devanagari"},
+"\u0915":{n:"DEVANAGARI LETTER KA",m:0,g:"Devanagari"},
+"\u0916":{n:"DEVANAGARI LETTER KHA",m:0,g:"Devanagari"},
+"\u0917":{n:"DEVANAGARI LETTER GA",m:0,g:"Devanagari"},
+"\u0918":{n:"DEVANAGARI LETTER GHA",m:0,g:"Devanagari"},
+"\u0919":{n:"DEVANAGARI LETTER NGA",m:0,g:"Devanagari"},
+"\u091A":{n:"DEVANAGARI LETTER CA",m:0,g:"Devanagari"},
+"\u091C":{n:"DEVANAGARI LETTER JA",m:0,g:"Devanagari"},
+"\u091D":{n:"DEVANAGARI LETTER JHA",m:0,g:"Devanagari"},
+"\u091E":{n:"DEVANAGARI LETTER NYA",m:0,g:"Devanagari"},
+"\u091F":{n:"DEVANAGARI LETTER TTA",m:0,g:"Devanagari"},
+"\u0921":{n:"DEVANAGARI LETTER DDA",m:0,g:"Devanagari"},
+"\u0924":{n:"DEVANAGARI LETTER TA",m:0,g:"Devanagari"},
+"\u0926":{n:"DEVANAGARI LETTER DA",m:0,g:"Devanagari"},
+"\u0927":{n:"DEVANAGARI LETTER DHA",m:0,g:"Devanagari"},
+"\u0928":{n:"DEVANAGARI LETTER NA",m:0,g:"Devanagari"},
+"\u0929":{n:"DEVANAGARI LETTER NNNA",m:0,g:"Devanagari"},
+"\u092A":{n:"DEVANAGARI LETTER PA",m:0,g:"Devanagari"},
+"\u092B":{n:"DEVANAGARI LETTER PHA",m:0,g:"Devanagari"},
+"\u092C":{n:"DEVANAGARI LETTER BA",m:0,g:"Devanagari"},
+"\u092E":{n:"DEVANAGARI LETTER MA",m:0,g:"Devanagari"},
+"\u092F":{n:"DEVANAGARI LETTER YA",m:0,g:"Devanagari"},
+"\u0930":{n:"DEVANAGARI LETTER RA",m:0,g:"Devanagari"},
+"\u0931":{n:"DEVANAGARI LETTER RRA",m:0,g:"Devanagari"},
+"\u0932":{n:"DEVANAGARI LETTER LA",m:0,g:"Devanagari"},
+"\u0934":{n:"DEVANAGARI LETTER LLLA",m:0,g:"Devanagari"},
+"\u0936":{n:"DEVANAGARI LETTER SHA",m:0,g:"Devanagari"},
+"\u0937":{n:"DEVANAGARI LETTER SSA",m:0,g:"Devanagari"},
+"\u0938":{n:"DEVANAGARI LETTER SA",m:0,g:"Devanagari"},
+"\u03AB":{n:"DEVANAGARI LETTER HA",m:0,g:"Devanagari"},
+"\u093C":{n:"DEVANAGARI SIGN NUKTA",m:1,g:"Devanagari"},
+"\u093E":{n:"DEVANAGARI VOWEL SIGN AA",m:1,g:"Devanagari"},
+"\u093F":{n:"DEVANAGARI VOWEL SIGN I",m:1,g:"Devanagari"},
+"\u0940":{n:"DEVANAGARI VOWEL SIGN II",m:1,g:"Devanagari"},
+"\u0941":{n:"DEVANAGARI VOWEL SIGN U",m:1,g:"Devanagari"},
+"\u0942":{n:"DEVANAGARI VOWEL SIGN UU",m:1,g:"Devanagari"},
+"\u0947":{n:"DEVANAGARI VOWEL SIGN E",m:1,g:"Devanagari"},
+"\u094B":{n:"DEVANAGARI VOWEL SIGN O",m:1,g:"Devanagari"},
+"\u094D":{n:"DEVANAGARI SIGN VIRAMA",m:1,g:"Devanagari"},
+"\u0958":{n:"DEVANAGARI LETTER QA",m:0,g:"Devanagari"},
+"\u0964":{n:"DEVANAGARI DANDA",m:0,g:"Devanagari"},
+"\u0965":{n:"DEVANAGARI DOUBLE DANDA",m:0,g:"Devanagari"},
+"\u0966":{n:"DEVANAGARI DIGIT ZERO",m:0,g:"Devanagari"},
+"\u0967":{n:"DEVANAGARI DIGIT ONE",m:0,g:"Devanagari"},
+"\u0968":{n:"DEVANAGARI DIGIT TWO",m:0,g:"Devanagari"},
+"\u0969":{n:"DEVANAGARI DIGIT THREE",m:0,g:"Devanagari"},
+"\u096A":{n:"DEVANAGARI DIGIT FOUR",m:0,g:"Devanagari"},
+"\u096B":{n:"DEVANAGARI DIGIT FIVE",m:0,g:"Devanagari"},
+"\u096C":{n:"DEVANAGARI DIGIT SIX",m:0,g:"Devanagari"},
+"\u096D":{n:"DEVANAGARI DIGIT SEVEN",m:0,g:"Devanagari"},
+"\u096E":{n:"DEVANAGARI DIGIT EIGHT",m:0,g:"Devanagari"},
+"\u096F":{n:"DEVANAGARI DIGIT NINE",m:0,g:"Devanagari"},
+"\u0995":{n:"BENGALI LETTER KA",m:0,g:"Bengali"},
+"\u09B7":{n:"BENGALI LETTER SSA",m:0,g:"Bengali"},
+"\u09CD":{n:"BENGALI SIGN VIRAMA",m:1,g:"Bengali"},
+"\u09E6":{n:"BENGALI DIGIT ZERO",m:0,g:"Bengali"},
+"\u09E7":{n:"BENGALI DIGIT ONE",m:0,g:"Bengali"},
+"\u09E8":{n:"BENGALI DIGIT TWO",m:0,g:"Bengali"},
+"\u09E9":{n:"BENGALI DIGIT THREE",m:0,g:"Bengali"},
+"\u09EA":{n:"BENGALI DIGIT FOUR",m:0,g:"Bengali"},
+"\u09EB":{n:"BENGALI DIGIT FIVE",m:0,g:"Bengali"},
+"\u09EC":{n:"BENGALI DIGIT SIX",m:0,g:"Bengali"},
+"\u09ED":{n:"BENGALI DIGIT SEVEN",m:0,g:"Bengali"},
+"\u09EE":{n:"BENGALI DIGIT EIGHT",m:0,g:"Bengali"},
+"\u09EF":{n:"BENGALI DIGIT NINE",m:0,g:"Bengali"},
+"\u0A02":{n:"GURMUKHI SIGN BINDI",m:1,g:"Gurmukhi"},
+"\u0A05":{n:"GURMUKHI LETTER A",m:0,g:"Gurmukhi"},
+"\u0A06":{n:"GURMUKHI LETTER AA",m:0,g:"Gurmukhi"},
+"\u0A07":{n:"GURMUKHI LETTER I",m:0,g:"Gurmukhi"},
+"\u0A08":{n:"GURMUKHI LETTER II",m:0,g:"Gurmukhi"},
+"\u0A09":{n:"GURMUKHI LETTER U",m:0,g:"Gurmukhi"},
+"\u0A0A":{n:"GURMUKHI LETTER UU",m:0,g:"Gurmukhi"},
+"\u0A0F":{n:"GURMUKHI LETTER EE",m:0,g:"Gurmukhi"},
+"\u0A10":{n:"GURMUKHI LETTER AI",m:0,g:"Gurmukhi"},
+"\u0A13":{n:"GURMUKHI LETTER OO",m:0,g:"Gurmukhi"},
+"\u0A14":{n:"GURMUKHI LETTER AU",m:0,g:"Gurmukhi"},
+"\u0A15":{n:"GURMUKHI LETTER KA",m:0,g:"Gurmukhi"},
+"\u0A18":{n:"GURMUKHI LETTER GHA",m:0,g:"Gurmukhi"},
+"\u0A21":{n:"GURMUKHI LETTER DDA",m:0,g:"Gurmukhi"},
+"\u0A24":{n:"GURMUKHI LETTER TA",m:0,g:"Gurmukhi"},
+"\u0A2A":{n:"GURMUKHI LETTER PA",m:0,g:"Gurmukhi"},
+"\u0A2E":{n:"GURMUKHI LETTER MA",m:0,g:"Gurmukhi"},
+"\u0A30":{n:"GURMUKHI LETTER RA",m:0,g:"Gurmukhi"},
+"\u0A32":{n:"GURMUKHI LETTER LA",m:0,g:"Gurmukhi"},
+"\u0A33":{n:"GURMUKHI LETTER LLA",m:0,g:"Gurmukhi"},
+"\u0A38":{n:"GURMUKHI LETTER SA",m:0,g:"Gurmukhi"},
+"\u0A3C":{n:"GURMUKHI SIGN NUKTA",m:1,g:"Gurmukhi"},
+"\u0A3E":{n:"GURMUKHI VOWEL SIGN AA",m:1,g:"Gurmukhi"},
+"\u0A41":{n:"GURMUKHI VOWEL SIGN U",m:1,g:"Gurmukhi"},
+"\u0A4B":{n:"GURMUKHI VOWEL SIGN OO",m:1,g:"Gurmukhi"},
+"\u0A5C":{n:"GURMUKHI LETTER RRA",m:0,g:"Gurmukhi"},
+"\u0A66":{n:"GURMUKHI DIGIT ZERO",m:0,g:"Gurmukhi"},
+"\u0A67":{n:"GURMUKHI DIGIT ONE",m:0,g:"Gurmukhi"},
+"\u0A68":{n:"GURMUKHI DIGIT TWO",m:0,g:"Gurmukhi"},
+"\u0A69":{n:"GURMUKHI DIGIT THREE",m:0,g:"Gurmukhi"},
+"\u0A6A":{n:"GURMUKHI DIGIT FOUR",m:0,g:"Gurmukhi"},
+"\u0A6B":{n:"GURMUKHI DIGIT FIVE",m:0,g:"Gurmukhi"},
+"\u0A6C":{n:"GURMUKHI DIGIT SIX",m:0,g:"Gurmukhi"},
+"\u0A6D":{n:"GURMUKHI DIGIT SEVEN",m:0,g:"Gurmukhi"},
+"\u0A6E":{n:"GURMUKHI DIGIT EIGHT",m:0,g:"Gurmukhi"},
+"\u0A6F":{n:"GURMUKHI DIGIT NINE",m:0,g:"Gurmukhi"},
+"\u0A70":{n:"GURMUKHI TIPPI",m:1,g:"Gurmukhi"},
+"\u0A71":{n:"GURMUKHI ADDAK",m:1,g:"Gurmukhi"},
+"\u0A72":{n:"GURMUKHI IRI",m:0,g:"Gurmukhi"},
+"\u0A73":{n:"GURMUKHI URA",m:0,g:"Gurmukhi"},
+"\u0A95":{n:"GUJARATI LETTER KA",m:0,g:"Gujarati"},
+"\u0A9F":{n:"GUJARATI LETTER TTA",m:0,g:"Gujarati"},
+"\u0AA0":{n:"GUJARATI LETTER TTHA",m:0,g:"Gujarati"},
+"\u0ABF":{n:"GUJARATI VOWEL SIGN I",m:1,g:"Gujarati"},
+"\u0ACD":{n:"GUJARATI SIGN VIRAMA",m:1,g:"Gujarati"},
+"\u0AE6":{n:"GUJARATI DIGIT ZERO",m:0,g:"Gujarati"},
+"\u0AE7":{n:"GUJARATI DIGIT ONE",m:0,g:"Gujarati"},
+"\u0AE8":{n:"GUJARATI DIGIT TWO",m:0,g:"Gujarati"},
+"\u0AE9":{n:"GUJARATI DIGIT THREE",m:0,g:"Gujarati"},
+"\u0AEA":{n:"GUJARATI DIGIT FOUR",m:0,g:"Gujarati"},
+"\u0AEB":{n:"GUJARATI DIGIT FIVE",m:0,g:"Gujarati"},
+"\u0AEC":{n:"GUJARATI DIGIT SIX",m:0,g:"Gujarati"},
+"\u0AED":{n:"GUJARATI DIGIT SEVEN",m:0,g:"Gujarati"},
+"\u0AEE":{n:"GUJARATI DIGIT EIGHT",m:0,g:"Gujarati"},
+"\u0AEF":{n:"GUJARATI DIGIT NINE",m:0,g:"Gujarati"},
+"\u0B01":{n:"ORIYA SIGN CANDRABINDU",m:1,g:"Oriya"},
+"\u0B02":{n:"ORIYA SIGN ANUSVARA",m:1,g:"Oriya"},
+"\u0B05":{n:"ORIYA LETTER A",m:0,g:"Oriya"},
+"\u0B06":{n:"ORIYA LETTER AA",m:0,g:"Oriya"},
+"\u0B15":{n:"ORIYA LETTER KA",m:0,g:"Oriya"},
+"\u0B22":{n:"ORIYA LETTER DDHA",m:0,g:"Oriya"},
+"\u0B3C":{n:"ORIYA SIGN NUKTA",m:0,g:"Oriya"},
+"\u0B3E":{n:"ORIYA VOWEL SIGN AA",m:1,g:"Oriya"},
+"\u0B5C":{n:"ORIYA LETTER RRA",m:0,g:"Oriya"},
+"\u0B66":{n:"ORIYA DIGIT ZERO",m:0,g:"Oriya"},
+"\u0B67":{n:"ORIYA DIGIT ONE",m:0,g:"Oriya"},
+"\u0B68":{n:"ORIYA DIGIT TWO",m:0,g:"Oriya"},
+"\u0B69":{n:"ORIYA DIGIT THREE",m:0,g:"Oriya"},
+"\u0B6A":{n:"ORIYA DIGIT FOUR",m:0,g:"Oriya"},
+"\u0B6B":{n:"ORIYA DIGIT FIVE",m:0,g:"Oriya"},
+"\u0B6C":{n:"ORIYA DIGIT SIX",m:0,g:"Oriya"},
+"\u0B6D":{n:"ORIYA DIGIT SEVEN",m:0,g:"Oriya"},
+"\u0B6E":{n:"ORIYA DIGIT EIGHT",m:0,g:"Oriya"},
+"\u0B6F":{n:"ORIYA DIGIT NINE",m:0,g:"Oriya"},
+"\u0B83":{n:"TAMIL SIGN VISARGA",m:1,g:"Tamil"},
+"\u0B87":{n:"TAMIL LETTER I",m:0,g:"Tamil"},
+"\u0B95":{n:"TAMIL LETTER KA",m:0,g:"Tamil"},
+"\u0B9A":{n:"TAMIL LETTER CA",m:0,g:"Tamil"},
+"\u0B9C":{n:"TAMIL LETTER JA",m:0,g:"Tamil"},
+"\u0BA4":{n:"TAMIL LETTER TA",m:0,g:"Tamil"},
+"\u0BA8":{n:"TAMIL LETTER NA",m:0,g:"Tamil"},
+"\u0BA9":{n:"TAMIL LETTER NNNA",m:0,g:"Tamil"},
+"\u0BAA":{n:"TAMIL LETTER PA",m:0,g:"Tamil"},
+"\u0BAE":{n:"TAMIL LETTER MA",m:0,g:"Tamil"},
+"\u0BB0":{n:"TAMIL LETTER RA",m:0,g:"Tamil"},
+"\u0BB8":{n:"TAMIL LETTER SA",m:0,g:"Tamil"},
+"\u0BB9":{n:"TAMIL LETTER HA",m:0,g:"Tamil"},
+"\u0BBE":{n:"TAMIL VOWEL SIGN AA",m:1,g:"Tamil"},
+"\u0BBF":{n:"TAMIL VOWEL SIGN I",m:1,g:"Tamil"},
+"\u0BC0":{n:"TAMIL VOWEL SIGN II",m:1,g:"Tamil"},
+"\u0BC1":{n:"TAMIL VOWEL SIGN U",m:1,g:"Tamil"},
+"\u0BC6":{n:"TAMIL VOWEL SIGN E",m:1,g:"Tamil"},
+"\u0BC8":{n:"TAMIL VOWEL SIGN AI",m:1,g:"Tamil"},
+"\u0BCA":{n:"TAMIL VOWEL SIGN O",m:1,g:"Tamil"},
+"\u0BCC":{n:"TAMIL VOWEL SIGN AU",m:1,g:"Tamil"},
+"\u0BCD":{n:"TAMIL SIGN VIRAMA",m:1,g:"Tamil"},
+"\u0BD7":{n:"TAMIL AU LENGTH MARK",m:1,g:"Tamil"},
+"\u0BE6":{n:"TAMIL DIGIT ZERO",m:0,g:"Tamil"},
+"\u0BE7":{n:"TAMIL DIGIT ONE",m:0,g:"Tamil"},
+"\u0BE8":{n:"TAMIL DIGIT TWO",m:0,g:"Tamil"},
+"\u0BE9":{n:"TAMIL DIGIT THREE",m:0,g:"Tamil"},
+"\u0BEA":{n:"TAMIL DIGIT FOUR",m:0,g:"Tamil"},
+"\u0BEB":{n:"TAMIL DIGIT FIVE",m:0,g:"Tamil"},
+"\u0BEC":{n:"TAMIL DIGIT SIX",m:0,g:"Tamil"},
+"\u0BED":{n:"TAMIL DIGIT SEVEN",m:0,g:"Tamil"},
+"\u0BEE":{n:"TAMIL DIGIT EIGHT",m:0,g:"Tamil"},
+"\u0BEF":{n:"TAMIL DIGIT NINE",m:0,g:"Tamil"},
+"\u0BF0":{n:"TAMIL NUMBER TEN",m:0,g:"Tamil"},
+"\u0BF1":{n:"TAMIL NUMBER ONE HUNDRED",m:0,g:"Tamil"},
+"\u0BF2":{n:"TAMIL NUMBER ONE THOUSAND",m:0,g:"Tamil"},
+"\u0C05":{n:"TELUGU LETTER A",m:0,g:"Telugu"},
+"\u0C06":{n:"TELUGU LETTER AA",m:0,g:"Telugu"},
+"\u0C07":{n:"TELUGU LETTER I",m:0,g:"Telugu"},
+"\u0C08":{n:"TELUGU LETTER II",m:0,g:"Telugu"},
+"\u0C09":{n:"TELUGU LETTER U",m:0,g:"Telugu"},
+"\u0C0A":{n:"TELUGU LETTER UU",m:0,g:"Telugu"},
+"\u0C0B":{n:"TELUGU LETTER VOCALIC R",m:0,g:"Telugu"},
+"\u0C0E":{n:"TELUGU LETTER E",m:0,g:"Telugu"},
+"\u0C0F":{n:"TELUGU LETTER EE",m:0,g:"Telugu"},
+"\u0C10":{n:"TELUGU LETTER AI",m:0,g:"Telugu"},
+"\u0C12":{n:"TELUGU LETTER O",m:0,g:"Telugu"},
+"\u0C13":{n:"TELUGU LETTER OO",m:0,g:"Telugu"},
+"\u0C14":{n:"TELUGU LETTER AU",m:0,g:"Telugu"},
+"\u0C15":{n:"TELUGU LETTER KA",m:0,g:"Telugu"},
+"\u0C3E":{n:"TELUGU VOWEL SIGN AA",m:1,g:"Telugu"},
+"\u0C3F":{n:"TELUGU VOWEL SIGN I",m:1,g:"Telugu"},
+"\u0C40":{n:"TELUGU VOWEL SIGN II",m:1,g:"Telugu"},
+"\u0C41":{n:"TELUGU VOWEL SIGN U",m:1,g:"Telugu"},
+"\u0C42":{n:"TELUGU VOWEL SIGN UU",m:1,g:"Telugu"},
+"\u0C43":{n:"TELUGU VOWEL SIGN VOCALIC R",m:1,g:"Telugu"},
+"\u0C46":{n:"TELUGU VOWEL SIGN E",m:1,g:"Telugu"},
+"\u0C47":{n:"TELUGU VOWEL SIGN EE",m:1,g:"Telugu"},
+"\u0C48":{n:"TELUGU VOWEL SIGN AI",m:1,g:"Telugu"},
+"\u0C4A":{n:"TELUGU VOWEL SIGN O",m:1,g:"Telugu"},
+"\u0C4B":{n:"TELUGU VOWEL SIGN OO",m:1,g:"Telugu"},
+"\u0C4C":{n:"TELUGU VOWEL SIGN AU",m:1,g:"Telugu"},
+"\u0C4D":{n:"TELUGU SIGN VIRAMA",m:1,g:"Telugu"},
+"\u0C66":{n:"TELUGU DIGIT ZERO",m:0,g:"Telugu"},
+"\u0C67":{n:"TELUGU DIGIT ONE",m:0,g:"Telugu"},
+"\u0C68":{n:"TELUGU DIGIT TWO",m:0,g:"Telugu"},
+"\u0C69":{n:"TELUGU DIGIT THREE",m:0,g:"Telugu"},
+"\u0C6A":{n:"TELUGU DIGIT FOUR",m:0,g:"Telugu"},
+"\u0C6B":{n:"TELUGU DIGIT FIVE",m:0,g:"Telugu"},
+"\u0C6C":{n:"TELUGU DIGIT SIX",m:0,g:"Telugu"},
+"\u0C6D":{n:"TELUGU DIGIT SEVEN",m:0,g:"Telugu"},
+"\u0C6E":{n:"TELUGU DIGIT EIGHT",m:0,g:"Telugu"},
+"\u0C6F":{n:"TELUGU DIGIT NINE",m:0,g:"Telugu"},
+"\u0C82":{n:"KANNADA SIGN ANUSVARA",m:1,g:"Kannada"},
+"\u0C83":{n:"KANNADA SIGN VISARGA",m:1,g:"Kannada"},
+"\u0C85":{n:"KANNADA LETTER A",m:0,g:"Kannada"},
+"\u0C95":{n:"KANNADA LETTER KA",m:0,g:"Kannada"},
+"\u0C97":{n:"KANNADA LETTER GA",m:0,g:"Kannada"},
+"\u0CA4":{n:"KANNADA LETTER TA",m:0,g:"Kannada"},
+"\u0CA8":{n:"KANNADA LETTER NA",m:0,g:"Kannada"},
+"\u0CAA":{n:"KANNADA LETTER PA",m:0,g:"Kannada"},
+"\u0CAF":{n:"KANNADA LETTER YA",m:0,g:"Kannada"},
+"\u0CB0":{n:"KANNADA LETTER RA",m:0,g:"Kannada"},
+"\u0CB2":{n:"KANNADA LETTER LA",m:0,g:"Kannada"},
+"\u0CB8":{n:"KANNADA LETTER SA",m:0,g:"Kannada"},
+"\u0CB9":{n:"KANNADA LETTER HA",m:0,g:"Kannada"},
+"\u0CBE":{n:"KANNADA VOWEL SIGN AA",m:1,g:"Kannada"},
+"\u0CBF":{n:"KANNADA VOWEL SIGN I",m:1,g:"Kannada"},
+"\u0CC1":{n:"KANNADA VOWEL SIGN U",m:1,g:"Kannada"},
+"\u0CCB":{n:"KANNADA VOWEL SIGN OO",m:1,g:"Kannada"},
+"\u0CCD":{n:"KANNADA SIGN VIRAMA",m:1,g:"Kannada"},
+"\u0CD5":{n:"KANNADA LENGTH MARK",m:1,g:"Kannada"},
+"\u0CDE":{n:"KANNADA LETTER FA",m:0,g:"Kannada"},
+"\u0CE6":{n:"KANNADA DIGIT ZERO",m:0,g:"Kannada"},
+"\u0CE7":{n:"KANNADA DIGIT ONE",m:0,g:"Kannada"},
+"\u0CE8":{n:"KANNADA DIGIT TWO",m:0,g:"Kannada"},
+"\u0CE9":{n:"KANNADA DIGIT THREE",m:0,g:"Kannada"},
+"\u0CEA":{n:"KANNADA DIGIT FOUR",m:0,g:"Kannada"},
+"\u0CEB":{n:"KANNADA DIGIT FIVE",m:0,g:"Kannada"},
+"\u0CEC":{n:"KANNADA DIGIT SIX",m:0,g:"Kannada"},
+"\u0CED":{n:"KANNADA DIGIT SEVEN",m:0,g:"Kannada"},
+"\u0CEE":{n:"KANNADA DIGIT EIGHT",m:0,g:"Kannada"},
+"\u0CEF":{n:"KANNADA DIGIT NINE",m:0,g:"Kannada"},
+"\u0D15":{n:"MALAYALAM LETTER KA",m:0,g:"Malayalam"},
+"\u0D4D":{n:"MALAYALAM SIGN VIRAMA",m:1,g:"Malayalam"},
+"\u0D66":{n:"MALAYALAM DIGIT ZERO",m:0,g:"Malayalam"},
+"\u0D67":{n:"MALAYALAM DIGIT ONE",m:0,g:"Malayalam"},
+"\u0D68":{n:"MALAYALAM DIGIT TWO",m:0,g:"Malayalam"},
+"\u0D69":{n:"MALAYALAM DIGIT THREE",m:0,g:"Malayalam"},
+"\u0D6A":{n:"MALAYALAM DIGIT FOUR",m:0,g:"Malayalam"},
+"\u0D6B":{n:"MALAYALAM DIGIT FIVE",m:0,g:"Malayalam"},
+"\u0D6C":{n:"MALAYALAM DIGIT SIX",m:0,g:"Malayalam"},
+"\u0D6D":{n:"MALAYALAM DIGIT SEVEN",m:0,g:"Malayalam"},
+"\u0D6E":{n:"MALAYALAM DIGIT EIGHT",m:0,g:"Malayalam"},
+"\u0D6F":{n:"MALAYALAM DIGIT NINE",m:0,g:"Malayalam"},
+"\u200C":{n:"ZERO WIDTH NON-JOINER",m:0,g:"General Punctuation"},
+"\u200D":{n:"ZERO WIDTH JOINER",m:0,g:"General Punctuation"},
+
+end: {}
+}
