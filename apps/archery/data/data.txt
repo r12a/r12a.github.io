@@ -67,8 +67,9 @@ rounds[rounds.length] = 'tftlb;	;2015-07-09;199;9 5  5  5  5  3  9 7  7  5  5  1
 rounds[rounds.length] = 'tftlb;	;2015-07-09;175;7 7  7  5  1  0  9 7  5  5  5  5  5 5  5  5  3  0  9 7  5  5  3  3  7 5  3  1  1  0  9 7  7  7  7  3  ;40yds 52lb bow with ground marker';
 rounds[rounds.length] = 'tftlb;	;2015-07-24;172;7 7  7  3  0  0  7 7  5  5  3  1  7 7  7  3  1  1  9 7  7  5  5  1  7 5  5  3  1  1  9 9  7  5  5  3  ;40yds';
 
+
 rounds[rounds.length] = 'tftbb;	;2015-06-16;300;9 9  9  9  7  5  9 9  9  7  7  7  9 9  9  9  7  7  9 9  9  9  7  7  9 9  9  9  9  7  9 9  9  9  9  7  ;20yds';
-rounds[rounds.length] = 'tftbb;	;2015-06-18;298;9 9  7  7  7  7  9 9  9  9  7  7  9 9  9  9  9  7  9 9  9  7  7  7  9 9  9  9  9  7  9 9  9  9  7  7;;20yds';
+rounds[rounds.length] = 'tftbb;	;2015-06-18;298;9 9  7  7  7  7  9 9  9  9  7  7  9 9  9  9  9  7  9 9  9  7  7  7  9 9  9  9  9  7  9 9  9  9  7  7  ;;20yds';
 rounds[rounds.length] = 'tftbb;	;2015-06-18;292;9 9  9  9  7  7  9 9  7  7  7  7  9 9  9  7  7  7  9 9  9  9  7  7  9 9  9  7  7  7  9 9  9  9  7  7  ;20yds';
 rounds[rounds.length] = 'tftbb;	;2015-06-11;270;9 9  7  7  7  5  9 7  7  7  3  3  9 9  9  9  9  9  9 9  7  7  5  5  9 9  7  7  7  5  9 9  9  9  7  7  ;30yds';
 rounds[rounds.length] = 'tftbb;	;2015-06-11;250;9 7  7  5  5  5  9 9  9  7  7  5  9 9  9  7  7  5  9 9  7  7  7  5  9 7  7  5  5  5  7 7  7  7  5  5  ;30yds';
@@ -76,6 +77,10 @@ rounds[rounds.length] = 'tftbb;	;2015-06-25;250;9 9  7  7  7  1  9 9  9  9  7  3
 rounds[rounds.length] = 'tftbb;	;2015-07-05;204;9 7  7  7  7  5  9 7  7  7  5  0  7 5  5  3  3  3  9 9  7  5  3  0  9 7  7  7  5  3  7 7  5  5  5  1  ;40yds';
 rounds[rounds.length] = 'tftbb;	;2015-07-16;201;9 9  7  5  3  3  5 5  5  3  3  1  9 7  7  7  5  3  9 9  5  5  1  0  9 7  7  7  5  3  9 7  7  5  5  5  ;40yds';
 rounds[rounds.length] = 'tftbb;	;2015-07-05;199;9 7  7  5  3  1  9 7  5  5  5  1  9 7  7  7  5  5  9 7  7  5  5  3  5 5  5  3  3  0  9 7  7  7  5  3  ;40yds';
+rounds[rounds.length] = 'tftbb;	;2015-07-25;228;9 7  7  5  5  5  9 9  7  5  5  5  9 9  9  7  5  5  7 7  7  5  3  3  9 9  9  7  5  1  9 7  5  5  5  3  ;50yds';
+rounds[rounds.length] = 'tftbb;	;2015-07-25;201;9 7  7  7  5  1  7 5  5  5  3  3  9 7  7  5  3  0  7 7  5  5  3  3  7 7  7  7  5  3  9 7  7  7  7  3  ;50yds';
+rounds[rounds.length] = 'tftbb;	;2015-07-25;199;9 9  7  5  3  3  9 7  7  5  3  1  7 7  5  5  1  0  9 9  7  5  5  3  9 7  7  5  3  3  9 7  7  5  3  3  ;50yds';
+
 
 rounds[rounds.length] = 'tft;	;2015-06-23;314;9 9  9  9  9  9  9 9  9  9  9  7  9 9  9  9  9  9  9 9  9  9  9  9  9 9  9  9  9  7  9 9  9  7  7  7  ;20yds';
 rounds[rounds.length] = 'tft;	;2015-06-23;310;9 9  9  7  7  7  9 9  9  9  9  9  9 9  9  9  9  7  9 9  9  9  9  7  9 9  9  9  9  7  9 9  9  9  9  7  ;20yds';
