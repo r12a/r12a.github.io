@@ -890,9 +890,11 @@ function getCharType (codepoint) {
 		return 2;
 		}
 	else if (findScriptGroup(codepoint) != sNotAChar) { // surrogates
-		if ((codepoint > 13312 && codepoint < 19903) || (codepoint > 19968 && codepoint < 40891) || 
-			(codepoint > 131072 && codepoint < 173782) || (codepoint > 44032 && codepoint < 55203)) {
-			// ie. one of CJK Unified Ideographs Ext A, CJK Ideographs, CJK Ideograph Ext B, or hangul syllable
+		if ((codepoint > 13312 && codepoint < 19903) || (codepoint > 19968 && codepoint < 40891) ||           // CJK Ext A, CJK main
+			(codepoint > 131072 && codepoint < 173782) || (codepoint > 0x2A700 && codepoint < 0x2B734) ||     // CKL Ext B, C
+			(codepoint > 0x2B740 && codepoint < 0x2B81D) || (codepoint > 0x2B820 && codepoint < 0x2CEA1) ||   // CJK Ext D, E
+			(codepoint > 44032 && codepoint < 55203)  // hangul syllables
+			) { 
 			return 3;
 			}
 		else if ((codepoint > 57344 && codepoint < 63743) || (codepoint > 983040 && codepoint < 1048573) || 
@@ -2049,7 +2051,6 @@ function printProperties ( codepoint ) {
 		button.title = sPrevChar;
 		button.className = 'moveForwardBack'; 
 
-	
 	if (charType == 2 || charType == 3 || charType == 5) { 
 		cRecord = charData.split(';');
 		if (cRecord[3] > 0) { MsPadding = '\u00A0'; }  // ie. this is a combining character
@@ -2256,7 +2257,19 @@ function printProperties ( codepoint ) {
 
 
 		//add link to UniHan db
-		if (codepoint > 0x4DFF && codepoint < 0x9FBC) {
+		var pageNum = 0
+		var approx = ''
+		if (scriptGroup == 'CJK Unified Ideographs') { pageNum = Math.floor(((codepoint-0x4E00)/40)+2); blockstart = '4E00' }
+		if (scriptGroup == 'CJK Unified Ideographs Extension A') { pageNum = Math.floor(((codepoint-13312)/56.25)+2); blockstart = '3400'; approx = ', approx' }
+		if (scriptGroup == 'CJK Unified Ideographs Extension B') { pageNum = Math.floor(((codepoint-0x20000)/58.67)+2); blockstart = '20000'; approx = ', approx' }
+		if (scriptGroup == 'CJK Unified Ideographs Extension C') { pageNum = Math.floor(((codepoint-0x2A700)/78.26)+2); blockstart = '2A700'; approx = ', approx' }
+		if (scriptGroup == 'CJK Unified Ideographs Extension D') { pageNum = Math.floor(((codepoint-0x2A700)/80)+2); blockstart = '2A700'; }
+		if (scriptGroup == 'CJK Unified Ideographs Extension E') { pageNum = Math.floor(((codepoint-0x2B820)/80)+2); blockstart = '2B820'; }
+		if (scriptGroup == 'Hangul Syllables') { pageNum = Math.floor(((codepoint-0xAC00)/256)+2); blockstart = 'AC00'; }
+		//if (codepoint > 0x4DFF && codepoint < 0x9FBC || codepoint > 13312 && codepoint < 19903) {
+			
+		// add link to Unihan db
+		if (pageNum > 0 && scriptGroup != 'Hangul Syllables') {
 			p = newContent.appendChild( document.createElement( 'p' ));
 				p.style.marginTop = "18px";
 			p.appendChild( document.createTextNode( 'View data in ' ));
@@ -2265,6 +2278,18 @@ function printProperties ( codepoint ) {
 			a.setAttribute( 'href', 'http://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint='+cRecord[0]+'&amp;useutf8=true' );
 			a.setAttribute( 'target', 'unihan' );
 			//a.onclick = function () { unihan.focus(); };
+			}
+		
+		// add pointer to PDF code chart page
+		if (pageNum > 0 && scriptGroup) {
+			p = newContent.appendChild( document.createElement( 'p' ));
+			p.appendChild( document.createTextNode( 'View in ' ));
+			a = p.appendChild( document.createElement( 'a' ));
+			a.appendChild( document.createTextNode( 'PDF code charts' ));
+			//var pageNum = Math.floor(((codepoint-0x4E00)/40)+2)
+			a.setAttribute( 'href', 'http://www.unicode.org/charts/PDF/U'+blockstart+'.pdf#page='+pageNum );
+			a.setAttribute( 'target', 'unihan' );
+			p.appendChild( document.createTextNode( ' (page '+pageNum+approx+')' ));
 			}
 			
 		
