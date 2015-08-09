@@ -2263,7 +2263,7 @@ function printProperties ( codepoint ) {
 		if (scriptGroup == 'CJK Unified Ideographs Extension A') { pageNum = Math.floor(((codepoint-13312)/56.25)+2); blockstart = '3400'; approx = ', approx' }
 		if (scriptGroup == 'CJK Unified Ideographs Extension B') { pageNum = Math.floor(((codepoint-0x20000)/58.67)+2); blockstart = '20000'; approx = ', approx' }
 		if (scriptGroup == 'CJK Unified Ideographs Extension C') { pageNum = Math.floor(((codepoint-0x2A700)/78.26)+2); blockstart = '2A700'; approx = ', approx' }
-		if (scriptGroup == 'CJK Unified Ideographs Extension D') { pageNum = Math.floor(((codepoint-0x2A700)/80)+2); blockstart = '2A700'; }
+		if (scriptGroup == 'CJK Unified Ideographs Extension D') { pageNum = Math.floor(((codepoint-0x2B740)/80)+2); blockstart = '2B740'; }
 		if (scriptGroup == 'CJK Unified Ideographs Extension E') { pageNum = Math.floor(((codepoint-0x2B820)/80)+2); blockstart = '2B820'; }
 		if (scriptGroup == 'Hangul Syllables') { pageNum = Math.floor(((codepoint-0xAC00)/256)+2); blockstart = 'AC00'; }
 		//if (codepoint > 0x4DFF && codepoint < 0x9FBC || codepoint > 13312 && codepoint < 19903) {
