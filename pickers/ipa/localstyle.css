@@ -57,7 +57,7 @@ span.hint {
 #vowels div { height: 38px; }
 #vowels span { background-color: white; padding: 2px; }
 #bottomphones td { padding: 0; margin: 0; }
-#bottomphones  { margin-bottom: 10px;   line-height: 1;}
+#bottomphones  { margin-bottom: 10px;   line-height: 1.6;}
 #bottomphones .bottomrighttop span { padding: 0 3px; }
 #other2 {  line-height: 1; }
 #other2 img { padding: 0; margin: 0; }
