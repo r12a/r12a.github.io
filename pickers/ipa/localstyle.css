@@ -15,7 +15,18 @@
 span.hint { 
 	margin-right: 3px;
 	}
-
+span.c {
+	cursor: pointer;
+	}
+.space {
+	color: #aaa;
+	width: 25px;
+	padding: 3px 8px;
+	border: 1px dotted #ccc;
+	line-height: 1.4;
+	margin-left: 20px; 
+	cursor:pointer;
+	}
 
 #kbd { 	
 	margin-left: 0; 
