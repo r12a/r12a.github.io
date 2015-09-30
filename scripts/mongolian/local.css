@@ -90,4 +90,13 @@ table.formtable td[lang='mn'] {
 .conflict { background-color: red; background-color: brown; color: white; font-weight: 500; }
 .fconflict { background-color: #F6A355; color: white; font-weight: 500; }
 .okdiff { background-color: #6F9; color: gray; font-weight: 500; }
+.agreed { background-color: #6F9; color: gray; font-weight: 500; }
 .notes ul, .notes ol { margin-right: 30px; }
+
+.rationale {  
+	background-color: bisque;
+	margin: 20px 5% 20px 7%;
+	padding: 10px;
+	border-radius: 10px;
+	}
+.rationale p, .rationale ol { margin: 10px; }

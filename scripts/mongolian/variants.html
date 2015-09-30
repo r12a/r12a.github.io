@@ -148,7 +148,9 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 <h3>How to use the document</h3>
 <p>For each Mongolian script letter, this page shows graphics to indicate the shape of a character in a given context (described in the left column). The graphics are standardised, and do not represent the actual font glyph shape.</p>
 <p>The columns to the left show the shapes expected in each of the three documents mentioned above. The columns to the right indicate the shapes produced by various fonts. See below for a key to the abbreviations used.</p>
-<p>A glyph image is shown with a  <span class="conflict">brown</span> border if it is in one of the spec columns and doesn't match the NP column. It has an <span class="fconflict">orange</span> border if it is in the font columns and the glyph doesn't match that in the NP column. If, however, the glyph choice is thought to be a design decision because the letter is not actually used in a particular position, then shapes diverging from the NP column are coloured <span class="okdiff">green</span>. This indicates that there is a difference, but it is probably not an issue. To help spot divergences, the background of the left-most column is also coloured. It is <span class="conflict">brown</span> if any cells on that row have brown borders, or <span class="fconflict">orange</span> if there are cells with orange borders but no brown.</p>
+<p>A glyph image is shown with a  <span class="conflict">brown</span> border if it is in one of the spec columns and doesn't match the NP column. It has an <span class="fconflict">orange</span> border if it is in the font columns and the glyph doesn't match that in the NP column. If, however, the glyph choice is thought to be a design decision because the letter is not actually used in a particular position, then shapes diverging from the NP column are coloured <span class="okdiff">green</span>. This indicates that there is a difference, but it is probably not an issue. </p>
+<p>To help spot divergences, the background of the left-most column is also coloured. It is <span class="conflict">brown</span> if any cells on that row have brown borders, or <span class="fconflict">orange</span> if there are cells with orange borders but no brown.</p>
+<p><strong>Where there are divergences but it is believed that agreement has been reached on a way forward, the left-hand column is coloured <span class="okdiff">green</span> and a description of the resolution is given in the notes  below the table.</strong></p>
 <p>The right column of the table contains a sequence of characters to allow you to check what glyphs are produced by fonts to which you have access. The vertical blue line at the bottom right of the window opens, when you click on it, to show a font control panel. When it is open, you can apply a specific font to the text in the right-hand column by selecting it from the top pull-down menu in this control panel. </p>
 <p>If the font you want to test is not available in the list selector, click on 'Add a font to these lists' (found below the two list selectors in the control panel just mentioned) and <strong>enter the name of the font</strong> you want to add in the dialog box that appears. The font name will be added to the selection  controls. Open the top list selector again, and click on the name of the font to apply it to the text in the right column. (Fonts you add to a list selector only stay on the  list for the duration of the session.)</p>
 <p>In the text column I use <span class="uname">U+200D   ZERO WIDTH JOINER</span> by default to establish the context for connecting characters. By clicking on the radio button in the font dialog box, you can <strong>change the connector</strong> to <span class="uname">U+180A MONGOLIAN NIRUGU</span>. </p>
@@ -393,7 +395,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td lang="mn">&#x1820;&#x200D;</td>
     </tr>
     <tr>
-      <td class="fconflict">**in+fvs1</td>
+      <td class="agreed">in+fvs1</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><img src="v/1820i1.png" alt=""/></td>
@@ -435,7 +437,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td lang="mn">&#x200D;&#x1820;&#x180B;&#x200D;</td>
     </tr>
     <tr>
-      <td class=conflict>m+fvs2</td>
+      <td class=agreed>m+fvs2</td>
       <td><img src="v/1820i1.png" alt="" class="conflict"/></td>
       <td><img src="v/1820i1.png" alt="" class="conflict"/></td>
       <td>n/s</td>
@@ -481,7 +483,12 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 	</table>
 	<div class="letter mongolian">
 	  <p><span class="title">Notes</span></p>
-	  <p>The glyph produced is the same as is produced for the suffix <img class="ex" lang="mn" src="images/aca.png" alt="ᠠᠴᠠ"/> for all the fonts tested.</p>
+      <div class="rationale">
+	  <p><strong>Resolutions:</strong> </p>
+	    <p><b>initial+FVS1, medial+FVS2</b>: If the UTC accepts the change of position from medial to initial for the initial A in suffix ACA, then the impact is that there is a new VS at initial+FVS1 instead of the old one at medial+FVS2.</p>
+      </div>
+	  <p><strong>Other notes:</strong> </p>
+	  <p>	The glyph produced is the same as is produced for the suffix <img class="ex" lang="mn" src="images/aca.png" alt="ᠠᠴᠠ"/> for all the fonts tested.</p>
 	  <p>Notes from Greg Eck about m+fvs2: &quot;The only place where the single tooth initial 1820 is used is with the masculine ablative suffix . Given the standard NNBSP model, this is an initial position and not a medial position. My thoughts here are similar to the 1836 final situation – the spec called for a medial. Font implementers created the 1820 medial+fvs. The display at standalone produced the desired effect – you could view the single tooth initial. Implementation went on to test in context. The implementation did not work. The contextual implementation was placed at initial position. The fvs stand-alone display was left at the medial position resulting in a mis-match of the stand-alone with the contextual implementation. If this is correct, then I suggest that the medial+fvs2 spec be dropped and the initial+fvs1 spec be added for the single tooth initial  <img src="v/1820i1.png" alt=""/>.&quot;</p>
 	  <p>&quot;One more point that might be considered – if the ablative suffix ACA/ECE was indeed being processed in the medial position, then one would expect there to be a glyph for this at the 1821-E medial slot. There is none.&quot;</p>
 	</div>
@@ -680,7 +687,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn">&#x200D;&#x1822;&#x180B;&#x200D;</td>
       </tr>
       <tr>
-        <td class="fconflict">m+fvs2</td>
+        <td class="agreed">m+fvs2</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="v/1822m.png" alt=""/></td>
@@ -694,7 +701,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn">&#x200D;&#x1822;&#x180C;&#x200D;</td>
       </tr>
       <tr>
-        <td class="fconflict">**m+fvs3</td>
+        <td class="agreed">m+fvs3</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="v/1822m3.png" alt=""/></td>
@@ -725,6 +732,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
   </table>
   <div class="letter mongolian">
     <p><span class="title">Notes</span></p>
+    <div class="rationale">
+      <p><strong>Resolutions:</strong></p>
+      <ol>
+      <li><b>medial+FVS2</b>: Add as the override needed to shape NAIMA correctly.</li>
+      <li><b>medial+FVS3</b>: Add as the fourth medial double-tooth, which has been left out from the beginning.</li>
+      </ol>
+    </div>
     <p>Bolorsoft lists two additional forms: f+fvs1 <img src="v/1822x.png" alt=""/>, used for "bi (meaning "I"), bui (meaning "is")", etc.; and f+fvs2 <img src="v/1822f.png" alt=""/>.</p>
   </div>
 </div>
@@ -810,7 +824,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn">&#x200D;&#x1823;&#x180B;&#x200D;</td>
       </tr>
       <tr>
-        <td class="fconflict">final</td>
+        <td>final</td>
         <td><img src="v/1823f.png" alt=""/></td>
         <td>&nbsp;</td>
         <td><img src="v/1823f.png" alt=""/></td>
@@ -880,7 +894,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn"><div>&#x1824;</div></td>
       </tr>
       <tr>
-        <td class="fconflict">**is+fvs1</td>
+        <td class="agreed">is+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="v/1823s.png" alt=""/></td>
@@ -889,8 +903,8 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1823s.png" alt=""/></td>
         <td><img src="v/1823s.png" alt=""/></td>
         <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
-        <td>&nbsp;</td>
-        <td>?</td>
+        <td><img src="v/none.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td lang="mn"><div>&#x1824;&#x180B;</div></td>
       </tr>
       <tr>
@@ -950,7 +964,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn">&#x200D;&#x1824;</td>
       </tr>
       <tr>
-        <td class=fconflict>**f+fvs1</td>
+        <td class=agreed>f+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="v/1823f1.png" alt=""/></td>
@@ -967,7 +981,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
   </table>
   <div class="letter mongolian">
     <p><span class="title">Notes</span></p>
-    <p>The Bolorsoft table used for the BS column lists one additional form: f+fvs2 <img src="v/1823f.png">, where the glyph is the same as for the ordinary final form but should have absolutely no <span class="uname">NIRUGU</span>, and which is used for genitive case suffix. The non-variant final form has to have a small "nirugu".</p>
+    <div class="rationale">
+      <p><strong>Resolutions:</strong> </p>
+      <ol>
+      <li><b>isolate+FVS1:</b> Dependent on which way the UTC decides, there may be a new VS here.</li>
+      <li><b>final+FVS1:</b> Add for spellings in such foreign words as PALAU. Similar to METRO with the foreign final O, the GLYPH FOR the foreign final U is necessary.</li>
+      </ol>
+    </div>
+    <p>The Bolorsoft table used for the BS column lists one additional form: f+fvs2 <img src="v/1823f.png" alt="">, where the glyph is the same as for the ordinary final form but should have absolutely no <span class="uname">NIRUGU</span>, and which is used for genitive case suffix. The non-variant final form has to have a small "nirugu".</p>
   </div>
 </div>
 </div>
@@ -1136,7 +1157,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn"><div>&#x1826;&nbsp;</div></td>
       </tr>
       <tr>
-        <td class="conflict">is+fvs1</td>
+        <td class="agreed">is+fvs1</td>
         <td><img src="v/1826s2.png" alt="" class="conflict"/></td>
         <td><img src="v/1826s2.png" alt="" class="conflict"/></td>
         <td><img src="v/1825s.png" alt=""/></td>
@@ -1150,7 +1171,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn">&#x1826;&#x180B;</td>
       </tr>
       <tr>
-        <td class="fconflict">is+fvs2</td>
+        <td class="agreed">is+fvs2</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td><img src="v/1826s2.png" alt=""/></td>
@@ -1159,8 +1180,8 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1825s.png" alt="" class="fconflict"/></td>
         <td><img src="v/1825s.png" alt="" class="fconflict"/></td>
         <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
-        <td>&nbsp;</td>
-        <td>?</td>
+        <td><img src="v/none.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td lang="mn">&#x1826;&#x180C;</td>
       </tr>
       <tr>
@@ -1251,6 +1272,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
   </table>
   <div class="letter mongolian">
     <p><span class="title">Notes</span></p>
+    <div class="rationale">
+      <p><strong>Resolutions:</strong></p>
+      <ol>
+        <li><b>isolate+FVS1:</b> Dependent on which way the UTC decides, there may be a new VS here.</li>
+        <li><b>isolate+FVS2:</b> Add.</li>
+      </ol>
+    </div>
     <p>The Bolorsoft table used for the BS column lists three additional forms: i+fvs1 <img src="v/1823i.png" alt=""/>, and f+fvs2 and f+fvs3. Both  the latter two look the same as  the ordinary final,<img src="v/1823f.png" alt=""/>. The third form is reserved for "khalkha" form, and could be simply ignored.</p>
   </div>
 </div>
@@ -12609,7 +12637,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  21 Sep 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-09-07  15:58<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-09-30  20:24<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">
