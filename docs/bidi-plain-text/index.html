@@ -23,6 +23,9 @@
 <header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+<style>
+figure { text-align: start; }
+</style>
 </header>
 
 <h1>Bidi in plain text (draft!)</h1>
@@ -44,7 +47,7 @@
   <p>Increasingly, questions are arising at the W3C about how to specify bidi handling for plain text environments. Most recently this includes JSON formats and CSV formats.</p>
 	<p>My aim in this page is to provide background information that can help with those discussions, and carry useful ideas from one discussion to the next. <!--p>When you see red text (examples of bopomofo) you can click on it to reveal the component characters.</p>
 		<p> Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system.</p--> I also add some personal thoughts on implementation alternatives, given current data.</p>
-	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-07-02  10:39<!-- #EndDate -->.</strong></p>
+	<p><strong>I'm using this page to clarify things for myself. It is only a draft, and will be updated  from time to time, as new information becomes available, as feedback arrives, and as ideas are clarified. Latest update was <!-- #BeginDate format:IS1m -->2015-10-02  15:04<!-- #EndDate -->.</strong></p>
 </section>
 	
 <section id="base_direction">
@@ -120,13 +123,52 @@
 
 <section id="webvtt">
 <h2><a href="#webvtt">Implications for WebVTT data</a></h2>
-<p>If a WebVTT script is in a language such as Arabic, Hebrew, Divehi, Persian, Urdu, etc., then most, if not all, of the cue text will need to have a base direction of RTL. The easiest way to achieve this would be to declare the direction at the top of the file, and have it inherited as the default direction for the content of each cue.</p>
+<p>If a WebVTT script is in a language such as Arabic, Hebrew, Divehi, Persian, Urdu, etc., then most, if not all, of the cue text will need to have a base direction of RTL. There needs to be a way to apply that automatically to all the cues in the file, with mechanisms to change the text in a particular cue or line where a different base direction is needed.</p>
 <p>This base direction would only be applied to the content of the cue, not to any of the additional information in the file, such as time settings, ids, etc.&nbsp; Unless you have a clever editor, it would also not be applied to the display of the cue text in the raw text file, either.&nbsp; This may produce occasional difficulties for editing of bidirectional text&nbsp;in the source.</p>
+<p>It appears to me that there are two possible approaches to automatically propagating base direction to the cue text: heuristically or declaratively. Heuristically means testing the text itself, and declaratively means providing markup or other metadata to indicate the preferred base direction.</p>
+<p>The currently specc'ed approach relies on heuristics, though with a slight twist which will be explained below. What follows is my current understanding of how the WebVTT spec does this.</p>
+
+  <h3>[1] heuristic (currently specced) approach</h3>
+  <p>Establish the base direction of all of the lines in a given cue text by detecting the direction of the first strong character in the first line of the cue, ie. where there are multiple lines, assign the base direction for following lines based on the of the first line, ignoring the normal UBA approach of treating each line as a paragraph. (Line breaks in UBA constitute paragraph breaks and the base direction needs to be redetected using first-strong heuristics for each paragraph. This is also different to the way CSS deals with plain text, since it follows the UBA rules.)</p>
+  <p>Strategies for where this approach fails:</p>
+  <p>(a) a line that should be rtl, but starts with non-rtl characters (and vice versa), such as </p>
+  <figure><pre>00:38.500 --&gt; 00:39.500 
+  &lt;v Maha&gt;&quot;C مدخل إلى!&quot;</pre></figure>
+  <p>The C should appear to the right of the line, and the ! to the left, but you will get the reverse.</p>
+  <p>Solution: put &amp;rlm; at the start of the line.</p>
+  <p>(b) same applies to a line with no strong character (such as a telephone number) or a mixture of strong and non-strong characters (such as a Mac address) but that has to ordered in a particular way, eg.</p>
+  <figure><pre>00:38.500 --&gt; 00:39.500
+bahrain مصر kuwait</pre></figure>
+  <p>(c) multiline cues in multiple scripts/languages, eg.</p>
+  <figure><pre>00:22.000 --&gt; 00:24.000
+שלום!
+Hello!</pre></figure>
+  <p>The exclamation mark in the first line will appear to the left, as expected, because the first-strong character in the cue is a Hebrew character (rtl).  That of the second line will also appear to the left, which is NOT expected, since the second line's directionality is set by that of the first line.</p>
+  <p>Solution: &amp;lrm; at the start of the second line will not have any effect, since the implementation doesn't test for first-strong characters in the second line.  The only way i can think of to fix this is to set an embedding level using RLI ... PDF characters around 'Hello!'.  Apart from the fact that it is a pain to do this for a large number of cases (such as in the video from which this example was taken), that the characters at either end of the text lend some fragility to the line, and that those Unicode control characters are not available on keyboards, RLI/LRI/FSI ... PDI are not currently supported by browsers or keyboards and it will be necessary to use RLE/LRE instead (which actually have the same problems).</p>
+  <p>(d) the implementation must ignore anything that appears before the actual cue text, eg. </p>
+  <figure><pre>00:16.000 --&gt; 00:18.000
+&lt;v Maha&gt;السلام عليكم!</pre></figure>
+  <p>the characters &lt;v Maha&gt; must be ignored.  Same goes if you have span or other markup at the start of the line.</p>
+  <p>(e) inline text may need a different base direction, eg.</p>
+  <figure><pre>00:37.000 --> 00:37.500
+The title of my new book is "مدخل إلى C++". 
+No wait...!</pre></figure>
+  <p>One way to do this would be to use RLI/LRI ... PDI control characters. These are generally not preferred because they are invisible and can be difficult to manage, and because they are not easy to input.</p>
+  <p>Since WebVTT supports span elements(?), this would offer the opportunity to apply directionality declaratively, which is often to work with. </p>
+  <h3>[2] declarative approach</h3>
+  <p>Give WebVTT the ability to say</p>
+  <figure><pre>STYLE
+direction:rtl;</pre></figure>
+  <p>at the top of the file, then the default base direction for the content is established by that statement, and displayed text for all lines of cue text should get a base direction of rtl, regardless of their first-strong character, unless some lower level directive intervenes. The important thing to bear in mind is that this approach is incompatible with first-strong heuristics, and &amp;lrm; or &amp;lrm; at the start of the para are of no consequence.</p>
+  <p>When you have paragraphs/lines that should not have a direction of rtl (like those mentioned above) you need a way to change their base direction using some kind of metadata annotation, on a per paragraph basis.</p>
+  <p>One could probably easily enough allow for some metadata declaration at the cue level to change the direction of content, however it is actually necessary to be able to change the direction of content for any paragraph/line level, eg. it may be the second line in the cue that has to be set to ltr. Since lines in WebVTT cues are not bounded by markup, i'm not sure how one would do this using metadata/markup.</p>
+  <p>So what i'm saying is that, if we have the file-level declaration for direction, it has to come with some other mechanism for indicating the desired base direction for individual paragraphs.</p>
+  <p>One solution might be to use Unicode embedding control characters, but, as described above, many people would prefer to use a declarative approach because of the difficulties involved in using control characters.  It may also be possible to surround each line in question with a span, but this is a rather cumbersome and inefficient approach.</p>
 </section>
 <!--div id="panel" style="display:none"></div-->
 
 <div class="smallprint"><span id="version">First published  3 Dec 2010.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-07-02  10:39<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-10-02  15:04<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
