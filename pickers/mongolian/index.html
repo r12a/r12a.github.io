@@ -422,7 +422,7 @@ return false;">D</div>
 
     <dd>To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page (Noto Sans Mongolian). See more information about <a href="/scripts/fontlist/#mongolian">standard OS fonts in Mac and Windows</a>.</dd>
     
-    <dd><strong>The picker will behave differently, depending on which browser you are using</strong>. Neither Firefox, Chrome, Safari nor IE display the text in the output box vertically. (Some browsers will show the text vertically in normal HTML, but not yet in a textarea element.) Firefox doesn't display the characters on the selection area vertically either. On the other hand, Firefox joins the characters as expected when using the Noto Sans Mongolian font, but Chrome and Safari don't.</dd>
+    <dd><strong>The picker will behave differently, depending on which browser you are using</strong>. Neither Chrome, Safari nor IE display the text in the output box vertically. (Some browsers will show the text vertically in normal HTML, but not yet in a <code class="kw" translate="no">textarea</code> element.) On the other hand, Firefox joins the characters as expected when using the Noto Sans Mongolian font, but Chrome and Safari don't.</dd>
     
       <dt>Mobile devices</dt>
    		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
@@ -430,6 +430,10 @@ return false;">D</div>
       <dt>About the chart</dt>
 				<dd>Includes  characters in the Unicode <a href="/uniview/?block=mongolian">Mongolian </a> block used for writing Mongolian.</dd>
       <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
+        
+      <dt>Variant selector box</dt>
+      <dd>When you hover over a character in the selection area, the box to the left of the character selector displays the alternate glyph forms that are appropriate for that character. It includes the default positional forms as well as the forms produced by following the character with a Free Variation Selector (FVS). The latter forms are derived from work which has been taking place in 2015 to standardise the forms produced by using FVS. At the moment, not all fonts will produce the expected shapes for all possible combinations. (For more information, see <a href="http://rishida.io/scripts/mongolian/variants">Notes on Mongolian variant forms</a>.)</dd>
+      <dd>If the output box doesn't show the form you want, look in this box to determine what combination of character + FVS will produce the needed form. Add the character, then click on one of the boxes below that look like the following.<br/> <img src="images/180B.png" alt="᠋" title="180B: MONGOLIAN FREE VARIATION SELECTOR ONE" /> <img src="images/180C.png" alt="᠋" title="180B: MONGOLIAN FREE VARIATION SELECTOR TWO" /> <img src="images/180D.png" alt="᠋" title="180D: MONGOLIAN FREE VARIATION SELECTOR THREE" /></dd>
       
       <dt>Input options</dt>
       <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
