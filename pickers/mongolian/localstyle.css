@@ -116,14 +116,11 @@ dt { color: #FF6600; }
 
 #output { /* position: absolute; top:100px; right: 10px; */ 
 	padding: 8px;
-	-moz-writing-mode: vertical-lr;
 	writing-mode: vertical-lr;
 	-webkit-writing-mode: vertical-lr;
 	-o-writing-mode: vertical-lr;
 	-ms-writing-mode: tb-lr;
-	writing-mode: tb-lr;
-	-webkit-text-orientation: sideways-right;
-	height: 300px; 
+	height: 400px; 
 	width:600px; 
 	clear:both;
  }
