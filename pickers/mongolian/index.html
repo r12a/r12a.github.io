@@ -33,11 +33,11 @@
     <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
     <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
     
-    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'mn','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
-    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'mongolian','mn','ltr');" title="Create an character link.">charLink</button>
+    <!--button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'mn','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'mongolian','mn','ltr');" title="Create an character link.">charLink</button-->
 </div>
 
-<div id="outputDiv">
+<div id="outputDiv" lang="mn">
   <textarea rows="2" cols="80" id="output" name="output"></textarea>
 </div>
 
