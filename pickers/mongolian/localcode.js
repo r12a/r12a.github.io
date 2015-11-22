@@ -104,7 +104,7 @@ function event_mouseoverChar ()  {
 		document.getElementById('variantshapes').innerHTML = variantimgs;
 		}
 	else {
-		document.getElementById('variantshapes').innerHTML = '<span class="hint">no variants</span>'
+		document.getElementById('variantshapes').innerHTML = '<span class="hint"> </span>'
 		}
 	}
 	}
