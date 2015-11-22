@@ -6,7 +6,7 @@ function localInitialise () {
 	}
 
 
-function event_mouseoverChar ()  {
+function event_mouseoverCharX ()  {
 	// display character information
 	span = document.createElement( 'span' );
 	span.setAttribute( 'id', 'charname' );
@@ -38,18 +38,75 @@ function event_mouseoverChar ()  {
 		var variants = this.dataset.variants.split(' ');
 		var variantimgs = '';
 		for (var i=0; i<variants.length; i++) {
-			if (variants[i] == 'is') { variantimgs += '<div class="hint">Isolated</div>' }
-			else if (variants[i] == 'i') { variantimgs += '<div class="hint">Initial</div>' }
-			else if (variants[i] == 'm') { variantimgs += '<div class="hint">Medial</div>' }
-			else if (variants[i] == 'f') { variantimgs += '<div class="hint">Final</div>' }
+			if (variants[i] == 'is') { variantimgs += '<div class="hint top">Is. <img src="v/'+codepoint+'s.png" alt="" /></div>';  }
+			else if (variants[i] == 'i') { variantimgs += '<div class="hint">In. <img src="v/'+codepoint+'i.png" alt="" /></div>' }
+			else if (variants[i] == 'm') { variantimgs += '<div class="hint">Med. <img src="v/'+codepoint+'m.png" alt="" /></div>' }
+			else if (variants[i] == 'f') { variantimgs += '<div class="hint">Fin. <img src="v/'+codepoint+'f.png" alt="" /></div>' }
 			else { 
-				variantimgs += '<div>'
+				variantimgs += '<div class="glyph">'
 				switch (variants[i].charAt(1)) {
-					case '1': variantimgs += '<span class="hint">#1</span>'; break
-					case '2': variantimgs += '<span class="hint">#2</span>'; break
-					case '3': variantimgs += '<span class="hint">#3</span>'; break
+					case '1': variantimgs += '<span class="hint">+①</span>'; break
+					case '2': variantimgs += '<span class="hint">+②</span>'; break
+					case '3': variantimgs += '<span class="hint">+③</span>'; break
 					}
-				variantimgs += '<img src="v/'+codepoint+variants[i]+'.gif" alt="" /></div>'
+				variantimgs += '<img src="v/'+codepoint+variants[i]+'.png" alt="" /></div>'
+				}
+			}
+		//alert( variantimgs );
+		document.getElementById('variantshapes').innerHTML = variantimgs;
+		}
+	else {
+		document.getElementById('variantshapes').innerHTML = '<span class="hint">no variants</span>'
+		}
+
+	}
+
+
+
+function event_mouseoverChar ()  {
+	// display character information
+	span = document.createElement( 'span' );
+	span.setAttribute( 'id', 'charname' );
+	charinfo = document.createTextNode( this.title );
+	span.appendChild(charinfo);
+	var chardata = document.getElementById('chardata');	
+	chardata.replaceChild( span, chardata.firstChild );
+	
+	// highlight this character
+	this.style.backgroundColor = '#CF9'
+	this.style.backgroundColor = '#fc6'
+	//this.style.backgroundColor = '#FC0'
+	
+	// highlight similar characters
+	if (_showShapeHints && _h[this.id]) {
+		ptr = this.id
+		for (i=0;i<_h[ptr].length;i++) {
+			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#E6FFCD'
+			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
+			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE680'
+			}
+		}
+
+	// display any variant forms in the dedicated area
+	if (this.dataset.variants) { // only do it if there's a class attribute
+		// first, get the character code point
+		var codepoint = this.id;
+		// now generate the img code for the variants
+		var variants = this.dataset.variants.split(' ');
+		var variantimgs = '<table><tbody>';
+		for (var i=0; i<variants.length; i++) {
+			if (variants[i] == 's') { variantimgs += '<tr><td class="hint top">Iso</td><td class="hint top"><img src="v/'+codepoint+'s.png" alt="" /></td></tr>';  }
+			else if (variants[i] == 'i') { variantimgs += '<tr><td class="hint">Ini</td><td class="hint"><img src="v/'+codepoint+'i.png" alt="" /></td></tr>' }
+			else if (variants[i] == 'm') { variantimgs += '<tr><td class="hint">Med</td><td class="hint"><img src="v/'+codepoint+'m.png" alt="" /></td></tr>' }
+			else if (variants[i] == 'f') { variantimgs += '<tr><td class="hint">Fin</td><td class="hint"><img src="v/'+codepoint+'f.png" alt="" /></td></tr>' }
+			else { 
+				variantimgs += '<tr class="glyph"><td>'
+				switch (variants[i].charAt(1)) {
+					case '1': variantimgs += '<span class="hint">+①</span>'; break
+					case '2': variantimgs += '<span class="hint">+②</span>'; break
+					case '3': variantimgs += '<span class="hint">+③</span>'; break
+					}
+				variantimgs += '</td><td><img src="v/'+codepoint+variants[i]+'.png" alt="" /></td></tr>'
 				}
 			}
 		//alert( variantimgs );

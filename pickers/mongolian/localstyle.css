@@ -51,11 +51,11 @@ dt { color: #FF6600; }
 #alphabet { padding-left: 5px; padding-right: 5px; }
 #consonants td { margin: 0; padding: 0; padding-bottom: 3px; }
 #subscripts td { margin: 0; padding: 0;  padding-bottom: 3px;  }
-#subscripts, #consonants { border-collapse:collapse; font-family: }
+#subscripts, #consonants { border-collapse:collapse;  }
 
 
 #variantshapes { 
-	width: 75px; 
+	width: 85px; 
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	}
@@ -65,8 +65,38 @@ dt { color: #FF6600; }
 #variantshapes div.hint {
 	font-size: 16px;
 	color: #aaa;
+	text-align: right;
+	vertical-align: middle;
+	border-top: 1px solid #ccc; 
+	}
+#variantshapes td.hint {
+	font-size: 16px;
+	color: #aaa;
 	text-align: center;
 	vertical-align: middle;
+	border-top: 1px solid #ccc; 
+	}
+#variantshapes span.hint {
+	color: #B46605;
+	padding-right: 2px;
+	font-size: 14px;
+	}
+#variantshapes .glyph {
+	text-align: right;
+	padding-right: 4px; 
+	}
+#variantshapes div.top {
+	border: 0;
+	}
+#variantshapes td.top {
+	border: 0;
+	}
+#variantshapes td {
+	text-align: center;
+	}
+#variantshapes table {
+	border-collapse: collapse;
+	width: 100%;
 	}
 
 #commonvowels { width: 95px; border: 1px solid #ccc; border-radius: 10px; vertical-align: middle; }
