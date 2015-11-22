@@ -99,6 +99,7 @@ menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length
 _showShapeHints = '';
 document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
  document.getElementById('keyboard').style.display = 'none';  _showKeyboard = ''; 
+ _showVariantsOnMouseover = ''; 
 return false;">D</div>
  
 <div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
@@ -106,6 +107,8 @@ return false;">D</div>
 <div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
 
 <div class="vmtab" onmouseover="this.textContent='Keyboard'+_showKeyboard" onmouseout="this.textContent='K'"  onclick="if (_showKeyboard) {_showKeyboard = ''; this.textContent ='Keyboard'; this.style.color='white'; document.getElementById('keyboard').style.display = 'none';} else {_showKeyboard = ' ✓'; this.textContent='Keyboard'+_showKeyboard; this.style.color='orange'; document.getElementById('keyboard').style.display = 'block';} return false;">K</div>
+
+<div class="vmtab" onmouseover="this.textContent='Variants on hover'+_showVariantsOnMouseover" onmouseout="this.textContent='V'"  onclick="if (_showVariantsOnMouseover) {_showVariantsOnMouseover = ''; this.textContent ='Variants on hover'; this.style.color='white'; } else {_showVariantsOnMouseover = ' ✓'; this.textContent='Variants on mouseover'+_showVariantsOnMouseover; this.style.color='orange';} return false;">V</div>
 </div>
 
 
@@ -431,9 +434,10 @@ return false;">D</div>
 				<dd>Includes  characters in the Unicode <a href="/uniview/?block=mongolian">Mongolian </a> block used for writing Mongolian.</dd>
       <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
         
-      <dt>Variant selector box</dt>
-      <dd>When you hover over a character in the selection area, the box to the left of the character selector displays the alternate glyph forms that are appropriate for that character. It includes the default positional forms as well as the forms produced by following the character with a Free Variation Selector (FVS). The latter forms are derived from work which has been taking place in 2015 to standardise the forms produced by using FVS. At the moment, not all fonts will produce the expected shapes for all possible combinations. (For more information, see <a href="http://r12a.github.io/scripts/mongolian/variants">Notes on Mongolian variant forms</a>.)</dd>
-      <dd>If the output box doesn't show the form you want, look in this box to determine what combination of character + FVS will produce the needed form. Add the character, then click on one of the boxes below that look like the following.<br/> <img src="images/180B.png" alt="᠋" title="180B: MONGOLIAN FREE VARIATION SELECTOR ONE" /> <img src="images/180C.png" alt="᠋" title="180B: MONGOLIAN FREE VARIATION SELECTOR TWO" /> <img src="images/180D.png" alt="᠋" title="180D: MONGOLIAN FREE VARIATION SELECTOR THREE" /></dd>
+      <dt id="variant_selector_box_description">Variant selector box</dt>
+      <dd>When you hover over or select a character in the selection area, the box to the left of that area displays the alternate glyph forms that are appropriate for that character. By default, this only happens when you click on a character, but you can make it happen on hover by clicking on the V in the gray selection bar to the right.</dd>
+      <dd>The list includes the default positional forms as well as the forms produced by following the character with a Free Variation Selector (FVS). The latter forms are derived from work which has been taking place in 2015 to standardise the forms produced by using FVS. At the moment, not all fonts will produce the expected shapes for all possible combinations. (For more information, see <a href="http://r12a.github.io/scripts/mongolian/variants">Notes on Mongolian variant forms</a>.)</dd>
+      <dd>If the variant list is displayed when you click on a character, you can add an appropriate FVS character to the output area by clicking in the list on the shape that you want to see in the output.</dd>
       
       <dt>Input options</dt>
       <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
@@ -448,6 +452,8 @@ return false;">D</div>
 				<dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
                 
 				<dd><strong class="leadin">Keyboard</strong> This provides a  standard Unicode-based Mongolian keyboard layout. </dd>
+                
+				<dd><strong class="leadin">Variants on hover</strong> Makes the list of variant forms appear as you hover over the selector area, rather than when you click on a character. See <a href="#variant_selector_box_description">Variant selector box</a> above. </dd>
                 
       <dt>Notes on other controls</dt>
       
