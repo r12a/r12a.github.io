@@ -1,0 +1,163 @@
+h1 {
+	margin-top: 10px;
+	}
+h2 {
+	margin-bottom: 0;
+	}
+
+.registryItem {
+	margin:1px;
+	margin-left: 7.5%;
+	margin-right: 32%;
+	background-color:#f8f8f8;
+	}
+	
+.registryItem h3 {
+	margin:0px;
+	padding:1.5%;
+	width:97%;
+	font-weight:normal;
+	color:#fff;
+	}
+	
+.registryItem h3 span.st {
+	font-weight:bold;
+	width:6em;
+	display:block;
+	float:left;
+	}
+
+#userDefined .registryItem h3 {
+	color:#666;
+	}
+
+.registryItem ul {
+	color:#444;
+	margin: 0;
+	padding-left: 6em;
+	font-family:"Courier New", Courier, monospace;
+	}
+	
+/* Coloring */
+#listScripts h3 {
+	background-color:#544;
+	}
+	
+#listLanguages h3 {
+	background-color:#454;
+	}
+	
+#listRegions h3 {
+	background-color:#445;
+	}
+	
+#listVariant h3 {
+	background-color:#455;
+	}
+	
+#listExtlang h3 {
+	background-color: #F90;  ;
+	}
+	
+#listGrand h3 {
+	background-color:#554;
+	}
+	
+#listRedundant h3 {
+	background-color:#545;
+	}
+
+/* Form */	
+form {
+	font-size: 95%;
+	color: gray;
+	text-align: left;
+	}
+	
+form select, form select option, form input {
+	color: gray;
+	font-size: 100%;
+	}
+
+button[type="submit"] {
+    background-color: #EEE;
+}
+button {
+    color: #0C3;
+    font-size: 100%;
+    border-radius: 10px;
+    line-height: 1.5em;
+    padding: 5px;
+    border: 1px solid #DDD;
+}
+
+#registryForm fieldset {
+	border: 0;
+	padding: 0;	
+	display: inline;
+	}
+
+#registryForm fieldset p {
+	margin-left: 0;
+	margin-right: 0;
+	}
+	
+.radio {
+	white-space: nowrap; 
+	}
+	
+#form strong {
+	color: brown;
+	}
+
+form {
+	display: inline;
+	}
+	
+.stname {
+	color:#C30; 
+	font-style: italic;
+	}
+.explanation { font-size: 70%; color:#C30; line-height: 1.2em; margin-top: 4em; }
+.notenumber { font-size: 120%; color:#C30; }
+.registryitem img { vertical-align: middle; }
+sub { color:#C30; font-style: italic; }
+
+.comments { margin-left: 50px; margin-bottom: 5px; }
+.task { font-size: 200%; font-weight:bold; color: #669;  }
+
+#search { float: left; width: 30%; margin: 0 0 0 3%; padding: 1%; }
+#check { float: left; width: 30%; margin: 0; padding: 1%; }
+#search p, #check p { margin: 0 0 20px 0; }
+
+#author { margin-top:0; }
+
+#search p, #check p {
+	border: 1px solid #ccc;
+	-o-box-shadow: 3px 3px 5px #888;
+	-icab-box-shadow: 3px 3px 5px #888;
+	-khtml-box-shadow: 3px 3px 5px #888;
+	-moz-box-shadow: 3px 3px 5px #ccc;
+	-webkit-box-shadow: 3px 3px 5px #ccc;
+	box-shadow: 3px 3px 5px #888; 
+	padding: 5px 10px 5px 15px; 
+	border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+	}
+
+#resultTable td { border: 1px solid #ccc; border: 0; padding: 0 20px; text-align: left; vertical-align:bottom; }
+.originalNumber { font-size: 30px; color: #999; }
+.output { color: #C33; font-size: 30px; margin: 1em 30% 2em 7.5%; line-height: 1.2; }
+.inputbox { width: 100%; border-radius: 10px; border: 2px solid #eee; font-size: 300%; }
+#rules { height: 100px; }
+.original { color: #999; font-size: 14px;  margin: 0 2px; }
+.hidden { display:none; }
+
+.alternative {
+	float: left;
+	width: 48%;
+	}
+.alternative p {
+	margin-right: 40px;
+	}
