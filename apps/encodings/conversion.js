@@ -1,7 +1,7 @@
 function encode ( stream ) {
 	document.getElementById('u2big5Result').textContent = big5Encoder(stream)
-	
 	document.getElementById('u2utf8Result').textContent = utf8Encoder(stream)
+	document.getElementById('u2eucjpResult').textContent = eucjpEncoder(stream)
 	}
 
 function decode ( stream ) {
@@ -11,123 +11,6 @@ function decode ( stream ) {
 	document.getElementById('myutf82uResult').textContent = myutf8Decoder(stream)
 	}
 
-
-function normalizeStr ( str ) { 
-	var out = ''
-	for (var c=0;c<str.length;c++) {
-		if (str.charAt(c) == ' ') {
-			out += String.fromCodePoint(parseInt(str.charAt(c+1)+str.charAt(c+2),16))
-			c += 2
-			}
-		else out += str.charAt(c)
-		}
-	var result = ''
-	for (var o=0;o<out.length;o++) {
-		result += ' '+out.charCodeAt(o).toString(16).toUpperCase()
-		}
-	return result
-	}
-
-
-function chars2cps ( chars ) { 
-	// converts a sequence of characters to hex code point values
-	// this is needed because of javascript's handling of supplementary characters
-	// char: a string of unicode characters
-	// returns a space separated list of decimal code point values
-	var haut = 0
-	var n = 0
-	var out = ''
-	for (var i = 0; i < chars.length; i++) {
-		var b = chars.charCodeAt(i)
-		if (b < 0 || b > 0xFFFF) {
-			out += 'Error in convertChar2CP: byte out of range ' + b.toString(16) + '!'
-			}
-		if (haut != 0) {
-			if (0xDC00 <= b && b <= 0xDFFF) {
-				var temp = 0x10000 + ((haut - 0xD800) << 10) + (b - 0xDC00)
-				out += temp + ' '
-				haut = 0
-				continue
-				}
-			else {
-				out += 'Error in convertChar2CP: surrogate out of range ' + haut.toString(16) + '!'
-				haut = 0
-				}
-			}
-		if (0xD800 <= b && b <= 0xDBFF) {
-			haut = b
-			}
-		else {
-			out += b + ' '
-			}
-		}
-	return out.trim()
-	}
-
-function cps2chars ( str ) {
-	// converts to characters a sequence of space-separated hex numbers representing bytes in utf8
-	// str: string, the sequence to be converted
-	var out = ""
-	var counter = 0
-	var n = 0
-	
-	// remove leading and trailing spaces
-	str = str.replace(/^\s+/, '')
-	str = str.replace(/\s+$/,'')
-	if (str.length == 0) { return "" }
-	str = str.replace(/\s+/g, ' ')
-  
-	var listArray = str.split(' ')
-	for ( var i = 0; i < listArray.length; i++ ) {
-		var b = parseInt(listArray[i], 16)  // console.log('b:'+dec2hex(b));
-		switch (counter) {
-			case 0:
-				if (0 <= b && b <= 0x7F) {  // 0xxxxxxx
-					out += dec2char(b) } 
-				else if (0xC0 <= b && b <= 0xDF) {  // 110xxxxx
-					counter = 1
-					n = b & 0x1F }
-				else if (0xE0 <= b && b <= 0xEF) {  // 1110xxxx
-					counter = 2
-					n = b & 0xF }
-				else if (0xF0 <= b && b <= 0xF7) {  // 11110xxx
-					counter = 3
-					n = b & 0x7 }
-				else {
-					out += 'convertUTF82Char: error1 ' + dec2hex(b) + '! '
-					}
-				break;
-			case 1:
-				if (b < 0x80 || b > 0xBF) {
-					out += 'convertUTF82Char: error2 ' + dec2hex(b) + '! '
-					}
-				counter--
-				out += dec2char((n << 6) | (b-0x80))
-				n = 0
-				break
-			case 2: case 3:
-				if (b < 0x80 || b > 0xBF) {
-					out += 'convertUTF82Char: error3 ' + dec2hex(b) + '! '
-					}
-				n = (n << 6) | (b-0x80)
-				counter--
-				break
-			}
-		}
-		return out.trim()
-	}
-
-function dec2char ( n ) {
-	// converts a decimal number to a Unicode character
-	// n: the dec codepoint value to be converted
-    if (n <= 0xFFFF) { out = String.fromCharCode(n) } 
-	else if (n <= 0x10FFFF) {
-		n -= 0x10000
-		out = String.fromCharCode(0xD800 | (n >> 10)) + String.fromCharCode(0xDC00 | (n & 0x3FF))
-    	} 
-	else out = 'dec2char error: Code point out of range: '+n
-	return out
-	}
 
 
 
@@ -147,22 +30,33 @@ big5CPs[0x256A] = 18976
 big5CPs[0x5341] = 5512
 big5CPs[0x5345] = 5599
 
+
+var jis0208CPs = []  // index is unicode cp, value is pointer
+ for (p=0;p<indexes.jis0208.length;p++) {
+	if (indexes.jis0208[p] != null && jis0208CPs[indexes.jis0208[p]] == null) {
+		jis0208CPs[indexes.jis0208[p]] = p
+		}
+	}
+
 // 	END OF DATA INITIALISATION
 
 
 
 function big5Encoder (stream) {
-	var cps = stream.split('')
-	for (i=0;i<cps.length;i++) cps[i] = cps[i].charCodeAt(0)
+	cps = chars2cps(stream)
+	//console.log(cps)
 	var out = ''
-	for (cp of cps) {
-		if (cp > -1 && cp < 0x80) {  // ASCII
-			out +=  normalizeStr(String.fromCodePoint(cp))
+	while (cps.length > 0) {
+		cp = cps.shift()
+		//console.log('CODE POINT:',cp, cp.toString(16))
+		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
+			out +=  ' '+cp.toString(16)
+			//console.log('out is ascii',cp, cp.toString(16))
 			continue
 			}
 		var ptr = big5CPs[cp]
 		if (ptr == null) {
-			out += '&#x'+cp.toString(16).toUpperCase()+';'
+			out += ' &#'+cp+';'
 			continue
 			}
 		var lead = Math.floor(ptr/157) + 0x81
@@ -184,8 +78,11 @@ function big5Decoder (stream) {
 	var out = ''
 	var lead, byte, offset, ptr, cp
 	var big5lead = 0x00
-	for (byte of bytes) {
-		if (big5lead != 0x00) {
+	while (bytes.length > 0) {
+		console.log(bytes)
+		byte = bytes.shift()														
+		console.log('BYTE: ',byte.toString(16),byte)
+		if (big5lead != 0x00) {	
 			lead = big5lead
 			ptr = null
 			big5lead = 0x00
@@ -202,36 +99,41 @@ function big5Decoder (stream) {
 				}
 			if (ptr == null) cp = null
 			else cp = indexes.big5[ptr]
-			if (cp == null && byte > -1 && byte < 0x80) { out += String.fromCodePoint(cp); continue }
-			if (cp == null) { out += '�'; continue }
-			out += String.fromCodePoint(cp)
+			if (cp == null && byte >= 0x00 && byte < 0x7F) { bytes.unshift(byte); continue } 			
+			if (cp == null) { 
+				out += '�'
+				continue
+				}
+			out += dec2char(cp)
 			}
-		else if (byte > -1 && byte < 0x80) out += String.fromCodePoint(byte)
-		else if (byte > 0x80 && byte < 0xFF) big5lead = byte
+		else if (byte >= 0x00 && byte < 0x7F) out += dec2char(byte)
+		else if (byte >= 0x81 && byte <= 0xFE) big5lead = byte
 		else out += '�'
 		}
 	if (big5lead != 0x00) out += '�'
 	return out
 	}
-	
+
+
+
 function utf8Encoder (stream) {
-	stream = chars2cps(stream)
-	var cps = stream.split(' ')
-	//for (i=0;i<cps.length;i++) cps[i] = convertChar2CP(cps[i])
-	console.log(cps)
+	// stream: a string of unicode characters
+	cps = chars2cps(stream)
+	//console.log(cps)
 	var out = ''
 	var count, offset
 	while (cps.length > 0) {
 		cp = cps.shift()
-		console.log(cp)
+		//console.log('CODE POINT:',cp, cp.toString(16))
 		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
 			out +=  ' '+cp.toString(16)
+			//console.log('out is ascii',cp, cp.toString(16))
 			continue
 			}
 		if (cp >= 0x80 && cp <= 0x7FF) { count = 1; offset = 0xC0; }
 		else if (cp >= 0x800 && cp <= 0xFFFF) { count = 2; offset = 0xE0; }
 		else { count = 3; offset = 0xF0; }
-		console.log('count',count,'offset',offset)
+		//console.log('count',count,'offset',offset)
 		var bytes = []
 		bytes[0] = (cp >> (6 * count)) + offset
 		while (count > 0) {
@@ -261,17 +163,18 @@ function utf8Decoder (stream) {
 	var lowerbound = 0x80
 	var upperbound = 0xBF
 	
-	console.log(bytes)
+	//console.log(bytes)
 	while (bytes.length > 0) {
 		byte = bytes.shift()
-		console.log('BYTE: ',byte.toString(16),byte)
+		//console.log('BYTE: ',byte.toString(16),byte)
 		if (bytesneeded == 0) {
 			if (byte >= 0x00 && byte <= 0x7F) { 
-				out += dec2char(cp); 
+				out += dec2char(byte)
+				//console.log('ascii output',byte)
 				continue 
 				}
 			else if (byte >= 0xC2 && byte <= 0xDF) { 
-				bytesneeded = 1; 
+				bytesneeded = 1
 				u8cp = byte - 0xC0 
 				}
 			else if (byte >= 0xE0 && byte <= 0xEF) { 
@@ -286,7 +189,7 @@ function utf8Decoder (stream) {
 				}
 			else { out += '�'; continue }
 			u8cp = u8cp << (6 * bytesneeded)
-			console.log('step3: u8cp',u8cp,'bytesseen',bytesseen,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
+			//console.log('step3: u8cp',u8cp,'bytesseen',bytesseen,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 			continue
 			}
 		
@@ -298,7 +201,7 @@ function utf8Decoder (stream) {
 			upperbound = 0xBF
 			bytes.unshift(byte)
 			out += '�'
-			console.log('step4: u8cp',u8cp,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
+			//console.log('step4: u8cp',u8cp,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 			continue
 			}
 		
@@ -306,7 +209,7 @@ function utf8Decoder (stream) {
 		upperbound = 0xBF
 		bytesseen++
 		u8cp = u8cp + (byte - 0x80) << (6 * (bytesneeded - bytesseen))
-		console.log('step7: u8cp',u8cp,'bytesseen',bytesseen,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
+		//console.log('step7: u8cp',u8cp,'bytesseen',bytesseen,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 		if (bytesseen != bytesneeded) continue
 		
 		cp = u8cp
@@ -314,7 +217,7 @@ function utf8Decoder (stream) {
 		bytesneeded = 0
 		bytesseen = 0
 		out += dec2char(cp)
-		console.log('step10: cp',cp,'u8cp',u8cp,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
+		//console.log('step10: cp',cp,'u8cp',u8cp,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 		}
 	if (bytesneeded != 0x00) out += '�'
 	return out
@@ -331,10 +234,10 @@ function myutf8Decoder (stream) {
 	var counter = 0
 	var n = 0
 	
-	console.log(bytes)
+	//console.log(bytes)
 	while (bytes.length > 0) {
 		b = bytes.shift()
-		console.log('BYTE: ',b.toString(16),b)
+		//console.log('BYTE: ',b.toString(16),b)
 		switch (counter) {
 			case 0:
 				if (0 <= b && b <= 0x7F) {  // 0xxxxxxx
@@ -371,4 +274,38 @@ function myutf8Decoder (stream) {
 		}
 	return out
 	}
-	
+
+
+
+function eucjpEncoder (stream) {
+	cps = chars2cps(stream)
+	//console.log(cps)
+	var out = ''
+	while (cps.length > 0) {
+		cp = cps.shift()
+		console.log('CODE POINT:',cp, cp.toString(16))
+		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
+			out +=  ' '+cp.toString(16)
+			//console.log('out is ascii',cp, cp.toString(16))
+			continue
+			}
+		if (cp == 0xA5) { out += ' 5C'; continue }
+		if (cp == 0x203E) { out += ' 7E'; continue }
+		if (cp >= 0xFF61 && cp <= 0xFF9F) {
+			temp = cp - 0xFF61 + 0xA1
+			out += ' 8E ' + temp.toString(16)
+			continue
+			}
+		if (cp == 0x2022) { cp = 0xFF0D }
+		var ptr = jis0208CPs[cp]
+		if (ptr == null) {
+			out += ' &#'+cp+';'
+			continue
+			}
+		var lead = Math.floor(ptr/94) + 0xA1
+		var trail = (ptr % 94) + 0xA1
+		out += ' '+lead.toString(16).toUpperCase()+' '+trail.toString(16).toUpperCase()
+		}
+	return out
+	}
+
