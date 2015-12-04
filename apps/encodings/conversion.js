@@ -11,7 +11,6 @@ function encode ( stream ) {
 
 function decode ( stream ) {
 	document.getElementById('utf82uResult').textContent = utf8Decoder(stream)
-	document.getElementById('myutf82uResult').textContent = myutf8Decoder(stream)
 	document.getElementById('big52uResult').textContent = big5Decoder(stream)
 	document.getElementById('eucjp2uResult').textContent = eucjpDecoder(stream)
 	document.getElementById('iso2022jp2uResult').textContent = iso2022jpDecoder(stream)
@@ -241,7 +240,7 @@ function utf8Decoder (stream) {
 	
 	////console.log(bytes)
 	while (bytes.length > 0) {
-		byte = bytes.shift()
+		var byte = bytes.shift()
 		////console.log('BYTE: ',byte.toString(16),byte)
 		if (bytesneeded == 0) {
 			if (byte >= 0x00 && byte <= 0x7F) { 
@@ -284,7 +283,7 @@ function utf8Decoder (stream) {
 		lowerbound = 0x80
 		upperbound = 0xBF
 		bytesseen++
-		u8cp = u8cp + (byte - 0x80) << (6 * (bytesneeded - bytesseen))
+		u8cp = u8cp + ((byte - 0x80) << (6 * (bytesneeded - bytesseen)))
 		////console.log('step7: u8cp',u8cp,'bytesseen',bytesseen,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 		if (bytesseen != bytesneeded) continue
 		
