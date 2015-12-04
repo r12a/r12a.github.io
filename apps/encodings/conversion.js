@@ -1,14 +1,16 @@
 function encode ( stream ) {
-	document.getElementById('u2big5Result').textContent = big5Encoder(stream)
 	document.getElementById('u2utf8Result').textContent = utf8Encoder(stream)
+	document.getElementById('u2big5Result').textContent = big5Encoder(stream)
 	document.getElementById('u2eucjpResult').textContent = eucjpEncoder(stream)
+	document.getElementById('u2iso2022jpResult').textContent = iso2022jpEncoder(stream)
 	}
 
 function decode ( stream ) {
-	document.getElementById('big52uResult').textContent = big5Decoder(stream)
-
 	document.getElementById('utf82uResult').textContent = utf8Decoder(stream)
 	document.getElementById('myutf82uResult').textContent = myutf8Decoder(stream)
+	document.getElementById('big52uResult').textContent = big5Decoder(stream)
+	document.getElementById('eucjp2uResult').textContent = eucjpDecoder(stream)
+
 	}
 
 
@@ -72,7 +74,7 @@ function big5Encoder (stream) {
 
 function big5Decoder (stream) {
 	stream = stream.replace(/%/g,' ')
-	stream = stream.trim()
+	stream = stream.replace(/[\s]+/g,' ').trim()
 	var bytes = stream.split(' ')
 	for (i=0;i<bytes.length;i++) bytes[i] = parseInt(bytes[i],16)
 	var out = ''
@@ -152,7 +154,7 @@ function utf8Encoder (stream) {
 function utf8Decoder (stream) {
 	// stream: a string of space/percent separated, 2-digit hex byte codes
 	stream = stream.replace(/%/g,' ')
-	stream = stream.trim()
+	stream = stream.replace(/[\s]+/g,' ').trim()
 	var bytes = stream.split(' ')
 	for (i=0;i<bytes.length;i++) bytes[i] = parseInt(bytes[i],16)
 
@@ -226,7 +228,7 @@ function utf8Decoder (stream) {
 
 function myutf8Decoder (stream) {
 	stream = stream.replace(/%/g,' ')
-	stream = stream.trim()
+	stream = stream.replace(/[\s]+/g,' ').trim()
 	var bytes = stream.split(' ')
 	for (i=0;i<bytes.length;i++) bytes[i] = parseInt(bytes[i],16)
 
@@ -307,5 +309,118 @@ function eucjpEncoder (stream) {
 		out += ' '+lead.toString(16).toUpperCase()+' '+trail.toString(16).toUpperCase()
 		}
 	return out
+	}
+
+function eucjpDecoder (stream) {
+	stream = stream.replace(/%/g,' ')
+	stream = stream.replace(/[\s]+/g,' ').trim()
+	var bytes = stream.split(' ')
+	for (i=0;i<bytes.length;i++) bytes[i] = parseInt(bytes[i],16)
+	var out = ''
+	var lead, byte, offset, ptr, cp
+	var jis0212flag = false
+	var eucjpLead = 0x00
+	while (bytes.length > 0) {
+		console.log(bytes)
+		byte = bytes.shift()														
+		console.log('BYTE: ',byte.toString(16),byte)
+		if (eucjpLead === 0x8E && byte >= 0xA1 && byte <= 0xDF) {	
+			temp = 0xFF61 + byte - 0xA1
+			out += dec2char(temp)
+			continue
+			}
+		if (eucjpLead === 0x8F && byte >= 0xA1 && byte <= 0xFE) {	
+			jis0212flag = true
+			eucjpLead = byte
+			continue
+			}
+		if (eucjpLead != 0x00) {	
+			lead = eucjpLead
+			eucjpLead = 0x00
+			cp = null
+	
+			if ((lead >= 0xA1 && lead <= 0xFE) && (byte >= 0xA1 && byte <= 0xFE)) {
+				ptr = (lead - 0xA1) * 94 + byte - 0xA1
+				if (jis0212flag) cp = indexes.jis0212[ptr]
+				else cp = indexes.jis0208[ptr]
+				jis0212flag = false
+				}
+			if (byte < 0xA1 || byte > 0xFE) bytes.unshift(byte)
+			if (cp === null) { 
+				out += '�'
+				continue
+				}
+			out += dec2char(cp)
+			}
+		else if (byte >= 0x00 && byte < 0x7F) out += dec2char(byte)
+		else if (byte === 0x8E || byte === 0x8F || (byte >= 0x81 && byte <= 0xFE)) eucjpLead = byte
+		else out += '�'
+		}
+	if (eucjpLead != 0x00) out += '�'
+	return out
+	}
+
+
+function iso2022jpEncoder (stream) {
+	cps = chars2cps(stream)
+	var out = ''
+	var encState = 'ascii'
+	var finished = false
+	while (!finished) {
+		console.log(cps)
+		if (cps.length === 0 && encState != 'ascii') { 
+			encState = 'ascii'
+			out += ' 1B 28 42'
+			continue
+			}
+		if (cps.length === 0 && encState == 'ascii') { 
+			finished = true
+			break 
+			}
+		cp = cps.shift()
+		console.log('CODE POINT:',cp, cp.toString(16),'encState',encState)
+		if (encState == 'ascii' && cp >= 0x00 && cp <= 0x7F) {  
+			out +=  ' '+cp.toString(16)
+			//console.log('out is ascii',cp, cp.toString(16))
+			continue
+			}
+		if (encState == 'roman' && ((cp >= 0x00 && cp <= 0x7F && cp !== 0x5C && cp !== 0x7E) || cp === 0xA5 || cp === 0x203E)) { 
+			if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
+				out +=  ' '+cp.toString(16)
+				//console.log('out is ascii',cp, cp.toString(16))
+				continue
+				}
+			if (cp === 0xA5) { out += ' 5C'; continue }
+			if (cp === 0x203E) { out += ' 7E'; continue }
+			}
+		if (encState != 'ascii' && cp >= 0x00 && cp <= 0x7F) {
+			cps.unshift(cp)
+			encState = 'ascii'
+			out += ' 1B 28 42'
+			continue
+			}
+		if ((cp === 0xA5 || cp === 0x203E) && encState != 'roman') { 
+			cps.unshift(cp)
+			encState = 'roman'
+			out += ' 1B 28 4A'
+			continue
+			}
+		if (cp === 0x2022) cp = 0xFF0D
+		ptr = jis0208CPs[cp]
+		if (ptr == null) {
+			out += ' &#'+cp+';'
+			continue
+			}
+		if (encState != 'jis0208') { 
+			cps.unshift(cp)
+			encState = 'jis0208'
+			out += ' 1B 24 42'
+			continue
+			}
+		var lead = Math.floor(ptr/94) + 0x21
+		var trail = (ptr % 94) + 0x21
+		out += ' '+lead.toString(16).toUpperCase()+' '+trail.toString(16).toUpperCase()
+		}
+	return out.trim()
 	}
 
