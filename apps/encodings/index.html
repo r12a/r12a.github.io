@@ -12,13 +12,16 @@
 <script type="text/javascript" src="basics.js"></script>
 </head>
 
-<body class="app">
+<body class="app" onload="document.getElementById('loading').textContent = '';">
 <header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Encoding converter','');</script>
 </header>
 
 <div class="section" style="margin-left:7.5%;">
+
+<p id="loading">Loading index data... </p>
+
   <div class="alternative">
   <form action="none" onsubmit="encode(document.getElementById('uChar').value); return false;">
     <p>Unicode characters  to encode:<br/>
@@ -33,6 +36,7 @@
   <p class="output">EUC-JP: <span id="u2eucjpResult"></span></p>
   <p class="output">ISO 2022-JP:<br/><span id="u2iso2022jpResult"></span></p>
   <p class="output">Shift JIS:<br/><span id="u2sjisResult"></span></p>
+  <p class="output">EUC-KR:<br/><span id="u2euckrResult"></span></p>
   </div>
 
 
@@ -50,6 +54,7 @@
   <p class="output">EUC-JP: <span id="eucjp2uResult"></span></p>
   <p class="output">ISO 2022-JP: <span id="iso2022jp2uResult"></span></p>
   <p class="output">Shift JIS: <span id="sjis2uResult"></span></p>
+  <p class="output">EUC-KR: <span id="euckr2uResult"></span></p>
 
   <p class="output">UTF8: <span id="myutf82uResult"></span></p>
   </div>
@@ -90,7 +95,7 @@
 </div>
 
 <div class="smallprint"><span id="version">First published  24 Jul 2013.  This version <span id="version-info"> 
-<!-- #BeginDate format:IS1m -->2015-12-04  10:49<!-- #EndDate --> 
+<!-- #BeginDate format:IS1m -->2015-12-04  11:51<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </body>
 </html>

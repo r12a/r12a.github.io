@@ -4,6 +4,7 @@ function encode ( stream ) {
 	document.getElementById('u2eucjpResult').textContent = eucjpEncoder(stream)
 	document.getElementById('u2iso2022jpResult').textContent = iso2022jpEncoder(stream)
 	document.getElementById('u2sjisResult').textContent = sjisEncoder(stream)
+	document.getElementById('u2euckrResult').textContent = euckrEncoder(stream)
 	}
 
 function decode ( stream ) {
@@ -13,6 +14,7 @@ function decode ( stream ) {
 	document.getElementById('eucjp2uResult').textContent = eucjpDecoder(stream)
 	document.getElementById('iso2022jp2uResult').textContent = iso2022jpDecoder(stream)
 	document.getElementById('sjis2uResult').textContent = sjisDecoder(stream)
+	document.getElementById('euckr2uResult').textContent = euckrDecoder(stream)
 
 	}
 
@@ -20,6 +22,7 @@ function decode ( stream ) {
 
 
 // INITIALISE INDEX DATA
+
 
  var big5CPs = []  // index is unicode cp, value is pointer
  for (p=5024;p<indexes.big5.length;p++) { // "Let index be index jis0208 excluding all pointers in the range 8272 to 8835, inclusive."
@@ -54,6 +57,14 @@ var jis0208CPs = []  // index is unicode cp, value is pointer
 		sjisCPs[indexes.jis0208[p]] = p
 	 	}
  	}
+
+ var euckrCPs = []  // index is unicode cp, value is pointer
+	 for (p=0;p<indexes.euckr.length;p++) {
+		if (indexes.euckr[p] != null && euckrCPs[indexes.euckr[p]] == null) {
+			euckrCPs[indexes.euckr[p]] = p
+			}
+ 	}
+
 
 // 	END OF DATA INITIALISATION
 
@@ -658,6 +669,74 @@ function sjisDecoder (stream) {
 		out += '�'
 		}
 	if (sjisLead != 0x00) out += '�'
+	return out
+	}
+
+
+
+
+function euckrEncoder (stream) {
+	cps = chars2cps(stream)
+	////console.log(cps)
+	var out = ''
+	while (cps.length > 0) {
+		cp = cps.shift()
+		//console.log('CODE POINT:',cp, cp.toString(16))
+		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
+			out +=  ' '+cp.toString(16)
+			////console.log('out is ascii',cp, cp.toString(16))
+			continue
+			}
+		var ptr = euckrCPs[cp]
+		if (ptr == null) {
+			out += ' &#'+cp+';'
+			continue
+			}
+		var lead = Math.floor(ptr/190) + 0x81
+		var trail = (ptr % 190) + 0x41
+		out += ' '+lead.toString(16).toUpperCase()+' '+trail.toString(16).toUpperCase()
+		}
+	return out
+	}
+
+function euckrDecoder (stream) {
+	stream = stream.replace(/%/g,' ')
+	stream = stream.replace(/[\s]+/g,' ').trim()
+	var bytes = stream.split(' ')
+	for (i=0;i<bytes.length;i++) bytes[i] = parseInt(bytes[i],16)
+	var out = ''
+	var lead, byte, offset, ptr, cp
+	var euckrLead = 0x00
+	while (bytes.length > 0) {
+		//console.log(bytes)
+		byte = bytes.shift()														
+		//console.log('BYTE: ',byte.toString(16),byte)
+		if (euckrLead != 0x00) {	
+			lead = euckrLead
+			ptr = null
+			euckrLead = 0x00
+			if (byte >= 0x41 || byte <= 0xFE) ptr = (lead - 0x81) * 190 + (byte - 0x41)
+			if (ptr == null) cp = null
+			else cp = indexes.euckr[ptr]
+			if (cp == null && byte >= 0x01 && byte <= 0x7F) bytes.unshift(byte)
+			if (cp === null) { 
+				out += '�'
+				continue
+				}
+			out += dec2char(cp)
+			continue
+			}
+		if (byte >= 0x01 && byte <= 0x7F) {
+			out += dec2char(byte)
+			continue
+			}
+		else if (byte >= 0x81 && byte <= 0xFE) {
+			euckrLead = byte
+			continue
+			}
+		out += '�'
+		}
+	if (euckrLead != 0x00) out += '�'
 	return out
 	}
 
