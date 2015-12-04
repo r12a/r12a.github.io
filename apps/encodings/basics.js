@@ -15,40 +15,6 @@ function normalizeStr ( str ) {
 	}
 
 
-function chars2cpsOLD ( chars ) { 
-	// this is needed because of javascript's handling of supplementary characters
-	// char: a string of unicode characters
-	// returns a space separated list of decimal code point values as a string
-	var haut = 0
-	var n = 0
-	var out = ''
-	for (var i = 0; i < chars.length; i++) {
-		var b = chars.charCodeAt(i)
-		if (b < 0 || b > 0xFFFF) {
-			out += 'Error in convertChar2CP: byte out of range ' + b.toString(16) + '!'
-			}
-		if (haut != 0) {
-			if (0xDC00 <= b && b <= 0xDFFF) {
-				var temp = 0x10000 + ((haut - 0xD800) << 10) + (b - 0xDC00)
-				out += temp + ' '
-				haut = 0
-				continue
-				}
-			else {
-				out += 'Error in convertChar2CP: surrogate out of range ' + haut.toString(16) + '!'
-				haut = 0
-				}
-			}
-		if (0xD800 <= b && b <= 0xDBFF) {
-			haut = b
-			}
-		else {
-			out += b + ' '
-			}
-		}
-	return out.trim()
-	}
-
 function chars2cps ( chars ) { 
 	// this is needed because of javascript's handling of supplementary characters
 	// char: a string of unicode characters
@@ -112,12 +78,12 @@ function cps2chars ( str ) {
 					counter = 3
 					n = b & 0x7 }
 				else {
-					out += 'convertUTF82Char: error1 ' + dec2hex(b) + '! '
+					out += '�'
 					}
 				break;
 			case 1:
 				if (b < 0x80 || b > 0xBF) {
-					out += 'convertUTF82Char: error2 ' + dec2hex(b) + '! '
+					out += '�'
 					}
 				counter--
 				out += dec2char((n << 6) | (b-0x80))
@@ -125,7 +91,7 @@ function cps2chars ( str ) {
 				break
 			case 2: case 3:
 				if (b < 0x80 || b > 0xBF) {
-					out += 'convertUTF82Char: error3 ' + dec2hex(b) + '! '
+					out += '�'
 					}
 				n = (n << 6) | (b-0x80)
 				counter--
