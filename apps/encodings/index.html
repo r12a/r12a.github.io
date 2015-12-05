@@ -18,54 +18,216 @@
 </header>
 
 <div class="section" style="margin-left:7.5%;">
-<p id="loading">Loading index data...</p>
-<br style="clear:both;"/>
 
 <script type="text/javascript" src="conversion.js"></script>
 
-  <div class="alternative">
+  <div class="column" id="encodingcolumn">
   <form action="none" onsubmit="encode(document.getElementById('uChar').value); return false;">
     <p>Unicode characters  to encode:<br/>
       <input class="inputbox" id="uChar" type="text"/>
     </p>
     <p>
-      <button type="submit">Convert</button>
+      <button onclick="encode(document.getElementById('uChar').value); return false;" type="submit">Convert</button>
     </p>
   </form>
-  <p class="output">UTF8: <span id="u2utf8Result"></span></p>
-  <p class="output">Big5: <span id="u2big5Result"></span></p>
-  <p class="output">EUC-JP: <span id="u2eucjpResult"></span></p>
-  <p class="output">ISO 2022-JP:<br/><span id="u2iso2022jpResult"></span></p>
-  <p class="output">Shift JIS:<br/><span id="u2sjisResult"></span></p>
-  <p class="output">EUC-KR:<br/><span id="u2euckrResult"></span></p>
-  <p class="output">GB18030:<br/><span id="u2gb18030Result"></span></p>
-  <p class="output">GBK:<br/><span id="u2gbkResult"></span></p>
+  <p class="output" id="utf8enc">utf-8<span></span><span id="utf8encResult"></span></p>
+  <p class="output" id="big5enc">big5<br/><span id="big5encResult"></span></p>
+  <p class="output" id="eucjpenc">euc-jp<br/><span id="eucjpencResult"></span></p>
+  <p class="output" id="iso2022jpenc">iso-2022-jp<br/><span id="iso2022jpencResult"></span></p>
+  <p class="output" id="shiftjisenc">shift_jis<br/><span id="sjisencResult"></span></p>
+  <p class="output" id="euckrenc">euc-kr<br/><span id="euckrencResult"></span></p>
+  <p class="output" id="gb18030enc">gb18030<br/><span id="gb18030encResult"></span></p>
+  <p class="output" id="gbkenc">gbk<br/><span id="gbkencResult"></span></p>
+  <p class="output" id="koi8renc" style="display:none">koi8-r<br/><span id="koi8rencResult"></span></p>
+  <p class="output" id="koi8uenc" style="display:none">koi8-u<br/><span id="koi8uencResult"></span></p>
+  <p class="output" id="windows1250enc" style="display:none">windows-1250<br/><span id="win1250encResult"></span></p>
+  <p class="output" id="windows1251enc" style="display:none">windows-1251<br/><span id="win1251encResult"></span></p>
+  <p class="output" id="windows1252enc">windows-1252/latin1<br/><span id="win1252encResult"></span></p>
+  <p class="output" id="windows1253enc" style="display:none">windows-1253<br/><span id="win1253encResult"></span></p>
+  <p class="output" id="windows1254enc" style="display:none">windows-1254<br/><span id="win1254encResult"></span></p>
+  <p class="output" id="windows1255enc" style="display:none">windows-1255<br/><span id="win1255encResult"></span></p>
+  <p class="output" id="windows1256enc" style="display:none">windows-1256<br/><span id="win1256encResult"></span></p>
+  <p class="output" id="windows1257enc" style="display:none">windows-1257<br/><span id="win1257encResult"></span></p>
+  <p class="output" id="windows1258enc" style="display:none">windows-1258<br/><span id="win1258encResult"></span></p>
+  <p class="output" id="windows874enc" style="display:none">windows-874<br/><span id="win874encResult"></span></p>
+  <p class="output" id="macintoshenc" style="display:none">macintosh<br/><span id="macintoshencResult"></span></p>
+  <p class="output" id="ibm866enc" style="display:none">ibm866<br/><span id="ibm866encResult"></span></p>
+  <p class="output" id="xmaccyrillicenc" style="display:none">x-mac-cyrillic<br/><span id="xmaccyrillicencResult"></span></p>
+  <p class="output" id="iso88592enc" style="display:none">iso-8859-2<br/><span id="iso88592encResult"></span></p>
+  <p class="output" id="iso88593enc" style="display:none">iso-8859-3<br/><span id="iso88593encResult"></span></p>
+  <p class="output" id="iso88594enc" style="display:none">iso-8859-4<br/><span id="iso88594encResult"></span></p>
+  <p class="output" id="iso88595enc" style="display:none">iso-8859-5<br/><span id="iso88595encResult"></span></p>
+  <p class="output" id="iso88596enc" style="display:none">iso-8859-6<br/><span id="iso88596encResult"></span></p>
+  <p class="output" id="iso88597enc" style="display:none">iso-8859-7<br/><span id="iso88597encResult"></span></p>
+  <p class="output" id="iso88598enc" style="display:none">iso-8859-8<br/><span id="iso88598encResult"></span></p>
+  <p class="output" id="iso88598ienc" style="display:none">iso-8859-8-i<br/><span id="iso88598iencResult"></span></p>
+  <p class="output" id="iso885910enc" style="display:none">iso-8859-10<br/><span id="iso885910encResult"></span></p>
+  <p class="output" id="iso885913enc" style="display:none">iso-8859-13<br/><span id="iso885913encResult"></span></p>
+  <p class="output" id="iso885914enc" style="display:none">iso-8859-14<br/><span id="iso885914encResult"></span></p>
+  <p class="output" id="iso885915enc" style="display:none">iso-8859-15<br/><span id="iso885915encResult"></span></p>
+  <p class="output" id="iso885916enc" style="display:none">iso-8859-16<br/><span id="iso885916encResult"></span></p>
   </div>
 
 
-<div class="alternative">
+<div class="column" id="decodingcolumn">
   <form action="none" onsubmit="decode(document.getElementById('lBytes').value); return false;">
-    <p>Bytes  to decode:<br/>
+    <p>Bytes  to decode<br/>
       <input class="inputbox" id="lBytes" type="text"/>
     </p>
     <p>
       <button type="submit">Convert</button>
     </p>
   </form>
-  <p class="output">UTF8: <span id="utf82uResult"></span></p>
-  <p class="output">Big5: <span id="big52uResult"></span></p>
-  <p class="output">EUC-JP: <span id="eucjp2uResult"></span></p>
-  <p class="output">ISO 2022-JP: <span id="iso2022jp2uResult"></span></p>
-  <p class="output">Shift JIS: <span id="sjis2uResult"></span></p>
-  <p class="output">EUC-KR: <span id="euckr2uResult"></span></p>
-  <p class="output">GB18030: <span id="gb180302uResult"></span></p>
-  <p class="output">GBK: <span id="gbk2uResult"></span></p>
+  <p class="output" id="utf8dec">utf-8<br/><span id="utf8decResult"></span></p>
+  <p class="output" id="big5dec">big5<br/><span id="big5decResult"></span></p>
+  <p class="output" id="eucjpdec">euc-jp<br/><span id="eucjpdecResult"></span></p>
+  <p class="output" id="iso2022jpdec">iso-2022-jp<br/><span id="iso2022jpdecResult"></span></p>
+  <p class="output" id="shiftjisdec">shift_jis<br/><span id="sjisdecResult"></span></p>
+  <p class="output" id="euckrdec">euc-kr<br/><span id="euckrdecResult"></span></p>
+  <p class="output" id="gb18030dec">gb18030<br/><span id="gb18030decResult"></span></p>
+  <p class="output" id="gbkdec">gbk<br/><span id="gbkdecResult"></span></p>
+  <p class="output" id="koi8rdec" style="display:none">koi8-r<br/><span id="koi8rdecResult"></span></p>
+  <p class="output" id="koi8udec" style="display:none">koi8-u<br/><span id="koi8udecResult"></span></p>
+  <p class="output" id="windows1250dec" style="display:none">windows-1250<br/><span id="win1250decResult"></span></p>
+  <p class="output" id="windows1251dec" style="display:none">windows-1251<br/><span id="win1251decResult"></span></p>
+  <p class="output" id="windows1252dec">windows-1252/latin1<br/><span id="win1252decResult"></span></p>
+  <p class="output" id="windows1253dec" style="display:none">windows-1253<br/><span id="win1253decResult"></span></p>
+  <p class="output" id="windows1254dec" style="display:none">windows-1254<br/><span id="win1254decResult"></span></p>
+  <p class="output" id="windows1255dec" style="display:none">windows-1255<br/><span id="win1255decResult"></span></p>
+  <p class="output" id="windows1256dec" style="display:none">windows-1256<br/><span id="win1256decResult"></span></p>
+  <p class="output" id="windows1257dec" style="display:none">windows-1257<br/><span id="win1257decResult"></span></p>
+  <p class="output" id="windows1258dec" style="display:none">windows-1258<br/><span id="win1258decResult"></span></p>
+  <p class="output" id="windows874dec" style="display:none">windows-874<br/><span id="win874decResult"></span></p>
+  <p class="output" id="macintoshdec" style="display:none">macintosh<br/><span id="macintoshdecResult"></span></p>
+  <p class="output" id="ibm866dec" style="display:none">ibm866<br/><span id="ibm866decResult"></span></p>
+  <p class="output" id="xmaccyrillicdec" style="display:none">x-mac-cyrillic<br/><span id="xmaccyrillicdecResult"></span></p>
+  <p class="output" id="iso88592dec" style="display:none">iso-8859-2<br/><span id="iso88592decResult"></span></p>
+  <p class="output" id="iso88593dec" style="display:none">iso-8859-3<br/><span id="iso88593decResult"></span></p>
+  <p class="output" id="iso88594dec" style="display:none">iso-8859-4<br/><span id="iso88594decResult"></span></p>
+  <p class="output" id="iso88595dec" style="display:none">iso-8859-5<br/><span id="iso88595decResult"></span></p>
+  <p class="output" id="iso88596dec" style="display:none">iso-8859-6<br/><span id="iso88596decResult"></span></p>
+  <p class="output" id="iso88597dec" style="display:none">iso-8859-7<br/><span id="iso88597decResult"></span></p>
+  <p class="output" id="iso88598dec" style="display:none">iso-8859-8<br/><span id="iso88598decResult"></span></p>
+  <p class="output" id="iso88598idec" style="display:none">iso-8859-8i<br/><span id="iso88598idecResult"></span></p>
+  <p class="output" id="iso885910dec" style="display:none">iso-8859-10<br/><span id="iso885910decResult"></span></p>
+  <p class="output" id="iso885913dec" style="display:none">iso-8859-13<br/><span id="iso885913decResult"></span></p>
+  <p class="output" id="iso885914dec" style="display:none">iso-8859-14<br/><span id="iso885914decResult"></span></p>
+  <p class="output" id="iso885915dec" style="display:none">iso-8859-15<br/><span id="iso885915decResult"></span></p>
+  <p class="output" id="iso885916dec" style="display:none">iso-8859-16<br/><span id="iso885916decResult"></span></p>
   </div>
 </div>
 
 
+<div id="customise"  style="margin-left: 7.5%; clear:both; cursor: pointer;"  onclick="toggleCustomList()"><span class="optionTrigger">change encodings shown</span></div>
 
-<div id="showNotes"  style="margin-left: 7.5%; clear:both;"  onclick="toggleNotes()">show notes</div>
+<div id="customsettings" style="display:none">
+<div>
+<table id="settings"><tbody>
+<tr>
+	<td><input type="checkbox" id='utf8' onclick="toggleEnc('utf8')" checked/> 
+	utf-8</td>
+  <td><input type="checkbox" id='windows1250' onclick="toggleEnc(this.id)"/>
+    windows-1250</td>
+    <td><input type="checkbox" id='iso88592' onclick="toggleEnc(this.id)"/> ISO 8859-2</td></tr>
+<tr>
+  <td><input type="checkbox" id='big5' onclick="toggleEnc(this.id)" checked/> 
+    big5</td>
+  <td><input type="checkbox" id='windows1251' onclick="toggleEnc(this.id)"/> 
+    windows-1251</td>
+  <td><input type="checkbox" id='iso88593' onclick="toggleEnc(this.id)"/> 
+    iso-8859-3</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='eucjp' onclick="toggleEnc(this.id)" checked/> 
+    euc-jp</td>
+    <td><input type="checkbox" id='windows1252' onclick="toggleEnc(this.id)" checked/> 
+    windows-1252</td>
+  <td><input type="checkbox" id='iso88594' onclick="toggleEnc(this.id)"/> 
+    iso-8859-4</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='iso2022jp' onclick="toggleEnc(this.id)" checked/> 
+    iso-2022-jp</td>
+  <td><input type="checkbox" id='windows1253' onclick="toggleEnc(this.id)"/> 
+    windows-1253</td>
+  <td><input type="checkbox" id='iso88595' onclick="toggleEnc(this.id)"/> 
+    iso-8859-5</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='shiftjis' onclick="toggleEnc(this.id)" checked/> 
+    shift_jis</td>
+  <td><input type="checkbox" id='windows1254' onclick="toggleEnc(this.id)"/> 
+    windows-1254</td>
+  <td><input type="checkbox" id='iso88596' onclick="toggleEnc(this.id)"/> 
+    iso-8859-6</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='euckr' onclick="toggleEnc(this.id)" checked/> 
+    euc-kr</td>
+  <td><input type="checkbox" id='windows1255' onclick="toggleEnc(this.id)"/> 
+    windows-1255</td>
+  <td><input type="checkbox" id='iso88597' onclick="toggleEnc(this.id)"/> 
+    iso-8859-7</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='gb18030' onclick="toggleEnc(this.id)" checked/> 
+    gb18030</td>
+  <td><input type="checkbox" id='windows1256' onclick="toggleEnc(this.id)"/> 
+    windows-1256</td>
+  <td><input type="checkbox" id='iso88598' onclick="toggleEnc(this.id)"/> 
+    iso-8859-8</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='gbk' onclick="toggleEnc(this.id)" checked/>
+    gbk</td>
+  <td><input type="checkbox" id='windows1257' onclick="toggleEnc(this.id)"/> 
+    windows-1257</td>
+  <td><input type="checkbox" id='iso88598i' onclick="toggleEnc(this.id)"/> 
+    iso-8859-8-i</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='koi8r' onclick="toggleEnc(this.id)"/>
+    koi8-r</td>
+  <td><input type="checkbox" id='windows1258' onclick="toggleEnc(this.id)"/> 
+    windows-1258</td>
+  <td><input type="checkbox" id='iso885910' onclick="toggleEnc(this.id)"/>
+    iso-8859-10</td>
+</tr>
+<tr>
+  <td><input type="checkbox" id='koi8u' onclick="toggleEnc(this.id)"/> 
+    koi8-u</td>
+  <td><input type="checkbox" id='macintosh' onclick="toggleEnc(this.id)"/> 
+    macintosh</td>
+  <td><input type="checkbox" id='iso885913' onclick="toggleEnc(this.id)"/> 
+    iso-8859-13</td>
+</tr>
+<tr>
+  <td onclick="selectAll()" style="cursor:pointer;">select all</td>
+  <td><input type="checkbox" id='ibm866' onclick="toggleEnc(this.id)"/> 
+    ibm866</td>
+  <td><input type="checkbox" id='iso885914' onclick="toggleEnc(this.id)"/> 
+    iso-8859-14</td>
+</tr>
+<tr>
+  <td onclick="closeAll()" style="cursor:pointer;">clear all</td>
+  <td><input type="checkbox" id='windows874' onclick="toggleEnc(this.id)"/> 
+    windows-874</td>
+  <td><input type="checkbox" id='iso885915' onclick="toggleEnc(this.id)"/> 
+    iso-8859-15</td>
+</tr>
+<tr>
+  <td onclick="document.getElementById('customsettings').style.display='none';" style="cursor:pointer;">X</td>
+  <td><input type="checkbox" id='xmaccyrillic' onclick="toggleEnc(this.id)"/> 
+    x-mac-cyrillic</td>
+  <td><input type="checkbox" id='iso885916' onclick="toggleEnc(this.id)"/> 
+    iso-8859-16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="showNotes"  style="margin-left: 7.5%; clear:both;"  onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
@@ -74,23 +236,27 @@
   <div class="section">
     <h2 class="flush">Related links</h2>
     <p><a target="_blank" href="https://encoding.spec.whatwg.org/">Encoding spec</a></p>
+    <p><a target="_blank" href="/uniview/">UniView</a></p>
+    <p><a target="_blank" href="/apps/conversion/">Unicode code converter</a></p>
   </div>
 </aside>
 
 <p id="status">Updated Fri 4 Dec 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'encoding'">encoding</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
 
 <section>
-  <p>This app allows you to see how Unicode characters are represented by bytes in various legacy encodings, and vice versa.</p>
+  <p>This app allows you to see how Unicode characters are represented by bytes in various legacy encodings, and vice versa. You can customise the encodings you want to experiment with by clicking on <span class="kw">change encodings shown</span>. The default selection excludes most of the single-byte encodings.</p>
   <p>The algorithms used are based on those described in the <a href="https://encoding.spec.whatwg.org/">Encoding specification</a>, and thus describe the behaviour you can expect from web browsers. The transforms may not be the same as for other conversion tools. (In some cases the browsers may also produce a different result than shown here. See <a href="http://www.w3.org/International/tests/repo/results/encoding-dbl-byte">the tests</a>.</p>
   <p>Encoding algorithms convert Unicode characters to sequences of double-digit hex numbers that represent the bytes found in the target character encoding. A character that cannot be handled by an encoder will be represented as a decimal HTML character escape.</p>
   <p>Decoding algorithms take the byte codes just mentioned and convert them to Unicode characters. The algorithm returns replacement characters where it is unable to map a given byte to the encoding.</p>
   <p>For the decoder input you can provide a string of hex numbers separated by space or by percent signs.</p>
+  <p>Green backgrounds appear behind sequences where all characters or bytes were successfully mapped to a character in the given encoding. Beware, however, that the character mapped to may not be the one you expect – especially in the single byte encodings.</p>
+  <p>To identify characters and look up information about them you will find <a href="/uniview/">UniView</a> extremely useful. You can paste Unicode characters into the UniView <code class="kw" translate="no">Edit Buffer</code> and click on the down-arrow icon below to find out what they are. (Click on the name that appears for more detailed information.)  It is particularly useful for identifying escaped characters. Copy the escape(s) to the <code class="kw" translate="no">Find</code> input area on UniView and click on <code class="kw" translate="no">Dec</code> just below.</p>
 </section>
 
 </div>
 
 <div class="smallprint"><span id="version">First published  3 Dec 2015.  This version <span id="version-info"> 
-<!-- #BeginDate format:IS1m -->2015-12-04  23:23<!-- #EndDate --> 
+<!-- #BeginDate format:IS1m -->2015-12-05  15:10<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </body>
 </html>

@@ -148,16 +148,63 @@ sub { color:#C30; font-style: italic; }
 
 #resultTable td { border: 1px solid #ccc; border: 0; padding: 0 20px; text-align: left; vertical-align:bottom; }
 .originalNumber { font-size: 30px; color: #999; }
-.output { color: #C33; font-size: 20px; margin: 1em 20% 2em 7.5%; line-height: 1.2; }
+.output { color: #C33; font-size: 90%; margin: 1em 20% 2em 7.5%; line-height: 1.2; padding: 5px; border-radius: 10px; }
+.output span { font-size: 150%; }
 .inputbox { width: 100%; border-radius: 10px; border: 2px solid #eee; font-size: 300%; }
 #rules { height: 100px; }
 .original { color: #999; font-size: 14px;  margin: 0 2px; }
 .hidden { display:none; }
 
-.alternative {
+.column {
 	float: left;
 	width: 48%;
+	min-width: 350px;
+	margin-bottom: 3em;
 	}
-.alternative p {
+.column p {
 	margin-right: 40px;
+	text-align: start;
+	}
+	
+
+#customsettings {
+	position: fixed;
+	top: 10%;
+	left: 0;
+	right: 0;
+	height: 0;
+	/* center all inline content */
+	text-align: center;
+	}
+#settings {
+	background-color: #eee;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px #888; 
+	margin: auto;
+	margin-bottom: 3em;
+	}
+.customsettings > div {
+	/* make the block centred */
+	display: inline-block;
+	text-align: left;
+	}
+#settings td {
+	text-align: start;
+	padding: 0 15px;
+	border: 0;
+	}
+
+.optionTrigger {
+	background-color: white;
+	border-radius: 2px;
+	padding: 0 4px;
+	}
+.optionTrigger:hover {
+	background-color: #FFFFC7;
+	border-radius: 2px;
+	padding: 0 4px;
+	}
+	
+.yes {
+	background-color: #E1FFE1;
 	}
