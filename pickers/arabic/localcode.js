@@ -64,4 +64,5 @@ function makeCharacterLink (cp, block, lang, direction) {
 	}
 
 
-// charData[chars.charAt(c)].n
+document.getElementById('makeExample').style.display = 'inline'
+document.getElementById('makeCharLink').style.display = 'inline'
