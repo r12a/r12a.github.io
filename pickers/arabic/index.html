@@ -17,6 +17,7 @@
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="/scripts/block/arabic-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
+<script type="text/javascript" src="localtranscription.js">  </script>
 </head>
 
 <body class="app">
@@ -31,6 +32,8 @@
     <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
     <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
     <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+    <button type="button" onclick="transcribe(document.getElementById('output'),'toLOC');document.getElementById('output').focus();" title="Convert Arabic text to an Library of Congress Latin transcription.">toLOC</button>
+    <!--button type="button" onclick="transcribe(document.getElementById('output'),'toISO');document.getElementById('output').focus();" title="Convert Arabic text to an ISO 233 Latin transcription.">toISO</button-->
     
     <button  id="makeExample" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'ar','rtl');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
     <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'arabic','ar','rtl');" title="Create an character link.">charLink</button>
@@ -285,6 +288,8 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
        <tr>
          <td class="hint">u</td>
          <td><span class="c">&#x0648;</span></td>
+         <td class="hint">ʾu</td>
+         <td><span class="c">&#x0624;</span></td>
          <td class="hint">r</td>
          <td><span class="c">&#x0631;</span></td>
          <td class="hint">z</td>
@@ -315,6 +320,8 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
          <td><span class="c">&#x0646;</span></td>
          <td class="hint">y</td>
          <td><span class="c">&#x064A;</span></td>
+         <td class="hint">ʾi         </td>
+         <td><span class="c">&#x0626;</span></td>
          <td class="hint">á</td>
          <td><span class="c">&#x0649;</span></td>
          <td class="hint">h</td>
@@ -341,9 +348,9 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
          </tr>
        <tr>
          <td><span class="c">&#x0670;</span></td>
-         <td><span class="c">&#x0656;</span></td>
          <td><span class="c">&#x0657;</span></td>
-         <td><span class="c">&#x0658;</span></td>
+         <td><span class="c">&#x0655;</span></td>
+         <td><span class="c">&#x0654;</span></td>
          <td>&nbsp;</td>
          </tr>
        <tr>
@@ -406,6 +413,7 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
          <td><span class="c">&#x066C;</span></td>
          <td><span class="c">&#x060D;</span></td>
          <td><span class="c">&#x066A;</span></td>
+         <td><span class="c">&#x0640;</span></td>
          </tr>
      </tbody>
    </table></td>
