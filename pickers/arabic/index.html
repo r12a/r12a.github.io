@@ -32,8 +32,8 @@
     <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
     <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
     
-    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'ar','rtl');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
-    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'arabic','ar','rtl');" title="Create an character link.">charLink</button>
+    <button  id="makeExample" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'ar','rtl');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+    <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'arabic','ar','rtl');" title="Create an character link.">charLink</button>
 </div>
 
 
@@ -554,7 +554,7 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 
 <div id="showNotes" onclick="toggleNotes()">show notes</div>
 
-<div id="detailednotes" style="display:block">
+<div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
   
  <aside class="sidebar">
