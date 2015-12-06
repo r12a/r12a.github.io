@@ -64,5 +64,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 	}
 
 
-document.getElementById('makeExample').style.display = 'inline'
-document.getElementById('makeCharLink').style.display = 'inline'
+function setLocalButtons () {
+	// overrides the function that hides the makeEg and charLink buttons
+	
+	}
