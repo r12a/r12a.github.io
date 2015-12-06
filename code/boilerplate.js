@@ -43,3 +43,16 @@ function toggleNotes () {
 		showNotes.textContent='hide notes'
 		} 
 	}
+
+function toggleCustomList () {
+	var notes = document.getElementById('detailednotes')
+	var showNotes = document.getElementById('showNotes')
+	if (notes.style.display=='block') {
+		notes.style.display='none' 
+		showNotes.textContent='show notes'
+		} 
+	else {
+		notes.style.display='block'
+		showNotes.textContent='hide notes'
+		} 
+	}
