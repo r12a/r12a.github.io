@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Scheherazade WF';
+    src: url('/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
+         url('/webfonts/scheherazaderegotwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+#alphabet { display: block; margin-right: 20px;  }
+
+#alphabet td.hint {  
+	font-size: 14px;
+	color: #ccc;
+	text-align: left;
+	text-align: end;
+	vertical-align: top;
+	}
+	
+#kbd { 	
+	margin-left: 0; 
+	}
+#kbd table {
+	margin:0;
+	}
+	
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: right;
+	text-align: start;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1.4;
+	}
+#kbd #consonants  {
+	text-align: start;
+	}
+#kbd #consonants td  {
+	padding: 0 2px;
+	}
+
+#kbd #vowels .hint {
+	padding-left: 10px; 
+	}
+
+#kbd #numbers {
+	padding-left: 20px;
+	}
+#kbd #additional span {
+	padding: 0 4px;
+	min-width: 20px;
+	}
+
+
+
+
