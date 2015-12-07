@@ -64,3 +64,9 @@ function makeCharacterLink (cp, block, lang, direction) {
 	document.getElementById('transcription').textContent = out.trim()
 	}
 
+
+
+function setLocalButtons () {
+-	// overrides the function that hides the makeEg and charLink buttons
+-	
+-	}
