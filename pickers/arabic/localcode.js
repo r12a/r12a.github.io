@@ -56,15 +56,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 		out += '&#x'+hex+';</span>)</a> '
 		}
 		
-	out = '<textarea id="characterLink" style="margin-left: 20px; width: 60%; border:0;">'+out+'</textarea>'
-	
-	document.getElementById('transcriptionWrapper').innerHTML = out +
-	'<div id="closeTranscription" onclick="closeTranscription()">X</div>'
-	document.getElementById('characterLink').select();
+	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').textContent = out.trim()
 	}
 
-
-function setLocalButtons () {
-	// overrides the function that hides the makeEg and charLink buttons
-	
-	}
