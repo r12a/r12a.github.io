@@ -26,11 +26,12 @@ function transcribetoLOC (str) {
 	// disambiguate any xh followed by h
 	str = str.replace(/([ت|ك|س|غ|د])ه/g, "$1ʹه")
 	
+	str = str.replace(/اللّٰه/g,'Allāh') 
+
 	// handle shadda
 	var re = /(.)([\u064E|\u064F|\u0650|\u0652|\u064B|\u064C|\u064D]?)\u0651/g
 	str = str.replace(re,'$1$1$2')  // shadda
 	
-
 	str = str.replace(/ ال/g,' al-'); // definite article
 	
 	str = str.replace(/\u200C([^ ])/g,'ʹ$1')  // zwnj creating final form in middle of word

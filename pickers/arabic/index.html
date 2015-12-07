@@ -113,9 +113,9 @@
 <span class="t" onclick="dotrans('ك')">k</span>
 <span class="t" onclick="dotrans('خ')">kh</span>
 <span class="t" onclick="dotrans('ل')">l</span>
-<span class="t" onclick="dotrans('ق,ڧ')">q</span>
 <span class="t" onclick="dotrans('م')">m</span>
 <span class="t" onclick="dotrans('ن')">n</span>
+<span class="t" onclick="dotrans('ق,ڧ')">q</span>
 <span class="t" onclick="dotrans('ر')">r</span>
 <span class="t" onclick="dotrans('س')">s</span>
 <span class="t" onclick="dotrans('ص')">ṣ</span>
@@ -131,18 +131,19 @@
 <span class="t" onclick="dotrans('ا')">ā</span>
 <span class="t" onclick="dotrans('ى')">á</span>
 <span class="t" onclick="dotrans('آ')">ʼā</span>
-<span class="t" onclick="dotrans('ال')">al</span>
 <span class="t" onclick="dotrans('ي')">ī</span>
 <span class="t" onclick="dotrans('و')">ū</span>
+<span class="t" onclick="dotrans('اللّٰه')">Allāh</span>
+<span class="t" onclick="dotrans('ال')">al-</span>
 &nbsp;&nbsp; diacritics:
-<span class="t" onclick="dotrans('\u064E')">a</span>
-<span class="t" onclick="dotrans('\u0650')">i</span>
-<span class="t" onclick="dotrans('\u064F')">u</span>
 <span class="t" onclick="dotrans('\u064B')">an</span>
 <span class="t" onclick="dotrans('\u064D')">in</span>
 <span class="t" onclick="dotrans('\u064C')">un</span>
-<span class="t" onclick="dotrans('\u0651')">shadda</span>
-<span class="t" onclick="dotrans('\u0652')">sukun</span>
+<span class="t" onclick="dotrans('\u0652')">°</span>
+<span class="t" onclick="dotrans('\u0651')">ᵚ</span>
+<span class="t" onclick="dotrans('\u064F')">u</span>
+<span class="t" onclick="dotrans('\u0650')">i</span>
+<span class="t" onclick="dotrans('\u064E')">a</span>
 </div>
 
 
@@ -221,7 +222,7 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
 
 <div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
 
-<div class="vmtab" onmouseover="this.textContent='LOC transcription'+_showLOCTrans" onmouseout="this.textContent='L'"  onclick="if (_showLOCTrans) {_showLOCTrans = ''; this.textContent ='LOC transcription'; this.style.color='white'; document.getElementById('loctranscript').style.display = 'none';} else {_showLOCTrans = ' ✓'; this.textContent='LOC transcription'+_showLOCTrans;  this.style.color='orange'; document.getElementById('loctranscript').style.display = 'block';} return false;">L</div>
+<div class="vmtab" onmouseover="this.textContent='Latin to Arabic transcription'+_showLOCTrans" onmouseout="this.textContent='L'"  onclick="if (_showLOCTrans) {_showLOCTrans = ''; this.textContent ='Latin to Arabic transcription'; this.style.color='white'; document.getElementById('loctranscript').style.display = 'none';} else {_showLOCTrans = ' ✓'; this.textContent='Latin to Arabic transcription'+_showLOCTrans;  this.style.color='orange'; document.getElementById('loctranscript').style.display = 'block';} return false;">L</div>
 
 <div class="vmtab" onmouseover="this.textContent='IPA transcription'+_showIPATrans" onmouseout="this.textContent='I'"  onclick="if (_showIPATrans) {_showIPATrans = ''; this.textContent ='IPA transcription'; this.style.color='white'; document.getElementById('ipatranscript').style.display = 'none';} else {_showIPATrans = ' ✓'; this.textContent='IPA transcription'+_showIPATrans;  this.style.color='orange'; document.getElementById('ipatranscript').style.display = 'block';} return false;">I</div>
 
