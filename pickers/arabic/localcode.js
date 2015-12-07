@@ -67,6 +67,6 @@ function makeCharacterLink (cp, block, lang, direction) {
 
 
 function setLocalButtons () {
--	// overrides the function that hides the makeEg and charLink buttons
--	
--	}
+	// overrides the function that hides the makeEg and charLink buttons
+	
+	}
