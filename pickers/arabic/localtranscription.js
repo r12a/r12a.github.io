@@ -20,16 +20,18 @@ function transcribetoLOC (str) {
 		}
 	if (!found) alert('This transcription method expects to start with vowelled text.')
 	
+	// add initial space so that beginning of word rules work
+	str = ' '+str
 	
 	// disambiguate any xh followed by h
-	str = str.replace(/([ث|ج|ذ|ش|غ]|د)ه/g, "$1ʹه")
+	str = str.replace(/([ت|ك|س|غ|د])ه/g, "$1ʹه")
 	
 	// handle shadda
 	var re = /(.)([\u064E|\u064F|\u0650|\u0652|\u064B|\u064C|\u064D]?)\u0651/g
 	str = str.replace(re,'$1$1$2')  // shadda
 	
 
-	str = str.replace(/ال/g,' al-'); // definite article
+	str = str.replace(/ ال/g,' al-'); // definite article
 	
 	str = str.replace(/\u200C([^ ])/g,'ʹ$1')  // zwnj creating final form in middle of word
 
@@ -37,11 +39,12 @@ function transcribetoLOC (str) {
 	str = str.replace(/\u064E[\u0651]?ى/g,'á') 
 	str = str.replace(/\u064F[\u0651]?و/g,'ū') 
 	str = str.replace(/\u0650[\u0651]?ى/g,'ī') 
+	str = str.replace(/\u0650[\u0651]?ي/g,'ī') 
 	str = str.replace(/\u064E[\u0651]?و\u0652/g,'aw') 
 	str = str.replace(/\u064E[\u0651]?ى\u0652/g,'ay') 
 	
 	
-	str = str.replace(/ء/g,'ˈ') 
+	str = str.replace(/ء/g,'’') 
 	str = str.replace(/م/g,'m') 
 	str = str.replace(/\bا/g,'ʾa') 
 	str = str.replace(/ا/g,'') 
@@ -128,7 +131,7 @@ function transcribetoLOC (str) {
 	str = str.replace(/¶/g,'')
 
 
-	return str
+	return str.trim()
 	}
 
 
