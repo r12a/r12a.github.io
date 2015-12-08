@@ -93,15 +93,12 @@ function getRangeCP (ptr) {
 
 
 function big5Encoder (stream) {
-	cps = chars2cps(stream)
-	//console.log(cps)
+	var cps = chars2cps(stream)
 	var out = ''
 	while (cps.length > 0) {
-		cp = cps.shift()
-		//console.log('CODE POINT:',cp, cp.toString(16))
+		var cp = cps.shift()
 		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
 			out +=  ' '+cp.toString(16)
-			//console.log('out is ascii',cp, cp.toString(16))
 			continue
 			}
 		var ptr = big5CPs[cp]
@@ -129,9 +126,7 @@ function big5Decoder (stream) {
 	var lead, byte, offset, ptr, cp
 	var big5lead = 0x00
 	while (bytes.length > 0) {
-		//console.log(bytes)
 		byte = bytes.shift()														
-		//console.log('BYTE: ',byte.toString(16),byte)
 		if (big5lead != 0x00) {	
 			lead = big5lead
 			ptr = null
@@ -169,21 +164,17 @@ function big5Decoder (stream) {
 function utf8Encoder (stream) {
 	// stream: a string of unicode characters
 	cps = chars2cps(stream)
-	//console.log(cps)
 	var out = ''
 	var count, offset
 	while (cps.length > 0) {
 		cp = cps.shift()
-		//console.log('CODE POINT:',cp, cp.toString(16))
 		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
 			out +=  ' '+cp.toString(16)
-			//console.log('out is ascii',cp, cp.toString(16))
 			continue
 			}
 		if (cp >= 0x80 && cp <= 0x7FF) { count = 1; offset = 0xC0; }
 		else if (cp >= 0x800 && cp <= 0xFFFF) { count = 2; offset = 0xE0; }
 		else { count = 3; offset = 0xF0; }
-		//console.log('count',count,'offset',offset)
 		var bytes = []
 		bytes[0] = (cp >> (6 * count)) + offset
 		while (count > 0) {
@@ -213,14 +204,11 @@ function utf8Decoder (stream) {
 	var lowerbound = 0x80
 	var upperbound = 0xBF
 	
-	//console.log(bytes)
 	while (bytes.length > 0) {
 		var byte = bytes.shift()
-		//console.log('BYTE: ',byte.toString(16),byte)
 		if (bytesneeded == 0) {
 			if (byte >= 0x00 && byte <= 0x7F) { 
 				out += dec2char(byte)
-				//console.log('ascii output',byte)
 				continue 
 				}
 			else if (byte >= 0xC2 && byte <= 0xDF) { 
@@ -239,7 +227,6 @@ function utf8Decoder (stream) {
 				}
 			else { out += '�'; continue }
 			u8cp = u8cp << (6 * bytesneeded)
-			//console.log('step3: u8cp',u8cp,'bytesseen',bytesseen,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 			continue
 			}
 		
@@ -251,7 +238,6 @@ function utf8Decoder (stream) {
 			upperbound = 0xBF
 			bytes.unshift(byte)
 			out += '�'
-			//console.log('step4: u8cp',u8cp,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 			continue
 			}
 		
@@ -259,7 +245,6 @@ function utf8Decoder (stream) {
 		upperbound = 0xBF
 		bytesseen++
 		u8cp = u8cp + ((byte - 0x80) << (6 * (bytesneeded - bytesseen)))
-		//console.log('step7: u8cp',u8cp,'bytesseen',bytesseen,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 		if (bytesseen != bytesneeded) continue
 		
 		cp = u8cp
@@ -267,7 +252,6 @@ function utf8Decoder (stream) {
 		bytesneeded = 0
 		bytesseen = 0
 		out += dec2char(cp)
-		//console.log('step10: cp',cp,'u8cp',u8cp,'bytesneeded',bytesneeded,'lowerb',lowerbound,'upperb',upperbound)
 		}
 	if (bytesneeded != 0x00) out += '�'
 	return out
@@ -284,10 +268,8 @@ function myutf8Decoder (stream) {
 	var counter = 0
 	var n = 0
 	
-	//console.log(bytes)
 	while (bytes.length > 0) {
 		b = bytes.shift()
-		//console.log('BYTE: ',b.toString(16),b)
 		switch (counter) {
 			case 0:
 				if (0 <= b && b <= 0x7F) {  // 0xxxxxxx
@@ -329,21 +311,18 @@ function myutf8Decoder (stream) {
 
 function eucjpEncoder (stream) {
 	cps = chars2cps(stream)
-	//console.log(cps)
 	var out = ''
 	while (cps.length > 0) {
 		cp = cps.shift()
-		//console.log('CODE POINT:',cp, cp.toString(16))
 		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
 			out +=  ' '+cp.toString(16)
-			//console.log('out is ascii',cp, cp.toString(16))
 			continue
 			}
 		if (cp == 0xA5) { out += ' 5C'; continue }
 		if (cp == 0x203E) { out += ' 7E'; continue }
 		if (cp >= 0xFF61 && cp <= 0xFF9F) {
 			temp = cp - 0xFF61 + 0xA1
-			out += ' 8E ' + temp.toString(16)
+			out += ' 8E ' + temp.toString(16).toUpperCase()
 			continue
 			}
 		if (cp == 0x2022) { cp = 0xFF0D }
@@ -369,9 +348,7 @@ function eucjpDecoder (stream) {
 	var jis0212flag = false
 	var eucjpLead = 0x00
 	while (bytes.length > 0) {
-		//console.log(bytes)
 		byte = bytes.shift()														
-		//console.log('BYTE: ',byte.toString(16),byte)
 		if (eucjpLead == 0x8E && byte >= 0xA1 && byte <= 0xDF) {	
 			temp = 0xFF61 + byte - 0xA1
 			out += dec2char(temp)
@@ -410,32 +387,31 @@ function eucjpDecoder (stream) {
 
 
 function iso2022jpEncoder (stream) {
-	cps = chars2cps(stream)
+	var cps = chars2cps(stream)
+	var endofstream = 2000000
+	cps.push(endofstream)
 	var out = ''
 	var encState = 'ascii'
 	var finished = false
 	while (!finished) {
-		//console.log(cps)
-		if (cps.length == 0 && encState != 'ascii') { 
+		var cp = cps.shift()
+		if (cp == endofstream && encState != 'ascii') { 
+			cps.unshift(cp)
 			encState = 'ascii'
 			out += ' 1B 28 42'
 			continue
 			}
-		if (cps.length == 0 && encState == 'ascii') { 
+		if (cp == endofstream && encState == 'ascii') { 
 			finished = true
 			break 
 			}
-		cp = cps.shift()
-		//console.log('CODE POINT:',cp, cp.toString(16),'encState',encState)
 		if (encState == 'ascii' && cp >= 0x00 && cp <= 0x7F) {  
-			out +=  ' '+cp.toString(16)
-			//console.log('out is ascii',cp, cp.toString(16))
+			out +=  ' '+cp.toString(16).toUpperCase()
 			continue
 			}
 		if (encState == 'roman' && ((cp >= 0x00 && cp <= 0x7F && cp !== 0x5C && cp !== 0x7E) || cp == 0xA5 || cp == 0x203E)) { 
 			if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
-				out +=  ' '+cp.toString(16)
-				//console.log('out is ascii',cp, cp.toString(16))
+				out +=  ' '+cp.toString(16).toUpperCase()
 				continue
 				}
 			if (cp == 0xA5) { out += ' 5C'; continue }
@@ -487,10 +463,7 @@ function iso2022jpDecoder (stream) {
 	
 	var finished = false
 	while (!finished) {
-		//console.log(bytes)
 		byte = bytes.shift()														
-		//if (byte != 2000000) console.log('BYTE: ',byte.toString(16),byte,'decState',decState)
-		//else console.log('end of stream byte','decState',decState)
 
 		switch (decState) {
 			case 'ascii':  if (byte == 0x1B) { decState = 'escStart'; continue }
@@ -603,9 +576,7 @@ function sjisEncoder (stream) {
 	cps = chars2cps(stream)
 	var out = ''
 	while (cps.length > 0) {
-		//console.log(cps)
 		cp = cps.shift()
-		//console.log('CODE POINT:',cp, cp.toString(16))
 		if ((cp >= 0x00 && cp <= 0x7F) || cp == 0x80) {  
 			out +=  ' '+cp.toString(16)
 			continue
@@ -646,9 +617,7 @@ function sjisDecoder (stream) {
 	var sjisLead = 0x00
 	
 	while (bytes.length > 0) {
-		//console.log(bytes)
 		byte = bytes.shift()														
-		//console.log('BYTE: ',byte.toString(16),byte)
 		if (sjisLead != 0x00) {	
 			lead = sjisLead
 			ptr = null
@@ -699,14 +668,11 @@ function sjisDecoder (stream) {
 
 function euckrEncoder (stream) {
 	cps = chars2cps(stream)
-	//console.log(cps)
 	var out = ''
 	while (cps.length > 0) {
 		cp = cps.shift()
-		//console.log('CODE POINT:',cp, cp.toString(16))
 		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
 			out +=  ' '+cp.toString(16)
-			//console.log('out is ascii',cp, cp.toString(16))
 			continue
 			}
 		var ptr = euckrCPs[cp]
@@ -731,9 +697,7 @@ function euckrDecoder (stream) {
 	var euckrLead = 0x00
 	
 	while (bytes.length > 0) {
-		//console.log(bytes)
 		byte = bytes.shift()														
-		//console.log('BYTE: ',byte.toString(16),byte)
 		if (euckrLead != 0x00) {	
 			lead = euckrLead
 			ptr = null
@@ -770,19 +734,17 @@ function euckrDecoder (stream) {
 
 function gbEncoder (stream, gbk) {
 	var cps = chars2cps(stream)
-	//console.log(cps)
 	var out = ''
 	var lead, trail, ptr, offset, end
 	
 	while (cps.length > 0) {
 		var cp = cps.shift()
-		//console.log('CODE POINT:',cp, cp.toString(16))
 		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
-			out +=  ' '+cp.toString(16)
+			out +=  ' '+cp.toString(16).toUpperCase()
 			continue
 			}
 		if (gbk && cp == 0x20AC) {
-			out += ' 0x80'
+			out += ' 80'
 			continue
 			}
 		var ptr = gbCPs[cp]
@@ -800,7 +762,6 @@ function gbEncoder (stream, gbk) {
 			continue
 			}
 		ptr = getRangePtr(cp)
-		//console.log(ptr)
 		byte1 = Math.floor(ptr / 10 /126 /10)
 		ptr = ptr - byte1 * 10 * 126 * 10
 		byte2 = Math.floor(ptr / 10 /126)
@@ -828,9 +789,7 @@ function gbDecoder (stream) {
 	var third = 0x00
 	
 	while (bytes.length > 0) {
-		console.log(bytes)
 		byte = bytes.shift()														
-		console.log('BYTE: ',byte.toString(16),byte)
 		if (third != 0x00) {	
 			cp = null
 			if (byte >= 0x30 && byte <= 0x39) {
