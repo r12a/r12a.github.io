@@ -48,6 +48,9 @@
 #kbd #vowels td span {
 	padding: 0 10px; 
 	}
+#rareVowels span {
+	padding: 0 10px; 
+	}
 
 #kbd #numbers {
 	padding-left: 20px;
