@@ -236,16 +236,12 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
   
   <!-- SHAPE -->
   <div id="alphabet" class="default"
-dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyana, 'Noto Sans Lao', sans-serif; font-size: 32px;">
+dir="rtl">
     <table id="kbd">
  <tr>
    <td id="consonants"><table>
      <tbody>
        <tr>
-         <td class="hint">ʼ</td>
-         <td><span class="c">&#x0621;</span></td>
-         <td class="hint">m</td>
-         <td><span class="c">&#x0645;</span></td>
          <td class="hint">a</td>
          <td><span class="c" style="padding: 5px">&#x0627;</span></td>
          <td><span class="c" style="padding: 5px">&#x0622;</span></td>
@@ -278,10 +274,12 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
          <td><span class="c">&#x062C;</span></td>
          <td class="hint">f</td>
          <td><span class="c">&#x0641;</span></td>
-         <td><span class="c">&#x06A2;</span></td>
          <td class="hint">q</td>
          <td><span class="c">&#x0642;</span></td>
-         <td><span class="c">&#x06A7;</span></td>
+         <td class="hint">ʼ</td>
+         <td><span class="c">&#x0621;</span></td>
+         <td class="hint">m</td>
+         <td><span class="c">&#x0645;</span></td>
        </tr>
        </tbody></table>
        <table><tbody>
@@ -334,31 +332,27 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
      <tbody>
        <tr>
          <td><span class="c">&#x064E;</span></td>
-         <td><span class="c">&#x064F;</span></td>
-         <td><span class="c">&#x0650;</span></td>
-         <td><span class="c">&#x0652;</span></td>
-         <td>&nbsp;</td>
-         </tr>
-       <tr>
          <td><span class="c">&#x064B;</span></td>
-         <td><span class="c">&#x064C;</span></td>
-         <td><span class="c">&#x064D;</span></td>
          <td><span class="c">&#x0651;</span></td>
          <td>&nbsp;</td>
          </tr>
        <tr>
-         <td><span class="c">&#x0670;</span></td>
-         <td><span class="c">&#x0657;</span></td>
-         <td><span class="c">&#x0655;</span></td>
-         <td><span class="c">&#x0654;</span></td>
+         <td><span class="c">&#x064F;</span></td>
+         <td><span class="c">&#x064C;</span></td>
+         <td><span class="c">&#x0652;</span></td>
          <td>&nbsp;</td>
          </tr>
        <tr>
-         <td><span class="c">&#x0610;</span></td>
-         <td><span class="c">&#x0611;</span></td>
-         <td><span class="c">&#x0612;</span></td>
-         <td><span class="c">&#x0613;</span></td>
-         <td><span class="c">&#x0614;</span></td>
+         <td><span class="c">&#x0650;</span></td>
+         <td><span class="c">&#x064D;</span></td>
+         <td><span class="c">&#x0670;</span></td>
+         <td>&nbsp;</td>
+         </tr>
+       <tr>
+         <td><span class="c">&#x0655;</span></td>
+         <td><span class="c">&#x0654;</span></td>
+         <td>&nbsp;</td>
+         <td>&nbsp;</td>
          </tr>
      </tbody>
    </table></td>
@@ -440,6 +434,21 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
         <td>&nbsp;</td>
       </tr>
       </table>
+
+
+ <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
+ <table id="rare" style="display:none;"><tbody>
+ 
+ 	<tr>
+    <td><span class="hint">q</span><span class=c>&#x06A7;</span> <span class="hint">f</span><span class=c>&#x06A2;</span> &nbsp;  <span class="c">&#x0610;</span>
+         <span class="c">&#x0611;</span>
+         <span class="c">&#x0612;</span>
+         <span class="c">&#x0613;</span>
+         <span class="c">&#x0614;</span>
+         <span class="c">&#x0657;</span>
+</td>
+      </tr>
+</tbody></table> 
   </div>
 
 
@@ -542,6 +551,8 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
         <option value=" ">SP</option>
         <option value="◌">◌</option>
         <option value="-">-</option>
+        <option value="ـ">ـ</option>
+        <option value="ه">ه</option>
 		</select>
 </div>
 

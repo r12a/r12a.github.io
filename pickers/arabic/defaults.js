@@ -9,6 +9,6 @@ defaults.language = 'ar'
 defaults.blocklocation= '/scripts/arabic/block'
 defaults.uifont = '"Scheherazade WF"'; // font name per usage in CSS
 defaults.uisize = "40";  // number of pixels (just the number)
-defaults.ccbase = "◌";  // default base for combining characters
+defaults.ccbase = "ـ";  // default base for combining characters
 
 

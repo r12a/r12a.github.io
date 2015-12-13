@@ -36,6 +36,7 @@
 	}
 #kbd #consonants  {
 	text-align: start;
+	padding-inline-end: 20px;
 	}
 #kbd #consonants td  {
 	padding: 0 2px;
@@ -43,6 +44,9 @@
 
 #kbd #vowels .hint {
 	padding-left: 10px; 
+	}
+#kbd #vowels td span {
+	padding: 0 10px; 
 	}
 
 #kbd #numbers {
@@ -53,6 +57,10 @@
 	min-width: 20px;
 	}
 
-
-
+#toggleRare {
+	margin: 10px 30px;
+	}
+#rare .hint {
+	vertical-align: top;
+	}
 
