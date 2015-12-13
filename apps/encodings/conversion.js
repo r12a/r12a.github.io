@@ -454,16 +454,19 @@ function iso2022jpDecoder (stream) {
 	var bytes = stream.split(' ')
 	for (i=0;i<bytes.length;i++) bytes[i] = parseInt(bytes[i],16)
 	var endofstream = 2000000
-	bytes.push(endofstream)
+	//bytes.push(endofstream)
 	var out = ''
 	var decState = 'ascii'
 	var outState = 'ascii'
 	var isoLead = 0x00
 	var outFlag = false
+	var cp, ptr
 	
 	var finished = false
 	while (!finished) {
-		byte = bytes.shift()														
+		if (bytes.length == 0) byte = endofstream
+		else var byte = bytes.shift()
+		//byte = bytes.shift()														
 
 		switch (decState) {
 			case 'ascii':  if (byte == 0x1B) { decState = 'escStart'; continue }
@@ -787,9 +790,24 @@ function gbDecoder (stream) {
 	var first = 0x00
 	var second = 0x00
 	var third = 0x00
+	var endofstream = 2000000
+	//bytes.push(endofstream)
+	finished = false
 	
-	while (bytes.length > 0) {
-		byte = bytes.shift()														
+	while (!finished) {
+		if (bytes.length == 0) byte = endofstream
+		else var byte = bytes.shift()
+		if (byte == endofstream && first == 0x00 && second == 0x00 && third == 0x00) {
+			finished = true
+			break
+			}
+		if (byte == endofstream && (first != 0x00 || second != 0x00 || third != 0x00)) {
+			first = 0x00
+			second = 0x00
+			third = 0x00
+			out += '�'
+			continue
+			}
 		if (third != 0x00) {	
 			cp = null
 			if (byte >= 0x30 && byte <= 0x39) {
@@ -856,7 +874,6 @@ function gbDecoder (stream) {
 			}
 		out += '�'
 		}
-	if (first != 0x00 || second != 0x00 || third != 0x00) out += '�'
 	return out
 	}
 
@@ -870,7 +887,7 @@ function sbEncoder (stream, index) {
 		var cp = cps.shift()
 		
 		if (cp >= 0x00 && cp <= 0x7F) { 
-			out +=  ' '+cp.toString(16)
+			out +=  ' '+cp.toString(16).toUpperCase()
 			continue
 			}
 		var ptr = getIndexPtr(cp, index)
