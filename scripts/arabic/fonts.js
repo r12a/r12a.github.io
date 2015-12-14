@@ -1,3 +1,4 @@
+/*jshint multistr: true */
  var fontSelection = '<option value="0">Select...</option>\
             <optgroup label="Web fonts ">\
             <option value="Nafees Nastaliq WF">Nafees Nastaliq WF</option>\
@@ -32,6 +33,7 @@
             </optgroup>\
             \
             <optgroup label="Other fonts ">\
+            <option value="Amiri">Amiri</option>\
             <option value="Arabic Transparent">Arabic Transparent</option>\
             <option value="Farsi Simple">Farsi Simple</option>\
             <option value="Koodak">Koodak</option>\
