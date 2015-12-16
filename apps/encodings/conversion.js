@@ -325,7 +325,7 @@ function eucjpEncoder (stream) {
 			out += ' 8E ' + temp.toString(16).toUpperCase()
 			continue
 			}
-		if (cp == 0x2022) { cp = 0xFF0D }
+		if (cp == 0x2212) { cp = 0xFF0D }
 		var ptr = jis0208CPs[cp]
 		if (ptr == null) {
 			out += ' &#'+cp+';'
@@ -429,7 +429,7 @@ function iso2022jpEncoder (stream) {
 			out += ' 1B 28 4A'
 			continue
 			}
-		if (cp == 0x2022) cp = 0xFF0D
+		if (cp == 0x2212) cp = 0xFF0D
 		ptr = jis0208CPs[cp]
 		if (ptr == null) {
 			out += ' &#'+cp+';'
@@ -591,7 +591,7 @@ function sjisEncoder (stream) {
 			out += temp.toString(16)
 			continue
 			}
-		if (cp == 0x2022) { cp = 0xFF0D }
+		if (cp == 0x2212) { cp = 0xFF0D }
 		var ptr = sjisCPs[cp]
 		if (ptr == null) {
 			out += ' &#'+cp+';'
