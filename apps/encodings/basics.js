@@ -1,6 +1,7 @@
 function encode ( stream ) {
+	// clear out the previous results
 	spans = document.getElementById('encodingcolumn').querySelectorAll('span')
-	for (s=0;s<spans.length;s++) spans[s].textContent = ''
+	for (s=0;s<spans.length;s++) if (spans[s].textContent != '↗') spans[s].textContent = ''
 	if (live.utf8) document.getElementById('utf8encResult').textContent = utf8Encoder(stream)
 	if (live.big5) document.getElementById('big5encResult').textContent = big5Encoder(stream)
 	if (live.eucjp) document.getElementById('eucjpencResult').textContent = eucjpEncoder(stream)
@@ -38,10 +39,11 @@ function encode ( stream ) {
 	if (live.iso885915) document.getElementById('iso885915encResult').textContent = sbEncoder(stream, indexes.iso885915)
 	if (live.iso885916) document.getElementById('iso885916encResult').textContent = sbEncoder(stream, indexes.iso885916)
 	
+	// paint the background green if there isn't an escape character
 	tests = document.getElementById('encodingcolumn').querySelectorAll('.output')
 	for (var t=0;t<tests.length;t++) {
 		if (tests[t].textContent.match('&')) tests[t].className = 'output'
-		else if (tests[t].childNodes[2].textContent != '') tests[t].className = 'output yes'
+		else if (tests[t].childNodes[3].textContent != '') tests[t].className = 'output yes'
 		}
 	}
 
@@ -88,7 +90,7 @@ function decode ( stream ) {
 	tests = document.getElementById('decodingcolumn').querySelectorAll('.output')
 	for (var t=0;t<tests.length;t++) {
 		if (tests[t].textContent.match('�')) tests[t].className = 'output'
-		else if (tests[t].childNodes[2].textContent != '') tests[t].className = 'output yes'
+		else if (tests[t].childNodes[3].textContent != '') tests[t].className = 'output yes'
 		}
 	}
 
@@ -274,3 +276,10 @@ function toggleNotes () {
 		} 
 	}
 
+function toDec (id) {
+	document.getElementById('lBytes').value = document.getElementById(id).textContent
+	}
+
+function toEnc (id) {
+	document.getElementById('uChar').value = document.getElementById(id).textContent
+	}

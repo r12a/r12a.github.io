@@ -198,11 +198,29 @@ sub { color:#C30; font-style: italic; }
 	background-color: white;
 	border-radius: 2px;
 	padding: 0 4px;
+	color: #999;
+	cursor: pointer;
+	}
+.output button {
+	color: #ddd;
+	background-color: transparent;
+	border:0;
+	border-radius: 2px;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
 	}
 .optionTrigger:hover {
 	background-color: #FFFFC7;
 	border-radius: 2px;
 	padding: 0 4px;
+	color: #666;
+	}
+.output button:hover {
+	background-color: #FFFFC7;
+	border-radius: 2px;
+	padding: 0 4px;
+	color: #666;
 	}
 	
 .yes {

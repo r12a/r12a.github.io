@@ -9,6 +9,7 @@
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="indexes.js"></script>
 <script type="text/javascript" src="basics.js"></script>
+<script type="text/javascript" src="../conversion/conversionfunctions.js"></script>
 </head>
 
 <body class="app">
@@ -22,50 +23,53 @@
 <script type="text/javascript" src="conversion.js"></script>
 
   <div class="column" id="encodingcolumn">
-  <form action="none" onsubmit="encode(document.getElementById('uChar').value); return false;">
+  <form action="none" onsubmit="encode(convertAllEscapes(document.getElementById('uChar').value)); return false;">
     <p>Unicode characters  to encode:<br/>
       <input class="inputbox" id="uChar" type="text"/>
     </p>
     <p>
-      <button onclick="encode(document.getElementById('uChar').value); return false;" type="submit">Convert</button>
+      <button onclick="encode(convertAllEscapes(document.getElementById('uChar').value)); return false;" type="submit">Convert</button>
     </p>
   </form>
-  <p class="output" id="utf8enc">utf-8<br/><span id="utf8encResult"></span></p>
-  <p class="output" id="big5enc">big5<br/><span id="big5encResult"></span></p>
-  <p class="output" id="eucjpenc">euc-jp<br/><span id="eucjpencResult"></span></p>
-  <p class="output" id="iso2022jpenc">iso-2022-jp<br/><span id="iso2022jpencResult"></span></p>
-  <p class="output" id="shiftjisenc">shift_jis<br/><span id="sjisencResult"></span></p>
-  <p class="output" id="euckrenc">euc-kr<br/><span id="euckrencResult"></span></p>
-  <p class="output" id="gb18030enc">gb18030<br/><span id="gb18030encResult"></span></p>
-  <p class="output" id="gbkenc">gbk<br/><span id="gbkencResult"></span></p>
-  <p class="output" id="koi8renc" style="display:none">koi8-r<br/><span id="koi8rencResult"></span></p>
-  <p class="output" id="koi8uenc" style="display:none">koi8-u<br/><span id="koi8uencResult"></span></p>
-  <p class="output" id="windows1250enc" style="display:none">windows-1250<br/><span id="win1250encResult"></span></p>
-  <p class="output" id="windows1251enc" style="display:none">windows-1251<br/><span id="win1251encResult"></span></p>
-  <p class="output" id="windows1252enc">windows-1252/latin1<br/><span id="win1252encResult"></span></p>
-  <p class="output" id="windows1253enc" style="display:none">windows-1253<br/><span id="win1253encResult"></span></p>
-  <p class="output" id="windows1254enc" style="display:none">windows-1254<br/><span id="win1254encResult"></span></p>
-  <p class="output" id="windows1255enc" style="display:none">windows-1255<br/><span id="win1255encResult"></span></p>
-  <p class="output" id="windows1256enc" style="display:none">windows-1256<br/><span id="win1256encResult"></span></p>
-  <p class="output" id="windows1257enc" style="display:none">windows-1257<br/><span id="win1257encResult"></span></p>
-  <p class="output" id="windows1258enc" style="display:none">windows-1258<br/><span id="win1258encResult"></span></p>
-  <p class="output" id="windows874enc" style="display:none">windows-874<br/><span id="win874encResult"></span></p>
-  <p class="output" id="macintoshenc" style="display:none">macintosh<br/><span id="macintoshencResult"></span></p>
-  <p class="output" id="ibm866enc" style="display:none">ibm866<br/><span id="ibm866encResult"></span></p>
-  <p class="output" id="xmaccyrillicenc" style="display:none">x-mac-cyrillic<br/><span id="xmaccyrillicencResult"></span></p>
-  <p class="output" id="iso88592enc" style="display:none">iso-8859-2<br/><span id="iso88592encResult"></span></p>
-  <p class="output" id="iso88593enc" style="display:none">iso-8859-3<br/><span id="iso88593encResult"></span></p>
-  <p class="output" id="iso88594enc" style="display:none">iso-8859-4<br/><span id="iso88594encResult"></span></p>
-  <p class="output" id="iso88595enc" style="display:none">iso-8859-5<br/><span id="iso88595encResult"></span></p>
-  <p class="output" id="iso88596enc" style="display:none">iso-8859-6<br/><span id="iso88596encResult"></span></p>
-  <p class="output" id="iso88597enc" style="display:none">iso-8859-7<br/><span id="iso88597encResult"></span></p>
-  <p class="output" id="iso88598enc" style="display:none">iso-8859-8<br/><span id="iso88598encResult"></span></p>
-  <p class="output" id="iso88598ienc" style="display:none">iso-8859-8-i<br/><span id="iso88598iencResult"></span></p>
-  <p class="output" id="iso885910enc" style="display:none">iso-8859-10<br/><span id="iso885910encResult"></span></p>
-  <p class="output" id="iso885913enc" style="display:none">iso-8859-13<br/><span id="iso885913encResult"></span></p>
-  <p class="output" id="iso885914enc" style="display:none">iso-8859-14<br/><span id="iso885914encResult"></span></p>
-  <p class="output" id="iso885915enc" style="display:none">iso-8859-15<br/><span id="iso885915encResult"></span></p>
-  <p class="output" id="iso885916enc" style="display:none">iso-8859-16<br/><span id="iso885916encResult"></span></p>
+  <!-- the next line is to make the convertAllEscapes function work -->
+  <input id="singleletterescapes" type="checkbox" checked style="display:none"/>
+
+  <p class="output" id="utf8enc">utf-8 <button onClick="toDec('utf8encResult');return false">↗</button><br/><span id="utf8encResult"></span></p>
+  <p class="output" id="big5enc">big5 <button onClick="toDec('utf8encResult');return false">↗</button><br/><span id="big5encResult"></span></p>
+  <p class="output" id="eucjpenc">euc-jp <button onClick="toDec('eucjpencResult');return false">↗</button><br/><span id="eucjpencResult"></span></p>
+  <p class="output" id="iso2022jpenc">iso-2022-jp <button onClick="toDec('iso2022jpencResult');return false">↗</button><br/><span id="iso2022jpencResult"></span></p>
+  <p class="output" id="shiftjisenc">shift_jis <button onClick="toDec('sjisencResult');return false">↗</button><br/><span id="sjisencResult"></span></p>
+  <p class="output" id="euckrenc">euc-kr <button onClick="toDec('euckrencResult');return false">↗</button><br/><span id="euckrencResult"></span></p>
+  <p class="output" id="gb18030enc">gb18030 <button onClick="toDec('gb18030encResult');return false">↗</button><br/><span id="gb18030encResult"></span></p>
+  <p class="output" id="gbkenc">gbk <button onClick="toDec('gbkencResult');return false">↗</button><br/><span id="gbkencResult"></span></p>
+  <p class="output" id="koi8renc" style="display:none">koi8-r <button onClick="toDec('koi8rencResult');return false">↗</button><br/><span id="koi8rencResult"></span></p>
+  <p class="output" id="koi8uenc" style="display:none">koi8-u <button onClick="toDec('koi8uencResult');return false">↗</button><br/><span id="koi8uencResult"></span></p>
+  <p class="output" id="windows1250enc" style="display:none">windows-1250 <button onClick="toDec('win1250encResult');return false">↗</button><br/><span id="win1250encResult"></span></p>
+  <p class="output" id="windows1251enc" style="display:none">windows-1251 <button onClick="toDec('win1251encResult');return false">↗</button><br/><span id="win1251encResult"></span></p>
+  <p class="output" id="windows1252enc">windows-1252/latin1 <button onClick="toDec('win1252encResult');return false">↗</button><br/><span id="win1252encResult"></span></p>
+  <p class="output" id="windows1253enc" style="display:none">windows-1253 <button onClick="toDec('win1253encResult');return false">↗</button><br/><span id="win1253encResult"></span></p>
+  <p class="output" id="windows1254enc" style="display:none">windows-1254 <button onClick="toDec('win1254encResult');return false">↗</button><br/><span id="win1254encResult"></span></p>
+  <p class="output" id="windows1255enc" style="display:none">windows-1255 <button onClick="toDec('win1255encResult');return false">↗</button><br/><span id="win1255encResult"></span></p>
+  <p class="output" id="windows1256enc" style="display:none">windows-1256 <button onClick="toDec('win1256encResult');return false">↗</button><br/><span id="win1256encResult"></span></p>
+  <p class="output" id="windows1257enc" style="display:none">windows-1257 <button onClick="toDec('win1257encResult');return false">↗</button><br/><span id="win1257encResult"></span></p>
+  <p class="output" id="windows1258enc" style="display:none">windows-1258 <button onClick="toDec('win1258encResult');return false">↗</button><br/><span id="win1258encResult"></span></p>
+  <p class="output" id="windows874enc" style="display:none">windows-874 <button onClick="toDec('win874encResult');return false">↗</button><br/><span id="win874encResult"></span></p>
+  <p class="output" id="macintoshenc" style="display:none">macintosh <button onClick="toDec('macintoshencResult');return false">↗</button><br/><span id="macintoshencResult"></span></p>
+  <p class="output" id="ibm866enc" style="display:none">ibm866 <button onClick="toDec('ibm866encResult');return false">↗</button><br/><span id="ibm866encResult"></span></p>
+  <p class="output" id="xmaccyrillicenc" style="display:none">x-mac-cyrillic <button onClick="toDec('xmaccyrillicencResult');return false">↗</button><br/><span id="xmaccyrillicencResult"></span></p>
+  <p class="output" id="iso88592enc" style="display:none">iso-8859-2 <button onClick="toDec('iso88592encResult');return false">↗</button><br/><span id="iso88592encResult"></span></p>
+  <p class="output" id="iso88593enc" style="display:none">iso-8859-3 <button onClick="toDec('iso88593encResult');return false">↗</button><br/><span id="iso88593encResult"></span></p>
+  <p class="output" id="iso88594enc" style="display:none">iso-8859-4 <button onClick="toDec('iso88594encResult');return false">↗</button><br/><span id="iso88594encResult"></span></p>
+  <p class="output" id="iso88595enc" style="display:none">iso-8859-5 <button onClick="toDec('iso88595encResult');return false">↗</button><br/><span id="iso88595encResult"></span></p>
+  <p class="output" id="iso88596enc" style="display:none">iso-8859-6 <button onClick="toDec('iso88596encResult');return false">↗</button><br/><span id="iso88596encResult"></span></p>
+  <p class="output" id="iso88597enc" style="display:none">iso-8859-7 <button onClick="toDec('iso88597encResult');return false">↗</button><br/><span id="iso88597encResult"></span></p>
+  <p class="output" id="iso88598enc" style="display:none">iso-8859-8 <button onClick="toDec('iso88598encResult');return false">↗</button><br/><span id="iso88598encResult"></span></p>
+  <p class="output" id="iso88598ienc" style="display:none">iso-8859-8-i <button onClick="toDec('iso88598iencResult');return false">↗</button><br/><span id="iso88598iencResult"></span></p>
+  <p class="output" id="iso885910enc" style="display:none">iso-8859-10 <button onClick="toDec('iso885910encResult');return false">↗</button><br/><span id="iso885910encResult"></span></p>
+  <p class="output" id="iso885913enc" style="display:none">iso-8859-13 <button onClick="toDec('iso885913encResult');return false">↗</button><br/><span id="iso885913encResult"></span></p>
+  <p class="output" id="iso885914enc" style="display:none">iso-8859-14 <button onClick="toDec('iso885914encResult');return false">↗</button><br/><span id="iso885914encResult"></span></p>
+  <p class="output" id="iso885915enc" style="display:none">iso-8859-15 <button onClick="toDec('iso885915encResult');return false">↗</button><br/><span id="iso885915encResult"></span></p>
+  <p class="output" id="iso885916enc" style="display:none">iso-8859-16 <button onClick="toDec('iso885916encResult');return false">↗</button><br/><span id="iso885916encResult"></span></p>
   </div>
 
 
@@ -78,42 +82,42 @@
       <button type="submit">Convert</button>
     </p>
   </form>
-  <p class="output" id="utf8dec">utf-8<br/><span id="utf8decResult"></span></p>
-  <p class="output" id="big5dec">big5<br/><span id="big5decResult"></span></p>
-  <p class="output" id="eucjpdec">euc-jp<br/><span id="eucjpdecResult"></span></p>
-  <p class="output" id="iso2022jpdec">iso-2022-jp<br/><span id="iso2022jpdecResult"></span></p>
-  <p class="output" id="shiftjisdec">shift_jis<br/><span id="sjisdecResult"></span></p>
-  <p class="output" id="euckrdec">euc-kr<br/><span id="euckrdecResult"></span></p>
-  <p class="output" id="gb18030dec">gb18030<br/><span id="gb18030decResult"></span></p>
-  <p class="output" id="gbkdec">gbk<br/><span id="gbkdecResult"></span></p>
-  <p class="output" id="koi8rdec" style="display:none">koi8-r<br/><span id="koi8rdecResult"></span></p>
-  <p class="output" id="koi8udec" style="display:none">koi8-u<br/><span id="koi8udecResult"></span></p>
-  <p class="output" id="windows1250dec" style="display:none">windows-1250<br/><span id="win1250decResult"></span></p>
-  <p class="output" id="windows1251dec" style="display:none">windows-1251<br/><span id="win1251decResult"></span></p>
-  <p class="output" id="windows1252dec">windows-1252/latin1<br/><span id="win1252decResult"></span></p>
-  <p class="output" id="windows1253dec" style="display:none">windows-1253<br/><span id="win1253decResult"></span></p>
-  <p class="output" id="windows1254dec" style="display:none">windows-1254<br/><span id="win1254decResult"></span></p>
-  <p class="output" id="windows1255dec" style="display:none">windows-1255<br/><span id="win1255decResult"></span></p>
-  <p class="output" id="windows1256dec" style="display:none">windows-1256<br/><span id="win1256decResult"></span></p>
-  <p class="output" id="windows1257dec" style="display:none">windows-1257<br/><span id="win1257decResult"></span></p>
-  <p class="output" id="windows1258dec" style="display:none">windows-1258<br/><span id="win1258decResult"></span></p>
-  <p class="output" id="windows874dec" style="display:none">windows-874<br/><span id="win874decResult"></span></p>
-  <p class="output" id="macintoshdec" style="display:none">macintosh<br/><span id="macintoshdecResult"></span></p>
-  <p class="output" id="ibm866dec" style="display:none">ibm866<br/><span id="ibm866decResult"></span></p>
-  <p class="output" id="xmaccyrillicdec" style="display:none">x-mac-cyrillic<br/><span id="xmaccyrillicdecResult"></span></p>
-  <p class="output" id="iso88592dec" style="display:none">iso-8859-2<br/><span id="iso88592decResult"></span></p>
-  <p class="output" id="iso88593dec" style="display:none">iso-8859-3<br/><span id="iso88593decResult"></span></p>
-  <p class="output" id="iso88594dec" style="display:none">iso-8859-4<br/><span id="iso88594decResult"></span></p>
-  <p class="output" id="iso88595dec" style="display:none">iso-8859-5<br/><span id="iso88595decResult"></span></p>
-  <p class="output" id="iso88596dec" style="display:none">iso-8859-6<br/><span id="iso88596decResult"></span></p>
-  <p class="output" id="iso88597dec" style="display:none">iso-8859-7<br/><span id="iso88597decResult"></span></p>
-  <p class="output" id="iso88598dec" style="display:none">iso-8859-8<br/><span id="iso88598decResult"></span></p>
-  <p class="output" id="iso88598idec" style="display:none">iso-8859-8i<br/><span id="iso88598idecResult"></span></p>
-  <p class="output" id="iso885910dec" style="display:none">iso-8859-10<br/><span id="iso885910decResult"></span></p>
-  <p class="output" id="iso885913dec" style="display:none">iso-8859-13<br/><span id="iso885913decResult"></span></p>
-  <p class="output" id="iso885914dec" style="display:none">iso-8859-14<br/><span id="iso885914decResult"></span></p>
-  <p class="output" id="iso885915dec" style="display:none">iso-8859-15<br/><span id="iso885915decResult"></span></p>
-  <p class="output" id="iso885916dec" style="display:none">iso-8859-16<br/><span id="iso885916decResult"></span></p>
+  <p class="output" id="utf8dec">utf-8 <button onClick="toEnc('utf8decResult');return false">↖</button><br/><span id="utf8decResult"></span></p>
+  <p class="output" id="big5dec">big5 <button onClick="toEnc('big5decResult');return false">↖</button><br/><span id="big5decResult"></span></p>
+  <p class="output" id="eucjpdec">euc-jp <button onClick="toEnc('eucjpdecResult');return false">↖</button><br/><span id="eucjpdecResult"></span></p>
+  <p class="output" id="iso2022jpdec">iso-2022-jp <button onClick="toEnc('iso2022jpdecResult');return false">↖</button><br/><span id="iso2022jpdecResult"></span></p>
+  <p class="output" id="shiftjisdec">shift_jis <button onClick="toEnc('sjisdecResult');return false">↖</button><br/><span id="sjisdecResult"></span></p>
+  <p class="output" id="euckrdec">euc-kr <button onClick="toEnc('euckrdecResult');return false">↖</button><br/><span id="euckrdecResult"></span></p>
+  <p class="output" id="gb18030dec">gb18030 <button onClick="toEnc('gb18030decResult');return false">↖</button><br/><span id="gb18030decResult"></span></p>
+  <p class="output" id="gbkdec">gbk <button onClick="toEnc('gbkdecResult');return false">↖</button><br/><span id="gbkdecResult"></span></p>
+  <p class="output" id="koi8rdec" style="display:none">koi8-r <button onClick="toEnc('koi8rdecResult');return false">↖</button><br/><span id="koi8rdecResult"></span></p>
+  <p class="output" id="koi8udec" style="display:none">koi8-u <button onClick="toEnc('koi8udecResult');return false">↖</button><br/><span id="koi8udecResult"></span></p>
+  <p class="output" id="windows1250dec" style="display:none">windows-1250 <button onClick="toEnc('win1250decResult');return false">↖</button><br/><span id="win1250decResult"></span></p>
+  <p class="output" id="windows1251dec" style="display:none">windows-1251 <button onClick="toEnc('win1251decResult');return false">↖</button><br/><span id="win1251decResult"></span></p>
+  <p class="output" id="windows1252dec">windows-1252/latin1 <button onClick="toEnc('win1252decResult');return false">↖</button><br/><span id="win1252decResult"></span></p>
+  <p class="output" id="windows1253dec" style="display:none">windows-1253 <button onClick="toEnc('win1253decResult');return false">↖</button><br/><span id="win1253decResult"></span></p>
+  <p class="output" id="windows1254dec" style="display:none">windows-1254 <button onClick="toEnc('win1254decResult');return false">↖</button><br/><span id="win1254decResult"></span></p>
+  <p class="output" id="windows1255dec" style="display:none">windows-1255 <button onClick="toEnc('win1255decResult');return false">↖</button><br/><span id="win1255decResult"></span></p>
+  <p class="output" id="windows1256dec" style="display:none">windows-1256 <button onClick="toEnc('win1256decResult');return false">↖</button><br/><span id="win1256decResult"></span></p>
+  <p class="output" id="windows1257dec" style="display:none">windows-1257 <button onClick="toEnc('win1257decResult');return false">↖</button><br/><span id="win1257decResult"></span></p>
+  <p class="output" id="windows1258dec" style="display:none">windows-1258 <button onClick="toEnc('win1258decResult');return false">↖</button><br/><span id="win1258decResult"></span></p>
+  <p class="output" id="windows874dec" style="display:none">windows-874 <button onClick="toEnc('win874decResult');return false">↖</button><br/><span id="win874decResult"></span></p>
+  <p class="output" id="macintoshdec" style="display:none">macintosh <button onClick="toEnc('macintoshdecResult');return false">↖</button><br/><span id="macintoshdecResult"></span></p>
+  <p class="output" id="ibm866dec" style="display:none">ibm866 <button onClick="toEnc('ibm866decResult');return false">↖</button><br/><span id="ibm866decResult"></span></p>
+  <p class="output" id="xmaccyrillicdec" style="display:none">x-mac-cyrillic <button onClick="toEnc('xmaccyrillicdecResult');return false">↖</button><br/><span id="xmaccyrillicdecResult"></span></p>
+  <p class="output" id="iso88592dec" style="display:none">iso-8859-2 <button onClick="toEnc('iso88592decResult');return false">↖</button><br/><span id="iso88592decResult"></span></p>
+  <p class="output" id="iso88593dec" style="display:none">iso-8859-3 <button onClick="toEnc('iso88593decResult');return false">↖</button><br/><span id="iso88593decResult"></span></p>
+  <p class="output" id="iso88594dec" style="display:none">iso-8859-4 <button onClick="toEnc('iso88594decResult');return false">↖</button><br/><span id="iso88594decResult"></span></p>
+  <p class="output" id="iso88595dec" style="display:none">iso-8859-5 <button onClick="toEnc('iso88595decResult');return false">↖</button><br/><span id="iso88595decResult"></span></p>
+  <p class="output" id="iso88596dec" style="display:none">iso-8859-6 <button onClick="toEnc('iso88596decResult');return false">↖</button><br/><span id="iso88596decResult"></span></p>
+  <p class="output" id="iso88597dec" style="display:none">iso-8859-7 <button onClick="toEnc('iso88597decResult');return false">↖</button><br/><span id="iso88597decResult"></span></p>
+  <p class="output" id="iso88598dec" style="display:none">iso-8859-8 <button onClick="toEnc('iso88598decResult');return false">↖</button><br/><span id="iso88598decResult"></span></p>
+  <p class="output" id="iso88598idec" style="display:none">iso-8859-8i <button onClick="toEnc('iso88598idecResult');return false">↖</button><br/><span id="iso88598idecResult"></span></p>
+  <p class="output" id="iso885910dec" style="display:none">iso-8859-10 <button onClick="toEnc('iso885910decResult');return false">↖</button><br/><span id="iso885910decResult"></span></p>
+  <p class="output" id="iso885913dec" style="display:none">iso-8859-13 <button onClick="toEnc('iso885913decResult');return false">↖</button><br/><span id="iso885913decResult"></span></p>
+  <p class="output" id="iso885914dec" style="display:none">iso-8859-14 <button onClick="toEnc('iso885914decResult');return false">↖</button><br/><span id="iso885914decResult"></span></p>
+  <p class="output" id="iso885915dec" style="display:none">iso-8859-15 <button onClick="toEnc('iso885915decResult');return false">↖</button><br/><span id="iso885915decResult"></span></p>
+  <p class="output" id="iso885916dec" style="display:none">iso-8859-16 <button onClick="toEnc('iso885916decResult');return false">↖</button><br/><span id="iso885916decResult"></span></p>
   </div>
 </div>
 
@@ -256,7 +260,7 @@
 </div>
 
 <div class="smallprint"><span id="version">First published  3 Dec 2015.  This version <span id="version-info"> 
-<!-- #BeginDate format:IS1m -->2015-12-05  15:20<!-- #EndDate --> 
+<!-- #BeginDate format:IS1m -->2015-12-16  16:37<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </body>
 </html>
