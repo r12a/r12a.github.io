@@ -122,6 +122,13 @@
 </div>
 
 
+<div id="hexdecConverter" style="clear:both; text-align:center; margin-bottom: 2em;">
+hex <input id="hex"  onchange="document.getElementById('dec').value=parseInt(document.getElementById('hex').value,16)"> 
+<span class="optionTrigger" title="Click to convert the decimal number to hex." onclick="document.getElementById('hex').value=parseInt(document.getElementById('dec').value).toString(16).toUpperCase()">←</span>
+<span class="optionTrigger" title="Click to convert the hex number to decimal." onclick="document.getElementById('dec').value=parseInt(document.getElementById('hex').value,16)">→</span>
+<input id="dec" onchange="document.getElementById('hex').value=parseInt(document.getElementById('dec').value).toString(16).toUpperCase()"/> dec
+ </div>
+
 <div id="customise"  style="margin-left: 7.5%; clear:both; cursor: pointer;"  onclick="toggleCustomList()"><span class="optionTrigger">change encodings shown</span></div>
 
 <div id="customsettings" style="display:none">
@@ -245,7 +252,7 @@
   </div>
 </aside>
 
-<p id="status">Updated Fri 4 Dec 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'encoding'">encoding</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+<p id="status">Updated Wed 16 Dec 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'encoding'">encoding</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
 
 <section>
   <p>This app allows you to see how Unicode characters are represented by bytes in various legacy encodings, and vice versa. You can customise the encodings you want to experiment with by clicking on <span class="kw">change encodings shown</span>. The default selection excludes most of the single-byte encodings.</p>
@@ -260,7 +267,7 @@
 </div>
 
 <div class="smallprint"><span id="version">First published  3 Dec 2015.  This version <span id="version-info"> 
-<!-- #BeginDate format:IS1m -->2015-12-16  16:37<!-- #EndDate --> 
+<!-- #BeginDate format:IS1m -->2015-12-16  21:14<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </body>
 </html>
