@@ -32,7 +32,7 @@ function transcribetoLOC (str) {
 	var re = /(.)([\u064E|\u064F|\u0650|\u0652|\u064B|\u064C|\u064D]?)\u0651/g
 	str = str.replace(re,'$1$1$2')  // shadda
 	
-	str = str.replace(/ ال/g,' al-'); // definite article
+	str = str.replace(/ ال/g,' al-') // definite article
 	
 	str = str.replace(/\u200C([^ ])/g,'ʹ$1')  // zwnj creating final form in middle of word
 
@@ -110,7 +110,10 @@ function transcribetoLOC (str) {
 	str = str.replace(/٪/g,'%')
 	str = str.replace(/؟/g,'?')
 	str = str.replace(/؛/g,'\u002C')
-	str = str.replace(/،/g,';')
+	str = str.replace(/،/g,',')
+	str = str.replace(/؛/g,';')
+	str = str.replace(/۔/g,'.')
+	str = str.replace(/ـ/g,'')
 
 	
 	
