@@ -531,14 +531,14 @@ table.inband {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	}
-table td { 
-	border: 1px solid teal; 
+td { 
+	border: 1px solid #ccc; 
 	vertical-align: top; 
 	text-align: center; 
 	border-collapse: collapse; 
 	font-family: 'Helvetica Neue', Verdana, helvetica, "Segoe UI", sans-serif; 
 	}
-table th { 
+th { 
 	font-size: 80%; 
 	text-align: right;
 	padding: 4px;
