@@ -283,3 +283,64 @@ function toDec (id) {
 function toEnc (id) {
 	document.getElementById('uChar').value = document.getElementById(id).textContent
 	}
+
+
+function showEncoding (enc) {
+	switch (enc) {
+		case 'big5': dbdisplay( 'encoding/legacy-mb-tchinese/big5/tools/make-big5-utf8-list'); break
+		case 'eucjp': dbdisplay( 'encoding/legacy-mb-japanese/euc-jp/tools/make-eucjp-utf8-list'); break
+		case 'iso2022jp': dbdisplay( 'encoding/legacy-mb-japanese/iso-2022-jp/tools/make-iso2022jp-utf8-list'); break
+		case 'shiftjis': dbdisplay( 'encoding/legacy-mb-japanese/shift_jis/tools/make-sjis-utf8-list'); break
+		case 'euckr': dbdisplay( 'encoding/legacy-mb-korean/euc-kr/tools/make-euckr-utf8-list'); break
+		case 'gb18030': dbdisplay( 'encoding/legacy-mb-schinese/gb18030/tools/make-gb18030-utf8-list'); break
+		case 'gbk': dbdisplay( 'encoding/legacy-mb-schinese/gbk/tools/make-gbk-utf8-list'); break
+		case 'koi8r': sbdisplay(indexes.koi8r); break
+		case 'koi8u': sbdisplay(indexes.koi8u); break
+		case 'windows1250': sbdisplay(indexes.windows1250); break
+		case 'windows1251': sbdisplay(indexes.windows1251); break
+		case 'windows1252': sbdisplay(indexes.windows1252); break
+		case 'windows1253': sbdisplay(indexes.windows1253); break
+		case 'windows1254': sbdisplay(indexes.windows1254); break
+		case 'windows1255': sbdisplay(indexes.windows1255); break
+		case 'windows1256': sbdisplay(indexes.windows1256); break
+		case 'windows1257': sbdisplay(indexes.windows1257); break
+		case 'windows1258': sbdisplay(indexes.windows1258); break
+		case 'macintosh': sbdisplay(indexes. macintosh); break
+		case 'ibm866': sbdisplay(indexes.ibm866); break
+		case 'windows874': sbdisplay(indexes.windows874); break
+		case 'xmaccyrillic': sbdisplay(indexes.xmaccyrillic); break
+		case 'iso88592': sbdisplay(indexes.iso88592); break
+		case 'iso88593': sbdisplay(indexes.iso88593); break
+		case 'iso88594': sbdisplay(indexes.iso88594); break
+		case 'iso88595': sbdisplay(indexes.iso88595); break
+		case 'iso88596': sbdisplay(indexes.iso88596); break
+		case 'iso88597': sbdisplay(indexes.iso88597); break
+		case 'iso88598': sbdisplay(indexes.iso88598); break
+		case 'iso88598i': sbdisplay(indexes.iso88598i); break
+		case 'iso885910': sbdisplay(indexes.iso885910); break
+		case 'iso885913': sbdisplay(indexes.iso885913); break
+		case 'iso885914': sbdisplay(indexes.iso885914); break
+		case 'iso885915': sbdisplay(indexes.iso885915); break
+		case 'iso885916': sbdisplay(indexes.iso885916); break
+		}
+	}
+
+
+function sbdisplay (enc) {
+	// opens the character list tool in another window to display the characters in the encoding
+	
+	var characters = ''
+	for (var i=0;i<enc.length;i++) {
+		characters += String.fromCodePoint(enc[i])
+		}
+	charDisplay = window.open('/apps/listcharacters?chars='+encodeURIComponent(characters), 'charDisplay')
+	charDisplay.focus()
+	}
+
+
+function dbdisplay (url) {
+	// opens the character list tool in another window to display the characters in the encoding
+	
+	charDisplay = window.open('http://www.w3.org/International/tests/repo/'+url, 'charDisplay')
+	charDisplay.focus()
+	}

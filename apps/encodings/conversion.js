@@ -59,12 +59,6 @@ function getRangePtr (cp) {
 	return ptrOffset + cp - offset
 	}
 
- var gbCPs = []  // index is unicode cp, value is pointer
-	 for (p=0;p<indexes.gb18030.length;p++) {
-		if (indexes.gb18030[p] != null && gbCPs[indexes.gb18030[p]] == null) {
-			gbCPs[indexes.gb18030[p]] = p
-			}
- 	}
 
 function getRangeCP (ptr) {
 	if ((ptr > 39419 && ptr < 189000) || ptr > 1237575) return null
@@ -81,7 +75,7 @@ function getRangeCP (ptr) {
 	}
 
  var gbCPs = []  // index is unicode cp, value is pointer
-	 for (p=0;p<indexes.gb18030.length;p++) {
+	 for (var p=0;p<indexes.gb18030.length;p++) {
 		if (indexes.gb18030[p] != null && gbCPs[indexes.gb18030[p]] == null) {
 			gbCPs[indexes.gb18030[p]] = p
 			}

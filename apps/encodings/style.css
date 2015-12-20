@@ -226,3 +226,14 @@ sub { color:#C30; font-style: italic; }
 .yes {
 	background-color: #E1FFE1;
 	}
+
+#hexdecConverter {
+	line-height: 1;
+	}
+#charList {
+	margin: auto;
+	}
+#charList td {
+	border: 0;
+	padding: 0;
+	}

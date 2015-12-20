@@ -123,11 +123,71 @@
 
 
 <div id="hexdecConverter" style="clear:both; text-align:center; margin-bottom: 2em;">
-hex <input id="hex"  onchange="document.getElementById('dec').value=parseInt(document.getElementById('hex').value,16)"> 
-<span class="optionTrigger" title="Click to convert the decimal number to hex." onclick="document.getElementById('hex').value=parseInt(document.getElementById('dec').value).toString(16).toUpperCase()">←</span>
-<span class="optionTrigger" title="Click to convert the hex number to decimal." onclick="document.getElementById('dec').value=parseInt(document.getElementById('hex').value,16)">→</span>
-<input id="dec" onchange="document.getElementById('hex').value=parseInt(document.getElementById('dec').value).toString(16).toUpperCase()"/> dec
+<table id="charList"><tbody>
+<tr><td>hex</td><td>char</td><td>dec</td></tr>
+<tr>
+<td><input id="hex"  
+onchange="document.getElementById('dec').value=parseInt(document.getElementById('hex').value,16); document.getElementById('charconv').value=hex2char(document.getElementById('hex').value)"></td>
+
+<td><input id="charconv" 
+onchange="document.getElementById('hex').value=convertCharStr2CP( document.getElementById('charconv').value, '', false, 'hex' ); document.getElementById('dec').value=convertCharStr2CP( document.getElementById('charconv').value, '', false, 'dec' );"/></td>
+
+<td><input id="dec" onchange="document.getElementById('hex').value=parseInt(document.getElementById('dec').value).toString(16).toUpperCase(); document.getElementById('charconv').value=dec2char(document.getElementById('dec').value)"/></td>
+</tr>
+<tr> 
+<td><span class="optionTrigger" title="Click to convert the hex number to decimal." 
+onclick="document.getElementById('dec').value=parseInt(document.getElementById('hex').value,16); document.getElementById('charconv').value=hex2char(document.getElementById('hex').value)">convert</span></td>
+
+<td><span class="optionTrigger" title="Click to convert the character to hex and decimal." 
+onclick="document.getElementById('hex').value=convertCharStr2CP( document.getElementById('charconv').value, '', false, 'hex' ); document.getElementById('dec').value=convertCharStr2CP( document.getElementById('charconv').value, '', false, 'dec' );">convert</span></td>
+
+<td><span class="optionTrigger" title="Click to convert the hex number to decimal." onclick="document.getElementById('hex').value=parseInt(document.getElementById('dec').value).toString(16).toUpperCase(); document.getElementById('charconv').value=dec2char(document.getElementById('dec').value)"> convert</span></td>
+</tr>
+</tbody></table>
  </div>
+
+<div id="characterList" style="clear:both; text-align:center; margin-bottom: 2em;">
+show all the characters in this encoding: <select onChange="showEncoding(this.value)">
+			<option value="none">Select...</option>
+    		<option value="big5">big5</option>
+    		<option value="eucjp">euc-jp</option>
+    		<option value="iso2022jp">iso-2022-jp</option>
+    		<option value="shiftjis">shift_jis</option>
+    		<option value="euckr">euc-kr</option>
+    		<option value="gb18030">gb18030 (index only)</option>
+    		<option value="gbk">gbk</option>
+            <option value="koi8r">koi8-r</option>
+            <option value="koi8u">koi8-u</option>
+            <option value="windows1250">windows-1250</option>
+            <option value="windows1251">windows-1251</option>
+            <option value="windows1252">windows-1252</option>
+            <option value="windows1253">windows-1253</option>
+            <option value="windows1254">windows-1254</option>
+            <option value="windows1255">windows-1255</option>
+            <option value="windows1256">windows-1256</option>
+            <option value="windows1257">windows-1257</option>
+            <option value="windows1258">windows-1258</option>
+            <option value="macintosh">macintosh</option>
+            <option value="ibm866">ibm866</option>
+            <option value="windows874">windows-874</option>
+            <option value="xmaccyrillic">x-mac-cyrillic</option>
+            <option value="iso88592">iso-8859-2</option>
+            <option value="iso88593">iso-8859-3</option>
+            <option value="iso88594">iso-8859-4</option>
+            <option value="iso88595">iso-8859-5</option>
+            <option value="iso88596">iso-8859-6</option>
+            <option value="iso88597">iso-8859-7</option>
+            <option value="iso88598">iso-8859-8</option>
+            <option value="iso88598i">iso-8859-8-i</option>
+            <option value="iso885910">iso-8859-10</option>
+            <option value="iso885913">iso-8859-13</option>
+            <option value="iso885914">iso-8859-14</option>
+            <option value="iso885915">iso-8859-15</option>
+            <option value="iso885916">iso-8859-16</option>
+            </select>
+          	</div>
+            
+<div id="showcharacters"  style="margin-left: 7.5%; clear:both; cursor: pointer;"  onclick="toggleCustomList()"><span class="optionTrigger">show characters in encodings</span></div>
 
 <div id="customise"  style="margin-left: 7.5%; clear:both; cursor: pointer;"  onclick="toggleCustomList()"><span class="optionTrigger">change encodings shown</span></div>
 
@@ -237,7 +297,7 @@ hex <input id="hex"  onchange="document.getElementById('dec').value=parseInt(doc
 </table>
 </div>
 </div>
-
+<p>&nbsp;</p>
 <div id="showNotes"  style="margin-left: 7.5%; clear:both;"  onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 <div id="detailednotes" style="display:none">
@@ -267,7 +327,7 @@ hex <input id="hex"  onchange="document.getElementById('dec').value=parseInt(doc
 </div>
 
 <div class="smallprint"><span id="version">First published  3 Dec 2015.  This version <span id="version-info"> 
-<!-- #BeginDate format:IS1m -->2015-12-16  21:14<!-- #EndDate --> 
+<!-- #BeginDate format:IS1m -->2015-12-20  21:10<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </body>
 </html>
