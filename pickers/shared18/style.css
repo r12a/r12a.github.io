@@ -388,3 +388,64 @@ dt {
 #extrashapes {
 	margin: 0 20px;
 	}
+
+#tools {
+	float:right; 
+	vertical-align:bottom; 
+	font-size: 80%;
+	}
+#tools span {
+	cursor:pointer; 
+	display: inline-block; 
+	line-height:1;
+	text-align:center;
+	/*border: 1px solid #ddd;*/
+	padding: 1px;
+	/*background-color: #eee;*/
+	border-radius: 5px;
+	}
+#copydelete span {
+	padding-right: 0.5em; 
+	cursor:pointer;
+	text-shadow: 1px 1px 2px #555;
+	font-size: 90%;
+	}
+.optionTrigger {
+	background-color: white;
+	border-radius: 2px;
+	padding: 0 4px;
+	color: #999;
+	cursor: pointer;
+	}
+.optionTrigger:hover {
+	background-color: #FFFFC7;
+	border-radius: 2px;
+	padding: 0 4px;
+	color: #666;
+	}
+#copyTranscription {
+	position: absolute; 
+	bottom: 0; 
+	right: 80px;
+	margin-right: 20px;
+	font-size: 28px;
+	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
+	cursor:pointer;
+	color: #ccc;
+	}
+#transcription {
+	margin: 5px 140px 10px 25px;
+	font-size: 28px;
+	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
+	color: #C33;
+	text-align: left;
+	}
+
+#output::selection {
+	background-color: #F5A806;
+    color: #fff;
+	}
+#output::-moz-selection {
+	background-color: #F5A806;
+    color: #fff;
+	}

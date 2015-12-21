@@ -35,11 +35,11 @@ function toggleExtraControls () {
 	for (var i=0;i<divs.length;i++) {
 		if (divs[i].style.display == 'none') {
 			divs[i].style.display = 'block'
-			toggle.textContent = '\u00A0 << hide'
+			toggle.innerHTML = '<span class="optionTrigger">\u00A0 << hide</span>'
 			}
 		else {
 			divs[i].style.display = 'none'
-			toggle.textContent = 'more controls'
+			toggle.innerHTML = '<span class="optionTrigger">more controls</span>'
 			}	
 		}
 	}
@@ -50,11 +50,11 @@ function toggleNotes () {
 	var showNotes = document.getElementById('showNotes')
 	if (notes.style.display=='block') {
 		notes.style.display='none' 
-		showNotes.textContent='show notes'
+		showNotes.innerHTML = '<span class="optionTrigger">show notes</span>'
 		} 
 	else {
 		notes.style.display='block'
-		showNotes.textContent='hide notes'
+		showNotes.innerHTML = '<span class="optionTrigger">hide notes</span>'
 		} 
 	}
 
@@ -690,6 +690,15 @@ function moveTranscription () {
 	add(document.getElementById('transcription').textContent)
 	}
 	
+function copyTranscription () {
+	var output = document.getElementById('transcription')
+	//output.contentEditable = true
+	output.focus()
+	document.execCommand('selectAll')
+	document.execCommand('copy')
+	//output.contentEditable = false
+	}
+
 
 
 function dotrans (altlist) { 
