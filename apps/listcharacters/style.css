@@ -23,3 +23,15 @@ body > p {
 	text-align: center;
 	margin: 1em 2em;
 	}
+.select {
+	border: 0;
+	font-size: 80%;
+	color: #ccc;
+	}
+.select:hover {
+	background-color: #FFFFC7;
+	border-radius: 2px;
+	padding: 0 4px;
+	color: #666;
+	cursor:pointer;
+	}

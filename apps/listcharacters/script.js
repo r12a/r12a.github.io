@@ -82,6 +82,7 @@ function makeList (stream) {
 			}
 		else if (uniqueNeeded) out += '<td class="count"></td>'
 		out += '<td class="chars">'+scriptGroups[keys[x]].unique+'</td>'
+		out += '<td class="select" title="Copy to clipboard" onclick="copyToClipboard(this.previousSibling)"><img src="copy.png"></td>'
 		out += '</tr>\n'
 		}
 	out += '</tbody></table>'
@@ -92,3 +93,11 @@ function makeList (stream) {
 	document.getElementById('out').innerHTML = out
 	}
 
+
+function copyToClipboard (node) {
+	node.contentEditable=true
+	node.focus()
+	document.execCommand('selectAll')
+	document.execCommand('copy')
+	node.contentEditable=false
+	}
