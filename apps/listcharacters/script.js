@@ -95,9 +95,12 @@ function makeList (stream) {
 
 
 function copyToClipboard (node) {
+	var oldContent = node.textContent
+	node.textContent=node.textContent.replace(/\u200B/g,'')
 	node.contentEditable=true
 	node.focus()
 	document.execCommand('selectAll')
 	document.execCommand('copy')
 	node.contentEditable=false
+	node.textContent=oldContent
 	}
