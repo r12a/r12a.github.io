@@ -134,23 +134,28 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 </div>
 	</aside>
 
-<p id="status">Updated Sat 3 Nov 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=mongolian" title="Show all blog posts tagged with 'mongolian'">mongolian</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+<p id="status">Updated Tue 22 Dec 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=mongolian" title="Show all blog posts tagged with 'mongolian'">mongolian</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
 
 
 <section>
 	<p>There is some confusion about which shapes should be produced by fonts for Mongolian characters. Most letters have at least one isolated, initial, medial and final shape, but other shapes are produced by contextual factors, such as vowel harmony. </p>
 	<p>Unicode <strong></strong>has a <a href="http://www.unicode.org/Public/UNIDATA/StandardizedVariants.html">list of standardised variant shapes</a>, dating from 27 November 2013, but that list is not complete and contains what are currently viewed by some as errors.</p>
 	<p>The original list of standardised variants was based on <a href="http://www.babelstone.co.uk/Mongolian/MGWBM.html">蒙古文编码</a> by Professor Quejingzhabu in 2000.</p>
-<p>A <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">new proposal (L2/14-031)</a> was published on 20 January 2014, which attempts to resolve the current issues. (Note that the data in the NP columns in this document is derived from significant revisions of that new proposal (DS01), and does <em>not</em> represent the  L2/14-031 document just mentioned.)</p>
+<p>A <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">new proposal (L2/14-031)</a> was published on 20 January 2014, which attempted to resolve the current issues. (Note that the data in the NP columns in this document is derived from significant revisions of that new proposal (DS01), and does <em>not</em> represent the  L2/14-031 document just mentioned.)</p>
 <p>The other factor in this is what the actual fonts do. Sometimes they follow the Unicode standardised variants list, other times they diverge from it. Occasionally a majority of implementations appear to diverge in the same way, suggesting that the standardised list should be adapted to reality.</p>
 <p>In this document I map the changes between the various proposals, and compare to various font implementations.</p>
 <p>The  differences are being discussed by Mongolian experts on the public-i18n-mongolian list (see <a href="http://lists.w3.org/Archives/Public/public-i18n-mongolian/">the archive</a>). There is also a <a href="http://w3c.github.io/mlreq/variants/document-log.html">document log</a> for these discussions.</p>
 <h3>How to use the document</h3>
 <p>For each Mongolian script letter, this page shows graphics to indicate the shape of a character in a given context (described in the left column). The graphics are standardised, and do not represent the actual font glyph shape.</p>
 <p>The columns to the left show the shapes expected in each of the three documents mentioned above. The columns to the right indicate the shapes produced by various fonts. See below for a key to the abbreviations used.</p>
-<p>A glyph image is shown with a  <span class="conflict">brown</span> border if it is in one of the spec columns and doesn't match the NP column. It has an <span class="fconflict">orange</span> border if it is in the font columns and the glyph doesn't match that in the NP column. If, however, the glyph choice is thought to be a design decision because the letter is not actually used in a particular position, then shapes diverging from the NP column are coloured <span class="okdiff">green</span>. This indicates that there is a difference, but it is probably not an issue. </p>
-<p>To help spot divergences, the background of the left-most column is also coloured. It is <span class="conflict">brown</span> if any cells on that row have brown borders, or <span class="fconflict">orange</span> if there are cells with orange borders but no brown.</p>
-<p><strong>Where there are divergences but it is believed that agreement has been reached on a way forward, the left-hand column is coloured <span class="okdiff">green</span> and a description of the resolution is given in the notes  below the table.</strong></p>
+<p>Character images are sometimes surrounded by a coloured border with the following meanings:</p>
+<ul>
+  <li><span class="conflict">brown</span> in spec columns: the character doesn't match the shape of the latest proposal.</li>
+  <li><span class="chstandard">magenta</span> in the NP column: the final outcome is pending decisions made during the finalisation of the Chinese national standard in 2016.</li>
+  <li><span class="fconflict">orange</span> in the font columns: the shape produced for the font in question in that context doesn't match the latest proposal.</li>
+  <li><span class="okdiff">green</span> in the font columns: although the glyph shape differs from the latest proposal, the glyph choice is thought to be a design decision because the letter is not actually used in a particular position, and the difference is probably not an issue.</li>
+</ul>
+<p>To help spot divergences, the background of the left-most column is also coloured. It is <span style="background-color: #F6A355; color: white; font-weight: 500;">orange</span> if there are cells with orange borders but no brown. <strong>Where there are divergences but it is believed that agreement has been reached on a way forward, the left-hand column is coloured <span style="background-color: #6F9; color: gray; font-weight: 500;">green</span> and a description of the resolution is given in the notes  below the table.</strong></p>
 <p>The right column of the table contains a sequence of characters to allow you to check what glyphs are produced by fonts to which you have access. The vertical blue line at the bottom right of the window opens, when you click on it, to show a font control panel. When it is open, you can apply a specific font to the text in the right-hand column by selecting it from the top pull-down menu in this control panel. </p>
 <p>If the font you want to test is not available in the list selector, click on 'Add a font to these lists' (found below the two list selectors in the control panel just mentioned) and <strong>enter the name of the font</strong> you want to add in the dialog box that appears. The font name will be added to the selection  controls. Open the top list selector again, and click on the name of the font to apply it to the text in the right column. (Fonts you add to a list selector only stay on the  list for the duration of the session.)</p>
 <p>In the text column I use <span class="uname">U+200D   ZERO WIDTH JOINER</span> by default to establish the context for connecting characters. By clicking on the radio button in the font dialog box, you can <strong>change the connector</strong> to <span class="uname">U+180A MONGOLIAN NIRUGU</span>. </p>
@@ -398,10 +403,10 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">in+fvs1</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/1820i1.png" alt=""/></td>
+      <td>n/s</td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/1820i.png" alt=""/> ≫ <img src="v/1820i1.png" alt=""/></td>
-      <td><img src="v/1820i.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1820i.png" alt=""/></td>
+      <td><img src="v/1820i.png" alt=""/></td>
       <td><img src="v/1820i1.png" alt=""/></td>
       <td><img src="v/1820i1.png" alt=""/></td>
       <td><img src="v/1820i1.png" alt=""/></td>
@@ -438,16 +443,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
     <tr>
       <td class=agreed>m+fvs2</td>
-      <td><img src="v/1820i1.png" alt="" class="conflict"/></td>
-      <td><img src="v/1820i1.png" alt="" class="conflict"/></td>
-      <td>n/s</td>
+      <td><img src="v/1820i1.png" alt=""/></td>
+      <td><img src="v/1820i1.png" alt=""/></td>
+      <td><img src="v/1820i1.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/1820i1.png" alt=""/> ≫ <img src="v/1820m.png" alt=""/></td>
-      <td><img src="v/1820i1.png" alt="" class="fconflict"/></td>
-      <td><img src="v/1820i1.png" alt="" class="fconflict"/></td>
-      <td><img src="v/1820m.png" alt=""/></td>
-      <td>&nbsp;</td>
-      <td><img src="v/1820m.png" alt=""/></td>
+      <td><img src="v/1820i1.png" alt=""/></td>
+      <td><img src="v/1820i1.png" alt=""/></td>
+      <td><img src="v/1820i1.png" alt=""/></td>
+      <td><img src="v/1820m.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1820i1.png" alt=""/></td>
+      <td><img src="v/1820m.png" alt="" class="fconflict"/></td>
       <td lang="mn">&#x200D;&#x1820;&#x180C;&#x200D;</td>
     </tr>
     <tr>
@@ -645,20 +650,6 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn"><div>&#x1822;&nbsp;</div></td>
       </tr>
       <tr>
-        <td class="agreed">is+fvs1</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/1822s1.png" alt=""/></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1822s.png" alt=""/> ≫ <img src="v/1822s1.png" alt=""/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1822s.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1822s.png" alt="" class="fconflict"/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn"><div>&#x1822;&nbsp;</div></td>
-      </tr>
-      <tr>
         <td>initial</td>
         <td><img src="v/1822i.png" alt=""/></td>
         <td>&nbsp;</td>
@@ -704,13 +695,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="agreed">m+fvs2</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1822m.png" alt=""/></td>
+        <td><img src="v/1822m3.png" alt="" class="chstandard"/></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1822m.png" alt=""/></td>
-        <td><img src="v/1822m.png" alt=""/></td>
-        <td><img src="v/1822m.png" alt=""/></td>
-        <td><img src="v/1822m3.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1822m3.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1822m3.png" alt=""/></td>
+        <td><img src="v/1822m.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1822m.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1822m3.png" alt=""/></td>
+        <td><img src="v/1822m3.png" alt=""/></td>
         <td><img src="v/1822m.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1822;&#x180C;&#x200D;</td>
       </tr>
@@ -718,14 +709,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="agreed">m+fvs3</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1822m3.png" alt=""/></td>
+        <td><img src="v/1822m.png" alt="" class="chstandard"/></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1822m3.png" alt=""/></td>
-        <td><img src="v/1822m.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1822m.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1822m.png" alt="" class="fconflict"/></td>
-        <td>&nbsp;</td>
-        <td>?</td>
+        <td><img src="v/1822m.png" alt=""/></td>
+        <td><img src="v/1822m.png" alt=""/></td>
+        <td><img src="v/1822m.png" alt=""/></td>
+        <td><img src="v/1822m.png" alt=""/></td>
+        <td><img src="v/1822m.png" alt=""/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td lang="mn">&#x200D;&#x1822;&#x180D;&#x200D;</td>
       </tr>
       <tr>
@@ -746,7 +737,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="agreed">f+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1822x.png" alt=""/></td>
+        <td><img src="v/1822x.png" alt="" class="chstandard"/></td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/1822f.png" alt=""/> ≫ <img src="v/1822x.png" alt=""/></td>
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
@@ -923,7 +914,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       </tr>
       <tr>
         <td class="agreed">is+fvs1</td>
-        <td>&nbsp;</td>
+        <td><img src="v/1823i.png" alt=""/></td>
         <td>&nbsp;</td>
         <td><img src="v/1823i.png" alt=""/></td>
         <td class="gap">&nbsp;</td>
@@ -931,23 +922,9 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1823s.png" alt="" class="fconflict"/></td>
         <td><img src="v/1823s.png" alt="" class="fconflict"/></td>
         <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
-        <td><img src="v/none.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1823i.png" alt=""/></td>
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td lang="mn">&#x1824;&#x180B;</td>
-      </tr>
-      <tr>
-        <td class="agreed">is+fvs2</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/1823f.png" alt=""/></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1823s.png" alt=""/> ≫ <img src="v/1823f.png" alt=""/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1823s.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1823s.png" alt="" class="fconflict"/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn">&#x1824;&#x180C;</td>
       </tr>
       <tr>
         <td>initial</td>
@@ -1009,7 +986,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="agreed">f+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1823f1.png" alt=""/></td>
+        <td><img src="v/1823f1.png" alt="" class="chstandard"/></td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/1823f1.png" alt=""/></td>
         <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
@@ -1018,6 +995,20 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1823f1.png" alt=""/></td>
         <td><img src="v/1823f1.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1824;&#x180B;</td>
+      </tr>
+      <tr>
+        <td class="agreed">f+fvs2</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="v/1847f.png" alt="" class="chstandard"/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="v/1823f.png" alt=""/> ≫ <img src="v/1847f.png" alt=""/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td lang="mn">&#x200D;&#x1824;&#x180C;</td>
       </tr>
       </tbody>
   </table>
@@ -1196,7 +1187,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1825s.png" alt=""/></td>
         <td><img src="v/1825s.png" alt=""/></td>
         <td><img src="v/1825s.png" alt=""/></td>
-        <td><img src="v/1825i.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1825s.png" alt=""/></td>
         <td><img src="v/1825s.png" alt=""/></td>
         <td lang="mn"><div>&#x1826;&nbsp;</div></td>
       </tr>
@@ -1224,23 +1215,9 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1825s.png" alt="" class="fconflict"/></td>
         <td><img src="v/1825s.png" alt="" class="fconflict"/></td>
         <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
-        <td><img src="v/none.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1825s.png" alt="" class="fconflict"/></td>
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td lang="mn">&#x1826;&#x180C;</td>
-      </tr>
-      <tr>
-        <td class="agreed">is+fvs3</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/1823f.png" alt=""/></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1825s.png" alt=""/> ≫ <img src="v/1823f.png" alt=""/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1825s.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1825s.png" alt="" class="fconflict"/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn">&#x1826;&#x180D;</td>
       </tr>
       <tr>
         <td>initial</td>
@@ -1302,13 +1279,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="agreed">m+fvs3</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1823m.png" alt=""/></td>
+        <td><img src="v/1823m.png" alt="" class="chstandard"/></td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/1823m.png" alt=""/></td>
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td><img src="v/1823m.png" alt=""/></td>
         <td><img src="v/1823m.png" alt=""/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1823m.png" alt=""/></td>
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td lang="mn">&#x200D;&#x1826;&#x180D;&#x200D;</td>
       </tr>
@@ -1339,6 +1316,20 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1825f1.png" alt=""/></td>
         <td><img src="v/1825f1.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1826;&#x180B;</td>
+      </tr>
+      <tr>
+        <td class="fconflict">f+fvs2</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="v/1847f.png" alt="" class="chstandard"/></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="v/1823f.png" alt=""/> ≫ <img src="v/1847f.png" alt=""/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1826f2mwc.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1823f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td lang="mn">&#x200D;&#x1826;&#x180C;</td>
       </tr>
     </tbody>
   </table>
@@ -1542,16 +1533,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
     <tr>
       <td class="agreed">m+fvs2</td>
-      <td><img src="v/1828f1.png" alt="" class="conflict"/></td>
-      <td><img src="v/1828f1.png" alt="" class="conflict"/></td>
-      <td><img src="v/1828m.png" alt=""/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/1828f1.png" alt=""/> ≫ <img src="v/1828m.png" alt=""/></td>
-      <td><img src="v/1828f1.png" alt="" class="fconflict"/></td>
-      <td><img src="v/1828f1.png" alt="" class="fconflict"/></td>
-      <td><img src="v/1828m.png" alt=""/></td>
-      <td><img src="v/1828f1.png" alt="" class="fconflict"/></td>
-      <td><img src="v/1828f1.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828m.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
       <td lang="mn">&#x200D;&#x1828;&#x180C;&#x200D;</td>
     </tr>
     <tr>
@@ -1586,14 +1577,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">f+fvs1</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/1828f1.png" alt=""/></td>
+      <td>n/s</td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/1828f.png" alt=""/> ≫ <img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828f.png" alt=""/></td>
       <td><img src="v/1828f1.png" alt=""/></td>
-      <td><img src="v/1828f.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1828f.png" alt=""/></td>
       <td><img src="v/1828f1.png" alt=""/></td>
-      <td><img src="v/none.png" alt="" class="fconflict"/></td>
-      <td><img src="v/1828f.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1828f1.png" alt=""/></td>
+      <td><img src="v/1828f.png" alt=""/></td>
       <td lang="mn">&#x200D;&#x1828;&#x180B;</td>
     </tr>
   </tbody>
@@ -1654,7 +1645,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td><img src="v/1829i.png" alt=""/></td>
       <td><img src="v/1829i.png" alt=""/></td>
       <td><img src="v/1829i.png" alt=""/></td>
-      <td>&nbsp;</td>
+      <td><img src="v/1829i.png" alt=""/></td>
       <td><img src="v/1829i.png" alt=""/></td>
       <td lang="mn">&#x1829;&#x200D;</td>
     </tr>
@@ -1920,7 +1911,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td><img src="v/182Ci1.png" alt="" class="fconflict"/></td>
-      <td><img src="v/none.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Ci.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td lang="mn">&#x182C;&#x180B;</td>
     </tr>
@@ -1934,7 +1925,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td><img src="v/182Cs2.png" alt=""/></td>
       <td><img src="v/182Cs2.png" alt=""/></td>
       <td><img src="v/182Cs2.png" alt=""/></td>
-      <td><img src="v/none.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Ci.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs2.png" alt=""/></td>
       <td lang="mn">&#x182C;&#x180C;</td>
     </tr>
@@ -1970,13 +1961,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">i+fvs2</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/182Cs1.png" alt=""/></td>
+      <td><img src="v/182Cs1.png" alt="" class="chstandard"/></td>
       <td class="gap">&nbsp;</td>
       <td><img src="v/182Ci.png" alt=""/> ≫ <img src="v/182Cs1.png" alt=""/></td>
       <td><img src="v/question.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs2.png" alt=""  class="fconflict"/></td>
       <td><img src="v/182Cs2.png" alt=""  class="fconflict"/></td>
-      <td><img src="v/question.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Ci.png" alt="" class="fconflict"/></td>
       <td><img src="v/question.png" alt="" class="fconflict"/></td>
       <td lang="mn">&#x182C;&#x180C;</td>
     </tr>
@@ -2012,9 +2003,9 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">m+fvs2</td>
       <td><img src="v/182Cf1.png" alt="" class="conflict"/></td>
       <td><img src="v/182Cf1.png" alt="" class="conflict"/></td>
-      <td>n/s</td>
+      <td><img src="v/182Cf.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/182Cf1.png" alt=""/> ≫ <img src="v/182Cm.png" alt=""/></td>
+      <td><img src="v/182Cf1.png" alt=""/> ≫ <img src="v/182Cf.png" alt=""/></td>
       <td><img src="v/182Cf1.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cm1.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs2.png" alt="" class="fconflict"/></td>
@@ -2026,13 +2017,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">m+fvs3</td>
       <td><img src="v/182Cf.png" alt="" class="conflict"/></td>
       <td><img src="v/182Cf.png" alt="" class="conflict"/></td>
-      <td>n/s</td>
+      <td><img src="v/182Cf1.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/182Cf.png" alt=""/> ≫ <img src="v/182Cm.png" alt=""/></td>
+      <td><img src="v/182Cf.png" alt=""/> ≫ <img src="v/182Cf1.png" alt=""/></td>
       <td><img src="v/182Cf.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cf1.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs1.png" alt="" class="fconflict"/></td>
-      <td>&nbsp;</td>
+      <td><img src="v/182Cm.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cf1.png" alt="" class="fconflict"/></td>
       <td lang="mn">&#x200D;&#x182C;&#x180D;&#x200D;</td>
     </tr>
@@ -2040,7 +2031,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">final</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/182Cf.png" alt=""/></td>
+      <td>n/s</td>
       <td class="gap">&nbsp;</td>
       <td><img src="v/182Cf.png" alt=""/></td>
       <td><img src="v/182Cf.png" alt=""/></td>
@@ -2054,7 +2045,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">f+fvs1</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/182Cf1.png" alt=""/></td>
+      <td>n/s</td>
       <td class="gap">&nbsp;</td>
       <td><img src="v/182Cf1.png" alt=""/></td>
       <td><img src="v/182Cf1.png" alt=""/></td>
@@ -2134,7 +2125,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
     <tr>
       <td class="agreed">is+fvs1</td>
-      <td>&nbsp;</td>
+      <td><img src="v/182Cs1.png" alt="" class="conflict"/></td>
       <td>&nbsp;</td>
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
@@ -2142,13 +2133,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td><img src="v/182Ci.png" alt="" class="fconflict"/></td>
-      <td><img src="v/none.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Di.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td lang="mn">&#x182D;&#x180B;</td>
     </tr>
     <tr>
       <td class="agreed">is+fvs2</td>
-      <td><img src="v/182Cs1.png" alt="" class="conflict"/></td>
+      <td><img src="v/182Cs2.png" alt=""/></td>
       <td>&nbsp;</td>
       <td><img src="v/182Cs2.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
@@ -2156,7 +2147,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td><img src="v/182Cs2.png" alt=""/></td>
       <td><img src="v/182Cs1.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs2.png" alt=""/></td>
-      <td><img src="v/none.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Di.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs2.png" alt=""/></td>
       <td lang="mn">&#x182D;&#x180C;</td>
     </tr>
@@ -2192,7 +2183,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">i+fvs2</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/182Cs1.png" alt=""/></td>
+      <td><img src="v/182Cs1.png" alt="" class="chstandard"/></td>
       <td class="gap">&nbsp;</td>
       <td><img src="v/182Cs1.png" alt=""/></td>
       <td><img src="v/182Di.png" alt="" class="fconflict"/></td>
@@ -2232,16 +2223,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
     <tr>
       <td class="agreed">m+fvs2</td>
-      <td><img src="v/182Cf1.png" alt="" class="conflict"/></td>
-      <td><img src="v/182Cf1.png" alt="" class="conflict"/></td>
-      <td><img src="v/182Cm.png" alt=""/></td>
+      <td><img src="v/182Cf1.png" alt=""/></td>
+      <td><img src="v/182Cf1.png" alt=""/></td>
+      <td><img src="v/182Cf1.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/182Cf1.png" alt=""/> ≫ <img src="v/182Cm.png" alt=""/></td>
-      <td><img src="v/182Cf1.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Cf1.png" alt=""/></td>
+      <td><img src="v/182Cf1.png" alt=""/></td>
       <td><img src="v/182Cs1.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs2.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Cs1.png" alt="" class="fconflict"/></td>
-      <td><img src="v/182Cf1.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Cf1.png" alt=""/></td>
       <td lang="mn">&#x200D;&#x182D;&#x180C;&#x200D;</td>
     </tr>
     <tr>
@@ -2254,7 +2245,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td><img src="v/182Ds1.png" alt=""/></td>
       <td><img src="v/182Cf1.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Ds1.png" alt=""/></td>
-      <td><img src="v/none.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Cm1.png" alt="" class="fconflict"/></td>
       <td><img src="v/182Ds1.png" alt=""/></td>
       <td lang="mn">&#x200D;&#x182D;&#x180D;&#x200D;</td>
     </tr>
@@ -2304,14 +2295,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class="agreed">f+fvs3</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/182Cf1.png" alt=""/></td>
+      <td>n/s</td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/182Cf1.png" alt=""/></td>
-      <td><img src="v/182Cf.png" alt="" class="fconflict"/></td>
-      <td><img src="v/182Cf.png" alt="" class="fconflict"/></td>
-      <td><img src="v/182Cf.png" alt="" class="fconflict"/></td>
-      <td><img src="v/none.png" alt="" class="fconflict"/></td>
-      <td><img src="v/182Cf.png" alt="" class="fconflict"/></td>
+      <td><img src="v/182Cf.png" alt=""/></td>
+      <td><img src="v/182Cf.png" alt=""/></td>
+      <td><img src="v/182Cf.png" alt=""/></td>
+      <td><img src="v/182Cf.png" alt=""/></td>
+      <td><img src="v/182Cf.png" alt=""/></td>
+      <td><img src="v/182Cf.png" alt=""/></td>
       <td lang="mn">&#x200D;&#x182D;&#x180D;</td>
     </tr>
   </tbody>
@@ -3105,16 +3096,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       </tr>
       <tr>
         <td class="agreed">m+fvs1</td>
-        <td><img src="v/1835m1.png" alt="" class="conflict"/></td>
-        <td><img src="v/1835m1.png" alt="" class="conflict"/></td>
-        <td>n/s</td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1835m1.png" alt=""/> ≫ <img src="v/1835m.png" alt=""/></td>
-        <td><img src="v/1835m1.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1835m1.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1835m.png" alt=""/></td>
-        <td><img src="v/none.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1835m1.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1835m.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1835;&#x180B;&#x200D;</td>
       </tr>
       <tr>
@@ -3135,14 +3126,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="agreed">f+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1835m1.png" alt=""/></td>
+        <td>n/s</td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1835f.png" alt=""/> ≫ <img src="v/1835m1.png" alt=""/></td>
-        <td><img src="v/1835f.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1835f.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1835f.png" alt=""/> ≫ <img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835f.png" alt=""/></td>
+        <td><img src="v/1835f.png" alt=""/></td>
+        <td><img src="v/1835f.png" alt=""/></td>
         <td><img src="v/1835m1.png" alt=""/></td>
-        <td><img src="v/1835f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835f.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1835;&#x180B;</td>
       </tr>
       </tbody>
@@ -3255,23 +3246,23 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       </tr>
       <tr>
         <td class="agreed">m+fvs2</td>
-        <td><img src="v/1835m1.png" alt="" class="conflict"/></td>
-        <td><img src="v/1835m1.png" alt="" class="conflict"/></td>
-        <td>n/s</td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1835m1.png" alt=""/> ≫ <img src="v/1836m.png" alt="" class="okdiff"/></td>
-        <td><img src="v/1835m1.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1835m1.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
         <td><img src="v/1836i.png" alt="" class="fconflict"/></td>
-        <td>&nbsp;</td>
-        <td><img src="v/1835m1.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
+        <td><img src="v/1835m1.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1836;&#x180C;&#x200D;</td>
       </tr>
       <tr>
         <td>final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1835m1.png" alt=""/></td>
+        <td>n/s</td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/1835m1.png" alt=""/></td>
         <td><img src="v/1835m1.png" alt=""/></td>
@@ -3457,7 +3448,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1838i.png" alt="" class="fconflict"/></td>
         <td><img src="v/1838i.png" alt="" class="fconflict"/></td>
         <td><img src="v/1838i.png" alt=""/> ≫ <img src="v/1838m.png" alt=""/></td>
-        <td>&nbsp;</td>
+        <td><img src="v/1838i.png" alt=""/></td>
         <td><img src="v/1838m.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1838;&#x180B;&#x200D;</td>
       </tr>
@@ -4169,14 +4160,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <td class=okdiff>final</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><img src="v/1840f.png" alt=""/></td>
+      <td><img src="v/1840m.png" alt=""/></td>
       <td class="gap">&nbsp;</td>
-      <td><img src="v/1840m.png" alt=""/> ≫ <img src="v/1840f.png" alt=""/></td>
-      <td><img src="v/1840i.png" alt="" class="okdiff"/></td>
-      <td><img src="v/1840m.png" alt="" class="okdiff"/></td>
-      <td><img src="v/1840f.png" alt=""/></td>
-      <td>&nbsp;</td>
-      <td><img src="v/1840m.png" alt="" class="okdiff"/></td>
+      <td><img src="v/1840m.png" alt=""/></td>
+      <td><img src="v/1840m.png" alt=""/></td>
+      <td><img src="v/1840m.png" alt=""/></td>
+      <td><img src="v/1840f.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1840i.png" alt="" class="fconflict"/></td>
+      <td><img src="v/1840m.png" alt=""/></td>
       <td lang="mn">&#x200D;&#x1840;</td>
       </tr>
     </tbody>
@@ -4228,7 +4219,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1841.png" alt=""/></td>
         <td><img src="v/1841.png" alt=""/></td>
         <td><img src="v/1841.png" alt=""/></td>
-        <td>&nbsp;</td>
+        <td><img src="v/1841.png" alt=""/></td>
         <td><img src="v/1841.png" alt=""/></td>
         <td lang="mn">&#x1841;&#x200D;</td>
       </tr>
@@ -4250,14 +4241,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class=okdiff>final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1841f.png" alt=""/></td>
+        <td><img src="v/1841.png" alt=""/></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1841.png" alt=""/> ≫ <img src="v/1841f.png" alt=""/></td>
-        <td><img src="v/1841.png" alt="" class="okdiff"/></td>
-        <td><img src="v/1841.png" alt="" class="okdiff"/></td>
-        <td><img src="v/1841f.png" alt=""/></td>
-        <td>&nbsp;</td>
-        <td><img src="v/1841.png" alt="" class="okdiff"/></td>
+        <td><img src="v/1841.png" alt=""/></td>
+        <td><img src="v/1841.png" alt=""/></td>
+        <td><img src="v/1841.png" alt=""/></td>
+        <td><img src="v/1841f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1841.png" alt=""/></td>
+        <td><img src="v/1841.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1841;</td>
       </tr>
     </tbody>
@@ -4316,7 +4307,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1842.png" alt=""/></td>
         <td><img src="v/1842.png" alt=""/></td>
         <td><img src="v/1842.png" alt=""/></td>
-        <td>&nbsp;</td>
+        <td><img src="v/1842.png" alt=""/></td>
         <td><img src="v/1842.png" alt=""/></td>
         <td lang="mn">&#x1842;&#x200D;</td>
       </tr>
@@ -4338,14 +4329,14 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class=okdiff>final</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1842f.png" alt=""/></td>
+        <td><img src="v/1842.png" alt=""/></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1842.png" alt=""/> ≫ <img src="v/1842f.png" alt=""/></td>
-        <td><img src="v/1842.png" alt="" class="okdiff"/></td>
-        <td><img src="v/1842.png" alt="" class="okdiff"/></td>
-        <td><img src="v/1842f.png" alt=""/></td>
-        <td>&nbsp;</td>
-        <td><img src="v/1842.png" alt="" class="okdiff"/></td>
+        <td><img src="v/1842.png" alt=""/></td>
+        <td><img src="v/1842.png" alt=""/></td>
+        <td><img src="v/1842.png" alt=""/></td>
+        <td><img src="v/1842f.png" alt="" class="fconflict"/></td>
+        <td><img src="v/1842.png" alt=""/></td>
+        <td><img src="v/1842.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1842;</td>
       </tr>
     </tbody>
@@ -4440,7 +4431,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1843f.png" alt=""/></td>
         <td><img src="v/1843f.png" alt=""/></td>
         <td><img src="v/1843m.png" alt="" class="fconflict"/></td>
-        <td><img src="v/none.png" alt="" class="fconflict"/></td>
+        <td>&nbsp;</td>
         <td><img src="v/1843f.png" alt=""/></td>
         <td lang="mn">&#x200D;&#x1843;</td>
       </tr>
@@ -4448,13 +4439,13 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="agreed">f+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/1843m.png" alt=""/></td>
+        <td><img src="v/1843m.png" alt="" class="chstandard"/></td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/1843f.png" alt=""/> ≫ <img src="v/1843m.png" alt=""/></td>
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td><img src="v/1843f.png" alt="" class="fconflict"/></td>
         <td><img src="v/1843m.png" alt=""/></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td>&nbsp;</td>
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td lang="mn">&#x200D;&#x1843;</td>
       </tr>
@@ -5148,16 +5139,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
           <tr>
             <td class="agreed">isolate</td>
-            <td><img src="v/184Af.png" alt=""></td>
+            <td><img src="v/184Af.png" alt="" class="conflict"></td>
             <td>&nbsp;</td>
-            <td><img src="v/184Af.png" alt=""></td>
+            <td><img src="v/184Am.png" alt=""></td>
             <td class="gap">&nbsp;</td>
-            <td><img src="v/184Am.png" alt=""> ≫ <img src="v/184Af.png" alt=""></td>
-            <td><img src="v/184Af.png" alt=""></td>
-            <td><img src="v/184Af.png" alt=""></td>
-            <td><img src="v/184Af.png" alt=""></td>
-            <td><img src="v/184Af.png" alt=""></td>
-            <td><img src="v/184Am.png" alt="" class="fconflict"></td>
+            <td><img src="v/184Am.png" alt=""></td>
+            <td><img src="v/184Af.png" alt="" class="fconflict"></td>
+            <td><img src="v/184Af.png" alt="" class="fconflict"></td>
+            <td><img src="v/184Af.png" alt="" class="fconflict"></td>
+            <td><img src="v/184Af.png" alt="" class="fconflict"></td>
+            <td><img src="v/184Am.png" alt=""></td>
             <td lang="mn">&#x184A;</td>
           </tr>
           <tr>
@@ -5240,16 +5231,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
           <tr>
         <td class="agreed">isolate</td>
-        <td><img src="v/184Bf.png" alt=""></td>
+        <td><img src="v/184Bf.png" alt="" class="conflict"></td>
         <td>&nbsp;</td>
-        <td><img src="v/184Bf.png" alt=""></td>
+        <td><img src="v/184Bm.png" alt=""></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/184Bm.png" alt=""> ≫ <img src="v/184Bf.png" alt=""></td>
-        <td><img src="v/184Bf.png" alt=""></td>
-        <td><img src="v/184Bf.png" alt=""></td>
-        <td><img src="v/184Bf.png" alt=""></td>
-        <td><img src="v/184Bf.png" alt=""></td>
-        <td><img src="v/184Bm.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Bm.png" alt=""></td>
+        <td><img src="v/184Bf.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Bf.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Bf.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Bf.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Bm.png" alt=""></td>
         <td lang="mn">&#x184B;</td>
       </tr>
           <tr>
@@ -5436,7 +5427,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
             <td><img src="v/question.png" alt="" class="fconflict"/></td>
             <td><img src="v/184Di.png" alt="" class="fconflict"></td>
             <td><img src="v/184Di.png" alt="" class="fconflict"></td>
-            <td><img src="v/question.png" alt="" class="fconflict"/></td>
+            <td>&nbsp;</td>
             <td><img src="v/question.png" alt="" class="fconflict"/></td>
             <td lang="mn">&#x184D;&#x180B;</td>
           </tr>
@@ -5671,16 +5662,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
           <tr>
         <td class="fconflict">isolate</td>
-        <td><img src="v/184Ff.png" alt=""></td>
+        <td><img src="v/184Ff.png" alt="" class="conflict"></td>
         <td>&nbsp;</td>
-        <td><img src="v/184Ff.png" alt=""></td>
+        <td><img src="v/184Fi.png" alt=""></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/184Fi.png" alt=""> ≫ <img src="v/184Ff.png" alt=""></td>
-        <td><img src="v/184Ff.png" alt=""></td>
-        <td><img src="v/184Ff.png" alt=""></td>
-        <td><img src="v/184Fi.png" alt="" class="fconflict"></td>
-        <td><img src="v/184Ff.png" alt=""></td>
-        <td><img src="v/184Fi.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Fi.png" alt=""></td>
+        <td><img src="v/184Ff.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Ff.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Fi.png" alt=""></td>
+        <td><img src="v/184Ff.png" alt="" class="fconflict"></td>
+        <td><img src="v/184Fi.png" alt=""></td>
         <td lang="mn">&#x184F;</td>
       </tr>
           <tr>
@@ -5707,7 +5698,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/184Fm.png" alt=""></td>
         <td><img src="v/184Fm.png" alt=""></td>
         <td><img src="v/184Fm.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td><img src="v/184Fm.png" alt=""></td>
         <td lang="mn">&#x200D;&#x184F;&#x200D;</td>
       </tr>
@@ -5721,7 +5712,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/184Ff.png" alt=""></td>
         <td><img src="v/184Ff.png" alt=""></td>
         <td><img src="v/184Ffx.png" alt="" class="fconflict"></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td><img src="v/184Ff.png" alt=""></td>
         <td lang="mn">&#x200D;&#x184F;</td>
       </tr>
@@ -6509,16 +6500,16 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
           <tr>
         <td class="fconflict">isolate</td>
-        <td><img src="v/1859f.png" alt=""></td>
+        <td><img src="v/1859f.png" alt="" class="conflict"></td>
         <td>&nbsp;</td>
-        <td><img src="v/1859f.png" alt=""></td>
+        <td><img src="v/1859i.png" alt=""></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1859i.png" alt=""> ≫ <img src="v/1859f.png" alt=""></td>
-        <td><img src="v/1859f.png" alt=""></td>
-        <td><img src="v/1859f.png" alt=""></td>
-        <td><img src="v/1859i.png" alt="" class="fconflict"></td>
-        <td><img src="v/1859f.png" alt=""></td>
-        <td><img src="v/1859f.png" alt=""></td>
+        <td><img src="v/1859i.png" alt=""></td>
+        <td><img src="v/1859f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1859f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1859i.png" alt=""></td>
+        <td><img src="v/1859f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1859f.png" alt="" class="fconflict"></td>
         <td lang="mn">&#x1859;</td>
       </tr>
           <tr>
@@ -6545,7 +6536,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1859m.png" alt=""></td>
         <td><img src="v/1859m.png" alt=""></td>
         <td><img src="v/1859m.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td><img src="v/1859m.png" alt=""></td>
         <td lang="mn">&#x200D;&#x1859;&#x200D;</td>
       </tr>
@@ -6559,7 +6550,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1859f.png" alt=""></td>
         <td><img src="v/1859f.png" alt=""></td>
         <td><img src="v/1859f.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td><img src="v/1859f.png" alt=""></td>
         <td lang="mn">&#x200D;&#x1859;</td>
       </tr>
@@ -6862,20 +6853,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/185Ds.png" alt=""></td>
         <td><img src="v/185Df.png" alt="" class="fconflict"></td>
         <td lang="mn">&#x185D;</td>
-        </tr>
-      <tr>
-        <td class="agreed">is+fvs1</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/185Df.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td> <img src="v/185Ds.png" alt="">≫ <img src="v/185Df.png" alt=""></td>
-        <td><img src="v/185Ds.png" alt="" class="fconflict"></td>
-        <td><img src="v/185Ds.png" alt="" class="fconflict"></td>
-        <td><img src="v/185Ds.png" alt="" class="fconflict"></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn">&#x185D;&#x180B;</td>
-        </tr>
+      </tr>
       <tr>
         <td>initial</td>
         <td><img src="v/185Di.png" alt=""></td>
@@ -6886,9 +6864,9 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/185Di.png" alt=""></td>
         <td><img src="v/185Di.png" alt=""></td>
         <td><img src="v/185Di.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td lang="mn">&#x185D;&#x200D;</td>
-        </tr>
+      </tr>
       <tr>
         <td>medial</td>
         <td><img src="v/185Dm.png" alt=""></td>
@@ -6899,7 +6877,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/185Dm.png" alt=""></td>
         <td><img src="v/185Dm.png" alt=""></td>
         <td><img src="v/185Dm.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td lang="mn">&#x200D;&#x185D;&#x200D;</td>
         </tr>
       <tr>
@@ -6912,7 +6890,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/185Dm1.png" alt=""></td>
         <td><img src="v/185Dm1.png" alt=""></td>
         <td><img src="v/185Dm1.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td lang="mn">&#x200D;&#x185D;&#x180B;&#x200D;</td>
         </tr>
       <tr>
@@ -6925,7 +6903,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/185Df.png" alt=""></td>
         <td><img src="v/185Df.png" alt=""></td>
         <td><img src="v/185Df.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td lang="mn">&#x200D;&#x185D;</td>
         </tr>
       <tr>
@@ -6938,7 +6916,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/185Df1.png" alt=""></td>
         <td><img src="v/185Df1.png" alt=""></td>
         <td><img src="v/185Df1.png" alt=""></td>
-        <td></td>
+        <td>&nbsp;</td>
         <td lang="mn">&#x200D;&#x185D;&#x180B;</td>
         </tr>
       </tbody>
@@ -6973,44 +6951,31 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <th>Text</th>
     </tr>
           <tr>
-        <td class="agreed">isolate</td>
-        <td><img src="v/185Em1.png" alt="" class="conflict"></td>
-        <td>&nbsp;</td>
-        <td><img src="v/185Es.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/185Es.png" alt=""></td>
-        <td><img src="v/185Es.png" alt=""></td>
-        <td><img src="v/185Es.png" alt=""></td>
-        <td><img src="v/185Es.png" alt=""></td>
-        <td><img src="v/185Em1.png" alt="" class="fconflict"></td>
-        <td lang="mn">&#x185E;</td>
-      </tr>
+            <td class="agreed">isolate</td>
+            <td><img src="v/185Em1.png" alt="" class="conflict"></td>
+            <td>&nbsp;</td>
+            <td><img src="v/185Es.png" alt=""></td>
+            <td class="gap">&nbsp;</td>
+            <td><img src="v/185Es.png" alt=""></td>
+            <td><img src="v/185Es.png" alt=""></td>
+            <td><img src="v/185Es.png" alt=""></td>
+            <td><img src="v/185Es.png" alt=""></td>
+            <td><img src="v/185Em1.png" alt="" class="fconflict"></td>
+            <td lang="mn">&#x185E;</td>
+          </tr>
           <tr>
-        <td class="agreed">is+fvs1</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/185Em1.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/185Es.png" alt=""> ≫ <img src="v/185Em1.png" alt=""></td>
-        <td><img src="v/185Es.png" alt="" class="fconflict"></td>
-        <td><img src="v/185Es.png" alt="" class="fconflict"></td>
-        <td><img src="v/185Es.png" alt="" class="fconflict"></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn">&#x185E;&#x180B;</td>
-      </tr>
-          <tr>
-        <td>initial</td>
-        <td><img src="v/185Ei.png" alt=""></td>
-        <td>&nbsp;</td>
-        <td><img src="v/185Ei.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/185Ei.png" alt=""></td>
-        <td><img src="v/185Ei.png" alt=""></td>
-        <td><img src="v/185Ei.png" alt=""></td>
-        <td><img src="v/185Ei.png" alt=""></td>
-        <td></td>
-        <td lang="mn">&#x185E;&#x200D;</td>
-      </tr>
+            <td>initial</td>
+            <td><img src="v/185Ei.png" alt=""></td>
+            <td>&nbsp;</td>
+            <td><img src="v/185Ei.png" alt=""></td>
+            <td class="gap">&nbsp;</td>
+            <td><img src="v/185Ei.png" alt=""></td>
+            <td><img src="v/185Ei.png" alt=""></td>
+            <td><img src="v/185Ei.png" alt=""></td>
+            <td><img src="v/185Ei.png" alt=""></td>
+            <td></td>
+            <td lang="mn">&#x185E;&#x200D;</td>
+          </tr>
       <tr>
         <td>medial</td>
         <td><img src="v/185Em.png" alt=""></td>
@@ -7314,44 +7279,31 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       <th>Text</th>
     </tr>
           <tr>
-        <td class="agreed">isolate</td>
-        <td><img src="v/1861m.png" alt="" class="conflict"></td>
-        <td>&nbsp;</td>
-        <td><img src="v/1861s.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1861s.png" alt=""></td>
-        <td><img src="v/1861s.png" alt=""></td>
-        <td><img src="v/1861s.png" alt=""></td>
-        <td><img src="v/1861s.png" alt=""></td>
-        <td><img src="v/1861m.png" alt="" class="fconflict"></td>
-        <td lang="mn">&#x1861;</td>
-      </tr>
+            <td class="agreed">isolate</td>
+            <td><img src="v/1861m.png" alt="" class="conflict"></td>
+            <td>&nbsp;</td>
+            <td><img src="v/1861s.png" alt=""></td>
+            <td class="gap">&nbsp;</td>
+            <td><img src="v/1861s.png" alt=""></td>
+            <td><img src="v/1861s.png" alt=""></td>
+            <td><img src="v/1861s.png" alt=""></td>
+            <td><img src="v/1861s.png" alt=""></td>
+            <td><img src="v/1861m.png" alt="" class="fconflict"></td>
+            <td lang="mn">&#x1861;</td>
+          </tr>
           <tr>
-        <td class="agreed">is+fvs1</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/1861m.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1861s.png" alt=""> ≫ <img src="v/1861m.png" alt=""></td>
-        <td><img src="v/1861s.png" alt="" class="fconflict"></td>
-        <td><img src="v/1861s.png" alt="" class="fconflict"></td>
-        <td><img src="v/1861s.png" alt="" class="fconflict"></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn">&#x1861;&#x180B;</td>
-      </tr>
-          <tr>
-        <td>initial</td>
-        <td><img src="v/1861i.png" alt=""></td>
-        <td>&nbsp;</td>
-        <td><img src="v/1861i.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1861i.png" alt=""></td>
-        <td><img src="v/1861i.png" alt=""></td>
-        <td><img src="v/1861i.png" alt=""></td>
-        <td><img src="v/1861i.png" alt=""></td>
-        <td></td>
-        <td lang="mn">&#x1861;&#x200D;</td>
-      </tr>
+            <td>initial</td>
+            <td><img src="v/1861i.png" alt=""></td>
+            <td>&nbsp;</td>
+            <td><img src="v/1861i.png" alt=""></td>
+            <td class="gap">&nbsp;</td>
+            <td><img src="v/1861i.png" alt=""></td>
+            <td><img src="v/1861i.png" alt=""></td>
+            <td><img src="v/1861i.png" alt=""></td>
+            <td><img src="v/1861i.png" alt=""></td>
+            <td></td>
+            <td lang="mn">&#x1861;&#x200D;</td>
+          </tr>
       <tr>
         <td>medial</td>
         <td><img src="v/1861m.png" alt=""></td>
@@ -7409,15 +7361,15 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
           <tr>
         <td>isolate</td>
-        <td><img src="v/1862f.png" alt=""></td>
+        <td><img src="v/1862f.png" alt="" class="conflict"></td>
         <td>&nbsp;</td>
-        <td><img src="v/1862f.png" alt=""></td>
+        <td><img src="v/1862m.png" alt=""></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1862m.png" alt=""> ≫ <img src="v/1862f.png" alt=""></td>
-        <td><img src="v/1862f.png" alt=""></td>
-        <td><img src="v/1862f.png" alt=""></td>
-        <td><img src="v/1862f.png" alt=""></td>
-        <td><img src="v/1862f.png" alt=""></td>
+        <td><img src="v/1862m.png" alt=""></td>
+        <td><img src="v/1862f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1862f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1862f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1862f.png" alt="" class="fconflict"></td>
         <td lang="mn">&#x1862;</td>
       </tr>
           <tr>
@@ -7504,44 +7456,31 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td lang="mn">&#x1863;</td>
       </tr>
           <tr>
-        <td class="agreed">is+fvs1</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/1863f.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1863s.png" alt=""> ≫ <img src="v/1863f.png" alt=""></td>
-        <td><img src="v/1863s.png" alt="" class="fconflict"></td>
-        <td><img src="v/1863s.png" alt="" class="fconflict"></td>
-        <td><img src="v/1863s.png" alt="" class="fconflict"></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn">&#x1863;&#x180B;</td>
-      </tr>
+            <td class="agreed">is+fvs1</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><img src="v/1863s.png" alt=""></td>
+            <td class="gap">&nbsp;</td>
+            <td><img src="v/1863s.png" alt=""></td>
+            <td><img src="v/1863s.png" alt=""></td>
+            <td><img src="v/1863s.png" alt=""></td>
+            <td><img src="v/1863s.png" alt=""></td>
+            <td>&nbsp;</td>
+            <td lang="mn">&#x1863;&#x180B;</td>
+          </tr>
           <tr>
-        <td class="agreed">is+fvs2</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><img src="v/1863s.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1863s.png" alt=""></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td><img src="v/1863s.png" alt=""></td>
-        <td><img src="v/1863i.png" alt="" class="fconflict"></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
-        <td lang="mn">&#x1863;&#x180C;</td>
-      </tr>
-          <tr>
-        <td>initial</td>
-        <td><img src="v/1863i.png" alt=""></td>
-        <td>&nbsp;</td>
-        <td><img src="v/1863i.png" alt=""></td>
-        <td class="gap">&nbsp;</td>
-        <td><img src="v/1863i.png" alt=""></td>
-        <td><img src="v/1863i.png" alt=""></td>
-        <td><img src="v/1863i.png" alt=""></td>
-        <td><img src="v/1863i.png" alt=""></td>
-        <td>&nbsp;</td>
-        <td lang="mn">&#x1863;&#x200D;</td>
-      </tr>
+            <td>initial</td>
+            <td><img src="v/1863i.png" alt=""></td>
+            <td>&nbsp;</td>
+            <td><img src="v/1863i.png" alt=""></td>
+            <td class="gap">&nbsp;</td>
+            <td><img src="v/1863i.png" alt=""></td>
+            <td><img src="v/1863i.png" alt=""></td>
+            <td><img src="v/1863i.png" alt=""></td>
+            <td><img src="v/1863i.png" alt=""></td>
+            <td>&nbsp;</td>
+            <td lang="mn">&#x1863;&#x200D;</td>
+          </tr>
       <tr>
         <td>medial</td>
         <td><img src="v/1863m.png" alt=""></td>
@@ -8013,7 +7952,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/1868i1.png" alt="" class="fconflict"></td>
         <td><img src="v/1868i.png" alt=""></td>
         <td><img src="v/1868i.png" alt=""></td>
-        <td><img src="v/1868i.png" alt=""></td>
+        <td>&nbsp;</td>
         <td lang="mn">&#x1868;&#x180B;</td>
       </tr>
           <tr>
@@ -9043,7 +8982,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td><img src="v/question.png" alt="" class="fconflict"/></td>
         <td><img src="v/1873s.png" alt="" class="fconflict"></td>
         <td><img src="v/1873s.png" alt="" class="fconflict"></td>
-        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td>&nbsp;</td>
         <td lang="mn">&#x1873;&#x180C;</td>
         </tr>
       <tr>
@@ -9205,19 +9144,19 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
        <tr>
          <td class="fconflict">isolate</td>
-         <td><img src="v/1874f.png" alt=""></td>
+         <td><img src="v/1874f.png" alt="" class="conflict"></td>
          <td>&nbsp;</td>
-         <td><img src="v/1874f.png" alt=""></td>
+         <td><img src="v/1874s.png" alt=""></td>
          <td class="gap">&nbsp;</td>
-         <td><img src="v/1874s.png" alt=""> ≫ <img src="v/1874f.png" alt=""></td>
-         <td><img src="v/1874s.png" alt="" class="fconflict"></td>
-         <td><img src="v/1874s.png" alt="" class="fconflict"></td>
+         <td><img src="v/1874s.png" alt=""></td>
+         <td><img src="v/1874s.png" alt=""></td>
+         <td><img src="v/1874s.png" alt=""></td>
          <td><img src="v/1874i.png" alt="" class="fconflict"></td>
-         <td><img src="v/1874f.png" alt=""></td>
+         <td><img src="v/1874f.png" alt="" class="fconflict"></td>
          <td lang="mn">&#x1874;</td>
        </tr>
        <tr>
-         <td>**i+fvs1</td>
+         <td>**is+fvs1</td>
          <td>&nbsp;</td>
          <td>&nbsp;</td>
          <td><img src="v/1874s.png" alt=""></td>
@@ -9365,15 +9304,15 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
           <tr>
         <td>isolate</td>
-        <td><img src="v/1875f.png" alt=""></td>
+        <td><img src="v/1875f.png" alt="" class="conflict"></td>
         <td>&nbsp;</td>
-        <td><img src="v/1875f.png" alt=""></td>
+        <td><img src="v/1875i.png" alt=""></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1875i.png" alt=""> ≫ <img src="v/1875f.png" alt=""></td>
-        <td><img src="v/1875f.png" alt=""></td>
-        <td><img src="v/1875f.png" alt=""></td>
-        <td><img src="v/1875f.png" alt=""></td>
-        <td><img src="v/1875f.png" alt=""></td>
+        <td><img src="v/1875i.png" alt=""></td>
+        <td><img src="v/1875f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1875f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1875f.png" alt="" class="fconflict"></td>
+        <td><img src="v/1875f.png" alt="" class="fconflict"></td>
         <td lang="mn">&#x1875;</td>
       </tr>
           <tr>
@@ -9444,15 +9383,15 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
     </tr>
           <tr>
         <td class="fconflict">isolate</td>
-        <td><img src="v/1876m.png" alt=""></td>
+        <td><img src="v/1876m.png" alt="" class="conflict"></td>
         <td>&nbsp;</td>
-        <td><img src="v/1876m.png" alt=""></td>
+        <td><img src="v/1876i.png" alt=""></td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1876i.png" alt=""> ≫ <img src="v/1876m.png" alt=""></td>
-        <td><img src="v/1876m.png" alt=""></td>
-        <td><img src="v/1876m.png" alt=""></td>
-        <td><img src="v/1876i.png" alt="" class="fconflict"></td>
-        <td><img src="v/1876m.png" alt=""></td>
+        <td><img src="v/1876i.png" alt=""></td>
+        <td><img src="v/1876m.png" alt="" class="fconflict"></td>
+        <td><img src="v/1876m.png" alt="" class="fconflict"></td>
+        <td><img src="v/1876i.png" alt=""></td>
+        <td><img src="v/1876m.png" alt="" class="fconflict"></td>
         <td lang="mn">&#x1876;</td>
       </tr>
           <tr>
@@ -9986,11 +9925,11 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
       </tr>
           <tr>
         <td>is+fvs1</td>
-        <td><img src="v/1887s1.png" alt=""></td>
-        <td><img src="v/1887s1.png" alt=""></td>
-        <td><img src="v/1887s1.png" alt=""></td>
+        <td><img src="v/1887s1.png" alt="" class="conflict"></td>
+        <td><img src="v/1887s1.png" alt="" class="conflict"></td>
+        <td>n/s</td>
         <td class="gap">&nbsp;</td>
-        <td><img src="v/1887s1.png" alt=""></td>
+        <td><img src="v/1887s.png" alt=""></td>
         <td><img src="v/1887s1.png" alt=""></td>
         <td><img src="v/1887s1.png" alt=""></td>
         <td><img src="v/1887s1.png" alt=""></td>
@@ -10081,6 +10020,20 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td></td>
         <td><img src="v/1887f3.png" alt=""></td>
         <td lang="mn">&#x200D;&#x1887;&#x180D;</td>
+      </tr>
+      <tr>
+        <td class="fconflict">f+fvs4</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><img src="v/1887s1.png" alt="" class="chstandard"></td>
+        <td class="gap">&nbsp;</td>
+        <td><img src="v/1887s1.png" alt=""></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td><img src="v/question.png" alt="" class="fconflict"/></td>
+        <td lang="mn">&nbsp;</td>
       </tr>
     </tbody>
 </table>
@@ -12271,7 +12224,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="fconflict">m+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/18A0m1.png" alt=""></td>
+        <td><img src="v/18A0m1.png" alt="" class="chstandard"></td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/18A0i.png" alt=""> ≫<img src="v/18A0m1.png" alt=""></td>
         <td><img src="v/18A0i.png" alt="" class="fconflict"></td>
@@ -12358,7 +12311,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="fconflict">i+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/18A1i1.png" alt=""></td>
+        <td><img src="v/18A1i1.png" alt="" class="chstandard"></td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/18A1i.png" alt=""> ≫ <img src="v/18A1i1.png" alt=""></td>
         <td><img src="v/18A1i.png" alt="" class="fconflict"></td>
@@ -12386,7 +12339,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
         <td class="fconflict">m+fvs1</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td><img src="v/18A1m1.png" alt=""></td>
+        <td><img src="v/18A1m1.png" alt="" class="chstandard"></td>
         <td class="gap">&nbsp;</td>
         <td><img src="v/18A1m.png" alt=""> ≫ <img src="v/18A1m1.png" alt=""></td>
         <td><img src="v/18A1m.png" alt="" class="fconflict"></td>
@@ -13133,7 +13086,7 @@ Use <label><input type="radio" value="zwj" checked="checked" name="connector"/> 
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  21 Sep 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-11-03  7:46<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2015-12-22  15:56<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">

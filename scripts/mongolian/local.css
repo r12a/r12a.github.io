@@ -20,9 +20,10 @@
 img { 
 	vertical-align: top;
 	}
-img.conflict { border: 3px solid red; border: 3px solid brown; }
-img.fconflict { border: 3px solid orange; }
-img.okdiff { border: 3px solid #6F9; }
+.conflict { border: 3px solid red; border: 3px solid brown; }
+.fconflict { border: 3px solid orange; }
+.okdiff { border: 3px solid #6F9; }
+.chstandard { border: 3px solid #ff59fd; }
 
 #fontsetting { width: 270px; }
 #fontsetting.open { right: 0px; }
@@ -87,10 +88,11 @@ table.formtable td[lang='mn'] {
 	text-align: start;
 	}
 .gap { border: 0px; width: 10px; background-color: #FDFADF; border: 0; }
-.conflict { background-color: red; background-color: brown; color: white; font-weight: 500; }
-.fconflict { background-color: #F6A355; color: white; font-weight: 500; }
-.okdiff { background-color: #6F9; color: gray; font-weight: 500; }
-.agreed { background-color: #6F9; color: gray; font-weight: 500; }
+td.conflict { background-color: red; background-color: brown; color: white; font-weight: 500; }
+td.fconflict { background-color: #F6A355; color: white; font-weight: 500; }
+td.okdiff { background-color: #6F9; color: gray; font-weight: 500; }
+td.agreed { background-color: #6F9; color: gray; font-weight: 500; }
+td.chstandard { background-color: #ff59fd; color: white; font-weight: 500; }
 .notes ul, .notes ol { margin-right: 30px; }
 
 .rationale {  
