@@ -37,7 +37,7 @@ end: {}
 
 
 
-function makeCharacterLink (cp, block, lang, direction) { 
+function oldmakeCharacterLink (cp, block, lang, direction) { 
 	// returns markup with information about cp
 	// cp: a unicode character, or sequence of unicode characters
 	// block: 
