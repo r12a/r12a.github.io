@@ -745,6 +745,7 @@ function selectCCBase (base) {
 
 function makeCharacterLink (cp, block, lang, direction) { 
 	// returns markup with information about cp
+	// only wraps in a link if not on r12a.github.io
 	// cp: a unicode character, or sequence of unicode characters
 	// block: 
 	// lang: the BCP47 language tag for the context
@@ -759,11 +760,14 @@ function makeCharacterLink (cp, block, lang, direction) {
 		var cbase = ''
 		if (defaults.ccbase != '') cbase = '&amp;#x'+convertChar2CP(defaults.ccbase)+';'
 	
-		out +=  '<a href="/scripts/'+block+'/block#char'+hex+'"><span class="uname">U+'+hex+' '+name+'</span> (<span lang="'+lang+'"'
+		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
+		out +=  '<span class="uname">U+'+hex+' '+name+'</span> (<span lang="'+lang+'"'
 		if (direction == 'rtl') { out += ' dir="rtl"' }
 		out += '>'
 		if (mark) { out += cbase }
-		out += '&#x'+hex+';</span>)</a> '
+		out += '&#x'+hex+';</span>)'
+		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
+		out += ' '
 		}
 		
 	document.getElementById('transcription').style.display = 'block'
