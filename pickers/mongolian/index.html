@@ -40,7 +40,7 @@
     <span  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'ar','rtl');document.getElementById('output').focus();" 
     title="Create an example.">Make<br/>example</span> &nbsp;
     <span  id="makeCharLink" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'mongolian','mn','');" 
-    title="Create an character link.">Make<br/>link(s)</span>
+    title="Create an character link.">Character<br/>markup</span>
     </span>
 </div>
 
@@ -504,7 +504,7 @@ return false;">D</div>
       
       <dd><span class="leadin">Show codepoints.</span> This produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
       <dd><span class="leadin">Convert to escapes.</span> This opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
-      <dd><span class="leadin">Make example.</span> This button near the top may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Mongolian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
+      <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Mongolian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
       <dd>For example, the following:</dd>
       <dd style="text-align:start;"><span lang="mn">ᠮᠣᠩᠭᠣᠯᠪᠢᠴᠢᠭ</span>/mongγol bičig/Монгол бичиг/Mongolian script</span></dd>
       <dd>will produce:</dd>
@@ -512,7 +512,7 @@ return false;">D</div>
       <dd>To get just the mongolian and the second transcription you would use:</dd>
        <dd>ᠮᠣᠩᠭᠣᠯᠪᠢᠴᠢᠭ//<span style="text-align:start;">Монгол бичиг</span></dd>
        
-      <dd><span class="leadin">Make link(s).</span> This button near the top may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
+      <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
       <dd style="text-align:left; text-justify:auto;"><code>&lt;a href=&quot;/scripts/mongolian/block#char1831&quot;&gt;&lt;span class=&quot;uname&quot;&gt;U+1831 MONGOLIAN LETTER SHA&lt;/span&gt; (&lt;span lang=&quot;mn&quot;&gt;&amp;#x1831;&lt;/span&gt;)&lt;/a&gt;</code></dd>
       <dd>You can remove or alter the URL to suit your needs. When you add it to your document, it will look like this.</dd>
       <dd><a href="/scripts/mongolian/block#char1831"><span class="uname">U+1831 MONGOLIAN LETTER SHA</span> (<span lang="mn">&#x1831;</span>)</a></dd>
