@@ -2,39 +2,46 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Mongolian character picker 17</title>
+<title>Mongolian character picker 18</title>
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared18/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/scripts/mongolian/fonts.js"> </script>
 
 <script type="text/javascript" src="defaults.js">  </script>
 <script type="text/javascript" src="/scripts/block/mongolian-names-subset.js"></script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="/pickers/shared18/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
+<script type="text/javascript" src="/pickers/shared18/local.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="/scripts/block/mongolian-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
 </head>
 
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Mongolian character picker','v17');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Mongolian character picker','v18');</script>
 </header>
 
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
-    
-    <!--button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'mn','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
-    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'mongolian','mn','ltr');" title="Create an character link.">charLink</button-->
+<span id="copydelete">
+  <span title="Copy to clipboard" onclick="copyToClipboard()">📋</span>
+  <span title="Select the text" onclick="selectAll()">🔶</span>
+  <span title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</span>
+  </span>
+    <span id="tools"><img  style="vertical-align:top;" src="/pickers/images/y.png"/> &nbsp;
+    <span onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</span> &nbsp;
+    <span onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</span> &nbsp;
+    <span  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'ar','rtl');document.getElementById('output').focus();" 
+    title="Create an example.">Make<br/>example</span> &nbsp;
+    <span  id="makeCharLink" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'mongolian','mn','');" 
+    title="Create an character link.">Make<br/>link(s)</span>
+    </span>
 </div>
 
 <div id="outputDiv" lang="mn">
@@ -45,9 +52,10 @@
 
 
 <div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription"></div>
+<div id="transcription" contenteditable="true"></div>
 </div>
 
 
@@ -64,22 +72,56 @@
 <div id="phonemelist" style="position:relative;">
  <div id="transcriptionChoice"></div>
 
-<div id=latintranscript class=transcript style="display:none;">
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('ö')">ö</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('ü')">ü</span>
+<span class="t" onclick="dotrans('ʊ')">ʊ</span>
+<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
+<span class="t" onclick="dotrans(',')">,</span>
+<span class="t" onclick="dotrans(';')">;</span>
+<span class="t" onclick="dotrans('(')">(</span>
+<span class="t" onclick="dotrans(')')">)</span>
+<span class="t" onclick="dotrans('[')">[</span>
+<span class="t" onclick="dotrans(']')">]</span>
+<span class="t" onclick="dotrans('/')">/</span>
+<span class="t" onclick="dotrans('?')">?</span>
+<br/>
+<span class="t" onclick="dotrans('b')">b</span>
 <span class="t" onclick="dotrans('č')">č</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('ʣ')">ʣ</span>
 <span class="t" onclick="dotrans('ʤ')">ʤ</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('k')">k</span>
 <span class="t" onclick="dotrans('ḳ')">ḳ</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
 <span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('q')">q</span>
+<span class="t" onclick="dotrans('r')">r</span>
 <span class="t" onclick="dotrans('ř')">ř</span>
+<span class="t" onclick="dotrans('s')">s</span>
 <span class="t" onclick="dotrans('š')">š</span>
 <span class="t" onclick="dotrans('ʃ')">ʃ</span>
+<span class="t" onclick="dotrans('t')">t</span>
 <span class="t" onclick="dotrans('ʦ')">ʦ</span>
 <span class="t" onclick="dotrans('ʧ')">ʧ</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('x')">x</span>
+<span class="t" onclick="dotrans('y')">y</span>
 <span class="t" onclick="dotrans('γ')">γ</span>
-<span class="t" onclick="dotrans('ə')">ə</span>
-<span class="t" onclick="dotrans('ɔ')">ɔ</span>
-<span class="t" onclick="dotrans('ʊ')">ʊ</span>
-<span class="t" onclick="dotrans('ö')">ö</span>
-<span class="t" onclick="dotrans('ü')">ü</span>
 	    </div> 
 
 
@@ -390,12 +432,12 @@ return false;">D</div>
 
 
 
-<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+<div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 </div>
 
 
 
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
@@ -412,13 +454,13 @@ return false;">D</div>
 </aside>     
 
 
-<p id="status">Updated Sat 14 Mar 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=mongolian" title="Show all blog posts tagged with 'mongolian'">mongolian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+<p id="status">Updated Wed 23 Dec 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=mongolian" title="Show all blog posts tagged with 'mongolian'">mongolian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
 <p>This Unicode character picker allows you to produce or analyse runs of Mongolian text using the Mongolian script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 
 <p>You must have JavaScript enabled. Choose view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
-   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
+  <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
    
     <dl>
          <dt>Display issues</dt>
@@ -439,7 +481,7 @@ return false;">D</div>
       <dd>The list includes the default positional forms as well as the forms produced by following the character with a Free Variation Selector (FVS). The latter forms are derived from work which has been taking place in 2015 to standardise the forms produced by using FVS. At the moment, not all fonts will produce the expected shapes for all possible combinations. (For more information, see <a href="http://r12a.github.io/scripts/mongolian/variants">Notes on Mongolian variant forms</a>.)</dd>
       <dd>If the variant list is displayed when you click on a character, you can add an appropriate FVS character to the output area by clicking in the list on the shape that you want to see in the output.</dd>
       
-      <dt>Input options</dt>
+      <dt>Input aids</dt>
       <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
       
       <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Mongolian.</dd>
@@ -449,11 +491,31 @@ return false;">D</div>
 				<dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd>
                 
 				<dd><strong class="leadin">Transcriptions</strong> There is one transcription panel available in this picker: Latin. </dd>
-				<dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+				<dd>The <code class="kw" translate="no">Latin transcription</code> panel provides characters you may need while typing in a Latin transcription from the keyboard.</dd>
                 
 				<dd><strong class="leadin">Keyboard</strong> This provides a  standard Unicode-based Mongolian keyboard layout. </dd>
                 
 				<dd><strong class="leadin">Variants on hover</strong> Makes the list of variant forms appear as you hover over the selector area, rather than when you click on a character. See <a href="#variant_selector_box_description">Variant selector box</a> above. </dd>
+
+
+
+      <dt>Tools above the input box</dt>
+      <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
+      
+      <dd><span class="leadin">Show codepoints.</span> This produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
+      <dd><span class="leadin">Convert to escapes.</span> This opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
+      <dd><span class="leadin">Make example.</span> This button near the top may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Mongolian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
+      <dd>For example, the following:</dd>
+      <dd style="text-align:start;"><span lang="mn">ᠮᠣᠩᠭᠣᠯᠪᠢᠴᠢᠭ</span>/mongγol bičig/Монгол бичиг/Mongolian script</span></dd>
+      <dd>will produce:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class="ex" lang="ar" dir="rtl">ᠮᠣᠩᠭᠣᠯᠪᠢᠴᠢᠭ&lt;/span> &lt;span class="ipa"><span style="text-align:start;">mongγol bičig</span>&lt;/span> &lt;span class="trans"><span style="text-align:start;">Монгол бичиг</span>&lt;/span> &lt;span class="meaning"><span style="text-align:start;">Mongolian script</span>&lt;/span></code></dd>
+      <dd>To get just the mongolian and the second transcription you would use:</dd>
+       <dd>ᠮᠣᠩᠭᠣᠯᠪᠢᠴᠢᠭ//<span style="text-align:start;">Монгол бичиг</span></dd>
+       
+      <dd><span class="leadin">Make link(s).</span> This button near the top may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;a href=&quot;/scripts/mongolian/block#char1831&quot;&gt;&lt;span class=&quot;uname&quot;&gt;U+1831 MONGOLIAN LETTER SHA&lt;/span&gt; (&lt;span lang=&quot;mn&quot;&gt;&amp;#x1831;&lt;/span&gt;)&lt;/a&gt;</code></dd>
+      <dd>You can remove or alter the URL to suit your needs. When you add it to your document, it will look like this.</dd>
+      <dd><a href="/scripts/mongolian/block#char1831"><span class="uname">U+1831 MONGOLIAN LETTER SHA</span> (<span lang="mn">&#x1831;</span>)</a></dd>
                 
       <dt>Notes on other controls</dt>
       
