@@ -7,5 +7,6 @@
 <option value="Mongolian Title">Mongolian Title</option>\
 <option value="Mongolian Art">Mongolian Art</option>\
 <option value="MongolianScript">MongolianScript</option>\
+<option value="FZMWBTOT_Unicode">FZMWBTOT_Unicode</option>\
 <option value="sans-serif">sans-serif</option>\
 <option value="serif">serif</option>'
