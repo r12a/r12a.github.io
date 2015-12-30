@@ -148,3 +148,6 @@ dt { color: #FF6600; }
 .key .s { position:absolute; bottom: 5px; left: 15px; }
 .key .n { position:absolute; bottom: 5px; right: 5px;  }
 
+.key .k1 { -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
+.key .k2 { -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
+.key .k3 { -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
