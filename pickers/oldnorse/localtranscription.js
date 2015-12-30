@@ -167,7 +167,8 @@ function oldNorseToRune (str) {
 	str = str.replace(/ã/g,'ᚨ')
 	
 	str = str.replace(/:/g,'᛬\u200B')
-	str = str.replace(/[͡|,|.|-]/g,'')
+	str = str.replace(/[,|.|-]/g,'')
+	str = str.replace(/͡/g,'\u200D')
 
 	// add markup for ambiguous cases
 	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
@@ -264,7 +265,8 @@ function oldNorseToShortRune (str) {
 	str = str.replace(/¶/g,'')
 	
 	str = str.replace(/:/g,'᛬\u200B')
-	str = str.replace(/[͡|,|.|-]/g,'')
+	str = str.replace(/[,|.|-]/g,'')
+	str = str.replace(/͡/g,'\u200D')
 	
 	// remove duplicate runes in sequence
 	var runes = str.split('')
