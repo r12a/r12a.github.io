@@ -67,6 +67,7 @@ var _showShapeHints = ''   // indicates whether or not to show shape hinting
 var _showShapeLookup = ''   // indicates whether or not to show shape images for lookup
 var _showLatinTrans = ''
 var _showKeyboard = ''
+var _output
 
 
 function add(ch) { 
@@ -360,29 +361,24 @@ function getHighlightedText (node) {
 	return chstring
 	}
 
-function transcribe (node, direction) {
+function transcribe (chstring, direction) {
 	// node: the output element
 	// direction: a string that the local routine will recognise to do the right transcription
-	var chstring = getHighlightedText(node) // the text to be converted
-	
-	// add a ¶ to avoid breaking on lookahead; if no selection, try whole field; if still nothing, abort
-	chstring = chstring.toLowerCase()+' ¶'
-	//if (chstring==' ¶') { chstring = node.value.toLowerCase()+' ¶' }
-	if (chstring==' ¶') { return }
+	if (chstring=='') { return }
 
 	// for security, remmove angle brackets
 	chstring = chstring.replace(/</g,'')
 	chstring = chstring.replace(/>/g,'')
 	
-	//var close = "<div id='closeTranscription' title='Hide transcription'>x</div>"
-	document.getElementById('transcription').innerHTML = localtranscribe(node, direction, chstring)//+close
+	var transcription = localtranscribe(direction, chstring)
+	//var transcription = localtranscribe(direction, chstring)
+	document.getElementById('transcription').innerHTML = transcription
 	document.getElementById('transcriptionWrapper').style.display = 'block' 
 	alts = document.querySelectorAll('.altfirst, .altlast, .alt')
 	for (i=0;i<alts.length;i++) {
 		alts[i].onclick = choose
 		}
-	//var close = document.querySelector("#closeTranscription")
-	//close.onclick = closeTranscription
+	return transcription
 	}
 
 function clearHighlights () {
@@ -416,34 +412,25 @@ function getTitle (textcontent) {
 	}
 	
 	
-function makeKeyboard () { 
 
-	var keyboardguide = [
-	"1,2,3,4,5,6,7,8,9,0,-,=",
-	"q,w,e,r,t,y,u,i,o,p,[,],",
-	"a,s,d,f,g,h,j,k,l,;,',\\",
-	"z,x,c,v,b,n,m,,.,/,"
-	]
 
-	if (typeof keyboarddef == 'undefined' || document.getElementById('keyboard') == null) 
+function makeKeyboard (chosenKbd) { 
+
+	if (typeof keyboarddef === 'undefined' || document.getElementById('keyboard') == null) 
 		{ return }
 		
 	var theKeyboard = document.getElementById('keyboard')
+	theKeyboard.innerHTML = ''
 	
-	for (kr=0;kr<4;kr++) {
+	for (kr=0;kr<chosenKbd.length;kr++) {
 		keyrownode = document.createElement('div')
 		keyrownode.className = 'keyboardrow'
-		switch (kr) {
-			case 0: keyrownode.style.paddingLeft = '5px'; break
-			case 1: keyrownode.style.paddingLeft = '20px'; break
-			case 2: keyrownode.style.paddingLeft = '30px'; break
-			case 3: keyrownode.style.paddingLeft = '50px'; break
-			}
+		keyrownode.style.paddingLeft = keyboardRowOffset[kr]
 			
-		var keyrow = keyboarddef[kr].split(',')
+		var keyrow = chosenKbd[kr].split('|')
 		var keyrowguide = keyboardguide[kr].split(',')
 		for (key=0;key<keyrow.length;key++) {
-			chars = keyrow[key].split('|')
+			chars = keyrow[key].split(',')
 			keynode = document.createElement('div')
 			keynode.className = 'key'
 			
@@ -452,33 +439,66 @@ function makeKeyboard () {
 			guide.className = 'kg'
 			keynode.appendChild(guide)
 			
-			shiftkey = document.createElement('span')
-			shiftkey.className = 's'
-			shiftkey.onmouseover = event_mouseoverChar
-			shiftkey.onmouseout = event_mouseoutChar
-			shiftkey.onclick = event_clickOnSpanChar
-			shiftkey.title = getTitle(chars[0])
-			shiftkey.appendChild(document.createTextNode(chars[0]))
-			normalkey = document.createElement('span')
-			normalkey.className = 'n'
-			normalkey.onmouseover = event_mouseoverChar
-			normalkey.onmouseout = event_mouseoutChar
-			normalkey.onclick = event_clickOnSpanChar
-			normalkey.title = getTitle(chars[1])
-			normalkey.appendChild(document.createTextNode(chars[1]))
-			if (chars.length == 3) {
+			if (chars.length == 1) {
+				normalkey = document.createElement('span')
+				normalkey.className = 'k1'
+				normalkey.onmouseover = event_mouseoverChar
+				normalkey.onmouseout = event_mouseoutChar
+				normalkey.onclick = event_clickOnSpanChar
+				normalkey.title = getTitle(chars[0])
+				normalkey.appendChild(document.createTextNode(chars[0]))
+				
+				keynode.appendChild(normalkey)
+				}
+			else if (chars.length == 2) {
+				shiftkey = document.createElement('span')
+				shiftkey.className = 'k2'
+				shiftkey.onmouseover = event_mouseoverChar
+				shiftkey.onmouseout = event_mouseoutChar
+				shiftkey.onclick = event_clickOnSpanChar
+				shiftkey.title = getTitle(chars[0])
+				shiftkey.appendChild(document.createTextNode(chars[0]))
+				
+				normalkey = document.createElement('span')
+				normalkey.className = 'k2'
+				normalkey.onmouseover = event_mouseoverChar
+				normalkey.onmouseout = event_mouseoutChar
+				normalkey.onclick = event_clickOnSpanChar
+				normalkey.title = getTitle(chars[1])
+				normalkey.appendChild(document.createTextNode(chars[1]))
+				
+				keynode.appendChild(shiftkey)
+				keynode.appendChild(normalkey)
+				}
+			
+			else if (chars.length == 3) {
 				thirdkey = document.createElement('span')
-				thirdkey.className = 'a'
+				thirdkey.className = 'k3'
 				thirdkey.onmouseover = event_mouseoverChar
 				thirdkey.onmouseout = event_mouseoutChar
 				thirdkey.onclick = event_clickOnSpanChar
-				thirdkey.title = getTitle(chars[2])
-				thirdkey.appendChild(document.createTextNode(chars[2]))
-				}
-			keynode.appendChild(shiftkey)
-			keynode.appendChild(normalkey)
-			if (chars.length == 3) {
+				thirdkey.title = getTitle(chars[0])
+				thirdkey.appendChild(document.createTextNode(chars[0]))
+
+				shiftkey = document.createElement('span')
+				shiftkey.className = 'k3'
+				shiftkey.onmouseover = event_mouseoverChar
+				shiftkey.onmouseout = event_mouseoutChar
+				shiftkey.onclick = event_clickOnSpanChar
+				shiftkey.title = getTitle(chars[1])
+				shiftkey.appendChild(document.createTextNode(chars[1]))
+				
+				normalkey = document.createElement('span')
+				normalkey.className = 'k3'
+				normalkey.onmouseover = event_mouseoverChar
+				normalkey.onmouseout = event_mouseoutChar
+				normalkey.onclick = event_clickOnSpanChar
+				normalkey.title = getTitle(chars[2])
+				normalkey.appendChild(document.createTextNode(chars[2]))
+
 				keynode.appendChild(thirdkey)
+				keynode.appendChild(shiftkey)
+				keynode.appendChild(normalkey)
 				}
 			
 			keyrownode.appendChild(keynode)
@@ -495,8 +515,30 @@ function makeKeyboard () {
 		}
 	}
 	
+
+function makeKbdUpperCase () {
+	var theKeyboard = document.getElementById('keyboard')
+	node = theKeyboard.querySelectorAll( '.k1, .k2, .k3' ); 
+	for (var n = 0; n < node.length; n++ ) { 
+		node[n].textContent = node[n].textContent.toUpperCase()
+		}
+	}
 	
+function makeKbdLowerCase () {
+	var theKeyboard = document.getElementById('keyboard')
+	node = theKeyboard.querySelectorAll( '.k1, .k2, .k3' ); 
+	for (var n = 0; n < node.length; n++ ) { 
+		node[n].textContent = node[n].textContent.toLowerCase()
+		}
+	}
 	
+function unshiftAll (kbdList) {
+	// puts keyboard buttons into off state
+	// kbdList: space separated list of keyboard buttons
+	var kbds = kbdList.split(' ')
+	for (var i=0;i<kbds.length;i++) document.getElementById(kbds[i]).className = 'unshifted'
+	}
+
 function event_mouseoverChar ()  {
 	// display character information
 	span = document.createElement( 'span' );
@@ -629,7 +671,8 @@ function initialise() {
 			}
 		}
 
-	makeKeyboard()
+	if (typeof keyboarddef !== 'undefined' && document.getElementById('keyboard') != null) 
+		makeKeyboard(keyboarddef)
 	}
 
 
@@ -677,6 +720,7 @@ window.onload = function() {
 		if (pairs[0] == 'ccbase') { if (pairs[1]) { if (pairs[1]=='none'){pairs[1]=''}; selectCCBase(decodeURI(pairs[1])) } }
 		}
 
+	_output = document.getElementById('output')
 	};
 
 

@@ -345,6 +345,7 @@ span.c:hover {
 	margin: 2px; 
 	box-shadow: 2px 2px 5px #888;
 	border-radius: 4px;
+	padding-right: 2px;
 	}
 .key .kg { 
 	float: left; 
@@ -355,6 +356,9 @@ span.c:hover {
 	}
 /*.key span { max-height: 20px; max-width:26px; }*/
 .k { padding: 0 5px; }
+.key .k1 { display: inline-block; min-width: 70%; text-align: center; vertical-align: middle; border-radius: 4px; }
+.key .k2 { display: inline-block; min-width: 35%;  text-align: center; vertical-align: middle; border-radius: 4px; }
+.key .k3 { display: inline-block; min-width: 15%;  text-align: center; vertical-align: middle; border-radius: 4px; }
 
 
 #autofocusswitch {
@@ -449,3 +453,43 @@ dt {
 	background-color: #F5A806;
     color: #fff;
 	}
+
+.shifted {
+	margin: 5px; 
+	border: 1px solid #ccc; 
+	border-radius: 10px;
+	background-color: #ccc;
+	color: white;
+	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; 
+	font-size: 14px; 
+	padding: 5px 10px; 
+	text-align: center; 
+	text-transform: uppercase; 
+	vertical-align:middle; 
+	display: inline;
+	}
+.unshifted {
+	margin: 5px; 
+	border: 1px solid #ccc; 
+	border-radius: 10px;
+	background-color: white;
+	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; 
+	font-size: 14px; 
+	padding: 5px 10px; 
+	text-align: center; 
+	text-transform: uppercase; 
+	vertical-align:middle; 
+	display: inline;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
