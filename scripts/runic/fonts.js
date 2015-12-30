@@ -1,5 +1,5 @@
  var fontSelection = '<optgroup label="Webfont">\
-      <option value="Noto Sans Runic WF">Noto Sans Runic WF</option>\
+      <option value="Junicode WF">Junicode WF</option>\
       <option value="Doulos SIL WF">Doulos SIL WF</option>\
       </optgroup>\
       <optgroup label="Runic fonts">\
