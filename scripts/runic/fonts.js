@@ -7,6 +7,12 @@
                <option value="Segoe UI Historic">Segoe UI Historic</option>\
                <option value="Junicode">Junicode</option>\
                <option value="Geneva">Geneva</option>\
+               <option value="Babelstone Runic Beagnoth">Babelstone Runic Beagnoth</option>\
+               <option value="Babelstone Runic Beorhtnoth">Babelstone Runic Beorhtnoth</option>\
+               <option value="Babelstone Runic Beorhtric">Babelstone Runic Beorhtric</option>\
+               <option value="Babelstone Runic Beowulf">Babelstone Runic Beowulf</option>\
+               <option value="Babelstone Runic Berhtwald">Babelstone Runic Berhtwald</option>\
+               <option value="Babelstone Runic Byrhtferth">Babelstone Runic Byrhtferth</option>\
       </optgroup>\
       <optgroup label="Latin fonts">\
                 <option value="Doulos SIL">Doulos SIL</option>\
