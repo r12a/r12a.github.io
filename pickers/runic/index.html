@@ -314,20 +314,21 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
   <div id="alphabet" class="default">
   
   <div dir="ltr" id="keyboard" style="display:block;"></div>
-    <table id="kbd">
+    <table id="kbd" style="width: 40em;">
 <tr>
-  <td colspan="3" id="bottomline">
-  <span id="elder" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(elderkbd); this.className='shifted'; unshiftAll('medieval younger anglosaxon latink')} ">Elder</span> 
-  <span id="younger" class="shifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(keyboarddef); this.className='shifted'; unshiftAll('medieval elder anglosaxon latink')} ">Younger</span> 
-  <span id="medieval" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(medievalkbd); this.className='shifted'; unshiftAll('elder younger anglosaxon latink')} ">Medieval</span> 
-  <span id="anglosaxon" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(anglosaxonkbd); this.className='shifted'; unshiftAll('medieval younger elder latink')} ">Anglo-saxon</span> 
-  <span id="latink" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(latinkbd); this.className='shifted'; unshiftAll('medieval younger elder anglosaxon')} ">Latin</span> 
+  <td id="bottomline" style="padding-bottom: 15px; text-align:center;">
   <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add(' ');">SPACE</span> 
   <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200B');">ZWSP</span>
   <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202E');">RLO</span>
   <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202C');">PDF</span>
+  <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+</td></tr>
+<tr><td style="text-align:center;"><span id="elder" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(elderkbd); this.className='shifted'; unshiftAll('medieval younger anglosaxon latink')} ">Elder</span> 
+  <span id="younger" class="shifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(keyboarddef); this.className='shifted'; unshiftAll('medieval elder anglosaxon latink')} ">Younger</span> 
+  <span id="medieval" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(medievalkbd); this.className='shifted'; unshiftAll('elder younger anglosaxon latink')} ">Medieval</span> 
+  <span id="anglosaxon" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(anglosaxonkbd); this.className='shifted'; unshiftAll('medieval younger elder latink')} ">Anglo-saxon</span> 
+  <span id="latink" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(latinkbd); this.className='shifted'; unshiftAll('medieval younger elder anglosaxon')} ">Latin</span> 
   </td>
-  <td>&nbsp;</td>
 </tr>
       </table>
 
@@ -471,6 +472,7 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
 
 <p>This  character picker allows you to produce or analyse runs of Runic text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>Writing in runes is not an exact science. Actual runic text is subject to many variations dependent on chronology, location and the author's idiosyncracies. It should be particularly noted that the automated transcription tools provided with this picker are intended as aids to speed up transcription, rather than to produce accurate renderings of specific texts. The output may need to be tweaked to produce the desired results. It should also be noted that the transcription tools do not produce bind-runes (ie. ligated forms), since there is no way that i'm aware of to produce such in Unicode.</p>
+<p>You can use the <code class="kw" translate="no">RLO/PDF</code> buttons below the keyboard to make the runic text run right-to-left, eg. <span style="font-family: Junicode, sans-serif;">&#x202E;ᚹᚪᚱᚦᚷᚪ&#x202C;</span>, and if you have the right font (such as Junicode or a Babelstone font), make the glyphs face to the left also. The <a href="http://babelstone.co.uk/Fonts/AngloSaxon.html">Bablestone fonts</a> also implement a number of bind-runes for Anglo-Saxon (but are missing some for Old Norse, it seems) if you put a ZWJ character between the characters you want to ligate. For example: <span lang="asc" style="font-family: 'Bablestone Runic Beorhtric', 'Babelstone Runic Beagnoth';">ᚻ‍ᛖ‍ᛚ</span>. You can also produce two glyphs mirrored around the central stave by putting ZWJ between two identical characters, eg. <span lang="asc" style="font-family: 'Bablestone Runic Beorhtric', 'Babelstone Runic Beagnoth';">ᚢ‍ᚢ</span>.</p>
 
     <p>You must have JavaScript enabled. Choose a view from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
     <p>To properly display the text you will need to choose a font that is loaded on your system or device. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7.</p>
