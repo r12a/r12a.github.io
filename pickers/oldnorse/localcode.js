@@ -50,7 +50,7 @@ var keyboardguide = [
 "z,x,c,v,b,n,m,,.,/,"
 ]
 
-var keyboardRowOffset = ['5px','20px','30px','30px','50px']
+var keyboardRowOffset = ['5px','20px','30px','50px']
 
 
 
