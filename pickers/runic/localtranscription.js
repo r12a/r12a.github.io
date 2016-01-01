@@ -3,6 +3,7 @@
 	if (direction == 'fromNItON') { return transcribeFromNItON(str) }
 	if (direction == 'transliterateRunes') { return transliterateRunes(str) }
 	if (direction == 'transliterateMedievalRunes') { return transliterateMedievalRunes(str) }
+	if (direction == 'transliterateASRunes') { return transliterateASRunes(str) }
 	if (direction == 'toNorwegian') { return toNorwegian(str) }
 	if (direction == 'toLB') { return toLB(str) }
 	if (direction == 'toST') { return toST(str) }
@@ -109,6 +110,60 @@ function transliterateMedievalRunes (str) {
 	str = str.replace(/[ᛙ|ᛘ]/g,'m') 
 	str = str.replace(/᛬​/g,' ') 
 	str = str.replace(/᛫/g,' ') 
+
+	// add markup for ambiguous cases
+	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+	str = str.replace(/\|/g,'</span><span class=alt>')
+	str = str.replace(/\{/g,'</span><span class=altlast>')
+	str = str.replace(/\]/g,'</span></span>')
+	str = str.replace(/¶/g,'')
+	
+	str = str.trim()
+
+	return str
+	}
+
+
+
+function transliterateASRunes (str) {
+	// transliterates Anglo-Saxon/Frisian runes into latin
+	
+	// add space so that beginning of word rules work
+	str = ' '+str.toLowerCase()+' '
+	str = str.replace(/[\s]+/g,' ')
+
+	str = str.replace(/ᚠ/g,'f') 
+	str = str.replace(/ᚢ/g,'u') 
+	str = str.replace(/ᚦ/g,'þ')
+	str = str.replace(/ᚩ/g,'o') 
+	str = str.replace(/ᚱ/g,'r') 
+	str = str.replace(/ᚳ/g,'c') 
+	str = str.replace(/ᚷ/g,'g') 
+	str = str.replace(/ᚹ/g,'w') 
+	str = str.replace(/ᚻ/g,'h') 
+	str = str.replace(/ᚾ/g,'n') 
+	str = str.replace(/ᛁ/g,'i') 
+	str = str.replace(/ᛡ/g,'j') 
+	str = str.replace(/ᛇ/g,'ɨ') 
+	str = str.replace(/ᛈ/g,'p') 
+	str = str.replace(/ᛉ/g,'x') 
+	str = str.replace(/[ᚴ|ᛋ]/g,'s') 
+	str = str.replace(/ᛏ/g,'t') 
+	str = str.replace(/ᛒ/g,'b') 
+	str = str.replace(/ᛖ/g,'e') 
+	str = str.replace(/ᛗ/g,'m') 
+	str = str.replace(/ᛚ/g,'l') 
+	str = str.replace(/ᛝ/g,'ŋ') 
+	str = str.replace(/ᛟ/g,'œ') 
+	str = str.replace(/ᛞ/g,'d') 
+	str = str.replace(/ᚪ/g,'a') 
+	str = str.replace(/ᚫ/g,'æ') 
+	str = str.replace(/ᚣ/g,'y') 
+	str = str.replace(/ᛠ/g,'ea') 
+	str = str.replace(/ᚸ/g,'g̈') 
+	str = str.replace(/ᛣ/g,'k') 
+	str = str.replace(/ᛤ/g,'k̈') 
+
 
 	// add markup for ambiguous cases
 	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')

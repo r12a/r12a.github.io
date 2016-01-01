@@ -45,6 +45,10 @@
     title="Transliterate Medieval runes.">Transliterate<br/>
     Medieval runes</span> &nbsp;
     
+    <span onclick="transcribe(getHighlightedText(_output),'transliterateASRunes');_output.focus();" 
+    title="Transliterate Anglo-Saxon/Frisian runes.">Transliterate<br/>
+    AS/F runes</span> &nbsp;
+    
     <span onclick="transcribe(getHighlightedText(_output),'toLB');_output.focus();" 
     title="Convert latin text to Long Branch Norwegian runes.">Latin to<br/>
     LB runes</span> &nbsp;
@@ -468,7 +472,7 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
   </div>
 </aside>     
 
-<p id="status">Updated Wed 30 Dec 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=runic" title="Show all blog posts tagged with 'runic'">runic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+<p id="status">Updated Fri 1 Jan 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=runic" title="Show all blog posts tagged with 'runic'">runic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 <p>This  character picker allows you to produce or analyse runs of Runic text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>Writing in runes is not an exact science. Actual runic text is subject to many variations dependent on chronology, location and the author's idiosyncracies. It should be particularly noted that the automated transcription tools provided with this picker are intended as aids to speed up transcription, rather than to produce accurate renderings of specific texts. The output may need to be tweaked to produce the desired results. It should also be noted that the transcription tools do not produce bind-runes (ie. ligated forms), since there is no way that i'm aware of to produce such in Unicode.</p>
