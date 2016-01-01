@@ -148,7 +148,7 @@ function changeFontSize ( newSize ) {
 
 
 function setUIFont (font) {
-	chars = document.querySelectorAll('.c')
+	chars = document.querySelectorAll('.c,.k1,.k2,.k3')
 	for (i=0;i<chars.length;i++) {
 		chars[i].style.fontFamily = font
 		}
