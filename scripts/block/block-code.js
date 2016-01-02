@@ -62,23 +62,23 @@ function showNameDetails (chars, clang, base, target) {
 	replacement.appendChild(str)
 	
 	// create a list of characters
-	for (c=0; c<chars.length; c++) { 
+	for (var c=0; c<chars.length; c++) { 
 		if (charData[chars.charAt(c)]) {
 			var hex = chars.charCodeAt(c).toString(16)
 			while (hex.length < 4) { hex = '0'+hex }
 			hex = hex.toUpperCase()
-			chardiv = document.createElement('div')
-			charimg = document.createElement('img')
+			var chardiv = document.createElement('div')
+			var charimg = document.createElement('img')
 			charimg.src = '/c/'+charData[chars.charAt(c)].g.replace(/ /g,'_')+"/"+hex+'.png'
 			charimg.alt = 'U+'+hex
 			chardiv.appendChild(charimg)
-			thelink = document.createElement('a');
+			var thelink = document.createElement('a');
 			if (base == '/uniview/?char=') { thelink.href = base+hex }
 			else { thelink.href = base+'#char'+hex }
 			thelink.target = target
 			thelink.appendChild(charimg)
 			thelink.appendChild(document.createTextNode(' U+'+hex));
-			thename = document.createTextNode(' '+charData[chars.charAt(c)].n)
+			var thename = document.createTextNode(' '+charData[chars.charAt(c)].n)
 			chardiv.appendChild(thelink)
 			chardiv.appendChild(thename)
 
