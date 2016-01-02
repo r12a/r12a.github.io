@@ -29,19 +29,19 @@
 
 <div id="main">
 <span id="copydelete">
-  <span title="Copy to clipboard" onclick="copyToClipboard()">📋</span>
-  <span title="Select the text" onclick="selectAll()">🔶</span>
-  <span title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</span>
+  <button title="Copy to clipboard" onclick="copyToClipboard()">📋</button>
+  <button title="Select the text" onclick="selectAll()">🔶</button>
+  <button title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</button>
   </span>
     <span id="tools"><img  style="vertical-align:top;" src="/pickers/images/y.png"/>
-    <span onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</span> &nbsp;
-    <span onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</span> &nbsp;
-    <span onclick="transcribe(document.getElementById('output'),'toLOC');document.getElementById('output').focus();" 
-    title="Convert Arabic text to an Library of Congress Latin transcription.">Transcribe<br/>to LOC</span> &nbsp;
-    <span  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'ar','rtl');document.getElementById('output').focus();" 
-    title="Create an example.">Make<br>example</span> &nbsp;
-    <span  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'arabic','ar','rtl');" 
-    title="Create an character link.">Character<br/>markup</span>
+    <button onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</button> 
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button> 
+    <button onclick="transcribe(document.getElementById('output'),'toLOC');document.getElementById('output').focus();" 
+    title="Convert Arabic text to an Library of Congress Latin transcription.">Transcribe<br/>to LOC</button> 
+    <button  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'ar','rtl');document.getElementById('output').focus();" 
+    title="Create an example.">Make<br>example</button> 
+    <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'arabic','ar','rtl');" 
+    title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
 
