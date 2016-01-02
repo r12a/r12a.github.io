@@ -29,47 +29,47 @@
 
 <div id="main">
 <span id="copydelete">
-  <span title="Copy to clipboard" onclick="copyToClipboard()">📋</span>
-  <span title="Select the text" onclick="selectAll()">🔶</span>
-  <span title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</span>
+  <button title="Copy to clipboard" onclick="copyToClipboard()">📋</button>
+  <button title="Select the text" onclick="selectAll()">🔶</button>
+  <button title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</button>
   </span>
-    <span id="tools"><img  style="vertical-align:top;" src="/pickers/images/y.png"/>
-    <span onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</span> &nbsp;
+    <span alt=" " id="tools"><img  style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</button>
     
-    <span onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</span> &nbsp;
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'transliterateRunes');_output.focus();" 
-    title="Transliterate Long Branch or Short Twig runes.">Transliterate<br/>LB/ST runes</span> &nbsp;
+    <button onclick="transcribe(getHighlightedText(_output),'transliterateRunes');_output.focus();" 
+    title="Transliterate Long Branch or Short Twig runes.">Transliterate<br/>LB/ST runes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'transliterateMedievalRunes');_output.focus();" 
+    <button onclick="transcribe(getHighlightedText(_output),'transliterateMedievalRunes');_output.focus();" 
     title="Transliterate Medieval runes.">Transliterate<br/>
-    Medieval runes</span> &nbsp;
+    Medieval runes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'transliterateASRunes');_output.focus();" 
+    <button onclick="transcribe(getHighlightedText(_output),'transliterateASRunes');_output.focus();" 
     title="Transliterate Anglo-Saxon/Frisian runes.">Transliterate<br/>
-    AS/F runes</span> &nbsp;
+    AS/F runes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'toLB');_output.focus();" 
+    <button onclick="transcribe(getHighlightedText(_output),'toLB');_output.focus();" 
     title="Convert latin text to Long Branch Norwegian runes.">Latin to<br/>
-    LB runes</span> &nbsp;
+    LB runes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'toST');_output.focus();" 
+    <button onclick="transcribe(getHighlightedText(_output),'toST');_output.focus();" 
     title="Convert latin text to Short Twig Norwegian runes.">Latin to<br/>
-    ST runes</span> &nbsp;
+    ST runes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'toMedieval');_output.focus();" 
+    <button onclick="transcribe(getHighlightedText(_output),'toMedieval');_output.focus();" 
     title="Convert latin text to toMedieval Norwegian runes.">Latin to<br/>
-    Medieval runes</span> &nbsp;
+    Medieval runes</button>
     
     
-    <span onclick="transcribe(getHighlightedText(_output),'fromNItON');_output.focus();" 
-    title="Convert text from New Introduction to Old Norse to Unicode.">Transcribe<br/>from NION</span> &nbsp;
+    <button onclick="transcribe(getHighlightedText(_output),'fromNItON');_output.focus();" 
+    title="Convert text from New Introduction to Old Norse to Unicode.">Transcribe<br/>from NION</button>
 
-    <span  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'non','');document.getElementById('output').focus();" 
-    title="Create an example.">Make<br>example</span> &nbsp;
+    <button  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'non','');document.getElementById('output').focus();" 
+    title="Create an example.">Make<br>example</button>
     
-    <span  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'latin','non','');" 
-    title="Create an character link.">Character<br/>markup</span>
+    <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'latin','non','');" 
+    title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
 
@@ -195,7 +195,7 @@
 
 
 <div style="position:relative;">
-<div id=vertical-menu>
+<div id="vertical-menu">
 <div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
 menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
 _showShapeHints = ''; 
@@ -287,7 +287,6 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
 
 </div><!-- end of tables -->
 
-<textarea id="copybuffer" style="display:none; position: absolute;"></textarea>
 
 
 
