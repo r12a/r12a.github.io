@@ -12,6 +12,17 @@ function copyToClipboard () {
 	document.execCommand('copy')
 	}
 
+function copyToClipboard () {
+	var output = document.getElementById('output')
+	var copybuffer = document.getElementById('copybuffer')
+	copybuffer.style.display = 'block'
+	copybuffer.value = getHighlightedText(output)
+	copybuffer.focus()
+	copybuffer.select()
+	document.execCommand('copy')
+	copybuffer.style.display = 'none'
+	}
+
 function paste () {
 	document.execCommand('paste')
 	}
