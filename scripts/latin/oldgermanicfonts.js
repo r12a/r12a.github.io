@@ -7,6 +7,7 @@
                 <option value="Charis SIL">Charis SIL</option>\
                 <option value="Gentium">Gentium</option>\
                 <option value="Gentium Plus">Gentium Plus</option>\
+                <option value="Beowulf1">Beowulf</option>\
       </optgroup>\
       <optgroup label="Runic fonts">\
                <option value="Noto Sans Runic">Noto Sans Runic</option>\
