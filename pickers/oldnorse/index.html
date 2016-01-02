@@ -15,7 +15,7 @@
 <script type="text/javascript" src="localcode.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
-<script type="text/javascript" src="/scripts/block/latin-full-names-subset.js"></script>
+<script type="text/javascript" src="/scripts/block/runic-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
 <script type="text/javascript" src="localtranscription.js">  </script>
 </head>
@@ -89,113 +89,10 @@
  <div id="transcriptionChoice"></div>
 
 <div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('al-')">al-</span>
-<span class="t" onclick="dotrans('a')">a</span>
-<span class="t" onclick="dotrans('ā')">ā</span>
-<span class="t" onclick="dotrans('á')">á</span>
-<span class="t" onclick="dotrans('ʼā')">ʼā</span>
-<span class="t" onclick="dotrans('ɑ')">ɑ</span>
-<span class="t" onclick="dotrans('ɑː')">ɑː</span>
-<span class="t" onclick="dotrans('i')">i</span>
-<span class="t" onclick="dotrans('ī')">ī</span>
-<span class="t" onclick="dotrans('iː')">iː</span>
-<span class="t" onclick="dotrans('u')">u</span>
-<span class="t" onclick="dotrans('ū')">ū</span>
-<span class="t" onclick="dotrans('uː')">uː</span>
-<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
-<span class="t" onclick="dotrans(',')">,</span>
-<span class="t" onclick="dotrans(';')">;</span>
-<span class="t" onclick="dotrans('(')">(</span>
-<span class="t" onclick="dotrans(')')">)</span>
-<span class="t" onclick="dotrans('[')">[</span>
-<span class="t" onclick="dotrans(']')">]</span>
-<span class="t" onclick="dotrans('/')">/</span>
-<span class="t" onclick="dotrans('?')">?</span>
-<br/>
-<span class="t" onclick="dotrans('ʼ')">ʼ</span>
-<span class="t" onclick="dotrans('ʻ')">ʻ</span>
-<span class="t" onclick="dotrans('b')">b</span>
-<span class="t" onclick="dotrans('d')">d</span>
-<span class="t" onclick="dotrans('ḍ')">ḍ</span>
-<span class="t" onclick="dotrans('dˤ')">dˤ</span>
-<span class="t" onclick="dotrans('ð')">ð</span>
-<span class="t" onclick="dotrans('ðˤ')">ðˤ</span>
-<span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('ħ')">ħ</span>
-<span class="t" onclick="dotrans('ḥ')">ḥ</span>
-<span class="t" onclick="dotrans('j')">j</span>
-<span class="t" onclick="dotrans('k')">k</span>
-<span class="t" onclick="dotrans('l')">l</span>
-<span class="t" onclick="dotrans('m')">m</span>
-<span class="t" onclick="dotrans('n')">n</span>
-<span class="t" onclick="dotrans('q')">q</span>
-<span class="t" onclick="dotrans('r')">r</span>
-<span class="t" onclick="dotrans('s')">s</span>
-<span class="t" onclick="dotrans('ṣ')">ṣ</span>
-<span class="t" onclick="dotrans('sˤ')">sˤ</span>
-<span class="t" onclick="dotrans('ʁ')">ʁ</span>
-<span class="t" onclick="dotrans('ʃ')">ʃ</span>
-<span class="t" onclick="dotrans('t')">t</span>
-<span class="t" onclick="dotrans('ṭ')">ṭ</span>
-<span class="t" onclick="dotrans('tˤ')">tˤ</span>
-<span class="t" onclick="dotrans('w')">w</span>
-<span class="t" onclick="dotrans('y')">y</span>
-<span class="t" onclick="dotrans('z')">z</span>
-<span class="t" onclick="dotrans('ẓ')">ẓ</span>
-<span class="t" onclick="dotrans('ʒ')">ʒ</span>
-<span class="t" onclick="dotrans('θ')">θ</span>
-<span class="t" onclick="dotrans('ɣ')">ɣ</span>
-<span class="t" onclick="dotrans('ʕ')">ʕ</span>
-<span class="t" onclick="dotrans('ʔ')">ʔ</span>
 </div>
 
 
 <div id="loctranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ء')">ʼ</span>
-<span class="t" onclick="dotrans('ع')">ʻ</span>
-<span class="t" onclick="dotrans('ب')">b</span>
-<span class="t" onclick="dotrans('د')">d</span>
-<span class="t" onclick="dotrans('ض')">ḍ</span>
-<span class="t" onclick="dotrans('ذ')">dh</span>
-<span class="t" onclick="dotrans('ف,ڢ')">f</span>
-<span class="t" onclick="dotrans('غ')">gh</span>
-<span class="t" onclick="dotrans('ه,ة')">h</span>
-<span class="t" onclick="dotrans('ح')">ḥ</span>
-<span class="t" onclick="dotrans('ج')">j</span>
-<span class="t" onclick="dotrans('ك')">k</span>
-<span class="t" onclick="dotrans('خ')">kh</span>
-<span class="t" onclick="dotrans('ل')">l</span>
-<span class="t" onclick="dotrans('م')">m</span>
-<span class="t" onclick="dotrans('ن')">n</span>
-<span class="t" onclick="dotrans('ق,ڧ')">q</span>
-<span class="t" onclick="dotrans('ر')">r</span>
-<span class="t" onclick="dotrans('س')">s</span>
-<span class="t" onclick="dotrans('ص')">ṣ</span>
-<span class="t" onclick="dotrans('ش')">sh</span>
-<span class="t" onclick="dotrans('ت,ة')">t</span>
-<span class="t" onclick="dotrans('ط')">ṭ</span>
-<span class="t" onclick="dotrans('ث')">th</span>
-<span class="t" onclick="dotrans('و')">w</span>
-<span class="t" onclick="dotrans('ي')">y</span>
-<span class="t" onclick="dotrans('ز')">z</span>
-<span class="t" onclick="dotrans('ظ')">ẓ</span>
-<br/>
-<span class="t" onclick="dotrans('ا')">ā</span>
-<span class="t" onclick="dotrans('ى')">á</span>
-<span class="t" onclick="dotrans('آ')">ʼā</span>
-<span class="t" onclick="dotrans('ي')">ī</span>
-<span class="t" onclick="dotrans('و')">ū</span>
-<span class="t" onclick="dotrans('اللّٰه')">Allāh</span>
-<span class="t" onclick="dotrans('ال')">al-</span>
-&nbsp;&nbsp; diacritics:
-<span class="t" onclick="dotrans('\u064B')">an</span>
-<span class="t" onclick="dotrans('\u064D')">in</span>
-<span class="t" onclick="dotrans('\u064C')">un</span>
-<span class="t" onclick="dotrans('\u0652')">°</span>
-<span class="t" onclick="dotrans('\u0651')">ᵚ</span>
-<span class="t" onclick="dotrans('\u064F')">u</span>
-<span class="t" onclick="dotrans('\u0650')">i</span>
-<span class="t" onclick="dotrans('\u064E')">a</span>
 </div>
 
 
@@ -364,7 +261,7 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
 </div><!-- end of tables -->
 
 
-</div><!-- end of wrapper round tables and vertical menu -->
+<textarea id="copybuffer" style="display:none; position: absolute;"></textarea>
 
 
 
