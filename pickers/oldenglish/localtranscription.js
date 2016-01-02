@@ -176,7 +176,8 @@ function oldEnglishToRune (str) {
 	str = str.replace(/ɨ/g,'ᛇ')
 	
 	str = str.replace(/:/g,'᛬\u200B')
-	str = str.replace(/[,|.|-]/g,'')
+	str = str.replace(/[,|-]/g,'')
+	str = str.replace(/[.|!]/g,'᛫\u200B​')
 	str = str.replace(/͡/g,'\u200D')
 
 	// add markup for ambiguous cases
@@ -195,7 +196,7 @@ function oldEnglishToRune (str) {
 
 
 	str = str.trim()
-	str = str.replace(/ /g,'᛬\u200B')
+	//str = str.replace(/ /g,'᛬\u200B')
 
 	return str
 	}
