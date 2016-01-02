@@ -19,6 +19,7 @@
                 <option value="Charis SIL">Charis SIL</option>\
                 <option value="Gentium">Gentium</option>\
                 <option value="Gentium Plus">Gentium Plus</option>\
+                <option value="Beowulf1">Beowulf</option>\
       </optgroup>\
       <optgroup label="Other fonts">\
                 <option value="Lucida Sans">Lucida Sans</option>\
