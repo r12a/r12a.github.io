@@ -29,35 +29,35 @@
 
 <div id="main">
 <span id="copydelete">
-  <span title="Copy to clipboard" onclick="copyToClipboard()">📋</span>
-  <span title="Select the text" onclick="selectAll()">🔶</span>
-  <span title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</span>
+  <button title="Copy to clipboard" onclick="copyToClipboard()">📋</button>
+  <button title="Select the text" onclick="selectAll()">🔶</button>
+  <button title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</button>
   </span>
     <span id="tools"><img  style="vertical-align:top;" src="/pickers/images/y.png"/>
-    <span onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</span> &nbsp;
+    <button onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</button>
     
-    <span onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</span> &nbsp;
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'toIPA');_output.focus();" 
-    title="Convert Old Norse text to a rough IPA transcription.">Old Norse<br/>to IPA</span> &nbsp;
+    <button onclick="transcribe(getHighlightedText(_output),'toIPA');_output.focus();" 
+    title="Convert Old Norse text to a rough IPA transcription.">Old Norse<br/>to IPA</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'toRunes');_output.focus();" 
-    title="Convert Old Norse text to a rough runic transcription.">Old Norse<br/>to LB runes</span> &nbsp;
+    <button onclick="transcribe(getHighlightedText(_output),'toRunes');_output.focus();" 
+    title="Convert Old Norse text to a rough runic transcription.">Old Norse<br/>to LB runes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'toShortRunes');_output.focus();" 
-    title="Convert Old Norse text to a rough runic transcription.">Old Norse<br/>to ST runes</span> &nbsp;
+    <button onclick="transcribe(getHighlightedText(_output),'toShortRunes');_output.focus();" 
+    title="Convert Old Norse text to a rough runic transcription.">Old Norse<br/>to ST runes</button>
     
-    <span onclick="transcribe(getHighlightedText(_output),'fromNItON');_output.focus();" 
-    title="Convert text from New Introduction to Old Norse to Unicode.">Transcribe<br/>from NION</span> &nbsp;
+    <button onclick="transcribe(getHighlightedText(_output),'fromNItON');_output.focus();" 
+    title="Convert text from New Introduction to Old Norse to Unicode.">Transcribe<br/>from NION</button>
     
-    <span onclick="openGlossaryWindow(transcribe(getHighlightedText(_output),'toGloss'));_output.focus();" 
-    title="Look up Old Norse text in A New Introduction to Old Norse.">Glossary<br/>lookup</span> &nbsp;
+    <button onclick="openGlossaryWindow(transcribe(getHighlightedText(_output),'toGloss'));_output.focus();" 
+    title="Look up Old Norse text in A New Introduction to Old Norse.">Glossary<br/>lookup</button>
     
-    <span  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'non','');document.getElementById('output').focus();" 
-    title="Create an example.">Make<br>example</span> &nbsp;
+    <button  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'non','');document.getElementById('output').focus();" 
+    title="Create an example.">Make<br>example</button>
     
-    <span  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'latin','non','');" 
-    title="Create an character link.">Character<br/>markup</span>
+    <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'latin','non','');" 
+    title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
 
@@ -261,7 +261,6 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
 </div><!-- end of tables -->
 
 
-<textarea id="copybuffer" style="display:none; position: absolute;"></textarea>
 
 
 
