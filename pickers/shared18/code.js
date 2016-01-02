@@ -5,12 +5,14 @@ function selectAll () {
 	output.select()
 	}
 
+/*
 function copyToClipboard () {
 	var output = document.getElementById('output')
 	output.focus()
 	output.select()
 	document.execCommand('copy')
 	}
+*/
 
 function copyToClipboard () {
 	var output = document.getElementById('output')
@@ -721,6 +723,16 @@ window.onload = function() {
 		}
 	if (defaults.view) { switchView(defaults.view); }
 
+
+	// create an element to serve as a buffer from which to copy selections to the clipboard
+	// assumes existence of element with id tables
+	buffer = document.createElement('textarea')
+	buffer.id = 'copybuffer'
+	buffer.style.display = 'none'
+	buffer.style.position = 'absolute'
+	buffer.textContent = ''
+	document.getElementById('tables').appendChild(buffer)
+	
 
 	// check for parameters and take appropriate action
 	parameters = location.search.split('&');

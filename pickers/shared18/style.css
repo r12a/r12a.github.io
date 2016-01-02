@@ -403,16 +403,34 @@ dt {
 	display: inline-block; 
 	line-height:1;
 	text-align:center;
-	/*border: 1px solid #ddd;*/
 	padding: 1px;
-	/*background-color: #eee;*/
 	border-radius: 5px;
 	}
-#copydelete span {
-	padding-right: 0.5em; 
+#tools button {
+	cursor:pointer; 
+	display: inline-block; 
+	line-height:1;
+	text-align:center;
+	padding: 1px;
+	border-radius: 5px;
+	border: 0;
+	background-color: white;
+	box-shadow: none;
+	font-size: 100%;
+	color: gray;
+	margin: 0;
+	margin-right: .5em;
+	}
+#copydelete button {
+	padding-right: 0em; 
 	cursor:pointer;
 	text-shadow: 1px 1px 2px #555;
 	font-size: 90%;
+	background-color: white;
+	box-shadow: none;
+	font-size: 100%;
+	border: 0;
+	margin-right: 0;
 	}
 .optionTrigger {
 	background-color: white;
