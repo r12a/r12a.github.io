@@ -420,7 +420,17 @@ dt {
 	color: gray;
 	margin: 0;
 	margin-right: .5em;
+	border: 1px solid white; 
 	}
+#tools button:hover {
+	color: #c33;
+	}
+/*#tools button:hover {
+	border: 1px solid #ccc; 
+	background-color: #FFFFD2;
+	color: #666;
+	box-shadow: 2px 2px 5px #888, -2px -2px 5px #888;
+	}*/
 #copydelete button {
 	padding-right: 0em; 
 	cursor:pointer;
@@ -440,10 +450,11 @@ dt {
 	cursor: pointer;
 	}
 .optionTrigger:hover {
-	background-color: #FFFFC7;
+	/*background-color: #FFFFC7;
 	border-radius: 2px;
 	padding: 0 4px;
-	color: #666;
+	color: #666;*/
+	color: #c33;
 	}
 #copyTranscription {
 	position: absolute; 

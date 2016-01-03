@@ -5,25 +5,49 @@ function selectAll () {
 	output.select()
 	}
 
-/*
-function copyToClipboard () {
-	var output = document.getElementById('output')
-	output.focus()
-	output.select()
-	document.execCommand('copy')
-	}
-*/
 
 function copyToClipboard () {
+	// this doesn't work on Safari because S doesn't support execCommand('copy')
 	var output = document.getElementById('output')
 	var copybuffer = document.getElementById('copybuffer')
 	copybuffer.style.display = 'block'
+	document.getElementById('output').focus()
 	copybuffer.value = getHighlightedText(output)
 	copybuffer.focus()
 	copybuffer.select()
 	document.execCommand('copy')
+	output.focus()
 	copybuffer.style.display = 'none'
 	}
+	
+	
+function getSelectionText() {
+	// can't get this to work - thought it might be an alternative to getHighlightedText
+    var text = "";
+    if (window.getSelection) {
+		var selObj = window.getSelection()
+        text = selObj.toString();
+    } else if (window.selection && window.selection.type != "Control") {
+        text = window.selection.createRange().text;
+    }
+    return text;
+}
+
+function getHighlightedText (node) {
+	// returns the highlighted text, or returns all the text, if no highlight
+	var chstring
+	
+	//older IE support
+	if (document.selection) chstring = document.selection.createRange()
+
+	// modern browser support
+	else if (node.selectionStart || node.selectionStart == '0') {
+		chstring = node.value.substring(node.selectionStart, node.selectionEnd)
+		}
+	if (chstring == '') { chstring = node.value }
+	return chstring
+	}
+
 
 function paste () {
 	document.execCommand('paste')
@@ -358,21 +382,6 @@ function closeTranscription () {
 	document.getElementById('transcriptionWrapper').style.display = 'none'
 	}
 
-function getHighlightedText (node) {
-	// returns the highlighted text, or returns all the text, if no highlight
-	var chstring
-	
-	//IE support
-	if (document.selection) { 
-	    chstring = document.selection.createRange()
-		}
-	// Mozilla and Safari support
-	else if (node.selectionStart || node.selectionStart == '0') {
-		chstring = node.value.substring(node.selectionStart, node.selectionEnd)
-		}
-	if (chstring == '') { chstring = node.value }
-	return chstring
-	}
 
 function transcribe (chstring, direction) {
 	// node: the output element
