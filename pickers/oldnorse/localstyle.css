@@ -74,6 +74,7 @@
 	}
 
 
+.key { 	height: 34px; width: 60px;	} 
 .key span { 
 	font-size: 24px; 
 	color: gray; 
@@ -84,8 +85,6 @@
 	line-height: 1;
 	padding: 0 2px; 
 	}
-.key .s { position:absolute; bottom: 5px; left: 15px; }
-.key .n { position:absolute; bottom: 5px; right: 5px;  }
 
 
 #endings {
