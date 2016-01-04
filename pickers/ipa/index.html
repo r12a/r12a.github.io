@@ -2,18 +2,17 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>IPA character picker 17</title>
+<title>IPA character picker 19</title>
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/scripts/latin/ipafonts.js"> </script>
 
 <script type="text/javascript" src="defaults.js">  </script>
 <script type="text/javascript" src="/scripts/block/ipa-names-subset.js"></script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
@@ -22,19 +21,30 @@
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','IPA character picker','v17');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','IPA character picker','v19');</script>
 </header>
 
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
-    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'en-fonipa','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
-    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'ipa','en-fonipa','ltr');" title="Create an character link.">charLink</button>
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll();">❌</button>
+  </span>
+  
+<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
+    
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('ipa','en-fonipa','')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
 </div>
+
+
+
 
 <div id="outputDiv">
   <textarea rows="2" cols="80" id="output" name="output"></textarea>
@@ -44,17 +54,18 @@
 
 
 <div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription"></div>
+<div id="transcription" contenteditable="true"></div>
 </div>
 
 
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+    onclick="switchAutofocus('off')">Off</span></div>
 
 
 
@@ -65,9 +76,6 @@
 
 <div id="latintranscript" class="transcript" style="display:none;">
 	    </div> 
-
-
-
 
 
 </div>
@@ -81,16 +89,21 @@
 
 <div style="position:relative;">
 <div id="vertical-menu">
-<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = ''; _showKeyboard = ''; 
-document.getElementById('keyboard').style.display = 'none';
- return false;">D</div>
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="
+        menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
+        globals.showShapeHints = ''; globals.showShapeLookup = ''; globals.showLatinTrans = ''; globals.showKeyboard = ''; 
+        document.getElementById('keyboard').style.display = 'none';
+         return false;">D</div>
  
-<div class="vmtab" onmouseover="this.textContent='Keyboard'+_showKeyboard" onmouseout="this.textContent='K'"  onclick="if (_showKeyboard) {_showKeyboard = ''; this.textContent ='Keyboard'; this.style.color='white'; document.getElementById('keyboard').style.display = 'none';} else {_showKeyboard = ' ✓'; this.textContent='Keyboard'+_showKeyboard; this.style.color='orange'; document.getElementById('keyboard').style.display = 'block';} return false;">K</div>
-
+<div class="vmtab" 
+	onmouseover="this.textContent='Keyboard'+globals.showKeyboard" 
+    onmouseout="this.textContent='K'"  
+    onclick="toggleSideBarOption(this, 'Keyboard', 'showKeyboard', 'keyboard')">K</div>
 </div>
-
+</div>
 
 
 
@@ -306,7 +319,7 @@ document.getElementById('keyboard').style.display = 'none';
     <tr>
       <td><div id="other2"> <span class="c" title="Voiceless labial velar plosive">&#x028D;</span> <span class="c" title="Voiced labial velar approximant">&#x0077;</span> <span class="c" title="Voiced labial palatal approximant">&#x0265;</span> <span class="c" title="Voiceless epiglottal fricative">&#x029C;</span> <span class="c" title="Voiced epiglottal fricative">&#x02A2;</span> <span class="c" title="Epiglottal plosive">&#x02A1;</span> <span class="c" title="Voiceless alveolo-palatal fricative">&#x0255;</span> <span class="c" title="Voiced alveolo-palatal fricative">&#x0291;</span> <span class="c" title="Simultaneous unvoiced postalveolar &amp; velar fricative">&#x0267;</span> <span class="c" title="Voiced alveolar lateral flap">&#x027A;</span> <span class="c" title="Voiceless dental affricate">&#x02A6;</span> <span class="c" title="Voiced dental affricate">&#x02A3;</span> <span class="c" title="Voiceless postalveolar affricate">&#x02A7;</span> <span class="c" title="Voiced postalveolar affricate">&#x02A4;</span> <span class="c" title="Voiceless alveolo-palatal affricate">&#x02A8;</span> <span class="c" title="Voiced alveolo-palatal affricate">&#x02A5;</span> <span class="c" title="Rhoticised schwa">&#x025A;</span> <span class="c" title="Rhoticised lower mid central vowel">&#x025D;</span></div></td>
       <td  class="bottomrighttop"><div><span class="c" style="padding-left:10px;" title="">&#x002F;</span> <span class="c" title="">&#x005B;</span> <span style="margin-right:20px;" class="c" title="">&#x005D;</span>  <span class="c" title="Long">&#x02D0;</span> <span class="c" title="Half-long">&#x02D1;</span> <span class="c" title="Extra short diacritic">&#x0306;</span> <span class="c" title="Primary stress">&#x02C8;</span> <span class="c" title="Secondary stress">&#x02CC;</span> <span class="c" title="Minor (foot) group">&#x007C;</span> <span class="c" title="Major (intonation) group">&#x2016;</span>  <span class="c" title="Syllable break">&#x002E;</span> <span class="c" title="Linking (absence of a break)">&#x203F;</span> <span class="c"  style="margin-left: 10px" title="Prosodic phrase">&#x03C6;</span> <span class="c" title="Prosodic word">&#x03C9;</span> <span class="c" title="Syllable">&#x03C3;</span> <span class="c" title="Mora">&#x03BC;</span></div></td>
-      <td rowspan="2" style="width: 6em;"><span onclick="add(' ');" class="space">SPACE</span><br/><br/><span onclick="add('\u00A0');" class="space">NBSP</span></td>
+      <td rowspan="2" style="width: 6em;"><span onclick="add(' ');" class="spaceEtc">SPACE</span><br/><br/><span onclick="add('\u00A0');" class="spaceEtc">NBSP</span></td>
     </tr>
     <tr>
       <td colspan="2"><div> <span class="c" title="Voiceless diacritic">&#x0325;</span> <span class="c" title="Voiceless diacritic">&#x030A;</span> <span class="c" title="Voiced diacritic">&#x032C;</span> <span class="c" title="Breathy voiced diacritic">&#x0324;</span> <span class="c" title="Creaky voiced diacritic">&#x0330;</span> <span class="c" title="Frictionalised diacritic">&#x0353;</span> <span class="c" title="Linguolabial diacritic">&#x033C;</span> <span class="c" title="Dental diacritic">&#x032A;</span> <span class="c" title="Apical diacritic">&#x033A;</span> <span class="c" title="Laminal diacritic">&#x033B;</span> <span class="c" title="More rounded diacritic">&#x0339;</span> <span class="c" title="Less rounded diacritic">&#x031C;</span> <span class="c" title="Advanced diacritic">&#x031F;</span> <span class="c" title="Retracted diacritic">&#x0320;</span> <span class="c" title="Centralised diacritic">&#x0308;</span> <span class="c" title="Mid-centralised diacritic">&#x033D;</span> <span class="c" title="Syllabic diacritic">&#x0329;</span> <span class="c" title="Non-syllabic diacritic">&#x032F;</span> <span class="c" title="Rhoticity diacritic">&#x02DE;</span> <span class="c" title="Derhoticised diacritic">&#x032E;</span> <span class="c" title="Retracted tongue root diacritic">&#x0319;</span> <span class="c" title="Advanced tongue root diacritic">&#x0318;</span> <span class="c" title="Lowered diacritic">&#x031E;</span> <span class="c" title="Raised diacritic">&#x031D;</span> <span class="c" title="Velarised or pharyngealised diacritic">&#x0334;</span> <span class="c" title="Nasalised diacritic">&#x0303;</span>  <span class="c" title="Alternate nasalised diacritic">&#x0328;</span> <span class="c" title="Denasalised diacritic">&#x034A;</span> <span class="c" title="Nasal emission">&#x034B;</span> <span class="c" title="No audible release diacritic">&#x031A;</span> <span class="c" title="Ejective diacritic">&#x02BC;</span> <span class="c" title="Aspirated diacritic">&#x02B0;</span> <span class="c" title="Unaspirated diacritic">&#x02ED;</span> <span class="c" title="Nasal release">&#x207F;</span> <span class="c" title="Lateral release">&#x02E1;</span> <span class="c" title="Pharyngealised diacritic">&#x02E4;</span> <span class="c" title="Velarised diacritic">&#x02E0;</span> <span class="c" title="Palatalised diacritic">&#x02B2;</span> <span class="c" title="Labialised diacritic">&#x02B7;</span>  <span class="c" title="">&#x1D4A;</span> <span class="c" title="Upper ligature tie">&#x0361;</span> <span class="c" title="Lower ligature tie">&#x035C;</span></div></td>
@@ -331,7 +344,7 @@ document.getElementById('keyboard').style.display = 'none';
 </div><!-- end of tables -->
 
 
-</div><!-- end of wrapper round tables and vertical menu -->
+<!--/div>< end of wrapper round tables and vertical menu -->
 
 
 
@@ -341,27 +354,46 @@ document.getElementById('keyboard').style.display = 'none';
 	    </select>
   <script>document.getElementById('fontList').innerHTML = fontSelection</script>
   </div>
+  
   <div class="control">Custom font:<br />
     <form action="none"
 						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
       <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
     </form>
   </div>
+  
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="fontSize" value="35" id="fontSize" size="3" 
+     	onchange="changeFontSize(this.value);" 
+     	onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" 
+     	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+        onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
+         onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+         onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
+         onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+         onfocus="document.getElementById('dimensions').textContent='Line height:'" 
+         onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
+  
   <div class="control">Add codepoint:
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
       <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
     </form>
   </div>
+  
   <div class="control">Search for:
-    <form action="none"
-						 onsubmit="searchFor(getElementById('search').value, 'ipa'); return false;">
+    <form action="none" onsubmit="searchFor(getElementById('search').value, 'ipa'); return false;">
       <input name="search" id="search"  type="text" />
-      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'ipa');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+      <!--img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'ipa');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." /-->
+      <span onclick="searchFor('xxxxxx', 'ipa');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" title="Clear search results." >X</span>
     </form>
   </div>
 </div>
@@ -371,11 +403,11 @@ document.getElementById('keyboard').style.display = 'none';
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+		onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value); document.getElementById('n11nform').innerHTML = 'NFC';"/> 
+    <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+		onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value); document.getElementById('n11nform').innerHTML = 'NFD';"/> 
+    <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+		onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
 
 
 
@@ -400,22 +432,19 @@ document.getElementById('keyboard').style.display = 'none';
 
 
 
-<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+<div id="showMoreControls" onclick="toggleExtraControls()"><span  class="optionTrigger">more controls</span></div>
 </div>
 
 
 
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
+<div id="showNotes" onclick="toggleNotes()"><span  class="optionTrigger">show notes</span></div>
 
-<!--div id="notes">
-</div-->
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
   
 <aside class="sidebar">
   <nav class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <!--p><a href="/scripts/latin/block">IPA character notes</a></p-->
         <p><a href="/scripts/links?script=latin">Latin script links</a></p>
         <p><a href="/uniview/?block=ipa_extensions">IPA in UniView </a></p>
         <p><a href="/pickers">Other pickers </a></p>
@@ -423,7 +452,7 @@ document.getElementById('keyboard').style.display = 'none';
 </aside>     
 
 
-<p id="status">Updated Wed 2 Sep 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a>, <a href="http://rishida.net/blog/index.php?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+<p id="status">Updated Mon 4 Jan 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
 <p>This Unicode character picker allows you to produce or analyse runs of IPA text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
@@ -441,7 +470,7 @@ document.getElementById('keyboard').style.display = 'none';
 		<dd>There are also a number of additional diacritics and symbols requested by phoneticians using the chart.</dd>
 	  <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons under <code class="kw" translate="no">more controls/Normalise</code>. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
       
-      <dt>Input options</dt>
+      <dt>Input aids</dt>
       <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area. </dd>
       <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of IPA.</dd>
 				<dd>Many characters are arranged similarly to the standard IPA chart. The trill and tap or flap rows of the standard  chart have been merged to save space. The same applies to the  approximant and lateral approximant rows. Non-pulmonic symbols were also added to the last two rows of the table for the same reason.</dd>
@@ -449,14 +478,26 @@ document.getElementById('keyboard').style.display = 'none';
                 
         <dd><strong>Keyboard</strong> A subset of the characters in the default view are arranged as per the <a href="http://www.phon.ucl.ac.uk/resource/phonetics/">Unicode Phonetic Keyboard (UCL)</a> v1.01 designed by Mark Huckvale. On any given key, the left-to-right order of characters corresponds to normal, shift and altgr.</dd>
                 
+	  <dt>Tools above the input box</dt>
+      <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
+      
+      <dd><strong class="leadin">Copy, select, delete.</strong> The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
+      <dd><span class="leadin">Show codepoints.</span> This produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
+      <dd><span class="leadin">Convert to escapes.</span> This opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
+      <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;U+00FE LATIN SMALL LETTER THORN&lt;/span&gt; (&lt;span lang=&quot;ang&quot;&gt;&amp;#x00FE;&lt;/span&gt;)</code></dd>
+
       
       <dt>Notes on other controls</dt>
       <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
 
       <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
+      
       <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
       <dd><strong>NOTE:</strong> You can use phonetic terminology when searching (eg. 'affricate', 'palatal','lower', etc) in this picker, in addition to Unicode character names.</dd>
-      <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
+      
+      <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
+
       <dt>If something is missing/broken</dt>
       <dd>... <a href="mailto:rishida@w3.org?subject=%5BIPA%20picker%5D%20">let me know</a>.</dd>
 

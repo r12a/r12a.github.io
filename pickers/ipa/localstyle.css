@@ -11,7 +11,7 @@
 	color: #999;
 	color: #666;
 	}
-
+/*
 span.hint { 
 	margin-right: 3px;
 	}
@@ -27,7 +27,7 @@ span.c {
 	margin-left: 20px; 
 	cursor:pointer;
 	}
-
+*/
 #kbd { 	
 	margin-left: 0; 
 	}
@@ -58,7 +58,17 @@ span.c {
 #alphabet { display: block; }
 #keyboard { display: block; }
 
-.key { 	height: 32px; width: 60px;	}
+.key { 	height: 32px; width: 60px;	} 
+.key span { 
+	font-size: 20px; 
+	color: #494848; 
+	font-weight: normal; 
+	font-family:  "Doulos SIL WF";  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	padding: 0 2px;
+	}
 
 #consonants { border: 1px solid  #ccc; padding-bottom: 10px;   padding-top: 8px; border-radius: 8px;  }
 #consonants td {  padding: 0;  white-space: nowrap; height: 30px; line-height: 1.4;}
@@ -85,20 +95,11 @@ table td {
 	text-align: left;
 	}
 
-.key span { 
-	font-size: 20px; 
-	color: #494848; 
-	font-weight: normal; 
-	font-family:  "Doulos SIL WF";  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
-	padding: 0 2px;
-	}
+/*
 .key .s { position:absolute; bottom: 5px; left: 6px; }
 .key .n { position:absolute; bottom: 5px; right: 22px;  }
 .key .a { position:absolute; bottom: 5px; right: 5px;  }
-
+*/
 
 /*
 .key { 	float: left; border: 1px solid #aaa; padding: 2px 0 2px 0; margin: 2px; 
