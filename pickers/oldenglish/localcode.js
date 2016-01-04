@@ -1,6 +1,10 @@
-var _showLOCTrans = ''
-var _showIPATrans = ''
-var _showCaseEndings = ''
+// GLOBAL VARIABLES
+
+globals.showLOCTrans = ''
+globals.showIPATrans = ''
+globals.showCaseEndings = ''
+
+
 
 function localInitialise () {
 
@@ -37,7 +41,7 @@ end: {}
 
 
 var keyboarddef = [
-"1|2|3|4|5|6|7|8|‹,9|›,0|«,»|‘,̀",
+"1|2|3|4|5|6|7|8|‹,9|›,0|«,»",
 "œ,q|w|ē,e|r|þ,t|ȳ,y|ū,u|ī,i|ō,o|p|[,]",
 "ā,a|s|ð,d|f|ġ,g|h|j|k|l|’|ǣ,æ",
 "z|x|ċ,c|v|b|n|m|;|.,:|\u0361"
