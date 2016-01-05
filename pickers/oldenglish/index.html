@@ -76,6 +76,26 @@
 
 
 
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab"  title="IPA characters" data-var="showIPATrans" data-locn="ipatranscript" data-shorttitle="I"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">I</div>
+
+</div>
+
+</div>
+
+
+
+
 <div id="phonemelist" style="position:relative;">
  <div id="transcriptionChoice"></div>
 
@@ -157,30 +177,6 @@
 
 
 <div id="chardata"><span id="charname">Click on characters  to create text in the box, then copy &amp; paste to your content.</span></div>
-
-
-
-<div style="position:relative;">
-<div id="vertical-menu">
-<div class="vmtab" 
-	onmouseover="this.textContent='Default'" 
-    onmouseout="this.textContent='D'"  
-    onclick="
-        menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-        globals.showShapeHints = ''; 
-        document.getElementById('latintranscript').style.display = 'none'; globals.showLatinTrans = '';
-        document.getElementById('loctranscript').style.display = 'none'; globals.showLOCTrans = '';
-        document.getElementById('ipatranscript').style.display = 'none'; globals.showIPATrans = '';
-         return false;">D</div>
-
-<div class="vmtab" 
-	onmouseover="this.textContent='IPA transcription'+globals.showIPATrans" 
-	onmouseout="this.textContent='I'"  
-    onclick="toggleSideBarOption(this, 'IPA transcription', 'showIPATrans', 'ipatranscript')">I</div>
-
-</div>
-</div>
-
 
 
 
