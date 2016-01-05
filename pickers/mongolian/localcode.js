@@ -1,6 +1,6 @@
-var _showMesherTrans =  ''
-var _showISOTrans = ''
-var _showVariantsOnMouseover = ''
+globals.showMesherTrans =  ''
+globals.showISOTrans = ''
+globals.showVariantsOnMouseover = ''
 
 function localInitialise () {
 	}
@@ -8,7 +8,7 @@ function localInitialise () {
 function event_clickOnChar () {
 	clearHighlights()
 	add(this.textContent)
-	if (this.dataset.variants && _showVariantsOnMouseover != ' ✓') {
+	if (this.dataset.variants && globals.showVariantsOnMouseover != ' ✓') {
 		showVariants(this)
 		}
 	}
@@ -62,7 +62,7 @@ function event_mouseoverChar ()  {
 	//this.style.backgroundColor = '#FC0'
 	
 	// highlight similar characters
-	if (_showShapeHints && _h[this.id]) {
+	if (globals.showShapeHints && _h[this.id]) {
 		ptr = this.id
 		for (i=0;i<_h[ptr].length;i++) {
 			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#E6FFCD'
@@ -72,7 +72,7 @@ function event_mouseoverChar ()  {
 		}
 
 	// display any variant forms in the dedicated area
-	if (_showVariantsOnMouseover) {
+	if (globals.showVariantsOnMouseover) {
 	if (this.dataset.variants) { // only do it if there's a class attribute
 		// first, get the character code point
 		var codepoint = this.id;
