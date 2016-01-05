@@ -69,6 +69,24 @@
 
 
 
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Keyboard" data-var="showKeyboard" data-locn="keyboard" data-shorttitle="K"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">K</div>
+
+</div>
+</div>
+
+
+
 
 
 <div id="phonemelist" style="position:relative;">
@@ -84,26 +102,6 @@
 
 
 <div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
-
-
-
-<div style="position:relative;">
-<div id="vertical-menu">
-<div class="vmtab" 
-	onmouseover="this.textContent='Default'" 
-    onmouseout="this.textContent='D'"  
-    onclick="
-        menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-        globals.showShapeHints = ''; globals.showShapeLookup = ''; globals.showLatinTrans = ''; globals.showKeyboard = ''; 
-        document.getElementById('keyboard').style.display = 'none';
-         return false;">D</div>
- 
-<div class="vmtab" 
-	onmouseover="this.textContent='Keyboard'+globals.showKeyboard" 
-    onmouseout="this.textContent='K'"  
-    onclick="toggleSideBarOption(this, 'Keyboard', 'showKeyboard', 'keyboard')">K</div>
-</div>
-</div>
 
 
 
