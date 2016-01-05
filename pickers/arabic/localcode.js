@@ -1,5 +1,5 @@
-var _showLOCTrans = ''
-var _showIPATrans = ''
+globals.showLOCTrans = ''
+globals.showIPATrans = ''
 
 function localInitialise () {
 
@@ -34,35 +34,6 @@ end: {}
 }
 
 
-
-
-
-function oldmakeCharacterLink (cp, block, lang, direction) { 
-	// returns markup with information about cp
-	// cp: a unicode character, or sequence of unicode characters
-	// block: 
-	// lang: the BCP47 language tag for the context
-	// direction: either rtl or ltr
-	var chars = cp.split('')
-
-	var out = ''
-	for (var i=0;i<chars.length;i++) {
-		var hex = convertChar2CP(chars[i])
-		var name = charData[chars[i]]['n']
-		var mark = charData[chars[i]]['m']
-		var cbase = ''
-		if (defaults.ccbase != '') cbase = '&amp;#x'+convertChar2CP(defaults.ccbase)+';'
-	
-		out +=  '<a href="/scripts/'+block+'/block#char'+hex+'"><span class="uname">U+'+hex+' '+name+'</span> (<span lang="'+lang+'"'
-		if (direction == 'rtl') { out += ' dir="rtl"' }
-		out += '>'
-		if (mark) { out += cbase }
-		out += '&#x'+hex+';</span>)</a> '
-		}
-		
-	document.getElementById('transcription').style.display = 'block'
-	document.getElementById('transcription').textContent = out.trim()
-	}
 
 
 

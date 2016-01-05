@@ -1,4 +1,4 @@
-﻿function localtranscribe (node, direction, str) {
+﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'toISO') { return transcribetoISO(str) }
 	if (direction == 'toLOC') { return transcribetoLOC(str) }
