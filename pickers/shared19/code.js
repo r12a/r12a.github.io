@@ -99,13 +99,13 @@ function toggleSideBarOption (node, fullTitle, variable, id) {
 		globals[variable] = ''
 		node.textContent = fullTitle
 		node.style.color='white'
-		document.getElementById(id).style.display = 'none'
+		if (id != '') document.getElementById(id).style.display = 'none'
 		} 
 	else {
 		globals[variable] = ' ✓'
 		node.textContent=fullTitle+globals[variable]
 		node.style.color='orange'
-		document.getElementById(id).style.display = 'block'
+		if (id != '') document.getElementById(id).style.display = 'block'
 		} 
 	return false
 	}
@@ -121,6 +121,20 @@ function toggleKbdShift (node) {
 		node.className = 'unshifted'
 		}
 	}
+
+function setSidebarDefaults (node) {
+	menuitems = node.parentNode.querySelectorAll('div'); 
+    for (i=1;i<menuitems.length;i++) { 
+    	menuitems[i].textContent = menuitems[i].dataset.shorttitle
+		menuitems[i].style.color='white'
+        toggleSideBarOption(menuitems[i], menuitems[i].title, menuitems[i].dataset.var, menuitems[i].dataset.locn)
+		globals[menuitems[i].dataset.var] = ''
+		menuitems[i].textContent = menuitems[i].dataset.shorttitle
+		menuitems[i].style.color='white'
+		if (menuitems[i].dataset.locn != '') document.getElementById(menuitems[i].dataset.locn).style.display = 'none'
+        }
+	}
+
 
 
 

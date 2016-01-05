@@ -216,10 +216,12 @@ table td { border: 0; }
 	position: absolute; 
 	color: white; 
 	z-index: 1000; 
-	padding: 2px;
+	padding: 4px;
 	background-color:#666;
 	margin-top: 10px;
 	cursor:pointer;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
 	}
 .vmtab {
 	background-color:#666; 
