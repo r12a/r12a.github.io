@@ -1,6 +1,6 @@
-var _showLOCTrans = ''
-var _showIPATrans = ''
-var _showCaseEndings = ''
+globals.showLOCTrans = ''
+globals.showIPATrans = ''
+globals.showCaseEndings = ''
 
 function localInitialise () {
 

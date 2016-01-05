@@ -2,16 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Runic character picker 18</title>
+<title>Runic character picker 19</title>
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared18/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/scripts/runic/fonts.js"> </script>
 
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/pickers/shared18/code.js">  </script>
-<script type="text/javascript" src="/pickers/shared18/local.js">  </script>
+<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
@@ -23,52 +22,47 @@
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Runic character picker','v18');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Runic character picker','v19');</script>
 </header>
 
 
 <div id="main">
 <span id="copydelete">
-  <button title="Copy to clipboard" onclick="copyToClipboard()">📋</button>
-  <button title="Select the text" onclick="selectAll()">🔶</button>
-  <button title="Delete the text" onclick="deleteAll();document.getElementById('output').focus();">❌</button>
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
   </span>
-    <span alt=" " id="tools"><img  style="vertical-align:top;" src="/pickers/images/y.png"/>
-    <button onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Show<br/>codepoints</button>
+  
+<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <button onclick="transcribe(getHighlightedText(_output),'transliterateRunes');_output.focus();" 
-    title="Transliterate Long Branch or Short Twig runes.">Transliterate<br/>LB/ST runes</button>
+    <button onclick="doTranscription('transliterateRunes')" 
+    title="Transliterate Long Branch or Short Twig runes.">Transliterate<br/>LB/ST runes</button> 
     
-    <button onclick="transcribe(getHighlightedText(_output),'transliterateMedievalRunes');_output.focus();" 
-    title="Transliterate Medieval runes.">Transliterate<br/>
-    Medieval runes</button>
+    <button onclick="doTranscription('transliterateMedievalRunes')" 
+    title="Transliterate Medieval runes.">Transliterate<br/>Medieval runes</button> 
     
-    <button onclick="transcribe(getHighlightedText(_output),'transliterateASRunes');_output.focus();" 
-    title="Transliterate Anglo-Saxon/Frisian runes.">Transliterate<br/>
-    AS/F runes</button>
+    <button onclick="doTranscription('transliterateASRunes')" 
+    title="Transliterate Anglo-Saxon/Frisian runes.">Transliterate<br/>AS/F runes</button> 
     
-    <button onclick="transcribe(getHighlightedText(_output),'toLB');_output.focus();" 
-    title="Convert latin text to Long Branch Norwegian runes.">Latin to<br/>
-    LB runes</button>
+    <button onclick="doTranscription('toLB')" 
+    title="Convert latin text to Long Branch Norwegian runes.">Latin to<br/>LB runes</button> 
     
-    <button onclick="transcribe(getHighlightedText(_output),'toST');_output.focus();" 
-    title="Convert latin text to Short Twig Norwegian runes.">Latin to<br/>
-    ST runes</button>
+    <button onclick="doTranscription('toST')" 
+    title="Convert latin text to Short Twig Norwegian runes.">Latin to<br/>ST runes</button> 
     
-    <button onclick="transcribe(getHighlightedText(_output),'toMedieval');_output.focus();" 
-    title="Convert latin text to toMedieval Norwegian runes.">Latin to<br/>
-    Medieval runes</button>
+    <button onclick="doTranscription('toMedieval')" 
+    title="Convert latin text to Medieval Norwegian runes.">Latin to<br/>Medieval runes</button> 
     
+    <button onclick="doTranscription('fromNItON')" 
+    title="Convert text from New Introduction to Old Norse to Unicode.">Transcribe<br/>from NION</button> 
     
-    <button onclick="transcribe(getHighlightedText(_output),'fromNItON');_output.focus();" 
-    title="Convert text from New Introduction to Old Norse to Unicode.">Transcribe<br/>from NION</button>
-
-    <button  id="makeExample" onclick="document.getElementById('transcriptionWrapper').style.display='block';  makeExample(document.getElementById('output').value,'non','');document.getElementById('output').focus();" 
+    <button  id="makeExample" onclick="makeExample('ang','')" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'latin','non','');" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('latin','ang','')" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -91,9 +85,29 @@
 
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
+
+
+
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab"  title="IPA characters" data-var="showIPATrans" data-locn="ipatranscript" data-shorttitle="I"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">I</div>
+
+</div>
+</div>
+
 
 
 
@@ -194,29 +208,6 @@
 
 
 
-<div style="position:relative;">
-<div id="vertical-menu">
-<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = ''; 
-document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
-document.getElementById('loctranscript').style.display = 'none'; _showLOCTrans = '';
-document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans = '';
- return false;">D</div>
-
-<!--div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div-->
-
-<!--div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div-->
-
-<!--div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div-->
-
-<!--div class="vmtab" onmouseover="this.textContent='Latin to Old Norse'+_showLOCTrans" onmouseout="this.textContent='L'"  onclick="if (_showLOCTrans) {_showLOCTrans = ''; this.textContent ='Latin to Old Norse'; this.style.color='white'; document.getElementById('loctranscript').style.display = 'none';} else {_showLOCTrans = ' ✓'; this.textContent='Latin to Old Norse'+_showLOCTrans;  this.style.color='orange'; document.getElementById('loctranscript').style.display = 'block';} return false;">L</div-->
-
-<div class="vmtab" onmouseover="this.textContent='IPA transcription'+_showIPATrans" onmouseout="this.textContent='I'"  onclick="if (_showIPATrans) {_showIPATrans = ''; this.textContent ='IPA transcription'; this.style.color='white'; document.getElementById('ipatranscript').style.display = 'none';} else {_showIPATrans = ' ✓'; this.textContent='IPA transcription'+_showIPATrans;  this.style.color='orange'; document.getElementById('ipatranscript').style.display = 'block';} return false;">I</div>
-
-</div>
-
-</div>
 
 
 
@@ -296,24 +287,42 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
 	    </select>
   <script>document.getElementById('fontList').innerHTML = fontSelection</script>
   </div>
+  
   <div class="control">Custom font:<br />
     <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
       <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
     </form>
   </div>
+  
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="fontSize" value="35" id="fontSize" size="3" 
+     	onchange="changeFontSize(this.value);" 
+        onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" 
+     	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+        onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
+     	onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+        onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Line height:'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
+  
   <div class="control">Add codepoint:
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
       <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
     </form>
   </div>
+  
   <div class="control">Search for:
-    <form action="none"
-						 onsubmit="searchFor(getElementById('search').value, 'klingon'); return false;">
+    <form action="none" onsubmit="searchFor(getElementById('search').value, 'klingon'); return false;">
       <input name="search" id="search"  type="text" />
       <span onclick="searchFor('xxxxxx', 'latin');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" title="Clear search results." >X</span>
     </form>
@@ -324,11 +333,14 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+		onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFC';"/> 
+    <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+		onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFD';"/> 
+    <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+		onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
+        </div>
 
 
 
@@ -393,6 +405,7 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
       <dd>Various keyboard arrangements are available, providing access to runes used for the Elder Fuþark, Younger Fuþark (Long Branch and Short Twig variants), Medieval Fuþark, and Anglo-Saxon Fuþork. There is also a layout that includes the Latin characters used for transliterations of the runic text. Use the buttons below the keyboard to switch between these alternatives.</dd>
       <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
       
+      
       <dt>Input aids</dt>
       <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
       <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Runic.</dd>
@@ -414,6 +427,9 @@ document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans =
       <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] runic text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
       <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
       <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;U+16A0 RUNIC LETTER FEHU FEOH FE F&lt;/span&gt; (&lt;span lang=&quot;non&quot;&gt;&amp;#x16A0;&lt;/span&gt;)</code></dd>
+
+
+
       <dt>Notes on other controls</dt>
       <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
       
