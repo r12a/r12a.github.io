@@ -2,15 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Tibetan character picker 17</title>
+<title>Tibetan character picker 19</title>
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/scripts/tibetan/fonts.js"></script>
 
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
 <script type="text/javascript" src="localtranscription.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
@@ -22,17 +22,34 @@
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Tibetan character picker', 'v17');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Tibetan character picker', 'v19');</script>
 </header>
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toWylie');document.getElementById('output').focus();" title="Convert tibetan text to a latin (Wylie) transcription.">toWylie</button>
-    <button type="button" onclick="var converter = window.open('http://www.thlib.org/reference/transliteration/wyconverter.php', 'converter') ; converter.focus()" title="Convert a latin (Wylie) transcription to Tibetan text .">toTibetan</button>
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  </span>
+  
+<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
+    
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    
+    <button onclick="doTranscription('toWylie')" 
+    title="Convert tibetan text to a latin (Wylie) transcription.">Transcribe<br/>to Wylie</button> 
+    
+    <button onclick="var converter = window.open('http://www.thlib.org/reference/transliteration/wyconverter.php', 'converter') ; converter.focus()" 
+    title="Convert a latin (Wylie) transcription to Tibetan text.">Transcribe<br/>from Wylie</button> 
+    
+    <button  id="makeExample" onclick="makeExample('bo','')" 
+    title="Create an example.">Make<br>example</button>
+    
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('tibetan','bo','')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
 </div>
 
 
@@ -43,17 +60,47 @@
 
 
 <div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription"></div>
+<div id="transcription" contenteditable="true"></div>
 </div>
 
 
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
+
+
+
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="Wylie transcription" data-var="showWylieTrans" data-locn="wylietranscript" data-shorttitle="W"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">W</div>
+
+</div>
+</div>
 
 
 
@@ -205,25 +252,6 @@ subjoined:
 
 
 <div id="chardata"><span id="charname">Click on characters to create text in the box, then copy & paste to your content.</span></div>
-
-
-
-<div style="position:relative;">
-<div id=vertical-menu>
-<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = '';  _showLatinTrans = '';  _showWylieTrans = ''; 	
-document.getElementById('latintranscript').style.display = 'none';
-document.getElementById('wylietranscript').style.display = 'none';
- return false;">D</div>
- 
-<div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
-
-<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
-
-<div class="vmtab" onmouseover="this.textContent='Wylie transcription'+_showWylieTrans" onmouseout="this.textContent='W'"  onclick="if (_showWylieTrans) {_showWylieTrans = ''; this.textContent ='Wylie transcription'; this.style.color='white'; document.getElementById('wylietranscript').style.display = 'none';} else {_showWylieTrans = ' ✓'; this.textContent='Wylie transcription'+_showWylieTrans; this.style.color='orange'; document.getElementById('wylietranscript').style.display = 'block';} return false;">W</div>
-
-</div>
 
 
 
@@ -521,7 +549,8 @@ document.getElementById('wylietranscript').style.display = 'none';
           </td>
           </tr>
     </table>
- <p id="toggleSymbols" onclick="hiddenstuff=document.getElementById('extraSymbols'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide more symbols</p>
+    
+ <p id="toggleSymbols" onclick="hiddenstuff=document.getElementById('extraSymbols'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }"><span class="optionTrigger">show/hide more symbols</span></p>
  <table id="extraSymbols" style="display:none;"><tbody>
         <tr><td>
           <div><span class="c">&#x0F1A;</span> <span class="c">&#x0F1B;</span> <span class="c">&#x0F1C;</span> <span class="c">&#x0F1D;</span> <span class="c">&#x0F1E;</span> <span class="c">&#x0FCF;</span> <span class="c">&#x0F1F;</span> <span class="c">&#x0FCE;</span></div>
@@ -555,7 +584,9 @@ document.getElementById('wylietranscript').style.display = 'none';
 </td>
           </tr>
 </tbody></table> 
- <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare/deprecated characters</p>
+
+
+ <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }"><span class="optionTrigger">show/hide rare/deprecated characters</span></p>
  <table id="rare" style="display:none;"><tbody>
         <tr><td>
         <div id="ccs">
@@ -588,7 +619,6 @@ document.getElementById('wylietranscript').style.display = 'none';
 </div><!-- end of tables -->
 
 
-</div><!-- end of wrapper round tables and vertical menu -->
 
 
 
@@ -598,25 +628,42 @@ document.getElementById('wylietranscript').style.display = 'none';
     </select>
 <script>document.getElementById('fontList').innerHTML = fontSelection</script>
   </div>
+  
   <div class="control">Custom font:<br />
-    <form action="none"
-						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+    <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
       <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
     </form>
   </div>
+  
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="fontSize" value="35" id="fontSize" size="3" 
+     	onchange="changeFontSize(this.value);" 
+        onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" 
+     	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+        onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
+     	onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+        onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Line height:'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
+  
   <div class="control">Add codepoint:
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
       <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
     </form>
   </div>
+  
   <div class="control">Search for:
-    <form action="none"
-						 onsubmit="searchFor(getElementById('search').value, 'tibetan'); return false;">
+    <form action="none" onsubmit="searchFor(getElementById('search').value, 'tibetan'); return false;">
       <input name="search" id="search"  type="text" />
       <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'tibetan');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
@@ -628,11 +675,14 @@ document.getElementById('wylietranscript').style.display = 'none';
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+		onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFC';"/> 
+    <img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+		onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFD';"/> 
+    <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+		onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
+        </div>
 
 
 
@@ -659,13 +709,13 @@ document.getElementById('wylietranscript').style.display = 'none';
 
 
 
-<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+<div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 </div>
 
 
 
 
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 
 <div id="detailednotes" style="display:none">
@@ -682,7 +732,7 @@ document.getElementById('wylietranscript').style.display = 'none';
 </aside>     
 
 
-<p id="status">Updated Sat 14 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=tibetan" title="Show all blog posts tagged with 'tibetan'">tibetan</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+<p id="status">Updated Tue 5 Jan 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=tibetan" title="Show all blog posts tagged with 'tibetan'">tibetan</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Tibetan text using the Tibetan script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 
@@ -697,8 +747,9 @@ document.getElementById('wylietranscript').style.display = 'none';
       <dt>About the chart</dt>
 		<dd>Includes characters in the Unicode <a href="/uniview/?block=tibetan">Tibetan</a> block as of Unicode 7.0.</dd>
       <dd>All Tibetan text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on 'more controls' and using the switch in the yellow area. Note that normalization only takes place when you add a character by clicking on the table – text pasted into the box won't be normalised until you click on another character below, or change the control in the yellow area.</dd>
-      
-       <dt>Input options</dt>
+
+
+       <dt>Input aids</dt>
       <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
       <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Tibetan.</dd>
 				<dd><em>Characters have been arranged so that is easy to input them, and especially to ensure that multiple combining characters are input in the right normalised order</em>. Consonants used in native Tibetan words appear to the left, with native Tibetan vowels below. To the right of each consonant is its subjoined version. Progressing to the right, we have syllable and other separators, then additional consonants and vowels used in transliterations of languages such as Sanskrit, Chinese and English.  The far right hand block contains numerals and some symbols, and below all run some head marks and paired punctuation.</dd>
@@ -707,23 +758,37 @@ document.getElementById('wylietranscript').style.display = 'none';
 				<dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd>
                 
     				<dd><strong class="leadin">Transcriptions</strong>  There are two transcription panels available in this picker: Latin,  and Wylie. The latter panel allows you to follow a transcription to produce some Tibetan text. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</dd>
-				<dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
-				<dd>The <code class="kw" translate="no">Wylie</code> panel allows you to generate some Tibetan text from a THL Extended Wylie Transliteration Schema transcription. It currently offers only a basic set of characters.</dd>
+				<dd>The <code class="kw" translate="no">Latin characters</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+				<dd>The <code class="kw" translate="no">Wylie transcription</code> panel allows you to generate some Tibetan text from a THL Extended Wylie Transliteration Schema transcription. It currently offers only a basic set of characters.</dd>
 
-      <dt>Automatic transcriptions</dt>
-  		<dd>The button <code class="button" translate="no">toWylie</code>  transcribes the contents of the box below from tibetan to latin script using the extended version of Wylie's transcription method as described by <a href="http://www.thlib.org/reference/transliteration/#!essay=/thl/ewts">The Tibetan &amp; Himalayan Library</a>. By default, the whole content of the box is transcribed, but if you have selected a range of text only that range will be transcribed. The result appears in a separate area below the box.</dd>
+
+	  <dt>Tools above the input box</dt>
+      <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
+      
+      <dd><strong class="leadin">Copy, select, delete.</strong> The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
+      <dd><span class="leadin">Show codepoints.</span> This produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
+      <dd><span class="leadin">Convert to escapes.</span> This opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
+      <dd><span class="leadin">Old English to IPA.</span> This produces a  rough phonetic transcription of the highlighted text in the box. It's useful for generating reminders about how to pronounce the text. The transcription appears just below the input box, where you can copy it, move it into the input box at the caret, or delete it.</dd>
+
+      <dd><span class="leadin">Transcribe to Wylie.</span> Transcribes the contents of the box below from tibetan to latin script using the extended version of Wylie's transcription method as described by <a href="http://www.thlib.org/reference/transliteration/#!essay=/thl/ewts">The Tibetan &amp; Himalayan Library</a>. By default, the whole content of the box is transcribed, but if you have selected a range of text only that range will be transcribed. The result appears in a separate area below the box.</dd>
    		<dd>Where ambiguity exists, and there is more than one way to transcribe a character, the displayed text will show alternatives. Click on the alternative that you prefer, and the others will disappear.</dd>
    		<dd><strong>Note:</strong> I implemented most of the rules, but I used diacritics over lowercase letters rather than uppercase letters, except for the fixed form characters. I also didn't provide conversions for many of the symbols – they will appear without change in the transcription. There may be some bugs for the less common aspects of the transcription, but the are not likely to occur for native tibetan words.</dd>
-   		<dd>The button <code class="button" translate="no">toTibetan</code> opens the  <a target="transcription" href="http://www.thlib.org/reference/transliteration/wyconverter.php">THL's Online Tibetan Transliteration Converter</a>, since Wylie's transcription doesn't make it easy to go from latin to tibetan, and I haven't yet implemented a converter myself .</dd>
 
-      <dt>Notes on controls</dt>
+      <dd><span class="leadin">Transcribe from Wylie.</span> Opens the  <a target="transcription" href="http://www.thlib.org/reference/transliteration/wyconverter.php">THL's Online Tibetan Transliteration Converter</a>, since Wylie's transcription doesn't make it easy to go from latin to tibetan, and I haven't yet implemented a converter myself.</dd>
+
+      <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with up to four parts, delimited by /, in the following order: [1] Tibetan text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
+      <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;U+0F40 TIBETAN LETTER KA&lt;/span&gt; (&lt;span lang=&quot;bo&quot;&gt;ཀ&lt;/span&gt;)</code></dd>
+
+      
+      <dt>Notes on other controls</dt>
       <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
       <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <em>Add codepoint</em> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
       <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use '\bha\b' (or the shortcut, ':b:').</dd>
        <dd><span class="leadin">Autofocus.</span> See the notes on mobile devices above.</dd>
      
       <dt>If something is missing/broken</dt>
-      <dd>... <a href="mailto:rishida@w3.org?subject=[Bengali%20picker]%20">let me know</a>.</dd>
+      <dd>... <a href="mailto:rishida@w3.org?subject=[Tibetan%20picker]%20">let me know</a>.</dd>
     </dl>
 </div>
 

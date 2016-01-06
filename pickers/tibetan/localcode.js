@@ -1,7 +1,7 @@
 function localInitialise () {
 	}
 
-_showWylieTrans = ''
+globals.showWylieTrans = ''
 
 var _h = {
 'F40': ['F69', 'F6B'],
