@@ -687,16 +687,16 @@ dir="rtl">
       <dd> Since the picker characters are already largely ordered in groups of similar shapes, hints are only provided when there is a little distance between the similar characters. (This is also why there is no shape lookup for this picker.)</dd>
       
       <dd><strong class="leadin">Transcriptions</strong>  There are three transcription panels available in this picker: Latin, and Latin to Arabic, and IPA transcription. </dd>
-				<dd>The <code class="kw" translate="no">Latin transcription</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+				<dd>The <code class="kw" translate="no">Latin characters</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
 				<dd>The <code class="kw" translate="no">Latin to Arabic</code> panel allows you to generate some Arabic text from characters used for Arabic transcription in  the <a href="http://www.loc.gov/catdir/cpso/romanization/urdu.pdf">Library of Congress scheme</a>.  Click on the transcription character and the appropriate Arabic character will be produced. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</dd>
 				<dd>The <code class="kw" translate="no">IPA transcription</code> panel allows you to generate some Arabic text from characters used for phonetic transcription of Arabic. (This may still need some work.)</dd>
 
-      <dd><strong class="leadin">Copy, select, delete.</strong>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
 
       
       <dt>Tools above the input box</dt>
       <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
       
+      <dd><strong class="leadin">Copy, select, delete.</strong>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
       <dd><span class="leadin">Show codepoints.</span> This produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
       <dd><span class="leadin">Convert to escapes.</span> This opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
       <dd><span class="leadin">Transcribe to LOC.</span> This produces a Library of Congress transcription of the text in the box. The transcription appears just below the input box, where you can copy it, move it into the input box at the caret, or delete it. The transcription is generated using rules.</dd>
@@ -722,6 +722,8 @@ dir="rtl">
       <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
       
       <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
+
+      <dd><span class="leadin">Table direction.</span> Allows you to flip the direction of the default input table.</dd>
       
       <dt>If something is missing/broken</dt>
       <dd>... <a href="mailto:rishida@w3.org?subject=%5BArabic%20picker%5D%20">let me know</a>.</dd>
