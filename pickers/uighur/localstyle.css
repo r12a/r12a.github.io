@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Scheherazade WF';
+    src: url('/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
+         url('/webfonts/scheherazaderegotwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
 #alphabet { display: block; }
 
 #alphabet td.hint {  
