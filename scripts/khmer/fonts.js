@@ -1,5 +1,5 @@
  var fontSelection = '<optgroup label="Webfonts">\
-      <option value="Battambang WF">Battambang WF</option>\
+      <option value="Khmer OS Battambang WF">Khmer OS Battambang WF</option>\
       <option value="Noto Sans Khmer WF">Noto Sans Khmer WF</option>\
       </optgroup>\
       <optgroup label="Mac fonts">\
