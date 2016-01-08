@@ -2,17 +2,16 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Arabic block character picker 17</title>
+<title>All Arabic character picker 19</title>
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/scripts/arabic/fonts.js"></script>
 
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="/scripts/block/arabic-names-subset.js"></script>
@@ -23,16 +22,28 @@
 <body class="app">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Arabic block character picker','v17');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','All Arabic character picker','v19');</script> 
 </header>
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-  <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-  <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-  <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
-  <button type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'bn','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  </span>
+  
+<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
+    
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    
+    <button  id="makeExample" onclick="makeExample('ar','rtl')" 
+    title="Create an example.">Make<br>example</button>
+    
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic','ar','rtl')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
 </div>
 
 
@@ -42,16 +53,19 @@
 
 
 <div id="transcriptionWrapper">
-  <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
-  <div id="closeTranscription" onclick="closeTranscription()">X</div>
-  <div id="transcription"></div>
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
+<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
+<div id="closeTranscription" onclick="closeTranscription()">X</div>
+<div id="transcription" contenteditable="true"></div>
 </div>
 
 
-<div id="autofocusswitch">Autofocus: <span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
-<div id="phonemelist" style="position:relative;">
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="switchAutofocus('on')">On</span> 
+    <span id="afoff" class="off" 
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
 
 
   <div id="transcriptionChoice"></div>
@@ -63,16 +77,44 @@
 
 
 <!--div style="position:relative;">
-  <div id=vertical-menu>
-    <div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = '';_showISOTrans = '';_showRadiceTrans = '';
-document.getElementById('shapelist').style.display = 'none';
-document.getElementById('latintranscript').style.display = 'none';
-document.getElementById('isotranscript').style.display = 'none';
-document.getElementById('radicetranscript').style.display = 'none';
- return false;">D</div>
-    <div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
+
+<div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div>
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="Latin to Arabic" data-var="showLOCTrans" data-locn="loctranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="Keyboard" data-var="showKeyboard" data-locn="keyboard" data-shorttitle="K"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">K</div>
+
+<div class="vmtab"  title="IPA characters" data-var="showIPATrans" data-locn="ipatranscript" data-shorttitle="I"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">I</div>
+
+</div>
   </div-->
   
   
@@ -151,9 +193,24 @@ document.getElementById('radicetranscript').style.display = 'none';
   </div>
   
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-    <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-    <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-    <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+    <input name="fontSize" value="35" id="fontSize" size="3" 
+    	onchange="changeFontSize(this.value);" 
+        onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+    <input name="rows" value="1.5" id="rows" size="3" 
+    	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+        onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
+    	onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+    <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
+    	onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+        onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Line height:'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
   
   <div class="control">Add codepoint:
@@ -175,11 +232,11 @@ document.getElementById('radicetranscript').style.display = 'none';
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers/images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers/images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers/images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+		onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers/images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+		onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers/images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+		onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
                             
   <div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
     <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
@@ -199,12 +256,12 @@ document.getElementById('radicetranscript').style.display = 'none';
     </select>
   </div>
   
-  <div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+  <div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 </div>
 
 
 
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 <!--div id="notes">
 </div-->
@@ -221,10 +278,10 @@ document.getElementById('radicetranscript').style.display = 'none';
     </div>
   </aside>
   
-  <p id="status">Updated Sun 22 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+  <p id="status">Updated Fri 8 Jan 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
-  <p>This Unicode character picker allows you to produce or analyse runs of text using the Arabic script. It is not language-specific, but rather gives access to all Arabic characters in the Unicode Arabic block, in a way that makes it easy to find the character you are looking for. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+  <p>This Unicode character picker allows you to produce or analyse runs of text using the Arabic script. It is not language-specific, but rather gives access to all Arabic characters in the Unicode Arabic and Arabic Supplement blocks, in a way that makes it easy to find the character you are looking for. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
   <p>You must have JavaScript enabled. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
   <p>To properly display the text you will need to choose a font that is loaded on your system or device or use one of the  web fonts downloaded with the page. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7, as well as which are the web fonts. Note that fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="/fontlist/#arabic">standard OS fonts in Mac and Windows</a>.</p>
   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
@@ -236,7 +293,27 @@ document.getElementById('radicetranscript').style.display = 'none';
     <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</dd>
     <dt>Input options</dt>
     <dd>Because the are a large number of characters in the repertoire of this picker, the default option requires a two-stage look-up.  <!--You can start up directly in one of the  views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>default</code>, <code>shape</code>, <code>transcription</code>, <code>phones</code> or <code>fontgrid</code>.-->First click on the  row of orange pictures that represent basic shapes associated with the Arabic  characters. This will then display second row of characters. Click on one of these to add the character to the output area.</dd>
-    <dt>Notes on controls</dt>
+      
+      
+      <dt>Tools above the input box</dt>
+      <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
+      
+      <dd><strong class="leadin">Copy, select, delete.</strong>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
+      <dd><span class="leadin">Show codepoints.</span> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
+      <dd><span class="leadin">Convert to escapes.</span> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
+
+      <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Arabic text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
+      <dd>For example, the following (which is displayed here more as you'd type it than see it):</dd>
+      <dd><span lang="ug" dir="rtl">ئۇيغۇر‎</span>‎/wiːɡər//Uyghurs</span></dd>
+      <dd>will produce:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;ex&quot; lang=&quot;ug&quot;&gt;ئۇيغۇر&#x200E;&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;wiːɡər&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Uyghurs&lt;/span&gt;</code></dd>
+       
+      <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;U+06C7 ARABIC LETTER U&lt;/span&gt; (&lt;span lang=&quot;ug&quot;&gt;ۇ&lt;/span&gt;)</code></dd>
+      <dd><span class="uname">U+6C7 ARABIC LETTER U</span> (<span lang="ug">&#x6C7;</span>)</dd>
+      
+
+    <dt>Notes on other controls</dt>
     <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
     <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <em>Add codepoint</em> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
     <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use '\bha\b' (or the shortcut, ':b:').</dd>
