@@ -1,5 +1,5 @@
-var _showHuffmanTrans =  ''
-var _showGilbertTrans = ''
+globals.showHuffmanTrans =  ''
+globals.showGilbertTrans = ''
 
 
 function localInitialise () {
