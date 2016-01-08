@@ -2,18 +2,17 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Burmese character picker 17</title>
+<title>Burmese character picker 19</title>
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/scripts/myanmar/fonts.js"> </script>
 
 <script type="text/javascript" src="defaults.js">  </script>
 <script type="text/javascript" src="/scripts/block/myanmar-names-subset.js"></script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
@@ -23,21 +22,38 @@
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Burmese character picker','v17');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Burmese character picker','v19');</script>
 </header>
 
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
-    <button type="button" onclick="add(splitSyllables(getHighlightedText(document.getElementById('output')))); return false;">Split syllables</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toMLC');document.getElementById('output').focus();" title="Convert Burmese text to an MLC Latin transcription.">toMLC</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toIPA');document.getElementById('output').focus();" title="Convert Burmese text to an *approximation* to the IPA transcription.">toIPA</button>
-    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'my','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
-    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'myanmar','my','ltr');" title="Create an character link.">charLink</button>
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  </span>
+  
+<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
+    
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    
+    <button onclick="add(splitSyllables(getHighlightedText(document.getElementById('output')))); return false;" 
+    title="Split the text into syllables.">Split<br/>syllables</button> 
+    
+    <button onclick="doTranscription('toMLC')" 
+    title="Convert Burmese text to an MLC Latin transcription.">Convert<br/>to MLC</button> 
+    
+    <button onclick="doTranscription('toIPA')" 
+    title="Convert Burmese text to an *approximation* to the IPA transcription.">Convert<br/>to IPA</button> 
+    
+    <button  id="makeExample" onclick="makeExample('my','')" 
+    title="Create an example.">Make<br>example</button>
+    
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('myanmar','my','')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
 </div>
 
 <div id="outputDiv">
@@ -48,18 +64,58 @@
 
 
 <div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription"></div>
+<div id="transcription" contenteditable="true"></div>
 </div>
 
 
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
 
+
+
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
+
+<div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div>
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="MLC transcription" data-var="showISOTrans" data-locn="mlctranscript" data-shorttitle="M"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div>
+
+<div class="vmtab"  title="Mesher transcription" data-var="showMesherTrans" data-locn="meshertranscript" data-shorttitle="M"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div>
+</div>
+</div>
+
+ 
 
 
 
@@ -272,27 +328,6 @@
 
 
 
-<div style="position:relative;">
-<div id=vertical-menu>
-<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = '';
-document.getElementById('shapelist').style.display = 'none'; _showShapeLookup = '';
-document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
-document.getElementById('mlctranscript').style.display = 'none'; _showISOTrans = '';
-document.getElementById('meshertranscript').style.display = 'none'; _showMesherTrans = '';
- return false;">D</div>
- 
-<div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
-
-<div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
-
-<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
-
-<div class="vmtab" onmouseover="this.textContent='MLC transcription'+_showISOTrans" onmouseout="this.textContent='M'"  onclick="if (_showISOTrans) {_showISOTrans = ''; this.textContent ='MLC transcription'; this.style.color='white'; document.getElementById('mlctranscript').style.display = 'none';} else {_showISOTrans = ' ✓'; this.textContent='MLC transcription'+_showISOTrans;  this.style.color='orange'; document.getElementById('mlctranscript').style.display = 'block';} return false;">M</div>
-
-<div class="vmtab" onmouseover="this.textContent='Mesher transcription'+_showMesherTrans" onmouseout="this.textContent='M'"  onclick="if (_showMesherTrans) {_showMesherTrans = ''; this.textContent ='Mesher transcription'; this.style.color='white'; document.getElementById('meshertranscript').style.display = 'none';} else {_showMesherTrans = ' ✓'; this.textContent='Mesher transcription'+_showMesherTrans;  this.style.color='orange'; document.getElementById('meshertranscript').style.display = 'block';} return false;">M</div>
-</div>
 
 
 
@@ -464,7 +499,7 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
 </tr>
 </table>
 
- <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
+ <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }"><span class="optionTrigger">show/hide rare characters</span></p>
  <table id="rare" style="display:none;"><tbody>
    
    <tr>
@@ -517,25 +552,42 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
 	    </select>
   <script>document.getElementById('fontList').innerHTML = fontSelection</script>
   </div>
+  
   <div class="control">Custom font:<br />
-    <form action="none"
-						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+    <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
       <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
     </form>
   </div>
+  
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="fontSize" value="35" id="fontSize" size="3" 
+     	onchange="changeFontSize(this.value);" 
+        onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" 
+     	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+        onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
+     	onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+        onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
+        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
+        onfocus="document.getElementById('dimensions').textContent='Line height:'" 
+        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
+  
   <div class="control">Add codepoint:
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
       <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
     </form>
   </div>
+  
   <div class="control">Search for:
-    <form action="none"
-						 onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
+    <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
       <input name="search" id="search"  type="text" />
       <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
@@ -547,11 +599,14 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+		onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFC';"/> 
+    <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+		onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+		document.getElementById('n11nform').innerHTML = 'NFD';"/> 
+    <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+		onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
+    </div>
 
 
 
@@ -576,12 +631,12 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
 
 
 
-<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+<div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 </div>
 
 
 
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
@@ -598,11 +653,11 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
 </aside>     
 
 
-<p id="status">Updated Sun 15 Feb 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=burmese" title="Show all blog posts tagged with 'burmese'">burmese</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+<p id="status">Updated Wed 6 Jan 2014 &bull; tags <a href="http://rishida.net/blog/index.php?tag=burmese" title="Show all blog posts tagged with 'burmese'">burmese</a>, <a href="http://rishida.net/blog/index.php?tag=myanmar" title="Show all blog posts tagged with 'myanmar'">myanmar</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
 <p>This Unicode character picker allows you to produce or analyse runs of Burmese text using the Myanmar script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>The <code class="button" translate="no">toIPA</code> button is intended to speed up phonetic transcription and to give a general idea of sounds, rather than to produce perfect transcriptions. For example, it doesn't apply sandhi or vowel reduction, and it doesn't handle irregular pronunciations.</p>
+<p><code class="kw" translate="no">Convert to IPA</code>  is intended to speed up phonetic transcription and to give a general idea of sounds, rather than to produce perfect transcriptions. For example, it doesn't apply sandhi or vowel reduction, and it doesn't handle irregular pronunciations.</p>
 
 <p>You must have JavaScript enabled. Choose view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
     <p>To properly display the text you will need to choose a font that is loaded on your system or device, or use one of the  web fonts downloaded with the page (Myanmar3, Tharlon, and Noto Sans Myanmar). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7/8, as well as which are the web fonts. Note that the web fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="/scripts/fontlist/#myanmar">standard OS fonts in Mac and Windows</a>.</p>
@@ -630,19 +685,30 @@ document.getElementById('meshertranscript').style.display = 'none'; _showMesherT
 				<dd>The orange shapes  typically indicate the left-most or top-most part of a character shape; characters and combinations that start with that shape are highlighted together. </dd>
                 
 				<dd><strong class="leadin">Transcriptions</strong> There are three transcription panels available in this picker: Latin, MLC, and Mesher. The latter two panels allow you to follow a transcription to produce some Burmese text. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</dd>
-				<dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
-				<dd>The <code class="kw" translate="no">MLC</code> panel allows you to generate some Burmese text from a Myanmar Language Commission Transcription System (1980) transcription  (see <a href="http://en.wikipedia.org/wiki/MLC_Transcription_System">here</a>).</dd>
-				<dd>The <code class="kw" translate="no">Mesher</code> panel allows you to generate some Burmese text from a transcription in the book <cite>Burmese for Beginners</cite>, by Gene Mesher.</dd>
+				<dd><code class="kw" translate="no">Latin characters</code>  provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+				<dd><code class="kw" translate="no">MLC transcription</code>  allows you to generate some Burmese text from a Myanmar Language Commission Transcription System (1980) transcription  (see <a href="http://en.wikipedia.org/wiki/MLC_Transcription_System">here</a>).</dd>
+				<dd><code class="kw" translate="no">Mesher transcription</code>  allows you to generate some Burmese text from a transcription in the book <cite>Burmese for Beginners</cite>, by Gene Mesher.</dd>
                 
-      <dt>Automatic transcriptions</dt>
-      <dd>There are two buttons that allow you to convert from Burmese text to Latin transcriptions. If you highlight part of the text, only that part will be transcribed.  The result appears in a separate area below the main output area.</dd>
-      <dd>The <code class="button" translate="no">toMLC</code> button produces a Myanmar Language Commission Transcription System transliteration, that basically latinizes the Burmese characters. The result doesn't normally tell you how to pronounce the Burmese text, but  each Myanmar character is represented by a unique sequence in Latin, with a few exceptions. This transcription should produce fully conformant output, except that the picker uses a dot below t, th, d, dh and n to distinguish the Pali-derived symbols from the native Burmese ones.</dd>
-      <dd>The <code class="button" translate="no">toIPA</code> button produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation. It will work reasonably well but it doesn't take into account sandhi (voicing of non-voiced consonants) or vowel reduction (which means that many vowels are just pronounced <span class="ipa">ə</span>).</dd>
-      
+      <dt>Tools above the input box</dt>
+     <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
+       <dd><strong class="leadin">Copy, select, delete.</strong> The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
+      <dd><span class="leadin">Show codepoints.</span> This produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
+      <dd><span class="leadin">Convert to escapes.</span> This opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
+      <dd><span class="leadin">Split syllables.</span> Adds a copy of the text to the cursor position that has been split apart at syllable boundaries. Syllables joined by subjoining consonants do not have a space inserted. As with other controls, this works on a subset of the text if it is highlighted, and replaces any highlighted text.</dd>
+      <dd><span class="leadin">Convert to MLC.</span> Produces a Myanmar Language Commission Transcription System transliteration, that basically latinizes the Burmese characters. The result doesn't normally tell you how to pronounce the Burmese text, but  each Myanmar character is represented by a unique sequence in Latin, with a few exceptions. This transcription should produce fully conformant output, except that the picker uses a dot below t, th, d, dh and n to distinguish the Pali-derived symbols from the native Burmese ones.</dd>
+      <dd><span class="leadin">Convert to IPA.</span> Produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation. It will work reasonably well but it doesn't take into account sandhi (voicing of non-voiced consonants) or vowel reduction (which means that many vowels are just pronounced <span class="ipa">ə</span>).</dd>
+       <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Burmese text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
+      <dd>For example, the following (which is displayed here more as you'd type it than see it):</dd>
+      <dd><span lang="my">မြန်မာဘာသာ</span>/bəmà bàðà//Burmese language</span></dd>
+      <dd>will produce:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;ex&quot; lang=&quot;my&quot;&gt;မြန်မာဘာသာ&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;bəmà bàðà&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Burmese language&lt;/span&gt;</code></dd>
+       
+      <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;U+1018 MYANMAR LETTER BHA&lt;/span&gt; (&lt;span lang=&quot;ang&quot;&gt;&amp;#x1018;&lt;/span&gt;)</code></dd>
+      <dd>When you add it to your document, it will look like this.</dd>
+      <dd><span class="uname">U+1018 MYANMAR LETTER BHA</span> (<span lang="ang">&#x1018;</span>)</dd>
+     
       <dt>Notes on other controls</dt>
-      
-      <dd>The <code class="button" translate="no">Split syllables</code> button adds a copy of the text to the cursor position that has been split apart at syllable boundaries. Syllables joined by subjoining consonants do not have a space inserted. As with other controls, this works on a subset of the text if it is highlighted, and replaces any highlighted text.</dd>
-      
       <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
       
       <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>

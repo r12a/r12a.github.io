@@ -1,4 +1,4 @@
-﻿function localtranscribe (node, direction, str) {
+﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'toMLC') { return transcribetomlc(str) }
 	if (direction == 'toIPA') { return transcribetoipa(str) }

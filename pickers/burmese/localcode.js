@@ -1,5 +1,5 @@
-var _showMesherTrans =  ''
-var _showISOTrans = ''
+globals.showMesherTrans =  ''
+globals.showISOTrans = ''
 
 
 function localInitialise () {
