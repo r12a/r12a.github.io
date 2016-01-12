@@ -1,7 +1,7 @@
 var charData = {
-"\0020":{n:"SPACE",m:0,g:"Basic Latin"},
-"\00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
-"\200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
+"\u0020":{n:"SPACE",m:0,g:"Basic Latin"},
+"\u00A0":{n:"NO-BREAK SPACE",m:0,g:"Latin-1 Supplement"},
+"\u200B":{n:"ZERO WIDTH SPACE",m:0,g:"General Punctuation"},
 
 "\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
 "\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
