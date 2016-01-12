@@ -151,3 +151,7 @@ span.hint {
 	content: '\200B ' ; /* zwsp */ 
 	}
 
+
+#extrashapes span {
+	cursor: pointer;
+	}
