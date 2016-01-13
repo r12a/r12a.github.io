@@ -1,4 +1,4 @@
-﻿function localtranscribe (node, direction, str) {
+﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'rtoBeng') { return radiceToBengali(str) }
 	if (direction == 'toBeng') { return isoToBengali(str) }
@@ -397,7 +397,7 @@ function isoToBengali (str) {
 		
 		// check for conjuncts
 		if (ch in consonants && next in consonants) 	conjunct = true
-		console.log('ch',ch,'next',next,'conjunct',conjunct)
+		//console.log('ch',ch,'next',next,'conjunct',conjunct)
 			
 		var out = isomap[ch]
 		if (conjunct) out += '\u09CD'

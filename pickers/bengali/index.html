@@ -2,16 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Bengali character picker 17</title>
+<title>Bengali character picker 19</title>
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="/scripts/block/bengali-names-subset.js"></script>
@@ -22,20 +21,40 @@
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Bengali character picker','v17');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Bengali character picker','v19');</script>
 </header>
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toBeng');document.getElementById('output').focus();" title="Convert ISO 15919 Latin transcription to Bengali text.">ISOtoBeng</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'rtoBeng');document.getElementById('output').focus();" title="Convert Radice Latin transcription to Bengali text.">RtoBeng</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toISO');document.getElementById('output').focus();" title="Convert Bengali text to an ISO 15919 Latin transcription.">toISO</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toRadice');document.getElementById('output').focus();" title="Convert Bengali text to a Radice Latin transcription.">toRadice</button>
-    <button type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'bn','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  </span>
+  
+<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
+    
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    
+    <button onclick="doTranscription('toBeng')" 
+    title="Convert ISO 15919 Latin transcription to Bengali.">ISO 15919<br/>to Bengali</button> 
+    
+    <button onclick="doTranscription('toISO')" 
+    title="Convert Bengali text to an ISO 15919 Latin transcription.">Bengali to<br/>ISO 15919</button> 
+    
+    <button onclick="doTranscription('rtoBeng')" 
+    title="Convert Radice Latin transcription to Bengali.">Radice<br/>to Bengali</button> 
+    
+    <button onclick="doTranscription('toRadice')" 
+    title="Convert Bengali text to a Radice Latin transcription.">Bengali to<br/>Radice</button> 
+    
+    <button  id="makeExample" onclick="makeExample('bn','')" 
+    title="Create an example.">Make<br>example</button>
+    
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('bengali','bn','')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
 </div>
 
 
@@ -47,17 +66,56 @@
 
 
 <div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription"></div>
+<div id="transcription" contenteditable="true"></div>
 </div>
 
 
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
+
+
+
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
+
+<div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div>
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="ISO-15919 to Bengali" data-var="showISOTrans" data-locn="isotranscript" data-shorttitle="I"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">I</div>
+
+<div class="vmtab"  title="Radice to Bengali" data-var="showRadiceTrans" data-locn="radicetranscript" data-shorttitle="R"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">R</div>
+</div>
+</div>
 
 
 
@@ -258,27 +316,6 @@
 
 
 
-<div style="position:relative;">
-<div id=vertical-menu>
-<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = ''; _showShapeLookup = ''; _showLatinTrans = '';_showISOTrans = '';_showRadiceTrans = '';
-document.getElementById('shapelist').style.display = 'none';
-document.getElementById('latintranscript').style.display = 'none';
-document.getElementById('isotranscript').style.display = 'none';
-document.getElementById('radicetranscript').style.display = 'none';
- return false;">D</div>
- 
-<div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
-
-<div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
-
-<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
-
-<div class="vmtab" onmouseover="this.textContent='ISO-15919 transcription'+_showISOTrans" onmouseout="this.textContent='I'"  onclick="if (_showISOTrans) {_showISOTrans = ''; this.textContent ='ISO-15919 transcription'; this.style.color='white'; document.getElementById('isotranscript').style.display = 'none';} else {_showISOTrans = ' ✓'; this.textContent='ISO-15919 transcription'+_showISOTrans;  this.style.color='orange'; document.getElementById('isotranscript').style.display = 'block';} return false;">I</div>
-
-<div class="vmtab" onmouseover="this.textContent='Radice transcription'+_showRadiceTrans" onmouseout="this.textContent='R'"  onclick="if (_showRadiceTrans) {_showRadiceTrans = ''; this.textContent ='Radice transcription'; this.style.color='white'; document.getElementById('radicetranscript').style.display = 'none';} else {_showRadiceTrans = ' ✓'; this.textContent='Radice transcription'+_showRadiceTrans;  this.style.color='orange'; document.getElementById('radicetranscript').style.display = 'block';} return false;">R</div>
-</div>
 
 
 
@@ -478,7 +515,7 @@ document.getElementById('radicetranscript').style.display = 'none';
         <td id="zwspcol2">&nbsp;</td>
       </tr>
     </table>
- <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
+ <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }"><span class="optionTrigger">show/hide rare characters</span></p>
  <table id="rare" style="display:none;"><tbody>
  
  	<tr>
@@ -504,32 +541,32 @@ document.getElementById('radicetranscript').style.display = 'none';
  
  <div id=shapelist style="display: none;">
  <div>
-<img alt="shape1" src="images/shape1.png" onclick="findShape('0995,09AC,09B0,09F1,09F0,099D','রু,রূ,ব্দ,ব্ব,ব্র,ব্ল,ক্ল,ক্ম,ক্স,ক্ব,ক্ষ্ন',true)" /> 
-<img alt="shape2" src="images/shape2.png" onclick="findShape('0998,09AF,09B7,09AF09BC,09AB,09DF','ঘ্ন,ঘ্র,ষ্ণ,ফ্র,ফ্ল,ফ,ব্ধ,ক্ক,ক্ব',true)" /> 
-<img alt="shape26" src="images/shape26.png" onclick="findShape('09A7,098B','ধ্র,ধ্ব,খ',true)" /> 
-<img alt="shape3" src="images/shape3.png" onclick="findShape('0996,098B,09E0','খ্র',true)" /> 
-<img alt="shape4" src="images/shape4.png" onclick="findShape('0997','গ্গ,গ্ধ,গ্ন,গ্ম,গ্র,গ্ল,গ্ব',true)" /> 
-<img alt="shape5" src="images/shape5.png" onclick="findShape('09B9,0987,09A5,09BD','হৃ,থ্র,ন্ধ্র,হ্র,হ্ণ,হ্ন,হ্ল,হ্ব,থ্ব,ঞ্চ,ঞ্ছ,ঞ্জ,ঞ্ঝ',true)" /> 
-<img alt="shape6" src="images/shape6.png" onclick="findShape('09B2','ত্থ,হু,ল্ক,ল্গ,ল্গ,ল্ট,ল্প,ল্প,ল্ফ,ল্ব,ল্ম,ল্ল',true)" /> 
-<img alt="shape7" src="images/shape7.png" onclick="findShape('09A3','ণ্ট,ণ্ঢ,ণ্ণ,ণ্ণ,ণ্ম,ণ্ম,ণ্ব,ণ্ঠ,ণ্ড্র,ণ্ড,ণ্ড্র',true)" /> 
-<img alt="shape8" src="images/shape8.png" onclick="findShape('09A8','ন্ত,ন্তু,ন্থ,ন্দ,ন্ধ,ন্ন,ন্ব,ন্ম,ন্স,ন্ত্ব,ন্ত্র,ন্দ্র,ন্দ্ব,ন্ধ্র',true)" /> 
-<img alt="shape15" src="images/shape15.png" onclick="findShape('09AE,099509CD09B7','ক্ষ্ন,ক্ষ্ম,হ্ম,ম্ম,ম্ন,ম্র',true)" /> 
-<img alt="shape16" src="images/shape16.png" onclick="findShape('09B8','স্ম,স্র',true)" /> 
-<img alt="shape17" src="images/shape17.png" onclick="findShape('0988','ঙ্গ',true)" /> 
-<img alt="shape9" src="images/shape9.png" onclick="findShape('09A6,09F8','ল্ড,দ্গ,দ্দ,দ্ধ,দ্ধ্ব,দ্ভ,দ্ম,দ্র,দ্ব',true)" /> 
-<img alt="shape10" src="images/shape10.png" onclick="findShape('0993,0994','ত্ত,ত্ত্ব,ক্ত,শু,গু,ণ্ড,ণ্ড্র',true)" /> 
-<img alt="shape11" src="images/shape11.png" onclick="findShape('09A4,09E9,0985,0986','ত্ন,ত্ম,ত্ব',true)" /> 
-<img alt="shape12" src="images/shape12.png" onclick="findShape('099E,098F','ত্র,ভ্র,ঐ,ক্র,ত্রু,ঞ্ঝ',true)" /> 
-<img alt="shape14" src="images/shape14.png" onclick="findShape('0999,09A1,09A109BC,09AD,09EC,0989,098A,09DC','ড্ড,ড্র,জ্র,ভ্র,জ,ব্জ,জ্ব,জ্ঝ,ঙ্খ,ঙ্ম,জ্জ,জ্জ্ব,জ্ঞ,ঙ্ক্ষ',true)" /> 
-<img alt="shape18" src="images/shape18.png" onclick="findShape('099A,099B','চ্চ,চ্ছ,চ্ঞ,চ্ছ্র,চ্ছ্ব',true)" /> 
-<img alt="shape19" src="images/shape19.png" onclick="findShape('099F,09A2,09A209BC,09F3,09DD','ট্ট,ট্র,ক্ট',true)" /> 
-<img alt="shape20" src="images/shape20.png" onclick="findShape('09A0','ষ্ঠ,ণ্ঠ',true)" /> 
-<img alt="shape21" src="images/shape21.png" onclick="findShape('09AA','প্ট,প্প,প্ন,প্ত,প্র,প্ল,প্স',true)" /> 
-<img alt="shape22" src="images/shape22.png" onclick="findShape('09B6','শ্চ,শ্ছ,শ্ন,শ্ম,শ্র,শ্ল,শ্ব',true)" /> 
-<img alt="shape23" src="images/shape23.png" onclick="findShape('09B7','ষ্ক,ষ্ট,ষ্প,ষ্ফ,ষ্ম,ষ্ক্র,ষ্ট্র',true)" /> 
-<img alt="shape24" src="images/shape24.png" onclick="findShape('09B8','স্ক,স্খ,স্ট,স্ত,স্থ,স্ন,স্ম,স্প,স্ফ,স্ল,স্ব,স্র,স্ট্র,স্ত্র,স্প্র',true)" /> 
-<img alt="shape27" src="images/shape27.png" onclick="findShape('09AE','ম্ন,ম্ল,ম্ভ্র,ম্র,ম্প,ম্প্র,ম্ফ,ম্ভ,ম্ব,ঙ্ক',true)" /> 
-<img alt="shape28" src="images/shape28.png" onclick="findShape('09C7,09C8,09CB,09CC','',true)" /> 
+<img alt="shape1" src="images/shape1.png" onclick="findShape('995,9AC,9B0,9F1,9F0,99D','রু,রূ,ব্দ,ব্ব,ব্র,ব্ল,ক্ল,ক্ম,ক্স,ক্ব,ক্ষ্ন',true)" /> 
+<img alt="shape2" src="images/shape2.png" onclick="findShape('998,9AF,9B7,9AF9BC,9AB,9DF','ঘ্ন,ঘ্র,ষ্ণ,ফ্র,ফ্ল,ফ,ব্ধ,ক্ক,ক্ব',true)" /> 
+<img alt="shape26" src="images/shape26.png" onclick="findShape('9A7,98B','ধ্র,ধ্ব,খ',true)" /> 
+<img alt="shape3" src="images/shape3.png" onclick="findShape('996,98B,9E0','খ্র',true)" /> 
+<img alt="shape4" src="images/shape4.png" onclick="findShape('997','গ্গ,গ্ধ,গ্ন,গ্ম,গ্র,গ্ল,গ্ব',true)" /> 
+<img alt="shape5" src="images/shape5.png" onclick="findShape('9B9,987,9A5,9BD','হৃ,থ্র,ন্ধ্র,হ্র,হ্ণ,হ্ন,হ্ল,হ্ব,থ্ব,ঞ্চ,ঞ্ছ,ঞ্জ,ঞ্ঝ',true)" /> 
+<img alt="shape6" src="images/shape6.png" onclick="findShape('9B2','ত্থ,হু,ল্ক,ল্গ,ল্গ,ল্ট,ল্প,ল্প,ল্ফ,ল্ব,ল্ম,ল্ল',true)" /> 
+<img alt="shape7" src="images/shape7.png" onclick="findShape('9A3','ণ্ট,ণ্ঢ,ণ্ণ,ণ্ণ,ণ্ম,ণ্ম,ণ্ব,ণ্ঠ,ণ্ড্র,ণ্ড,ণ্ড্র',true)" /> 
+<img alt="shape8" src="images/shape8.png" onclick="findShape('9A8','ন্ত,ন্তু,ন্থ,ন্দ,ন্ধ,ন্ন,ন্ব,ন্ম,ন্স,ন্ত্ব,ন্ত্র,ন্দ্র,ন্দ্ব,ন্ধ্র',true)" /> 
+<img alt="shape15" src="images/shape15.png" onclick="findShape('9AE,9959CD9B7','ক্ষ্ন,ক্ষ্ম,হ্ম,ম্ম,ম্ন,ম্র',true)" /> 
+<img alt="shape16" src="images/shape16.png" onclick="findShape('9B8','স্ম,স্র',true)" /> 
+<img alt="shape17" src="images/shape17.png" onclick="findShape('988','ঙ্গ',true)" /> 
+<img alt="shape9" src="images/shape9.png" onclick="findShape('9A6,9F8','ল্ড,দ্গ,দ্দ,দ্ধ,দ্ধ্ব,দ্ভ,দ্ম,দ্র,দ্ব',true)" /> 
+<img alt="shape10" src="images/shape10.png" onclick="findShape('993,994','ত্ত,ত্ত্ব,ক্ত,শু,গু,ণ্ড,ণ্ড্র',true)" /> 
+<img alt="shape11" src="images/shape11.png" onclick="findShape('9A4,9E9,985,986','ত্ন,ত্ম,ত্ব',true)" /> 
+<img alt="shape12" src="images/shape12.png" onclick="findShape('99E,98F','ত্র,ভ্র,ঐ,ক্র,ত্রু,ঞ্ঝ',true)" /> 
+<img alt="shape14" src="images/shape14.png" onclick="findShape('999,9A1,9A19BC,9AD,9EC,989,98A,9DC','ড্ড,ড্র,জ্র,ভ্র,জ,ব্জ,জ্ব,জ্ঝ,ঙ্খ,ঙ্ম,জ্জ,জ্জ্ব,জ্ঞ,ঙ্ক্ষ',true)" /> 
+<img alt="shape18" src="images/shape18.png" onclick="findShape('99A,99B','চ্চ,চ্ছ,চ্ঞ,চ্ছ্র,চ্ছ্ব',true)" /> 
+<img alt="shape19" src="images/shape19.png" onclick="findShape('99F,9A2,9A29BC,9F3,9DD','ট্ট,ট্র,ক্ট',true)" /> 
+<img alt="shape20" src="images/shape20.png" onclick="findShape('9A0','ষ্ঠ,ণ্ঠ',true)" /> 
+<img alt="shape21" src="images/shape21.png" onclick="findShape('9AA','প্ট,প্প,প্ন,প্ত,প্র,প্ল,প্স',true)" /> 
+<img alt="shape22" src="images/shape22.png" onclick="findShape('9B6','শ্চ,শ্ছ,শ্ন,শ্ম,শ্র,শ্ল,শ্ব',true)" /> 
+<img alt="shape23" src="images/shape23.png" onclick="findShape('9B7','ষ্ক,ষ্ট,ষ্প,ষ্ফ,ষ্ম,ষ্ক্র,ষ্ট্র',true)" /> 
+<img alt="shape24" src="images/shape24.png" onclick="findShape('9B8','স্ক,স্খ,স্ট,স্ত,স্থ,স্ন,স্ম,স্প,স্ফ,স্ল,স্ব,স্র,স্ট্র,স্ত্র,স্প্র',true)" /> 
+<img alt="shape27" src="images/shape27.png" onclick="findShape('9AE','ম্ন,ম্ল,ম্ভ্র,ম্র,ম্প,ম্প্র,ম্ফ,ম্ভ,ম্ব,ঙ্ক',true)" /> 
+<img alt="shape28" src="images/shape28.png" onclick="findShape('9C7,9C8,9CB,9CC','',true)" /> 
 </div>
 
 <div id="extrashapes"></div>
@@ -651,11 +688,11 @@ document.getElementById('radicetranscript').style.display = 'none';
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
 							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
 							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
 
 
 
@@ -680,9 +717,9 @@ document.getElementById('radicetranscript').style.display = 'none';
 
 
 
-<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+<div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 </div>
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 
 
@@ -708,14 +745,14 @@ document.getElementById('radicetranscript').style.display = 'none';
 <p>This Unicode character picker allows you to produce or analyse runs of text using the Devanagari script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 
     <p>You must have JavaScript enabled. Choose  view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
-    <p>To properly display the text you will need to choose a font that is loaded on your system or device or use one of the two web fonts downloaded with the page (Noto Sans Bengali, and Lohit Bengali). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7, as well as which are the web fonts. Note that fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="/rishida/scripts/fontlist/#bengali">standard OS fonts in Mac and Windows</a>.</p>
+    <p>To properly display the text you will need to choose a font that is loaded on your system or device or use one of the two web fonts downloaded with the page (Noto Sans Bengali, and Lohit Bengali). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7, as well as which are the web fonts. Note that fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="/scripts/fontlist/#bengali">standard OS fonts in Mac and Windows</a>.</p>
    <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
     <dl>
       <dt>Mobile devices</dt>
    		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
         
       <dt>About the chart</dt>
-      <dd>Includes all the characters in the Unicode <a href="/rishida/scripts/uniview/?block=bengali">Bengali</a> block.</dd>
+      <dd>Includes all the characters in the Unicode <a href="/uniview/?block=bengali">Bengali</a> block.</dd>
       <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</dd>
       
       <dt>Input options</dt>
@@ -729,17 +766,42 @@ document.getElementById('radicetranscript').style.display = 'none';
              
       <dd><strong class="leadin">Shape lookup</strong> This adds a row of orange pictures that represent basic shapes associated with the Bengali characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</dd>
       <dd>In addition to highlighting characters in the table above, this picker suggests matches for a shape in the more common conjuncts for Bengali. This helps, since conjunct combinations are very common in Bengali text. Conjuncts associated with a given shape are displayed below the orange shape selectors. Just click on one to add it to the output area.</dd>
-				<dd>Note that where the shape of the  characters involved in a cluster doesn't really change I don't usually list the combination here. You should search for the two shapes and add a virama between them. For example, some clusters are indicated by bringing two characters close together, eg. compare <img src="/rishida/scripts/pickers/bengali/closeconj1.png" alt="conjunct" /> with <img src="/rishida/scripts/pickers/bengali/closeconj2.png" alt="not a conjunct" />. Also, conjuncts ending in YA <img src="/rishida/scripts/pickers/bengali/yaconj.png" alt="trailing ya"  /> are excluded: use the combining YA from the table above. The same goes for the initial RA, which ends up as a superscript <img src="/rishida/scripts/pickers/bengali/rephconj.png" alt="reph"  />.</dd>
+				<dd>Note that where the shape of the  characters involved in a cluster doesn't really change I don't usually list the combination here. You should search for the two shapes and add a virama between them. For example, some clusters are indicated by bringing two characters close together, eg. compare <img src="images/closeconj1.png" alt="conjunct" /> with <img src="images/closeconj2.png" alt="not a conjunct" />. Also, conjuncts ending in YA <img src="images/yaconj.png" alt="trailing ya"  /> are excluded: use the combining YA from the table above. The same goes for the initial RA, which ends up as a superscript <img src="images/rephconj.png" alt="reph"  />.</dd>
 
       <dd><strong class="leadin">Transcriptions</strong> There are three transcription panels available in this picker: Latin, ISO 15919, and Radice. The latter two panels allow you to follow a transcription to produce some Bengali text. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</dd>
-      <dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
-      <dd>The <code class="kw" translate="no">ISO 15919</code> panel allows you to generate some Bengali text from an ISO 15919 transcription  (from the main table <a href="http://homepage.ntlworld.com/stone-catend/trind.htm">here</a>).</dd>
-      <dd>The <code class="kw" translate="no">Radice</code> panel allows you to generate some Bengali text from a transcription in the book <cite>Teach Yourself Bengali</cite>, by William Radice.</dd>
-
-      <dt>Automatic transcription</dt>
-   		<dd>The <span class="button" translate="no">toBeng</span> button converts text <strong>in the Radice transliteration</strong> (see above) to Bengali characters, automatically. If you highlight part of the text, only that part will be transcribed.  The result appears in a separate area below the main output area.</dd>
+      <dd><code class="kw" translate="no">Latin characters</code> provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
+      <dd><code class="kw" translate="no">ISO 15919 to Bengali</code> allows you to generate some Bengali text from an ISO 15919 transcription  (from the main table <a href="http://homepage.ntlworld.com/stone-catend/trind.htm">here</a>).</dd>
+      <dd><code class="kw" translate="no">Radice to Bengali</code> allows you to generate some Bengali text from a transcription in the book <cite>Teach Yourself Bengali</cite>, by William Radice.</dd>
+      <dt>Tools above the input box</dt>
+      <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
       
-      <dt>Notes on controls</dt>
+      <dd><strong class="leadin">Copy, select, delete.</strong> The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
+      <dd><span class="leadin">Show codepoints.</span> This produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
+      <dd><span class="leadin">Convert to escapes.</span> This opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
+      
+      <dd><span class="leadin">ISO 15919 to Bengali.</span> Converts text in the ISO 15919 transliteration  to Bengali characters.</dd>
+
+      <dd><span class="leadin">Bengali to ISO 15919.</span> Converts Bengali text to an ISO 15919 transliteration.</dd>
+
+      <dd><span class="leadin">Radice to Bengali.</span> Converts text in the Radice transliteration to Bengali characters.</dd>
+
+      <dd><span class="leadin">Bengali to Radice.</span> Converts Bengali text to a Radice transliteration.</dd>
+      <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Bengali text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
+      <dd>For example, the following:</dd>
+      <dd><span lang="bn">বাংলা লিপি</span>//bangla lipi/Bengali script</dd>
+      <dd>will produce:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;ex&quot; lang=&quot;bn&quot;&gt;বাংলা লিপি&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;bangla lipi&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Bengali script&lt;/span&gt;</code></dd>
+      <dd>To get just the arabic and the second transcription you would use:</dd>
+       <dd><span lang="bn">বাংলা লিপি</span>//bangla lipi</dd>
+       
+      <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;U+9B2 BENGALI LETTER LA&lt;/span&gt; (&lt;span lang=&quot;bn&quot;&gt;&amp;#x9B2;&lt;/span&gt;)</code></dd>
+      <dd>When you add it to your document, it will look like this.</dd>
+      <dd><span class="uname">U+9B2 BENGALI LETTER LA</span> (<span lang="bn">&#x9B2;</span>)</a> </dd>
+
+      
+
+      <dt>Notes on other controls</dt>
       <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
       <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <em>Add codepoint</em> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
       <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use '\bha\b' (or the shortcut, ':b:').</dd>
