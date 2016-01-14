@@ -103,6 +103,11 @@
     onclick="setSidebarDefaults(this);
      return false;">D</div>
 
+<div class="vmtab"  title="Transliteration characters" data-var="showTranslitTrans" data-locn="translittranscript" data-shorttitle="T"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">T</div>
+
 <div class="vmtab"  title="IPA characters" data-var="showIPATrans" data-locn="ipatranscript" data-shorttitle="I"
 	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
     onmouseout="this.textContent=this.dataset.shorttitle"  
@@ -121,7 +126,62 @@
 </div>
 
 
-<div id="loctranscript" class="transcript" style="display:none;">
+<div id="translittranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('ã')">ã</span>
+<span class="t" onclick="dotrans('ą')">ą</span>
+<span class="t" onclick="dotrans('æ')">æ</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('e͡a')">e͡a</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('ï')">ï</span>
+<span class="t" onclick="dotrans('ɨ')">ɨ</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('ǫ')">ǫ</span>
+<span class="t" onclick="dotrans('œ')">œ</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('ü')">ü</span>
+<span class="t" onclick="dotrans('y')">y</span>
+<span class="t" style="margin-left: 30px;" onclick="dotrans('᛬​')">᛬</span>
+<span class="t" onclick="dotrans('᛫​')">᛫</span>
+<span class="t" onclick="dotrans('.')">.</span>
+<span class="t" onclick="dotrans(',')">,</span>
+<span class="t" onclick="dotrans(';')">;</span>
+<span class="t" onclick="dotrans('(')">(</span>
+<span class="t" onclick="dotrans(')')">)</span>
+<span class="t" onclick="dotrans('[')">[</span>
+<span class="t" onclick="dotrans(']')">]</span>
+<span class="t" onclick="dotrans('/')">/</span>
+<span class="t" onclick="dotrans('?')">?</span>
+<br/>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('b̈')">b̈</span>
+<span class="t" onclick="dotrans('c')">c</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('þ')">þ</span>
+<span class="t" onclick="dotrans('þ̈')">þ̈</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('f̈')">f̈</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('g̈')">g̈</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('k̈')">k̈</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('ʀ')">ʀ</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ẗ')">ẗ</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('x')">x</span>
+<span class="t" onclick="dotrans('z')">z</span>
 </div>
 
 
@@ -393,6 +453,7 @@
 <p id="status">Updated Fri 1 Jan 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=runic" title="Show all blog posts tagged with 'runic'">runic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 <p>This  character picker allows you to produce or analyse runs of Runic text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>Note that the Latin characters provided in this picker are for standard <strong>transliterations</strong> of runes, and you may need different characters to represent transcriptions into actual Old Norse or Anglo-Saxon, etc, text. (For that, see the <a href="/pickers/oldnorse/">Old Norse</a> and <a href="/pickers/oldenglish/">Old English</a> pickers.</p>
 <p>Writing in runes is not an exact science. Actual runic text is subject to many variations dependent on chronology, location and the author's idiosyncracies. It should be particularly noted that the automated transcription tools provided with this picker are intended as aids to speed up transcription, rather than to produce accurate renderings of specific texts. The output may need to be tweaked to produce the desired results. It should also be noted that the transcription tools do not produce bind-runes (ie. ligated forms), since there is no way that i'm aware of to produce such in Unicode.</p>
 <p>You can use the <code class="kw" translate="no">RLO/PDF</code> buttons below the keyboard to make the runic text run right-to-left, eg. <span style="font-family: Junicode, sans-serif;">&#x202E;ᚹᚪᚱᚦᚷᚪ&#x202C;</span>, and if you have the right font (such as Junicode or a Babelstone font), make the glyphs face to the left also. The <a href="http://babelstone.co.uk/Fonts/AngloSaxon.html">Bablestone fonts</a> also implement a number of bind-runes for Anglo-Saxon (but are missing some for Old Norse, it seems) if you put a ZWJ character between the characters you want to ligate. For example: <span lang="asc" style="font-family: 'Bablestone Runic Beorhtric', 'Babelstone Runic Beagnoth';">ᚻ‍ᛖ‍ᛚ</span>. You can also produce two glyphs mirrored around the central stave by putting ZWJ between two identical characters, eg. <span lang="asc" style="font-family: 'Bablestone Runic Beorhtric', 'Babelstone Runic Beagnoth';">ᚢ‍ᚢ</span>.</p>
 
@@ -413,8 +474,12 @@
       <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
       <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Runic.</dd>
       
-      <dd><strong class="leadin">Transcriptions</strong>  There is one transcription panel available in this picker:  IPA transcription. For Latin characters used in transliteration of runic text, use the Latin keyboard layout.</dd>
-				<dd>The <code class="kw" translate="no">IPA transcription</code> panel provides  characters you may need while typing in an IPA (International Phonetic Alphabet) transcription from the keyboard.</dd>
+      <dd><strong class="leadin">Transcriptions</strong>  There are two transcription panels available in this picker.</dd>
+		<dd><code class="kw" translate="no">IPA characters</code> provides  characters you may need while typing in an IPA (International Phonetic Alphabet) transcription from the keyboard.</dd>
+		<dd><code class="kw" translate="no">Transliteration characters</code> provides  characters you may need while typing in a transliteration of runic text from the keyboard. The Latin keyboard also provides all of these characters.</dd>
+                
+                
+                
 	  <dt>Tools above the input box</dt>
       <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
       
@@ -426,6 +491,7 @@
     <dd><span class="leadin">Latin to LB Runes.</span> Converts a latin transliteration into runic text, using the Long Branch variants of the Younger Fuþark.</dd>
     <dd><span class="leadin">Latin to ST Runes.</span> Converts a latin transliteration into runic text, using the Short Twig variants of the Younger Fuþark.</dd>
     <dd><span class="leadin">Latin to Medieval Runes.</span> Converts a latin transliteration into runic text, using the Medieval Fuþark.</dd>
+    <dd><span class="leadin">Latin to AS/F Runes.</span> Converts a latin transliteration into runic text, using the Anglo-Saxon/Frisian Fuþorc.</dd>
       <dd><span class="leadin">Transcribe from NION.</span> The online PDF version of A New Introduction to Old Norse (such as <a href="http://www.vsnrweb-publications.org.uk/NION%20II-2011.pdf">the reader</a>) has strange encoding quirks, for example representing ð as › and þ as fl. If you copy paste text from the PDF into the output box, you can use this feature to convert the text into Unicode. One warning: fi is converted to Þ, but occasionally it is meant to represent fi.</dd>
       <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] runic text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
       <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>

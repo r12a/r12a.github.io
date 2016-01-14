@@ -1,4 +1,4 @@
-globals.showLOCTrans = ''
+globals.showTranslitTrans = ''
 globals.showIPATrans = ''
 globals.showCaseEndings = ''
 
@@ -69,8 +69,8 @@ var anglosaxonkbd = [
 
 var latinkbd = [
 "1|2|3|4|5|6|7|8|‹,9|›,0|«,»|‘,̀",
-"þ̈,þ|w|é,e|ʀ,r|ẗ,t|ý,y|ü,ú,u|ï,í,i|ø,o|ǫ,ó|p",
-"ã,á,a|s|ð,d|f|g̈,g|h|j|k̈,k|l|’|æ,œ",
+"þ̈,þ|w|é,e|ʀ,r|ẗ,t|ý,y|ü,ú,u|ï,í,i|ø,o|ą,ǫ,ó|p",
+"ã,á,a|s|ð,d|f̈,f|g̈,g|h|j|k̈,k|l|’|e͡a,æ,œ",
 "z|x|c|v|b̈,b|ŋ,n|m|;|.,:"
 ]
 
