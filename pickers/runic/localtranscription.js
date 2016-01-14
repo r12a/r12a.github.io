@@ -8,6 +8,7 @@
 	if (direction == 'toLB') { return toLB(str) }
 	if (direction == 'toST') { return toST(str) }
 	if (direction == 'toMedieval') { return toMedieval(str) }
+	if (direction == 'toASF') { return toASF(str) }
 	}
 
 
@@ -323,6 +324,60 @@ function toMedieval (str) {
 	str = str.replace(/b/g,'ᛒ') 
 	str = str.replace(/n/g,'ᚿ') 
 	str = str.replace(/m/g,'ᛘ') 
+	str = str.replace(/᛬​/g,' ') 
+
+	// add markup for ambiguous cases
+	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+	str = str.replace(/\|/g,'</span><span class=alt>')
+	str = str.replace(/\{/g,'</span><span class=altlast>')
+	str = str.replace(/\]/g,'</span></span>')
+	str = str.replace(/¶/g,'')
+	
+	str = str.trim()
+
+	return str
+	}
+
+
+
+function toASF (str) {
+	// converts Latin transliterations into an Anglo-Saxon/Frisian runic transcription
+	
+	// add space so that beginning of word rules work
+	str = ' '+str.toLowerCase()+' '
+	str = str.replace(/[\s]+/g,' ')
+	
+	str = str.replace(/f/g,'ᚠ') 
+	str = str.replace(/u/g,'ᚢ') 
+	str = str.replace(/þ/g,'ᚦ') 
+	str = str.replace(/o/g,'ᚩ') 
+	str = str.replace(/r/g,'ᚱ') 
+	str = str.replace(/c/g,'ᚳ') 
+	str = str.replace(/g/g,'ᚷ') 
+	str = str.replace(/w/g,'ᚹ') 
+	str = str.replace(/h/g,'ᚻ') 
+	str = str.replace(/n/g,'ᚾ') 
+	str = str.replace(/i/g,'ᛁ') 
+	str = str.replace(/j/g,'ᛡ') 
+	str = str.replace(/ɨ/g,'ᛇ') 
+	str = str.replace(/p/g,'ᛈ') 
+	str = str.replace(/x/g,'ᛉ') 
+	str = str.replace(/s/g,'ᛋ') 
+	str = str.replace(/t/g,'ᛏ') 
+	str = str.replace(/b/g,'ᛒ') 
+	str = str.replace(/a͡e/g,'ᛠ') 
+	str = str.replace(/e/g,'ᛖ') 
+	str = str.replace(/m/g,'ᛗ') 
+	str = str.replace(/l/g,'ᛚ') 
+	str = str.replace(/ŋ/g,'ᛝ') 
+	str = str.replace(/d/g,'ᛞ') 
+	str = str.replace(/œ/g,'ᛟ') 
+	str = str.replace(/a/g,'ᚪ') 
+	str = str.replace(/æ/g,'ᚫ') 
+	str = str.replace(/y/g,'ᚣ') 
+	str = str.replace(/g̈/g,'ᚸ') 
+	str = str.replace(/k̈/g,'ᛤ') 
+	str = str.replace(/k/g,'ᛣ') 
 	str = str.replace(/᛬​/g,' ') 
 
 	// add markup for ambiguous cases
