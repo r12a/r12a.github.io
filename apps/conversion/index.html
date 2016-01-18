@@ -87,7 +87,7 @@ textarea { padding: 0 5px; }
 				onclick="var list = window.open( '/rishida/uniview/?codepoints='+convertChar2CP( chars.value ) );
                 return false;" >View in UniView</button-->
       <button  
-				onclick="var list = window.open( '/uniview/?charlist='+chars.value );
+				onclick="var list = window.open( '/uniview/?charlist='+encodeURIComponent(chars.value ));
                 return false;" >View in UniView</button>
       <br/>
       <textarea id="chars" name="chars" rows="2" cols="5"></textarea></td>
@@ -286,7 +286,7 @@ textarea { padding: 0 5px; }
 
 
 <div class="smallprint"><span id="version">This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-12-21  12:16<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-01-18  12:54<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GPL (see source).</span></div>
 
 <script type="text/javascript">
