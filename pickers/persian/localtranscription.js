@@ -18,10 +18,10 @@ function transcribetoUN (str) {
 	for (var i=0;i<str.length;i++) {
 		if (vowels[str.charAt(i)]) { found=true; break }
 		}
-	if (!found) alert('This transcription method expects to start with vowelled text.')
+	//if (!found) alert('This transcription method expects to start with vowelled text.')
 	
 	// add initial space so that beginning of word rules work
-	str = ' '+str
+	str = ' '+str+' '
 	
 	str = str.replace(/اللّٰه/g,'Allāh') 
 
@@ -33,20 +33,53 @@ function transcribetoUN (str) {
 	
 	str = str.replace(/\u200C([^ ])/g,'ʹ$1')  // zwnj creating final form in middle of word
 
-	str = str.replace(/\u064Aي/g,'ey') 
-	str = str.replace(/ي/g,'i') 
-	str = str.replace(/\u0650/g,'e') 
-	str = str.replace(/\u0650/g,'e') 
-	str = str.replace(/\u064E/g,'a') 
-	str = str.replace(/\u064F/g,'o') 
-	str = str.replace(/ا/g,'ā') 
-	str = str.replace(/\u064Fو/g,'ā') 
+	str = str.replace(/\u0622/g,'ā') 
+	
+	
+	str = str.replace(/ \u0627\u0650\u06CC/g,'i') // initial aleph kasra yeh 
+	str = str.replace(/ \u0627\u064E\u06CC/g,'ey') // initial aleph fatha yeh 
+	str = str.replace(/ \u0627\u06CC/g,'[i{ey]') // initial aleph yeh 
 
-	// unclear items
-	// final heh can be h or e
-	// yeh can be y or i
-	// waw can be v or u
-	// is final heh in middle of word always e? eg. محله‌ي بالا
+	str = str.replace(/ \u0627\u064F\u0648/g,'u') // initial aleph damma waw 
+	str = str.replace(/ \u0627\u064E\u0648/g,'ow') // initial aleph fatha waw 
+	str = str.replace(/ \u0627\u0648/g,'[u{ow]') // initial aleph waw 
+
+	str = str.replace(/ \u0627\u064E/g,'a') // initial aleph fatha
+	str = str.replace(/ \u0627\u064F/g,'o') // initial aleph damma
+	str = str.replace(/ \u0627\u0650/g,'e') // initial aleph kasra
+	str = str.replace(/ \u0627/g,'[a{o{e]') // initial aleph 
+
+	str = str.replace(/([\u0627\u06CC\u0648ā]+)\u0648/g,'$1v') // long-vowel waw
+	str = str.replace(/([\u0627\u06CC\u0648ā]+)\u06CC/g,'$1y') // long-vowel yeh
+
+	str = str.replace(/\u064E\u0648/g,'ow') // fatha waw
+	str = str.replace(/\u064F\u0648/g,'u') // damma waw
+
+	str = str.replace(/\u064E\u06CC\u0670 /g,'ā') // fatha yeh supaleph final
+	str = str.replace(/\u064E\u06CC /g,'ā') // fatha yeh final
+	str = str.replace(/\u0650\u06CC/g,'i') // kasra yeh
+	str = str.replace(/\u064E\u06CC/g,'ey') // fatha yeh
+
+	str = str.replace(/ \u0648/g,'v') // intial waw
+	str = str.replace(/ \u06CC/g,'y') // intial yeh
+	str = str.replace(/\u0648/g,'u') // waw
+	str = str.replace(/\u06CC/g,'i') // yeh
+
+	str = str.replace(/\u06C0 /g,'ye') // yeh-on-heh final
+	str = str.replace(/\u064E\u0647 /g,'e') // fatha heh final
+	str = str.replace(/\u0650\u0647 /g,'e') // kasra heh final
+	
+	str = str.replace(/\u064E\u0627/g,'ā') // fatha alef
+	str = str.replace(/\u0627/g,'ā') // alef
+	
+
+	str = str.replace(/\u064E/g,'a') // fatha
+	str = str.replace(/\u064F/g,'o') // damma
+	str = str.replace(/\u0650/g,'e') // kasra
+	
+	str = str.replace(/ \u0639/g,'a') // ain initial
+	
+
 
 	/*
 	str = str.replace(/\u064E[\u0651]?ا/g,'ā') 
@@ -67,6 +100,7 @@ function transcribetoUN (str) {
 	str = str.replace(/ب/g,'b') 
 	str = str.replace(/ت/g,'t') 
 	str = str.replace(/ث/g,'s')  
+	str = str.replace(/پ/g,'p')  
 	str = str.replace(/ج/g,'j') 
 	str = str.replace(/چ/g,'č') // ...
 	str = str.replace(/ح/g,'h')
@@ -88,14 +122,15 @@ function transcribetoUN (str) {
 	str = str.replace(/ف/g,'f') 
 	str = str.replace(/ق/g,'q') 
 	str = str.replace(/ك/g,'k') 
-	str = str.replace(/گ/g,'[ɟ{ɡ]') 
+	str = str.replace(/گ/g,'ɡ') 
+	//str = str.replace(/گ/g,'[ɟ{ɡ]') 
 	str = str.replace(/ل/g,'l')
 	str = str.replace(/م/g,'m')
 	str = str.replace(/ن/g,'n')
-	str = str.replace(/و/g,'[v{u]') 
-	str = str.replace(/ه /g,'[h{e]')
+	str = str.replace(/و/g,'v') 
+	str = str.replace(/ه /g,'e')
 	str = str.replace(/ه/g,'h')
-	str = str.replace(/ي/g,'y') 
+	str = str.replace(/ی/g,'y') 
 	
 
 	/*
