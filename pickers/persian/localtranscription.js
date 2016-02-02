@@ -121,7 +121,7 @@ function transcribetoUN (str) {
 	str = str.replace(/غ/g,'q') 
 	str = str.replace(/ف/g,'f') 
 	str = str.replace(/ق/g,'q') 
-	str = str.replace(/ك/g,'k') 
+	str = str.replace(/ک/g,'k') 
 	str = str.replace(/گ/g,'ɡ') 
 	//str = str.replace(/گ/g,'[ɟ{ɡ]') 
 	str = str.replace(/ل/g,'l')
