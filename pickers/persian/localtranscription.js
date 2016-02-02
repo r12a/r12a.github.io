@@ -23,6 +23,11 @@ function transcribetoUN (str) {
 	// add initial space so that beginning of word rules work
 	str = ' '+str+' '
 	
+	// collect a list of punctuation, in order
+	var punctuationSet = /!|\(|\)|\-|\.|:|\[|\]|\*|\/|\\|،|؟|«|»|‹|›| /g
+	var punctuationList = str.match(punctuationSet)
+	str = str.replace(punctuationSet,' ')
+	
 	str = str.replace(/اللّٰه/g,'Allāh') 
 
 	// handle shadda
@@ -36,18 +41,18 @@ function transcribetoUN (str) {
 	str = str.replace(/\u0622/g,'ā') 
 	
 	
-	str = str.replace(/ \u0627\u0650\u06CC/g,'i') // initial aleph kasra yeh 
-	str = str.replace(/ \u0627\u064E\u06CC/g,'ey') // initial aleph fatha yeh 
-	str = str.replace(/ \u0627\u06CC/g,'[i{ey]') // initial aleph yeh 
+	str = str.replace(/ \u0627\u0650\u06CC/g,' i') // initial aleph kasra yeh 
+	str = str.replace(/ \u0627\u064E\u06CC/g,' ey') // initial aleph fatha yeh 
+	str = str.replace(/ \u0627\u06CC/g,' [i{ey]') // initial aleph yeh 
 
-	str = str.replace(/ \u0627\u064F\u0648/g,'u') // initial aleph damma waw 
-	str = str.replace(/ \u0627\u064E\u0648/g,'ow') // initial aleph fatha waw 
-	str = str.replace(/ \u0627\u0648/g,'[u{ow]') // initial aleph waw 
+	str = str.replace(/ \u0627\u064F\u0648/g,' u') // initial aleph damma waw 
+	str = str.replace(/ \u0627\u064E\u0648/g,' ow') // initial aleph fatha waw 
+	str = str.replace(/ \u0627\u0648/g,' [u{ow]') // initial aleph waw 
 
-	str = str.replace(/ \u0627\u064E/g,'a') // initial aleph fatha
-	str = str.replace(/ \u0627\u064F/g,'o') // initial aleph damma
-	str = str.replace(/ \u0627\u0650/g,'e') // initial aleph kasra
-	str = str.replace(/ \u0627/g,'[a{o{e]') // initial aleph 
+	str = str.replace(/ \u0627\u064E/g,' a') // initial aleph fatha
+	str = str.replace(/ \u0627\u064F/g,' o') // initial aleph damma
+	str = str.replace(/ \u0627\u0650/g,' e') // initial aleph kasra
+	str = str.replace(/ \u0627/g,' [a{o{e]') // initial aleph 
 
 	str = str.replace(/([\u0627\u06CC\u0648ā]+)\u0648/g,'$1v') // long-vowel waw
 	str = str.replace(/([\u0627\u06CC\u0648ā]+)\u06CC/g,'$1y') // long-vowel yeh
@@ -55,19 +60,19 @@ function transcribetoUN (str) {
 	str = str.replace(/\u064E\u0648/g,'ow') // fatha waw
 	str = str.replace(/\u064F\u0648/g,'u') // damma waw
 
-	str = str.replace(/\u064E\u06CC\u0670 /g,'ā') // fatha yeh supaleph final
+	str = str.replace(/\u064E\u06CC\u0670 /g,'ā ') // fatha yeh supaleph final
 	str = str.replace(/\u064E\u06CC /g,'ā') // fatha yeh final
 	str = str.replace(/\u0650\u06CC/g,'i') // kasra yeh
 	str = str.replace(/\u064E\u06CC/g,'ey') // fatha yeh
 
-	str = str.replace(/ \u0648/g,'v') // intial waw
-	str = str.replace(/ \u06CC/g,'y') // intial yeh
+	str = str.replace(/ \u0648/g,' v') // intial waw
+	str = str.replace(/ \u06CC/g,' y') // intial yeh
 	str = str.replace(/\u0648/g,'u') // waw
 	str = str.replace(/\u06CC/g,'i') // yeh
 
-	str = str.replace(/\u06C0 /g,'ye') // yeh-on-heh final
-	str = str.replace(/\u064E\u0647 /g,'e') // fatha heh final
-	str = str.replace(/\u0650\u0647 /g,'e') // kasra heh final
+	str = str.replace(/\u06C0 /g,'ye ') // yeh-on-heh final
+	str = str.replace(/\u064E\u0647 /g,'e  ') // fatha heh final
+	str = str.replace(/\u0650\u0647 /g,'e ') // kasra heh final
 	
 	str = str.replace(/\u064E\u0627/g,'ā') // fatha alef
 	str = str.replace(/\u0627/g,'ā') // alef
@@ -77,7 +82,7 @@ function transcribetoUN (str) {
 	str = str.replace(/\u064F/g,'o') // damma
 	str = str.replace(/\u0650/g,'e') // kasra
 	
-	str = str.replace(/ \u0639/g,'a') // ain initial
+	str = str.replace(/ \u0639/g,' a') // ain initial
 	
 
 
@@ -102,7 +107,7 @@ function transcribetoUN (str) {
 	str = str.replace(/ث/g,'s')  
 	str = str.replace(/پ/g,'p')  
 	str = str.replace(/ج/g,'j') 
-	str = str.replace(/چ/g,'č') // ...
+	str = str.replace(/چ/g,'č') 
 	str = str.replace(/ح/g,'h')
 	str = str.replace(/خ/g,'x')
 	str = str.replace(/د/g,'d') 
@@ -128,27 +133,11 @@ function transcribetoUN (str) {
 	str = str.replace(/م/g,'m')
 	str = str.replace(/ن/g,'n')
 	str = str.replace(/و/g,'v') 
-	str = str.replace(/ه /g,'e')
+	str = str.replace(/ه /g,'e ')
 	str = str.replace(/ه/g,'h')
 	str = str.replace(/ی/g,'y') 
 	
 
-	/*
-	str = str.replace(/م/g,'m') 
-	str = str.replace(/\bا/g,'ʾa') 
-	str = str.replace(/ا/g,'') 
-	str = str.replace(/آ/g,'[’ā{ā]') 
-	str = str.replace(/ أ/g,'') 
-	str = str.replace(/أ/g,'’') 
-	str = str.replace(/ إ/g,'') 
-	str = str.replace(/إ/g,'’') 
-	str = str.replace(/ٱ/g,'') 
-	str = str.replace(/ؤ/g,'’') 
-	str = str.replace(/ئ/g,'’') 
-	str = str.replace(/ة/g,'[h{t]') 
-	str = str.replace(/ى/g,'ỳ') 
-	*/
-	
 	/*
 	str = str.replace(/\u064E/g,'a') 
 	str = str.replace(/\u064F/g,'u') 
@@ -190,12 +179,22 @@ function transcribetoUN (str) {
 	str = str.replace(/௵/g,'<year sign>')
 */
 
+	str = str.replace(/ʹ/g,'')
+	// replace punctuation
+	var ptr = 0
+	var out = ''
+	for (var c=0;c<str.length;c++) {
+		if (str.charAt(c) == ' ') out += punctuationList[ptr++]
+		else out += str.charAt(c)
+		}
+	str = out
+	
 	// add markup for ambiguous cases
 	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
 	str = str.replace(/\|/g,'</span><span class=alt>')
 	str = str.replace(/\{/g,'</span><span class=altlast>')
 	str = str.replace(/\]/g,'</span></span>')
-	str = str.replace(/¶/g,'')
+	//str = str.replace(/¶/g,'')
 
 
 	return str.trim()
