@@ -17,6 +17,11 @@ var charData = {
 "\u202C":{n:"POP DIRECTIONAL FORMATTING",m:0,g:"General Punctuation"},
 "\u2069":{n:"POP DIRECTIONAL ISOLATE",m:0,g:"General Punctuation"},
 
+"\u2039":{n:"SINGLE LEFT-POINTING ANGLE QUOTATION MARK",m:0,g:"General Punctuation"},
+"\u203A":{n:"SINGLE RIGHT-POINTING ANGLE QUOTATION MARK",m:0,g:"General Punctuation"},
+"\u00AB":{n:"LEFT-POINTING DOUBLE ANGLE QUOTATION MARK",m:0,g:"Latin-1 Supplement"},
+"\u00BB":{n:"RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK",m:0,g:"Latin-1 Supplement"},
+
 "\u0021":{n:"EXCLAMATION MARK",m:0,g:"Basic Latin"},
 "\u0022":{n:"QUOTATION MARK",m:0,g:"Basic Latin"},
 "\u0023":{n:"NUMBER SIGN",m:0,g:"Basic Latin"},
