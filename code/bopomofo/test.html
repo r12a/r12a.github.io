@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bopomofo ruby generator</title>
+<script type="application/ecmascript" src="bopomofo.js"></script>
+<style>
+body { font-family:  'lisong pro', 'Microsoft JhengHei',mingliu; font-size: 60px; }
+p { margin-top: .5em;   }
+ruby { }
+rt { color: black; }
+.win rt { color:red; }
+}
+</style>
+</head>
+
+<body>
+<p><ruby class="mac"><rb>電</rb><rt>ㄉㄧㄢˋ</rt><rb>腦</rb><rt>ㄋㄠˇ</rt><rb>腦</rb><rt>ㄋˇ</rt><rb>了</rb><rt>˙ㄌㄜ</rt><rb>電</rb><rt>ㄉㄧㄢˋ</rt></ruby></p>
+<p><ruby class="win"><rb>電</rb><rt>ㄉㄧㄢˋ</rt><rb>腦</rb><rt>ㄋㄠˇ</rt><rb>腦</rb><rt>ㄋˇ</rt><rb>了</rb><rt>˙ㄌㄜ</rt><rb>電</rb><rt>ㄉㄧㄢˋ</rt></ruby></p>
+<script>
+generateRuby('mac',-8)
+generateRuby('win',-8)
+</script>
+</body>
+</html>
