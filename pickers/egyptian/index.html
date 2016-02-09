@@ -41,7 +41,7 @@
     <button  id="makeExample" onclick="makeExample('en','')" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('latin','en','')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('egyptian','egy','')" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -69,10 +69,26 @@
 
 
 
-<!--div style="position:relative;">
+
+
+<div style="position:relative;">
 <div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
 </div>
-</div-->
+
+</div>
+
+
 
 
 
@@ -80,7 +96,62 @@
 
 
   <div id="transcriptionChoice"></div>
-  <div id=latintranscript class=transcript style="display:none;"></div>
+  <div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('i̓')">i̓</span>
+<span class="t" onclick="dotrans('i͗')">i͗</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('⸗')">⸗</span>
+<span class="t" onclick="dotrans('Ꜣ')">Ꜣ</span>
+<span class="t" onclick="dotrans('ꜣ')">ꜣ</span>
+<span class="t" onclick="dotrans('Ꜥ')">Ꜥ</span>
+<span class="t" onclick="dotrans('ꜥ')">ꜥ</span>
+<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
+<span class="t" onclick="dotrans(',')">,</span>
+<span class="t" onclick="dotrans(';')">;</span>
+<span class="t" onclick="dotrans('(')">(</span>
+<span class="t" onclick="dotrans(')')">)</span>
+<span class="t" onclick="dotrans('[')">[</span>
+<span class="t" onclick="dotrans(']')">]</span>
+<span class="t" onclick="dotrans('/')">/</span>
+<span class="t" onclick="dotrans('⸢')">⸢</span>
+<span class="t" onclick="dotrans('⸣')">⸣</span>
+<span class="t" onclick="dotrans('?')">?</span>
+<br/>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('c')">c</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('ḏ')">ḏ</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('ḥ')">ḥ</span>
+<span class="t" onclick="dotrans('ḫ')">ḫ</span>
+<span class="t" onclick="dotrans('ẖ')">ẖ</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('ḳ')">ḳ</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('q')">q</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('š')">š</span>
+<span class="t" onclick="dotrans('ś')">ś</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ṯ')">ṯ</span>
+<span class="t" onclick="dotrans('ṱ')">ṱ</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('x')">x</span>
+<span class="t" onclick="dotrans('y')">y</span>
+<span class="t" onclick="dotrans('z')">z</span>
+</div>
 </div>
 
 
@@ -99,7 +170,8 @@
           <td colspan="3">
           <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> 
           <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span>
-          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 10px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202E');">RLO</span> </td>
+          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 10px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202E');">RLO</span> 
+          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 10px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202C');">PDF</span> </td>
         </tr>
       </table>
       <div style="margin-right:2em;"> 
@@ -150,8 +222,7 @@
   </div>
   
   <div class="control">Custom font:<br />
-    <form action="none"
-						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+    <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
       <input name="fontName" id="fontName" value="Hanuman" />
     </form>
   </div>
@@ -243,7 +314,7 @@
     </div>
   </aside>
   
-  <p id="status">Updated Mon 11 Jan 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=latin" title="Show all blog posts tagged with 'latin'">latin</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+  <p id="status">Updated Tues 9 Feb 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=latin" title="Show all blog posts tagged with 'egyptian'">egyptian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
   <p>This Unicode character picker allows you to produce or analyse runs of text using the Latin script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
