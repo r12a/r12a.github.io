@@ -283,16 +283,19 @@ function add(ch) {
 	
 	
 function selectFont ( newFont ) {
+	newFont = '"'+newFont+'", "Doulos SIL"'
 	document.getElementById( 'output' ).style.fontFamily = newFont;
 	document.querySelector('#panel #title').style.fontFamily = newFont;
 	document.getElementById('fontName').value="";
 	}
 	
 function customFont ( newFont ) { 
+	var temp = newFont
+	newFont = '"'+newFont+'", "Doulos SIL"'
 	document.getElementById( 'output' ).style.fontFamily = newFont;
 	document.querySelector('#panel #title').style.fontFamily = newFont;
 	document.getElementById('fontList').value='0';
-	addFontToLists(newFont, 'fontList,uiFont');
+	addFontToLists(temp, 'fontList,uiFont');
 	}
 
 function changeFontSize ( newSize ) {
@@ -323,9 +326,9 @@ function setUIFontSize (size) {
 
 function searchFor ( str, scriptname ) { 
 
-	var str = str.replace( /\:/g, '\\b' );
+	str = str.replace( /\:/g, '\\b' );
 	var re = new RegExp(str, "i"); 
-	var characters = new Array; 
+	var characters = [] 
 	
 	borderwidth = '1px';
 	characters = document.querySelectorAll( '.c, .f' )
