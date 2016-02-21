@@ -20,6 +20,8 @@ reviews = [
 
 //								Context	Mult	Context								No						
 //		No.		case	CC		Posn	CC		Shaping	Cursive	RTL				Space	Baseln	Wrap		Justify	Region
+	 [ "Tamazight", "Tifinagh", 	
+	   32, 	"yes", 	0, 	"no", 	"no", 	"no",	"no", 	"ltr (rtl,b,vtb,vbt)",			"yes",	"mid",	"space",	"space", 	"Europe"],
 	 [ "English", "Latin \u003Ca href='/scripts/summaries/latin'>\u003Cimg src='link.png' alt='details'/>\u003C/a>", 	
 	   52, 	"yes", 	0, 	"no", 	"no", 	"no",	"no", 	"ltr",			"yes",	"mid",	"space",	"space", 	"Europe"],
 	 [ "Amharic", "Ethiopic", 
@@ -34,6 +36,8 @@ reviews = [
 	   59, 	"no", 	17, 	"yes", 	"yes", 	"yes",	"no", 	"ltr",			"no",	"mid",	"word",		"cluster", 	"Asia SE"],
 	 [ "Cambodian", "Khmer", 
 	   76, 	"no", 	29, 	"yes", 	"yes", 	"yes",	"no", 	"ltr",			"no",	"mid",	"word",		"cluster",	"Asia SE"],
+	 [ "Cherokee", "Cherokee", 	
+	   172, 	"yes", 	0, 	"no", 	"no", 	"no",	"no", 	"ltr",			"yes",	"mid",	"space",	"space", 	"America"],
 	 [ "Chinese", "Han \u003Ca href='/scripts/summaries/han'>\u003Cimg src='link.png' alt='details'/>\u003C/a>", 
 	   2128, 	"no", 	0, 	"no", 	"no", 	"no",	"no", 	"ltr / tbrl",	"no",	"low",	"char",		"char",		"Asia E"],
 	 [ "Dzongkha", "Tibetan \u003Ca href='/scripts/summaries/tibetan'>\u003Cimg src='link.png' alt='details'/>\u003C/a>", 
