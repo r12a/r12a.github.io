@@ -38,3 +38,10 @@
 #fontsetting.open { right: 0px; }
 #fontsetting.closed { right: -258px; }
 #fontsettingswitch { height: 130px; }
+
+
+#showNotes { text-align: right; font-size: 80%; }
+
+#sources { font-size: 90%; }
+
+.ref { vertical-align: super; }

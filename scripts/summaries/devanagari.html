@@ -154,6 +154,7 @@
         </tr>
       </tbody>
     </table>
+    <p id="showNotes"><a onClick="showAllFeatureInfo(); return false;" href="">Show all notes</a></p>
     </div>
     </div>
 </section>
@@ -162,7 +163,7 @@
 <div id="default">
   <p class="instructions">Click on the orange text in the features list (right column) to see examples and notes. Click on highlighted text in the Sample section to see the characters. Click on the vertical blue bar, bottom right, to change font settings.</p>
   </div>
-  <div id="n-placement">
+  <div id="n-placement" class="note">
     <h2>Context-based positioning</h2>
     <p>Combining characters need to be placed in different positions, according to the context.</p>
     <p>The  example on the left below displays the dot (anusvara) immediately over the long vertical stroke. The example to the right has moved the dot slightly to the right in order to accomodate the vowel sign.</p>
@@ -170,7 +171,8 @@
     <p>In the following  the black image shows the normal position of the long U vowel sign, beneath the first letter. The red example shows that character displayed higher up and to the right when combined with the base character RA.</p>
     <p><img src="images/hindi-u.png" alt=" "></p>
   </div>
-  <div id="n-shaping">
+  
+  <div id="n-shaping" class="note">
     <h2>Context-based shaping</h2>
     <p>The shape of a character when displayed can vary, often dramatically, according to the context.</p>
     <p>One very common example in most indic scripts is the handling of 'conjunct consonants', ie. groups of consonants with no intervening vowel sounds. Since consonants in indic scripts have an inherent vowel sound, when two consonants are combined this way you have to indicate that the vowel of the initial consonant  suppressed. This is normally done by altering the shape of the first consonant, or merging the shape of the two consonants. </p>
@@ -179,12 +181,14 @@
     <p>There are other types of context-based shaping in the sample text above, which are applied by the particular font I used when generating my examples. One is shown below. The width of the glyph for the I character differs according to the base character to which it is attached.</p>
     <p><img src="images/hindi-i1.png" alt=" "> vs. <img src="images/hindi-i2.png" alt=" "></p>
   </div>
-  <div id="n-multiple">
+  
+  <div id="n-multiple" class="note">
     <h2>Multiple combining characters</h2>
     <p>Devanagari regularly combines multiple combining characters with a base consonant. The picture below shows the two combining characters that are positioned above the base character in the highlighted word above. One is a vowel sign, and the other a nasalisation mark.</p>
     <p><img src="images/hindi-multiple.png" alt=" "></p>
   </div>
-  <div id="n-justify">
+  
+  <div id="n-justify" class="note">
     <h2>Justification</h2>
     <p>Justification in devanagari works with the inter-word spaces. </p>
     <p><em>Use the control below to see how this browser justifies Hindi text.</em></p>
@@ -192,7 +196,8 @@
       <button type="button" id="justifyButton" onclick="toggleJustification()">   Justify   </button>
     </p>
   </div>
-  <div id="n-chars">
+  
+  <div id="n-chars" class="note">
     <h2>Character list</h2>
     <p>The Devanagari script characters in Unicode 7.0 are contained in 2 blocks:</p>
     <ul>
@@ -222,7 +227,7 @@
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published  22 Dec 2002.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-16  10:37<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-02-21  16:27<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">

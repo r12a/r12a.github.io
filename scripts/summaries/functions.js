@@ -65,3 +65,11 @@ function showFeatureInfo (examples, featureInfoId) {
 		document.location = '#'+featureInfoId
 		}
 	}
+
+function showAllFeatureInfo () {
+	// causes the page to display all the info in note form
+	var notes = document.querySelectorAll('.note')
+	for (var i=0;i<notes.length;i++) {
+		notes[i].style.display = 'block'
+		}
+	}
