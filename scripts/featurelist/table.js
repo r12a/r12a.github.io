@@ -36,7 +36,7 @@ reviews = [
 	   59, 	"no", 	17, 	"yes", 	"yes", 	"yes",	"no", 	"ltr",			"no",	"mid",	"word",		"cluster", 	"Asia SE"],
 	 [ "Cambodian", "Khmer", 
 	   76, 	"no", 	29, 	"yes", 	"yes", 	"yes",	"no", 	"ltr",			"no",	"mid",	"word",		"cluster",	"Asia SE"],
-	 [ "Cherokee", "Cherokee", 	
+	 [ "Cherokee", "Cherokee \u003Ca href='/scripts/summaries/cherokee'>\u003Cimg src='link.png' alt='details'/>\u003C/a>", 	
 	   172, 	"yes", 	0, 	"no", 	"no", 	"no",	"no", 	"ltr",			"yes",	"mid",	"space",	"space", 	"America"],
 	 [ "Chinese", "Han \u003Ca href='/scripts/summaries/han'>\u003Cimg src='link.png' alt='details'/>\u003C/a>", 
 	   2128, 	"no", 	0, 	"no", 	"no", 	"no",	"no", 	"ltr / tbrl",	"no",	"low",	"char",		"char",		"Asia E"],
