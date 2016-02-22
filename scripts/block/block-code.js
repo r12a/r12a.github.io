@@ -30,7 +30,41 @@ function shownames_setClose ( node ) {
 	}
 
 
-function showNameDetails (chars, clang, base, target) { 
+function convertStr2DecArray ( textString, array ) { 
+	// takes an array and a string and fills the array with decimal codepoints representing chars in the string
+	var haut = 0
+	var n = 0
+	var ptr = 0
+	for (var i = 0; i < textString.length; i++) {
+		var b = textString.charCodeAt(i) 
+		if (b < 0 || b > 0xFFFF) {
+			console.log('Error in convertChar2CP: byte out of range ' + b + '!')
+			}
+		if (haut != 0) {
+			if (0xDC00 <= b && b <= 0xDFFF) {
+				array[ptr] = 0x10000 + ((haut - 0xD800) << 10) + (b - 0xDC00)
+				haut = 0
+				ptr++
+				continue
+				}
+			else {
+				console.log('Error in convertChar2CP: surrogate out of range ' + haut + '!')
+				haut = 0
+				}
+			}
+		if (0xD800 <= b && b <= 0xDBFF) {
+			haut = b
+			}
+		else {
+			array[ptr] = b
+			ptr++
+			}
+		}
+	return array.length
+	}
+
+
+function OLDshowNameDetails (chars, clang, base, target) { 
 // get the list of characters for an example and display their names
 // chars (string), alt text of example
 // clang (string), lang attribute value of example img
@@ -108,6 +142,97 @@ function showNameDetails (chars, clang, base, target) {
 	var p = document.createElement('p')
 	p.style.textAlign = 'right'
 	img = document.createElement('img')
+	img.src = '/scripts/block/images/close.png'
+	img.alt = 'Close'
+	img.style.cursor = 'pointer'
+	shownames_setClose(img)
+	p.appendChild(img)	
+	panel.appendChild(p)
+	}
+
+
+function showNameDetails (chars, clang, base, target) { 
+// get the list of characters for an example and display their names
+// chars (string), alt text of example
+// clang (string), lang attribute value of example img
+// base (string), path for link to character detail
+// target (string), name of the window to display results in, usually 'c' or ''; given the latter, link goes to same window
+
+	// check whether the calling page has set a base and target window
+	if(typeof base === 'undefined' || base == '') { base = '/uniview/?char=' }
+	if(typeof target === 'undefined') { target = '' }
+	
+	 chars = chars
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+	  
+	document.getElementById('panel').innerHTML = ''
+	var panel = document.getElementById('panel')
+	panel.style.display = 'block'
+	
+	// add the example to the panel as a title
+	var replacement = document.createElement('div')
+	var str = document.createElement('div')
+	str.appendChild(document.createTextNode(chars))
+	str.className='ex'
+	str.lang = clang
+	str.id = 'title'
+	replacement.appendChild(str)
+	
+	// create a list of characters
+	var charArray = []
+	convertStr2DecArray(chars, charArray)
+	var chardiv, charimg, thename, thelink, hex
+
+	for (var c=0; c<charArray.length; c++) { 
+		if (charData[String.fromCodePoint(charArray[c])]) {
+			hex = charArray[c].toString(16)
+			while (hex.length < 4) { hex = '0'+hex }
+			hex = hex.toUpperCase()
+			chardiv = document.createElement('div')
+			charimg = document.createElement('img')
+			charimg.src = '/c/'+charData[String.fromCodePoint(charArray[c])].g.replace(/ /g,'_')+"/"+hex+'.png'
+			charimg.alt = 'U+'+hex
+			chardiv.appendChild(charimg)
+			thelink = document.createElement('a');
+			if (base == '/uniview/?char=') { thelink.href = base+hex }
+			else { thelink.href = base+'#char'+hex }
+			thelink.target = target
+			thelink.appendChild(charimg)
+			thelink.appendChild(document.createTextNode(' U+'+hex));
+			thename = document.createTextNode(' '+charData[String.fromCodePoint(charArray[c])].n)
+			chardiv.appendChild(thelink)
+			chardiv.appendChild(thename)
+
+			replacement.appendChild(chardiv);
+			}
+		else {
+			hex = charArray[c].toString(16)
+			while (hex.length < 4) { hex = '0'+hex }
+			hex = hex.toUpperCase()
+			chardiv = document.createElement('div')
+			charimg = document.createElement('img')
+			charimg.src = '/c/Basic_Latin/005F.png'
+			charimg.alt = 'U+'+hex
+			chardiv.appendChild(charimg)
+			thename = document.createTextNode(' U+'+hex+' No data for this character')
+			chardiv.appendChild(thename)
+			
+			replacement.appendChild(chardiv)
+			}
+		}
+	
+	
+	//add the new data to the panel
+	panel.appendChild(replacement)
+	
+	// add a close button
+	var p = document.createElement('p')
+	p.style.textAlign = 'right'
+	var img = document.createElement('img')
 	img.src = '/scripts/block/images/close.png'
 	img.alt = 'Close'
 	img.style.cursor = 'pointer'
