@@ -7,6 +7,7 @@
 	  content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
 
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/style/slideshow.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
 
 <script type="text/javascript" src="/code/toc_section.js"></script>
@@ -60,7 +61,7 @@ h1 { margin-bottom: 90px;  }
 
 <div id="western" class="slide">
     <h3><a href="#western">Western</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/boundaries.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/boundaries.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>It is not easy to determine what is meant by ‘word’. Typically people initially think of items in a sentence separated by spaces or
       certain types of punctuation. In languages such as German and Turkish, however, such runs of text can include a number of concepts run together.</p>
@@ -74,7 +75,7 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="chinese" class="slide">
     <h3><a href="#chinese">Chinese</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/boundaries2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/boundaries2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Chinese does not use spaces for word separation. Most ideographs have word-like meanings, although it is common for a sequence of
       characters to have a composite meaning derived from the individual parts.</p>
@@ -85,7 +86,7 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="japanese" class="slide">
     <h3><a href="#japanese">Japanese</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/boundaries3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/boundaries3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Japanese also makes no use of spaces for word separation. The apparent spacing in the example above is simply the lack of ink in the
       mono-spaced character cells.</p>
@@ -97,7 +98,7 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="korean" class="slide">
     <h3><a href="#korean">Korean</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/boundaries4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/boundaries4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Korean does separate words with spaces.</p>
     <p>Double-clicking works in the same way as the Greek example. </p>
@@ -106,7 +107,7 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="thai" class="slide">
     <h3><a href="#thai">Thai</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/boundaries5.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/boundaries5.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Thai uses spaces, but to separate phrases or sentences, not words. At the same time there is a fairly clear notion of where word
       boundaries fall.</p>
@@ -123,7 +124,7 @@ h1 { margin-bottom: 90px;  }
 
 <div id="basics" class="slide">
     <h3><a href="#basics">Basic alternatives</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/linebreak.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/linebreak.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>In this section we will look at line breaking. Justification often occurs at the same time, but we will examine it separately to keep the
       explanations simple.</p>
@@ -132,9 +133,9 @@ h1 { margin-bottom: 90px;  }
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/wrapping/linebreak2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/linebreak2.png" alt="slide" /></div>
   <div class="speaker-notes">
-    <p>If you have a recent browser you can see how each script wraps by going to the the <a href="http://people.w3.org/rishida/scripts/samples/wrapping.html">word wrap tester page</a> and changing the width of the browser window. It is
+    <p>You can see how each script wraps by going to the the <a href="/scripts/summaries/wrapping">word wrap test page</a> and changing the width of the browser window. It is
       impressive to see how, if all scripts are displayed together, each line wraps according to its own rules.</p>
     <p>English, Greek, Hindi, and Russian text wraps whole words onto the next line.</p>
     <p>Arabic and Hebrew do the same, but the text wraps to the right. Wrapping of embedded Latin text produces a special effect that will be
@@ -149,7 +150,7 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="cjk" class="slide">
     <h3><a href="#cjk">CJK line breaking rules</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/linebreak3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/linebreak3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide shows the rules for character-based line breaking that apply by default for Japanese in Office XP, minus the full vs. half
       width duplicates.</p>
@@ -157,7 +158,7 @@ h1 { margin-bottom: 90px;  }
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/wrapping/linebreak4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/linebreak4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>The question arises, if Japanese and Chinese are typically grid-like in layout, what happens when a character such as a comma would by
       default appear at the beginning of a line as in the first example above.</p>
@@ -177,7 +178,8 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="latin-in-rtl" class="slide">
     <h3><a href="#latin-in-rtl">Wrapping Latin text in Arabic &amp; Hebrew</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/linebreak5.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/linebreak5.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/linebreak6.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide shows the result of breaking a line in the middle of some Latin text in Arabic and Hebrew. The result is not immediately
       obvious for people unaccustomed to these scripts, as the order of words appears to be swapped.</p>
@@ -186,9 +188,15 @@ h1 { margin-bottom: 90px;  }
     <p class="slide-bottom">&nbsp;<a href="toc#toc">go to table of contents</a></p>
   </div>
 </div>
+<div id="hyphenation2" class="slide">
+  <div class="slide-pic"> <img src="images/linebreak7.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Other scripts have different rules about how to do line breaking. The example on this slide shows how Tibetan may sometimes fill the remainder of the line with small <em>tsek</em> characters (syllable separators) – although, actually, the rules are a little more complicated than that, and some lines do not get filled with tseks while others do.</p>
+  </div>
+</div>
 <div id="hyphenation" class="slide">
     <h3><a href="#hyphenation">Hyphenation</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/hyphenation.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/hyphenation.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Latin and Cyrillic scripts allow hyphenation of words at the end of a line in order to achieve a better fit.</p>
     <p>It is important to note that hyphenation rules differ from language to language within the same script. The slide shows hyphenation that
@@ -196,7 +204,7 @@ h1 { margin-bottom: 90px;  }
   </div>
 </div>
 <div id="soft-hyphen" class="slide">
-  <div class="slide-pic"> <img src="images/wrapping/hyphenation2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/hyphenation2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Unicode provides a soft-hyphen character (U+00AD   SOFT HYPHEN) that can be used to control hyphenation. If the application displaying the text knows how to handle it, the hyphen will only be displayed if a word doesn't fit at the end of a line.</p>
     <p>This is another kind of character that should be ignored when comparing strings, counting characters, ordering text, etc.</p>
@@ -212,7 +220,7 @@ h1 { margin-bottom: 90px;  }
 
 <div id="j-basics" class="slide">
     <h3><a href="#j-basics">Basic alternatives</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/justification.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/justification.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide lists possible approaches to justification. These include:</p>
     <ul>
@@ -233,20 +241,20 @@ h1 { margin-bottom: 90px;  }
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/wrapping/justification2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/justification2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide shows an unjustified text.</p>
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/wrapping/justification3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/justification3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>On this slide, justification has used inter-word spacing only. Note how the result is less than perfect, with large inter-word spaces on
       the second line, and no justification to the single word on the third line.</p>
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/wrapping/justification4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/justification4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>In this third slide, both inter-word and inter-character spacing have been applied to the same text, and produce a much better result.</p>
     <p>Note that justification does not only involve expansion. In fact it is common for a justification algorithm to attempt to reduce
@@ -258,7 +266,7 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="j-cjk" class="slide">
     <h3><a href="#j-cjk">Justification in Chinese &amp; Japanese</a></h3>
-  <div class="slide-pic"><img src="images/wrapping/justification5.png" alt="slide" /></div>
+  <div class="slide-pic"><img src="images/justification5.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide illustrates how justification can be used to remove the blank space at the end of the first line of text that we saw in the
       section about line breaking. The justification involves equally expanding the space between all characters on the first line.</p>
@@ -272,25 +280,33 @@ h1 { margin-bottom: 90px;  }
 </div>
 <div id="j-arabic" class="slide">
     <h3><a href="#j-arabic">Justification in Arabic</a></h3>
-  <div class="slide-pic"> <img src="images/wrapping/justification6.png" alt="slide" /></div>
-  <div class="slide-pic"> <img src="images/wrapping/justification7.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/justification6.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/justification7.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>These two slides illustrate justification in Arabic based on extension of the baseline.</p>
-    <p>More sophisticated rendering algorithms produce this effect without adding additional characters to memory. A less sophisticated approach
-      may involve adding baseline extension characters called tatweel or kashida (U+0640) to the text.</p>
-    <p>Note too that this kind of baseline extension is also used for emphasising text in Arabic, for example in headings. </p>
+    <p>Note  that this kind of baseline extension is also used for emphasising text in Arabic, for example in headings. </p>
+    <p>More sophisticated rendering algorithms produce this effect without adding additional characters to memory, and by stretching the baseline typographically. This can be referred to as <span class="newterm">kashida</span>. Better quality applications also use additional techniques to stretch the text, such as replacing certain character glyphs with wider variants. They may also stretch interword spaces, and even the small spaces inside words where characters don't join to the left.</p>
+    <p>The very unsophisticated approach
+      shown on the slide was copied from a newspaper where they had simply added baseline extension characters called <span class="newterm">tatweel</span> (U+0640) to the text.</p>
+    <p>Whatever approach is used to elongate the words, there are rules about how much elongation is appropriate, and where it should occur. These rules also vary from type style to type style. For example, the rules for a naskh font will differ from those for a nasta'liq font. In fact, the ruq'a font style doesn't allow stretching at all.</p>
+    <p class="slide-bottom">&nbsp;<a href="toc#toc">go to table of contents</a></p>
+  </div>
+</div>
+<div id="j-arabic3" class="slide">
+  <div class="slide-pic"> <img src="images/justification8.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Another common approach to justification in Arabic script is to reduce the width of words, in order to produce a better fit. One way to achieve this is to use ligatures. Note how the (same) word in the example on the slide is much shorter where ligatures are used.</p>
     <p class="slide-bottom">&nbsp;<a href="toc#toc">go to table of contents</a></p>
   </div>
 </div>
 </section>
-
 <nav>
-<p class="siblings-bottom"><a href="part4">&lt;&lt; Text direction</a> &bull; <a href="#topbar">Top of page</a> &bull; <a href="part6">Typographic differences &amp; wrapping &gt;&gt;</a></p>
+  <p class="siblings-bottom"><a href="part4">&lt;&lt; Text direction</a> &bull; <a href="#topbar">Top of page</a> &bull; <a href="part6">Typographic differences &amp; wrapping &gt;&gt;</a></p>
 </nav>
 
 
 <div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-23  7:29<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-02-22  12:29<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 

@@ -7,6 +7,7 @@
 	  content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
 
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/style/slideshow.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
 
 <script type="text/javascript" src="/code/toc_section.js"></script>
@@ -54,10 +55,10 @@
 
 <div id="complexity" class="slide">
     <h3><a href="#complexity">Glyph complexity</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/characters.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/characters.png" alt="slide" /></div>
   <div class="speaker-notes">
-    <p>In this and following slides I look at the minimum number of pixels required on something like an LCD panel to achieve a quality rendering
-      of characters in a number of scripts. This has implication for line height and pixel resolution on screen. It also tends to impact the use of bolding
+    <p>In this and following slides we look at the minimum number of pixels required on something like an LCD panel to achieve a quality rendering
+      of characters in a number of scripts. This has implications for line height and pixel resolution on screen. It also tends to impact the use of bolding
       and italicization, since they require additional pixels for rendering.</p>
     <p>English generally fits adequately in a 6x8 pixel block.</p>
     <p>Unfortunately this is not true for other languages based on the Latin script. Accents over or under upper case letters in particular tend
@@ -68,14 +69,14 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/miscellaneous/characters2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/characters2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Most Thai characters require only around 7 pixels in width, although there are a small number that may require around twice that.</p>
     <p>In height, however, Thai demands a minimum of 22 pixels (plus more inter-line spacing than is usual for Latin text). </p>
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/miscellaneous/characters3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/characters3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>In Chinese (especially Traditional) there are many hundreds of characters that cannot be rendered in a16x16 pixel grid. An adequate size
       is likely to involve around 24x24 pixels. (Count the lines and spaces on the example on this slide and you will see that a minimal representation of
@@ -85,7 +86,7 @@
 </div>
 <div id="interline" class="slide">
     <h3><a href="#interline">Line height &amp; inter-line spacing</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/characters4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/characters4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Even after supplying sufficient numbers of pixels to accommodate the complex shapes we have seen, many of these scripts demand additional
       inter-line spacing.</p>
@@ -105,7 +106,7 @@
 </div>
 <div id="baseline" class="slide">
     <h3><a href="#baseline">Baseline alignment</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/characters5.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/characters5.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Another issue to be borne in mind concerns baseline alignment. The slide shows a number of possible types of baseline.</p>
     <p> If using a font that includes more than one script this is not usually an issue since the font designer will normally ensure an
@@ -116,7 +117,7 @@
 </div>
 <div id="proportional" class="slide">
     <h3><a href="#proportional">Proportional spacing</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/characters6.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/characters6.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Whereas East Asian characters tend to use mono-spaced glyphs as the default, a script such as Arabic is extremely difficult to fit into a
       mono-spaced font. Arabic really demands proportionally-spaced glyphs.</p>
@@ -129,12 +130,13 @@
 
 
 
-<section id="ruby">
-  <h2><a href="#ruby">Ruby</a></h2>
+<section id="other">
+  <h2><a href="#other">Indigenous typographic styles</a></h2>
+  <p>This section gathers together a few additional typographic features that may differ across scripts. It is not exhaustive.</p>
 
 <div id="furigana" class="slide">
-    <h3><a href="#furigana">Furigana</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/ruby.png" alt="slide" /></div>
+    <h3><a href="#furigana">ruby</a></h3>
+  <div class="slide-pic"> <img src="images/ruby.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>The term <span class="newterm">ruby</span> is used to refer to annotations typically occurring in East Asian scripts. In Japanese this is
       called <span class="newterm">furigana</span>. </p>
@@ -144,58 +146,56 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/miscellaneous/ruby2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/ruby2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>In vertical text, above equates to right, and below equates to left. </p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">got to top of page</a></p>
   </div>
 </div>
-<div id="bopomofo" class="slide">
-    <h3><a href="#bopomofo">Bopomofo</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/ruby3.png" alt="slide" /></div>
-  <div class="speaker-notes">
-    <p>Such annotation in Traditional Chinese uses bopomofo to indicate the pronunciation, and rather than appearing above the main text, the
-      annotation is included vertically to the right of each character, whether the main text is vertical or horizontal. </p>
-    <p class="slide-bottom">&nbsp;<a href="#topbar">got to top of page</a></p>
-  </div>
-</div>
-<div id="annotation" class="slide">
-    <h3><a href="#annotation">Interlinear annotation characters</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/ruby4.png" alt="slide" /></div>
+<div id="annotation2" class="slide">
+  <div class="slide-pic"> <img src="images/ruby4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Unicode provides special control characters that can be used to indicate what is ruby in plain text, as shown on the slide.</p>
     <p><strong>NOTE: these characters should not be used in a markup language such as HTML if a markup-based alternative is provided. </strong></p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">got to top of page</a></p>
   </div>
 </div>
-</section>
-
-
-
-<section id="other">
-  <h2><a href="#other">Other typographic differences</a></h2>
+<div id="bopomofo" class="slide">
+  <div class="slide-pic"> <img src="images/ruby3.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Ruby annotation in Traditional Chinese uses bopomofo to indicate the pronunciation, and rather than appearing above the main text, the
+      annotation is included vertically to the right of each character, whether the main text is vertical or horizontal. </p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">got to top of page</a></p>
+  </div>
+</div>
 
 <div id="emphasis" class="slide">
     <h3><a href="#emphasis">Emphasis</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/misc.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/misc.png" alt="slide" /></div>
   <div class="speaker-notes">
-    <p>This section gathers together a small number of additional typographic features that may differ across scripts.</p>
     <p>This slide illustrates alternative, native Japanese, methods of emphasizing text. In the top example, small dots (called <span class="newterm">wakiten</span>) are placed above the characters to be emphasized – one dot per character. (In vertical text they appear to the
       right of the character.)</p>
     <p>The second example shows emphasis being indicated by the use of a light shaded box behind the relevant characters. This is called <span class="newterm">amikake</span>.</p>
     <p>Note also, as was mentioned earlier, that emphasis can be achieved in German by widening the spaces between characters.</p>
   </div>
 </div>
+<div id="emphasis2" class="slide">
+  <div class="slide-pic"> <img src="images/tibetan-emphasis.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>One style of Tibetan emphasis places small glyphs below a syllable, as shown in the slide. The glyph needs to be centred per the visible width of the syllable. In the cases on the slide, this looks possible by added a combining character to the stack, but in other syllables the position of the emphasis mark is not aligned with the stack, so actually it's placement varies according to the contents of the whole syllable.</p>
+  </div>
+</div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/miscellaneous/misc2.png" alt="slide" /></div>
+    <h3><a href="#italics">Italics</a></h3>
+  <div class="slide-pic"> <img src="images/misc2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Emphasis in Cyrillic is commonly achieved by italicization, as in Latin text, however italicization of Cyrillic typically changes certain
       glyphs in a systematic way. It cannot be achieved simply by distorting the non-italicized text slightly. Firstly, many characters adopt a more
       rounded shape.</p>
-  </div>
+    </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/miscellaneous/misc3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/misc3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Other Cyrillic letters adopt a very different base shape during italicization.</p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">got to top of page</a></p>
@@ -203,7 +203,7 @@
 </div>
 <div id="kumimoji" class="slide">
     <h3><a href="#kumimoji">Kumimoji and warichu</a></h3>
-  <div class="slide-pic"> <img src="images/miscellaneous/misc4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/misc4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>As an example of other typographic effects that may need to be supported, Japanese typography frequently uses approaches such as <span class="newterm">kumimoji</span> and <span class="newterm">warichu</span>.</p>
     <p>Kumimoji (top line on the slide) refers to composites consisting of up to 5 characters that are reduced in size and combined to fit within
@@ -212,6 +212,30 @@
       height and length.</p>
     <p>(These examples and definitions are taken from the <a href="http://www.w3.org/TR/css3-text/">CSS3 Text Module</a>.) </p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">got to top of page</a></p>
+  </div>
+</div>
+<div id="grid" class="slide">
+  <h3><a href="grid">Grid layout</a></h3>
+  <div class="slide-pic"> <img src="images/ideographic-layout.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Note how, because all the characters above are mono-spaced and fit within the same sized box, the text on the slide gives the appearance of
+      a grid. Grid layouts are actually a common typographic convention in East Asian scripts.</p>
+    <p>When half-width or proportionally-spaced characters are introduced, there is a possibility of this grid being corrupted, but typographic
+      devices are available to provide several possible solutions to this.</p>
+  </div>
+</div>
+<div id="grid2" class="slide">
+  <h3><a href="grid">Counter styles</a></h3>
+  <div class="slide-pic"> <img src="images/counter-styles.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>Another typographic feature that varies from script to script and often from language to language is the numbering used for lists, chapter headings, etc. Not only are the counters likely to be based on characters of the script in question, but they may increment according to numeric, alphabetic or other rules. There are often more than one counter style per script/language. For more information about counter styles see <a href="https://www.w3.org/TR/predefined-counter-styles/">Custom Counter Styles</a>.</p>
+  </div>
+</div>
+<div id="grid3" class="slide">
+  <h3><a href="grid">Layout requirements work</a></h3>
+  <div class="slide-pic"> <img src="images/layout-reqs.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>The W3C has a number of task forces working to define requirements for layout and typography in script around the world. You can follow or join these task forces if you want to contribute your expertise in a particular area. The documents being worked on at the time this presentation was written include those shown on the slide.</p>
   </div>
 </div>
 </section>
@@ -223,7 +247,7 @@
 
 
 <div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-23  7:28<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-02-22  12:37<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 

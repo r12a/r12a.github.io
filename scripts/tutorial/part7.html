@@ -7,6 +7,7 @@
 	  content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
 
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/style/slideshow.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
 
 <script type="text/javascript" src="/code/toc_section.js"></script>
@@ -54,7 +55,7 @@
 
 <div id="latin" class="slide">
     <h3><a href="#latin">Basic Latin</a></h3>
-  <div class="slide-pic"><img src="images/sorting/sorting.png" alt="slide" /></div>
+  <div class="slide-pic"><img src="images/sorting.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Unicode based text cannot be sorted by simply comparing code point values, any more than English in ASCII given its separation of upper
       and lower case.</p>
@@ -75,7 +76,7 @@
   </div>
 </div>
 <div id="Slide1480" class="slide">
-  <div class="slide-pic"> <img src="images/sorting/sorting2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>In the second pass accents are typically addressed for entries that would otherwise be the same.</p>
     <p>The preferred order of diacritics may vary from language to language, and to some extent from application to application.</p>
@@ -84,7 +85,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/sorting/sorting3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>When accents have been dealt with, any differences in case may be addressed in a third pass. Whether upper-cased letters are sorted first
       or second varies from application to application and platform to platform. </p>
@@ -93,7 +94,7 @@
 </div>
 <div id="arabic" class="slide">
     <h3><a href="#arabic">Arabic</a></h3>
-  <div class="slide-pic"> <img src="images/sorting/sorting4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>A language written with Arabic script will also need to initially ignore diacritics such as the short vowels so that the two versions of
       the word above sort in the same place.</p>
@@ -102,7 +103,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/sorting/sorting5.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting5.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Whereas for most languages using the Arabic script sorting follows the kinds of alphabetic principles already discussed, sorting of words
       for the Arabic language often uses a much more complicated approach.</p>
@@ -112,14 +113,14 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/sorting/sorting6.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting6.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>When we look up ‘kataba’ (to write) we will find words such as those shown on this slide as sub-entries, including the word we were
       looking for, ‘maktab’. </p>
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/sorting/sorting7.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting7.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide shows the meaning rather than the pronunciation of the words on the previous slide. Note how they are all related in meaning
       because they share the same root. </p>
@@ -128,7 +129,7 @@
 </div>
 <div id="thai" class="slide">
     <h3><a href="#thai">Thai</a></h3>
-  <div class="slide-pic"> <img src="images/sorting/sorting9.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting9.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>A sort key for Thai begins with the Thai consonants, then continues with the vowel signs. Thus all consonants without vowel signs come
       before those with vowel signs. In addition, we have seen how there is often more than one vowel sign associated with a base consonant in Thai. Each
@@ -142,7 +143,7 @@
 </div>
 <div id="korean" class="slide">
     <h3><a href="#korean">Korean</a></h3>
-  <div class="slide-pic"> <img src="images/sorting/sorting10.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting10.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Korean is very simple to sort in Unicode if you are only dealing with hangul characters, since they are all already in sorted order in the
       character set.</p>
@@ -152,7 +153,7 @@
 </div>
 <div id="cj" class="slide">
     <h3><a href="#cj">Chinese &amp; Japanese</a></h3>
-  <div class="slide-pic"> <img src="images/sorting/sorting11.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting11.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Chinese and Japanese can be sorted in a number of ways that use a radically different approach. These different sort methods may be
       application dependent. For example, a bilingual dictionary, an on-line help index, a telephone book, and a kanji lookup table may all sort in
@@ -169,7 +170,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/sorting/sorting12.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting12.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Radical and stroke ordered lists ignore pronunciation altogether and sort characters on the basis of their shape.</p>
     <p>In the former case, the first sort pass uses the radical of each character to sort text according to the traditional position of that
@@ -185,7 +186,7 @@
 </div>
 <div id="multilingual" class="slide">
     <h3><a href="#multilingual">Multilingual text</a></h3>
-  <div class="slide-pic"> <img src="images/sorting/sorting14.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting14.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide introduces an additional issue when sorting. If you have text in a number of different scripts and/or languages, how do you
       order them?</p>
@@ -202,7 +203,7 @@
 </div>
 <div id="indexing" class="slide">
     <h3><a href="#indexing">Indexing &amp; alphabetic ordering</a></h3>
-  <div class="slide-pic"> <img src="images/sorting/sorting15.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/sorting15.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>The implications of different sort orders mean that a presentation such as that shown on the slide needs significant work during
       localization. The alphabet at the top and the links need to be changed and the order of all elements in the index needs to be changed.</p>
@@ -221,7 +222,7 @@
   <h2><a href="#case">Case conversion</a></h2>
 
 <div class="slide">
-  <div class="slide-pic"> <img src="images/sorting/case.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/case.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>A distinction between upper and lower case applies to Latin, Cyrillic, Greek and Armenian scripts. (Georgian makes a distinction between
       two variants of a character that has been compared to a case distinction, but in modern Georgian is not used.)</p>
@@ -245,7 +246,7 @@
 </nav>
 
 <div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-23  7:27<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-02-22  10:07<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 

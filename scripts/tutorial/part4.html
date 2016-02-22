@@ -7,6 +7,7 @@
 	  content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
 
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/style/slideshow.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
 
 <script type="text/javascript" src="/code/toc_section.js"></script>
@@ -53,20 +54,29 @@
  <h2><a href="#vertical">Vertical text</a></h2>
 
 <div id="text-flow" class="slide">
-    <h3><a href="text-flow">Text flow</a></h3>
-  <div class="slide-pic"> <img src="images/direction/vertical.png" alt="slide" /></div>
-  <div class="slide-pic"> <img src="images/direction/vertical2.png" alt="slide" /></div>
+    <h3><a href="text-flow">Reading direction</a></h3>
+  <div class="slide-pic"> <img src="images/vertical.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/vertical2.png" alt="slide" /></div>
   <div class="speaker-notes">
-    <p>Vertical Mongolian flows from the left to the right of the page, but this is very unusual. Mongolian is also unusual in that it is only meant to be read vertically.</p>
-    <p>Vertical Chinese, Japanese and Korean flows from the right to the left of the page. All of these scripts can also be set
+    <p>Vertical Mongolian lines are stacked from the left to the right of the page, but this is very unusual. Mongolian is also unusual in that it is only meant to be read vertically.</p>
+    <p>Lines in vertical Chinese, Japanese and Korean are stacked from the right to the left of the page. All of these scripts can also be set
       horizontally.</p>
-    <p>Vertically oriented text is still very common in printed matter such as books, magazines and newspapers. </p>
+    <p>In Japan, vertically oriented text is still very common in printed matter such as books, magazines and newspapers. It is also quite common for Traditional Chinese. It is less common, but still found for Simplified Chinese and Korean text.</p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
+<div id="columns" class="slide">
+  <h3><a href="columns">Columns</a> in vertical text</h3>
+  <div class="slide-pic"> <img src="images/vertical7.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide illustrates the path of the eye in two-column vertical text. The columns, of course, run horizontally. If you are implementing
+      an OCR application, this is an important thing to get right. </p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
   </div>
 </div>
 <div id="rotations" class="slide">
     <h3><a href="rotations">Rotations &amp; shifts</a></h3>
-  <div class="slide-pic"> <img src="images/direction/vertical3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/vertical3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This and the two following slides show differences between the same text when set horizontally and vertically.</p>
     <p>On this slide we see how parentheses and vowel lengthening marks are rotated. Bear in mind that this does not reflect any change in the
@@ -74,7 +84,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/vertical4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/vertical4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide shows how punctuation and small kana characters move from one corner of the cell square to the other. This is not a question of
       rotation.</p>
@@ -82,7 +92,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/vertical5.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/vertical5.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide shows the treatment of embedded Latin text. Text typically flows down the line at a 90 degree rotation from the East Asian
       characters, however acronyms and initials are commonly not rotated. </p>
@@ -91,20 +101,18 @@
 </div>
 <div id="tatechuyoko" class="slide">
     <h3><a href="tatechuyoko">Tate chu yoko</a></h3>
-  <div class="slide-pic"> <img src="images/direction/vertical6.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/vertical6.png" alt="slide" /></div>
   <div class="speaker-notes">
-    <p>Vertical text often includes short runs of horizontal numbers or Latin text, called <span class="newterm">tate chu yoko</span>. The
-      example on this slide shows the heading of a newspaper article in Korean.</p>
-    <p>(Note also the use of a hanja character meaning ‘hundred’ between the 3 and the 76.) </p>
+    <p>Vertical text often includes short runs of horizontal numbers or Latin text. In CSS this is referred to using the Japanese name<span class="newterm"> tate chu yoko</span>. It occurs in Chinese, Japanese and Korean vertical text.</p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
   </div>
 </div>
-<div id="columns" class="slide">
-    <h3><a href="columns">Vertical columns</a></h3>
-  <div class="slide-pic"> <img src="images/direction/vertical7.png" alt="slide" /></div>
+<div id="tatechuyoko2" class="slide">
+  <div class="slide-pic"> <img src="images/vertical8.png" alt="slide" /></div>
   <div class="speaker-notes">
-    <p>This slide illustrates the path of the eye in two-column vertical text. The columns, of course, run horizontally. If you are implementing
-      an OCR application, this is an important thing to get right. </p>
+    <p> The
+      example on this slide shows the heading of a newspaper article in Korean. It is rather an extreme case!</p>
+    <p>(Note also the use of a hanja character meaning ‘hundred’ between the 3 and the 76.) </p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
   </div>
 </div>
@@ -113,16 +121,15 @@
 <section id="bidi">
   <h2><a href="#bidi">Bidirectional text</a></h2>
 <div id="right-align" class="slide">
-    <h3><a href="right-align">Right alignment</a></h3>
-  <div class="slide-pic"> <img src="images/direction/bidi.png" alt="slide" /></div>
+    <h3><a href="right-align">Reading direction &amp; alignment</a></h3>
+  <div class="slide-pic"> <img src="images/bidi.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Arabic and Hebrew scripts run predominantly from right to left and are right justified. </p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
   </div>
 </div>
 <div id="ordering" class="slide">
-    <h3><a href="ordering">Bidirectional ordering</a></h3>
-  <div class="slide-pic"> <img src="images/direction/bidi2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/bidi2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>Text in right-to-left scripts does not always flow right to left. Embedded Latin text and all numbers are read left to right. It is for
       this reason that these scripts are referred to as <span class="newterm">bidirectional</span>.</p>
@@ -131,7 +138,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/bidi3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/bidi3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>It is important to understand that the order of characters in memory is unidirectional, following what is called the <span
 			 class="newterm">logical order</span>. The reordering you see on screen or paper is magic worked by the text rendering algorithms of the software.</p>
@@ -139,7 +146,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/bidi4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/bidi4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>East Asian scripts often used to also be read from right to left, though this is much less common nowadays. The example shown on the slide
       is a Traditional Chinese newspaper where the text of the articles is predominantly vertical. The headings of the articles and the captions of the
@@ -152,7 +159,7 @@
 </div>
 <div id="algorithm" class="slide">
     <h3><a href="algorithm">Unicode bidirectional algorithm</a></h3>
-  <div class="slide-pic"> <img src="images/direction/algorithm.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/algorithm.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>The Unicode Standard has a <span class="newterm">Bidirectional Algorithm</span> that should be used to support the display of bidi text. Unlike many character sets,
       Unicode provides several properties of semantic information for every character. One of these properties indicates the behavior of the character with
@@ -163,7 +170,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/algorithm2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/algorithm2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>As each of the right-to-left typed characters are typed on the first and second lines the bidirectional algorithm will place the next
       character to the left of the previous one.</p>
@@ -179,7 +186,7 @@
 </div>
 <div id="mirrored" class="slide">
     <h3><a href="mirrored">Mirrored characters</a></h3>
-  <div class="slide-pic"> <img src="images/direction/mirrored.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/mirrored.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>The treatment of paired characters such as parentheses deserves a brief mention here. The text on the slide flows consistently from right
       to left. The point of interest is the shape of the parentheses.</p>
@@ -192,7 +199,8 @@
 </div>
 <div id="controls" class="slide">
     <h3><a href="controls">Bidi formatting control characters</a></h3>
-  <div class="slide-pic"> <img src="images/direction/controls.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/controls.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/controls2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>There are occasionally situations where the bidirectional algorithm needs a little help to determine the directional context.</p>
     <p>Unicode provides special, invisible control codes to help clarify such ambiguities or intentional deviations from the rules of the
@@ -208,7 +216,7 @@
 </div>
 <div id="selection" class="slide">
     <h3><a href="selection">Visual selection</a></h3>
-  <div class="slide-pic"> <img src="images/direction/selecting.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/selecting.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>The difference between the logical, underlying order of bidirectional text and the displayed order of characters also has an impact on
       highlighting.</p>
@@ -217,7 +225,7 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/selecting2.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/selecting2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>As you can see here, two separate ranges of text have been highlighted, one of which falls outside the two points we mentioned on the
       previous slide. A look at the underlying codes (see the bottom of the slide) immediately reveals the inherent logic in this approach. Although this
@@ -235,11 +243,9 @@
 
 <div id="layout" class="slide">
     <h3><a href="layout">Screen layout</a></h3>
-  <div class="slide-pic"> <img src="images/direction/layout-graphics.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/layout-graphics.png" alt="slide" /></div>
   <div class="speaker-notes">
-    <p>A predominant reading direction of right-to-left can have an impact on more than just the text. If you look at the <a href="http://people.w3.org/rishida/scripts/samples/arabic.html">Arabic</a> and <a
-			 href="http://people.w3.org/rishida/scripts/samples/hebrew.html">Hebrew</a> sample pages in Internet Explorer you will see that the scroll bar appears
-      on the left.</p>
+    <p>A predominant reading direction of right-to-left can have an impact on more than just the text. </p>
     <p>In Arabic and Hebrew environments the layout of screen information is typically mirrored to reflect the scanning direction of the
       text.</p>
     <p>The screen shot of an editor on the slide shows the following differences from the English version: </p>
@@ -263,32 +269,39 @@
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"><img src="images/direction/layout-graphics2.png" alt="slide" /></div>
+  <div class="slide-pic"><img src="images/layout-graphics2.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>In addition, the text on pull down menus is on the right and accelerator keys are listed to the left.</p>
     <p>If there were submenus they would cascade to the left, not the right as in an English user interface. </p>
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/layout-graphics3.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/layout-graphics3.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>All the items on this dialogue box are mirrored by comparison to the English version. </p>
     <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
   </div>
 </div>
+<div class="slide">
+  <div class="slide-pic"> <img src="images/layout-graphics-web.png" alt="slide" /></div>
+  <div class="speaker-notes">
+    <p>This slide illustrates mirroring of content on a Web page.</p>
+    <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+  </div>
+</div>
 <div id="graphics" class="slide">
     <h3><a href="graphics">Graphics, icons and charts</a></h3>
-  <div class="slide-pic"> <img src="images/direction/layout-graphics4.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/layout-graphics4.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>In addition to layout of user interfaces, directionality may affect the layout of charts, tables, spreadsheets, collated pictures, and the
       like. (This appears to more consistently the case for Arabic documents than for Hebrew.)</p>
-    <p>(It is worth visiting the <a href="http://people.w3.org/rishida/scripts/samples/arabic.html">Arabic</a> or <a href="http://people.w3.org/rishida/scripts/samples/hebrew.html">Hebrew</a> sample page on the Web to see the effect of changing the directionality
+    <p>(It is worth visiting the <a href="/scripts/summaries/arabic.html">Arabic</a> or <a href="/scripts/summaries/hebrew.html">Hebrew</a> sample page on the Web to see the effect of changing the directionality
       of the page on the table cells shown at the top of this slide. Just click on the button provided.)</p>
     <p>Also, any graphics showing directional bias will need to be mirrored. </p>
   </div>
 </div>
 <div class="slide">
-  <div class="slide-pic"> <img src="images/direction/layout-graphics5.png" alt="slide" /></div>
+  <div class="slide-pic"> <img src="images/layout-graphics5.png" alt="slide" /></div>
   <div class="speaker-notes">
     <p>This slide shows a small selection of icons that exhibit directional bias and will probably need to be replaced with mirrored versions in
       an Arabic or Hebrew context.</p>
@@ -312,7 +325,7 @@
 
 
 <div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-23  7:29<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-02-22  12:16<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
