@@ -956,7 +956,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 		//var hex = convertChar2CP(chars[i])
 		charstr = String.fromCodePoint(chars[i])
 		if (charData[charstr]) {
-			var hex = chars[i].toString(16)
+			var hex = chars[i].toString(16).toUpperCase()
 			var name = charData[charstr]['n']
 			var mark = charData[charstr]['m']
 			var cbase = ''
