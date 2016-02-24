@@ -1,7 +1,8 @@
 @font-face {
-    font-family: 'Doulos SIL WF';
-    src: local("Doulos SIL"),
-		url('/webfonts/DoulosSIL-Rwebfont.woff2.woff') format('woff2');
+    font-family: 'Noto Sans Egyptian Hieroglyphs WF';
+    src: local("Noto Sans Egyptian Hieroglyphs"),
+		url('/webfonts/NotoSansEgyptianHieroglyphs-Regular.woff2') format('woff2'),
+		url('/webfonts/NotoSansEgyptianHieroglyphs-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

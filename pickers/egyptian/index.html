@@ -38,7 +38,7 @@
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <button  id="makeExample" onclick="makeExample('en','')" 
+    <button  id="makeExample" onclick="makeExample('egy','')" 
     title="Create an example.">Make<br>example</button>
     
     <button  id="makeCharLink" type="button" onclick="makeCharLink('egyptian','egy','')" 
@@ -257,9 +257,9 @@
   
   <div class="control">Search for:
     <form action="none"
-						 onsubmit="searchFor(getElementById('search').value, 'bengali'); return false;">
+						 onsubmit="searchFor(getElementById('search').value, 'egyptian'); return false;">
       <input name="search" id="search"  type="text" />
-      <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'bengali');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+      <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
   </div>
 </div>
@@ -308,29 +308,29 @@
       <h2 class="notoc flush"><a id="links">Related links</a></h2>
       <!--p><a href="/scripts/ethiopic/">Ethiopic script notes</a></p-->
       <!--p><a href="/scripts/latin/block">Latin character notes</a></p-->
-      <p><a href="/scripts/links?script=latin">Latin script links</a></p>
-      <p><a href="/uniview/?block=latin">Basic Latin in UniView </a></p>
+      <p><a href="/scripts/links?script=egyptianhieroglyphs">Egyptian Hieroglyph script links</a></p>
+      <p><a href="/uniview/?block=egyptian_hieroglyphs">Egyptian Hieroglyphs in UniView </a></p>
       <p><a href="/pickers/">Other pickers </a></p>
     </div>
   </aside>
   
-  <p id="status">Updated Tues 9 Feb 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=latin" title="Show all blog posts tagged with 'egyptian'">egyptian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+  <p id="status">Updated Wed 24 Feb 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=latin" title="Show all blog posts tagged with 'egyptian'">egyptian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
-  <p>This Unicode character picker allows you to produce or analyse runs of text using the Latin script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+  <p>This Unicode character picker allows you to produce or analyse runs of text using the Egyptian Hieroglyph script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
   <p>You must have JavaScript enabled. Choose  view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
-  <p>To properly display the text you will need to choose a font that is loaded on your system or device or use one of the  web fonts downloaded with the page. I recommend downloading the free Doulos SIL font. If you don't have that font on your system, the page will try to download a WOFF2 version, which may slow down the initial page load, given the size of the Latin character repertoire. Note that fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system.</p>
+  <p>To properly display the text you will need to choose a font that is loaded on your system or device or use one of the  web fonts downloaded with the page.  </p>
   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
   <dl>
     <dt>Mobile devices</dt>
     <dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
     
     <dt>About the chart</dt>
-    <dd>Includes all the characters in the Unicode <a href="/uniview/?block=basic_latin">Basic Latin</a> block.</dd>
+    <dd>Includes all the characters in the Unicode <a href="/uniview/?block=egyptian_hieroglyphs">Egyptian Hieroglyphs</a> block.</dd>
     <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</dd>
     
     <dt>Input options</dt>
-    <dd>The default option requires a two-stage look-up for the syllabic characters. First click on the  row of orange pictures that represent basic shapes similar to the Latin character you want to find. This will then display second row of characters. Click on one of these to add the character to the output area.</dd>
+    <dd>The default option requires a two-stage look-up for the syllabic characters. First click on the  row of orange pictures that represent one shape from each of the character groups within the block. This will then display second row of characters. Click on one of these to add the character to the output area.</dd>
     
           
       
@@ -341,18 +341,12 @@
       <dd><span class="leadin">Show codepoints.</span> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
       <dd><span class="leadin">Convert to escapes.</span> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
 
-      <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Arabic text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
-      <dd>For example, the following:</dd>
-      <dd><span lang="en">tiếng Việt</span>‎/tĭəŋ vìəˀt//Vietnamese</span></dd>
-      <dd>will produce:</dd>
-      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;ex&quot; lang=&quot;en&quot;&gt;tiếng Việt&#x200E;&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;tĭəŋ vìəˀt&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Vietnamese&lt;/span&gt;</code></dd>
+      <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Egyptian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
        
       <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
-      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;ệ LATIN SMALL LETTER E WITH CIRCUMFLEX AND DOT BELOW&lt;/span&gt; (&lt;span lang=&quot;en&quot;&gt;ệ&lt;/span&gt;)</code></dd>
-      <dd><span class="uname">U+1EC7 LATIN SMALL LETTER E WITH CIRCUMFLEX AND DOT BELOW</span> (<span lang="en">&#x1EC7;</span>)</dd>
-      <dd><strong>NOTE: Because this picker is not language-specific, you will need to add the correct lang attribute value manually!</strong></dd>
-
-
+      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;<span class="uname">U+13002 </span><span class="uname">EGYPTIAN HIEROGLYPH A003</span>&lt;/span&gt; (&lt;span lang=&quot;egy&quot;&gt;&amp;#x13002;&lt;/span&gt;)</code></dd>
+      <dd>When displayed on an HTML page that code will look like this:</dd>
+      <dd><span class="uname">U+13002 EGYPTIAN HIEROGLYPH A003</span> (<span lang="en">&#x13002;</span>)</dd>
     <dt>Notes on other controls</dt>
     <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
     <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <em>Add codepoint</em> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
