@@ -945,15 +945,23 @@ function makeCharacterLink (cp, block, lang, direction) {
 	// block: 
 	// lang: the BCP47 language tag for the context
 	// direction: either rtl or ltr or ''
-	var chars = cp.split('')
+	//var chars = cp.split('')
+	var chars = []
+	convertStr2DecArray(cp, chars)
+	
 
 	var out = ''
+	var charstr = ''
 	for (var i=0;i<chars.length;i++) {
-		var hex = convertChar2CP(chars[i])
-		var name = charData[chars[i]]['n']
-		var mark = charData[chars[i]]['m']
-		var cbase = ''
-		if (defaults.ccbase != '') cbase = '&amp;#x'+convertChar2CP(defaults.ccbase)+';'
+		//var hex = convertChar2CP(chars[i])
+		charstr = String.fromCodePoint(chars[i])
+		if (charData[charstr]) {
+			var hex = chars[i].toString(16)
+			var name = charData[charstr]['n']
+			var mark = charData[charstr]['m']
+			var cbase = ''
+			if (defaults.ccbase != '') cbase = '&amp;#x'+convertChar2CP(defaults.ccbase)+';'
+			}
 	
 		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
 		out +=  '<span class="uname">U+'+hex+' '+name+'</span> (<span lang="'+lang+'"'
