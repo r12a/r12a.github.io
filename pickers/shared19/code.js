@@ -462,6 +462,23 @@ function findShape (shapelist, extrashapes, show) {
 		document.getElementById('extrashapes').textContent = ''
 		for (i=0;i<extrashapesarray.length;i++) {
 			span = document.createElement('span')
+			
+			
+			
+			
+			prop = extrashapesarray[i]
+			var chars = []
+			convertStr2DecArray(prop, chars)
+			var codepoint = ''
+				for (c=0; c<chars.length; c++) { 
+					cp = chars[c].toString(16).toUpperCase()
+					while (cp.length < 4) cp = '0'+cp
+					cp = 'U+'+cp
+					if (c < prop.length-1) cp += ' '
+					codepoint += cp
+					}
+			
+			/*
 			prop = extrashapesarray[i]
 				var codepoint = ''
 				for (c=0; c<prop.length; c++) { 
@@ -472,6 +489,7 @@ function findShape (shapelist, extrashapes, show) {
 					if (c < prop.length-1) cp += ' '
 					codepoint += cp
 					}
+					*/
 			if (charData[prop]) span.title = codepoint+': '+charData[prop].n
 			else span.title = codepoint
 				
@@ -762,10 +780,26 @@ function initialise() {
 	var node = document.querySelectorAll( '.c' ); 
 	for (var j = 0; j < node.length; j++ ) { 
 		prop = node[j].textContent
+		var chars = []
+		convertStr2DecArray(prop, chars)
 		previoustitle = ''
 		if (node[j].title) previoustitle = node[j].title // pick up any title information available
 		if (charData[prop]) { // temporary while we populate the thing
 			var codepoint = ''
+			for (c=0; c<chars.length; c++) { 
+				cp = chars[c].toString(16).toUpperCase()
+				while (cp.length < 4) cp = '0'+cp
+				cp = 'U+'+cp
+				if (c < prop.length-1) cp += ' '
+				codepoint += cp
+				}
+			node[j].title = codepoint+': '+charData[prop].n
+			//node[j].title = charData[prop].cp+': '+charData[prop].name
+			if (previoustitle) node[j].title += ', '+previoustitle
+
+			
+			
+			/*
 			for (c=0; c<prop.length; c++) { 
 				cp = parseInt(prop.charCodeAt(c),10)
 				cp = cp.toString(16).toUpperCase()
@@ -777,6 +811,7 @@ function initialise() {
 			node[j].title = codepoint+': '+charData[prop].n
 			//node[j].title = charData[prop].cp+': '+charData[prop].name
 			if (previoustitle) node[j].title += ', '+previoustitle
+			*/
 			}
 		else console.log('failed to find data for codepoint',prop)
 		node[j].onmouseover = event_mouseoverChar;
