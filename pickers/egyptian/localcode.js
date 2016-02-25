@@ -3,6 +3,33 @@ var _showISOTrans = ''
 
 
 function localInitialise () {
+	//  SET MOUSEOVERS FOR GROUP SELECTORS
+	// set mouseover/mouseout functions for all imgs in shapeSelect list
+	var node = document.querySelectorAll( '.shapeSelect' ) 
+	for (var j = 0; j < node.length; j++ ) { 
+		/*prop = node[j].textContent
+		previoustitle = ''
+		if (node[j].title) previoustitle = node[j].title // pick up any title information available
+		if (charData[prop]) { // temporary while we populate the thing
+			var codepoint = ''
+			for (c=0; c<prop.length; c++) { 
+				cp = parseInt(prop.charCodeAt(c),10)
+				cp = cp.toString(16).toUpperCase()
+				while (cp.length < 4) cp = '0'+cp
+				cp = 'U+'+cp
+				if (c < prop.length-1) cp += ' '
+				codepoint += cp
+				}
+			node[j].title = codepoint+': '+charData[prop].n
+			//node[j].title = charData[prop].cp+': '+charData[prop].name
+			if (previoustitle) node[j].title += ', '+previoustitle
+			}
+		else console.log('failed to find data for codepoint',prop)
+		*/
+		node[j].onmouseover = event_mouseoverChar;
+		node[j].onmouseout = event_mouseoutChar;
+		}
+
 	}
 	
 
