@@ -298,6 +298,14 @@
       <option value="-">-</option>
     </select>
   </div>
+
+
+<div class="control" id="uiTableDirection" style="display:none; text-align:right;">Output direction:<br />
+<select onChange="_output=document.getElementById('output');if (this.value == 'rtl') {_output.style.direction = 'rtl'; _output.style.unicodeBidi='bidi-override';} else {_output.style.direction = 'ltr'; _output.style.unicodeBidi='bidi-override';} return false;">
+<option value="ltr" selected>LTR</option>
+<option value="rtl">RTL</option>
+</select>
+</div>
   
   <div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 </div>
@@ -334,6 +342,13 @@
     
     <dt>About the chart</dt>
     <dd>Includes all the characters in the Unicode <a href="/uniview/?block=egyptian_hieroglyphs">Egyptian Hieroglyphs</a> block.</dd>
+    <dd>Characters are grouped into standard categories. Click on one of the orange characters, chosen as a nominal representative of the class, to show below all the characters in that category. Click on one of those to add it to the output box. As you mouse over the orange characters, you’ll see the name of the category appear just below the output box.</dd>
+
+<dd>Just above the orange characters you can find buttons to insert RLO and PDF controls. RLO will make the characters that follow it to progress from right to left. Alternatively, you can select <code class="kw" translate="no">more controls</code> > <code class="kw" translate="no">Output direction</code> to set the direction of the output box to RTL/LTR override. The latter approach will align the text to the right of the box. I haven’t yet found a Unicode font that also flips the glyphs horizontally as a result. I’m not entirely sure about the best way to apply directionality to Egyptian hieroglyphs, so I’m happy to hear suggestions.</dd>
+
+<dd>Alongside the direction controls are some characters used for markup in the Manuel de Codage, which allows you to prepare text for an engine that knows how to lay it out two-dimensionally. (The picker doesn’t do that.)</dd>
+
+<dd>The Latin Characters panel, opened from the grey bar to the left, provides characters needed for transcription.</dd>
     <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</dd>
     
     <dt>Input options</dt>
