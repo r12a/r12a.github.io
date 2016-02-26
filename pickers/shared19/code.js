@@ -886,7 +886,6 @@ window.onload = function() {
 		}
 	if (defaults.view) { switchView(defaults.view); }
 
-
 	// create an element to serve as a buffer from which to copy selections to the clipboard
 	// assumes existence of element with id tables
 	buffer = document.createElement('textarea')
@@ -931,14 +930,16 @@ function copyTranscription () {
 
 
 function dotrans (altlist) { 
-	inserts = altlist.split(',')
+	var inserts = altlist.split(',')
 	if (inserts.length == 1 && inserts[0] != '-') add(inserts[0])
 	else {
-		insert = ''
+		var insert = ''
 		for (i=0;i<inserts.length;i++) {
 			if (inserts[i] == '+' || inserts[i] == '-') insert += '<bdi style="color:red">'+inserts[i]+'</bdi>'
 			else { 
-				if (charData[inserts[i][0]].m) { inserts[i] = defaults.ccbase+inserts[i] }
+				//if (charData[inserts[i][0]].m) { inserts[i] = defaults.ccbase+inserts[i] }
+				// check for full thing (for supp chars)
+				if (charData[inserts[i]].m) { inserts[i] = defaults.ccbase+inserts[i] }
 				insert += "<bdi class=c onclick='add(\""+inserts[i]+"\"); closeTranscriptionChoice();'>"+inserts[i]+"</bdi> "
 				}
 			}
