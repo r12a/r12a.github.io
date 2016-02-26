@@ -1,4 +1,5 @@
-var _showRadiceTrans =  ''
+globals.showLOCTrans = ''
+globals.showAlphaTrans =  ''
 var _showISOTrans = ''
 
 
@@ -32,6 +33,45 @@ function localInitialise () {
 
 	}
 	
+	
+	
+function searchFor ( str, scriptname ) { 
+
+	if (str == 'xxxxxx') {
+		document.getElementById('searchResults').style.display = 'none'
+		return
+		}
+
+	str = str.replace( /\:/g, '\\b' );
+	var re = new RegExp(str, "i"); 
+	var out = '' 
+	
+	for (var char in charData) {
+		var hex = convertChar2CP(char)
+		if (charData[char].s && charData[char].s.match(re)) {
+			//console.log('matched',charData[char].n,' as ',char)
+			out += '<span class="c" title="U+'+hex+' '+charData[char].n+' ('+charData[char].s+')">'+char+'</span> '
+			}
+		}
+	
+	if (out == '') out = 'Not found'
+	
+	var resultsCell = document.getElementById('searchResults')
+	resultsCell.style.display = 'block'
+	resultsCell.innerHTML = out
+	
+	// set up mouseovers
+	var node = document.querySelectorAll( '#searchResults span' ) 
+	for (var j = 0; j < node.length; j++ ) { 
+		node[j].onmouseover = event_mouseoverChar;
+		node[j].onmouseout = event_mouseoutChar;
+		node[j].onclick = event_clickOnChar;
+		}
+	return false;
+	}
+	
+
+
 
 var _h = {
 '995': ['9AC'],

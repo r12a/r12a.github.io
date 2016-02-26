@@ -84,6 +84,16 @@
     onmouseout="this.textContent=this.dataset.shorttitle"  
 	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
 
+<div class="vmtab"  title="Latin to Egyptian" data-var="showLOCTrans" data-locn="loctranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="Egyptian alphabet" data-var="showAlphaTrans" data-locn="alphatranscript" data-shorttitle="E"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">E</div>
+
 </div>
 
 </div>
@@ -152,6 +162,69 @@
 <span class="t" onclick="dotrans('y')">y</span>
 <span class="t" onclick="dotrans('z')">z</span>
 </div>
+
+
+<div id="loctranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('𓄿')">ꜣ</span>
+<span class="t" onclick="dotrans('𓇋')">i</span>
+<span class="t" onclick="dotrans('𓇌,𓏭')">y</span>
+<span class="t" onclick="dotrans('𓂝')">ꜥ</span>
+<span class="t" onclick="dotrans('𓅱,𓏲')">w</span>
+<span class="t" onclick="dotrans('𓃀')">b</span>
+<span class="t" onclick="dotrans('𓊪')">p</span>
+<span class="t" onclick="dotrans('𓆑')">f</span>
+<span class="t" onclick="dotrans('𓅓')">m</span>
+<span class="t" onclick="dotrans('𓈖')">n</span>
+<span class="t" onclick="dotrans('𓂋')">r</span>
+<span class="t" onclick="dotrans('𓉔')">h</span>
+<span class="t" onclick="dotrans('𓎛')">ḥ</span>
+<span class="t" onclick="dotrans('𓐍')">ḫ</span>
+<span class="t" onclick="dotrans('𓄡')">ẖ</span>
+<span class="t" onclick="dotrans('𓋴,𓊃')">s</span>
+<span class="t" onclick="dotrans('𓈙')">š</span>
+<span class="t" onclick="dotrans('𓈎')">ḳ</span>
+<span class="t" onclick="dotrans('𓎢')">k</span>
+<span class="t" onclick="dotrans('𓎼')">g</span>
+<span class="t" onclick="dotrans('𓏏')">t</span>
+<span class="t" onclick="dotrans('𓍿')">ṯ</span>
+<span class="t" onclick="dotrans('𓂧')">d</span>
+<span class="t" onclick="dotrans('𓆓')">ḏ</span>
+</div>
+
+
+<div id="alphatranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('𓄿')">𓄿</span>
+<span class="t" onclick="dotrans('𓇋')">𓇋</span>
+<span class="t" onclick="dotrans('𓇌')">𓇌</span>
+<span class="t" onclick="dotrans('𓏭')">𓏭</span>
+<span class="t" onclick="dotrans('𓂝')">𓂝</span>
+<span class="t" onclick="dotrans('𓅱')">𓅱</span>
+<span class="t" onclick="dotrans('𓏲')">𓏲</span>
+<span class="t" onclick="dotrans('𓃀')">𓃀</span>
+<span class="t" onclick="dotrans('𓊪')">𓊪</span>
+<span class="t" onclick="dotrans('𓆑')">𓆑</span>
+<span class="t" onclick="dotrans('𓅓')">𓅓</span>
+<span class="t" onclick="dotrans('𓈖')">𓈖</span>
+<span class="t" onclick="dotrans('𓂋')">𓂋</span>
+<span class="t" onclick="dotrans('𓉔')">𓉔</span>
+<span class="t" onclick="dotrans('𓎛')">𓎛</span>
+<span class="t" onclick="dotrans('𓐍')">𓐍</span>
+<span class="t" onclick="dotrans('𓄡')">𓄡</span>
+<span class="t" onclick="dotrans('𓋴')">𓋴</span>
+<span class="t" onclick="dotrans('𓊃')">𓊃</span>
+<span class="t" onclick="dotrans('𓈙')">𓈙</span>
+<span class="t" onclick="dotrans('𓈎')">𓈎</span>
+<span class="t" onclick="dotrans('𓎢')">𓎢</span>
+<span class="t" onclick="dotrans('𓎼')">𓎼</span>
+<span class="t" onclick="dotrans('𓏏')">𓏏</span>
+<span class="t" onclick="dotrans('𓍿')">𓍿</span>
+<span class="t" onclick="dotrans('𓂧')">𓂧</span>
+<span class="t" onclick="dotrans('𓆓')">𓆓</span>
+</div>
+
+
+
+
 </div>
 
 
@@ -166,6 +239,7 @@
     <!-- SHAPE -->
     <div id="alphabet" class="default">
       <table id="kbd">
+      	<tr><td id="searchResults"></td></tr>
         <tr>
           <td colspan="3">
           <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> 
@@ -263,8 +337,7 @@
   </div>
   
   <div class="control">Search for:
-    <form action="none"
-						 onsubmit="searchFor(getElementById('search').value, 'egyptian'); return false;">
+    <form action="none" onsubmit="searchFor(getElementById('search').value, 'egyptian'); return false;">
       <input name="search" id="search"  type="text" />
       <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
