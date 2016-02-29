@@ -3,37 +3,50 @@ globals.showAlphaTrans =  ''
 var _showISOTrans = ''
 
 
+function event_mouseoverChar ()  {
+	// display character information ADAPTED to retrieve description
+	var span = document.createElement( 'span' );
+	span.setAttribute( 'id', 'charname' );
+	//charinfo = document.createTextNode( this.title );
+	
+	var charname = this.title
+	if (charData[this.textContent] && charData[this.textContent].s) {
+		var descriptions = charData[this.textContent].s.split(':')
+		charname += ' ( '+descriptions[0]+')'
+		}
+	var charinfo = document.createTextNode( charname )
+	
+	span.appendChild(charinfo);
+	var chardata = document.getElementById('chardata');	
+	chardata.replaceChild( span, chardata.firstChild );
+	
+	// highlight this character
+	this.style.backgroundColor = '#CF9'
+	this.style.backgroundColor = '#fc6'
+	
+	// highlight similar characters
+	if (globals.showShapeHints && _h[this.id]) {
+		ptr = this.id
+		for (i=0;i<_h[ptr].length;i++) {
+			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
+			}
+		}
+	}
+	
+
+
 function localInitialise () {
 	//  SET MOUSEOVERS FOR GROUP SELECTORS
 	// set mouseover/mouseout functions for all imgs in shapeSelect list
 	var node = document.querySelectorAll( '.shapeSelect' ) 
 	for (var j = 0; j < node.length; j++ ) { 
-		/*prop = node[j].textContent
-		previoustitle = ''
-		if (node[j].title) previoustitle = node[j].title // pick up any title information available
-		if (charData[prop]) { // temporary while we populate the thing
-			var codepoint = ''
-			for (c=0; c<prop.length; c++) { 
-				cp = parseInt(prop.charCodeAt(c),10)
-				cp = cp.toString(16).toUpperCase()
-				while (cp.length < 4) cp = '0'+cp
-				cp = 'U+'+cp
-				if (c < prop.length-1) cp += ' '
-				codepoint += cp
-				}
-			node[j].title = codepoint+': '+charData[prop].n
-			//node[j].title = charData[prop].cp+': '+charData[prop].name
-			if (previoustitle) node[j].title += ', '+previoustitle
-			}
-		else console.log('failed to find data for codepoint',prop)
-		*/
 		node[j].onmouseover = event_mouseoverChar;
 		node[j].onmouseout = event_mouseoutChar;
 		}
 
 	}
 	
-	
+
 	
 function searchFor ( str, scriptname ) { 
 
@@ -48,9 +61,9 @@ function searchFor ( str, scriptname ) {
 	
 	for (var char in charData) {
 		var hex = convertChar2CP(char)
-		if (charData[char].s && charData[char].s.match(re)) {
+		if (charData[char].n && charData[char].n.match(re)) {
 			//console.log('matched',charData[char].n,' as ',char)
-			out += '<span class="c" title="U+'+hex+' '+charData[char].n+' ('+charData[char].s+')">'+char+'</span> '
+			out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
 			}
 		}
 	
@@ -70,6 +83,92 @@ function searchFor ( str, scriptname ) {
 	return false;
 	}
 	
+
+
+
+function searchForKeywords ( str, scriptname ) { 
+
+	if (str == 'xxxxxx') {
+		document.getElementById('searchResults').style.display = 'none'
+		return
+		}
+
+	str = str.replace( /\:/g, '\\b' );
+	var re = new RegExp(str, "i"); 
+	var out = '' 
+	
+	for (var char in charData) {
+		var hex = convertChar2CP(char)
+		if (charData[char].s && charData[char].s.match(re)) {
+			//console.log('matched',charData[char].n,' as ',char)
+			out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
+			}
+		}
+	
+	if (out == '') out = 'Not found'
+	
+	var resultsCell = document.getElementById('searchResults')
+	resultsCell.style.display = 'block'
+	resultsCell.innerHTML = out
+	
+	// set up mouseovers
+	var node = document.querySelectorAll( '#searchResults span' ) 
+	for (var j = 0; j < node.length; j++ ) { 
+		node[j].onmouseover = event_mouseoverChar;
+		node[j].onmouseout = event_mouseoutChar;
+		node[j].onclick = event_clickOnChar;
+		}
+	return false;
+	}
+	
+
+
+function convertPhonemes (type) {
+	searchForPhones(getHighlightedText(_output), '')
+	_output.focus()
+	}
+
+
+function searchForPhones ( str, scriptname ) { 
+
+	if (str == '') {
+		document.getElementById('searchResults').style.display = 'none'
+		return
+		}
+
+	var re = new RegExp(str, "i"); 
+	var out = '' 
+	var alternatives
+	
+	for (var char in charData) {
+		var hex = convertChar2CP(char)
+		if (charData[char].p) {
+			alternatives = charData[char].p.split(',')
+			for (c=0;c<alternatives.length;c++) {
+				if (alternatives[c] == str) {
+					out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
+					}
+				}
+			}
+		}
+	
+	if (out == '') out = 'Not found'
+	
+	var resultsCell = document.getElementById('searchResults')
+	resultsCell.style.display = 'block'
+	resultsCell.innerHTML = out
+	
+	// set up mouseovers
+	var node = document.querySelectorAll( '#searchResults span' ) 
+	for (var j = 0; j < node.length; j++ ) { 
+		node[j].onmouseover = event_mouseoverChar;
+		node[j].onmouseout = event_mouseoutChar;
+		node[j].onclick = event_clickOnChar;
+		}
+	return false;
+	}
+	
+
 
 
 
@@ -134,10 +233,8 @@ var _h = {
 '9F8': ['9A6'],
 '9A6': ['9F8'],
 
-end: {}
+end: ''
 }
-
-
 
 
 

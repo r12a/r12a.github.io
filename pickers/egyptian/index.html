@@ -37,7 +37,10 @@
     <button onclick="showCodepoints()">Show<br/>codepoints</button>
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
-    
+        
+    <button onclick="convertPhonemes()" 
+    title="Look up a Latin consonant or consonant sounds.">Look up<br/>from Latin</button> 
+
     <button  id="makeExample" onclick="makeExample('egy','')" 
     title="Create an example.">Make<br>example</button>
     
@@ -236,12 +239,13 @@
   <div id="tables">
     <div id="transcriptionChoice2" style="position:absolute;left:40px; font-size: 60px; background-color: #FFFACD; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
     
+    <div id="searchResults"></div>
     <!-- SHAPE -->
     <div id="alphabet" class="default">
       <table id="kbd">
-      	<tr><td id="searchResults"></td></tr>
+      	<!--tr><td colspan="2" id="searchResults"></td></tr-->
         <tr>
-          <td colspan="3">
+          <td>
           <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> 
           <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span>
           <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 10px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202E');">RLO</span> 
@@ -255,6 +259,11 @@
           </td>
         </tr>
       </table>
+      
+      
+      <div id="keywordSearch">Search for: <input onchange="searchForKeywords(this.value);" type="text" placeholder="keywords"/></div>
+      
+      
       <div style="margin-right:2em;"> 
       <span title="A. Man and his occupations" class="shapeSelect" onclick="findShape('','𓀀,𓀁,𓀂,𓀃,𓀄,𓀅,𓀆,𓀇,𓀈,𓀉,𓀊,𓀋,𓀌,𓀍,𓀎,𓀏,𓀐,𓀑,𓀒,𓀓,𓀔,𓀕,𓀖,𓀗,𓀘,𓀙,𓀚,𓀛,𓀜,𓀝,𓀞,𓀟,𓀠,𓀡,𓀢,𓀣,𓀤,𓀥,𓀦,𓀧,𓀨,𓀩,𓀪,𓀫,𓀬,𓀭,𓀮,𓀯,𓀰,𓀱,𓀲,𓀳,𓀴,𓀵,𓀶,𓀷,𓀸,𓀹,𓀺,𓀻,𓀼,𓀽,𓀾,𓀿,𓁀,𓁁,𓁂,𓁃,𓁄,𓁅,𓁆,𓁇,𓁈,𓁉,𓁊,𓁋,𓁌,𓁍,𓁎,𓁏',false)">𓀀</span> 
       <span title="B. Woman and her occupations" class="shapeSelect" onclick="findShape('','𓁐,𓁑,𓁒,𓁓,𓁔,𓁕,𓁖,𓁗,𓁘,𓁙',false)">𓁐</span> 

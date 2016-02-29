@@ -161,3 +161,23 @@ span.hint {
 #extrashapes span {
 	cursor: pointer;
 	}
+
+
+#keywordSearch {
+	font-size: 120%;
+	}
+
+#keywordSearch input {
+	font-size: 100%;
+	color: #aaa;
+	border-radius: 10px; 
+	border: 1px solid #ccc;
+	padding: 0 5px; 
+	}
+
+
+#searchResults {
+	font-size: 2em;
+	cursor: pointer;
+	font-family: 'Noto Sans Egyptian Hieroglyphs WF', Aegyptus;
+	}
