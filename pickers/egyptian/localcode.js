@@ -11,8 +11,7 @@ function event_mouseoverChar ()  {
 	
 	var charname = this.title
 	if (charData[this.textContent] && charData[this.textContent].s) {
-		var descriptions = charData[this.textContent].s.split(':')
-		charname += ' ( '+descriptions[0]+')'
+		charname += ' ( '+charData[this.textContent].s+' )'
 		}
 	var charinfo = document.createTextNode( charname )
 	
@@ -86,7 +85,10 @@ function searchFor ( str, scriptname ) {
 
 
 
-function searchForKeywords ( str, scriptname ) { 
+function searchForKeywords ( str, usage ) { 
+	// searches for a keyword
+	// str, the keyword to search for
+	// usage, true or false, indicates whether or not to include .u keywords
 
 	if (str == 'xxxxxx') {
 		document.getElementById('searchResults').style.display = 'none'
@@ -102,6 +104,57 @@ function searchForKeywords ( str, scriptname ) {
 		if (charData[char].s && charData[char].s.match(re)) {
 			//console.log('matched',charData[char].n,' as ',char)
 			out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
+			}
+		}
+	
+	if (out == '') out = 'Not found'
+	
+	var resultsCell = document.getElementById('searchResults')
+	resultsCell.style.display = 'block'
+	resultsCell.innerHTML = out
+	
+	// set up mouseovers
+	var node = document.querySelectorAll( '#searchResults span' ) 
+	for (var j = 0; j < node.length; j++ ) { 
+		node[j].onmouseover = event_mouseoverChar;
+		node[j].onmouseout = event_mouseoutChar;
+		node[j].onclick = event_clickOnChar;
+		}
+	return false;
+	}
+	
+
+
+function searchForKeywords ( str, usage ) { 
+	// searches for a keyword
+	// str, the keyword to search for
+	// usage, true or false, indicates whether or not to include .u keywords
+
+	if (str == '') {
+		document.getElementById('searchResults').style.display = 'none'
+		return
+		}
+
+	str = str.replace( /\:/g, '\\b' )
+	var re = new RegExp(str, "i")
+	var out = '' 
+	var found = false
+	
+	for (var char in charData) {
+		var hex = convertChar2CP(char)
+		if (charData[char].s && charData[char].s.match(re)) {
+			out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
+			found = true
+			}
+		}
+	
+	if (! found && usage == true) {
+		for (var char in charData) {
+			var hex = convertChar2CP(char)
+			if (charData[char].u && charData[char].u.match(re)) {
+				out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
+				found = true
+				}
 			}
 		}
 	
