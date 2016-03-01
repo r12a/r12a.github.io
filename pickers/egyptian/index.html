@@ -87,6 +87,11 @@
     onmouseout="this.textContent=this.dataset.shorttitle"  
 	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
 
+<div class="vmtab"  title="Capital Latin characters" data-var="showLatinCapsTrans" data-locn="latincapstranscript" data-shorttitle="C"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">C</div>
+
 <div class="vmtab"  title="Latin to Egyptian" data-var="showLOCTrans" data-locn="loctranscript" data-shorttitle="L"
 	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
     onmouseout="this.textContent=this.dataset.shorttitle"  
@@ -107,9 +112,10 @@
 
 <div id="phonemelist" style="position:relative;">
 
-
   <div id="transcriptionChoice"></div>
-  <div id="latintranscript" class="transcript" style="display:none;">
+
+
+<div id="latintranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('a')">a</span>
 <span class="t" onclick="dotrans('e')">e</span>
 <span class="t" onclick="dotrans('i')">i</span>
@@ -118,9 +124,7 @@
 <span class="t" onclick="dotrans('o')">o</span>
 <span class="t" onclick="dotrans('u')">u</span>
 <span class="t" onclick="dotrans('⸗')">⸗</span>
-<span class="t" onclick="dotrans('Ꜣ')">Ꜣ</span>
 <span class="t" onclick="dotrans('ꜣ')">ꜣ</span>
-<span class="t" onclick="dotrans('Ꜥ')">Ꜥ</span>
 <span class="t" onclick="dotrans('ꜥ')">ꜥ</span>
 <span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
 <span class="t" onclick="dotrans(',')">,</span>
@@ -164,6 +168,61 @@
 <span class="t" onclick="dotrans('x')">x</span>
 <span class="t" onclick="dotrans('y')">y</span>
 <span class="t" onclick="dotrans('z')">z</span>
+</div>
+
+
+<div id="latincapstranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('A')">A</span>
+<span class="t" onclick="dotrans('E')">E</span>
+<span class="t" onclick="dotrans('I')">I</span>
+<span class="t" onclick="dotrans('I̓')">I̓</span>
+<span class="t" onclick="dotrans('I͗')">I͗</span>
+<span class="t" onclick="dotrans('O')">O</span>
+<span class="t" onclick="dotrans('U')">U</span>
+<span class="t" onclick="dotrans('⸗')">⸗</span>
+<span class="t" onclick="dotrans('Ꜣ')">Ꜣ</span>
+<span class="t" onclick="dotrans('Ꜥ')">Ꜥ</span>
+<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
+<span class="t" onclick="dotrans(',')">,</span>
+<span class="t" onclick="dotrans(';')">;</span>
+<span class="t" onclick="dotrans('(')">(</span>
+<span class="t" onclick="dotrans(')')">)</span>
+<span class="t" onclick="dotrans('[')">[</span>
+<span class="t" onclick="dotrans(']')">]</span>
+<span class="t" onclick="dotrans('/')">/</span>
+<span class="t" onclick="dotrans('⸢')">⸢</span>
+<span class="t" onclick="dotrans('⸣')">⸣</span>
+<span class="t" onclick="dotrans('?')">?</span>
+<br/>
+<span class="t" onclick="dotrans('B')">B</span>
+<span class="t" onclick="dotrans('C')">C</span>
+<span class="t" onclick="dotrans('D')">D</span>
+<span class="t" onclick="dotrans('Ḏ')">Ḏ</span>
+<span class="t" onclick="dotrans('F')">F</span>
+<span class="t" onclick="dotrans('G')">G</span>
+<span class="t" onclick="dotrans('H')">H</span>
+<span class="t" onclick="dotrans('Ḥ')">Ḥ</span>
+<span class="t" onclick="dotrans('Ḫ')">Ḫ</span>
+<span class="t" onclick="dotrans('J')">J</span>
+<span class="t" onclick="dotrans('K')">K</span>
+<span class="t" onclick="dotrans('Ḳ')">Ḳ</span>
+<span class="t" onclick="dotrans('L')">L</span>
+<span class="t" onclick="dotrans('M')">M</span>
+<span class="t" onclick="dotrans('N')">N</span>
+<span class="t" onclick="dotrans('P')">P</span>
+<span class="t" onclick="dotrans('Q')">Q</span>
+<span class="t" onclick="dotrans('R')">R</span>
+<span class="t" onclick="dotrans('S')">S</span>
+<span class="t" onclick="dotrans('Š')">Š</span>
+<span class="t" onclick="dotrans('Ś')">Ś</span>
+<span class="t" onclick="dotrans('T')">T</span>
+<span class="t" onclick="dotrans('Ṯ')">Ṯ</span>
+<span class="t" onclick="dotrans('Ṱ')">Ṱ</span>
+<span class="t" onclick="dotrans('V')">V</span>
+<span class="t" onclick="dotrans('W')">W</span>
+<span class="t" onclick="dotrans('X')">X</span>
+<span class="t" onclick="dotrans('Y')">Y</span>
+<span class="t" onclick="dotrans('Z')">Z</span>
 </div>
 
 
@@ -244,11 +303,13 @@
     <div id="alphabet" class="default">
       <table id="kbd">
         <tr>
+
+
           <td>
-          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> 
-          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span>
-          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 10px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202E');">RLO</span> 
-          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 10px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202C');">PDF</span> </td>
+          <span class="spaceEtc" style="padding: 5px 50px;" dir="auto" title="U+0020 : SPACE" onClick="add(' ');">SPACE</span> 
+          <span class="spaceEtc" style="padding: 5px 50px;" dir="auto" title="U+00A0 : NO-BREAK SPACE" onClick="add('\u00A0');">NBSP</span>
+          <span class="spaceEtc" style="padding: 5px 10px;" dir="auto" title="U+202E : RIGHT-TO-LEFT OVERRIDE" onClick="add('\u202E');">RLO</span> 
+          <span class="spaceEtc" style="padding: 5px 10px;" dir="auto" title="U+202C : POP DIRECTIONAL FORMATTING" onClick="add('\u202C');">PDF</span></td>
           <td>
           <span class="c">&#x13379;</span>
           <span class="c">-</span>
@@ -394,12 +455,12 @@
 
 
 
-<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show usage guidelines &amp; notes</span></div>
 
 <!--div id="notes">
 </div-->
 <div id="detailednotes" style="display:none">
-  <p><strong>Notes:</strong></p>
+  <p><strong>Usage guidelines &amp; notes:</strong></p>
   <aside class="sidebar">
     <div class="noprint">
       <h2 class="notoc flush"><a id="links">Related links</a></h2>
@@ -411,12 +472,12 @@
     </div>
   </aside>
   
-  <p id="status">Updated Mon 29 Feb 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=egyptian" title="Show all blog posts tagged with 'egyptian'">egyptian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+  <p id="status">App last updated Tues 1 Mar 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=egyptian" title="Show all blog posts tagged with 'egyptian'">egyptian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
   <p>This Unicode character picker allows you to produce or analyse runs of text using the Egyptian Hieroglyph script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
   <p>You must have JavaScript enabled. Choose  view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
-  <p>To properly display the text you will need to choose a font that is loaded on your system or device or use one of the  web fonts downloaded with the page.  </p>
+  <p>To properly display the text you will need to choose a font that is loaded on your system or device or use the  web font downloaded with the page (Noto Sans Egyptian Hieroglyphs). If you cut and paste the text to another application, you will also need a font on your system. Free fonts such as Noto Sans Egyptian Hieroglyphs and Aegyptus can be found by searching Web.</p>
   <p>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</p>
 <dl>
     <dt>Mobile devices</dt>
@@ -431,14 +492,14 @@
     <dd>Searching for <samp>ripple</samp> will match both <samp>ripple</samp> and <samp>ripples</samp>. Searching for <samp>king</samp> will match <samp>king</samp> and <samp>walking</samp>. If you want to only match whole words, surround the search term with colons, ie.<samp> :ripple:</samp> or <samp>:king:</samp>.</dd>
     <dd>Note that the keywords are written in British English, so you need to look for <samp>sceptre</samp> rather than <samp>sceptre</samp>.</dd>
     <dd>The search input is treated as a regular expression, so if you want to search for two words that may have other words between them, use <samp>.*</samp>. For example,<samp> ox .* palm</samp> will match <samp>ox horns with stripped palm branch</samp>.</dd>
-    <dd>May of the hieroglyphs have also been associated with keywords related to their use. If you select <code class="kw" translate="no">Include usage</code>, these keywords will also be selected. Note that this keyword list is not exhaustive by any means, but it may occasionally be useful. For example, a search for Anubis  will produce 𓁢 𓃢 𓃣 𓃤 .</dd>
+    <dd>May of the hieroglyphs have also been associated with keywords related to their use. If you select <code class="kw" translate="no">Include usage</code>, these keywords will also be selected. Note that this keyword list is not exhaustive by any means, but it may occasionally be useful. For example, a search for Anubis  will produce <span lang="egy">𓁢 𓃢 𓃣 𓃤 </span>.</dd>
     <dd>(Note: to search for a character based on the Unicode name for that character, eg. <samp>w004</samp>, use the search box in the yellow area.)</dd>
 
     <dt>Searching for pronunciations</dt>
     <dd>Many of the hieroglyphs are associated with 1, 2 or 3 consonant pronunciations. These can be looked up as follows.</dd>
     <dd>Type the sequence of consonants into the output box and highlight them. Then click on <code class="kw" translate="no">Look up from Latin</code>. Hieroglyphs that match that character or sequence of characters will be displayed below the output box, and can be added to the output box by clicking on them. (Note that if you still have the search string highlighted in the output box those characters will be replaced by the hieroglyph.)</dd>
     <dd>You will find the panel <code class="kw" translate="no">Latin characters</code> useful for typing character that are not accessible via your keyboard. The panel is displayed by clicking on the higher <code class="kw" translate="no">L</code> in the grey bar to the left. Click on a character to add it to the output area.</dd>
-    <dd>For example, if you want to obtain the hieroglyph 𓎝, which is represented by the 3-character sequence wꜣḥ, add wꜣḥ to the output area and select it. Then click on <code class="kw" translate="no">Latin characters</code>. You will see the character you need just above the SPACE button. Click on that hieroglyph and it will replace the wꜣḥ text in the output area. (Unhighlight the text in the output area if you want to keep both and add the hierglyph at the cursor position.)</dd>
+    <dd>For example, if you want to obtain the hieroglyph <span lang="egy">𓎝</span>, which is represented by the 3-character sequence wꜣḥ, add wꜣḥ to the output area and select it. Then click on <code class="kw" translate="no">Latin characters</code>. You will see the character you need just above the SPACE button. Click on that hieroglyph and it will replace the wꜣḥ text in the output area. (Unhighlight the text in the output area if you want to keep both and add the hierglyph at the cursor position.)</dd>
     <dt>Setting direction</dt>
     <dd>Just above the orange characters you can find buttons to insert RLO and PDF controls. RLO will make the characters that follow it to progress from right to left. Alternatively, you can select <code class="kw" translate="no">more controls</code> > <code class="kw" translate="no">Output direction</code> to set the direction of the output box to RTL/LTR override. The latter approach will align the text to the right of the box. I haven’t yet found a Unicode font that also flips the glyphs horizontally as a result. I’m not entirely sure about the best way to apply directionality to Egyptian hieroglyphs, so I’m happy to hear suggestions.</dd>
 
@@ -456,7 +517,7 @@
       <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
       <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;<span class="uname">U+13002 </span><span class="uname">EGYPTIAN HIEROGLYPH A003</span>&lt;/span&gt; (&lt;span lang=&quot;egy&quot;&gt;&amp;#x13002;&lt;/span&gt;)</code></dd>
       <dd>When displayed on an HTML page that code will look like this:</dd>
-      <dd><span class="uname">U+13002 EGYPTIAN HIEROGLYPH A003</span> (<span lang="en">&#x13002;</span>)</dd>
+      <dd><span class="uname">U+13002 EGYPTIAN HIEROGLYPH A003</span> (<span lang="egy">&#x13002;</span>)</dd>
     <dt>Input panels accessed from the vertical grey bar</dt>
     <dd>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</dd>
     <dd><span class="leadin">Latin characters.</span> This panel displays Latin characters you are likely to need for transcription. It is particularly useful for setting up a search by pronunciation (see above).</dd>

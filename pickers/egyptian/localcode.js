@@ -1,5 +1,6 @@
 globals.showLOCTrans = ''
 globals.showAlphaTrans =  ''
+globals.showLatinCapsTrans = ''
 var _showISOTrans = ''
 
 

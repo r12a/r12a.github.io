@@ -11,6 +11,10 @@
 #alphabet { display: block; }
 
 
+[lang='egy'] {
+	font-family: 'Noto Sans Egyptian Hieroglyphs WF', 'Noto Sans Egyptian Hieroglyphs', Aegyptus, serif;
+	}
+
 .shapeSelect {
 	color: orange;
 	font-size: 2em;
