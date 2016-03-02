@@ -16,7 +16,7 @@
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="/scripts/block/egyptian-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
-<!--script type="text/javascript" src="localtranscription.js">  </script-->
+<script type="text/javascript" src="localtranscription.js">  </script>
 </head>
 
 <body class="app">
@@ -40,6 +40,12 @@
         
     <button onclick="convertPhonemes()" 
     title="Look up a Latin consonant or consonant sounds.">Look up<br/>from Latin</button> 
+    
+    <button onclick="doTranscription('mdcToUnicode')" 
+    title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Unicode</button> 
+    
+    <button onclick="doTranscription('mdcToHieroglyphs')" 
+    title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Hieroglyphs</button> 
 
     <button  id="makeExample" onclick="makeExample('egy','')" 
     title="Create an example.">Make<br>example</button>
@@ -91,6 +97,11 @@
 	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
     onmouseout="this.textContent=this.dataset.shorttitle"  
 	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">C</div>
+
+<!--div class="vmtab"  title="Manuel de codage" data-var="manuelDeCodage" data-locn="manueldecodage" data-shorttitle="M"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div-->
 
 <div class="vmtab"  title="Latin to Egyptian" data-var="showLOCTrans" data-locn="loctranscript" data-shorttitle="L"
 	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
@@ -226,6 +237,48 @@
 </div>
 
 
+<div id="manueldecodage" class="transcript" style="display:none;">
+<span class="t" style="font-size: 140%; padding:6px;" onclick="dotrans('--')">-</span>
+<span class="t" style="font-size: 140%; padding:6px" onclick="dotrans('*')">*</span>
+<span class="t" style="font-size: 140%; padding:6px" onclick="dotrans(':')">:</span>
+<span class="t" style="font-size: 140%; padding:6px" onclick="dotrans('(')">(</span>
+<span class="t" style="font-size: 140%; padding:6px" onclick="dotrans(')')">)</span>
+<span class="t" style="font-size: 140%; padding:6px" onclick="dotrans('!')">!</span>
+<span class="t" style="margin-left: 2em;" onclick="dotrans('.')">.</span>
+<span class="t" onclick="dotrans('$')">$</span>
+<span class="t" onclick="dotrans('#')">#</span>
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('O')">O</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('/')">/</span>
+<span class="t" onclick="dotrans('\\')">\</span>
+<span class="t" onclick="dotrans('0')">0</span>
+<span class="t" onclick="dotrans('1')">1</span>
+<span class="t" onclick="dotrans('2')">2</span>
+<span class="t" onclick="dotrans('3')">3</span>
+<span class="t" onclick="dotrans('4')">4</span>
+<span class="t" onclick="dotrans('[')">[</span>
+<span class="t" onclick="dotrans(']')">]</span>
+<span class="t" onclick="dotrans('{')">{</span>
+<span class="t" onclick="dotrans('}')">}</span>
+<span class="t" onclick="dotrans('\"')">"</span>
+<span class="t" onclick="dotrans('\u0029')">'</span>
+<span class="t" onclick="dotrans('&')">&amp;</span>
+<span class="t" onclick="dotrans('<')">&lt;</span>
+<span class="t" onclick="dotrans('>')">&gt;</span>
+<span class="t" onclick="dotrans('|')">|</span>
+<span class="t" onclick="dotrans('^')">^</span>
+<span class="t" onclick="dotrans('+')">+</span>
+<span class="t" onclick="dotrans('=')">=</span>
+</div>
+
+
 <div id="loctranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('𓄿')">ꜣ</span>
 <span class="t" onclick="dotrans('𓇋')">i</span>
@@ -312,10 +365,12 @@
           <span class="spaceEtc" style="padding: 5px 10px;" dir="auto" title="U+202C : POP DIRECTIONAL FORMATTING" onClick="add('\u202C');">PDF</span></td>
           <td>
           <span class="c">&#x13379;</span>
-          <span class="c">-</span>
-          <span class="c">:</span>
-          <span class="c">*</span>
           <span class="c">&#x1337A;</span>
+          <span class="c">&lt;</span>
+          <span class="c">&gt;</span>
+          <span class="c">*</span>
+          <span class="c">-</span>
+          <span class="c">!</span>
           </td>
         </tr>
       </table>
@@ -472,7 +527,7 @@
     </div>
   </aside>
   
-  <p id="status">App last updated Tues 1 Mar 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=egyptian" title="Show all blog posts tagged with 'egyptian'">egyptian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+  <p id="status">App last updated Wed 2 Mar 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=egyptian" title="Show all blog posts tagged with 'egyptian'">egyptian</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 
   <p>This Unicode character picker allows you to produce or analyse runs of text using the Egyptian Hieroglyph script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
@@ -533,6 +588,8 @@
     <dd>... <a href="mailto:rishida@w3.org?subject=[Latin%20picker]%20">let me know</a>.</dd>
     <dt>Sources</dt>
     <dd>The main source for keywords and consonant mappings so far has been <a href="http://www.egyptianhieroglyphs.net/">http://www.egyptianhieroglyphs.net/</a> and <cite>How to Read Egyptian Hieroglyphs</cite> by Mark Collier and Bill Manley. I aim to check the data against other sources shortly.</dd>
+    <dd>A key source for the manuel de codage was <a href="http://www.catchpenny.org/codage/">http://www.catchpenny.org/codage/</a>.</dd>
+    <dd>Another useful site is <a href="http://aoineko.free.fr/index.php?lang=en">http://aoineko.free.fr/index.php?lang=en</a>, which composes two-dimensional hieroglyphic runs from the manuel de codage syntax.</dd>
   </dl>
 </div>
 
