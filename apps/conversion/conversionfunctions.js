@@ -366,31 +366,16 @@ function convertNumbers2Char ( str, type ) {
 	// type: string enum [none, hex, dec, utf8, utf16], what to treat numbers as
 	
 	if (type == 'hex') {
-		str = str.replace(/(\b[A-Fa-f0-9]{1,6}\b)/g, 
+		str = str.replace(/\s*(\b[A-Fa-f0-9]{1,6}\b)\s*/g, 
 					function(matchstr, parens) {
 						return hex2char(parens);
 						}
 						);
 		}
 	else if (type == 'dec') {
-		str = str.replace(/(\b[0-9]+\b)/g, 
+		str = str.replace(/\s*(\b[0-9]+\b)\s*/g, 
 					function(matchstr, parens) {
 						return dec2char(parens);
-						}
-						);
-		}
-	else if (type == 'utf8') {
-		str = str.replace(/(( [A-Fa-f0-9]{2})+)/g, 
-		//str = str.replace(/((\b[A-Fa-f0-9]{2}\b)+)/g, 
-					function(matchstr, parens) {
-						return convertUTF82Char(parens); 
-						}
-						);
-		}
-	else if (type == 'utf16') {
-		str = str.replace(/(( [A-Fa-f0-9]{1,6})+)/g, 
-					function(matchstr, parens) {
-						return convertUTF162Char(parens);
 						}
 						);
 		}
