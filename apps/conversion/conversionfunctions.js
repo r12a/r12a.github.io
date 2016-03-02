@@ -366,14 +366,14 @@ function convertNumbers2Char ( str, type ) {
 	// type: string enum [none, hex, dec, utf8, utf16], what to treat numbers as
 	
 	if (type == 'hex') {
-		str = str.replace(/\s*(\b[A-Fa-f0-9]{1,6}\b)\s*/g, 
+		str = str.replace(/\s*,?\s*(\b[A-Fa-f0-9]{1,6}\b)\s*,?\s*/g, 
 					function(matchstr, parens) {
 						return hex2char(parens);
 						}
 						);
 		}
 	else if (type == 'dec') {
-		str = str.replace(/\s*(\b[0-9]+\b)\s*/g, 
+		str = str.replace(/\s*,?\s*(\b[0-9]+\b)\s*,?\s*/g, 
 					function(matchstr, parens) {
 						return dec2char(parens);
 						}
