@@ -351,7 +351,6 @@
   <div id="tables">
     <div id="transcriptionChoice2" style="position:absolute;left:40px; font-size: 60px; background-color: #FFFACD; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
     
-    <div id="searchResults"></div>
     <!-- SHAPE -->
     <div id="alphabet" class="default">
       <table id="kbd">
@@ -375,12 +374,12 @@
         </tr>
       </table>
       
-      
       <div id="keywordSearch">Search for: <input onchange="searchForKeywords(this.value, document.getElementById('includeUsage').checked);" type="text" placeholder="keywords"/> 
       <input id="includeUsage" type="checkbox"/><span style="font-size: 80%">Include usage</span></div>
+    <div id="searchResults"></div>
       
       
-      <div style="margin-right:2em;"> 
+   <div id="categoryList"> 
       <span title="A. Man and his occupations" class="shapeSelect" onclick="findShape('','𓀀,𓀁,𓀂,𓀃,𓀄,𓀅,𓀆,𓀇,𓀈,𓀉,𓀊,𓀋,𓀌,𓀍,𓀎,𓀏,𓀐,𓀑,𓀒,𓀓,𓀔,𓀕,𓀖,𓀗,𓀘,𓀙,𓀚,𓀛,𓀜,𓀝,𓀞,𓀟,𓀠,𓀡,𓀢,𓀣,𓀤,𓀥,𓀦,𓀧,𓀨,𓀩,𓀪,𓀫,𓀬,𓀭,𓀮,𓀯,𓀰,𓀱,𓀲,𓀳,𓀴,𓀵,𓀶,𓀷,𓀸,𓀹,𓀺,𓀻,𓀼,𓀽,𓀾,𓀿,𓁀,𓁁,𓁂,𓁃,𓁄,𓁅,𓁆,𓁇,𓁈,𓁉,𓁊,𓁋,𓁌,𓁍,𓁎,𓁏',false)">𓀀</span> 
       <span title="B. Woman and her occupations" class="shapeSelect" onclick="findShape('','𓁐,𓁑,𓁒,𓁓,𓁔,𓁕,𓁖,𓁗,𓁘,𓁙',false)">𓁐</span> 
       <span title="C. Anthropomorphic deities" class="shapeSelect" onclick="findShape('','𓁚,𓁛,𓁜,𓁝,𓁞,𓁟,𓁠,𓁡,𓁢,𓁣,𓁤,𓁥,𓁦,𓁧,𓁨,𓁩,𓁪,𓁫,𓁬,𓁭,𓁮,𓁯,𓁰,𓁱,𓁲,𓁳,𓁴,𓁵',true)">𓁛</span> 
@@ -417,8 +416,6 @@
   <!-- end of tables --> 
      <div id="extrashapes"></div>
  
-</div>
-<!-- end of wrapper round tables and vertical menu -->
 
 <div id="controls">
   <div class="control">Font list:<br />
@@ -463,7 +460,7 @@
   
   <div class="control">Search for:
     <form action="none" onsubmit="searchFor(getElementById('search').value, 'egyptian'); return false;">
-      <input name="search" id="search"  type="text" />
+      <input name="search" id="search" placeholder="Catalog numbers" type="text" />
       <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
   </div>
