@@ -42,6 +42,7 @@
 <aside class="sidebar">
   <div class="noprint">
     <h2 class="notoc flush" id="links">Related links</h2>
+    <p><a href="/scripts/summaries/">Script summaries</a></p>
     <p><a href="/scripts/featurelist/">Script features by language</a></p>
     <p><a href="/scripts/links?script=arabic">Arabic script links</a></p>
     <p><a href="/scripts/urdu">Urdu script notes</a></p>
@@ -108,11 +109,11 @@
         </tr>
         <tr>
           <th>Script type</th>
-          <td title="Number taken from CLDR.">abjad</td>
+          <td><a href="#notes" onclick="showFeatureInfo('', 'n_overview')">abjad</a></td>
         </tr>
         <tr>
           <th>Number of characters</th>
-          <td><a href="#notes" onclick="showFeatureInfo('', 'n-chars')">350</a></td>
+          <td><a href="#notes" onclick="showFeatureInfo('', 'n_chars')">350</a></td>
         </tr>
         <tr>
           <th>Case distinction</th>
@@ -173,7 +174,8 @@
         </tr>
       </tbody>
     </table>
-    </div>
+     <p id="showNotes"><a onClick="showAllFeatureInfo(); return false;" href="">Show all notes</a></p>
+   </div>
     </div>
 </section>
 
@@ -181,7 +183,20 @@
 <div id="default">
   <p class="instructions">Click on the orange text in the features list (right column) to see examples and notes. Click on highlighted text in the Sample section to see the characters. Click on the vertical blue bar, bottom right, to change font settings.</p>
   </div>
-  <div id="n_placement">
+  
+  <div id="n_overview" class="note">
+    <h2>Brief overview</h2>
+    <p>Arabic is an <span class="newterm">abjad</span>. This means that in normal use the script  represents only consonant and long vowel sounds. This approach is helped by the strong emphasis on consonant patterns in Semitic languages, however the Arabic script is also used for other kinds of language (such as the Indo-European Urdu).</p>
+    <p>For more information see <a href="http://scriptsource.org/scr/Arab">ScriptSource</a>, <a href="http://en.wikipedia.org/wiki/Arabic_script">Wikipedia</a> or <a href="http://www.omniglot.com/writing/arabic.htm">Omniglot</a>.</p>
+  </div>
+  
+  <div id="n_bidi" class="note">
+    <h2>Text direction</h2>
+    <p>Arabic script is written horizontally and right-to-left in the main, but as with all RTL scripts, numbers and embedded LTR script text are written left-to-right (producing 'bidirectional' text). In the following example, the Arabic words are read RTL, starting with the one on the right, and numbers are ten and twelve (ie. read left-to-right). The numeric range is also ordered RTL, ie. it starts with 10 and ends with 12:</p>
+    <p><img src="images/arabic-bidi.png" alt=" "></p>
+  </div>
+  
+  <div id="n_placement" class="note">
     <h2>Context-based positioning</h2>
     <p>Diacritics for vowel sounds are typically not used. The shadda (w-like diacritic, that doubles the consonant value) is often not used either. When they are used, however, they need to be placed in different positions, according to the context.</p>
     <p>In the highlighted examples you can see that shadda being placed at different heights, depending on the height of the base character that it appears above.</p>
@@ -189,38 +204,40 @@
     <p>The sample text at the end shows how the vowel signs are placed above and below the <em>shadda</em>, rather than above and below the base character, when a shadda is present.</p>
     <p><img src="images/arabic-multiple-diacritics.png" width="142" height="81" alt=" "></p>
   </div>
-  <div id="n_multiple">
+  
+  <div id="n_multiple" class="note">
     <h2>Multiple combining characters</h2>
     <p>Diacritics for vowel sounds are typically not used. The shadda (w-like diacritic, that doubles the consonant value) is often not used either. But if they are used together, they have to be displayed together above the same base consonant.</p>
     <p><img src="images/arabic-multiple-diacritics.png" width="142" height="81" alt=" "></p>
   </div>
-  <div id="n_shaping">
+  
+  <div id="n_shaping" class="note">
     <h2>Contextual shaping</h2>
-    <p>This example is font dependent. In more classical fonts, you will often see the join between certain characters above the baseline, rather than at the baseline. Certain letters in the highlighted sequence may join above the line, like this:</p>
+    <p>    This example is font dependent. In more classical fonts, you will often see the join between certain characters above the baseline, rather than at the baseline. Certain letters in the highlighted sequence may join above the line, like this:
+    </p>
     <p><img src="images/arabic-shaping.png" alt=" "></p>
     <p>or on the baseline, like this:</p>
     <p><img src="images/arabic-shaping-flat.png" alt=" "></p>
     <p>Richer fonts will also apply  ligatures. Ligatures are also used for justification and styling. The following shows a word using no ligatures, on the left, and ligatures, on the right.</p>
     <p><img src="images/arabic-ligatures1.png" alt=" "> vs. <img src="images/arabic-ligatures2.png" alt=" "></p>
   </div>
-  <div id="n_cursive">
+  
+  <div id="n_cursive" class="note">
     <h2>Cursive script</h2>
     <p>Arabic script joins letters together. The highlights show the same letter,
       <bdi>ع</bdi>
       , with three different shapes, depending on how it joins:</p>
     <p><img src="images/arabic-cursivei.png" alt=" "> <img src="images/arabic-cursivem.png" alt=" "> <img src="images/arabic-cursivef.png" alt=" "></p>
+    <p>A few Arabic script letters only join on the right-hand side.</p>
   </div>
-  <div id="n_bidi">
-    <h2>Text direction</h2>
-    <p>Arabic script is written right-to-left in the main, but as with all RTL scripts, numbers and embedded LTR script text are written left-to-right (bidirectional text). In the following example, the Arabic words are read RTL, starting with the one on the right, and numbers are ten and twelve (ie. read left-to-right). The date range is also ordered RTL, ie. it starts with 10 and ends with 12:</p>
-    <p><img src="images/arabic-bidi.png" alt=" "></p>
-  </div>
-  <div id="n-glyphs">
+  
+  <div id="n_glyphs" class="note">
     <h2>Large glyph sets</h2>
-    <p>Since Arabic is a cursive script, there are many more glyphs in a font set than there are characters, since you need glyphs that join in various ways. Not only that, but Arabic also has ligatures, which themselves join to characters or other ligatures alongside them. One ligature (lam-alif) is mandatory. Otherwise, the use of ligatures varies by font. Compare the two screen captures below, which show the same word - ligatures are used in a couple of places in the example on the right:</p>
+    <p>Since Arabic is a cursive script, and you need glyphs to join with each other in different ways, there are many more glyphs in a font set than there are characters. Not only that, but Arabic also has ligatures, which themselves join to characters or other ligatures alongside them. One ligature (lam-alif) is mandatory. Otherwise, the use of ligatures varies by font. Compare the two screen captures below, which show the same word - ligatures are used in a couple of places in the example on the right:</p>
     <p><img src="images/arabic-ligatures1.png" alt=" "> vs. <img src="images/arabic-ligatures2.png" alt=" "></p>
   </div>
-  <div id="n-justify">
+  
+  <div id="n_justify" class="note">
     <h2>Justification</h2>
     <p>The Arabic justifies text by stretching the baseline and the glyphs of the text, rather than expanding inter-word spaces. Justification can also introduce ligatures in order to squeeze more text onto a line. </p>
     <p><em>This is not supported by many browsers, but if your browser supports it, you can play with justification and vary the extent of the stretching using the controls below.</em></p>
@@ -230,7 +247,8 @@
       <input type="text" name="kashidaValue" id="kashidaValue" value="0" size="5"/>
     </p>
   </div>
-  <div id="n-chars">
+  
+  <div id="n_chars" class="note">
     <h2>Character list</h2>
     <p>The Arabic script characters in Unicode 7.0 are spread across 3 blocks:</p>
     <ol>
@@ -238,6 +256,8 @@
       <li><a href="/uniview/?block=arabic_supplement">Arabic Supplement </a>(48)</li>
       <li><a href="/uniview/?block=arabic">Arabic Extended-A</a> (47)</li>
     </ol>
+    <p>There are two additional blocks for presentation forms, but these characters are only for compatibility with legacy encodings, and should not be used. Sometimes they are used by people to get around problems with Arabic support in applications, but this is a bad idea since it corrupts the underlying data, making it difficult to search, spellcheck, or do many other things that rely on the use of standard characters and their properties.</p>
+    <p>Many of the characters share a common base form, and are distinguished by the number and location of dots or other small diacritics, called <span class="foreigntext">i'jam</span>. For example, س ‎ش ‎ݜ ‎ ݰ ‎ݽ ‎ݾ ‎ڛ ‎ښ ‎ڜ ‎ۺ.</p>
     <p>The following is an incomplete list of languages and the number of characters they use, per version 26 of CLDR's lists of characters (exemplarCharacters).</p>
     <ul>
       <li>Arabic: main 45, auxiliary 13, punctuation 26</li>
@@ -261,7 +281,7 @@
 
 
 <div class="smallprint"><span id="version">First published  16 Dec 2002.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-16  11:02<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-03-03  8:16<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">

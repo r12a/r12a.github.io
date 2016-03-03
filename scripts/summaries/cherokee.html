@@ -96,7 +96,7 @@
         </tr>
         <tr>
           <th>Script type</th>
-          <td title="Number taken from CLDR.">syllabary</td>
+          <td><a href="#notes" onclick="showFeatureInfo('', 'n-overview')">syllabary</a></td>
         </tr>
         <tr>
           <th>Number of characters (not including phonetic or combining blocks)</th>
@@ -169,10 +169,18 @@
 <div id="default">
   <p class="instructions">Click on the orange text in the features list (right column) to see examples and notes. Click on highlighted text in the Sample section to see the characters. Click on the vertical blue bar, bottom right, to change font settings.</p>
   </div>
+
+  <div id="n-overview" class="note">
+    <h2>Brief overview</h2>
+    <p>Cherokee is a <span class="newterm">syllabary</span>. Letters typically represent a combination of consonants and vowels.</p>
+    <p>Text is normally written horizontally, left to right, and the visual forms of letters don't usually interact.</p>
+    <p>For more information see <a href="http://scriptsource.org/scr/Cher">ScriptSource</a>, <a href="http://en.wikipedia.org/wiki/Cherokee_script">Wikipedia</a> or <a href="http://www.omniglot.com/writing/cherokee.htm">Omniglot</a>.</p>
+  </div>
+  
   
   <div id="n-case" class="note">
     <h2>Case</h2>
-    <p>Lowercase characters were introduced in Unicode 8.0, to cover growing use of bicameral content in modern typesetting, as well as some older texts such as the Cherokee New Testament. </p>
+    <p>Lowercase characters were introduced in Unicode 8.0, to cover growing use of bicameral content in modern typesetting, as well as some older texts such as the Cherokee New Testament. The lowercase text above is likely to be displayed as tofu (boxes), since it is currently difficult to find a font that includes lowercase forms.</p>
     <p>It is unusual for the majority of content to be in uppercase, and for lowercase to come in later, and implementers may need to take care in introducing the new characters. For example, Cherokee case-folds to uppercase, rather than lower. For more details see the <a href="http://www.unicode.org/versions/latest/ch20.pdf" target="_blank">Unicode Standard</a>.</p>
      <p class="instructions">The sample text above is repeated. The first paragraph is all uppercase, the second is mixed. The highlighted words are the same in upper- and mixed-case.</p> 
  </div>
@@ -229,7 +237,7 @@
 <div id="panel" style="display:none"></div>
 
 <div class="smallprint"><span id="version">First published Feb 2016.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-02-24  19:39<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-03-03  8:23<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <script type="text/javascript">
