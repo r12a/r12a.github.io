@@ -23,6 +23,10 @@ function mdcToUnicode (str) {
 	str = str.replace(/q/g,'ḳ') 
 	str = str.replace(/T([^1234567890])/g,'ṯ$1') 
 	str = str.replace(/D([^1234567890])/g,'ḏ$1') 
+	str = str.replace(/W([^1234567890])/g,'w$1') 
+	str = str.replace(/M([^1234567890])/g,'m$1') 
+	str = str.replace(/N([^1234567890])/g,'n$1') 
+	str = str.replace(/z/g,'s$1') 
 
 	return str.trim()
 	}
