@@ -72,7 +72,6 @@ function mdcToHieroglyphs (str) {
 					for (r=0;r<readings.length;r++) {
 						if (readings[r] == units[u]) {
 							found = char
-							console.log(char)
 							break
 							}
 						}
