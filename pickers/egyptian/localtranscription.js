@@ -2,9 +2,7 @@
 	
 	if (direction == 'mdcToUnicode') { return mdcToUnicode(str) }
 	if (direction == 'mdcToHieroglyphs') { return mdcToHieroglyphs(str) }
-	if (direction == 'fromNItON') { return transcribeFromNItON(str) }
-	if (direction == 'toRunes') { return oldNorseToRune(str) }
-	if (direction == 'toShortRunes') { return oldNorseToShortRune(str) }
+	if (direction == 'hieroglyphsToMdC') { return hieroglyphsToMdC(str) }
 	}
 
 
@@ -95,6 +93,50 @@ function mdcToHieroglyphs (str) {
 
 
 	return output.trim()
+	}
+
+
+
+
+
+function hieroglyphsToMdC (str) {
+	// converts hieroglyphs to Manuel de Codage transcriptions 
+	
+	var catNumRe = /([A-Z]+)([0-9]+)([A-Z])*/
+	var out = ''
+	var chars = []
+	convertStr2CharArray(str, chars)
+	
+	for (var i=0;i<chars.length;i++) {
+		if (charData[chars[i]]) {
+			if (charData[chars[i]].c) {
+				var values = charData[chars[i]].c.split(',')
+				if (values.length > 1) {
+					out += '['+values[0]
+					for (var v=1;v<values.length;v++) out += '{'+values[v]
+					out += ']'
+					}
+				else out += values[0]
+				}
+			else if (charData[chars[i]].n.match('EGYPTIAN')) {
+				var name = charData[chars[i]].n.match(catNumRe)
+				var number = name[2]
+				while (number.charAt(0) == '0') number = number.substr(1)
+				out += name[1]+number
+				if (name[3]) out += name[3]
+				}
+			else out += chars[i]
+			}
+		else out += chars[i]
+		}
+
+	// add markup for ambiguous cases
+	out = out.replace(/\[/g,'<span class=alts><span class=altfirst>')
+	out = out.replace(/\|/g,'</span><span class=alt>')
+	out = out.replace(/\{/g,'</span><span class=altlast>')
+	out = out.replace(/\]/g,'</span></span>')
+
+	return out.trim()
 	}
 
 
