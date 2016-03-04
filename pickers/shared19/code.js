@@ -526,8 +526,11 @@ function transcribe (chstring, direction) {
 	if (chstring=='') { return }
 
 	// for security, remmove angle brackets
-	chstring = chstring.replace(/</g,'')
-	chstring = chstring.replace(/>/g,'')
+	chstring = chstring.replace(/</g,'&lt;')
+	chstring = chstring.replace(/>/g,'&gt;')
+	chstring = chstring.replace(/\[/g,'&#x5B;')
+	chstring = chstring.replace(/\]/g,'&#x5D;')
+	chstring = chstring.replace(/\{/g,'&#x7B;')
 	
 	var transcription = localtranscribe(direction, chstring)
 	//var transcription = localtranscribe(direction, chstring)
@@ -931,7 +934,8 @@ function copyTranscription () {
 
 function dotrans (altlist) { 
 	var inserts = altlist.split(',')
-	if (inserts.length == 1 && inserts[0] != '-') add(inserts[0])
+	if (inserts.length == 1 && inserts[0] == '--') add('-')
+	else if (inserts.length == 1 && inserts[0] != '-') add(inserts[0])
 	else {
 		var insert = ''
 		for (i=0;i<inserts.length;i++) {
