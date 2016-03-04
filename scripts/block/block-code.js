@@ -64,6 +64,25 @@ function convertStr2DecArray ( textString, array ) {
 	}
 
 
+function convertStr2CharArray ( textString, array ) { 
+	// takes an array and a string and fills the array with decimal codepoints representing chars in the string
+	var ptr = 0
+	for (var i = 0; i < textString.length; i++) {
+		var b = textString.charAt(i) 
+		if ('\uD800' <= b && b <= '\uDBFF') {
+			array[ptr] = textString.charAt(i)+textString.charAt(i+1)  // note: i need to add error checking here at some point
+			i++
+			ptr++
+			}
+		else {
+			array[ptr] = textString.charAt(i)
+			ptr++
+			}
+		}
+	return array.length
+	}
+
+
 function OLDshowNameDetails (chars, clang, base, target) { 
 // get the list of characters for an example and display their names
 // chars (string), alt text of example
