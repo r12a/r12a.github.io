@@ -37,18 +37,18 @@
     <button onclick="showCodepoints()">Show<br/>codepoints</button>
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
-        
-    <button onclick="convertPhonemes()" 
-    title="Look up a Latin consonant or consonant sounds.">Look up<br/>from Latin</button> 
-    
-    <button onclick="doTranscription('mdcToUnicode')" 
-    title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Unicode</button> 
     
     <button onclick="doTranscription('mdcToHieroglyphs')" 
     title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Hieroglyphs</button> 
 
     <button onclick="doTranscription('hieroglyphsToMdC')" 
     title="Convert Manuel de Codage transcriptions to Unicode.">Hieroglyphs<br/>to MdC</button> 
+    
+    <button onclick="doTranscription('mdcToUnicode')" 
+    title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Unicode</button> 
+        
+    <button onclick="convertPhonemes()" 
+    title="Look up a Latin consonant or consonant sounds.">Phonetic<br/>look up</button> 
 
     <button  id="makeExample" onclick="makeExample('egy','')" 
     title="Create an example.">Make<br>example</button>
@@ -467,6 +467,9 @@
       <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
   </div>
+  
+  <div class="control" style="text-align:center; color: white; background-color: #60ADFB; cursor: pointer;" onClick="help = window.open('help', 'help'); help.focus();">Help<br/><img src="../shared19/help.png" alt="" style="vertical-align: baseline;"/>
+  </div>
 </div>
 
 
@@ -510,12 +513,10 @@
 
 
 
-<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show usage guidelines &amp; notes</span></div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
-<!--div id="notes">
-</div-->
 <div id="detailednotes" style="display:none">
-  <p><strong>Usage guidelines &amp; notes:</strong></p>
+  <p><strong>Notes:</strong></p>
   <aside class="sidebar">
     <div class="noprint">
       <h2 class="notoc flush"><a id="links">Related links</a></h2>
@@ -531,63 +532,16 @@
 
 
   <p>This Unicode character picker allows you to produce or analyse runs of text using the Egyptian Hieroglyph script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-  <p>You must have JavaScript enabled. Choose  view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+  <p>The picker includes all the characters in the Unicode <a href="/uniview/?block=egyptian_hieroglyphs">Egyptian Hieroglyphs</a> block.</p>
   <p>To properly display the text you will need to choose a font that is loaded on your system or device or use the  web font downloaded with the page (Noto Sans Egyptian Hieroglyphs). If you cut and paste the text to another application, you will also need a font on your system. Free fonts such as Noto Sans Egyptian Hieroglyphs and Aegyptus can be found by searching Web.</p>
-  <p>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</p>
-<dl>
+  <p>You must have JavaScript enabled. Choose  view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
+  <dl>
     <dt>Mobile devices</dt>
     <dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
-    
-    <dt>About the chart</dt>
-    <dd>Includes all the characters in the Unicode <a href="/uniview/?block=egyptian_hieroglyphs">Egyptian Hieroglyphs</a> block.</dd>
-    <dt>Category-based input</dt>
-    <dd>Characters are grouped into standard categories. Click on one of the orange characters, chosen as a nominal representative of the class, to show below all the characters in that category. Click on one of those to add it to the output box. As you mouse over the orange characters, you’ll see the name of the category appear just below the output box.</dd>
-    <dt>Search-based input</dt>
-    <dd>The app associates most hieroglyphs with keywords that describe the glyph. You can search for glyphs using those keywords in the input field labelled <code class="kw" translate="no">Search for</code>.</dd>
-    <dd>Searching for <samp>ripple</samp> will match both <samp>ripple</samp> and <samp>ripples</samp>. Searching for <samp>king</samp> will match <samp>king</samp> and <samp>walking</samp>. If you want to only match whole words, surround the search term with colons, ie.<samp> :ripple:</samp> or <samp>:king:</samp>.</dd>
-    <dd>Note that the keywords are written in British English, so you need to look for <samp>sceptre</samp> rather than <samp>sceptre</samp>.</dd>
-    <dd>The search input is treated as a regular expression, so if you want to search for two words that may have other words between them, use <samp>.*</samp>. For example,<samp> ox .* palm</samp> will match <samp>ox horns with stripped palm branch</samp>.</dd>
-    <dd>May of the hieroglyphs have also been associated with keywords related to their use. If you select <code class="kw" translate="no">Include usage</code>, these keywords will also be selected. Note that this keyword list is not exhaustive by any means, but it may occasionally be useful. For example, a search for Anubis  will produce <span lang="egy">𓁢 𓃢 𓃣 𓃤 </span>.</dd>
-    <dd>(Note: to search for a character based on the Unicode name for that character, eg. <samp>w004</samp>, use the search box in the yellow area.)</dd>
-
-    <dt>Searching for pronunciations</dt>
-    <dd>Many of the hieroglyphs are associated with 1, 2 or 3 consonant pronunciations. These can be looked up as follows.</dd>
-    <dd>Type the sequence of consonants into the output box and highlight them. Then click on <code class="kw" translate="no">Look up from Latin</code>. Hieroglyphs that match that character or sequence of characters will be displayed below the output box, and can be added to the output box by clicking on them. (Note that if you still have the search string highlighted in the output box those characters will be replaced by the hieroglyph.)</dd>
-    <dd>You will find the panel <code class="kw" translate="no">Latin characters</code> useful for typing character that are not accessible via your keyboard. The panel is displayed by clicking on the higher <code class="kw" translate="no">L</code> in the grey bar to the left. Click on a character to add it to the output area.</dd>
-    <dd>For example, if you want to obtain the hieroglyph <span lang="egy">𓎝</span>, which is represented by the 3-character sequence wꜣḥ, add wꜣḥ to the output area and select it. Then click on <code class="kw" translate="no">Latin characters</code>. You will see the character you need just above the SPACE button. Click on that hieroglyph and it will replace the wꜣḥ text in the output area. (Unhighlight the text in the output area if you want to keep both and add the hierglyph at the cursor position.)</dd>
-    <dt>Setting direction</dt>
-    <dd>Just above the orange characters you can find buttons to insert RLO and PDF controls. RLO will make the characters that follow it to progress from right to left. Alternatively, you can select <code class="kw" translate="no">more controls</code> > <code class="kw" translate="no">Output direction</code> to set the direction of the output box to RTL/LTR override. The latter approach will align the text to the right of the box. I haven’t yet found a Unicode font that also flips the glyphs horizontally as a result. I’m not entirely sure about the best way to apply directionality to Egyptian hieroglyphs, so I’m happy to hear suggestions.</dd>
-
-<dd>Alongside the direction controls are some characters used for markup in the Manuel de Codage, which allows you to prepare text for an engine that knows how to lay it out two-dimensionally. (The picker doesn’t do that.)</dd>
-<dt>Tools above the input box</dt>
-      <dd>Controls above the input box allow you to run various operations on the text in the box. Most of them work on what you have selected within the box, or the whole box if nothing is selected.</dd>
-      
-      <dd><strong class="leadin">Copy, select, delete.</strong>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </dd>
-      <dd><span class="leadin">Show codepoints.</span> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</dd>
-      <dd><span class="leadin">Convert to escapes.</span> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</dd>
-      <dd><span class="leadin">Look up from Latin.</span> This helps you look up hieroglyphs according to their pronunciations. See the section <cite>Searching for pronunciations</cite> above.</dd>
-
-      <dd><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Egyptian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</dd>
-       
-      <dd><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the output area, then click this button.  It will return something like the following for each of the characters:</dd>
-      <dd style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;uname&quot;&gt;<span class="uname">U+13002 </span><span class="uname">EGYPTIAN HIEROGLYPH A003</span>&lt;/span&gt; (&lt;span lang=&quot;egy&quot;&gt;&amp;#x13002;&lt;/span&gt;)</code></dd>
-      <dd>When displayed on an HTML page that code will look like this:</dd>
-      <dd><span class="uname">U+13002 EGYPTIAN HIEROGLYPH A003</span> (<span lang="egy">&#x13002;</span>)</dd>
-    <dt>Input panels accessed from the vertical grey bar</dt>
-    <dd>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</dd>
-    <dd><span class="leadin">Latin characters.</span> This panel displays Latin characters you are likely to need for transcription. It is particularly useful for setting up a search by pronunciation (see above).</dd>
-    <dd><span class="leadin">Latin to Egyptian.</span> This panel also displays Latin characters used for transcription, but when you click on them they insert hieroglyphs into the output area. These are 24 hieroglyphs represented by a single consonant. Think of it as a shortcut if you want to find 1-consonant hieroglyphs by pronunciation.</dd>
-    <dd>Where a single consonant can be represented by more than one hieroglyph, a small pop-up will present you with the available choices. Just click on the one you want.</dd>
-    <dd><span class="leadin">Egyptian alphabet.</span> This panel  displays the 26 hieroglyphs that the previous panel produces as hieroglyphs. In many cases this is a quicker way of typing in these hieroglyphs.</dd>
-    <dt>Notes on other controls</dt>
-    <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
-    <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <em>Add codepoint</em> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
-    <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use '\bha\b' (or the shortcut, ':b:').</dd>
-    <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
-    <dt>If something is missing/broken</dt>
-    <dd>... <a href="mailto:rishida@w3.org?subject=[Latin%20picker]%20">let me know</a>.</dd>
+    <dt>Get help</dt>
+    <dd>Open <a href="help" target="help">the help file</a>, or if something is broken or missing <a href="mailto:rishida@w3.org?subject=[Egyptian%20picker]%20">let me know</a>.</dd>
     <dt>Sources</dt>
-    <dd>The main source for keywords and consonant mappings so far has been <a href="http://www.egyptianhieroglyphs.net/">http://www.egyptianhieroglyphs.net/</a> and <cite>How to Read Egyptian Hieroglyphs</cite> by Mark Collier and Bill Manley. I aim to check the data against other sources shortly.</dd>
+    <dd>The main source for keywords and consonant mappings so far has been Gardiner's 1957 List of Hieroglyphic Signs,  <a href="http://www.egyptianhieroglyphs.net/">http://www.egyptianhieroglyphs.net/</a> and <cite>How to Read Egyptian Hieroglyphs</cite> by Mark Collier and Bill Manley. I aim to check the data against other sources shortly.</dd>
     <dd>A key source for the manuel de codage was <a href="http://www.catchpenny.org/codage/">http://www.catchpenny.org/codage/</a>.</dd>
     <dd>Another useful site is <a href="http://aoineko.free.fr/index.php?lang=en">http://aoineko.free.fr/index.php?lang=en</a>, which composes two-dimensional hieroglyphic runs from the manuel de codage syntax.</dd>
   </dl>
