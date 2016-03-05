@@ -193,10 +193,10 @@ function searchForKeywords ( str, usage ) {
 	str = str.replace( /\:/g, '\\b' )
 	
 	keywordList = str.split(' ')
-	for (var i=0;i<keywordList;i++) {
+	for (var i=0;i<keywordList.length;i++) {
+		console.log(keywordList)
 		keywordList[i] = keywordList[i].replace('+',' ')
 		}
-	
 	
 	var found = false
 	var foundList = []
