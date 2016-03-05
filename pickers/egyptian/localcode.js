@@ -87,7 +87,7 @@ function searchFor ( str, scriptname ) {
 
 
 
-function searchForKeywords ( str, usage ) { 
+function searchForKeywordsoldest ( str, usage ) { 
 	// searches for a keyword
 	// str, the keyword to search for
 	// usage, true or false, indicates whether or not to include .u keywords
@@ -127,7 +127,7 @@ function searchForKeywords ( str, usage ) {
 	
 
 
-function searchForKeywords ( str, usage ) { 
+function searchForKeywordsold ( str, usage ) { 
 	// searches for a keyword
 	// str, the keyword to search for
 	// usage, true or false, indicates whether or not to include .u keywords
@@ -158,6 +158,74 @@ function searchForKeywords ( str, usage ) {
 				found = true
 				}
 			}
+		}
+	
+	if (out == '') out = 'Not found'
+	
+	var resultsCell = document.getElementById('searchResults')
+	resultsCell.style.display = 'block'
+	resultsCell.innerHTML = out
+	
+	// set up mouseovers
+	var node = document.querySelectorAll( '#searchResults span' ) 
+	for (var j = 0; j < node.length; j++ ) { 
+		node[j].onmouseover = event_mouseoverChar;
+		node[j].onmouseout = event_mouseoutChar;
+		node[j].onclick = event_clickOnChar;
+		}
+	return false;
+	}
+	
+
+
+function searchForKeywords ( str, usage ) { 
+	// searches for a keyword
+	// str, the keyword to search for
+	// usage, true or false, indicates whether or not to include .u keywords
+
+	str = str.trim()
+	str = str.replace('-',' ')
+	if (str == '' || str==' ') {
+		document.getElementById('searchResults').style.display = 'none'
+		return
+		}
+
+	str = str.replace( /\:/g, '\\b' )
+	
+	keywordList = str.split(' ')
+	for (var i=0;i<keywordList;i++) {
+		keywordList[i] = keywordList[i].replace('+',' ')
+		}
+	
+	
+	var found = false
+	var foundList = []
+	
+	// search for the first item
+	var re = new RegExp(keywordList[0], "i")
+	for (var char in charData) {
+		if (charData[char].s && charData[char].s.match(re)) {
+			foundList.push(char)
+			found = true
+			}
+		}
+//console.log('first item:',foundList)
+
+	// narrow it down to match other items too
+	for (k=1; k<keywordList.length; k++) {
+		var newFoundList = []
+		re = RegExp(keywordList[k], "i")
+		for (var f=0;f<foundList.length;f++) {
+			if (charData[foundList[f]].s.match(re)) newFoundList.push(foundList[f])
+			}
+		foundList = newFoundList
+//console.log('k=:',k,foundList)
+		}
+	
+	var out = '' 
+	for (o=0;o<foundList.length;o++) {
+		var hex = convertChar2CP(foundList[o])
+		out += '<span class="c" title="U+'+hex+' '+charData[foundList[o]].n+'">'+foundList[o]+'</span> '
 		}
 	
 	if (out == '') out = 'Not found'
