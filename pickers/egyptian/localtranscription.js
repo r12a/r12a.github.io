@@ -39,7 +39,7 @@ function mdcToHieroglyphs (str) {
 	str = str.trim()
 	
 	// collect a list of separators, in order
-	var separatorSet = /\-|:|\*|\u000A|\(|\)/g
+	var separatorSet = /\-|:|\*|\u000A|\(|\)| /g
 	var separatorList = str.match(separatorSet)
 	str = str.replace(separatorSet,' ')
 
