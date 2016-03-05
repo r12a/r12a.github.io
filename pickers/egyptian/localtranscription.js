@@ -36,6 +36,8 @@ function mdcToUnicode (str) {
 function mdcToHieroglyphs (str) {
 	// converts Manuel de Codage transcriptions to hieroglyphs
 	
+	str = str.trim()
+	
 	// collect a list of separators, in order
 	var separatorSet = /\-|:|\*|\u000A|\(|\)/g
 	var separatorList = str.match(separatorSet)
@@ -100,6 +102,8 @@ function mdcToHieroglyphs (str) {
 
 function hieroglyphsToMdC (str) {
 	// converts hieroglyphs to Manuel de Codage transcriptions 
+	
+	str = str.trim()
 	
 	var catNumRe = /([A-Z]+)([0-9]+)([A-Z])*/
 	var out = ''
