@@ -44,6 +44,9 @@
     <button onclick="doTranscription('hieroglyphsToMdC')" 
     title="Convert Manuel de Codage transcriptions to Unicode.">Hieroglyphs<br/>to MdC</button> 
     
+    <button onclick="doWikiHiero()" 
+    title="Display Manuel de Codage transcriptions on WikiHiero page.">MdC to<br/>WikiHiero</button> 
+
     <button onclick="doTranscription('mdcToUnicode')" 
     title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Unicode</button> 
         
@@ -58,6 +61,10 @@
     </span>
 </div>
 
+
+<form id="wikihieroForm" method="post" action="http://aoineko.free.fr/index.php">
+<input type="hidden" id="wikihieroInput" name="text"/>
+</form>
 
 <div id="outputDiv">
   <textarea rows="2" cols="80" id="output" name="output"></textarea>

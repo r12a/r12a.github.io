@@ -5,6 +5,16 @@ globals.manuelDeCodage = ''
 var _showISOTrans = ''
 
 
+
+function doWikiHiero () {
+	var output = document.getElementById('output')
+	document.getElementById('wikihieroInput').value = getHighlightedText(output)
+	document.getElementById('wikihieroForm').submit()
+	output.focus()
+	}
+
+
+
 function event_mouseoverChar ()  {
 	// display character information ADAPTED to retrieve description
 	var span = document.createElement( 'span' );
