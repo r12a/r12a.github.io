@@ -185,10 +185,23 @@ function searchForKeywords ( str, usage ) {
 
 	str = str.trim()
 	str = str.replace('-',' ')
+	str = str.replace("'",'')
+	str = str.replace(/\bof\b/,'')
+	str = str.replace(/\bin\b/,'')
+	str = str.replace(/\bon\b/,'')
+	str = str.replace(/\bwith\b/,'')
+	str = str.replace(/\bas\b/,'')
+	str = str.replace(/\bor\b/,'')
+	str = str.replace(/\bfrom\b/,'')
+	str = str.replace(/\bfor\b/,'')
+	str = str.replace(/\bto\b/,'')
+	str = str.replace(/\ba\b/,'')
+	str = str.replace(/\s+/,' ')
 	if (str == '' || str==' ') {
 		document.getElementById('searchResults').style.display = 'none'
 		return
 		}
+console.log(str)
 
 	str = str.replace( /\:/g, '\\b' )
 	
