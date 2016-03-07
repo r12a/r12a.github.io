@@ -426,6 +426,11 @@ acronym {
 	color: #A52a2a;
 	font-size: 14px;
 	}
+samp {
+	font-family: "Lucida Console", Monaco, monospace;
+	color: #A52a2a;
+	font-size: 14px;
+	}
 .button {
 	font-family: "Lucida Console", Monaco, monospace;
 	color: #A52a2a;
