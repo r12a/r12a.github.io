@@ -17,12 +17,20 @@
 <script type="text/javascript" src="/scripts/block/egyptian-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
 <script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="wikihiero.js">  </script>
+<script type="text/javascript" src="wh_list.js">  </script>
+
+<style>
+#wikiHieroOut { margin-left: 30px;  }
+#wikiHieroOut table { border: 0; border-collapse:collapse; padding: 0; margin:0; }
+#wikiHieroOut td { text-align:center; vertical-align:middle; line-height: 0; padding: 0; }
+</style>
 </head>
 
 <body class="app">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Egyptian hieroglyph character picker','v19');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Egyptian hieroglyph character picker','');</script> 
 </header>
 
 
@@ -79,6 +87,9 @@
 </div>
 
 
+<div id="wikiHieroOut"></div>
+
+
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
@@ -130,10 +141,9 @@
 
 
 
-
 <div id="phonemelist" style="position:relative;">
 
-  <div id="transcriptionChoice"></div>
+	<div id="transcriptionChoice"></div>
 
 
 <div id="latintranscript" class="transcript" style="display:none;">
@@ -381,6 +391,8 @@
           <span class="c">-</span>
           <span class="c">!</span>
           </td>
+          <td>
+          </td>
         </tr>
       </table>
       
@@ -519,8 +531,6 @@
   
   <div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 </div>
-
-
 
 <div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
