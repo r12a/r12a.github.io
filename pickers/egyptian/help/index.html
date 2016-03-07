@@ -27,20 +27,30 @@ h3 { margin-left: 30px; }
 
 <p><strong>Select the thing you want help with:</strong></p>
 
-<table id="imageMap"><tbody>
-<tr><td colspan="2"><img src="images/slice_01.png" alt="Top banner (no help)"/></td></tr>
-<tr><td colspan="2"><a href="#top_controls"><img src="images/slice_02.png" alt="Controls above output box."/></a></td></tr>
-<tr><td colspan="2"><img src="images/slice_03.png" alt="Output box (no help)."/></td></tr>
-<tr><td rowspan="5"><a href="#input_aids"><img src="images/slice_04.png" alt="Vertical panel selector."/></a></td>
-	<td><a href="#secondary_output"><img src="images/slice_05.png" alt="Secondary output area."/></a></td></tr>
-<tr><td><a href="#autofocus"><img src="images/slice_06.png" alt="Autofocus."/></a></td></tr>
-<tr><td><a href="#buttons"><img src="images/slice_07.png" alt="Buttons (space, etc)."/></a></td></tr>
-<tr><td><a href="#keyword_search"><img src="images/slice_08.png" alt="Search for keywords."/></a></td></tr>
-<tr><td><a href="#category_selector"><img src="images/slice_09.png" alt="Category list."/></a></td></tr>
-<tr><td colspan="2"><a href="#yellow_controls"><img src="images/slice_10.png" alt="Yellow controls."/></a></td></tr>
-<tr><td colspan="2"><a href="#more_controls"><img src="images/slice_11.png" alt="Additional controls."/></a></td></tr>
-<tr><td colspan="2"><img src="images/slice_12.png" alt="Show notes (no help)."/></td></tr>
-</tbody></table>
+<map name="helpSelector">
+  <area shape="rect" coords="0,40,600,80" href="#top_controls" />
+  <area shape="rect" coords="0,41,600,280" href="#text_area" />
+  <area shape="rect" coords="0,281,600,345" href="#secondary_output" />
+  <area shape="rect" coords="0,346,600,385" href="#wikiHiero" />
+  <area shape="rect" coords="0,388,14,490" href="#input_aids" />
+  <area shape="rect" coords="15,386,365,402" href="#character_names" />
+  <area shape="rect" coords="500,386,600,400" href="#autofocus" />
+  <area shape="rect" coords="15,403,400,430" href="#buttons" />
+  <area shape="rect" coords="15,431,600,465" href="#keyword_search" />
+  <area shape="rect" coords="15,466,600,575" href="#category_selector" />
+  <area shape="rect" coords="0,576,602,615" href="#yellow_controls" />
+  <area shape="rect" coords="0,616,600,650" href="#more_controls" />
+</map>
+<p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
+
+
+
+
+<section>
+  <h3 id="text_area">Text area</h3>
+  <p>This is where you see characters appearing as you select them from the panels lower down or where you paste text into the picker. Once you have some text here, you can perform various operations on it, or simply copy it to the clipboard for use elsewhere.</p>
+  <p>The controls just above the text area allow you to interactive with the text in various ways. They mostly work on highlighted text within the text area, or if there is no highlight they work on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
+</section>
 
 
 
@@ -59,7 +69,10 @@ h3 { margin-left: 30px; }
       <p>From there you can replace the original text or add to it, or copy-paste the result elsewhere.</p>
       <p><span class="leadin">Hieroglyphs to MdC.</span> Does the opposite to that of the previous control, converting text written in hieroglyphs into the Manuel de Codage style. Try the example above in reverse.</p>
   <p>When converting in this direction, because one hieroglyph may map to alternative MdC strings, you may need to select from the alternatives offered by the control (shown in a yellow box). Simply click on the alternative you want when they are displayed by the picker.  </p>
-  <p><span class="leadin">MdC to WikiHiero.</span> Opens the WikiHiero site, which displays the highlighted MdC (ASCII) string as hieroglyphs in 2-dimensional arrangements.</p>
+  <p id="wikiHiero"><span class="leadin">MdC to WikiHiero.</span> Displays the highlighted MdC (ASCII) string as hieroglyphs in 2-dimensional arrangements just below the output area. For example, <kbd style="white-space:nowrap;">&lt;-i-mn:n-R4:t*p-&gt;</kbd> becomes:</p>
+  <p><img src="images/amenhotep.png" alt="Amenhotep in 2-dimensional words."/></p>
+  <p>The code for this section was derived from the WikiHiero pages at <a href="http://aoineko.free.fr/">http://aoineko.free.fr/</a>. The logic and graphics were developed by Guillaume Blanchard (Aoineko), S. Rosmorduc, G. Watson, and J. Hirst.</p>
+  <p>Images are currently used to represent characters, in order to achieve the correct placement. At some point in the future,  font designs with appropriate positioning rules and a few new Unicode characters should allow for this positioning to be achieved easily using fonts.</p>
   <p><span class="leadin"> MdC to Unicode.</span> Converts MdC codes, singly or in combination, to Unicode-based phonetic strings. For example, <kbd>H-mA-A-t</kbd> becomes <samp>ḥ-mꜣ-ꜣ-t</samp>.</p>
   <p><span class="leadin"> Phonetic look up.</span> Many of the hieroglyphs are associated with 1-, 2- or 3-consonant pronunciations. Many such pronunciations are stored in the database behind the picker. If you know the pronunciation, you can look for corresponding hieroglyphs as follows. (Note that this lookup is far from exhaustive!)</p>
     <p>Type the sequence of consonants using Unicode characters (not McD equivalents) into the output box and highlight them. Then click on <code class="kw" translate="no">Phonetic look up</code>. Hieroglyphs that match that character or sequence of characters will be displayed below the output box, and can be added to the output box by clicking on them. (Note that if you still have the search string highlighted in the output box those characters will be replaced by the hieroglyph.)</p>
@@ -73,18 +86,25 @@ h3 { margin-left: 30px; }
       <p>When displayed on an HTML page that code will look like this:</p>
       <p><span class="uname">U+13002 EGYPTIAN HIEROGLYPH A003</span> (<span lang="egy">&#x13002;</span>)</p>
 </section>
+
 <section>
-  <h3 id="secondary_output">SECONDARY OUTPUT AREA</h3>
+  <h3 id="secondary_output">Secondary output area</h3>
   <p>This area receives the output of various tools. Note that the text is editable.</p>
   <p>The icons to the right ( <img src="images/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main output area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main output area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
   <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="images/alternatives.png" alt="" style="vertical-align:middle;"/> presents you with the alternatives 'r' or 'rA'. Simply click on the alternative you want, and the picker will discard the rest.</p>
 </section>
+
 <section>
-  <h3 id="autofocus">Character names &amp; autofocus</h3>
-  <p><b class="leadin">Character name box.</b> As you mouse over characters in the selection areas of the picker, you will see the code point and character name appear here. </p>
+  <h3 id="character_names">Character names</h3>
+  <p>As you mouse over characters in the selection areas of the picker, you will see the code point and character name appear here. </p>
   <p>In this picker you will also see the category as you mouse over the orange category selectors, which makes it much easier to find a given category. Also, keywords are appended to the character names, where they exist.</p>
-  <p><b class="leadin">Autofocus.</b> When working on an iPad or similar device, you should set this to <samp>Off</samp><code class="kw" translate="no"></code>. This prevents the keyboard popping up after you input every character.</p>
 </section>
+
+<section>
+  <h3 id="autofocus">Autofocus</h3>
+  <p>When working on an iPad or similar device, you should set this to <samp>Off</samp><code class="kw" translate="no"></code>. This prevents the keyboard popping up after you input every character.</p>
+</section>
+
 <section>
   <h3 id="input_aids">Input aids</h3>
     <p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
