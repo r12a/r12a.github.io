@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Help for Persian character picker 19</title>
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script src="/code/boilerplate.js" type="text/javascript"></script>
+<style>
+h2 { margin-left: 30px; }
+</style>
+</head>
+
+<body class="app">
+<header>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Help, Persian picker','');</script> 
+</header>
+
+
+
+<p><strong>Select the thing you want help with:</strong></p>
+
+<map name="helpSelector">
+  <area shape="rect" coords="0,55,600,95" href="#top_controls" />
+  <area shape="rect" coords="0,95,600,298" href="#text_area" />
+  <area shape="rect" coords="0,299,600,331" href="#secondary_output" />
+  <area shape="rect" coords="0,342,16,460" href="#input_aids" />
+  <area shape="rect" coords="16,339,368,360" href="#character_names" />
+  <area shape="rect" coords="484,336,597,359" href="#autofocus" />
+  <area shape="rect" coords="16,361,599,627" href="#buttons" />
+  <area shape="rect" coords="0,631,602,670" href="#yellow_controls" />
+  <area shape="rect" coords="-2,671,597,711" href="#more_controls" />
+</map>
+<p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
+
+
+
+
+<section>
+  <h2 id="text_area">Text area</h2>
+  <p>This is where you see characters appearing as you select them from the panels lower down or where you paste text into the picker. Once you have some text here, you can perform various operations on it, or simply copy it to the clipboard for use elsewhere.</p>
+  <p>The controls just above the text area allow you to interactive with the text in various ways. They mostly work on highlighted text within the text area, or if there is no highlight they work on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
+</section>
+
+
+
+<section>
+<h2 id="top_controls">Controls above the text area</h2>
+      <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
+      
+      <p><b class="leadin">Copy, select, delete (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </p>
+      <p><span class="leadin">Show codepoints.</span> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
+      <p><span class="leadin">Convert to escapes.</span> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
+  <p><span class="leadin">Transcribe to UN.</span> This produces a @@@@ transcription of the text in the box. The transcription appears just below the input box, where you can copy it, move it into the input box at the caret, or delete it. The transcription is generated using rules.</p>
+  <p>In order to obtain a full transcription it is necessary to add short vowel diactritics to places that could have more than one pronunciation.</p>
+  <p><span class="leadin">Make example.</span> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Persian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</p>
+       <p>For example, the following (which is displayed here more as you'd type it than see it):</p>
+      <p><span lang="ar" dir="rtl">العربي</span>/alʕarabiː/alarabī/Arabic</span></p>
+      <p>will produce:</p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class="ex" lang="ar" dir="rtl">العربي&lt;/span> &lt;span class="ipa">alʕarabiː&lt;/span> &lt;span class="trans">alʻarabī&lt;/span> &lt;span class="meaning">Arabic&lt;/span></code></p>
+      <p>To get just the arabic and the second transcription you would use:</p>
+       <p><span lang="ar" dir="rtl">العربي</span>//alarabī</p>
+       
+      
+      <p><span class="leadin">Character markup.</span> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.  It will return something like the following for each of the characters:</p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;a href=&quot;/scripts/arabic/block#char0628&quot;&gt;&lt;span class=&quot;uname&quot;&gt;U+064A  ARABIC LETTER BEH&lt;/span&gt; (&lt;span lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;ب&lt;/span&gt;)&lt;/a&gt;</code></p>
+      <p>You can remove or alter the URL to suit your needs. When you add it to your document, it will look like this.</p>
+      <p><a href="/scripts/arabic/block#char064A"><span class="uname">U+064A ARABIC LETTER YEH</span> (<span lang="ar" dir="rtl">ي</span>)</a> </p>
+</section>
+
+<section>
+  <h2 id="secondary_output">Secondary text area</h2>
+  <p>This area receives the output of various tools. Note that the text is editable.</p>
+  <p>The icons to the right ( <img src="images/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
+  <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="images/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the picker will discard the rest.</p>
+</section>
+
+<section>
+  <h2 id="character_names">Character names</h2>
+  <p>As you mouse over characters in the selection areas of the picker, you will see the code point and character name appear here. </p>
+</section>
+
+<section>
+  <h2 id="autofocus">Autofocus</h2>
+  <p>When working on an iPad or similar device, you should set this to <samp>Off</samp>. This prevents the keyboard popping up after you input every character.</p>
+</section>
+
+<section>
+  <h2 id="input_aids">Input aids</h2>
+    <p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
+    <p><span class="leadin">Default.</span> Turns off all input aids and closes all panels.</p>
+      <p><strong class="leadin">Hinting.</strong> Changes the selection area so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</p>
+      <p> Since the picker characters are already largely ordered in groups of similar shapes, hints are only provided when there is a little distance between the similar characters. (This is also why there is no shape lookup for this picker.)</p>
+    <p><span class="leadin">Latin characters.</span> Displays a panel of lowercase Latin characters you are likely to need for  transcription.</p>
+    <p><span class="leadin">Latin to Persian.</span> Displays a panel that allows you to generate  Persian text from characters used for Persian transcription in  the <a href="http://www.loc.gov/catdir/cpso/romanization/urdu.pdf">@@@</a> scheme.  Click on the transcription character and the appropriate Persian character will be produced. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
+    <p><span class="leadin">IPA transcriptions.</span> Displays a panel that allows you to generate  Persian text from characters used for phonetic transcription of Persian. (This may still need some work.).</p>
+</section>
+<section>
+  <h2 id="buttons">Selection area</h2>
+  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
+  <p>Persian characters are arranged so that similar shapes are close to each other, since this helps people unfamiliar with the script to find the right character. There are buttons to insert invisible bidi control characters to one side. There is also a section containing rarely used characters that is hidden by default.</p>
+  <p>Note that it is possible to flip the direction of the selection area by selecting <samp translate="no">more options &gt; Table direction</samp> (near the bottom of the picker).</p>
+</section>
+<section>
+  <h2 id="yellow_controls">Controls on the yellow background</h2>
+    <p><b class="leadin">Left-hand controls.</b> These controls at the bottom of the page allow you to modify fonts used, the font size, line height, and the height of the text area. </p>
+    <p><span class="leadin">Add codepoint.</span> You can add characters to the text area by typing codepoints and escapes in the <samp>Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
+    <p><span class="leadin">Search for. </span>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\bha\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
+</section>
+<section>
+  <h2 id="more_controls">More controls</h2>
+  <p>Click on <samp>more controls</samp> to reveal the less commonly used controls described here.</p>
+  <p><b class="leadin">Normalise. </b>All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
+  <p><b class="leadin">Change table font. </b>Allows you to change the font and size of the characters you click on in the main selection areas. </p>
+    <p><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
+    <p>The <samp class="kw" translate="no">CC base</samp> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</p>
+  <p><span class="leadin">Table direction.</span> Allows you to flip the direction of the selection area.</p>
+</section>
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+</body>
+</html>
