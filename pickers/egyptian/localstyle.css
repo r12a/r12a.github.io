@@ -207,3 +207,16 @@ span.hint {
 	background-color: #eee;
 	padding: 0 .5em;
 	}
+
+
+.mirrorRTL {
+	transform: rotateY(180deg);
+	}
+.bdoRTL {
+	direction: rtl; 
+	unicode-bidi: bidi-override;
+	}
+.bdoLTR {
+	direction: rtl; 
+	unicode-bidi: bidi-override;
+	}
