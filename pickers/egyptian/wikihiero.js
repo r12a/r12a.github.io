@@ -59,7 +59,7 @@ function escapeHtml(text) {
 	}
 
 function escapeHtml(text) {
-	console.log('text: ',text)
+	//console.log('text: ',text)
 	return text
 		.replace(/&/g, "&amp;")
 		.replace(/</g, "&lt;")
@@ -263,7 +263,7 @@ function WikiHieroHTML(hiero, scale, line)  {
 	var tableHtml = ''
 	var tableContentHtml = ""
 
-	console.log('block',block)
+	//console.log('block',block)
 	
 	var div = wh_scale/100
 	var option, glyph
@@ -342,10 +342,10 @@ function WikiHieroHTML(hiero, scale, line)  {
 			contentHtml += "\n"
 			}
 
-	console.log('html',html)
-	console.log('tableHtml',tableHtml)
-	console.log('contentHtml',contentHtml)
-	console.log('tableContentHtml',tableContentHtml)
+	//console.log('html',html)
+	//console.log('tableHtml',tableHtml)
+	//console.log('contentHtml',contentHtml)
+	//console.log('tableContentHtml',tableContentHtml)
 
 		if(contentHtml.length > 0) {
 			tableContentHtml += tableHtml + contentHtml
