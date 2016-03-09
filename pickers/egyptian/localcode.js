@@ -7,14 +7,9 @@ var _showISOTrans = ''
 
 
 function doWikiHiero () {
-	var output = document.getElementById('output')
-	document.getElementById('wikiHieroOut').innerHTML = WikiHieroHTML(output.value, 100, false)
-
-	
-	
-	//document.getElementById('wikihieroInput').value = getHighlightedText(output)
-	//document.getElementById('wikihieroForm').submit()
-	output.focus()
+	var _output = document.getElementById('output')
+	document.getElementById('wikiHieroOut').innerHTML = WikiHieroHTML(getHighlightedText(_output), 100, false)
+	_output.focus()
 	}
 
 
