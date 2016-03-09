@@ -523,7 +523,7 @@
 
 
 <div class="control" id="uiTableDirection" style="display:none; text-align:right;">Text area direction:<br />
-<select onChange="_output=document.getElementById('output');if (this.value == 'rtl') {_output.className = 'bdoRTL';} else if (this.value == 'mirrorRTL') { _output.className = 'mirrorRTL';} else { _output.className = '';} return false;">
+<select onChange="_output=document.getElementById('output'); whout = document.getElementById('wikiHieroOut'); if (this.value == 'rtl') {_output.className = 'bdoRTL';} else if (this.value == 'mirrorRTL') { _output.className = 'mirrorRTL'; whout.className = 'mirrorRTL';} else { _output.className = ''; whout.className = '';} return false;">
 <option value="ltr" selected>LTR (default)</option>
 <option value="rtl">RTL bidi</option>
 <option value="mirrorRTL">RTL mirror</option>
