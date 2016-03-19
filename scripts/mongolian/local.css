@@ -102,3 +102,9 @@ td.chstandard { background-color: #ff59fd; color: white; font-weight: 500; }
 	border-radius: 10px;
 	}
 .rationale p, .rationale ol { margin: 10px; }
+
+
+.syllables {
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+	}
