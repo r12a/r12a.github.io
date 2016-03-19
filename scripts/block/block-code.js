@@ -377,3 +377,6 @@ function addFontToLists (fontname, selectionlists) {
 	}
 
 
+function hideStuff (codepoint) {
+	document.getElementById('includeStyles').textContent = '.character, h1, h2, h3, #charlistsection, .sidebar, header, #status, #intro, #fontsetting, .smallprint, .univiewLink, #references, #endlinks, .up { display: none; } #char'+codepoint+' { display: block; }' 
+	}
