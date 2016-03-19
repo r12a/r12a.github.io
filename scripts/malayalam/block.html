@@ -4,29 +4,25 @@
 <meta charset="utf-8"/>
 <title>Malayalam character notes</title>
 <meta name="description" content="Notes about characters in the Unicode Malayalam script block."/>
-
 <link rel="stylesheet" href="/style/docs.css" type="text/css" />
 <link rel="stylesheet" href="/scripts/block/block-style.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
-
 <script type="text/javascript" src="/scripts/block/malayalam-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
 <script type="text/javascript" src="fonts.js"></script>
-
 <script type="text/javascript" src="/code/toc_section.js"></script>
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/uniview/scriptGroups.js"></script>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style id="includeStyles"></style>
 </head>
 
 <body>
 <header>
-<div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script> 
 </header>
-
 <h1>Malayalam character notes</h1>
-
 <aside class="sidebar">
   <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
   <div id="toc"><!-- placeholder --></div>
@@ -37,915 +33,1167 @@
     <p><a href="/uniview/?block=malayalam">Malayalam in UniView </a></p>
     <p><a href="/scripts/links?script=malayalam">Malayalam script links</a></p>
   </div>
-        
-<div id="fontsetting" class="closed">
-<h2 class="notoc"><a id="fonts">Fonts</a></h2>
-<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
-<p>Set a font for Malayalam text</p>
-<p>
-<select id="exfontswitchfont" 
+  <div id="fontsetting" class="closed">
+    <h2 class="notoc"><a id="fonts">Fonts</a></h2>
+    <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+    <p>Set a font for Malayalam text</p>
+    <p>
+      <select id="exfontswitchfont" 
 onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'ml');">
-</select> 
-<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
-<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+      </select>
+      <script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
+      <input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
 onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'ta');" />
-</p>
-<p>Set a font for the symbol list</p>
-<p>
-<select  id="slfontswitchfont" 
+    </p>
+    <p>Set a font for the symbol list</p>
+    <p>
+      <select  id="slfontswitchfont" 
 onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'ml');">
-</select> 
-<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
-<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+      </select>
+      <script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
+      <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'ta');" />
-</p>
-<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
-</div>
+    </p>
+    <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+  </div>
 </aside>
-
+<div id="intro">
 <p id="status">Updated Sun 31 Aug 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=malayalam" title="Show all blog posts tagged with 'malayalam'">malayalam</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
-
 <section>
-<p>This page lists characters in  Unicode's Malayalam block and provides information about them. For information about Malayalam script and its features in general, see the companion document <a href="/scripts/malayalam/">Malayalam Script Notes</a>.</p>
-<p>To view this page as intended, you  need a Malayalam font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
-<p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
-<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
+  <p>This page lists characters in  Unicode's Malayalam block and provides information about them. For information about Malayalam script and its features in general, see the companion document <a href="/scripts/malayalam/">Malayalam Script Notes</a>.</p>
+  <p>To view this page as intended, you  need a Malayalam font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
+  <p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
+  <p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
 </section>
+</div>
 
 <section id="charlistsection">
   <h2><a href="#characterlist" id="characterlist">Index </a></h2>
   <p>Click on a character in the table to jump to its description. Only characters with a line below have descriptive notes attached (apart from any descriptions in the Unicode database).</p>
   <p>&nbsp;</p>
+<table id="index">
+  <tbody>
+    <tr>
+      <th><a href="#varioussigns">Various signs</a></th>
+      <td><a href="#char0D02" title="U+0D02 MALAYALAM SIGN ANUSVARA">&#xA0;&#xA0;&#x0D02;</a> <a href="#char0D03" title="U+0D03 MALAYALAM SIGN VISARGA">&#xA0;&#xA0;&#x0D03;</a> <a href="#char0D57" title="U+0D57 MALAYALAM AU LENGTH MARK">&#xA0;&#xA0;&#x0D57;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#ivowels">Independent vowels</a></th>
+      <td><a href="#char0D05" title="U+0D05 MALAYALAM LETTER A">&#x0D05;</a> <a href="#char0D06" title="U+0D06 MALAYALAM LETTER AA">&#x0D06;</a> <a href="#char0D07" title="U+0D07 MALAYALAM LETTER I">&#x0D07;</a> <a href="#char0D08" title="U+0D08 MALAYALAM LETTER II">&#x0D08;</a> <a href="#char0D09" title="U+0D09 MALAYALAM LETTER U">&#x0D09;</a> <a href="#char0D0A" title="U+0D0A MALAYALAM LETTER UU">&#x0D0A;</a> <a href="#char0D0B" title="U+0D0B MALAYALAM LETTER VOCALIC R">&#x0D0B;</a> <a href="#char0D0C" title="U+0D0C MALAYALAM LETTER VOCALIC L">&#x0D0C;</a> <a href="#char0D0E" title="U+0D0E MALAYALAM LETTER E">&#x0D0E;</a> <a href="#char0D0F" title="U+0D0F MALAYALAM LETTER EE">&#x0D0F;</a> <a href="#char0D10" title="U+0D10 MALAYALAM LETTER AI">&#x0D10;</a> <a href="#char0D12" title="U+0D12 MALAYALAM LETTER O">&#x0D12;</a> <a href="#char0D13" title="U+0D13 MALAYALAM LETTER OO">&#x0D13;</a> <a href="#char0D14" title="U+0D14 MALAYALAM LETTER AU">&#x0D14;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#consonants">Consonants</a></th>
+      <td><a href="#char0D15" title="U+0D15 MALAYALAM LETTER KA">&#x0D15;</a> <a href="#char0D16" title="U+0D16 MALAYALAM LETTER KHA">&#x0D16;</a> <a href="#char0D17" title="U+0D17 MALAYALAM LETTER GA">&#x0D17;</a> <a href="#char0D18" title="U+0D18 MALAYALAM LETTER GHA">&#x0D18;</a> <a href="#char0D19" title="U+0D19 MALAYALAM LETTER NGA">&#x0D19;</a> <a href="#char0D1A" title="U+0D1A MALAYALAM LETTER CA">&#x0D1A;</a> <a href="#char0D1B" title="U+0D1B MALAYALAM LETTER CHA">&#x0D1B;</a> <a href="#char0D1C" title="U+0D1C MALAYALAM LETTER JA">&#x0D1C;</a> <a href="#char0D1D" title="U+0D1D MALAYALAM LETTER JHA">&#x0D1D;</a> <a href="#char0D1E" title="U+0D1E MALAYALAM LETTER NYA">&#x0D1E;</a> <a href="#char0D1F" title="U+0D1F MALAYALAM LETTER TTA">&#x0D1F;</a> <a href="#char0D20" title="U+0D20 MALAYALAM LETTER TTHA">&#x0D20;</a> <a href="#char0D21" title="U+0D21 MALAYALAM LETTER DDA">&#x0D21;</a> <a href="#char0D22" title="U+0D22 MALAYALAM LETTER DDHA">&#x0D22;</a> <a href="#char0D23" title="U+0D23 MALAYALAM LETTER NNA">&#x0D23;</a> <a href="#char0D24" title="U+0D24 MALAYALAM LETTER TA">&#x0D24;</a> <a href="#char0D25" title="U+0D25 MALAYALAM LETTER THA">&#x0D25;</a> <a href="#char0D26" title="U+0D26 MALAYALAM LETTER DA">&#x0D26;</a> <a href="#char0D27" title="U+0D27 MALAYALAM LETTER DHA">&#x0D27;</a> <a href="#char0D28" title="U+0D28 MALAYALAM LETTER NA">&#x0D28;</a> <a href="#char0D29" title="U+0D29 MALAYALAM LETTER NNNA">&#x0D29;</a> <a href="#char0D2A" title="U+0D2A MALAYALAM LETTER PA">&#x0D2A;</a> <a href="#char0D2B" title="U+0D2B MALAYALAM LETTER PHA">&#x0D2B;</a> <a href="#char0D2C" title="U+0D2C MALAYALAM LETTER BA">&#x0D2C;</a> <a href="#char0D2D" title="U+0D2D MALAYALAM LETTER BHA">&#x0D2D;</a> <a href="#char0D2E" title="U+0D2E MALAYALAM LETTER MA">&#x0D2E;</a> <a href="#char0D2F" title="U+0D2F MALAYALAM LETTER YA">&#x0D2F;</a> <a href="#char0D30" title="U+0D30 MALAYALAM LETTER RA">&#x0D30;</a> <a href="#char0D31" title="U+0D31 MALAYALAM LETTER RRA">&#x0D31;</a> <a href="#char0D32" title="U+0D32 MALAYALAM LETTER LA">&#x0D32;</a> <a href="#char0D33" title="U+0D33 MALAYALAM LETTER LLA">&#x0D33;</a> <a href="#char0D34" title="U+0D34 MALAYALAM LETTER LLLA">&#x0D34;</a> <a href="#char0D35" title="U+0D35 MALAYALAM LETTER VA">&#x0D35;</a> <a href="#char0D36" title="U+0D36 MALAYALAM LETTER SHA">&#x0D36;</a> <a href="#char0D37" title="U+0D37 MALAYALAM LETTER SSA">&#x0D37;</a> <a href="#char0D38" title="U+0D38 MALAYALAM LETTER SA">&#x0D38;</a> <a href="#char0D39" title="U+0D39 MALAYALAM LETTER HA">&#x0D39;</a> <a href="#char0D3A" title="U+0D3A MALAYALAM LETTER TTTA">&#x0D3A;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#chillu">Chillu letters</a></th>
+      <td><a href="#char0D7A" title="U+0D7A MALAYALAM LETTER CHILLU NN">&#x0D7A;</a> <a href="#char0D7B" title="U+0D7B MALAYALAM LETTER CHILLU N">&#x0D7B;</a> <a href="#char0D7C" title="U+0D7C MALAYALAM LETTER CHILLU RR">&#x0D7C;</a> <a href="#char0D7D" title="U+0D7D MALAYALAM LETTER CHILLU L">&#x0D7D;</a> <a href="#char0D7E" title="U+0D7E MALAYALAM LETTER CHILLU LL">&#x0D7E;</a> <a href="#char0D7F" title="U+0D7F MALAYALAM LETTER CHILLU K">&#x0D7F;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#sanskrit">Additions for Sanskrit</a></th>
+      <td><a href="#char0D60" title="U+0D60 MALAYALAM LETTER VOCALIC RR">&#x0D60;</a> <a href="#char0D61" title="U+0D61 MALAYALAM LETTER VOCALIC LL">&#x0D61;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#dvowels">Dependent vowel signs</a></th>
+      <td><a href="#char0D62" title="U+0D62 MALAYALAM VOWEL SIGN VOCALIC L">&#xA0;&#xA0;&#x0D62;</a> <a href="#char0D63" title="U+0D63 MALAYALAM VOWEL SIGN VOCALIC LL">&#xA0;&#xA0;&#x0D63;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#twopart">Two-part dependent vowel signs</a></th>
+      <td><a href="#char0D4A" title="U+0D4A MALAYALAM VOWEL SIGN O">&#xA0;&#xA0;&#x0D4A;</a> <a href="#char0D4B" title="U+0D4B MALAYALAM VOWEL SIGN OO">&#xA0;&#xA0;&#x0D4B;</a> <a href="#char0D4C" title="U+0D4C MALAYALAM VOWEL SIGN AU">&#xA0;&#xA0;&#x0D4C;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#virama">Virama</a></th>
+      <td><a href="#char0D4D" title="U+0D4D MALAYALAM SIGN VIRAMA">&#xA0;&#xA0;&#x0D4D;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#dotreph">Dot reph</a></th>
+      <td><a href="#char0D4E" title="U+0D4E MALAYALAM LETTER DOT REPH">&#x0D4E;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#digits">Digits</a></th>
+      <td><a href="#char0D66" title="U+0D66 MALAYALAM DIGIT ZERO">&#x0D66;</a> <a href="#char0D67" title="U+0D67 MALAYALAM DIGIT ONE">&#x0D67;</a> <a href="#char0D68" title="U+0D68 MALAYALAM DIGIT TWO">&#x0D68;</a> <a href="#char0D69" title="U+0D69 MALAYALAM DIGIT THREE">&#x0D69;</a> <a href="#char0D6A" title="U+0D6A MALAYALAM DIGIT FOUR">&#x0D6A;</a> <a href="#char0D6B" title="U+0D6B MALAYALAM DIGIT FIVE">&#x0D6B;</a> <a href="#char0D6C" title="U+0D6C MALAYALAM DIGIT SIX">&#x0D6C;</a> <a href="#char0D6D" title="U+0D6D MALAYALAM DIGIT SEVEN">&#x0D6D;</a> <a href="#char0D6E" title="U+0D6E MALAYALAM DIGIT EIGHT">&#x0D6E;</a> <a href="#char0D6F" title="U+0D6F MALAYALAM DIGIT NINE">&#x0D6F;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#numerics">Malayalam numerics</a></th>
+      <td><a href="#char0D70" title="U+0D70 MALAYALAM NUMBER TEN">&#x0D70;</a> <a href="#char0D71" title="U+0D71 MALAYALAM NUMBER ONE HUNDRED">&#x0D71;</a> <a href="#char0D72" title="U+0D72 MALAYALAM NUMBER ONE THOUSAND">&#x0D72;</a></td>
+    </tr>
+    <tr>
+      <th><a href="#datemark">Date mark</a></th>
+      <td><a href="#char0D79" title="U+0D79 MALAYALAM DATE MARK">&#x0D79;</a></td>
+    </tr>
+  </tbody>
+</table>
 </section>
-<table id="index"><tbody>
-
-
-<tr><th><a href="#varioussigns">Various signs</a></th><td>
-<a href="#char0D02" title="U+0D02 MALAYALAM SIGN ANUSVARA">&#xA0;&#xA0;&#x0D02;</a> 
-<a href="#char0D03" title="U+0D03 MALAYALAM SIGN VISARGA">&#xA0;&#xA0;&#x0D03;</a> 
-<a href="#char0D57" title="U+0D57 MALAYALAM AU LENGTH MARK">&#xA0;&#xA0;&#x0D57;</a> 
-</td></tr>
-
-<tr><th><a href="#ivowels">Independent vowels</a></th><td>
-<a href="#char0D05" title="U+0D05 MALAYALAM LETTER A">&#x0D05;</a> 
-<a href="#char0D06" title="U+0D06 MALAYALAM LETTER AA">&#x0D06;</a> 
-<a href="#char0D07" title="U+0D07 MALAYALAM LETTER I">&#x0D07;</a> 
-<a href="#char0D08" title="U+0D08 MALAYALAM LETTER II">&#x0D08;</a> 
-<a href="#char0D09" title="U+0D09 MALAYALAM LETTER U">&#x0D09;</a> 
-<a href="#char0D0A" title="U+0D0A MALAYALAM LETTER UU">&#x0D0A;</a> 
-<a href="#char0D0B" title="U+0D0B MALAYALAM LETTER VOCALIC R">&#x0D0B;</a> 
-<a href="#char0D0C" title="U+0D0C MALAYALAM LETTER VOCALIC L">&#x0D0C;</a> 
-<a href="#char0D0E" title="U+0D0E MALAYALAM LETTER E">&#x0D0E;</a> 
-<a href="#char0D0F" title="U+0D0F MALAYALAM LETTER EE">&#x0D0F;</a> 
-<a href="#char0D10" title="U+0D10 MALAYALAM LETTER AI">&#x0D10;</a> 
-<a href="#char0D12" title="U+0D12 MALAYALAM LETTER O">&#x0D12;</a> 
-<a href="#char0D13" title="U+0D13 MALAYALAM LETTER OO">&#x0D13;</a> 
-<a href="#char0D14" title="U+0D14 MALAYALAM LETTER AU">&#x0D14;</a> 
-</td></tr>
-
-<tr><th><a href="#consonants">Consonants</a></th><td>
-<a href="#char0D15" title="U+0D15 MALAYALAM LETTER KA">&#x0D15;</a> 
-<a href="#char0D16" title="U+0D16 MALAYALAM LETTER KHA">&#x0D16;</a> 
-<a href="#char0D17" title="U+0D17 MALAYALAM LETTER GA">&#x0D17;</a> 
-<a href="#char0D18" title="U+0D18 MALAYALAM LETTER GHA">&#x0D18;</a> 
-<a href="#char0D19" title="U+0D19 MALAYALAM LETTER NGA">&#x0D19;</a> 
-<a href="#char0D1A" title="U+0D1A MALAYALAM LETTER CA">&#x0D1A;</a> 
-<a href="#char0D1B" title="U+0D1B MALAYALAM LETTER CHA">&#x0D1B;</a> 
-<a href="#char0D1C" title="U+0D1C MALAYALAM LETTER JA">&#x0D1C;</a> 
-<a href="#char0D1D" title="U+0D1D MALAYALAM LETTER JHA">&#x0D1D;</a> 
-<a href="#char0D1E" title="U+0D1E MALAYALAM LETTER NYA">&#x0D1E;</a> 
-<a href="#char0D1F" title="U+0D1F MALAYALAM LETTER TTA">&#x0D1F;</a> 
-<a href="#char0D20" title="U+0D20 MALAYALAM LETTER TTHA">&#x0D20;</a> 
-<a href="#char0D21" title="U+0D21 MALAYALAM LETTER DDA">&#x0D21;</a> 
-<a href="#char0D22" title="U+0D22 MALAYALAM LETTER DDHA">&#x0D22;</a> 
-<a href="#char0D23" title="U+0D23 MALAYALAM LETTER NNA">&#x0D23;</a> 
-<a href="#char0D24" title="U+0D24 MALAYALAM LETTER TA">&#x0D24;</a> 
-<a href="#char0D25" title="U+0D25 MALAYALAM LETTER THA">&#x0D25;</a> 
-<a href="#char0D26" title="U+0D26 MALAYALAM LETTER DA">&#x0D26;</a> 
-<a href="#char0D27" title="U+0D27 MALAYALAM LETTER DHA">&#x0D27;</a> 
-<a href="#char0D28" title="U+0D28 MALAYALAM LETTER NA">&#x0D28;</a> 
-<a href="#char0D29" title="U+0D29 MALAYALAM LETTER NNNA">&#x0D29;</a> 
-<a href="#char0D2A" title="U+0D2A MALAYALAM LETTER PA">&#x0D2A;</a> 
-<a href="#char0D2B" title="U+0D2B MALAYALAM LETTER PHA">&#x0D2B;</a> 
-<a href="#char0D2C" title="U+0D2C MALAYALAM LETTER BA">&#x0D2C;</a> 
-<a href="#char0D2D" title="U+0D2D MALAYALAM LETTER BHA">&#x0D2D;</a> 
-<a href="#char0D2E" title="U+0D2E MALAYALAM LETTER MA">&#x0D2E;</a> 
-<a href="#char0D2F" title="U+0D2F MALAYALAM LETTER YA">&#x0D2F;</a> 
-<a href="#char0D30" title="U+0D30 MALAYALAM LETTER RA">&#x0D30;</a> 
-<a href="#char0D31" title="U+0D31 MALAYALAM LETTER RRA">&#x0D31;</a> 
-<a href="#char0D32" title="U+0D32 MALAYALAM LETTER LA">&#x0D32;</a> 
-<a href="#char0D33" title="U+0D33 MALAYALAM LETTER LLA">&#x0D33;</a> 
-<a href="#char0D34" title="U+0D34 MALAYALAM LETTER LLLA">&#x0D34;</a> 
-<a href="#char0D35" title="U+0D35 MALAYALAM LETTER VA">&#x0D35;</a> 
-<a href="#char0D36" title="U+0D36 MALAYALAM LETTER SHA">&#x0D36;</a> 
-<a href="#char0D37" title="U+0D37 MALAYALAM LETTER SSA">&#x0D37;</a> 
-<a href="#char0D38" title="U+0D38 MALAYALAM LETTER SA">&#x0D38;</a> 
-<a href="#char0D39" title="U+0D39 MALAYALAM LETTER HA">&#x0D39;</a> 
-<a href="#char0D3A" title="U+0D3A MALAYALAM LETTER TTTA">&#x0D3A;</a> 
-</td></tr>
-
-<tr><th><a href="#chillu">Chillu letters</a></th><td>
-<a href="#char0D7A" title="U+0D7A MALAYALAM LETTER CHILLU NN">&#x0D7A;</a> 
-<a href="#char0D7B" title="U+0D7B MALAYALAM LETTER CHILLU N">&#x0D7B;</a> 
-<a href="#char0D7C" title="U+0D7C MALAYALAM LETTER CHILLU RR">&#x0D7C;</a> 
-<a href="#char0D7D" title="U+0D7D MALAYALAM LETTER CHILLU L">&#x0D7D;</a> 
-<a href="#char0D7E" title="U+0D7E MALAYALAM LETTER CHILLU LL">&#x0D7E;</a> 
-<a href="#char0D7F" title="U+0D7F MALAYALAM LETTER CHILLU K">&#x0D7F;</a> 
-</td></tr>
-
-<tr><th><a href="#sanskrit">Additions for Sanskrit</a></th><td>
-<a href="#char0D60" title="U+0D60 MALAYALAM LETTER VOCALIC RR">&#x0D60;</a> 
-<a href="#char0D61" title="U+0D61 MALAYALAM LETTER VOCALIC LL">&#x0D61;</a> 
-</td></tr>
-
-<tr><th><a href="#dvowels">Dependent vowel signs</a></th><td>
-<a href="#char0D62" title="U+0D62 MALAYALAM VOWEL SIGN VOCALIC L">&#xA0;&#xA0;&#x0D62;</a> 
-<a href="#char0D63" title="U+0D63 MALAYALAM VOWEL SIGN VOCALIC LL">&#xA0;&#xA0;&#x0D63;</a> 
-</td></tr>
-
-<tr><th><a href="#twopart">Two-part dependent vowel signs</a></th><td>
-<a href="#char0D4A" title="U+0D4A MALAYALAM VOWEL SIGN O">&#xA0;&#xA0;&#x0D4A;</a> 
-<a href="#char0D4B" title="U+0D4B MALAYALAM VOWEL SIGN OO">&#xA0;&#xA0;&#x0D4B;</a> 
-<a href="#char0D4C" title="U+0D4C MALAYALAM VOWEL SIGN AU">&#xA0;&#xA0;&#x0D4C;</a> 
-</td></tr>
-
-<tr><th><a href="#virama">Virama</a></th><td>
-<a href="#char0D4D" title="U+0D4D MALAYALAM SIGN VIRAMA">&#xA0;&#xA0;&#x0D4D;</a> 
-</td></tr>
-
-<tr><th><a href="#dotreph">Dot reph</a></th><td>
-<a href="#char0D4E" title="U+0D4E MALAYALAM LETTER DOT REPH">&#x0D4E;</a> 
-</td></tr>
-
-<tr><th><a href="#digits">Digits</a></th><td>
-<a href="#char0D66" title="U+0D66 MALAYALAM DIGIT ZERO">&#x0D66;</a> 
-<a href="#char0D67" title="U+0D67 MALAYALAM DIGIT ONE">&#x0D67;</a> 
-<a href="#char0D68" title="U+0D68 MALAYALAM DIGIT TWO">&#x0D68;</a> 
-<a href="#char0D69" title="U+0D69 MALAYALAM DIGIT THREE">&#x0D69;</a> 
-<a href="#char0D6A" title="U+0D6A MALAYALAM DIGIT FOUR">&#x0D6A;</a> 
-<a href="#char0D6B" title="U+0D6B MALAYALAM DIGIT FIVE">&#x0D6B;</a> 
-<a href="#char0D6C" title="U+0D6C MALAYALAM DIGIT SIX">&#x0D6C;</a> 
-<a href="#char0D6D" title="U+0D6D MALAYALAM DIGIT SEVEN">&#x0D6D;</a> 
-<a href="#char0D6E" title="U+0D6E MALAYALAM DIGIT EIGHT">&#x0D6E;</a> 
-<a href="#char0D6F" title="U+0D6F MALAYALAM DIGIT NINE">&#x0D6F;</a> 
-</td></tr>
-
-<tr><th><a href="#numerics">Malayalam numerics</a></th><td>
-<a href="#char0D70" title="U+0D70 MALAYALAM NUMBER TEN">&#x0D70;</a> 
-<a href="#char0D71" title="U+0D71 MALAYALAM NUMBER ONE HUNDRED">&#x0D71;</a> 
-<a href="#char0D72" title="U+0D72 MALAYALAM NUMBER ONE THOUSAND">&#x0D72;</a> 
-</td></tr>
-
-<tr><th><a href="#datemark">Date mark</a></th><td>
-  <a href="#char0D79" title="U+0D79 MALAYALAM DATE MARK">&#x0D79;</a> 
-</td></tr>
-
-
-</tbody></table>
 
 <section id='varioussigns'>
-<h2><a href='#varioussigns'>Various signs</a></h2>
-<div class='character' id='char0D02'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D02;</div>
-<p class='charname'><strong>U+0D02</strong> <a href='/scripts/uniview/?codepoints=0D02'>MALAYALAM SIGN ANUSVARA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> combining mark</p>
-
-<p><span class="ipa">m</span> (used at the end of a syllable), eg. <span class="ex" lang="ml" xml:lang="ml">ഹംസം</span> <span class="ipa">hamsam</span> (<span class="meaning">swan</span>).</p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D03'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D03;</div>
-<p class='charname'><strong>U+0D03</strong> <a href='/scripts/uniview/?codepoints=0D03'>MALAYALAM SIGN VISARGA</a></p></div><div class='character' id='char0D57'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D57;</div>
-<p class='charname'><strong>U+0D57</strong> <a href='/scripts/uniview/?codepoints=0D57'>MALAYALAM AU LENGTH MARK</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• used alone to write the /au/ dependent vowel in modern texts<br />→ (malayalam vowel sign au - 0D4C)</div></div></section>
-
+  <h2><a href='#varioussigns'>Various signs</a></h2>
+  <div class='character' id='char0D02'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D02;</div>
+    <p class="charname"><strong>U+0D02</strong> <a href="#char0D02">MALAYALAM SIGN ANUSVARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D02">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> combining mark</p>
+          <p><span class="ipa">m</span> (used at the end of a syllable), eg. <span class="ex" lang="ml" xml:lang="ml">ഹംസം</span> <span class="ipa">hamsam</span> (<span class="meaning">swan</span>).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D03'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D03;</div>
+    <p class="charname"><strong>U+0D03</strong> <a href="#char0D03">MALAYALAM SIGN VISARGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D03">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D57'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D57;</div>
+    <p class="charname"><strong>U+0D57</strong> <a href="#char0D57">MALAYALAM AU LENGTH MARK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D57">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• used alone to write the /au/ dependent vowel in modern texts<br />
+      → (malayalam vowel sign au - 0D4C)</div>
+  </div>
+</section>
 <section id='ivowels'>
-<h2><a href='#ivowels'>Independent vowels</a></h2>
-<div class='character' id='char0D05'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D05;</div>
-<p class='charname'><strong>U+0D05</strong> <a href='/scripts/uniview/?codepoints=0D05'>MALAYALAM LETTER A</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">a</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D06'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D06;</div>
-<p class='charname'><strong>U+0D06</strong> <a href='/scripts/uniview/?codepoints=0D06'>MALAYALAM LETTER AA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">aː</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D07'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D07;</div>
-<p class='charname'><strong>U+0D07</strong> <a href='/scripts/uniview/?codepoints=0D07'>MALAYALAM LETTER I</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">i</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D08'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D08;</div>
-<p class='charname'><strong>U+0D08</strong> <a href='/scripts/uniview/?codepoints=0D08'>MALAYALAM LETTER II</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">iː</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D09'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D09;</div>
-<p class='charname'><strong>U+0D09</strong> <a href='/scripts/uniview/?codepoints=0D09'>MALAYALAM LETTER U</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">u</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D0A'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D0A;</div>
-<p class='charname'><strong>U+0D0A</strong> <a href='/scripts/uniview/?codepoints=0D0A'>MALAYALAM LETTER UU</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">uː</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D0B'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D0B;</div>
-<p class='charname'><strong>U+0D0B</strong> <a href='/scripts/uniview/?codepoints=0D0B'>MALAYALAM LETTER VOCALIC R</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel <!--, <span class="name">cɔː</span>  <span class="ex" lang="ml" xml:lang="ml"></span>--></p>
-
-<p><span class="ipa">rɨ</span></p>
-
-
-</div>
-</div></div>
-</div><div class='character' id='char0D0C'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D0C;</div>
-<p class='charname'><strong>U+0D0C</strong> <a href='/scripts/uniview/?codepoints=0D0C'>MALAYALAM LETTER VOCALIC L</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel <!--, <span class="name">cɔː</span>  <span class="ex" lang="ml" xml:lang="ml"></span>--></p>
-
-<p>Used only in one Malayalam word borrowed from Sanskrit.</p>
-</div>
-</div></div>
-</div><div class='character' id='char0D0E'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D0E;</div>
-<p class='charname'><strong>U+0D0E</strong> <a href='/scripts/uniview/?codepoints=0D0E'>MALAYALAM LETTER E</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">e</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D0F'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D0F;</div>
-<p class='charname'><strong>U+0D0F</strong> <a href='/scripts/uniview/?codepoints=0D0F'>MALAYALAM LETTER EE</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">eː</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D10'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D10;</div>
-<p class='charname'><strong>U+0D10</strong> <a href='/scripts/uniview/?codepoints=0D10'>MALAYALAM LETTER AI</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">ai̯</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D12'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D12;</div>
-<p class='charname'><strong>U+0D12</strong> <a href='/scripts/uniview/?codepoints=0D12'>MALAYALAM LETTER O</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">o</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D13'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D13;</div>
-<p class='charname'><strong>U+0D13</strong> <a href='/scripts/uniview/?codepoints=0D13'>MALAYALAM LETTER OO</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">oː</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D14'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D14;</div>
-<p class='charname'><strong>U+0D14</strong> <a href='/scripts/uniview/?codepoints=0D14'>MALAYALAM LETTER AU</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> independent vowel</p>
-
-<p><span class="ipa">au̯</span></p>
-</div>
-
-
-</div></div>
-</div></section>
-
+  <h2><a href='#ivowels'>Independent vowels</a></h2>
+  <div class='character' id='char0D05'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D05;</div>
+    <p class="charname"><strong>U+0D05</strong> <a href="#char0D05">MALAYALAM LETTER A</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D05">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">a</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D06'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D06;</div>
+    <p class="charname"><strong>U+0D06</strong> <a href="#char0D06">MALAYALAM LETTER AA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D06">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">aː</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D07'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D07;</div>
+    <p class="charname"><strong>U+0D07</strong> <a href="#char0D07">MALAYALAM LETTER I</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D07">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">i</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D08'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D08;</div>
+    <p class="charname"><strong>U+0D08</strong> <a href="#char0D08">MALAYALAM LETTER II</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D08">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">iː</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D09'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D09;</div>
+    <p class="charname"><strong>U+0D09</strong> <a href="#char0D09">MALAYALAM LETTER U</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D09">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">u</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D0A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D0A;</div>
+    <p class="charname"><strong>U+0D0A</strong> <a href="#char0D0A">MALAYALAM LETTER UU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D0A">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">uː</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D0B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D0B;</div>
+    <p class="charname"><strong>U+0D0B</strong> <a href="#char0D0B">MALAYALAM LETTER VOCALIC R</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D0B">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel <!--, <span class="name">cɔː</span>  <span class="ex" lang="ml" xml:lang="ml"></span>--></p>
+          <p><span class="ipa">rɨ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D0C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D0C;</div>
+    <p class="charname"><strong>U+0D0C</strong> <a href="#char0D0C">MALAYALAM LETTER VOCALIC L</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D0C">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel <!--, <span class="name">cɔː</span>  <span class="ex" lang="ml" xml:lang="ml"></span>--></p>
+          <p>Used only in one Malayalam word borrowed from Sanskrit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D0E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D0E;</div>
+    <p class="charname"><strong>U+0D0E</strong> <a href="#char0D0E">MALAYALAM LETTER E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D0E">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">e</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D0F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D0F;</div>
+    <p class="charname"><strong>U+0D0F</strong> <a href="#char0D0F">MALAYALAM LETTER EE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D0F">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">eː</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D10'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D10;</div>
+    <p class="charname"><strong>U+0D10</strong> <a href="#char0D10">MALAYALAM LETTER AI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D10">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">ai̯</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D12'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D12;</div>
+    <p class="charname"><strong>U+0D12</strong> <a href="#char0D12">MALAYALAM LETTER O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D12">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">o</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D13'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D13;</div>
+    <p class="charname"><strong>U+0D13</strong> <a href="#char0D13">MALAYALAM LETTER OO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D13">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">oː</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D14'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D14;</div>
+    <p class="charname"><strong>U+0D14</strong> <a href="#char0D14">MALAYALAM LETTER AU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D14">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> independent vowel</p>
+          <p><span class="ipa">au̯</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id='consonants'>
-<h2><a href='#consonants'>Consonants</a></h2>
-<div class='character' id='char0D15'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D15;</div>
-<p class='charname'><strong>U+0D15</strong> <a href='/scripts/uniview/?codepoints=0D15'>MALAYALAM LETTER KA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">k</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D16'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D16;</div>
-<p class='charname'><strong>U+0D16</strong> <a href='/scripts/uniview/?codepoints=0D16'>MALAYALAM LETTER KHA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">kʰ</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D17'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D17;</div>
-<p class='charname'><strong>U+0D17</strong> <a href='/scripts/uniview/?codepoints=0D17'>MALAYALAM LETTER GA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">g</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D18'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D18;</div>
-<p class='charname'><strong>U+0D18</strong> <a href='/scripts/uniview/?codepoints=0D18'>MALAYALAM LETTER GHA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">gʰ</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D19'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D19;</div>
-<p class='charname'><strong>U+0D19</strong> <a href='/scripts/uniview/?codepoints=0D19'>MALAYALAM LETTER NGA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ŋ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D1A'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D1A;</div>
-<p class='charname'><strong>U+0D1A</strong> <a href='/scripts/uniview/?codepoints=0D1A'>MALAYALAM LETTER CA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= cha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʧ</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D1B'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D1B;</div>
-<p class='charname'><strong>U+0D1B</strong> <a href='/scripts/uniview/?codepoints=0D1B'>MALAYALAM LETTER CHA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= chha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʧʰ</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D1C'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D1C;</div>
-<p class='charname'><strong>U+0D1C</strong> <a href='/scripts/uniview/?codepoints=0D1C'>MALAYALAM LETTER JA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʤ</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D1D'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D1D;</div>
-<p class='charname'><strong>U+0D1D</strong> <a href='/scripts/uniview/?codepoints=0D1D'>MALAYALAM LETTER JHA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʤʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D1E'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D1E;</div>
-<p class='charname'><strong>U+0D1E</strong> <a href='/scripts/uniview/?codepoints=0D1E'>MALAYALAM LETTER NYA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= nha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ɲ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D1F'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D1F;</div>
-<p class='charname'><strong>U+0D1F</strong> <a href='/scripts/uniview/?codepoints=0D1F'>MALAYALAM LETTER TTA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= ta</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʈ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D20'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D20;</div>
-<p class='charname'><strong>U+0D20</strong> <a href='/scripts/uniview/?codepoints=0D20'>MALAYALAM LETTER TTHA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= tta</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʈʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D21'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D21;</div>
-<p class='charname'><strong>U+0D21</strong> <a href='/scripts/uniview/?codepoints=0D21'>MALAYALAM LETTER DDA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= hard da</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ɖ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D22'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D22;</div>
-<p class='charname'><strong>U+0D22</strong> <a href='/scripts/uniview/?codepoints=0D22'>MALAYALAM LETTER DDHA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= hard dda</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ɖʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D23'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D23;</div>
-<p class='charname'><strong>U+0D23</strong> <a href='/scripts/uniview/?codepoints=0D23'>MALAYALAM LETTER NNA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= hard na</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ɳ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D24'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D24;</div>
-<p class='charname'><strong>U+0D24</strong> <a href='/scripts/uniview/?codepoints=0D24'>MALAYALAM LETTER TA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= tha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">t̪</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D25'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D25;</div>
-<p class='charname'><strong>U+0D25</strong> <a href='/scripts/uniview/?codepoints=0D25'>MALAYALAM LETTER THA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= ttha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">t̪ʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D26'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D26;</div>
-<p class='charname'><strong>U+0D26</strong> <a href='/scripts/uniview/?codepoints=0D26'>MALAYALAM LETTER DA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= soft da</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">d̪</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D27'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D27;</div>
-<p class='charname'><strong>U+0D27</strong> <a href='/scripts/uniview/?codepoints=0D27'>MALAYALAM LETTER DHA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= soft dda</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">d̪ʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D28'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D28;</div>
-<p class='charname'><strong>U+0D28</strong> <a href='/scripts/uniview/?codepoints=0D28'>MALAYALAM LETTER NA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">n̪</span> when initial and single.</p>
-
-<p><span class="ipa">n</span> elsewhere when single.</p>
-
-<p>The geminate form can be either, eg. <span class="ex" lang="ml" xml:lang="ml">പന്നി</span> <span class="ipa">pan̪n̪i</span> (<span class="meaning">pig</span>) and <span class="ex" lang="ml" xml:lang="ml">കന്നി</span> <span class="ipa">kanni</span> (<span class="meaning">unmarried girl</span>).</p>
-</div>
-</div></div>
-</div><div class='character' id='char0D29'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D29;</div>
-<p class='charname'><strong>U+0D29</strong> <a href='/scripts/uniview/?codepoints=0D29'>MALAYALAM LETTER NNNA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• historic use only</div></div><div class='character' id='char0D2A'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D2A;</div>
-<p class='charname'><strong>U+0D2A</strong> <a href='/scripts/uniview/?codepoints=0D2A'>MALAYALAM LETTER PA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">p</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D2B'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D2B;</div>
-<p class='charname'><strong>U+0D2B</strong> <a href='/scripts/uniview/?codepoints=0D2B'>MALAYALAM LETTER PHA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">pʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D2C'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D2C;</div>
-<p class='charname'><strong>U+0D2C</strong> <a href='/scripts/uniview/?codepoints=0D2C'>MALAYALAM LETTER BA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">bʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D2D'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D2D;</div>
-<p class='charname'><strong>U+0D2D</strong> <a href='/scripts/uniview/?codepoints=0D2D'>MALAYALAM LETTER BHA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">bʰ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D2E'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D2E;</div>
-<p class='charname'><strong>U+0D2E</strong> <a href='/scripts/uniview/?codepoints=0D2E'>MALAYALAM LETTER MA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">m</span></p>
-
-<p>An <span class='ipa'>m</span> at the end of a syllable is commonly written with <span class="uname">ANUSVARA</span>, eg. <span class="ex" lang="ml" xml:lang="ml">ഹംസം</span> <span class="ipa">hamsam</span> (<span class="meaning">swan</span>).</p>
-</div>
-</div></div>
-</div><div class='character' id='char0D2F'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D2F;</div>
-<p class='charname'><strong>U+0D2F</strong> <a href='/scripts/uniview/?codepoints=0D2F'>MALAYALAM LETTER YA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">j</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D30'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D30;</div>
-<p class='charname'><strong>U+0D30</strong> <a href='/scripts/uniview/?codepoints=0D30'>MALAYALAM LETTER RA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">r̪</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D31'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D31;</div>
-<p class='charname'><strong>U+0D31</strong> <a href='/scripts/uniview/?codepoints=0D31'>MALAYALAM LETTER RRA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">r</span> (alveolar)</p>
-
-<p><span class="ipa">tː</span> when doubled,  eg. <span class="ex" lang="ml" xml:lang="ml">മാറ്റം</span> <span class="ipa">matːam</span> (<span class="meaning">change</span>).</p>
-</div>
-</div></div>
-</div><div class='character' id='char0D32'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D32;</div>
-<p class='charname'><strong>U+0D32</strong> <a href='/scripts/uniview/?codepoints=0D32'>MALAYALAM LETTER LA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">l</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D33'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D33;</div>
-<p class='charname'><strong>U+0D33</strong> <a href='/scripts/uniview/?codepoints=0D33'>MALAYALAM LETTER LLA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ɭ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D34'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D34;</div>
-<p class='charname'><strong>U+0D34</strong> <a href='/scripts/uniview/?codepoints=0D34'>MALAYALAM LETTER LLLA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= zha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ɹ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D35'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D35;</div>
-<p class='charname'><strong>U+0D35</strong> <a href='/scripts/uniview/?codepoints=0D35'>MALAYALAM LETTER VA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʋ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D36'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D36;</div>
-<p class='charname'><strong>U+0D36</strong> <a href='/scripts/uniview/?codepoints=0D36'>MALAYALAM LETTER SHA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= soft sha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ɕ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D37'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D37;</div>
-<p class='charname'><strong>U+0D37</strong> <a href='/scripts/uniview/?codepoints=0D37'>MALAYALAM LETTER SSA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= sha</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">ʃ</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D38'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D38;</div>
-<p class='charname'><strong>U+0D38</strong> <a href='/scripts/uniview/?codepoints=0D38'>MALAYALAM LETTER SA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">s</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D39'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D39;</div>
-<p class='charname'><strong>U+0D39</strong> <a href='/scripts/uniview/?codepoints=0D39'>MALAYALAM LETTER HA</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> consonant</p>
-
-<p><span class="ipa">h</span></p>
-</div>
-</div></div>
-</div><div class='character' id='char0D3A'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D3A;</div>
-<p class='charname'><strong>U+0D3A</strong> <a href='/scripts/uniview/?codepoints=0D3A'>MALAYALAM LETTER TTTA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• historic use only</div></div></section>
-
+  <h2><a href='#consonants'>Consonants</a></h2>
+  <div class='character' id='char0D15'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D15;</div>
+    <p class="charname"><strong>U+0D15</strong> <a href="#char0D15">MALAYALAM LETTER KA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D15">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">k</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D16'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D16;</div>
+    <p class="charname"><strong>U+0D16</strong> <a href="#char0D16">MALAYALAM LETTER KHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D16">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">kʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D17'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D17;</div>
+    <p class="charname"><strong>U+0D17</strong> <a href="#char0D17">MALAYALAM LETTER GA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D17">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">g</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D18'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D18;</div>
+    <p class="charname"><strong>U+0D18</strong> <a href="#char0D18">MALAYALAM LETTER GHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D18">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">gʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D19'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D19;</div>
+    <p class="charname"><strong>U+0D19</strong> <a href="#char0D19">MALAYALAM LETTER NGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D19">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ŋ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D1A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D1A;</div>
+    <p class="charname"><strong>U+0D1A</strong> <a href="#char0D1A">MALAYALAM LETTER CA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D1A">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= cha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʧ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D1B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D1B;</div>
+    <p class="charname"><strong>U+0D1B</strong> <a href="#char0D1B">MALAYALAM LETTER CHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D1B">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= chha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʧʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D1C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D1C;</div>
+    <p class="charname"><strong>U+0D1C</strong> <a href="#char0D1C">MALAYALAM LETTER JA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D1C">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʤ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D1D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D1D;</div>
+    <p class="charname"><strong>U+0D1D</strong> <a href="#char0D1D">MALAYALAM LETTER JHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D1D">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʤʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D1E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D1E;</div>
+    <p class="charname"><strong>U+0D1E</strong> <a href="#char0D1E">MALAYALAM LETTER NYA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D1E">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= nha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ɲ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D1F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D1F;</div>
+    <p class="charname"><strong>U+0D1F</strong> <a href="#char0D1F">MALAYALAM LETTER TTA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D1F">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ta</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʈ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D20'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D20;</div>
+    <p class="charname"><strong>U+0D20</strong> <a href="#char0D20">MALAYALAM LETTER TTHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D20">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= tta</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʈʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D21'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D21;</div>
+    <p class="charname"><strong>U+0D21</strong> <a href="#char0D21">MALAYALAM LETTER DDA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D21">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= hard da</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ɖ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D22'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D22;</div>
+    <p class="charname"><strong>U+0D22</strong> <a href="#char0D22">MALAYALAM LETTER DDHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D22">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= hard dda</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ɖʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D23'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D23;</div>
+    <p class="charname"><strong>U+0D23</strong> <a href="#char0D23">MALAYALAM LETTER NNA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D23">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= hard na</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ɳ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D24'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D24;</div>
+    <p class="charname"><strong>U+0D24</strong> <a href="#char0D24">MALAYALAM LETTER TA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D24">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= tha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">t̪</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D25'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D25;</div>
+    <p class="charname"><strong>U+0D25</strong> <a href="#char0D25">MALAYALAM LETTER THA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D25">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= ttha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">t̪ʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D26'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D26;</div>
+    <p class="charname"><strong>U+0D26</strong> <a href="#char0D26">MALAYALAM LETTER DA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D26">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= soft da</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">d̪</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D27'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D27;</div>
+    <p class="charname"><strong>U+0D27</strong> <a href="#char0D27">MALAYALAM LETTER DHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D27">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= soft dda</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">d̪ʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D28'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D28;</div>
+    <p class="charname"><strong>U+0D28</strong> <a href="#char0D28">MALAYALAM LETTER NA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D28">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">n̪</span> when initial and single.</p>
+          <p><span class="ipa">n</span> elsewhere when single.</p>
+          <p>The geminate form can be either, eg. <span class="ex" lang="ml" xml:lang="ml">പന്നി</span> <span class="ipa">pan̪n̪i</span> (<span class="meaning">pig</span>) and <span class="ex" lang="ml" xml:lang="ml">കന്നി</span> <span class="ipa">kanni</span> (<span class="meaning">unmarried girl</span>).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D29'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D29;</div>
+    <p class="charname"><strong>U+0D29</strong> <a href="#char0D29">MALAYALAM LETTER NNNA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D29">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• historic use only</div>
+  </div>
+  <div class='character' id='char0D2A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D2A;</div>
+    <p class="charname"><strong>U+0D2A</strong> <a href="#char0D2A">MALAYALAM LETTER PA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D2A">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">p</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D2B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D2B;</div>
+    <p class="charname"><strong>U+0D2B</strong> <a href="#char0D2B">MALAYALAM LETTER PHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D2B">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">pʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D2C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D2C;</div>
+    <p class="charname"><strong>U+0D2C</strong> <a href="#char0D2C">MALAYALAM LETTER BA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D2C">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">bʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D2D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D2D;</div>
+    <p class="charname"><strong>U+0D2D</strong> <a href="#char0D2D">MALAYALAM LETTER BHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D2D">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">bʰ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D2E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D2E;</div>
+    <p class="charname"><strong>U+0D2E</strong> <a href="#char0D2E">MALAYALAM LETTER MA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D2E">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">m</span></p>
+          <p>An <span class='ipa'>m</span> at the end of a syllable is commonly written with <span class="uname">ANUSVARA</span>, eg. <span class="ex" lang="ml" xml:lang="ml">ഹംസം</span> <span class="ipa">hamsam</span> (<span class="meaning">swan</span>).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D2F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D2F;</div>
+    <p class="charname"><strong>U+0D2F</strong> <a href="#char0D2F">MALAYALAM LETTER YA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D2F">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">j</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D30'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D30;</div>
+    <p class="charname"><strong>U+0D30</strong> <a href="#char0D30">MALAYALAM LETTER RA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D30">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">r̪</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D31'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D31;</div>
+    <p class="charname"><strong>U+0D31</strong> <a href="#char0D31">MALAYALAM LETTER RRA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D31">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">r</span> (alveolar)</p>
+          <p><span class="ipa">tː</span> when doubled,  eg. <span class="ex" lang="ml" xml:lang="ml">മാറ്റം</span> <span class="ipa">matːam</span> (<span class="meaning">change</span>).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D32'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D32;</div>
+    <p class="charname"><strong>U+0D32</strong> <a href="#char0D32">MALAYALAM LETTER LA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D32">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">l</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D33'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D33;</div>
+    <p class="charname"><strong>U+0D33</strong> <a href="#char0D33">MALAYALAM LETTER LLA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D33">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ɭ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D34'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D34;</div>
+    <p class="charname"><strong>U+0D34</strong> <a href="#char0D34">MALAYALAM LETTER LLLA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D34">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= zha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ɹ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D35'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D35;</div>
+    <p class="charname"><strong>U+0D35</strong> <a href="#char0D35">MALAYALAM LETTER VA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D35">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʋ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D36'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D36;</div>
+    <p class="charname"><strong>U+0D36</strong> <a href="#char0D36">MALAYALAM LETTER SHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D36">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= soft sha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ɕ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D37'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D37;</div>
+    <p class="charname"><strong>U+0D37</strong> <a href="#char0D37">MALAYALAM LETTER SSA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D37">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= sha</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">ʃ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D38'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D38;</div>
+    <p class="charname"><strong>U+0D38</strong> <a href="#char0D38">MALAYALAM LETTER SA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D38">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">s</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D39'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D39;</div>
+    <p class="charname"><strong>U+0D39</strong> <a href="#char0D39">MALAYALAM LETTER HA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D39">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> consonant</p>
+          <p><span class="ipa">h</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D3A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D3A;</div>
+    <p class="charname"><strong>U+0D3A</strong> <a href="#char0D3A">MALAYALAM LETTER TTTA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D3A">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• historic use only</div>
+  </div>
+</section>
 <section id='chillu'>
-<h2><a href='#chillu'>Chillu letters</a></h2>
-<div class='character' id='char0D7A'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D7A;</div>
-<p class='charname'><strong>U+0D7A</strong> <a href='/scripts/uniview/?codepoints=0D7A'>MALAYALAM LETTER CHILLU NN</a></p></div><div class='character' id='char0D7B'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D7B;</div>
-<p class='charname'><strong>U+0D7B</strong> <a href='/scripts/uniview/?codepoints=0D7B'>MALAYALAM LETTER CHILLU N</a></p></div><div class='character' id='char0D7C'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D7C;</div>
-<p class='charname'><strong>U+0D7C</strong> <a href='/scripts/uniview/?codepoints=0D7C'>MALAYALAM LETTER CHILLU RR</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• historically derived from the full letter ra<br />• also used for chillu r</div></div><div class='character' id='char0D7D'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D7D;</div>
-<p class='charname'><strong>U+0D7D</strong> <a href='/scripts/uniview/?codepoints=0D7D'>MALAYALAM LETTER CHILLU L</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• historically derived from the full letter ta<br />• used for chillu t and chillu d</div></div><div class='character' id='char0D7E'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D7E;</div>
-<p class='charname'><strong>U+0D7E</strong> <a href='/scripts/uniview/?codepoints=0D7E'>MALAYALAM LETTER CHILLU LL</a></p></div><div class='character' id='char0D7F'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D7F;</div>
-<p class='charname'><strong>U+0D7F</strong> <a href='/scripts/uniview/?codepoints=0D7F'>MALAYALAM LETTER CHILLU K</a></p></div></section>
-
+  <h2><a href='#chillu'>Chillu letters</a></h2>
+  <div class='character' id='char0D7A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D7A;</div>
+    <p class="charname"><strong>U+0D7A</strong> <a href="#char0D7A">MALAYALAM LETTER CHILLU NN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D7A">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D7B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D7B;</div>
+    <p class="charname"><strong>U+0D7B</strong> <a href="#char0D7B">MALAYALAM LETTER CHILLU N</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D7B">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D7C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D7C;</div>
+    <p class="charname"><strong>U+0D7C</strong> <a href="#char0D7C">MALAYALAM LETTER CHILLU RR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D7C">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• historically derived from the full letter ra<br />
+      • also used for chillu r</div>
+  </div>
+  <div class='character' id='char0D7D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D7D;</div>
+    <p class="charname"><strong>U+0D7D</strong> <a href="#char0D7D">MALAYALAM LETTER CHILLU L</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D7D">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• historically derived from the full letter ta<br />
+      • used for chillu t and chillu d</div>
+  </div>
+  <div class='character' id='char0D7E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D7E;</div>
+    <p class="charname"><strong>U+0D7E</strong> <a href="#char0D7E">MALAYALAM LETTER CHILLU LL</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D7E">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D7F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D7F;</div>
+    <p class="charname"><strong>U+0D7F</strong> <a href="#char0D7F">MALAYALAM LETTER CHILLU K</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D7F">See in UniView</a></p>
+  </div>
+</section>
 <section id='sanskrit'>
-<h2><a href='#sanskrit'>Additions for Sanskrit</a></h2>
-<div class='character' id='char0D60'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D60;</div>
-<p class='charname'><strong>U+0D60</strong> <a href='/scripts/uniview/?codepoints=0D60'>MALAYALAM LETTER VOCALIC RR</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> vowel sign</p>
-
-<p>Very rare.</p>
-</div>
-</div></div>
-</div><div class='character' id='char0D61'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D61;</div>
-<p class='charname'><strong>U+0D61</strong> <a href='/scripts/uniview/?codepoints=0D61'>MALAYALAM LETTER VOCALIC LL</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> vowel sign</p>
-
-<p>Very rare.</p>
-</div>
-</div></div>
-</div></section>
-
+  <h2><a href='#sanskrit'>Additions for Sanskrit</a></h2>
+  <div class='character' id='char0D60'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D60;</div>
+    <p class="charname"><strong>U+0D60</strong> <a href="#char0D60">MALAYALAM LETTER VOCALIC RR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D60">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> vowel sign</p>
+          <p>Very rare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D61'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D61;</div>
+    <p class="charname"><strong>U+0D61</strong> <a href="#char0D61">MALAYALAM LETTER VOCALIC LL</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D61">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> vowel sign</p>
+          <p>Very rare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id='dvowels'>
-<h2><a href='#dvowels'>Dependent vowel signs</a></h2>
-<div class='character' id='char0D62'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D62;</div>
-<p class='charname'><strong>U+0D62</strong> <a href='/scripts/uniview/?codepoints=0D62'>MALAYALAM VOWEL SIGN VOCALIC L</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> vowel sign <!--, <span class="name">cɔː</span>  <span class="ex" lang="ml" xml:lang="ml"></span>--></p>
-
-<p><span class="ipa">lu</span></p>
-
-<p>Very rare.</p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D63'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D63;</div>
-<p class='charname'><strong>U+0D63</strong> <a href='/scripts/uniview/?codepoints=0D63'>MALAYALAM VOWEL SIGN VOCALIC LL</a></p><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> vowel sign</p>
-
-<p>Very rare.</p>
-</div>
-</div></div>
-</div></section>
-
+  <h2><a href='#dvowels'>Dependent vowel signs</a></h2>
+  <div class='character' id='char0D62'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D62;</div>
+    <p class="charname"><strong>U+0D62</strong> <a href="#char0D62">MALAYALAM VOWEL SIGN VOCALIC L</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D62">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> vowel sign <!--, <span class="name">cɔː</span>  <span class="ex" lang="ml" xml:lang="ml"></span>--></p>
+          <p><span class="ipa">lu</span></p>
+          <p>Very rare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D63'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D63;</div>
+    <p class="charname"><strong>U+0D63</strong> <a href="#char0D63">MALAYALAM VOWEL SIGN VOCALIC LL</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D63">See in UniView</a></p>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> vowel sign</p>
+          <p>Very rare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id='twopart'>
-<h2><a href='#twopart'>Two-part dependent vowel signs</a></h2>
-<div class='character' id='char0D4A'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D4A;</div>
-<p class='charname'><strong>U+0D4A</strong> <a href='/scripts/uniview/?codepoints=0D4A'>MALAYALAM VOWEL SIGN O</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>≡ 0D46 0D3E</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> vowel sign</p>
-
-<p><span class="ipa">o</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D4B'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D4B;</div>
-<p class='charname'><strong>U+0D4B</strong> <a href='/scripts/uniview/?codepoints=0D4B'>MALAYALAM VOWEL SIGN OO</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>≡ 0D47 0D3E</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> vowel sign</p>
-
-<p><span class="ipa">oː</span></p>
-</div>
-
-
-</div></div>
-</div><div class='character' id='char0D4C'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D4C;</div>
-<p class='charname'><strong>U+0D4C</strong> <a href='/scripts/uniview/?codepoints=0D4C'>MALAYALAM VOWEL SIGN AU</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• archaic form of the /au/ dependent vowel<br />→ (malayalam au length mark - 0D57)<br />≡ 0D46 0D57</div><div class='notes'>
-<div class='letter'>
-<div class="malayalam">
-<p><span class="title">Malayalam</span> vowel sign</p>
-
-<p><span class="ipa">au̯</span></p>
-</div>
-
-
-</div></div>
-</div></section>
-
+  <h2><a href='#twopart'>Two-part dependent vowel signs</a></h2>
+  <div class='character' id='char0D4A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D4A;</div>
+    <p class="charname"><strong>U+0D4A</strong> <a href="#char0D4A">MALAYALAM VOWEL SIGN O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D4A">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>≡ 0D46 0D3E</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> vowel sign</p>
+          <p><span class="ipa">o</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D4B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D4B;</div>
+    <p class="charname"><strong>U+0D4B</strong> <a href="#char0D4B">MALAYALAM VOWEL SIGN OO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D4B">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>≡ 0D47 0D3E</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> vowel sign</p>
+          <p><span class="ipa">oː</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='character' id='char0D4C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D4C;</div>
+    <p class="charname"><strong>U+0D4C</strong> <a href="#char0D4C">MALAYALAM VOWEL SIGN AU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D4C">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• archaic form of the /au/ dependent vowel<br />
+      → (malayalam au length mark - 0D57)<br />
+      ≡ 0D46 0D57</div>
+    <div class='notes'>
+      <div class='letter'>
+        <div class="malayalam">
+          <p><span class="title">Malayalam</span> vowel sign</p>
+          <p><span class="ipa">au̯</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id='virama'>
-<h2><a href='#virama'>Virama</a></h2>
-<div class='character' id='char0D4D'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D4D;</div>
-<p class='charname'><strong>U+0D4D</strong> <a href='/scripts/uniview/?codepoints=0D4D'>MALAYALAM SIGN VIRAMA</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>= chandrakkala (the preferred name)<br />= vowel half-u</div></div></section>
-
+  <h2><a href='#virama'>Virama</a></h2>
+  <div class='character' id='char0D4D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D4D;</div>
+    <p class="charname"><strong>U+0D4D</strong> <a href="#char0D4D">MALAYALAM SIGN VIRAMA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D4D">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>= chandrakkala (the preferred name)<br />
+      = vowel half-u</div>
+  </div>
+</section>
 <section id='dotreph'>
-<h2><a href='#dotreph'>Dot reph</a></h2>
-<div class='character' id='char0D4E'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D4E;</div>
-<p class='charname'><strong>U+0D4E</strong> <a href='/scripts/uniview/?codepoints=0D4E'>MALAYALAM LETTER DOT REPH</a></p><p class='subtitle'>Description in the Unicode standard:</p><div class='unicodenotes'>• not used in reformed modern Malayalam orthography</div></div></section>
-
+  <h2><a href='#dotreph'>Dot reph</a></h2>
+  <div class='character' id='char0D4E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D4E;</div>
+    <p class="charname"><strong>U+0D4E</strong> <a href="#char0D4E">MALAYALAM LETTER DOT REPH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D4E">See in UniView</a></p>
+    <p class='subtitle'>Description in the Unicode standard:</p>
+    <div class='unicodenotes'>• not used in reformed modern Malayalam orthography</div>
+  </div>
+</section>
 <section id='digits'>
-<h2><a href='#digits'>Digits</a></h2>
-<div class='character' id='char0D66'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D66;</div>
-<p class='charname'><strong>U+0D66</strong> <a href='/scripts/uniview/?codepoints=0D66'>MALAYALAM DIGIT ZERO</a></p></div><div class='character' id='char0D67'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D67;</div>
-<p class='charname'><strong>U+0D67</strong> <a href='/scripts/uniview/?codepoints=0D67'>MALAYALAM DIGIT ONE</a></p></div><div class='character' id='char0D68'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D68;</div>
-<p class='charname'><strong>U+0D68</strong> <a href='/scripts/uniview/?codepoints=0D68'>MALAYALAM DIGIT TWO</a></p></div><div class='character' id='char0D69'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D69;</div>
-<p class='charname'><strong>U+0D69</strong> <a href='/scripts/uniview/?codepoints=0D69'>MALAYALAM DIGIT THREE</a></p></div><div class='character' id='char0D6A'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D6A;</div>
-<p class='charname'><strong>U+0D6A</strong> <a href='/scripts/uniview/?codepoints=0D6A'>MALAYALAM DIGIT FOUR</a></p></div><div class='character' id='char0D6B'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D6B;</div>
-<p class='charname'><strong>U+0D6B</strong> <a href='/scripts/uniview/?codepoints=0D6B'>MALAYALAM DIGIT FIVE</a></p></div><div class='character' id='char0D6C'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D6C;</div>
-<p class='charname'><strong>U+0D6C</strong> <a href='/scripts/uniview/?codepoints=0D6C'>MALAYALAM DIGIT SIX</a></p></div><div class='character' id='char0D6D'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D6D;</div>
-<p class='charname'><strong>U+0D6D</strong> <a href='/scripts/uniview/?codepoints=0D6D'>MALAYALAM DIGIT SEVEN</a></p></div><div class='character' id='char0D6E'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D6E;</div>
-<p class='charname'><strong>U+0D6E</strong> <a href='/scripts/uniview/?codepoints=0D6E'>MALAYALAM DIGIT EIGHT</a></p></div><div class='character' id='char0D6F'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D6F;</div>
-<p class='charname'><strong>U+0D6F</strong> <a href='/scripts/uniview/?codepoints=0D6F'>MALAYALAM DIGIT NINE</a></p></div></section>
-
+  <h2><a href='#digits'>Digits</a></h2>
+  <div class='character' id='char0D66'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D66;</div>
+    <p class="charname"><strong>U+0D66</strong> <a href="#char0D66">MALAYALAM DIGIT ZERO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D66">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D67'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D67;</div>
+    <p class="charname"><strong>U+0D67</strong> <a href="#char0D67">MALAYALAM DIGIT ONE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D67">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D68'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D68;</div>
+    <p class="charname"><strong>U+0D68</strong> <a href="#char0D68">MALAYALAM DIGIT TWO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D68">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D69'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D69;</div>
+    <p class="charname"><strong>U+0D69</strong> <a href="#char0D69">MALAYALAM DIGIT THREE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D69">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D6A'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D6A;</div>
+    <p class="charname"><strong>U+0D6A</strong> <a href="#char0D6A">MALAYALAM DIGIT FOUR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D6A">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D6B'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D6B;</div>
+    <p class="charname"><strong>U+0D6B</strong> <a href="#char0D6B">MALAYALAM DIGIT FIVE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D6B">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D6C'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D6C;</div>
+    <p class="charname"><strong>U+0D6C</strong> <a href="#char0D6C">MALAYALAM DIGIT SIX</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D6C">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D6D'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D6D;</div>
+    <p class="charname"><strong>U+0D6D</strong> <a href="#char0D6D">MALAYALAM DIGIT SEVEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D6D">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D6E'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D6E;</div>
+    <p class="charname"><strong>U+0D6E</strong> <a href="#char0D6E">MALAYALAM DIGIT EIGHT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D6E">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D6F'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D6F;</div>
+    <p class="charname"><strong>U+0D6F</strong> <a href="#char0D6F">MALAYALAM DIGIT NINE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D6F">See in UniView</a></p>
+  </div>
+</section>
 <section id='numerics'>
-<h2><a href='#numerics'>Malayalam numerics</a></h2>
-<div class='character' id='char0D70'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D70;</div>
-<p class='charname'><strong>U+0D70</strong> <a href='/scripts/uniview/?codepoints=0D70'>MALAYALAM NUMBER TEN</a></p></div><div class='character' id='char0D71'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D71;</div>
-<p class='charname'><strong>U+0D71</strong> <a href='/scripts/uniview/?codepoints=0D71'>MALAYALAM NUMBER ONE HUNDRED</a></p></div><div class='character' id='char0D72'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D72;</div>
-<p class='charname'><strong>U+0D72</strong> <a href='/scripts/uniview/?codepoints=0D72'>MALAYALAM NUMBER ONE THOUSAND</a></p></div></section>
-
+  <h2><a href='#numerics'>Malayalam numerics</a></h2>
+  <div class='character' id='char0D70'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D70;</div>
+    <p class="charname"><strong>U+0D70</strong> <a href="#char0D70">MALAYALAM NUMBER TEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D70">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D71'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D71;</div>
+    <p class="charname"><strong>U+0D71</strong> <a href="#char0D71">MALAYALAM NUMBER ONE HUNDRED</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D71">See in UniView</a></p>
+  </div>
+  <div class='character' id='char0D72'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D72;</div>
+    <p class="charname"><strong>U+0D72</strong> <a href="#char0D72">MALAYALAM NUMBER ONE THOUSAND</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D72">See in UniView</a></p>
+  </div>
+</section>
 <section id='currency'>
-<h2><a href='#currency'>Date mark</a></h2>
-<div class='character' id='char0D79'><div class='up'><a href='#index'>⇧</a></div>
-<div class='charimg'>&#x0D79;</div>
-<p class='charname'><strong>U+0D79</strong> <a href='/scripts/uniview/?codepoints=0D79'>MALAYALAM DATE MARK</a></p></div></section>
-
-
+  <h2><a href='#currency'>Date mark</a></h2>
+  <div class='character' id='char0D79'>
+    <div class='up'><a href='#index'>⇧</a></div>
+    <div class='charimg'>&#x0D79;</div>
+    <p class="charname"><strong>U+0D79</strong> <a href="#char0D79">MALAYALAM DATE MARK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0D79">See in UniView</a></p>
+  </div>
+</section>
 <div id="panel" style="display:none"></div>
-
 <div class="smallprint"><span id="version">First published  3 Feb 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-22  11:57<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-03-11  10:17<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
-
 
 <!-- Uncomment this code to get a list of all character names for the file names-subset.js  
 <div id=charliststr></div>
@@ -956,7 +1204,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <script>document.getElementById('listofchars').innerHTML = getlistofchars();
 listCharsWithNotes();
 </script>
--->
+--> 
 
 <!--
 Various signs;varioussigns;0D02-0D03 0D57
@@ -971,13 +1219,22 @@ Dot reph;dotreph;0D4E
 Digits;digits;0D66-0D6F
 Malayalam numerics;numerics;0D70-0D72
 Date mark;datemark;0D79
--->
+--> 
 
 <script type="text/javascript">
 createtoc();
 initialiseShowNames();
 highlightIndexChars()
-</script>
 
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	var pairs = parameters[p].split('=');
+	if (pairs[0] == 'char') { 
+		if (pairs[1]) hideStuff(pairs[1]) 
+		}
+	}
+</script>
 </body>
 </html>
