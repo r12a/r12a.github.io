@@ -18,7 +18,7 @@
 //var U = new Array;
 //var desc = new Array;
 
-var _notesArray = new Array;
+var _notesArray = []
 var _newNotesArray = false;
 var _currentFont = _defaultFont;
 var _lastOperation = ''; // used for switching between graphics and lists etc to refresh the left panel
@@ -28,7 +28,7 @@ var _IE = false;
 var _notesLoaded = false;
 var databaseAvailable = true;
 //var desc = new Array;
-var _selections = new Array;
+var _selections = []
 var _newCodepoint;
 var _newCharacterList;
 var _newContent, _resultdiv, _counter;
@@ -48,7 +48,33 @@ var _defaultFont = "";
 var _casefield = ''; // used for ajax parameter when converting case
 var _charScriptGroup = "Latin"; // records the unicode block of the character in the right panel
 var _block = ''; // remembers which block was displayed
+var _showNotes = false  // determines whether or not to display notes for individual characters
 
+
+
+function togglePanelDestination () {
+	var buttons
+	if(_copy2Picker) { 
+		document.getElementById('clickto').src='images/clicktopanel.png'
+		document.getElementById('cpAreaToggle').style.backgroundColor='#EDE4D0'
+		if (document.getElementById('charNavigation')) {
+			document.getElementById('charNavigation').style.backgroundColor='#a52a2a'
+			buttons = document.getElementById('charNavigation').querySelectorAll('button')
+			for (var i=0;i<buttons.length;i++)  buttons[i].style.color = 'white'
+			}
+		_copy2Picker=false
+		} 
+	else{ 
+		document.getElementById('clickto').src='images/clicktocparea.png'
+		document.getElementById('cpAreaToggle').style.backgroundColor='#a52a2a'
+		if (document.getElementById('charNavigation')) {
+			document.getElementById('charNavigation').style.backgroundColor='#EDE4D0'
+			buttons = document.getElementById('charNavigation').querySelectorAll('button')
+			for (i=0;i<buttons.length;i++)  buttons[i].style.color = '#666'
+			}
+		_copy2Picker=true
+		}
+	}
 
 function adjacentChar (codepoint, direction) {
 	// output: shows the next or previous character in the database in the details panel
@@ -1797,7 +1823,7 @@ function showSelection (range) {
 	// add pointer to block info, if such exists
 	var infoptr = scriptInfoPointer(rangeArray[0]);
 	if (infoptr) { 
-		document.getElementById('blockInfoPointer').innerHTML = '<div id="blockname" style="line-height:"1em; " onclick="displayBlockData(\''+infoptr+'\');">'+scriptGroups[infoptr][2]+' <img style="vertical-align:bottom;" src="images/info.gif" alt="info"/></div> ';
+		document.getElementById('blockInfoPointer').innerHTML = '<div id="blockname" onclick="displayBlockData(\''+infoptr+'\');">'+scriptGroups[infoptr][3]+' <img style="vertical-align:bottom;" src="images/info.gif" alt="info"/></div> ';
 		}
 	else { document.getElementById('blockInfoPointer').innerHTML = ''; }
 	
@@ -1880,6 +1906,20 @@ function toggleDisplay (checkbox) {
 		}
 	if (_lastOperation == 'customrange') {
 		showRange( document.getElementById('customRange1').value ); 
+		}
+	}
+		
+		
+function toggleNotes (checkbox) { 
+	// if show notes is selected sets _showNotes to true and sets localStorage
+	if (! document.getElementById('showNotesToggle').checked)  {
+		_showNotes = false
+		localStorage.setItem('showNotes', false)
+		document.getElementById('notesIframe').src = 'blank.html'
+		}
+	else {
+		_showNotes = true
+		localStorage.setItem('showNotes', true)
 		}
 	}
 		
@@ -2034,18 +2074,21 @@ function printProperties ( codepoint ) {
 	scriptGroup = findScriptGroup(codepoint);
 	
 		// set up navigational graphics
-	div = newContent.appendChild( document.createElement( 'div' ));
-		div.className = 'charNavigation';
-	button = div.appendChild( document.createElement( 'button' ));
+	div = newContent.appendChild( document.createElement( 'div' ))
+	span = div.appendChild(document.createElement('span'))
+		span.id = 'charNavigation';
+		if (_copy2Picker) span.style.backgroundColor = '#EDE4D0'
+		else span.style.backgroundColor = '#a52a2a'
+	button = span.appendChild( document.createElement( 'button' ));
 		button.onclick = function () { listDiv.style.display = 'none'; };
 		button.appendChild(document.createTextNode('Close'));
 		button.className = 'clearButtonTop'; 
-	button = div.appendChild( document.createElement( 'button' ));
+	button = span.appendChild( document.createElement( 'button' ));
 		button.onclick = function () { adjacentChar( codepoint, -1 ); };
 		button.appendChild(document.createTextNode('Previous'));
 		button.title = sPrevChar;
 		button.className = 'moveForwardBack'; 
-	button = div.appendChild( document.createElement( 'button' ));
+	button = span.appendChild( document.createElement( 'button' ));
 		button.onclick = function () { adjacentChar( codepoint, 1 ); };
 		button.appendChild(document.createTextNode('Next'));
 		button.title = sPrevChar;
@@ -2406,14 +2449,18 @@ function printProperties ( codepoint ) {
 		//	span.className = 'subcat';
 		//span.appendChild( document.createTextNode( st[cRecord[SUBTITLE_FIELD]] ));
 
+		// return block name if this character listed as contained in block doc
 		var blockfile = charInfoPointer(cRecord[0]);
 		
+		
+		// display Description heading
 		if (desc[eval('0x'+cRecord[0])] || blockfile) { 
 			p = newContent.appendChild( document.createElement( 'p' ));
 				p.style.marginTop = "18px";
 			strong = p.appendChild( document.createElement( 'strong' ));
 			strong.appendChild( document.createTextNode( sDescription ));
 
+			// display any Unicode descriptions
 			if (desc[eval('0x'+cRecord[0])]) {
 				dRecord = desc[eval('0x'+cRecord[0])].split('¶');
 				//p.appendChild( document.createElement( 'br' ));
@@ -2423,19 +2470,33 @@ function printProperties ( codepoint ) {
 					p.appendChild( document.createElement( 'br' ));
 					}
 				}
-			if (blockfile) {
+
+			// display notes if there are any, and if required
+			if (blockfile && _showNotes) {  
 				p.appendChild( document.createElement( 'br' ));
-				a = p.appendChild( document.createElement('a'));
-					a.href = '/scripts/'+blockfile+'/block#char'+cRecord[0];
-					a.target = 'blockdata';
-				a.appendChild( document.createTextNode('See character notes'));
-				a.className = 'noteslink'
 				span = p.appendChild( document.createElement('span') );
 				span.className = 'notesexpl'
-				span.appendChild( document.createTextNode( 'Notes are available for this character. The link will open in another window or tab.' ));
+				a = span.appendChild( document.createElement('a'));
+					a.href = '/scripts/'+blockfile+'/block#char'+cRecord[0];
+					a.target = 'blockdata';
+				a.appendChild( document.createTextNode('Open the notes in a separate page.'));
 				span.style.fontSize = '80%';
+
+				document.getElementById('notesIframe').src = '/scripts/'+blockfile+'/block?char='+cRecord[0]
 				}
+			// if _showNotes isn't on, just mention that there are some notes
+			else if (blockfile) {  
+				p.appendChild( document.createElement( 'br' ));
+				span = p.appendChild( document.createElement('span') );
+				span.className = 'notesexpl'
+				span.appendChild( document.createTextNode( 'Notes are available for this character.' ));
+				span.style.fontSize = '80%';
+
+				document.getElementById('notesIframe').src = 'blank'
+				}
+			else document.getElementById('notesIframe').src = 'blank'
 			}
+		else document.getElementById('notesIframe').src = 'blank'
 		}
 		
 		
@@ -2496,7 +2557,9 @@ function printProperties ( codepoint ) {
 	//	}
 	
 	div = newContent.appendChild( document.createElement( 'div' ));
-		div.className = 'charNavigation';
+		div.id = 'charNavigation';
+		if (_copy2Picker) div.style.backgroundColor = '#EDE4D0'
+		else div.style.backgroundColor = '#a52a2a'
 	button = div.appendChild( document.createElement( 'button' ));
 		button.onclick = function () { listDiv.style.display = 'none'; };
 		button.appendChild(document.createTextNode('Close'));
@@ -2613,6 +2676,7 @@ function foundInList (ch, range) {
 function charInfoPointer (codepoint) {
 	// find the name of the file in /block/, if one exists,
 	// for the character in codepoint
+	// only returns the block name if the code point is listed in the 4th field of a scriptGroups row
 	// codepoint: hex codepoint value
 	// returns: the filename, if successful
 	//          otherwise ''
@@ -2690,15 +2754,27 @@ function convertChar2pEsc ( n ) {
 //日本語	
 
 
-function addSpacesToPicker () {
-	// adds a space between each character in the edit buffer
+function addSpacesToPicker (sep) {
+	// adds a separator between each character in the edit buffer
+	// sep: a string to use as separator
 	
-	charlist = document.getElementById('picker').value.split('')
+	var charList = document.getElementById('picker').value
+	var cpList = convertChar2CP(charList)
+	var cpArray = cpList.split(' ')
 	var out = ''
-	for (var i=0;i<charlist.length-1;i++) {
-		out += charlist[i]+' '
+	for (var i=0;i<cpArray.length-1;i++) {
+		out += convertCP2Char(cpArray[i])+sep
 		}
-	out += charlist[charlist.length-1]
+	out += convertCP2Char(cpArray[cpArray.length-1])
 	document.getElementById('picker').value = out
+	}
+
+function countPickerChars () {
+	// counts how many characters are in the text area
+	
+	var charList = document.getElementById('picker').value
+	var cpList = convertChar2CP(charList)
+	var cpArray = cpList.split(' ')
+	return cpArray.length;
 	}
 

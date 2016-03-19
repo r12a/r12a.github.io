@@ -80,6 +80,7 @@ img {
 /* end header */
 
 
+
 div[role='main'] {
 	margin: 0 8px;
 	}
@@ -415,7 +416,40 @@ span[lang|='ur'] {
 
 .largeCharDiv { float: right; margin-left: 10px; }
 
-.charNavigation button { border: 1px solid #C90; -moz-border-radius: 4px; -webkit-border-radius: 4px; background-color: white; color:#999; padding: 1px; vertical-align: middle; font-size: 80%; margin-right: 5px; }
+#charNavigation { 
+	background-color: #A52A2A;
+	border-radius: 10px;
+	/*
+	border-top-left-radius: 10px;
+	background-color: #A52A2A;
+	text-align: right;
+	*/
+	}
+#charNavigation button { 
+	border: 0; 
+	border-radius: 4px; 
+	background-color: transparent; 
+	color:white; 
+	padding: 0;
+	padding-bottom: 2px;
+	vertical-align: middle; 
+	font-size: 80%; 
+	margin: 1px 5px;
+	line-height: 1;
+	
+	
+	/* 
+	border: 1px solid #C90; 
+	border-radius: 4px; 
+	background-color: white; 
+	color:#999; 
+	padding: 1px; 
+	vertical-align: middle; 
+	font-size: 80%; 
+	margin: 1px 5px;
+	line-height: 1;
+	*/
+	}
 .clearButtonBottom { margin-top: 10px; display: none; }
 .clearButtonTop { display: none; }
 .ex { cursor: pointer; }
@@ -430,26 +464,155 @@ span[lang|='ur'] {
 	}
 	
 
-#tabs li { float:left; background-image: url(images/tabright.png); background-repeat: no-repeat; background-position: right top; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #C96; }
-#tabs a { display: block; background-image: url(images/tableft.png); background-repeat: no-repeat; background-position: left top; padding: 2px 15px; color: #a52a2a; text-decoration: none; margin: 0; background-color: transparent;}
-#tabs { margin: 5px 0 0 10px; padding:0;  }
-#tabs .ontab { font-weight:bold;  border-bottom: 1px solid #EDE4D0; }
+/* -------- TABS ---------------- */
 
-
-#lookuppanel, #listpanel, #optionspanel, #helppanel, #cppanel, #dropzonepanel, #blockinfoptr, #listcreator { border: 1px solid #C96; border-radius: 10px; padding: 5px; background-color: #EDE4D0; margin-top: -1px; 
+#tabpanels {
+	float: left;
+	border-radius: 5px;
 	}
+#tabs {
+	float: left;
+	margin: 0px 0 0 0px; 
+	padding:0;  
+	border-top-right-radius: 10px;
+	}
+#tabs li { 
+	float:left; 
+	margin: 0; 
+	padding: 0; 
+	list-style: none; 
+	background-color: #eee;
+	color: #666;
+	line-height: 1;
+
+	border: 1px solid #a52a2a;
+	border: 1px solid #ccc;
+	border-bottom: 1px solid #EDE4D0;
+	border-bottom: 1px solid #C96;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	margin-right: 5px;
+	}
+#tabs a { 
+	display: block; 
+	padding: 3px 15px; 
+	text-decoration: none; 
+	margin: 0; 
+	background-color: transparent;
+	color: #999;
+	}
+#tabs .ontab { 
+	font-weight:bold;  
+	border: 1px solid #C96;
+	border-bottom: 1px solid #A22929;
+	border-bottom: 1px solid #EDE4D0;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	background-color: #EDE4D0;
+	}
+#tabs .ontab a, #tabs .ontab a:visited { 
+	color: white;
+	color: #a52a2a;
+	background-color: #a52a2a;
+	background-color: #EDE4D0;
+	border-radius: 5px;
+	}
+#lookuppaneltab {
+	border-top-left-radius: 5px; 
+	}
+#lookuppanel, #listpanel, #optionspanel, #helppanel,  #dropzonepanel, #blockinfoptr, #listcreator { 
+	border: 1px solid #C96;
+	border-bottom-left-radius: 5px; 
+	border-bottom-right-radius: 5px; 
+	border-top-right-radius: 5px;
+	padding: 5px; 
+	background-color: #EDE4D0; 
+	margin-top: -1px; 
+	}
+
+
+
 #helppanel { max-width: 42%; min-width: 40%; }
 #listpanel, #optionspanel, #helppanel { display: none; }
 #lookuppanel, #listpanel, #optionspanel, #helppanel { line-height: 1.5em; color: #a52a2a; } 
-#blockinfoptr { text-align: right; text-align: end; clear:both; float: right; margin-top: 5px; margin-right: 5px; font-size: 85%; padding-top:2px; padding-bottom:2px; cursor:pointer;}
 #listcreator { text-align: right; text-align: end; float: right; margin-top: 5px; font-size: 85%; padding-top:2px; padding-bottom:2px; margin-right: 5px; cursor:pointer; }
-#blockname { text-align: right; text-align: end; float: right; margin-top: 5px; font-size: 85%; padding-top:2px; padding-bottom:2px; margin-right: 5px; padding: 5px; }
+
+
+#blockinfoptr { 
+	text-align: right; 
+	text-align: end; 
+	clear:both; 
+	margin-top: 5px; 
+	margin-right: 5px; 
+	font-size: 85%; 
+	padding-top:2px; 
+	padding-bottom:2px; 
+	cursor:pointer;
+	float: right;
+	}
+#blockInfoPointer { 
+	float: right;
+	}
+#blockname { 
+	text-align: left; 
+	text-align: start; 
+	margin-top: 0; 
+	margin-left: 25px;
+	font-size: 85%; 
+	padding-top:0; 
+	padding-bottom:0; 
+	margin-right: 5px; 
+	padding: 0; 
+	cursor: pointer;
+	}
 
 
 #charInfo h2 { margin-top: 0; font-weight: normal; color:#C63; }
 #charInfo .links td { vertical-align: top; padding: 15px 10px 15px 0; }
 
-#cparea { margin: 0 5px; }
+#cpAreaToggle {
+	height: 100%;
+	width: 20px;
+	float: left;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	}
+#cparea { 
+	margin: 0 5px;
+	float: left;
+	border: 1px solid #a52a2a;
+	border-radius: 5px; 
+	border-color: #C96;
+	background-color: #EDE4D0;
+	}
+#cppanel {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	/* border-left: 1px solid #a52a2a;  */
+	background-color: transparent;
+	padding: 5px; 
+	float: left;
+	}
+#cppanel textarea {
+	width:350px; 
+	font-size: 150%; 
+	border:2px solid #ede4d0; 
+	height: 5.25em;
+	height: 100px;
+	}
+
+
+.helpButton {
+	float:right; 
+	border-radius:10px;
+	background-color: rgba(93,167,246,1.00);
+	color: white; 
+	padding: 1px 8px;
+	cursor: pointer; 
+	margin-top: 2px
+	}
+
+
 #cptabs li { float:left; background-image: url(images/tabright.png); background-repeat: no-repeat; background-position: right top; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #C96; }
 #cptabs a { display: block; background-image: url(images/tableft.png); background-repeat: no-repeat; background-position: left top; padding: 2px 15px; color: #a52a2a; text-decoration: none; margin: 0; background-color: transparent;}
 #cptabs { margin: 5px 0 0 10px; padding:0;  }
@@ -459,7 +622,7 @@ span[lang|='ur'] {
 
 #dropzone { float: left; margin-left:5px; }
 #dztabs li { float:left; padding: 0; list-style: none; border-bottom: 1px solid #C96; }
-#dztabs a { display: block; padding: 2px 15px; color: #white; text-decoration: none; margin: 0; background-color: transparent;}
+#dztabs a { display: block; padding: 2px 15px; color: white; text-decoration: none; margin: 0; background-color: transparent;}
 #dztabs { margin: 5px 0 0 10px; padding:0;  }
 
 #floatedsearch { color: #a52a2a; }
@@ -482,3 +645,29 @@ span[lang|='ur'] {
 
 .noteslink { padding: 2px 5px; background-color: #ede4d0; background-color: #F2EBDE; border: 1px solid #cc9966; border-radius: 8px; float: right; margin: 0 50px; }
 .noteslink a { background-color: #ede4d0; }
+
+#notesIframe {
+	width: 100%;
+	border: 0;
+	height: 500px;
+	margin-top: 2em;
+	}
+
+#makeListFromTA {
+	border:0; 
+	margin:0; 
+	padding:0; 
+	vertical-align:top; 
+	margin-left: 10px; 
+	float: left
+	}
+
+
+#searchResultCount {
+	display: none; 
+	float:left; 
+	font-size: 80%; 
+	vertical-align:top;
+	color: #a52a2a;
+	margin-left: 10px;
+	}
