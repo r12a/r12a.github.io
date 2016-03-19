@@ -5,80 +5,73 @@
 <title>Balinese character notes</title>
 <meta name="description" content="Notes about Unicode Balinese characters."/>
 <style type="text/css"></style>
-
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
 <link rel="stylesheet" type="text/css" href="/scripts/block/block-style.css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
-
 <script type="text/javascript" src="/scripts/block/balinese-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
 <script type="text/javascript" src="fonts.js"></script>
-
 <script type="text/javascript" src="/code/toc_section.js"></script>
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/uniview/scriptGroups.js"></script>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style id="includeStyles"></style>
 </head>
 
 <body>
+<header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
 </header>
-
 <h1> Balinese character notes</h1>
-
 <aside class="sidebar">
-<h2 class="notoc flush"><a id="tochead" name="tochead" tabindex="4">Contents</a></h2>
-<div id="toc"><!-- placeholder --></div>
-<div class="noprint">
-  <h2 class="notoc"><a id="links" name="links" tabindex="5">Related links</a></h2>
-  <p><a href="/scripts/balinese">Balinese script notes</a></p>
-  <p><a href="/scripts/links?script=balinese">Balinese script links</a></p>
-  <p><a href="/pickers/balinese/">Balinese character picker</a></p>
-  <p><a href="/scripts/uniview/?block=balinese">UniView </a></p>
-</div>
-
-<div id="fontsetting" class="closed">
-<h2 class="notoc"><a id="fonts">Fonts</a></h2>
-<div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
-<p>Set a font for Balinese text</p>
-<p>
-<select id="exfontswitchfont" 
+  <h2 class="notoc flush"><a id="tochead" name="tochead" tabindex="4">Contents</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links" name="links" tabindex="5">Related links</a></h2>
+    <p><a href="/scripts/balinese">Balinese script notes</a></p>
+    <p><a href="/scripts/links?script=balinese">Balinese script links</a></p>
+    <p><a href="/pickers/balinese/">Balinese character picker</a></p>
+    <p><a href="/scripts/uniview/?block=balinese">UniView </a></p>
+  </div>
+  <div id="fontsetting" class="closed">
+    <h2 class="notoc"><a id="fonts">Fonts</a></h2>
+    <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
+    <p>Set a font for Balinese text</p>
+    <p>
+      <select id="exfontswitchfont" 
 onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'ta');">
-</select> 
-<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
-<input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
+      </select>
+      <script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
+      <input id="exfontswitchsize" type="number" value="22" style="width: 30px;"
 onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'ta');" />
-</p>
-<p>Set a font for the symbol list</p>
-<p>
-<select  id="slfontswitchfont" 
+    </p>
+    <p>Set a font for the symbol list</p>
+    <p>
+      <select  id="slfontswitchfont" 
 onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'ta');">
-</select> 
-<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
-<input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
+      </select>
+      <script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
+      <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'ta');" />
-</p>
-<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
-</div>
+    </p>
+    <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+  </div>
 </aside>
-
+<div id="intro">
 <p id="status">Updated Mon 13 Oct 2014  &bull; tags <a href="http:/.net/blog/index.php?tag=balinese" title="Show all blog posts tagged with 'balinese'">balinese</a>, <a href="http:/.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
-
 <section>
-<p>This page lists characters in  Unicode's Balinese block and provides information about them that I have gleaned from the <a href="#references">sources below</a>. For information about Tamil script and its features in general, see the companion document <a href="/scripts/balinese/">Balinese Script Notes</a>.</p>
-<p>To view this page as intended, you  need a Tamil font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
-<p>To ensure that you see what is intended, and given the rarity of Balinese fonts, the Balinese text on this page is presented using graphics. I may change that at some point and use a webfont.</p>
-<p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
-<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
+  <p>This page lists characters in  Unicode's Balinese block and provides information about them that I have gleaned from the <a href="#references">sources below</a>. For information about Tamil script and its features in general, see the companion document <a href="/scripts/balinese/">Balinese Script Notes</a>.</p>
+  <p>To view this page as intended, you  need a Tamil font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
+  <p>To ensure that you see what is intended, and given the rarity of Balinese fonts, the Balinese text on this page is presented using graphics. I may change that at some point and use a webfont.</p>
+  <p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
+  <p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
 </section>
-
+</div>
 <section class="section" id="charlistsection">
   <h2><a href="#characterlist" id="characterlist">Index </a></h2>
   <p>Click on a character in the table to jump to its description. Only characters with a line below have descriptive notes attached (apart from any descriptions in the Unicode database).</p>
   <p>&nbsp;</p>
-</section>
-
 <table id="index">
   <tbody>
     <tr>
@@ -123,12 +116,14 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
     </tr>
   </tbody>
 </table>
+</section>
 <div>
   <h2><a id='varioussigns'>Various signs</a></h2>
   <div class='character' id='char1B00'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B00;</div>
-    <p class='charname'><strong>U+1B00</strong> <a href='/scripts/uniview/?codepoints=1B00'>BALINESE SIGN ULU RICEM</a></p>
+    <p class="charname"><strong>U+1B00</strong> <a href="#char1B00">BALINESE SIGN ULU RICEM</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B00">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ardhacandra</div>
     <div class='notes'>
@@ -145,7 +140,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B01'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B01;</div>
-    <p class='charname'><strong>U+1B01</strong> <a href='/scripts/uniview/?codepoints=1B01'>BALINESE SIGN ULU CANDRA</a></p>
+    <p class="charname"><strong>U+1B01</strong> <a href="#char1B01">BALINESE SIGN ULU CANDRA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B01">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= candrabindu</div>
     <div class='notes'>
@@ -163,7 +159,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B02'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B02;</div>
-    <p class='charname'><strong>U+1B02</strong> <a href='/scripts/uniview/?codepoints=1B02'>BALINESE SIGN CECEK</a></p>
+    <p class="charname"><strong>U+1B02</strong> <a href="#char1B02">BALINESE SIGN CECEK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B02">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= anusvara</div>
     <div class='notes'>
@@ -180,7 +177,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B03'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B03;</div>
-    <p class='charname'><strong>U+1B03</strong> <a href='/scripts/uniview/?codepoints=1B03'>BALINESE SIGN SURANG</a></p>
+    <p class="charname"><strong>U+1B03</strong> <a href="#char1B03">BALINESE SIGN SURANG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B03">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= repha</div>
     <div class='notes'>
@@ -198,7 +196,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B04'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B04;</div>
-    <p class='charname'><strong>U+1B04</strong> <a href='/scripts/uniview/?codepoints=1B04'>BALINESE SIGN BISAH</a></p>
+    <p class="charname"><strong>U+1B04</strong> <a href="#char1B04">BALINESE SIGN BISAH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B04">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= visarga</div>
     <div class='notes'>
@@ -215,7 +214,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B34'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B34;</div>
-    <p class='charname'><strong>U+1B34</strong> <a href='/scripts/uniview/?codepoints=1B34'>BALINESE SIGN REREKAN</a></p>
+    <p class="charname"><strong>U+1B34</strong> <a href="#char1B34">BALINESE SIGN REREKAN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B34">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= nukta</div>
     <div class='notes'>
@@ -231,7 +231,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B44'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B44;</div>
-    <p class='charname'><strong>U+1B44</strong> <a href='/scripts/uniview/?codepoints=1B44'>BALINESE ADEG ADEG</a></p>
+    <p class="charname"><strong>U+1B44</strong> <a href="#char1B44">BALINESE ADEG ADEG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B44">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= virama</div>
     <div class='notes'>
@@ -250,7 +251,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B05'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B05;</div>
-    <p class='charname'><strong>U+1B05</strong> <a href='/scripts/uniview/?codepoints=1B05'>BALINESE LETTER AKARA</a></p>
+    <p class="charname"><strong>U+1B05</strong> <a href="#char1B05">BALINESE LETTER AKARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B05">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= a</div>
     <div class='notes'>
@@ -268,7 +270,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B06'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B06;</div>
-    <p class='charname'><strong>U+1B06</strong> <a href='/scripts/uniview/?codepoints=1B06'>BALINESE LETTER AKARA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B06</strong> <a href="#char1B06">BALINESE LETTER AKARA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B06">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= aa<br />
       ≡ 1B05 1B35</div>
@@ -285,7 +288,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B07'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B07;</div>
-    <p class='charname'><strong>U+1B07</strong> <a href='/scripts/uniview/?codepoints=1B07'>BALINESE LETTER IKARA</a></p>
+    <p class="charname"><strong>U+1B07</strong> <a href="#char1B07">BALINESE LETTER IKARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B07">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= i</div>
     <div class='notes'>
@@ -301,7 +305,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B08'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B08;</div>
-    <p class='charname'><strong>U+1B08</strong> <a href='/scripts/uniview/?codepoints=1B08'>BALINESE LETTER IKARA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B08</strong> <a href="#char1B08">BALINESE LETTER IKARA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B08">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ii<br />
       ≡ 1B07 1B35</div>
@@ -318,7 +323,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B09'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B09;</div>
-    <p class='charname'><strong>U+1B09</strong> <a href='/scripts/uniview/?codepoints=1B09'>BALINESE LETTER UKARA</a></p>
+    <p class="charname"><strong>U+1B09</strong> <a href="#char1B09">BALINESE LETTER UKARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B09">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= u</div>
     <div class='notes'>
@@ -334,7 +340,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B0A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B0A;</div>
-    <p class='charname'><strong>U+1B0A</strong> <a href='/scripts/uniview/?codepoints=1B0A'>BALINESE LETTER UKARA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B0A</strong> <a href="#char1B0A">BALINESE LETTER UKARA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B0A">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= uu<br />
       ≡ 1B09 1B35</div>
@@ -351,7 +358,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B0B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B0B;</div>
-    <p class='charname'><strong>U+1B0B</strong> <a href='/scripts/uniview/?codepoints=1B0B'>BALINESE LETTER RA REPA</a></p>
+    <p class="charname"><strong>U+1B0B</strong> <a href="#char1B0B">BALINESE LETTER RA REPA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B0B">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic r</div>
     <div class='notes'>
@@ -370,7 +378,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B0C'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B0C;</div>
-    <p class='charname'><strong>U+1B0C</strong> <a href='/scripts/uniview/?codepoints=1B0C'>BALINESE LETTER RA REPA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B0C</strong> <a href="#char1B0C">BALINESE LETTER RA REPA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B0C">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic rr<br />
       ≡ 1B0B 1B35</div>
@@ -378,14 +387,16 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B0D'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B0D;</div>
-    <p class='charname'><strong>U+1B0D</strong> <a href='/scripts/uniview/?codepoints=1B0D'>BALINESE LETTER LA LENGA</a></p>
+    <p class="charname"><strong>U+1B0D</strong> <a href="#char1B0D">BALINESE LETTER LA LENGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B0D">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic l</div>
   </div>
   <div class='character' id='char1B0E'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B0E;</div>
-    <p class='charname'><strong>U+1B0E</strong> <a href='/scripts/uniview/?codepoints=1B0E'>BALINESE LETTER LA LENGA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B0E</strong> <a href="#char1B0E">BALINESE LETTER LA LENGA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B0E">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic ll<br />
       ≡ 1B0D 1B35</div>
@@ -393,7 +404,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B0F'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B0F;</div>
-    <p class='charname'><strong>U+1B0F</strong> <a href='/scripts/uniview/?codepoints=1B0F'>BALINESE LETTER EKARA</a></p>
+    <p class="charname"><strong>U+1B0F</strong> <a href="#char1B0F">BALINESE LETTER EKARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B0F">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= e</div>
     <div class='notes'>
@@ -409,7 +421,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B10'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B10;</div>
-    <p class='charname'><strong>U+1B10</strong> <a href='/scripts/uniview/?codepoints=1B10'>BALINESE LETTER AIKARA</a></p>
+    <p class="charname"><strong>U+1B10</strong> <a href="#char1B10">BALINESE LETTER AIKARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B10">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ai</div>
     <div class='notes'>
@@ -426,7 +439,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B11'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B11;</div>
-    <p class='charname'><strong>U+1B11</strong> <a href='/scripts/uniview/?codepoints=1B11'>BALINESE LETTER OKARA</a></p>
+    <p class="charname"><strong>U+1B11</strong> <a href="#char1B11">BALINESE LETTER OKARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B11">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= o</div>
     <div class='notes'>
@@ -442,7 +456,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B12'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B12;</div>
-    <p class='charname'><strong>U+1B12</strong> <a href='/scripts/uniview/?codepoints=1B12'>BALINESE LETTER OKARA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B12</strong> <a href="#char1B12">BALINESE LETTER OKARA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B12">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= au<br />
       ≡ 1B11 1B35</div>
@@ -462,7 +477,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B13'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B13;</div>
-    <p class='charname'><strong>U+1B13</strong> <a href='/scripts/uniview/?codepoints=1B13'>BALINESE LETTER KA</a></p>
+    <p class="charname"><strong>U+1B13</strong> <a href="#char1B13">BALINESE LETTER KA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B13">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -477,7 +493,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B14'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B14;</div>
-    <p class='charname'><strong>U+1B14</strong> <a href='/scripts/uniview/?codepoints=1B14'>BALINESE LETTER KA MAHAPRANA</a></p>
+    <p class="charname"><strong>U+1B14</strong> <a href="#char1B14">BALINESE LETTER KA MAHAPRANA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B14">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= kha</div>
     <div class='notes'>
@@ -495,7 +512,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B15'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B15;</div>
-    <p class='charname'><strong>U+1B15</strong> <a href='/scripts/uniview/?codepoints=1B15'>BALINESE LETTER GA</a></p>
+    <p class="charname"><strong>U+1B15</strong> <a href="#char1B15">BALINESE LETTER GA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B15">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -510,7 +528,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B16'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B16;</div>
-    <p class='charname'><strong>U+1B16</strong> <a href='/scripts/uniview/?codepoints=1B16'>BALINESE LETTER GA GORA</a></p>
+    <p class="charname"><strong>U+1B16</strong> <a href="#char1B16">BALINESE LETTER GA GORA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B16">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= gha</div>
     <div class='notes'>
@@ -528,7 +547,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B17'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B17;</div>
-    <p class='charname'><strong>U+1B17</strong> <a href='/scripts/uniview/?codepoints=1B17'>BALINESE LETTER NGA</a></p>
+    <p class="charname"><strong>U+1B17</strong> <a href="#char1B17">BALINESE LETTER NGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B17">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -543,7 +563,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B18'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B18;</div>
-    <p class='charname'><strong>U+1B18</strong> <a href='/scripts/uniview/?codepoints=1B18'>BALINESE LETTER CA</a></p>
+    <p class="charname"><strong>U+1B18</strong> <a href="#char1B18">BALINESE LETTER CA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B18">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -558,7 +579,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B19'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B19;</div>
-    <p class='charname'><strong>U+1B19</strong> <a href='/scripts/uniview/?codepoints=1B19'>BALINESE LETTER CA LACA</a></p>
+    <p class="charname"><strong>U+1B19</strong> <a href="#char1B19">BALINESE LETTER CA LACA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B19">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= cha</div>
     <div class='notes'>
@@ -576,7 +598,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B1A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B1A;</div>
-    <p class='charname'><strong>U+1B1A</strong> <a href='/scripts/uniview/?codepoints=1B1A'>BALINESE LETTER JA</a></p>
+    <p class="charname"><strong>U+1B1A</strong> <a href="#char1B1A">BALINESE LETTER JA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B1A">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -591,7 +614,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B1B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B1B;</div>
-    <p class='charname'><strong>U+1B1B</strong> <a href='/scripts/uniview/?codepoints=1B1B'>BALINESE LETTER JA JERA</a></p>
+    <p class="charname"><strong>U+1B1B</strong> <a href="#char1B1B">BALINESE LETTER JA JERA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B1B">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= jha</div>
     <div class='notes'>
@@ -609,7 +633,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B1C'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B1C;</div>
-    <p class='charname'><strong>U+1B1C</strong> <a href='/scripts/uniview/?codepoints=1B1C'>BALINESE LETTER NYA</a></p>
+    <p class="charname"><strong>U+1B1C</strong> <a href="#char1B1C">BALINESE LETTER NYA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B1C">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -624,7 +649,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B1D'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B1D;</div>
-    <p class='charname'><strong>U+1B1D</strong> <a href='/scripts/uniview/?codepoints=1B1D'>BALINESE LETTER TA LATIK</a></p>
+    <p class="charname"><strong>U+1B1D</strong> <a href="#char1B1D">BALINESE LETTER TA LATIK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B1D">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= tta</div>
     <div class='notes'>
@@ -642,28 +668,32 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B1E'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B1E;</div>
-    <p class='charname'><strong>U+1B1E</strong> <a href='/scripts/uniview/?codepoints=1B1E'>BALINESE LETTER TA MURDA MAHAPRANA</a></p>
+    <p class="charname"><strong>U+1B1E</strong> <a href="#char1B1E">BALINESE LETTER TA MURDA MAHAPRANA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B1E">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ttha</div>
   </div>
   <div class='character' id='char1B1F'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B1F;</div>
-    <p class='charname'><strong>U+1B1F</strong> <a href='/scripts/uniview/?codepoints=1B1F'>BALINESE LETTER DA MURDA ALPAPRANA</a></p>
+    <p class="charname"><strong>U+1B1F</strong> <a href="#char1B1F">BALINESE LETTER DA MURDA ALPAPRANA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B1F">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= dda</div>
   </div>
   <div class='character' id='char1B20'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B20;</div>
-    <p class='charname'><strong>U+1B20</strong> <a href='/scripts/uniview/?codepoints=1B20'>BALINESE LETTER DA MURDA MAHAPRANA</a></p>
+    <p class="charname"><strong>U+1B20</strong> <a href="#char1B20">BALINESE LETTER DA MURDA MAHAPRANA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B20">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ddha</div>
   </div>
   <div class='character' id='char1B21'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B21;</div>
-    <p class='charname'><strong>U+1B21</strong> <a href='/scripts/uniview/?codepoints=1B21'>BALINESE LETTER NA RAMBAT</a></p>
+    <p class="charname"><strong>U+1B21</strong> <a href="#char1B21">BALINESE LETTER NA RAMBAT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B21">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= nna</div>
     <div class='notes'>
@@ -681,7 +711,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B22'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B22;</div>
-    <p class='charname'><strong>U+1B22</strong> <a href='/scripts/uniview/?codepoints=1B22'>BALINESE LETTER TA</a></p>
+    <p class="charname"><strong>U+1B22</strong> <a href="#char1B22">BALINESE LETTER TA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B22">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -696,7 +727,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B23'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B23;</div>
-    <p class='charname'><strong>U+1B23</strong> <a href='/scripts/uniview/?codepoints=1B23'>BALINESE LETTER TA TAWA</a></p>
+    <p class="charname"><strong>U+1B23</strong> <a href="#char1B23">BALINESE LETTER TA TAWA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B23">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= tha</div>
     <div class='notes'>
@@ -714,7 +746,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B24'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B24;</div>
-    <p class='charname'><strong>U+1B24</strong> <a href='/scripts/uniview/?codepoints=1B24'>BALINESE LETTER DA</a></p>
+    <p class="charname"><strong>U+1B24</strong> <a href="#char1B24">BALINESE LETTER DA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B24">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -729,7 +762,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B25'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B25;</div>
-    <p class='charname'><strong>U+1B25</strong> <a href='/scripts/uniview/?codepoints=1B25'>BALINESE LETTER DA MADU</a></p>
+    <p class="charname"><strong>U+1B25</strong> <a href="#char1B25">BALINESE LETTER DA MADU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B25">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= dha</div>
     <div class='notes'>
@@ -747,7 +781,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B26'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B26;</div>
-    <p class='charname'><strong>U+1B26</strong> <a href='/scripts/uniview/?codepoints=1B26'>BALINESE LETTER NA</a></p>
+    <p class="charname"><strong>U+1B26</strong> <a href="#char1B26">BALINESE LETTER NA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B26">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -762,7 +797,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B27'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B27;</div>
-    <p class='charname'><strong>U+1B27</strong> <a href='/scripts/uniview/?codepoints=1B27'>BALINESE LETTER PA</a></p>
+    <p class="charname"><strong>U+1B27</strong> <a href="#char1B27">BALINESE LETTER PA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B27">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -777,7 +813,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B28'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B28;</div>
-    <p class='charname'><strong>U+1B28</strong> <a href='/scripts/uniview/?codepoints=1B28'>BALINESE LETTER PA KAPAL</a></p>
+    <p class="charname"><strong>U+1B28</strong> <a href="#char1B28">BALINESE LETTER PA KAPAL</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B28">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= pha</div>
     <div class='notes'>
@@ -795,7 +832,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B29'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B29;</div>
-    <p class='charname'><strong>U+1B29</strong> <a href='/scripts/uniview/?codepoints=1B29'>BALINESE LETTER BA</a></p>
+    <p class="charname"><strong>U+1B29</strong> <a href="#char1B29">BALINESE LETTER BA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B29">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -809,7 +847,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B2A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B2A;</div>
-    <p class='charname'><strong>U+1B2A</strong> <a href='/scripts/uniview/?codepoints=1B2A'>BALINESE LETTER BA KEMBANG</a></p>
+    <p class="charname"><strong>U+1B2A</strong> <a href="#char1B2A">BALINESE LETTER BA KEMBANG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B2A">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= bha</div>
     <div class='notes'>
@@ -827,7 +866,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B2B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B2B;</div>
-    <p class='charname'><strong>U+1B2B</strong> <a href='/scripts/uniview/?codepoints=1B2B'>BALINESE LETTER MA</a></p>
+    <p class="charname"><strong>U+1B2B</strong> <a href="#char1B2B">BALINESE LETTER MA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B2B">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -842,7 +882,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B2C'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B2C;</div>
-    <p class='charname'><strong>U+1B2C</strong> <a href='/scripts/uniview/?codepoints=1B2C'>BALINESE LETTER YA</a></p>
+    <p class="charname"><strong>U+1B2C</strong> <a href="#char1B2C">BALINESE LETTER YA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B2C">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -859,7 +900,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B2D'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B2D;</div>
-    <p class='charname'><strong>U+1B2D</strong> <a href='/scripts/uniview/?codepoints=1B2D'>BALINESE LETTER RA</a></p>
+    <p class="charname"><strong>U+1B2D</strong> <a href="#char1B2D">BALINESE LETTER RA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B2D">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -877,7 +919,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B2E'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B2E;</div>
-    <p class='charname'><strong>U+1B2E</strong> <a href='/scripts/uniview/?codepoints=1B2E'>BALINESE LETTER LA</a></p>
+    <p class="charname"><strong>U+1B2E</strong> <a href="#char1B2E">BALINESE LETTER LA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B2E">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -895,7 +938,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B2F'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B2F;</div>
-    <p class='charname'><strong>U+1B2F</strong> <a href='/scripts/uniview/?codepoints=1B2F'>BALINESE LETTER WA</a></p>
+    <p class="charname"><strong>U+1B2F</strong> <a href="#char1B2F">BALINESE LETTER WA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B2F">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -912,7 +956,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B30'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B30;</div>
-    <p class='charname'><strong>U+1B30</strong> <a href='/scripts/uniview/?codepoints=1B30'>BALINESE LETTER SA SAGA</a></p>
+    <p class="charname"><strong>U+1B30</strong> <a href="#char1B30">BALINESE LETTER SA SAGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B30">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= sha</div>
     <div class='notes'>
@@ -930,7 +975,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B31'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B31;</div>
-    <p class='charname'><strong>U+1B31</strong> <a href='/scripts/uniview/?codepoints=1B31'>BALINESE LETTER SA SAPA</a></p>
+    <p class="charname"><strong>U+1B31</strong> <a href="#char1B31">BALINESE LETTER SA SAPA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B31">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ssa</div>
     <div class='notes'>
@@ -948,7 +994,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B32'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B32;</div>
-    <p class='charname'><strong>U+1B32</strong> <a href='/scripts/uniview/?codepoints=1B32'>BALINESE LETTER SA</a></p>
+    <p class="charname"><strong>U+1B32</strong> <a href="#char1B32">BALINESE LETTER SA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B32">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -963,7 +1010,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B33'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B33;</div>
-    <p class='charname'><strong>U+1B33</strong> <a href='/scripts/uniview/?codepoints=1B33'>BALINESE LETTER HA</a></p>
+    <p class="charname"><strong>U+1B33</strong> <a href="#char1B33">BALINESE LETTER HA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B33">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -982,37 +1030,44 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B45'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B45;</div>
-    <p class='charname'><strong>U+1B45</strong> <a href='/scripts/uniview/?codepoints=1B45'>BALINESE LETTER KAF SASAK</a></p>
+    <p class="charname"><strong>U+1B45</strong> <a href="#char1B45">BALINESE LETTER KAF SASAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B45">See in UniView</a></p>
   </div>
   <div class='character' id='char1B46'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B46;</div>
-    <p class='charname'><strong>U+1B46</strong> <a href='/scripts/uniview/?codepoints=1B46'>BALINESE LETTER KHOT SASAK</a></p>
+    <p class="charname"><strong>U+1B46</strong> <a href="#char1B46">BALINESE LETTER KHOT SASAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B46">See in UniView</a></p>
   </div>
   <div class='character' id='char1B47'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B47;</div>
-    <p class='charname'><strong>U+1B47</strong> <a href='/scripts/uniview/?codepoints=1B47'>BALINESE LETTER TZIR SASAK</a></p>
+    <p class="charname"><strong>U+1B47</strong> <a href="#char1B47">BALINESE LETTER TZIR SASAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B47">See in UniView</a></p>
   </div>
   <div class='character' id='char1B48'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B48;</div>
-    <p class='charname'><strong>U+1B48</strong> <a href='/scripts/uniview/?codepoints=1B48'>BALINESE LETTER EF SASAK</a></p>
+    <p class="charname"><strong>U+1B48</strong> <a href="#char1B48">BALINESE LETTER EF SASAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B48">See in UniView</a></p>
   </div>
   <div class='character' id='char1B49'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B49;</div>
-    <p class='charname'><strong>U+1B49</strong> <a href='/scripts/uniview/?codepoints=1B49'>BALINESE LETTER VE SASAK</a></p>
+    <p class="charname"><strong>U+1B49</strong> <a href="#char1B49">BALINESE LETTER VE SASAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B49">See in UniView</a></p>
   </div>
   <div class='character' id='char1B4A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B4A;</div>
-    <p class='charname'><strong>U+1B4A</strong> <a href='/scripts/uniview/?codepoints=1B4A'>BALINESE LETTER ZAL SASAK</a></p>
+    <p class="charname"><strong>U+1B4A</strong> <a href="#char1B4A">BALINESE LETTER ZAL SASAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B4A">See in UniView</a></p>
   </div>
   <div class='character' id='char1B4B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B4B;</div>
-    <p class='charname'><strong>U+1B4B</strong> <a href='/scripts/uniview/?codepoints=1B4B'>BALINESE LETTER ASYURA SASAK</a></p>
+    <p class="charname"><strong>U+1B4B</strong> <a href="#char1B4B">BALINESE LETTER ASYURA SASAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B4B">See in UniView</a></p>
   </div>
 </div>
 <div>
@@ -1020,7 +1075,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B35'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B35;</div>
-    <p class='charname'><strong>U+1B35</strong> <a href='/scripts/uniview/?codepoints=1B35'>BALINESE VOWEL SIGN TEDUNG</a></p>
+    <p class="charname"><strong>U+1B35</strong> <a href="#char1B35">BALINESE VOWEL SIGN TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B35">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= aa</div>
     <div class='notes'>
@@ -1038,7 +1094,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B36'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B36;</div>
-    <p class='charname'><strong>U+1B36</strong> <a href='/scripts/uniview/?codepoints=1B36'>BALINESE VOWEL SIGN ULU</a></p>
+    <p class="charname"><strong>U+1B36</strong> <a href="#char1B36">BALINESE VOWEL SIGN ULU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B36">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= i</div>
     <div class='notes'>
@@ -1054,7 +1111,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B37'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B37;</div>
-    <p class='charname'><strong>U+1B37</strong> <a href='/scripts/uniview/?codepoints=1B37'>BALINESE VOWEL SIGN ULU SARI</a></p>
+    <p class="charname"><strong>U+1B37</strong> <a href="#char1B37">BALINESE VOWEL SIGN ULU SARI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B37">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ii</div>
     <div class='notes'>
@@ -1070,7 +1128,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B38'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B38;</div>
-    <p class='charname'><strong>U+1B38</strong> <a href='/scripts/uniview/?codepoints=1B38'>BALINESE VOWEL SIGN SUKU</a></p>
+    <p class="charname"><strong>U+1B38</strong> <a href="#char1B38">BALINESE VOWEL SIGN SUKU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B38">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= u</div>
     <div class='notes'>
@@ -1087,7 +1146,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B39'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B39;</div>
-    <p class='charname'><strong>U+1B39</strong> <a href='/scripts/uniview/?codepoints=1B39'>BALINESE VOWEL SIGN SUKU ILUT</a></p>
+    <p class="charname"><strong>U+1B39</strong> <a href="#char1B39">BALINESE VOWEL SIGN SUKU ILUT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B39">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= uu</div>
     <div class='notes'>
@@ -1104,7 +1164,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B3A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B3A;</div>
-    <p class='charname'><strong>U+1B3A</strong> <a href='/scripts/uniview/?codepoints=1B3A'>BALINESE VOWEL SIGN RA REPA</a></p>
+    <p class="charname"><strong>U+1B3A</strong> <a href="#char1B3A">BALINESE VOWEL SIGN RA REPA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B3A">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic r</div>
     <div class='notes'>
@@ -1122,7 +1183,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B3B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B3B;</div>
-    <p class='charname'><strong>U+1B3B</strong> <a href='/scripts/uniview/?codepoints=1B3B'>BALINESE VOWEL SIGN RA REPA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B3B</strong> <a href="#char1B3B">BALINESE VOWEL SIGN RA REPA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B3B">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic rr<br />
       ≡ 1B3A 1B35</div>
@@ -1141,7 +1203,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B3C'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B3C;</div>
-    <p class='charname'><strong>U+1B3C</strong> <a href='/scripts/uniview/?codepoints=1B3C'>BALINESE VOWEL SIGN LA LENGA</a></p>
+    <p class="charname"><strong>U+1B3C</strong> <a href="#char1B3C">BALINESE VOWEL SIGN LA LENGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B3C">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic l</div>
     <div class='notes'>
@@ -1159,7 +1222,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B3D'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B3D;</div>
-    <p class='charname'><strong>U+1B3D</strong> <a href='/scripts/uniview/?codepoints=1B3D'>BALINESE VOWEL SIGN LA LENGA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B3D</strong> <a href="#char1B3D">BALINESE VOWEL SIGN LA LENGA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B3D">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= vocalic ll<br />
       ≡ 1B3C 1B35</div>
@@ -1178,7 +1242,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B3E'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B3E;</div>
-    <p class='charname'><strong>U+1B3E</strong> <a href='/scripts/uniview/?codepoints=1B3E'>BALINESE VOWEL SIGN TALING</a></p>
+    <p class="charname"><strong>U+1B3E</strong> <a href="#char1B3E">BALINESE VOWEL SIGN TALING</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B3E">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= e</div>
     <div class='notes'>
@@ -1194,7 +1259,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B3F'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B3F;</div>
-    <p class='charname'><strong>U+1B3F</strong> <a href='/scripts/uniview/?codepoints=1B3F'>BALINESE VOWEL SIGN TALING REPA</a></p>
+    <p class="charname"><strong>U+1B3F</strong> <a href="#char1B3F">BALINESE VOWEL SIGN TALING REPA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B3F">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ai</div>
     <div class='notes'>
@@ -1210,7 +1276,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B40'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B40;</div>
-    <p class='charname'><strong>U+1B40</strong> <a href='/scripts/uniview/?codepoints=1B40'>BALINESE VOWEL SIGN TALING TEDUNG</a></p>
+    <p class="charname"><strong>U+1B40</strong> <a href="#char1B40">BALINESE VOWEL SIGN TALING TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B40">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= o<br />
       ≡ 1B3E 1B35</div>
@@ -1227,7 +1294,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B41'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B41;</div>
-    <p class='charname'><strong>U+1B41</strong> <a href='/scripts/uniview/?codepoints=1B41'>BALINESE VOWEL SIGN TALING REPA TEDUNG</a></p>
+    <p class="charname"><strong>U+1B41</strong> <a href="#char1B41">BALINESE VOWEL SIGN TALING REPA TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B41">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= au<br />
       ≡ 1B3F 1B35</div>
@@ -1244,7 +1312,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B42'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B42;</div>
-    <p class='charname'><strong>U+1B42</strong> <a href='/scripts/uniview/?codepoints=1B42'>BALINESE VOWEL SIGN PEPET</a></p>
+    <p class="charname"><strong>U+1B42</strong> <a href="#char1B42">BALINESE VOWEL SIGN PEPET</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B42">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= ae</div>
     <div class='notes'>
@@ -1262,7 +1331,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B43'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B43;</div>
-    <p class='charname'><strong>U+1B43</strong> <a href='/scripts/uniview/?codepoints=1B43'>BALINESE VOWEL SIGN PEPET TEDUNG</a></p>
+    <p class="charname"><strong>U+1B43</strong> <a href="#char1B43">BALINESE VOWEL SIGN PEPET TEDUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B43">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= oe<br />
       ≡ 1B42 1B35</div>
@@ -1281,7 +1351,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B44'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B44;</div>
-    <p class='charname'><strong>U+1B44</strong> <a href='/scripts/uniview/?codepoints=1B44'>BALINESE ADEG ADEG</a></p>
+    <p class="charname"><strong>U+1B44</strong> <a href="#char1B44">BALINESE ADEG ADEG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B44">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= virama</div>
     <div class='notes'>
@@ -1300,7 +1371,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B50'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B50;</div>
-    <p class='charname'><strong>U+1B50</strong> <a href='/scripts/uniview/?codepoints=1B50'>BALINESE DIGIT ZERO</a></p>
+    <p class="charname"><strong>U+1B50</strong> <a href="#char1B50">BALINESE DIGIT ZERO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B50">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1313,7 +1385,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B51'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B51;</div>
-    <p class='charname'><strong>U+1B51</strong> <a href='/scripts/uniview/?codepoints=1B51'>BALINESE DIGIT ONE</a></p>
+    <p class="charname"><strong>U+1B51</strong> <a href="#char1B51">BALINESE DIGIT ONE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B51">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1326,7 +1399,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B52'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B52;</div>
-    <p class='charname'><strong>U+1B52</strong> <a href='/scripts/uniview/?codepoints=1B52'>BALINESE DIGIT TWO</a></p>
+    <p class="charname"><strong>U+1B52</strong> <a href="#char1B52">BALINESE DIGIT TWO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B52">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1339,7 +1413,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B53'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B53;</div>
-    <p class='charname'><strong>U+1B53</strong> <a href='/scripts/uniview/?codepoints=1B53'>BALINESE DIGIT THREE</a></p>
+    <p class="charname"><strong>U+1B53</strong> <a href="#char1B53">BALINESE DIGIT THREE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B53">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1352,7 +1427,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B54'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B54;</div>
-    <p class='charname'><strong>U+1B54</strong> <a href='/scripts/uniview/?codepoints=1B54'>BALINESE DIGIT FOUR</a></p>
+    <p class="charname"><strong>U+1B54</strong> <a href="#char1B54">BALINESE DIGIT FOUR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B54">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1365,7 +1441,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B55'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B55;</div>
-    <p class='charname'><strong>U+1B55</strong> <a href='/scripts/uniview/?codepoints=1B55'>BALINESE DIGIT FIVE</a></p>
+    <p class="charname"><strong>U+1B55</strong> <a href="#char1B55">BALINESE DIGIT FIVE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B55">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1378,7 +1455,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B56'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B56;</div>
-    <p class='charname'><strong>U+1B56</strong> <a href='/scripts/uniview/?codepoints=1B56'>BALINESE DIGIT SIX</a></p>
+    <p class="charname"><strong>U+1B56</strong> <a href="#char1B56">BALINESE DIGIT SIX</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B56">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1391,7 +1469,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B57'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B57;</div>
-    <p class='charname'><strong>U+1B57</strong> <a href='/scripts/uniview/?codepoints=1B57'>BALINESE DIGIT SEVEN</a></p>
+    <p class="charname"><strong>U+1B57</strong> <a href="#char1B57">BALINESE DIGIT SEVEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B57">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1404,7 +1483,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B58'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B58;</div>
-    <p class='charname'><strong>U+1B58</strong> <a href='/scripts/uniview/?codepoints=1B58'>BALINESE DIGIT EIGHT</a></p>
+    <p class="charname"><strong>U+1B58</strong> <a href="#char1B58">BALINESE DIGIT EIGHT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B58">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1417,7 +1497,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B59'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B59;</div>
-    <p class='charname'><strong>U+1B59</strong> <a href='/scripts/uniview/?codepoints=1B59'>BALINESE DIGIT NINE</a></p>
+    <p class="charname"><strong>U+1B59</strong> <a href="#char1B59">BALINESE DIGIT NINE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B59">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="balinese">
@@ -1433,7 +1514,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B5A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B5A;</div>
-    <p class='charname'><strong>U+1B5A</strong> <a href='/scripts/uniview/?codepoints=1B5A'>BALINESE PANTI</a></p>
+    <p class="charname"><strong>U+1B5A</strong> <a href="#char1B5A">BALINESE PANTI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B5A">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= section</div>
     <div class='notes'>
@@ -1450,7 +1532,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B5B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B5B;</div>
-    <p class='charname'><strong>U+1B5B</strong> <a href='/scripts/uniview/?codepoints=1B5B'>BALINESE PAMADA</a></p>
+    <p class="charname"><strong>U+1B5B</strong> <a href="#char1B5B">BALINESE PAMADA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B5B">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= honorific section</div>
     <div class='notes'>
@@ -1467,7 +1550,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B5C'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B5C;</div>
-    <p class='charname'><strong>U+1B5C</strong> <a href='/scripts/uniview/?codepoints=1B5C'>BALINESE WINDU</a></p>
+    <p class="charname"><strong>U+1B5C</strong> <a href="#char1B5C">BALINESE WINDU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B5C">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= punctuation ring</div>
     <div class='notes'>
@@ -1483,7 +1567,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B5D'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B5D;</div>
-    <p class='charname'><strong>U+1B5D</strong> <a href='/scripts/uniview/?codepoints=1B5D'>BALINESE CARIK PAMUNGKAH</a></p>
+    <p class="charname"><strong>U+1B5D</strong> <a href="#char1B5D">BALINESE CARIK PAMUNGKAH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B5D">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= colon</div>
     <div class='notes'>
@@ -1499,7 +1584,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B5E'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B5E;</div>
-    <p class='charname'><strong>U+1B5E</strong> <a href='/scripts/uniview/?codepoints=1B5E'>BALINESE CARIK SIKI</a></p>
+    <p class="charname"><strong>U+1B5E</strong> <a href="#char1B5E">BALINESE CARIK SIKI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B5E">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= danda<br />
       → (devanagari danda - 0964)</div>
@@ -1518,7 +1604,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B5F'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B5F;</div>
-    <p class='charname'><strong>U+1B5F</strong> <a href='/scripts/uniview/?codepoints=1B5F'>BALINESE CARIK PAREREN</a></p>
+    <p class="charname"><strong>U+1B5F</strong> <a href="#char1B5F">BALINESE CARIK PAREREN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B5F">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= double danda<br />
       → (devanagari double danda - 0965)</div>
@@ -1536,7 +1623,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B60'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B60;</div>
-    <p class='charname'><strong>U+1B60</strong> <a href='/scripts/uniview/?codepoints=1B60'>BALINESE PAMENENG</a></p>
+    <p class="charname"><strong>U+1B60</strong> <a href="#char1B60">BALINESE PAMENENG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B60">See in UniView</a></p>
     <p class='subtitle'>Description in the Unicode standard:</p>
     <div class='unicodenotes'>= line-breaking hyphen</div>
     <div class='notes'>
@@ -1555,52 +1643,62 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B61'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B61;</div>
-    <p class='charname'><strong>U+1B61</strong> <a href='/scripts/uniview/?codepoints=1B61'>BALINESE MUSICAL SYMBOL DONG</a></p>
+    <p class="charname"><strong>U+1B61</strong> <a href="#char1B61">BALINESE MUSICAL SYMBOL DONG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B61">See in UniView</a></p>
   </div>
   <div class='character' id='char1B62'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B62;</div>
-    <p class='charname'><strong>U+1B62</strong> <a href='/scripts/uniview/?codepoints=1B62'>BALINESE MUSICAL SYMBOL DENG</a></p>
+    <p class="charname"><strong>U+1B62</strong> <a href="#char1B62">BALINESE MUSICAL SYMBOL DENG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B62">See in UniView</a></p>
   </div>
   <div class='character' id='char1B63'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B63;</div>
-    <p class='charname'><strong>U+1B63</strong> <a href='/scripts/uniview/?codepoints=1B63'>BALINESE MUSICAL SYMBOL DUNG</a></p>
+    <p class="charname"><strong>U+1B63</strong> <a href="#char1B63">BALINESE MUSICAL SYMBOL DUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B63">See in UniView</a></p>
   </div>
   <div class='character' id='char1B64'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B64;</div>
-    <p class='charname'><strong>U+1B64</strong> <a href='/scripts/uniview/?codepoints=1B64'>BALINESE MUSICAL SYMBOL DANG</a></p>
+    <p class="charname"><strong>U+1B64</strong> <a href="#char1B64">BALINESE MUSICAL SYMBOL DANG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B64">See in UniView</a></p>
   </div>
   <div class='character' id='char1B65'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B65;</div>
-    <p class='charname'><strong>U+1B65</strong> <a href='/scripts/uniview/?codepoints=1B65'>BALINESE MUSICAL SYMBOL DANG SURANG</a></p>
+    <p class="charname"><strong>U+1B65</strong> <a href="#char1B65">BALINESE MUSICAL SYMBOL DANG SURANG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B65">See in UniView</a></p>
   </div>
   <div class='character' id='char1B66'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B66;</div>
-    <p class='charname'><strong>U+1B66</strong> <a href='/scripts/uniview/?codepoints=1B66'>BALINESE MUSICAL SYMBOL DING</a></p>
+    <p class="charname"><strong>U+1B66</strong> <a href="#char1B66">BALINESE MUSICAL SYMBOL DING</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B66">See in UniView</a></p>
   </div>
   <div class='character' id='char1B67'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B67;</div>
-    <p class='charname'><strong>U+1B67</strong> <a href='/scripts/uniview/?codepoints=1B67'>BALINESE MUSICAL SYMBOL DAENG</a></p>
+    <p class="charname"><strong>U+1B67</strong> <a href="#char1B67">BALINESE MUSICAL SYMBOL DAENG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B67">See in UniView</a></p>
   </div>
   <div class='character' id='char1B68'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B68;</div>
-    <p class='charname'><strong>U+1B68</strong> <a href='/scripts/uniview/?codepoints=1B68'>BALINESE MUSICAL SYMBOL DEUNG</a></p>
+    <p class="charname"><strong>U+1B68</strong> <a href="#char1B68">BALINESE MUSICAL SYMBOL DEUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B68">See in UniView</a></p>
   </div>
   <div class='character' id='char1B69'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B69;</div>
-    <p class='charname'><strong>U+1B69</strong> <a href='/scripts/uniview/?codepoints=1B69'>BALINESE MUSICAL SYMBOL DAING</a></p>
+    <p class="charname"><strong>U+1B69</strong> <a href="#char1B69">BALINESE MUSICAL SYMBOL DAING</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B69">See in UniView</a></p>
   </div>
   <div class='character' id='char1B6A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B6A;</div>
-    <p class='charname'><strong>U+1B6A</strong> <a href='/scripts/uniview/?codepoints=1B6A'>BALINESE MUSICAL SYMBOL DANG GEDE</a></p>
+    <p class="charname"><strong>U+1B6A</strong> <a href="#char1B6A">BALINESE MUSICAL SYMBOL DANG GEDE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B6A">See in UniView</a></p>
   </div>
 </div>
 <div>
@@ -1608,47 +1706,56 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B6B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B6B;</div>
-    <p class='charname'><strong>U+1B6B</strong> <a href='/scripts/uniview/?codepoints=1B6B'>BALINESE MUSICAL SYMBOL COMBINING TEGEH</a></p>
+    <p class="charname"><strong>U+1B6B</strong> <a href="#char1B6B">BALINESE MUSICAL SYMBOL COMBINING TEGEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B6B">See in UniView</a></p>
   </div>
   <div class='character' id='char1B6C'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B6C;</div>
-    <p class='charname'><strong>U+1B6C</strong> <a href='/scripts/uniview/?codepoints=1B6C'>BALINESE MUSICAL SYMBOL COMBINING ENDEP</a></p>
+    <p class="charname"><strong>U+1B6C</strong> <a href="#char1B6C">BALINESE MUSICAL SYMBOL COMBINING ENDEP</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B6C">See in UniView</a></p>
   </div>
   <div class='character' id='char1B6D'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B6D;</div>
-    <p class='charname'><strong>U+1B6D</strong> <a href='/scripts/uniview/?codepoints=1B6D'>BALINESE MUSICAL SYMBOL COMBINING KEMPUL</a></p>
+    <p class="charname"><strong>U+1B6D</strong> <a href="#char1B6D">BALINESE MUSICAL SYMBOL COMBINING KEMPUL</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B6D">See in UniView</a></p>
   </div>
   <div class='character' id='char1B6E'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B6E;</div>
-    <p class='charname'><strong>U+1B6E</strong> <a href='/scripts/uniview/?codepoints=1B6E'>BALINESE MUSICAL SYMBOL COMBINING KEMPLI</a></p>
+    <p class="charname"><strong>U+1B6E</strong> <a href="#char1B6E">BALINESE MUSICAL SYMBOL COMBINING KEMPLI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B6E">See in UniView</a></p>
   </div>
   <div class='character' id='char1B6F'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B6F;</div>
-    <p class='charname'><strong>U+1B6F</strong> <a href='/scripts/uniview/?codepoints=1B6F'>BALINESE MUSICAL SYMBOL COMBINING JEGOGAN</a></p>
+    <p class="charname"><strong>U+1B6F</strong> <a href="#char1B6F">BALINESE MUSICAL SYMBOL COMBINING JEGOGAN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B6F">See in UniView</a></p>
   </div>
   <div class='character' id='char1B70'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B70;</div>
-    <p class='charname'><strong>U+1B70</strong> <a href='/scripts/uniview/?codepoints=1B70'>BALINESE MUSICAL SYMBOL COMBINING KEMPUL WITH JEGOGAN</a></p>
+    <p class="charname"><strong>U+1B70</strong> <a href="#char1B70">BALINESE MUSICAL SYMBOL COMBINING KEMPUL WITH JEGOGAN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B70">See in UniView</a></p>
   </div>
   <div class='character' id='char1B71'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B71;</div>
-    <p class='charname'><strong>U+1B71</strong> <a href='/scripts/uniview/?codepoints=1B71'>BALINESE MUSICAL SYMBOL COMBINING KEMPLI WITH JEGOGAN</a></p>
+    <p class="charname"><strong>U+1B71</strong> <a href="#char1B71">BALINESE MUSICAL SYMBOL COMBINING KEMPLI WITH JEGOGAN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B71">See in UniView</a></p>
   </div>
   <div class='character' id='char1B72'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B72;</div>
-    <p class='charname'><strong>U+1B72</strong> <a href='/scripts/uniview/?codepoints=1B72'>BALINESE MUSICAL SYMBOL COMBINING BENDE</a></p>
+    <p class="charname"><strong>U+1B72</strong> <a href="#char1B72">BALINESE MUSICAL SYMBOL COMBINING BENDE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B72">See in UniView</a></p>
   </div>
   <div class='character' id='char1B73'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B73;</div>
-    <p class='charname'><strong>U+1B73</strong> <a href='/scripts/uniview/?codepoints=1B73'>BALINESE MUSICAL SYMBOL COMBINING GONG</a></p>
+    <p class="charname"><strong>U+1B73</strong> <a href="#char1B73">BALINESE MUSICAL SYMBOL COMBINING GONG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B73">See in UniView</a></p>
   </div>
 </div>
 <div>
@@ -1656,47 +1763,56 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class='character' id='char1B74'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B74;</div>
-    <p class='charname'><strong>U+1B74</strong> <a href='/scripts/uniview/?codepoints=1B74'>BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DUG</a></p>
+    <p class="charname"><strong>U+1B74</strong> <a href="#char1B74">BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DUG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B74">See in UniView</a></p>
   </div>
   <div class='character' id='char1B75'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B75;</div>
-    <p class='charname'><strong>U+1B75</strong> <a href='/scripts/uniview/?codepoints=1B75'>BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DAG</a></p>
+    <p class="charname"><strong>U+1B75</strong> <a href="#char1B75">BALINESE MUSICAL SYMBOL RIGHT-HAND OPEN DAG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B75">See in UniView</a></p>
   </div>
   <div class='character' id='char1B76'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B76;</div>
-    <p class='charname'><strong>U+1B76</strong> <a href='/scripts/uniview/?codepoints=1B76'>BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TUK</a></p>
+    <p class="charname"><strong>U+1B76</strong> <a href="#char1B76">BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TUK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B76">See in UniView</a></p>
   </div>
   <div class='character' id='char1B77'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B77;</div>
-    <p class='charname'><strong>U+1B77</strong> <a href='/scripts/uniview/?codepoints=1B77'>BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TAK</a></p>
+    <p class="charname"><strong>U+1B77</strong> <a href="#char1B77">BALINESE MUSICAL SYMBOL RIGHT-HAND CLOSED TAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B77">See in UniView</a></p>
   </div>
   <div class='character' id='char1B78'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B78;</div>
-    <p class='charname'><strong>U+1B78</strong> <a href='/scripts/uniview/?codepoints=1B78'>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PANG</a></p>
+    <p class="charname"><strong>U+1B78</strong> <a href="#char1B78">BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PANG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B78">See in UniView</a></p>
   </div>
   <div class='character' id='char1B79'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B79;</div>
-    <p class='charname'><strong>U+1B79</strong> <a href='/scripts/uniview/?codepoints=1B79'>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PUNG</a></p>
+    <p class="charname"><strong>U+1B79</strong> <a href="#char1B79">BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PUNG</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B79">See in UniView</a></p>
   </div>
   <div class='character' id='char1B7A'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B7A;</div>
-    <p class='charname'><strong>U+1B7A</strong> <a href='/scripts/uniview/?codepoints=1B7A'>BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLAK</a></p>
+    <p class="charname"><strong>U+1B7A</strong> <a href="#char1B7A">BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLAK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B7A">See in UniView</a></p>
   </div>
   <div class='character' id='char1B7B'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B7B;</div>
-    <p class='charname'><strong>U+1B7B</strong> <a href='/scripts/uniview/?codepoints=1B7B'>BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLUK</a></p>
+    <p class="charname"><strong>U+1B7B</strong> <a href="#char1B7B">BALINESE MUSICAL SYMBOL LEFT-HAND CLOSED PLUK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B7B">See in UniView</a></p>
   </div>
   <div class='character' id='char1B7C'>
     <div class='up'><a href='#index'>⇧</a></div>
     <div class='charimg'>&#x1B7C;</div>
-    <p class='charname'><strong>U+1B7C</strong> <a href='/scripts/uniview/?codepoints=1B7C'>BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PING</a></p>
+    <p class="charname"><strong>U+1B7C</strong> <a href="#char1B7C">BALINESE MUSICAL SYMBOL LEFT-HAND OPEN PING</a></p>
+    <p class="univiewLink"><a href="/uniview/?char1B7C">See in UniView</a></p>
   </div>
 </div>
 <section id="references">
@@ -1712,13 +1828,10 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
     <li>[ScriptSource] <a href="http://scriptsource.org/cms/scripts/page.php?item_id=script_detail&amp;uid=aggc6af8cc">Balinese</a></li>
   </ol>
 </section>
-
 <div id="panel" style="display:none"></div>
-
 <div class="smallprint"><span id="version">First published  3 Feb 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-11-04  14:43<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-03-11  9:15<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
-
 
 <!-- Uncomment this code to get a list of all character names for the file names-subset.js 
 <div id=charliststr></div>
@@ -1734,6 +1847,18 @@ listCharsWithNotes();
 <script type="text/javascript">
 createtoc();
 initialiseShowNames();
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'char') { 
+		if (pairs[1]) { 
+			document.getElementById('includeStyles').textContent = '.character, h1, h2, #charlistsection, .sidebar, header, #status, #intro, #fontsetting, .smallprint, .univiewLink, #references { display: none; } #char'+pairs[1]+' { display: block; }' 
+			} 
+		}
+	}
 </script>
 </body>
 </html>
