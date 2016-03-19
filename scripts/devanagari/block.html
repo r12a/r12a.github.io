@@ -4,29 +4,25 @@
 <meta charset="utf-8"/>
 <title>Devanagari character notes</title>
 <meta name="description" content="Notes about characters in the Unicode Devanagari script block."/>
-
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
 <link rel="stylesheet" type="text/css" href="/scripts/block/block-style.css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
-
 <script type="text/javascript" src="/scripts/block/devanagari-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
 <script type="text/javascript" src="fonts.js"></script>
-
 <script type="text/javascript" src="/code/toc_section.js"></script>
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/uniview/scriptGroups.js"></script>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style id="includeStyles"></style>
 </head>
 
 <body>
 <header>
-<div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script> 
 </header>
-
 <h1>Devanagari character notes</h1>
-
 <aside class="sidebar">
   <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
   <div id="toc"><!-- placeholder --></div>
@@ -36,7 +32,6 @@
     <p><a href="/pickers/devanagari/">Devanagari character picker</a></p>
     <p><a href="/uniview/?block=devanagari">UniView </a></p>
   </div>
-  
   <div id="fontsetting" class="closed">
     <h2 class="notoc"><a id="fonts">Fonts</a></h2>
     <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
@@ -45,7 +40,7 @@
       <select id="exfontswitchfont" 
 onchange="var params = this.value.split(':');setGeneralFont(params[0], document.querySelector('#exfontswitchsize').value+'px', 'hi');">
       </select>
-<script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
+      <script>document.getElementById('exfontswitchfont').innerHTML = fontSelection</script>
       <input id="exfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this.value+'px', 'ar');" />
     </p>
@@ -54,28 +49,27 @@ onChange="setGeneralFont(document.querySelector('#exfontswitchfont').value, this
       <select  id="slfontswitchfont" 
 onchange="var params = this.value.split(':');setIndexFont(params[0], document.querySelector('#slfontswitchsize').value, 'hi');">
       </select>
-<script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
+      <script>document.getElementById('slfontswitchfont').innerHTML = fontSelection</script>
       <input id="slfontswitchsize" type="number" value="28" style="width: 30px;"
 onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.value+'px', 'ar');" />
     </p>
-<p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
+    <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
   </div>
 </aside>
-
+<div id="intro">
 <p id="status">Updated Wed 15 Oct 2014  &bull; tags <a href="http:/.net/blog/index.php?tag=tamil" title="Show all blog posts tagged with 'tamil'">tamil</a>, <a href="http:/.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
-
 <section>
-<p>This page lists characters in  Unicode's Devanagari and Devanagari Extended blocks and provides information about them.</p>
-<p>To view this page as intended, you  need a Devanagari font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
-<p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
-<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
+  <p>This page lists characters in  Unicode's Devanagari and Devanagari Extended blocks and provides information about them.</p>
+  <p>To view this page as intended, you  need a Devanagari font. Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
+  <p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
+  <p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
 </section>
+</div>
 
 <section id="charlistsection">
   <h2><a href="#characterlist" id="characterlist">Index </a></h2>
   <p>Click on a character in the table to jump to its description. Only characters with a line below have descriptive notes attached (apart from any descriptions in the Unicode database).</p>
   <p>&nbsp;</p>
-</section>
 <table id="index">
   <tbody>
     <tr>
@@ -156,14 +150,15 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
     </tr>
   </tbody>
 </table>
-
+</section>
 
 <section id="consonants">
   <h2><a href="#consonants">Consonants</a></h2>
   <div class="character" id="char0915">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0915;</div>
-    <p class="charname"><strong>U+0915</strong> <a href="/uniview/?char=0915">DEVANAGARI LETTER KA</a></p>
+    <p class="charname"><strong>U+0915</strong> <a href="#char0915">DEVANAGARI LETTER KA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0915">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">k</span> in ISO 15919</p>
       <p><span class="trans">q</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char0958"><span class="uname">U+0958 DEVANAGARI LETTER QA</span> <span lang="hi">&#x0958;</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -177,7 +172,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0916">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0916;</div>
-    <p class="charname"><strong>U+0916</strong> <a href="/uniview/?char=0916">DEVANAGARI LETTER KHA</a></p>
+    <p class="charname"><strong>U+0916</strong> <a href="#char0916">DEVANAGARI LETTER KHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0916">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">kh</span> in ISO 15919</p>
       <p><span class="trans">k͟h</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char0959"><span class="uname">U+0959 DEVANAGARI LETTER KHHA</span> <span lang="hi">ख़</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -191,7 +187,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0917">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0917;</div>
-    <p class="charname"><strong>U+0917</strong> <a href="/uniview/?char=0917">DEVANAGARI LETTER GA</a></p>
+    <p class="charname"><strong>U+0917</strong> <a href="#char0917">DEVANAGARI LETTER GA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0917">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">g</span> in ISO 15919</p>
       <p><span class="trans">ġ</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char095A"><span class="uname">U+095A DEVANAGARI LETTER GHHA</span> <span lang="hi">&#x095A;</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -205,7 +202,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0918">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0918;</div>
-    <p class="charname"><strong>U+0918</strong> <a href="/uniview/?char=0918">DEVANAGARI LETTER GHA</a></p>
+    <p class="charname"><strong>U+0918</strong> <a href="#char0918">DEVANAGARI LETTER GHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0918">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">gh</span> in ISO 15919</p>
       <div class="letter">
@@ -217,7 +215,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0919">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0919;</div>
-    <p class="charname"><strong>U+0919</strong> <a href="/uniview/?char=0919">DEVANAGARI LETTER NGA</a></p>
+    <p class="charname"><strong>U+0919</strong> <a href="#char0919">DEVANAGARI LETTER NGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0919">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ṅ</span> in ISO 15919</p>
       <div class="letter">
@@ -230,7 +229,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char091A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x091A;</div>
-    <p class="charname"><strong>U+091A</strong> <a href="/uniview/?char=091A">DEVANAGARI LETTER CA</a></p>
+    <p class="charname"><strong>U+091A</strong> <a href="#char091A">DEVANAGARI LETTER CA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char091A">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">c</span> in ISO 15919</p>
       <div class="letter">
@@ -242,7 +242,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char091B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x091B;</div>
-    <p class="charname"><strong>U+091B</strong> <a href="/uniview/?char=091B">DEVANAGARI LETTER CHA</a></p>
+    <p class="charname"><strong>U+091B</strong> <a href="#char091B">DEVANAGARI LETTER CHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char091B">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ch</span> in ISO 15919</p>
       <div class="letter">
@@ -254,7 +255,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char091C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x091C;</div>
-    <p class="charname"><strong>U+091C</strong> <a href="/uniview/?char=091C">DEVANAGARI LETTER JA</a></p>
+    <p class="charname"><strong>U+091C</strong> <a href="#char091C">DEVANAGARI LETTER JA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char091C">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">j</span> in ISO 15919</p>
       <p><span class="trans">z</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char095B"><span class="uname">U+095B DEVANAGARI LETTER ZA</span> <span lang="hi">&#x095B;</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -268,7 +270,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char091D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x091D;</div>
-    <p class="charname"><strong>U+091D</strong> <a href="/uniview/?char=091D">DEVANAGARI LETTER JHA</a></p>
+    <p class="charname"><strong>U+091D</strong> <a href="#char091D">DEVANAGARI LETTER JHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char091D">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">j</span>h in ISO 15919</p>
       <p><span class="trans">zh</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>.</p>
@@ -282,7 +285,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char091E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x091E;</div>
-    <p class="charname"><strong>U+091E</strong> <a href="/uniview/?char=091E">DEVANAGARI LETTER NYA</a></p>
+    <p class="charname"><strong>U+091E</strong> <a href="#char091E">DEVANAGARI LETTER NYA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char091E">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ñ</span> in ISO 15919</p>
       <div class="letter">
@@ -294,7 +298,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char091F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x091F;</div>
-    <p class="charname"><strong>U+091F</strong> <a href="/uniview/?char=091F">DEVANAGARI LETTER TTA</a></p>
+    <p class="charname"><strong>U+091F</strong> <a href="#char091F">DEVANAGARI LETTER TTA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char091F">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ṭ</span> in ISO 15919</p>
       <div class="letter">
@@ -306,7 +311,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0920">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0920;</div>
-    <p class="charname"><strong>U+0920</strong> <a href="/uniview/?char=0920">DEVANAGARI LETTER TTHA</a></p>
+    <p class="charname"><strong>U+0920</strong> <a href="#char0920">DEVANAGARI LETTER TTHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0920">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ṭh</span> in ISO 15919</p>
       <div class="letter">
@@ -318,7 +324,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0921">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0921;</div>
-    <p class="charname"><strong>U+0921</strong> <a href="/uniview/?char=0921">DEVANAGARI LETTER DDA</a></p>
+    <p class="charname"><strong>U+0921</strong> <a href="#char0921">DEVANAGARI LETTER DDA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0921">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ḍ</span> in ISO 15919</p>
       <p><span class="trans">ṛ</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char095C"><span class="uname">U+095C DEVANAGARI LETTER DDDHA</span> <span lang="hi">&#x095C;</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -332,7 +339,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0922">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0922;</div>
-    <p class="charname"><strong>U+0922</strong> <a href="/uniview/?char=0922">DEVANAGARI LETTER DDHA</a></p>
+    <p class="charname"><strong>U+0922</strong> <a href="#char0922">DEVANAGARI LETTER DDHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0922">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ḍh</span> in ISO 15919</p>
       <p><span class="trans">ṛh</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char095D"><span class="uname">U+095D DEVANAGARI LETTER RHA</span> <span lang="hi">&#x095D;</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -346,7 +354,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0923">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0923;</div>
-    <p class="charname"><strong>U+0923</strong> <a href="/uniview/?char=0923">DEVANAGARI LETTER NNA</a></p>
+    <p class="charname"><strong>U+0923</strong> <a href="#char0923">DEVANAGARI LETTER NNA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0923">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ṇ</span> in ISO 15919</p>
       <div class="letter">
@@ -358,7 +367,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0924">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0924;</div>
-    <p class="charname"><strong>U+0924</strong> <a href="/uniview/?char=0924">DEVANAGARI LETTER TA</a></p>
+    <p class="charname"><strong>U+0924</strong> <a href="#char0924">DEVANAGARI LETTER TA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0924">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">t</span> in ISO 15919</p>
       <div class="letter">
@@ -370,7 +380,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0925">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0925;</div>
-    <p class="charname"><strong>U+0925</strong> <a href="/uniview/?char=0925">DEVANAGARI LETTER THA</a></p>
+    <p class="charname"><strong>U+0925</strong> <a href="#char0925">DEVANAGARI LETTER THA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0925">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">th</span> in ISO 15919</p>
       <div class="letter">
@@ -382,7 +393,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0926">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0926;</div>
-    <p class="charname"><strong>U+0926</strong> <a href="/uniview/?char=0926">DEVANAGARI LETTER DA</a></p>
+    <p class="charname"><strong>U+0926</strong> <a href="#char0926">DEVANAGARI LETTER DA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0926">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">d</span> in ISO 15919</p>
       <div class="letter">
@@ -394,7 +406,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0927">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0927;</div>
-    <p class="charname"><strong>U+0927</strong> <a href="/uniview/?char=0927">DEVANAGARI LETTER DHA</a></p>
+    <p class="charname"><strong>U+0927</strong> <a href="#char0927">DEVANAGARI LETTER DHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0927">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">dh</span> in ISO 15919</p>
       <div class="letter">
@@ -406,7 +419,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0928">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0928;</div>
-    <p class="charname"><strong>U+0928</strong> <a href="/uniview/?char=0928">DEVANAGARI LETTER NA</a></p>
+    <p class="charname"><strong>U+0928</strong> <a href="#char0928">DEVANAGARI LETTER NA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0928">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">n</span> in ISO 15919</p>
       <p><span class="trans">ṉ</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>, however for that you should use the precomposed character <a href="#char0929"><span class="uname">U+0929 DEVANAGARI LETTER NNNA</span> <span lang="hi">&#x0929;</span></a>.</p>
@@ -419,7 +433,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0929">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0929;</div>
-    <p class="charname"><strong>U+0929</strong> <a href="/uniview/?char=0929">DEVANAGARI LETTER NNNA</a></p>
+    <p class="charname"><strong>U+0929</strong> <a href="#char0929">DEVANAGARI LETTER NNNA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0929">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• for transcribing Dravidian alveolar n<br/>
       ≡ 0928 093C</div>
@@ -430,7 +445,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char092A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x092A;</div>
-    <p class="charname"><strong>U+092A</strong> <a href="/uniview/?char=092A">DEVANAGARI LETTER PA</a></p>
+    <p class="charname"><strong>U+092A</strong> <a href="#char092A">DEVANAGARI LETTER PA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char092A">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">p</span> in ISO 15919</p>
       <div class="letter">
@@ -442,7 +458,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char092B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x092B;</div>
-    <p class="charname"><strong>U+092B</strong> <a href="/uniview/?char=092B">DEVANAGARI LETTER PHA</a></p>
+    <p class="charname"><strong>U+092B</strong> <a href="#char092B">DEVANAGARI LETTER PHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char092B">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">pʰ</span> in ISO 15919</p>
       <p><span class="trans">f</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char095E"><span class="uname">U+095E DEVANAGARI LETTER FA</span> <span lang="hi">&#x095E;</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -456,7 +473,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char092C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x092C;</div>
-    <p class="charname"><strong>U+092C</strong> <a href="/uniview/?char=092C">DEVANAGARI LETTER BA</a></p>
+    <p class="charname"><strong>U+092C</strong> <a href="#char092C">DEVANAGARI LETTER BA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char092C">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">b</span> in ISO 15919</p>
       <div class="letter">
@@ -468,7 +486,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char092D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x092D;</div>
-    <p class="charname"><strong>U+092D</strong> <a href="/uniview/?char=092D">DEVANAGARI LETTER BHA</a></p>
+    <p class="charname"><strong>U+092D</strong> <a href="#char092D">DEVANAGARI LETTER BHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char092D">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">bʰ</span> in ISO 15919</p>
       <div class="letter">
@@ -480,7 +499,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char092E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x092E;</div>
-    <p class="charname"><strong>U+092E</strong> <a href="/uniview/?char=092E">DEVANAGARI LETTER MA</a></p>
+    <p class="charname"><strong>U+092E</strong> <a href="#char092E">DEVANAGARI LETTER MA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char092E">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">m</span> in ISO 15919</p>
       <div class="letter">
@@ -492,7 +512,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char092F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x092F;</div>
-    <p class="charname"><strong>U+092F</strong> <a href="/uniview/?char=092F">DEVANAGARI LETTER YA</a></p>
+    <p class="charname"><strong>U+092F</strong> <a href="#char092F">DEVANAGARI LETTER YA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char092F">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">y</span> in ISO 15919</p>
       <p><span class="trans">ẏ</span> when followed by <a href="#char093C"><span class="uname">U+093C DEVANAGARI SIGN NUKTA</span> <span lang="hi">&#x093C;</span></a>. (Do not use the precomposed <a href="#char095F"><span class="uname">U+095F DEVANAGARI LETTER YYA</span> <span lang="hi">&#x095F;</span></a>,  since  normalization form NFC uses the decomposed sequence.)</p>
@@ -506,7 +527,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0930">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0930;</div>
-    <p class="charname"><strong>U+0930</strong> <a href="/uniview/?char=0930">DEVANAGARI LETTER RA</a></p>
+    <p class="charname"><strong>U+0930</strong> <a href="#char0930">DEVANAGARI LETTER RA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0930">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">r</span> in ISO 15919</p>
       <div class="letter">
@@ -526,7 +548,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0931">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0931;</div>
-    <p class="charname"><strong>U+0931</strong> <a href="/uniview/?char=0931">DEVANAGARI LETTER RRA</a></p>
+    <p class="charname"><strong>U+0931</strong> <a href="#char0931">DEVANAGARI LETTER RRA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0931">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• for transcribing Dravidian alveolar r<br/>
       • half form is represented as 'Eyelash RA'<br/>
@@ -541,7 +564,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0932">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0932;</div>
-    <p class="charname"><strong>U+0932</strong> <a href="/uniview/?char=0932">DEVANAGARI LETTER LA</a></p>
+    <p class="charname"><strong>U+0932</strong> <a href="#char0932">DEVANAGARI LETTER LA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0932">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">l</span> in ISO 15919</p>
       <div class="letter">
@@ -553,7 +577,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0933">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0933;</div>
-    <p class="charname"><strong>U+0933</strong> <a href="/uniview/?char=0933">DEVANAGARI LETTER LLA</a></p>
+    <p class="charname"><strong>U+0933</strong> <a href="#char0933">DEVANAGARI LETTER LLA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0933">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ḷ</span> in ISO 15919</p>
       <div class="letter">
@@ -564,7 +589,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0934">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0934;</div>
-    <p class="charname"><strong>U+0934</strong> <a href="/uniview/?char=0934">DEVANAGARI LETTER LLLA</a></p>
+    <p class="charname"><strong>U+0934</strong> <a href="#char0934">DEVANAGARI LETTER LLLA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0934">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• for transcribing Dravidian l<br/>
       ≡ 0933 093C</div>
@@ -576,7 +602,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0935">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0935;</div>
-    <p class="charname"><strong>U+0935</strong> <a href="/uniview/?char=0935">DEVANAGARI LETTER VA</a></p>
+    <p class="charname"><strong>U+0935</strong> <a href="#char0935">DEVANAGARI LETTER VA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0935">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">v</span> in ISO 15919</p>
       <div class="letter">
@@ -588,7 +615,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0936">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0936;</div>
-    <p class="charname"><strong>U+0936</strong> <a href="/uniview/?char=0936">DEVANAGARI LETTER SHA</a></p>
+    <p class="charname"><strong>U+0936</strong> <a href="#char0936">DEVANAGARI LETTER SHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0936">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ś</span> in ISO 15919</p>
       <div class="letter">
@@ -600,7 +628,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0937">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0937;</div>
-    <p class="charname"><strong>U+0937</strong> <a href="/uniview/?char=0937">DEVANAGARI LETTER SSA</a></p>
+    <p class="charname"><strong>U+0937</strong> <a href="#char0937">DEVANAGARI LETTER SSA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0937">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ṣ</span> in ISO 15919</p>
       <div class="letter">
@@ -612,7 +641,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0938">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0938;</div>
-    <p class="charname"><strong>U+0938</strong> <a href="/uniview/?char=0938">DEVANAGARI LETTER SA</a></p>
+    <p class="charname"><strong>U+0938</strong> <a href="#char0938">DEVANAGARI LETTER SA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0938">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">s</span> in ISO 15919</p>
       <div class="letter">
@@ -624,7 +654,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0939">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0939;</div>
-    <p class="charname"><strong>U+0939</strong> <a href="/uniview/?char=0939">DEVANAGARI LETTER HA</a></p>
+    <p class="charname"><strong>U+0939</strong> <a href="#char0939">DEVANAGARI LETTER HA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0939">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">h</span> in ISO 15919</p>
       <div class="letter">
@@ -639,7 +670,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0958">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0958;</div>
-    <p class="charname"><strong>U+0958</strong> <a href="/uniview/?char=0958">DEVANAGARI LETTER QA</a></p>
+    <p class="charname"><strong>U+0958</strong> <a href="#char0958">DEVANAGARI LETTER QA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0958">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 0915 093C</div>
     <div class="notes">
@@ -654,7 +686,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0959">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0959;</div>
-    <p class="charname"><strong>U+0959</strong> <a href="/uniview/?char=0959">DEVANAGARI LETTER KHHA</a></p>
+    <p class="charname"><strong>U+0959</strong> <a href="#char0959">DEVANAGARI LETTER KHHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0959">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 0916 093C</div>
     <div class="notes">
@@ -669,7 +702,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char095A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x095A;</div>
-    <p class="charname"><strong>U+095A</strong> <a href="/uniview/?char=095A">DEVANAGARI LETTER GHHA</a></p>
+    <p class="charname"><strong>U+095A</strong> <a href="#char095A">DEVANAGARI LETTER GHHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char095A">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 0917 093C</div>
     <div class="notes">
@@ -684,7 +718,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char095B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x095B;</div>
-    <p class="charname"><strong>U+095B</strong> <a href="/uniview/?char=095B">DEVANAGARI LETTER ZA</a></p>
+    <p class="charname"><strong>U+095B</strong> <a href="#char095B">DEVANAGARI LETTER ZA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char095B">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 091C 093C</div>
     <div class="notes">
@@ -699,7 +734,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char095C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x095C;</div>
-    <p class="charname"><strong>U+095C</strong> <a href="/uniview/?char=095C">DEVANAGARI LETTER DDDHA</a></p>
+    <p class="charname"><strong>U+095C</strong> <a href="#char095C">DEVANAGARI LETTER DDDHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char095C">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 0921 093C</div>
     <div class="notes">
@@ -714,7 +750,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char095D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x095D;</div>
-    <p class="charname"><strong>U+095D</strong> <a href="/uniview/?char=095D">DEVANAGARI LETTER RHA</a></p>
+    <p class="charname"><strong>U+095D</strong> <a href="#char095D">DEVANAGARI LETTER RHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char095D">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 0922 093C</div>
     <div class="notes">
@@ -729,7 +766,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char095E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x095E;</div>
-    <p class="charname"><strong>U+095E</strong> <a href="/uniview/?char=095E">DEVANAGARI LETTER FA</a></p>
+    <p class="charname"><strong>U+095E</strong> <a href="#char095E">DEVANAGARI LETTER FA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char095E">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 092B 093C</div>
     <div class="notes">
@@ -744,7 +782,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char095F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x095F;</div>
-    <p class="charname"><strong>U+095F</strong> <a href="/uniview/?char=095F">DEVANAGARI LETTER YYA</a></p>
+    <p class="charname"><strong>U+095F</strong> <a href="#char095F">DEVANAGARI LETTER YYA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char095F">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≡ 092F 093C</div>
     <div class="notes">
@@ -761,7 +800,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char097B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x097B;</div>
-    <p class="charname"><strong>U+097B</strong> <a href="/uniview/?char=097B">DEVANAGARI LETTER GGA</a></p>
+    <p class="charname"><strong>U+097B</strong> <a href="#char097B">DEVANAGARI LETTER GGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char097B">See in UniView</a></p>
     <div class="notes">
       <div class="letter">
         <p><span class="title">Sindhi, Saraiki</span> implosive consonant</p>
@@ -773,7 +813,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char097C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x097C;</div>
-    <p class="charname"><strong>U+097C</strong> <a href="/uniview/?char=097C">DEVANAGARI LETTER JJA</a></p>
+    <p class="charname"><strong>U+097C</strong> <a href="#char097C">DEVANAGARI LETTER JJA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char097C">See in UniView</a></p>
     <div class="notes">
       <div class="letter">
         <p><span class="title">Sindhi, Saraiki</span> implosive consonant</p>
@@ -785,7 +826,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char097E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x097E;</div>
-    <p class="charname"><strong>U+097E</strong> <a href="/uniview/?char=097E">DEVANAGARI LETTER DDDA</a></p>
+    <p class="charname"><strong>U+097E</strong> <a href="#char097E">DEVANAGARI LETTER DDDA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char097E">See in UniView</a></p>
     <div class="notes">
       <div class="letter">
         <p><span class="title">Sindhi, Saraiki</span> implosive consonant</p>
@@ -797,7 +839,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char097F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x097F;</div>
-    <p class="charname"><strong>U+097F</strong> <a href="/uniview/?char=097F">DEVANAGARI LETTER BBA</a></p>
+    <p class="charname"><strong>U+097F</strong> <a href="#char097F">DEVANAGARI LETTER BBA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char097F">See in UniView</a></p>
     <div class="notes">
       <div class="letter">
         <p><span class="title">Sindhi, Saraiki</span> implosive consonant</p>
@@ -812,7 +855,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char097D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x097D;</div>
-    <p class="charname"><strong>U+097D</strong> <a href="/uniview/?char=097D">DEVANAGARI LETTER GLOTTAL STOP</a></p>
+    <p class="charname"><strong>U+097D</strong> <a href="#char097D">DEVANAGARI LETTER GLOTTAL STOP</a></p>
+    <p class="univiewLink"><a href="/uniview/?char097D">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• used for writing Limbu in Devanagari<br/>
       • a glyph variant has the connecting top bar</div>
@@ -823,12 +867,14 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0904">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0904;</div>
-    <p class="charname"><strong>U+0904</strong> <a href="/uniview/?char=0904">DEVANAGARI LETTER SHORT A</a></p>
+    <p class="charname"><strong>U+0904</strong> <a href="#char0904">DEVANAGARI LETTER SHORT A</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0904">See in UniView</a></p>
   </div>
   <div class="character" id="char0905">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0905;</div>
-    <p class="charname"><strong>U+0905</strong> <a href="/uniview/?char=0905">DEVANAGARI LETTER A</a></p>
+    <p class="charname"><strong>U+0905</strong> <a href="#char0905">DEVANAGARI LETTER A</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0905">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">a</span> in ISO 15919</p>
       <div class="letter">
@@ -841,7 +887,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0906">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0906;</div>
-    <p class="charname"><strong>U+0906</strong> <a href="/uniview/?char=0906">DEVANAGARI LETTER AA</a></p>
+    <p class="charname"><strong>U+0906</strong> <a href="#char0906">DEVANAGARI LETTER AA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0906">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ā</span> in ISO 15919</p>
       <div class="letter">
@@ -854,7 +901,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0907">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0907;</div>
-    <p class="charname"><strong>U+0907</strong> <a href="/uniview/?char=0907">DEVANAGARI LETTER I</a></p>
+    <p class="charname"><strong>U+0907</strong> <a href="#char0907">DEVANAGARI LETTER I</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0907">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">i</span> in ISO 15919</p>
       <div class="letter">
@@ -867,7 +915,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0908">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0908;</div>
-    <p class="charname"><strong>U+0908</strong> <a href="/uniview/?char=0908">DEVANAGARI LETTER II</a></p>
+    <p class="charname"><strong>U+0908</strong> <a href="#char0908">DEVANAGARI LETTER II</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0908">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ī</span> in ISO 15919</p>
       <div class="letter">
@@ -880,7 +929,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0909">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0909;</div>
-    <p class="charname"><strong>U+0909</strong> <a href="/uniview/?char=0909">DEVANAGARI LETTER U</a></p>
+    <p class="charname"><strong>U+0909</strong> <a href="#char0909">DEVANAGARI LETTER U</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0909">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">u</span> in ISO 15919</p>
       <div class="letter">
@@ -893,7 +943,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char090A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x090A;</div>
-    <p class="charname"><strong>U+090A</strong> <a href="/uniview/?char=090A">DEVANAGARI LETTER UU</a></p>
+    <p class="charname"><strong>U+090A</strong> <a href="#char090A">DEVANAGARI LETTER UU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char090A">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ū</span> in ISO 15919</p>
       <div class="letter">
@@ -906,7 +957,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char090B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x090B;</div>
-    <p class="charname"><strong>U+090B</strong> <a href="/uniview/?char=090B">DEVANAGARI LETTER VOCALIC R</a></p>
+    <p class="charname"><strong>U+090B</strong> <a href="#char090B">DEVANAGARI LETTER VOCALIC R</a></p>
+    <p class="univiewLink"><a href="/uniview/?char090B">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">r̥</span> in ISO 15919 (IAST <span class="trans">ṛ</span>)</p>
       <div class="letter">
@@ -919,7 +971,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char090C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x090C;</div>
-    <p class="charname"><strong>U+090C</strong> <a href="/uniview/?char=090C">DEVANAGARI LETTER VOCALIC L</a></p>
+    <p class="charname"><strong>U+090C</strong> <a href="#char090C">DEVANAGARI LETTER VOCALIC L</a></p>
+    <p class="univiewLink"><a href="/uniview/?char090C">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">l̥</span> in ISO 15919 (IAST <span class="trans">ḷ</span>)</p>
       <div class="letter">
@@ -931,7 +984,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char090D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x090D;</div>
-    <p class="charname"><strong>U+090D</strong> <a href="/uniview/?char=090D">DEVANAGARI LETTER CANDRA E</a></p>
+    <p class="charname"><strong>U+090D</strong> <a href="#char090D">DEVANAGARI LETTER CANDRA E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char090D">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ê</span> in ISO 15919</p>
       <div class="letter">
@@ -943,7 +997,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char090E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x090E;</div>
-    <p class="charname"><strong>U+090E</strong> <a href="/uniview/?char=090E">DEVANAGARI LETTER SHORT E</a></p>
+    <p class="charname"><strong>U+090E</strong> <a href="#char090E">DEVANAGARI LETTER SHORT E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char090E">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• Kashmiri, Bihari languages<br/>
       • also used for transcribing Dravidian short e</div>
@@ -958,7 +1013,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char090F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x090F;</div>
-    <p class="charname"><strong>U+090F</strong> <a href="/uniview/?char=090F">DEVANAGARI LETTER E</a></p>
+    <p class="charname"><strong>U+090F</strong> <a href="#char090F">DEVANAGARI LETTER E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char090F">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ē</span> in ISO 15919 (IAST <span class="trans">e</span>)</p>
       <div class="letter">
@@ -970,7 +1026,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0910">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0910;</div>
-    <p class="charname"><strong>U+0910</strong> <a href="/uniview/?char=0910">DEVANAGARI LETTER AI</a></p>
+    <p class="charname"><strong>U+0910</strong> <a href="#char0910">DEVANAGARI LETTER AI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0910">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ai</span> in ISO 15919</p>
       <div class="letter">
@@ -982,7 +1039,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0911">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0911;</div>
-    <p class="charname"><strong>U+0911</strong> <a href="/uniview/?char=0911">DEVANAGARI LETTER CANDRA O</a></p>
+    <p class="charname"><strong>U+0911</strong> <a href="#char0911">DEVANAGARI LETTER CANDRA O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0911">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ô</span> in ISO 15919</p>
       <div class="letter">
@@ -994,7 +1052,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0912">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0912;</div>
-    <p class="charname"><strong>U+0912</strong> <a href="/uniview/?char=0912">DEVANAGARI LETTER SHORT O</a></p>
+    <p class="charname"><strong>U+0912</strong> <a href="#char0912">DEVANAGARI LETTER SHORT O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0912">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• Kashmiri, Bihari languages<br/>
       • also used for transcribing Dravidian short o</div>
@@ -1009,7 +1068,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0913">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0913;</div>
-    <p class="charname"><strong>U+0913</strong> <a href="/uniview/?char=0913">DEVANAGARI LETTER O</a></p>
+    <p class="charname"><strong>U+0913</strong> <a href="#char0913">DEVANAGARI LETTER O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0913">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ō</span> in ISO 15919</p>
       <div class="letter">
@@ -1021,7 +1081,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0914">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0914;</div>
-    <p class="charname"><strong>U+0914</strong> <a href="/uniview/?char=0914">DEVANAGARI LETTER AU</a></p>
+    <p class="charname"><strong>U+0914</strong> <a href="#char0914">DEVANAGARI LETTER AU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0914">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">au</span> in ISO 15919</p>
       <div class="letter">
@@ -1036,27 +1097,32 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0973">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0973;</div>
-    <p class="charname"><strong>U+0973</strong> <a href="/uniview/?char=0973">DEVANAGARI LETTER OE</a></p>
+    <p class="charname"><strong>U+0973</strong> <a href="#char0973">DEVANAGARI LETTER OE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0973">See in UniView</a></p>
   </div>
   <div class="character" id="char0974">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0974;</div>
-    <p class="charname"><strong>U+0974</strong> <a href="/uniview/?char=0974">DEVANAGARI LETTER OOE</a></p>
+    <p class="charname"><strong>U+0974</strong> <a href="#char0974">DEVANAGARI LETTER OOE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0974">See in UniView</a></p>
   </div>
   <div class="character" id="char0975">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0975;</div>
-    <p class="charname"><strong>U+0975</strong> <a href="/uniview/?char=0975">DEVANAGARI LETTER AW</a></p>
+    <p class="charname"><strong>U+0975</strong> <a href="#char0975">DEVANAGARI LETTER AW</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0975">See in UniView</a></p>
   </div>
   <div class="character" id="char0976">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0976;</div>
-    <p class="charname"><strong>U+0976</strong> <a href="/uniview/?char=0976">DEVANAGARI LETTER UE</a></p>
+    <p class="charname"><strong>U+0976</strong> <a href="#char0976">DEVANAGARI LETTER UE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0976">See in UniView</a></p>
   </div>
   <div class="character" id="char0977">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0977;</div>
-    <p class="charname"><strong>U+0977</strong> <a href="/uniview/?char=0977">DEVANAGARI LETTER UUE</a></p>
+    <p class="charname"><strong>U+0977</strong> <a href="#char0977">DEVANAGARI LETTER UUE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0977">See in UniView</a></p>
   </div>
 </section>
 <section id="marathiiv">
@@ -1064,7 +1130,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0972">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0972;</div>
-    <p class="charname"><strong>U+0972</strong> <a href="/uniview/?char=0972">DEVANAGARI LETTER CANDRA A</a></p>
+    <p class="charname"><strong>U+0972</strong> <a href="#char0972">DEVANAGARI LETTER CANDRA A</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0972">See in UniView</a></p>
   </div>
 </section>
 <section id="depvowelsigns">
@@ -1072,7 +1139,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char093E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x093E;</div>
-    <p class="charname"><strong>U+093E</strong> <a href="/uniview/?char=093E">DEVANAGARI VOWEL SIGN AA</a></p>
+    <p class="charname"><strong>U+093E</strong> <a href="#char093E">DEVANAGARI VOWEL SIGN AA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char093E">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ā</span> in ISO 15919</p>
       <div class="letter">
@@ -1085,7 +1153,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char093F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x093F;</div>
-    <p class="charname"><strong>U+093F</strong> <a href="/uniview/?char=093F">DEVANAGARI VOWEL SIGN I</a></p>
+    <p class="charname"><strong>U+093F</strong> <a href="#char093F">DEVANAGARI VOWEL SIGN I</a></p>
+    <p class="univiewLink"><a href="/uniview/?char093F">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• stands to the left of the consonant</div>
     <div class="notes">
@@ -1100,7 +1169,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0940">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0940;</div>
-    <p class="charname"><strong>U+0940</strong> <a href="/uniview/?char=0940">DEVANAGARI VOWEL SIGN II</a></p>
+    <p class="charname"><strong>U+0940</strong> <a href="#char0940">DEVANAGARI VOWEL SIGN II</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0940">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ī</span> in ISO 15919</p>
       <div class="letter">
@@ -1113,7 +1183,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0941">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0941;</div>
-    <p class="charname"><strong>U+0941</strong> <a href="/uniview/?char=0941">DEVANAGARI VOWEL SIGN U</a></p>
+    <p class="charname"><strong>U+0941</strong> <a href="#char0941">DEVANAGARI VOWEL SIGN U</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0941">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">u</span> in ISO 15919</p>
       <div class="letter">
@@ -1126,7 +1197,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0942">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0942;</div>
-    <p class="charname"><strong>U+0942</strong> <a href="/uniview/?char=0942">DEVANAGARI VOWEL SIGN UU</a></p>
+    <p class="charname"><strong>U+0942</strong> <a href="#char0942">DEVANAGARI VOWEL SIGN UU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0942">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ū</span> in ISO 15919</p>
       <div class="letter">
@@ -1139,7 +1211,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0943">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0943;</div>
-    <p class="charname"><strong>U+0943</strong> <a href="/uniview/?char=0943">DEVANAGARI VOWEL SIGN VOCALIC R</a></p>
+    <p class="charname"><strong>U+0943</strong> <a href="#char0943">DEVANAGARI VOWEL SIGN VOCALIC R</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0943">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">r̥</span> in ISO 15919 (IAST <span class="trans">ṛ</span>)</p>
       <div class="letter">
@@ -1152,7 +1225,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0944">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0944;</div>
-    <p class="charname"><strong>U+0944</strong> <a href="/uniview/?char=0944">DEVANAGARI VOWEL SIGN VOCALIC RR</a></p>
+    <p class="charname"><strong>U+0944</strong> <a href="#char0944">DEVANAGARI VOWEL SIGN VOCALIC RR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0944">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">l̥</span> in ISO 15919 (IAST <span class="trans">ḷ</span>)</p>
       <div class="letter">
@@ -1164,7 +1238,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0945">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0945;</div>
-    <p class="charname"><strong>U+0945</strong> <a href="/uniview/?char=0945">DEVANAGARI VOWEL SIGN CANDRA E</a></p>
+    <p class="charname"><strong>U+0945</strong> <a href="#char0945">DEVANAGARI VOWEL SIGN CANDRA E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0945">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= candra</div>
     <div class="notes">
@@ -1178,7 +1253,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0946">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0946;</div>
-    <p class="charname"><strong>U+0946</strong> <a href="/uniview/?char=0946">DEVANAGARI VOWEL SIGN SHORT E</a></p>
+    <p class="charname"><strong>U+0946</strong> <a href="#char0946">DEVANAGARI VOWEL SIGN SHORT E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0946">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• Kashmiri, Bihari languages<br/>
       • also used for transcribing Dravidian short e</div>
@@ -1193,7 +1269,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0947">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0947;</div>
-    <p class="charname"><strong>U+0947</strong> <a href="/uniview/?char=0947">DEVANAGARI VOWEL SIGN E</a></p>
+    <p class="charname"><strong>U+0947</strong> <a href="#char0947">DEVANAGARI VOWEL SIGN E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0947">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ē</span> in ISO 15919 (IAST <span class="trans">e</span>)</p>
       <div class="letter">
@@ -1205,7 +1282,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0948">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0948;</div>
-    <p class="charname"><strong>U+0948</strong> <a href="/uniview/?char=0948">DEVANAGARI VOWEL SIGN AI</a></p>
+    <p class="charname"><strong>U+0948</strong> <a href="#char0948">DEVANAGARI VOWEL SIGN AI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0948">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ai</span> in ISO 15919</p>
       <div class="letter">
@@ -1217,7 +1295,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0949">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0949;</div>
-    <p class="charname"><strong>U+0949</strong> <a href="/uniview/?char=0949">DEVANAGARI VOWEL SIGN CANDRA O</a></p>
+    <p class="charname"><strong>U+0949</strong> <a href="#char0949">DEVANAGARI VOWEL SIGN CANDRA O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0949">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ô</span> in ISO 15919</p>
       <div class="letter">
@@ -1229,7 +1308,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char094A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x094A;</div>
-    <p class="charname"><strong>U+094A</strong> <a href="/uniview/?char=094A">DEVANAGARI VOWEL SIGN SHORT O</a></p>
+    <p class="charname"><strong>U+094A</strong> <a href="#char094A">DEVANAGARI VOWEL SIGN SHORT O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char094A">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• Kashmiri, Bihari languages<br/>
       • also used for transcribing Dravidian short o</div>
@@ -1244,7 +1324,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char094B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x094B;</div>
-    <p class="charname"><strong>U+094B</strong> <a href="/uniview/?char=094B">DEVANAGARI VOWEL SIGN O</a></p>
+    <p class="charname"><strong>U+094B</strong> <a href="#char094B">DEVANAGARI VOWEL SIGN O</a></p>
+    <p class="univiewLink"><a href="/uniview/?char094B">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ō</span> in ISO 15919</p>
       <div class="letter">
@@ -1256,7 +1337,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char094C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x094C;</div>
-    <p class="charname"><strong>U+094C</strong> <a href="/uniview/?char=094C">DEVANAGARI VOWEL SIGN AU</a></p>
+    <p class="charname"><strong>U+094C</strong> <a href="#char094C">DEVANAGARI VOWEL SIGN AU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char094C">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">au</span> in ISO 15919</p>
       <div class="letter">
@@ -1268,7 +1350,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char094E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x094E;</div>
-    <p class="charname"><strong>U+094E</strong> <a href="/uniview/?char=094E">DEVANAGARI VOWEL SIGN PRISHTHAMATRA E</a></p>
+    <p class="charname"><strong>U+094E</strong> <a href="#char094E">DEVANAGARI VOWEL SIGN PRISHTHAMATRA E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char094E">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• character has historic use only<br/>
       • combines with E to form AI, with AA to form O, and with O to form AU</div>
@@ -1276,14 +1359,16 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char094F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x094F;</div>
-    <p class="charname"><strong>U+094F</strong> <a href="/uniview/?char=094F">DEVANAGARI VOWEL SIGN AW</a></p>
+    <p class="charname"><strong>U+094F</strong> <a href="#char094F">DEVANAGARI VOWEL SIGN AW</a></p>
+    <p class="univiewLink"><a href="/uniview/?char094F">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• Kashmiri, Bihari languages</div>
   </div>
   <div class="character" id="char0955">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0955;</div>
-    <p class="charname"><strong>U+0955</strong> <a href="/uniview/?char=0955">DEVANAGARI VOWEL SIGN CANDRA LONG E</a></p>
+    <p class="charname"><strong>U+0955</strong> <a href="#char0955">DEVANAGARI VOWEL SIGN CANDRA LONG E</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0955">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• used in transliteration of Avestan</div>
   </div>
@@ -1293,22 +1378,26 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char093A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x093A;</div>
-    <p class="charname"><strong>U+093A</strong> <a href="/uniview/?char=093A">DEVANAGARI VOWEL SIGN OE</a></p>
+    <p class="charname"><strong>U+093A</strong> <a href="#char093A">DEVANAGARI VOWEL SIGN OE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char093A">See in UniView</a></p>
   </div>
   <div class="character" id="char093B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x093B;</div>
-    <p class="charname"><strong>U+093B</strong> <a href="/uniview/?char=093B">DEVANAGARI VOWEL SIGN OOE</a></p>
+    <p class="charname"><strong>U+093B</strong> <a href="#char093B">DEVANAGARI VOWEL SIGN OOE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char093B">See in UniView</a></p>
   </div>
   <div class="character" id="char0956">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0956;</div>
-    <p class="charname"><strong>U+0956</strong> <a href="/uniview/?char=0956">DEVANAGARI VOWEL SIGN UE</a></p>
+    <p class="charname"><strong>U+0956</strong> <a href="#char0956">DEVANAGARI VOWEL SIGN UE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0956">See in UniView</a></p>
   </div>
   <div class="character" id="char0957">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0957;</div>
-    <p class="charname"><strong>U+0957</strong> <a href="/uniview/?char=0957">DEVANAGARI VOWEL SIGN UUE</a></p>
+    <p class="charname"><strong>U+0957</strong> <a href="#char0957">DEVANAGARI VOWEL SIGN UUE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0957">See in UniView</a></p>
   </div>
 </section>
 <section id="sanskritvowel">
@@ -1316,7 +1405,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0960">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0960;</div>
-    <p class="charname"><strong>U+0960</strong> <a href="/uniview/?char=0960">DEVANAGARI LETTER VOCALIC RR</a></p>
+    <p class="charname"><strong>U+0960</strong> <a href="#char0960">DEVANAGARI LETTER VOCALIC RR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0960">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">r̥̄</span> in ISO 15919 (IAST <span class="trans">ṝ</span>)</p>
       <div class="letter">
@@ -1329,17 +1419,20 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0961">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0961;</div>
-    <p class="charname"><strong>U+0961</strong> <a href="/uniview/?char=0961">DEVANAGARI LETTER VOCALIC LL</a></p>
+    <p class="charname"><strong>U+0961</strong> <a href="#char0961">DEVANAGARI LETTER VOCALIC LL</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0961">See in UniView</a></p>
   </div>
   <div class="character" id="char0962">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0962;</div>
-    <p class="charname"><strong>U+0962</strong> <a href="/uniview/?char=0962">DEVANAGARI VOWEL SIGN VOCALIC L</a></p>
+    <p class="charname"><strong>U+0962</strong> <a href="#char0962">DEVANAGARI VOWEL SIGN VOCALIC L</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0962">See in UniView</a></p>
   </div>
   <div class="character" id="char0963">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0963;</div>
-    <p class="charname"><strong>U+0963</strong> <a href="/uniview/?char=0963">DEVANAGARI VOWEL SIGN VOCALIC LL</a></p>
+    <p class="charname"><strong>U+0963</strong> <a href="#char0963">DEVANAGARI VOWEL SIGN VOCALIC LL</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0963">See in UniView</a></p>
   </div>
 </section>
 <section id="virama">
@@ -1347,7 +1440,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char094D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x094D;</div>
-    <p class="charname"><strong>U+094D</strong> <a href="/uniview/?char=094D">DEVANAGARI SIGN VIRAMA</a></p>
+    <p class="charname"><strong>U+094D</strong> <a href="#char094D">DEVANAGARI SIGN VIRAMA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char094D">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= halant (the preferred Hindi name)<br/>
       • suppresses inherent vowel</div>
@@ -1358,7 +1452,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0951">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0951;</div>
-    <p class="charname"><strong>U+0951</strong> <a href="/uniview/?char=0951">DEVANAGARI STRESS SIGN UDATTA</a></p>
+    <p class="charname"><strong>U+0951</strong> <a href="#char0951">DEVANAGARI STRESS SIGN UDATTA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0951">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= Vedic tone svarita<br/>
       • mostly used for svarita, with rare use for udatta<br/>
@@ -1368,7 +1463,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0952">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0952;</div>
-    <p class="charname"><strong>U+0952</strong> <a href="/uniview/?char=0952">DEVANAGARI STRESS SIGN ANUDATTA</a></p>
+    <p class="charname"><strong>U+0952</strong> <a href="#char0952">DEVANAGARI STRESS SIGN ANUDATTA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0952">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= Vedic tone anudatta<br/>
       • used also in Vedic texts written in other scripts<br/>
@@ -1380,14 +1476,16 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0953">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0953;</div>
-    <p class="charname"><strong>U+0953</strong> <a href="/uniview/?char=0953">DEVANAGARI GRAVE ACCENT</a></p>
+    <p class="charname"><strong>U+0953</strong> <a href="#char0953">DEVANAGARI GRAVE ACCENT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0953">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">→ (combining grave accent - 0300)</div>
   </div>
   <div class="character" id="char0954">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0954;</div>
-    <p class="charname"><strong>U+0954</strong> <a href="/uniview/?char=0954">DEVANAGARI ACUTE ACCENT</a></p>
+    <p class="charname"><strong>U+0954</strong> <a href="#char0954">DEVANAGARI ACUTE ACCENT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0954">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">→ (combining acute accent - 0301)</div>
   </div>
@@ -1397,14 +1495,16 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0900">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0900;</div>
-    <p class="charname"><strong>U+0900</strong> <a href="/uniview/?char=0900">DEVANAGARI SIGN INVERTED CANDRABINDU</a></p>
+    <p class="charname"><strong>U+0900</strong> <a href="#char0900">DEVANAGARI SIGN INVERTED CANDRABINDU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0900">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika adhomukha candrabindu</div>
   </div>
   <div class="character" id="char0901">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0901;</div>
-    <p class="charname"><strong>U+0901</strong> <a href="/uniview/?char=0901">DEVANAGARI SIGN CANDRABINDU</a></p>
+    <p class="charname"><strong>U+0901</strong> <a href="#char0901">DEVANAGARI SIGN CANDRABINDU</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0901">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= anunasika<br/>
       → (combining candrabindu - 0310)</div>
@@ -1412,7 +1512,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0902">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0902;</div>
-    <p class="charname"><strong>U+0902</strong> <a href="/uniview/?char=0902">DEVANAGARI SIGN ANUSVARA</a></p>
+    <p class="charname"><strong>U+0902</strong> <a href="#char0902">DEVANAGARI SIGN ANUSVARA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0902">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= bindu</div>
     <div class="notes">
@@ -1428,7 +1529,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0903">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0903;</div>
-    <p class="charname"><strong>U+0903</strong> <a href="/uniview/?char=0903">DEVANAGARI SIGN VISARGA</a></p>
+    <p class="charname"><strong>U+0903</strong> <a href="#char0903">DEVANAGARI SIGN VISARGA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0903">See in UniView</a></p>
     <div class="notes">
       <p><span class="trans">ḥ</span> in ISO 15919</p>
       <div class="letter">
@@ -1440,7 +1542,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char093C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x093C;</div>
-    <p class="charname"><strong>U+093C</strong> <a href="/uniview/?char=093C">DEVANAGARI SIGN NUKTA</a></p>
+    <p class="charname"><strong>U+093C</strong> <a href="#char093C">DEVANAGARI SIGN NUKTA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char093C">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• for extending the alphabet to new letters</div>
     <div class="notes">
@@ -1453,7 +1556,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char093D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x093D;</div>
-    <p class="charname"><strong>U+093D</strong> <a href="/uniview/?char=093D">DEVANAGARI SIGN AVAGRAHA</a></p>
+    <p class="charname"><strong>U+093D</strong> <a href="#char093D">DEVANAGARI SIGN AVAGRAHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char093D">See in UniView</a></p>
     <div class="notes">
       <div class="letter">
         <p><span class="title">Hindi</span> sign <span class="trans">'</span>.</p>
@@ -1463,21 +1567,24 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0950">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0950;</div>
-    <p class="charname"><strong>U+0950</strong> <a href="/uniview/?char=0950">DEVANAGARI OM</a></p>
+    <p class="charname"><strong>U+0950</strong> <a href="#char0950">DEVANAGARI OM</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0950">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">→ (om symbol - 1F549)</div>
   </div>
   <div class="character" id="char0970">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0970;</div>
-    <p class="charname"><strong>U+0970</strong> <a href="/uniview/?char=0970">DEVANAGARI ABBREVIATION SIGN</a></p>
+    <p class="charname"><strong>U+0970</strong> <a href="#char0970">DEVANAGARI ABBREVIATION SIGN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0970">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• intended for Devanagari-specific abbreviations</div>
   </div>
   <div class="character" id="char0971">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0971;</div>
-    <p class="charname"><strong>U+0971</strong> <a href="/uniview/?char=0971">DEVANAGARI SIGN HIGH SPACING DOT</a></p>
+    <p class="charname"><strong>U+0971</strong> <a href="#char0971">DEVANAGARI SIGN HIGH SPACING DOT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0971">See in UniView</a></p>
   </div>
 </section>
 <section id="gpunctuation">
@@ -1485,7 +1592,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0964">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0964;</div>
-    <p class="charname"><strong>U+0964</strong> <a href="/uniview/?char=0964">DEVANAGARI DANDA</a></p>
+    <p class="charname"><strong>U+0964</strong> <a href="#char0964">DEVANAGARI DANDA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0964">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= purna viram<br/>
       • phrase separator</div>
@@ -1499,7 +1607,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0965">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0965;</div>
-    <p class="charname"><strong>U+0965</strong> <a href="/uniview/?char=0965">DEVANAGARI DOUBLE DANDA</a></p>
+    <p class="charname"><strong>U+0965</strong> <a href="#char0965">DEVANAGARI DOUBLE DANDA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0965">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= deergh viram</div>
     <div class='notes'>
@@ -1515,52 +1624,62 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0966">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0966;</div>
-    <p class="charname"><strong>U+0966</strong> <a href="/uniview/?char=0966">DEVANAGARI DIGIT ZERO</a></p>
+    <p class="charname"><strong>U+0966</strong> <a href="#char0966">DEVANAGARI DIGIT ZERO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0966">See in UniView</a></p>
   </div>
   <div class="character" id="char0967">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0967;</div>
-    <p class="charname"><strong>U+0967</strong> <a href="/uniview/?char=0967">DEVANAGARI DIGIT ONE</a></p>
+    <p class="charname"><strong>U+0967</strong> <a href="#char0967">DEVANAGARI DIGIT ONE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0967">See in UniView</a></p>
   </div>
   <div class="character" id="char0968">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0968;</div>
-    <p class="charname"><strong>U+0968</strong> <a href="/uniview/?char=0968">DEVANAGARI DIGIT TWO</a></p>
+    <p class="charname"><strong>U+0968</strong> <a href="#char0968">DEVANAGARI DIGIT TWO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0968">See in UniView</a></p>
   </div>
   <div class="character" id="char0969">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0969;</div>
-    <p class="charname"><strong>U+0969</strong> <a href="/uniview/?char=0969">DEVANAGARI DIGIT THREE</a></p>
+    <p class="charname"><strong>U+0969</strong> <a href="#char0969">DEVANAGARI DIGIT THREE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char0969">See in UniView</a></p>
   </div>
   <div class="character" id="char096A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x096A;</div>
-    <p class="charname"><strong>U+096A</strong> <a href="/uniview/?char=096A">DEVANAGARI DIGIT FOUR</a></p>
+    <p class="charname"><strong>U+096A</strong> <a href="#char096A">DEVANAGARI DIGIT FOUR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char096A">See in UniView</a></p>
   </div>
   <div class="character" id="char096B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x096B;</div>
-    <p class="charname"><strong>U+096B</strong> <a href="/uniview/?char=096B">DEVANAGARI DIGIT FIVE</a></p>
+    <p class="charname"><strong>U+096B</strong> <a href="#char096B">DEVANAGARI DIGIT FIVE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char096B">See in UniView</a></p>
   </div>
   <div class="character" id="char096C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x096C;</div>
-    <p class="charname"><strong>U+096C</strong> <a href="/uniview/?char=096C">DEVANAGARI DIGIT SIX</a></p>
+    <p class="charname"><strong>U+096C</strong> <a href="#char096C">DEVANAGARI DIGIT SIX</a></p>
+    <p class="univiewLink"><a href="/uniview/?char096C">See in UniView</a></p>
   </div>
   <div class="character" id="char096D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x096D;</div>
-    <p class="charname"><strong>U+096D</strong> <a href="/uniview/?char=096D">DEVANAGARI DIGIT SEVEN</a></p>
+    <p class="charname"><strong>U+096D</strong> <a href="#char096D">DEVANAGARI DIGIT SEVEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char096D">See in UniView</a></p>
   </div>
   <div class="character" id="char096E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x096E;</div>
-    <p class="charname"><strong>U+096E</strong> <a href="/uniview/?char=096E">DEVANAGARI DIGIT EIGHT</a></p>
+    <p class="charname"><strong>U+096E</strong> <a href="#char096E">DEVANAGARI DIGIT EIGHT</a></p>
+    <p class="univiewLink"><a href="/uniview/?char096E">See in UniView</a></p>
   </div>
   <div class="character" id="char096F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x096F;</div>
-    <p class="charname"><strong>U+096F</strong> <a href="/uniview/?char=096F">DEVANAGARI DIGIT NINE</a></p>
+    <p class="charname"><strong>U+096F</strong> <a href="#char096F">DEVANAGARI DIGIT NINE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char096F">See in UniView</a></p>
   </div>
 </section>
 <section id="cantillation">
@@ -1568,126 +1687,144 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="charA8E0">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E0.png" alt="&#xA8E0;"/></div>
-    <p class="charname"><strong>U+A8E0</strong> <a href="/uniview/?char=A8E0">COMBINING DEVANAGARI DIGIT ZERO</a></p>
+    <p class="charname"><strong>U+A8E0</strong> <a href="#charA8E0">COMBINING DEVANAGARI DIGIT ZERO</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E0">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka shuunya</div>
   </div>
   <div class="character" id="charA8E1">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E1.png" alt="&#xA8E1;"/></div>
-    <p class="charname"><strong>U+A8E1</strong> <a href="/uniview/?char=A8E1">COMBINING DEVANAGARI DIGIT ONE</a></p>
+    <p class="charname"><strong>U+A8E1</strong> <a href="#charA8E1">COMBINING DEVANAGARI DIGIT ONE</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E1">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka eka udaatta</div>
   </div>
   <div class="character" id="charA8E2">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E2.png" alt="&#xA8E2;"/></div>
-    <p class="charname"><strong>U+A8E2</strong> <a href="/uniview/?char=A8E2">COMBINING DEVANAGARI DIGIT TWO</a></p>
+    <p class="charname"><strong>U+A8E2</strong> <a href="#charA8E2">COMBINING DEVANAGARI DIGIT TWO</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E2">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka dvi svarita</div>
   </div>
   <div class="character" id="charA8E3">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E3.png" alt="&#xA8E3;"/></div>
-    <p class="charname"><strong>U+A8E3</strong> <a href="/uniview/?char=A8E3">COMBINING DEVANAGARI DIGIT THREE</a></p>
+    <p class="charname"><strong>U+A8E3</strong> <a href="#charA8E3">COMBINING DEVANAGARI DIGIT THREE</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E3">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka tri anudaatta</div>
   </div>
   <div class="character" id="charA8E4">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E4.png" alt="&#xA8E4;"/></div>
-    <p class="charname"><strong>U+A8E4</strong> <a href="/uniview/?char=A8E4">COMBINING DEVANAGARI DIGIT FOUR</a></p>
+    <p class="charname"><strong>U+A8E4</strong> <a href="#charA8E4">COMBINING DEVANAGARI DIGIT FOUR</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E4">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka chatur</div>
   </div>
   <div class="character" id="charA8E5">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E5.png" alt="&#xA8E5;"/></div>
-    <p class="charname"><strong>U+A8E5</strong> <a href="/uniview/?char=A8E5">COMBINING DEVANAGARI DIGIT FIVE</a></p>
+    <p class="charname"><strong>U+A8E5</strong> <a href="#charA8E5">COMBINING DEVANAGARI DIGIT FIVE</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E5">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka pancha</div>
   </div>
   <div class="character" id="charA8E6">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E6.png" alt="&#xA8E6;"/></div>
-    <p class="charname"><strong>U+A8E6</strong> <a href="/uniview/?char=A8E6">COMBINING DEVANAGARI DIGIT SIX</a></p>
+    <p class="charname"><strong>U+A8E6</strong> <a href="#charA8E6">COMBINING DEVANAGARI DIGIT SIX</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E6">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka shatt</div>
   </div>
   <div class="character" id="charA8E7">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E7.png" alt="&#xA8E7;"/></div>
-    <p class="charname"><strong>U+A8E7</strong> <a href="/uniview/?char=A8E7">COMBINING DEVANAGARI DIGIT SEVEN</a></p>
+    <p class="charname"><strong>U+A8E7</strong> <a href="#charA8E7">COMBINING DEVANAGARI DIGIT SEVEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E7">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka sapta</div>
   </div>
   <div class="character" id="charA8E8">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E8.png" alt="&#xA8E8;"/></div>
-    <p class="charname"><strong>U+A8E8</strong> <a href="/uniview/?char=A8E8">COMBINING DEVANAGARI DIGIT EIGHT</a></p>
+    <p class="charname"><strong>U+A8E8</strong> <a href="#charA8E8">COMBINING DEVANAGARI DIGIT EIGHT</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E8">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka ashta</div>
   </div>
   <div class="character" id="charA8E9">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8E9.png" alt="&#xA8E9;"/></div>
-    <p class="charname"><strong>U+A8E9</strong> <a href="/uniview/?char=A8E9">COMBINING DEVANAGARI DIGIT NINE</a></p>
+    <p class="charname"><strong>U+A8E9</strong> <a href="#charA8E9">COMBINING DEVANAGARI DIGIT NINE</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8E9">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara anka nava</div>
   </div>
   <div class="character" id="charA8EA">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8EA.png" alt="&#xA8EA;"/></div>
-    <p class="charname"><strong>U+A8EA</strong> <a href="/uniview/?char=A8EA">COMBINING DEVANAGARI LETTER A</a></p>
+    <p class="charname"><strong>U+A8EA</strong> <a href="#charA8EA">COMBINING DEVANAGARI LETTER A</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8EA">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara abhinihita</div>
   </div>
   <div class="character" id="charA8EB">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8EB.png" alt="&#xA8EB;"/></div>
-    <p class="charname"><strong>U+A8EB</strong> <a href="/uniview/?char=A8EB">COMBINING DEVANAGARI LETTER U</a></p>
+    <p class="charname"><strong>U+A8EB</strong> <a href="#charA8EB">COMBINING DEVANAGARI LETTER U</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8EB">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara u</div>
   </div>
   <div class="character" id="charA8EC">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8EC.png" alt="&#xA8EC;"/></div>
-    <p class="charname"><strong>U+A8EC</strong> <a href="/uniview/?char=A8EC">COMBINING DEVANAGARI LETTER KA</a></p>
+    <p class="charname"><strong>U+A8EC</strong> <a href="#charA8EC">COMBINING DEVANAGARI LETTER KA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8EC">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara ka</div>
   </div>
   <div class="character" id="charA8ED">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8ED.png" alt="&#xA8ED;"/></div>
-    <p class="charname"><strong>U+A8ED</strong> <a href="/uniview/?char=A8ED">COMBINING DEVANAGARI LETTER NA</a></p>
+    <p class="charname"><strong>U+A8ED</strong> <a href="#charA8ED">COMBINING DEVANAGARI LETTER NA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8ED">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara namana</div>
   </div>
   <div class="character" id="charA8EE">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8EE.png" alt="&#xA8EE;"/></div>
-    <p class="charname"><strong>U+A8EE</strong> <a href="/uniview/?char=A8EE">COMBINING DEVANAGARI LETTER PA</a></p>
+    <p class="charname"><strong>U+A8EE</strong> <a href="#charA8EE">COMBINING DEVANAGARI LETTER PA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8EE">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara prannatam</div>
   </div>
   <div class="character" id="charA8EF">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8EF.png" alt="&#xA8EF;"/></div>
-    <p class="charname"><strong>U+A8EF</strong> <a href="/uniview/?char=A8EF">COMBINING DEVANAGARI LETTER RA</a></p>
+    <p class="charname"><strong>U+A8EF</strong> <a href="#charA8EF">COMBINING DEVANAGARI LETTER RA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8EF">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara ra</div>
   </div>
   <div class="character" id="charA8F0">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F0.png" alt="&#xA8F0;"/></div>
-    <p class="charname"><strong>U+A8F0</strong> <a href="/uniview/?char=A8F0">COMBINING DEVANAGARI LETTER VI</a></p>
+    <p class="charname"><strong>U+A8F0</strong> <a href="#charA8F0">COMBINING DEVANAGARI LETTER VI</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F0">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara vinata</div>
   </div>
   <div class="character" id="charA8F1">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F1.png" alt="&#xA8F1;"/></div>
-    <p class="charname"><strong>U+A8F1</strong> <a href="/uniview/?char=A8F1">COMBINING DEVANAGARI SIGN AVAGRAHA</a></p>
+    <p class="charname"><strong>U+A8F1</strong> <a href="#charA8F1">COMBINING DEVANAGARI SIGN AVAGRAHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F1">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika saamasvara diirghiibhaava</div>
   </div>
@@ -1697,7 +1834,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="charA8F2">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F2.png" alt="&#xA8F2;"/></div>
-    <p class="charname"><strong>U+A8F2</strong> <a href="/uniview/?char=A8F2">DEVANAGARI SIGN SPACING CANDRABINDU</a></p>
+    <p class="charname"><strong>U+A8F2</strong> <a href="#charA8F2">DEVANAGARI SIGN SPACING CANDRABINDU</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F2">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika candrabindu<br/>
       → (devanagari sign candrabindu - 0901)</div>
@@ -1705,35 +1843,40 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="charA8F3">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F3.png" alt="&#xA8F3;"/></div>
-    <p class="charname"><strong>U+A8F3</strong> <a href="/uniview/?char=A8F3">DEVANAGARI SIGN CANDRABINDU VIRAMA</a></p>
+    <p class="charname"><strong>U+A8F3</strong> <a href="#charA8F3">DEVANAGARI SIGN CANDRABINDU VIRAMA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F3">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika anusvaara candrabindu tiryak</div>
   </div>
   <div class="character" id="charA8F4">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F4.png" alt="&#xA8F4;"/></div>
-    <p class="charname"><strong>U+A8F4</strong> <a href="/uniview/?char=A8F4">DEVANAGARI SIGN DOUBLE CANDRABINDU VIRAMA</a></p>
+    <p class="charname"><strong>U+A8F4</strong> <a href="#charA8F4">DEVANAGARI SIGN DOUBLE CANDRABINDU VIRAMA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F4">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika anusvaara dvi candrabindu tiryak</div>
   </div>
   <div class="character" id="charA8F5">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F5.png" alt="&#xA8F5;"/></div>
-    <p class="charname"><strong>U+A8F5</strong> <a href="/uniview/?char=A8F5">DEVANAGARI SIGN CANDRABINDU TWO</a></p>
+    <p class="charname"><strong>U+A8F5</strong> <a href="#charA8F5">DEVANAGARI SIGN CANDRABINDU TWO</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F5">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika anusvaara candrabindu sa-dvi</div>
   </div>
   <div class="character" id="charA8F6">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F6.png" alt="&#xA8F6;"/></div>
-    <p class="charname"><strong>U+A8F6</strong> <a href="/uniview/?char=A8F6">DEVANAGARI SIGN CANDRABINDU THREE</a></p>
+    <p class="charname"><strong>U+A8F6</strong> <a href="#charA8F6">DEVANAGARI SIGN CANDRABINDU THREE</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F6">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika anusvaara candrabindu sa-tri</div>
   </div>
   <div class="character" id="charA8F7">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F7.png" alt="&#xA8F7;"/></div>
-    <p class="charname"><strong>U+A8F7</strong> <a href="/uniview/?char=A8F7">DEVANAGARI SIGN CANDRABINDU AVAGRAHA</a></p>
+    <p class="charname"><strong>U+A8F7</strong> <a href="#charA8F7">DEVANAGARI SIGN CANDRABINDU AVAGRAHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F7">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika anusvaara candrabindu sa-avagraha</div>
   </div>
@@ -1743,7 +1886,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="charA8F8">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F8.png" alt="&#xA8F8;"/></div>
-    <p class="charname"><strong>U+A8F8</strong> <a href="/uniview/?char=A8F8">DEVANAGARI SIGN PUSHPIKA</a></p>
+    <p class="charname"><strong>U+A8F8</strong> <a href="#charA8F8">DEVANAGARI SIGN PUSHPIKA</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F8">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika pushpikaa<br/>
       • used as a placeholder or 'filler'<br/>
@@ -1752,14 +1896,16 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="charA8F9">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8F9.png" alt="&#xA8F9;"/></div>
-    <p class="charname"><strong>U+A8F9</strong> <a href="/uniview/?char=A8F9">DEVANAGARI GAP FILLER</a></p>
+    <p class="charname"><strong>U+A8F9</strong> <a href="#charA8F9">DEVANAGARI GAP FILLER</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8F9">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• used to indicate that a gap in a manuscript or text is not a lacuna</div>
   </div>
   <div class="character" id="charA8FA">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8FA.png" alt="&#xA8FA;"/></div>
-    <p class="charname"><strong>U+A8FA</strong> <a href="/uniview/?char=A8FA">DEVANAGARI CARET</a></p>
+    <p class="charname"><strong>U+A8FA</strong> <a href="#charA8FA">DEVANAGARI CARET</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8FA">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vaidika trutikaa<br/>
       • zero-advance character centered on the point between two orthographic syllables<br/>
@@ -1769,7 +1915,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="charA8FB">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg"><img src="/c/Devanagari_Extended/large/A8FB.png" alt="&#xA8FB;"/></div>
-    <p class="charname"><strong>U+A8FB</strong> <a href="/uniview/?char=A8FB">DEVANAGARI HEADSTROKE</a></p>
+    <p class="charname"><strong>U+A8FB</strong> <a href="#charA8FB">DEVANAGARI HEADSTROKE</a></p>
+    <p class="univiewLink"><a href="/uniview/?charA8FB">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= shirorekhaa<br/>
       • used to indicate uncertain manuscript readings</div>
@@ -1782,13 +1929,10 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
     <li>Rupert Snell &amp; Simon Weightman, Teach Yourself Hindi, ISBN 978-0-340-86687-0</li>
   </ol>
 </section>
-
 <div id="panel" style="display:none"></div>
-
 <div class="smallprint"><span id="version">First published  9 Mar 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-22  9:24<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-03-11  9:45<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
-
 
 <!-- Uncomment this code to get a list of all character names for the file names-subset.js  
 <div id=charliststr></div>
@@ -1829,6 +1973,16 @@ Editorial marks;editorial;A8F8-A8FB
 createtoc();
 initialiseShowNames();
 highlightIndexChars()
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'char') { 
+		if (pairs[1]) hideStuff(pairs[1]) 
+		}
+	}
 </script>
 </body>
 </html>
