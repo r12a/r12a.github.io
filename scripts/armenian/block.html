@@ -4,11 +4,9 @@
 <meta charset="utf-8"/>
 <title>Armenian character notes</title>
 <meta name="description" content="Notes about characters in the Unicode Armenian script block."/>
-
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
 <link rel="stylesheet" type="text/css" href="/scripts/block/block-style.css" />
 <link rel="stylesheet" type="text/css" href="local.css" />
-
 <script type="text/javascript" src="/scripts/block/armenian-names-subset.js"></script>
 <script type="text/javascript" src="/scripts/block/block-code.js"></script>
 <script type="text/javascript" src="fonts.js"></script>
@@ -16,6 +14,7 @@
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/uniview/scriptGroups.js"></script>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style id="includeStyles"></style>
 </head>
 
 <body>
@@ -23,9 +22,7 @@
   <div id="header-boilerplate"></div>
   <script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script> 
 </header>
-
 <h1>Armenian character notes</h1>
-
 <aside class="sidebar">
   <h2 class="notoc flush" id="tochead" tabindex="4">Contents</h2>
   <div id="toc"><!-- placeholder --></div>
@@ -35,7 +32,6 @@
     <p><a href="/pickers/armenian/">Armenian character picker</a></p>
     <p style="line-height: 1.3em"><a href="/uniview/?block=armenian">UniView </a></p>
   </div>
-  
   <div id="fontsetting" class="closed">
     <h2 class="notoc"><a id="fonts">Fonts</a></h2>
     <div id="fontsettingswitch" title="Click to show/hide the panel."  onclick="if (this.parentNode.className == 'open'){this.parentNode.className='closed'; this.textContent='◀';} else {this.parentNode.className='open';this.textContent='▶';}">◀</div>
@@ -60,55 +56,53 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
     <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
   </div>
 </aside>
-
 <p id="status">Updated Thu 28 Aug 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=armenian" title="Show all blog posts tagged with 'armenian'">armenian</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
-
-<section>
-<p>This page lists characters in the Unicode Armenian block and provides information about them.</p>
-<p>To view this page as intended, you  need an Armenian font. The Noto Serif Armenian font is downloaded with this page as a webfont.  Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
-<p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
-<p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
+<section id="intro">
+  <p>This page lists characters in the Unicode Armenian block and provides information about them.</p>
+  <p>To view this page as intended, you  need an Armenian font. The Noto Serif Armenian font is downloaded with this page as a webfont.  Click the blue vertical bar at the bottom right of the page to apply other fonts, if you have them on your system. For transcriptions I recommend the excellent and free <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=DoulosSILfont">Doulos SIL font</a>.</p>
+  <p>If you click on any red  example text, you will see a list of the  characters that make up the example appear at the bottom right of the page.</p>
+  <p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase.</p>
 </section>
-
 <section class="section" id="charlistsection">
   <h2><a href="#characterlist" id="characterlist">index </a></h2>
   <p>Click on a character in the table to jump to its description. Only characters with a line below have descriptive notes attached (apart from any descriptions in the Unicode database).</p>
   <p>&nbsp;</p>
+  <table id="index">
+    <tbody>
+      <tr>
+        <th><a href="#uppercase">Uppercase letters</a></th>
+        <td><a href="#char0531" title="ARMENIAN CAPITAL LETTER AYB">&#x0531;</a> <a href="#char0532" title="ARMENIAN CAPITAL LETTER BEN">&#x0532;</a> <a href="#char0533" title="ARMENIAN CAPITAL LETTER GIM">&#x0533;</a> <a href="#char0534" title="ARMENIAN CAPITAL LETTER DA">&#x0534;</a> <a href="#char0535" title="ARMENIAN CAPITAL LETTER ECH">&#x0535;</a> <a href="#char0536" title="ARMENIAN CAPITAL LETTER ZA">&#x0536;</a> <a href="#char0537" title="ARMENIAN CAPITAL LETTER EH">&#x0537;</a> <a href="#char0538" title="ARMENIAN CAPITAL LETTER ET">&#x0538;</a> <a href="#char0539" title="ARMENIAN CAPITAL LETTER TO">&#x0539;</a> <a href="#char053A" title="ARMENIAN CAPITAL LETTER ZHE">&#x053A;</a> <a href="#char053B" title="ARMENIAN CAPITAL LETTER INI">&#x053B;</a> <a href="#char053C" title="ARMENIAN CAPITAL LETTER LIWN">&#x053C;</a> <a href="#char053D" title="ARMENIAN CAPITAL LETTER XEH">&#x053D;</a> <a href="#char053E" title="ARMENIAN CAPITAL LETTER CA">&#x053E;</a> <a href="#char053F" title="ARMENIAN CAPITAL LETTER KEN">&#x053F;</a> <a href="#char0540" title="ARMENIAN CAPITAL LETTER HO">&#x0540;</a> <a href="#char0541" title="ARMENIAN CAPITAL LETTER JA">&#x0541;</a> <a href="#char0542" title="ARMENIAN CAPITAL LETTER GHAD">&#x0542;</a> <a href="#char0543" title="ARMENIAN CAPITAL LETTER CHEH">&#x0543;</a> <a href="#char0544" title="ARMENIAN CAPITAL LETTER MEN">&#x0544;</a> <a href="#char0545" title="ARMENIAN CAPITAL LETTER YI">&#x0545;</a> <a href="#char0546" title="ARMENIAN CAPITAL LETTER NOW">&#x0546;</a> <a href="#char0547" title="ARMENIAN CAPITAL LETTER SHA">&#x0547;</a> <a href="#char0548" title="ARMENIAN CAPITAL LETTER VO">&#x0548;</a> <a href="#char0549" title="ARMENIAN CAPITAL LETTER CHA">&#x0549;</a> <a href="#char054A" title="ARMENIAN CAPITAL LETTER PEH">&#x054A;</a> <a href="#char054B" title="ARMENIAN CAPITAL LETTER JHEH">&#x054B;</a> <a href="#char054C" title="ARMENIAN CAPITAL LETTER RA">&#x054C;</a> <a href="#char054D" title="ARMENIAN CAPITAL LETTER SEH">&#x054D;</a> <a href="#char054E" title="ARMENIAN CAPITAL LETTER VEW">&#x054E;</a> <a href="#char054F" title="ARMENIAN CAPITAL LETTER TIWN">&#x054F;</a> <a href="#char0550" title="ARMENIAN CAPITAL LETTER REH">&#x0550;</a> <a href="#char0551" title="ARMENIAN CAPITAL LETTER CO">&#x0551;</a> <a href="#char0552" title="ARMENIAN CAPITAL LETTER YIWN">&#x0552;</a> <a href="#char0553" title="ARMENIAN CAPITAL LETTER PIWR">&#x0553;</a> <a href="#char0554" title="ARMENIAN CAPITAL LETTER KEH">&#x0554;</a> <a href="#char0555" title="ARMENIAN CAPITAL LETTER OH">&#x0555;</a> <a href="#char0556" title="ARMENIAN CAPITAL LETTER FEH">&#x0556;</a></td>
+      </tr>
+      <tr>
+        <th><a href="#lowercase">Lowercase letters</a></th>
+        <td><a href="#char0561" title="ARMENIAN SMALL LETTER AYB">&#x0561;</a> <a href="#char0562" title="ARMENIAN SMALL LETTER BEN">&#x0562;</a> <a href="#char0563" title="ARMENIAN SMALL LETTER GIM">&#x0563;</a> <a href="#char0564" title="ARMENIAN SMALL LETTER DA">&#x0564;</a> <a href="#char0565" title="ARMENIAN SMALL LETTER ECH">&#x0565;</a> <a href="#char0566" title="ARMENIAN SMALL LETTER ZA">&#x0566;</a> <a href="#char0567" title="ARMENIAN SMALL LETTER EH">&#x0567;</a> <a href="#char0568" title="ARMENIAN SMALL LETTER ET">&#x0568;</a> <a href="#char0569" title="ARMENIAN SMALL LETTER TO">&#x0569;</a> <a href="#char056A" title="ARMENIAN SMALL LETTER ZHE">&#x056A;</a> <a href="#char056B" title="ARMENIAN SMALL LETTER INI">&#x056B;</a> <a href="#char056C" title="ARMENIAN SMALL LETTER LIWN">&#x056C;</a> <a href="#char056D" title="ARMENIAN SMALL LETTER XEH">&#x056D;</a> <a href="#char056E" title="ARMENIAN SMALL LETTER CA">&#x056E;</a> <a href="#char056F" title="ARMENIAN SMALL LETTER KEN">&#x056F;</a> <a href="#char0570" title="ARMENIAN SMALL LETTER HO">&#x0570;</a> <a href="#char0571" title="ARMENIAN SMALL LETTER JA">&#x0571;</a> <a href="#char0572" title="ARMENIAN SMALL LETTER GHAD">&#x0572;</a> <a href="#char0573" title="ARMENIAN SMALL LETTER CHEH">&#x0573;</a> <a href="#char0574" title="ARMENIAN SMALL LETTER MEN">&#x0574;</a> <a href="#char0575" title="ARMENIAN SMALL LETTER YI">&#x0575;</a> <a href="#char0576" title="ARMENIAN SMALL LETTER NOW">&#x0576;</a> <a href="#char0577" title="ARMENIAN SMALL LETTER SHA">&#x0577;</a> <a href="#char0578" title="ARMENIAN SMALL LETTER VO">&#x0578;</a> <a href="#char0579" title="ARMENIAN SMALL LETTER CHA">&#x0579;</a> <a href="#char057A" title="ARMENIAN SMALL LETTER PEH">&#x057A;</a> <a href="#char057B" title="ARMENIAN SMALL LETTER JHEH">&#x057B;</a> <a href="#char057C" title="ARMENIAN SMALL LETTER RA">&#x057C;</a> <a href="#char057D" title="ARMENIAN SMALL LETTER SEH">&#x057D;</a> <a href="#char057E" title="ARMENIAN SMALL LETTER VEW">&#x057E;</a> <a href="#char057F" title="ARMENIAN SMALL LETTER TIWN">&#x057F;</a> <a href="#char0580" title="ARMENIAN SMALL LETTER REH">&#x0580;</a> <a href="#char0581" title="ARMENIAN SMALL LETTER CO">&#x0581;</a> <a href="#char0582" title="ARMENIAN SMALL LETTER YIWN">&#x0582;</a> <a href="#char0583" title="ARMENIAN SMALL LETTER PIWR">&#x0583;</a> <a href="#char0584" title="ARMENIAN SMALL LETTER KEH">&#x0584;</a> <a href="#char0585" title="ARMENIAN SMALL LETTER OH">&#x0585;</a> <a href="#char0586" title="ARMENIAN SMALL LETTER FEH">&#x0586;</a> <a href="#char0587" title="ARMENIAN SMALL LIGATURE ECH YIWN">&#x0587;</a></td>
+      </tr>
+      <tr>
+        <th><a href="#modifier">Modifier letters</a></th>
+        <td><a href="#char0559" title="ARMENIAN MODIFIER LETTER LEFT HALF RING">&#x0559;</a> <a href="#char055A" title="ARMENIAN APOSTROPHE">&#x055A;</a> <a href="#char055B" title="ARMENIAN EMPHASIS MARK">&#x055B;</a> <a href="#char055C" title="ARMENIAN EXCLAMATION MARK">&#x055C;</a> <a href="#char055D" title="ARMENIAN COMMA">&#x055D;</a> <a href="#char055E" title="ARMENIAN QUESTION MARK">&#x055E;</a> <a href="#char055F" title="ARMENIAN ABBREVIATION MARK">&#x055F;</a></td>
+      </tr>
+      <tr>
+        <th><a href="#punctuation">Punctuation</a></th>
+        <td><a href="#char0589" title="ARMENIAN FULL STOP">&#x0589;</a> <a href="#char058A" title="ARMENIAN HYPHEN">&#x058A;</a></td>
+      </tr>
+      <tr>
+        <th><a href="#religious">Religious symbols</a></th>
+        <td><a href="#char058D" title="RIGHT-FACING ARMENIAN ETERNITY SIGN"><img src='/c/Armenian/058D' alt='058D' /></a> <a href="#char058E" title="LEFT-FACING ARMENIAN ETERNITY SIGN"><img src='/c/Armenian/058E' alt='058E' /></a></td>
+      </tr>
+      <tr>
+        <th><a href="#currency">Currency symbol</a></th>
+        <td><a href="#char058F" title="ARMENIAN DRAM SIGN">&#x058F;</a></td>
+      </tr>
+    </tbody>
+  </table>
 </section>
-<table id="index">
-  <tbody>
-    <tr>
-      <th><a href="#uppercase">Uppercase letters</a></th>
-      <td><a href="#char0531" title="ARMENIAN CAPITAL LETTER AYB">&#x0531;</a> <a href="#char0532" title="ARMENIAN CAPITAL LETTER BEN">&#x0532;</a> <a href="#char0533" title="ARMENIAN CAPITAL LETTER GIM">&#x0533;</a> <a href="#char0534" title="ARMENIAN CAPITAL LETTER DA">&#x0534;</a> <a href="#char0535" title="ARMENIAN CAPITAL LETTER ECH">&#x0535;</a> <a href="#char0536" title="ARMENIAN CAPITAL LETTER ZA">&#x0536;</a> <a href="#char0537" title="ARMENIAN CAPITAL LETTER EH">&#x0537;</a> <a href="#char0538" title="ARMENIAN CAPITAL LETTER ET">&#x0538;</a> <a href="#char0539" title="ARMENIAN CAPITAL LETTER TO">&#x0539;</a> <a href="#char053A" title="ARMENIAN CAPITAL LETTER ZHE">&#x053A;</a> <a href="#char053B" title="ARMENIAN CAPITAL LETTER INI">&#x053B;</a> <a href="#char053C" title="ARMENIAN CAPITAL LETTER LIWN">&#x053C;</a> <a href="#char053D" title="ARMENIAN CAPITAL LETTER XEH">&#x053D;</a> <a href="#char053E" title="ARMENIAN CAPITAL LETTER CA">&#x053E;</a> <a href="#char053F" title="ARMENIAN CAPITAL LETTER KEN">&#x053F;</a> <a href="#char0540" title="ARMENIAN CAPITAL LETTER HO">&#x0540;</a> <a href="#char0541" title="ARMENIAN CAPITAL LETTER JA">&#x0541;</a> <a href="#char0542" title="ARMENIAN CAPITAL LETTER GHAD">&#x0542;</a> <a href="#char0543" title="ARMENIAN CAPITAL LETTER CHEH">&#x0543;</a> <a href="#char0544" title="ARMENIAN CAPITAL LETTER MEN">&#x0544;</a> <a href="#char0545" title="ARMENIAN CAPITAL LETTER YI">&#x0545;</a> <a href="#char0546" title="ARMENIAN CAPITAL LETTER NOW">&#x0546;</a> <a href="#char0547" title="ARMENIAN CAPITAL LETTER SHA">&#x0547;</a> <a href="#char0548" title="ARMENIAN CAPITAL LETTER VO">&#x0548;</a> <a href="#char0549" title="ARMENIAN CAPITAL LETTER CHA">&#x0549;</a> <a href="#char054A" title="ARMENIAN CAPITAL LETTER PEH">&#x054A;</a> <a href="#char054B" title="ARMENIAN CAPITAL LETTER JHEH">&#x054B;</a> <a href="#char054C" title="ARMENIAN CAPITAL LETTER RA">&#x054C;</a> <a href="#char054D" title="ARMENIAN CAPITAL LETTER SEH">&#x054D;</a> <a href="#char054E" title="ARMENIAN CAPITAL LETTER VEW">&#x054E;</a> <a href="#char054F" title="ARMENIAN CAPITAL LETTER TIWN">&#x054F;</a> <a href="#char0550" title="ARMENIAN CAPITAL LETTER REH">&#x0550;</a> <a href="#char0551" title="ARMENIAN CAPITAL LETTER CO">&#x0551;</a> <a href="#char0552" title="ARMENIAN CAPITAL LETTER YIWN">&#x0552;</a> <a href="#char0553" title="ARMENIAN CAPITAL LETTER PIWR">&#x0553;</a> <a href="#char0554" title="ARMENIAN CAPITAL LETTER KEH">&#x0554;</a> <a href="#char0555" title="ARMENIAN CAPITAL LETTER OH">&#x0555;</a> <a href="#char0556" title="ARMENIAN CAPITAL LETTER FEH">&#x0556;</a></td>
-    </tr>
-    <tr>
-      <th><a href="#lowercase">Lowercase letters</a></th>
-      <td><a href="#char0561" title="ARMENIAN SMALL LETTER AYB">&#x0561;</a> <a href="#char0562" title="ARMENIAN SMALL LETTER BEN">&#x0562;</a> <a href="#char0563" title="ARMENIAN SMALL LETTER GIM">&#x0563;</a> <a href="#char0564" title="ARMENIAN SMALL LETTER DA">&#x0564;</a> <a href="#char0565" title="ARMENIAN SMALL LETTER ECH">&#x0565;</a> <a href="#char0566" title="ARMENIAN SMALL LETTER ZA">&#x0566;</a> <a href="#char0567" title="ARMENIAN SMALL LETTER EH">&#x0567;</a> <a href="#char0568" title="ARMENIAN SMALL LETTER ET">&#x0568;</a> <a href="#char0569" title="ARMENIAN SMALL LETTER TO">&#x0569;</a> <a href="#char056A" title="ARMENIAN SMALL LETTER ZHE">&#x056A;</a> <a href="#char056B" title="ARMENIAN SMALL LETTER INI">&#x056B;</a> <a href="#char056C" title="ARMENIAN SMALL LETTER LIWN">&#x056C;</a> <a href="#char056D" title="ARMENIAN SMALL LETTER XEH">&#x056D;</a> <a href="#char056E" title="ARMENIAN SMALL LETTER CA">&#x056E;</a> <a href="#char056F" title="ARMENIAN SMALL LETTER KEN">&#x056F;</a> <a href="#char0570" title="ARMENIAN SMALL LETTER HO">&#x0570;</a> <a href="#char0571" title="ARMENIAN SMALL LETTER JA">&#x0571;</a> <a href="#char0572" title="ARMENIAN SMALL LETTER GHAD">&#x0572;</a> <a href="#char0573" title="ARMENIAN SMALL LETTER CHEH">&#x0573;</a> <a href="#char0574" title="ARMENIAN SMALL LETTER MEN">&#x0574;</a> <a href="#char0575" title="ARMENIAN SMALL LETTER YI">&#x0575;</a> <a href="#char0576" title="ARMENIAN SMALL LETTER NOW">&#x0576;</a> <a href="#char0577" title="ARMENIAN SMALL LETTER SHA">&#x0577;</a> <a href="#char0578" title="ARMENIAN SMALL LETTER VO">&#x0578;</a> <a href="#char0579" title="ARMENIAN SMALL LETTER CHA">&#x0579;</a> <a href="#char057A" title="ARMENIAN SMALL LETTER PEH">&#x057A;</a> <a href="#char057B" title="ARMENIAN SMALL LETTER JHEH">&#x057B;</a> <a href="#char057C" title="ARMENIAN SMALL LETTER RA">&#x057C;</a> <a href="#char057D" title="ARMENIAN SMALL LETTER SEH">&#x057D;</a> <a href="#char057E" title="ARMENIAN SMALL LETTER VEW">&#x057E;</a> <a href="#char057F" title="ARMENIAN SMALL LETTER TIWN">&#x057F;</a> <a href="#char0580" title="ARMENIAN SMALL LETTER REH">&#x0580;</a> <a href="#char0581" title="ARMENIAN SMALL LETTER CO">&#x0581;</a> <a href="#char0582" title="ARMENIAN SMALL LETTER YIWN">&#x0582;</a> <a href="#char0583" title="ARMENIAN SMALL LETTER PIWR">&#x0583;</a> <a href="#char0584" title="ARMENIAN SMALL LETTER KEH">&#x0584;</a> <a href="#char0585" title="ARMENIAN SMALL LETTER OH">&#x0585;</a> <a href="#char0586" title="ARMENIAN SMALL LETTER FEH">&#x0586;</a> <a href="#char0587" title="ARMENIAN SMALL LIGATURE ECH YIWN">&#x0587;</a></td>
-    </tr>
-    <tr>
-      <th><a href="#modifier">Modifier letters</a></th>
-      <td><a href="#char0559" title="ARMENIAN MODIFIER LETTER LEFT HALF RING">&#x0559;</a> <a href="#char055A" title="ARMENIAN APOSTROPHE">&#x055A;</a> <a href="#char055B" title="ARMENIAN EMPHASIS MARK">&#x055B;</a> <a href="#char055C" title="ARMENIAN EXCLAMATION MARK">&#x055C;</a> <a href="#char055D" title="ARMENIAN COMMA">&#x055D;</a> <a href="#char055E" title="ARMENIAN QUESTION MARK">&#x055E;</a> <a href="#char055F" title="ARMENIAN ABBREVIATION MARK">&#x055F;</a></td>
-    </tr>
-    <tr>
-      <th><a href="#punctuation">Punctuation</a></th>
-      <td><a href="#char0589" title="ARMENIAN FULL STOP">&#x0589;</a> <a href="#char058A" title="ARMENIAN HYPHEN">&#x058A;</a></td>
-    </tr>
-    <tr>
-      <th><a href="#religious">Religious symbols</a></th>
-      <td><a href="#char058D" title="RIGHT-FACING ARMENIAN ETERNITY SIGN"><img src='/c/Armenian/058D' alt='058D' /></a> <a href="#char058E" title="LEFT-FACING ARMENIAN ETERNITY SIGN"><img src='/c/Armenian/058E' alt='058E' /></a></td>
-    </tr>
-    <tr>
-      <th><a href="#currency">Currency symbol</a></th>
-      <td><a href="#char058F" title="ARMENIAN DRAM SIGN">&#x058F;</a></td>
-    </tr>
-  </tbody>
-</table>
 <section id="uppercase">
   <h2><a href="#uppercase">Uppercase letters</a></h2>
   <div class="character" id="char0531">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0531;</div>
-    <p class="charname"><strong>U+0531</strong> <a href="/uniview/?char=0531">ARMENIAN CAPITAL LETTER AYB</a></p>
+    <p class="charname"><strong>U+0531</strong> <a href="#char0531">ARMENIAN CAPITAL LETTER AYB</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0531">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -122,7 +116,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0532">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0532;</div>
-    <p class="charname"><strong>U+0532</strong> <a href="/uniview/?char=0532">ARMENIAN CAPITAL LETTER BEN</a></p>
+    <p class="charname"><strong>U+0532</strong> <a href="#char0532">ARMENIAN CAPITAL LETTER BEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0532">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -136,7 +131,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0533">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0533;</div>
-    <p class="charname"><strong>U+0533</strong> <a href="/uniview/?char=0533">ARMENIAN CAPITAL LETTER GIM</a></p>
+    <p class="charname"><strong>U+0533</strong> <a href="#char0533">ARMENIAN CAPITAL LETTER GIM</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0533">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -150,7 +146,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0534">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0534;</div>
-    <p class="charname"><strong>U+0534</strong> <a href="/uniview/?char=0534">ARMENIAN CAPITAL LETTER DA</a></p>
+    <p class="charname"><strong>U+0534</strong> <a href="#char0534">ARMENIAN CAPITAL LETTER DA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0534">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -164,7 +161,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0535">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0535;</div>
-    <p class="charname"><strong>U+0535</strong> <a href="/uniview/?char=0535">ARMENIAN CAPITAL LETTER ECH</a></p>
+    <p class="charname"><strong>U+0535</strong> <a href="#char0535">ARMENIAN CAPITAL LETTER ECH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0535">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -178,7 +176,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0536">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0536;</div>
-    <p class="charname"><strong>U+0536</strong> <a href="/uniview/?char=0536">ARMENIAN CAPITAL LETTER ZA</a></p>
+    <p class="charname"><strong>U+0536</strong> <a href="#char0536">ARMENIAN CAPITAL LETTER ZA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0536">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -192,7 +191,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0537">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0537;</div>
-    <p class="charname"><strong>U+0537</strong> <a href="/uniview/?char=0537">ARMENIAN CAPITAL LETTER EH</a></p>
+    <p class="charname"><strong>U+0537</strong> <a href="#char0537">ARMENIAN CAPITAL LETTER EH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0537">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -206,7 +206,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0538">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0538;</div>
-    <p class="charname"><strong>U+0538</strong> <a href="/uniview/?char=0538">ARMENIAN CAPITAL LETTER ET</a></p>
+    <p class="charname"><strong>U+0538</strong> <a href="#char0538">ARMENIAN CAPITAL LETTER ET</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0538">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -220,7 +221,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0539">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0539;</div>
-    <p class="charname"><strong>U+0539</strong> <a href="/uniview/?char=0539">ARMENIAN CAPITAL LETTER TO</a></p>
+    <p class="charname"><strong>U+0539</strong> <a href="#char0539">ARMENIAN CAPITAL LETTER TO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0539">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -234,7 +236,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char053A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x053A;</div>
-    <p class="charname"><strong>U+053A</strong> <a href="/uniview/?char=053A">ARMENIAN CAPITAL LETTER ZHE</a></p>
+    <p class="charname"><strong>U+053A</strong> <a href="#char053A">ARMENIAN CAPITAL LETTER ZHE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=053A">See in UniView</a></p>
     <div class='letter'>
       <div class="armenian">
         <p><span class="title">Armenian</span> consonant</p>
@@ -246,7 +249,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char053B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x053B;</div>
-    <p class="charname"><strong>U+053B</strong> <a href="/uniview/?char=053B">ARMENIAN CAPITAL LETTER INI</a></p>
+    <p class="charname"><strong>U+053B</strong> <a href="#char053B">ARMENIAN CAPITAL LETTER INI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=053B">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -260,7 +264,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char053C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x053C;</div>
-    <p class="charname"><strong>U+053C</strong> <a href="/uniview/?char=053C">ARMENIAN CAPITAL LETTER LIWN</a></p>
+    <p class="charname"><strong>U+053C</strong> <a href="#char053C">ARMENIAN CAPITAL LETTER LIWN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=053C">See in UniView</a></p>
     <div class='letter'>
       <div class="armenian">
         <p><span class="title">Armenian</span> consonant</p>
@@ -272,7 +277,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char053D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x053D;</div>
-    <p class="charname"><strong>U+053D</strong> <a href="/uniview/?char=053D">ARMENIAN CAPITAL LETTER XEH</a></p>
+    <p class="charname"><strong>U+053D</strong> <a href="#char053D">ARMENIAN CAPITAL LETTER XEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=053D">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -286,7 +292,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char053E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x053E;</div>
-    <p class="charname"><strong>U+053E</strong> <a href="/uniview/?char=053E">ARMENIAN CAPITAL LETTER CA</a></p>
+    <p class="charname"><strong>U+053E</strong> <a href="#char053E">ARMENIAN CAPITAL LETTER CA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=053E">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -300,7 +307,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char053F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x053F;</div>
-    <p class="charname"><strong>U+053F</strong> <a href="/uniview/?char=053F">ARMENIAN CAPITAL LETTER KEN</a></p>
+    <p class="charname"><strong>U+053F</strong> <a href="#char053F">ARMENIAN CAPITAL LETTER KEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=053F">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -314,7 +322,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0540">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0540;</div>
-    <p class="charname"><strong>U+0540</strong> <a href="/uniview/?char=0540">ARMENIAN CAPITAL LETTER HO</a></p>
+    <p class="charname"><strong>U+0540</strong> <a href="#char0540">ARMENIAN CAPITAL LETTER HO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0540">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -328,7 +337,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0541">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0541;</div>
-    <p class="charname"><strong>U+0541</strong> <a href="/uniview/?char=0541">ARMENIAN CAPITAL LETTER JA</a></p>
+    <p class="charname"><strong>U+0541</strong> <a href="#char0541">ARMENIAN CAPITAL LETTER JA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0541">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -342,7 +352,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0542">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0542;</div>
-    <p class="charname"><strong>U+0542</strong> <a href="/uniview/?char=0542">ARMENIAN CAPITAL LETTER GHAD</a></p>
+    <p class="charname"><strong>U+0542</strong> <a href="#char0542">ARMENIAN CAPITAL LETTER GHAD</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0542">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -356,7 +367,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0543">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0543;</div>
-    <p class="charname"><strong>U+0543</strong> <a href="/uniview/?char=0543">ARMENIAN CAPITAL LETTER CHEH</a></p>
+    <p class="charname"><strong>U+0543</strong> <a href="#char0543">ARMENIAN CAPITAL LETTER CHEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0543">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -370,7 +382,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0544">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0544;</div>
-    <p class="charname"><strong>U+0544</strong> <a href="/uniview/?char=0544">ARMENIAN CAPITAL LETTER MEN</a></p>
+    <p class="charname"><strong>U+0544</strong> <a href="#char0544">ARMENIAN CAPITAL LETTER MEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0544">See in UniView</a></p>
     <div class='letter'>
       <div class="armenian">
         <p><span class="title">Armenian</span> consonant</p>
@@ -382,7 +395,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0545">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0545;</div>
-    <p class="charname"><strong>U+0545</strong> <a href="/uniview/?char=0545">ARMENIAN CAPITAL LETTER YI</a></p>
+    <p class="charname"><strong>U+0545</strong> <a href="#char0545">ARMENIAN CAPITAL LETTER YI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0545">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -396,7 +410,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0546">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0546;</div>
-    <p class="charname"><strong>U+0546</strong> <a href="/uniview/?char=0546">ARMENIAN CAPITAL LETTER NOW</a></p>
+    <p class="charname"><strong>U+0546</strong> <a href="#char0546">ARMENIAN CAPITAL LETTER NOW</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0546">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -410,7 +425,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0547">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0547;</div>
-    <p class="charname"><strong>U+0547</strong> <a href="/uniview/?char=0547">ARMENIAN CAPITAL LETTER SHA</a></p>
+    <p class="charname"><strong>U+0547</strong> <a href="#char0547">ARMENIAN CAPITAL LETTER SHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0547">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -424,7 +440,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0548">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0548;</div>
-    <p class="charname"><strong>U+0548</strong> <a href="/uniview/?char=0548">ARMENIAN CAPITAL LETTER VO</a></p>
+    <p class="charname"><strong>U+0548</strong> <a href="#char0548">ARMENIAN CAPITAL LETTER VO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0548">See in UniView</a></p>
     <div class='letter'>
       <div class="armenian">
         <p><span class="title">Armenian</span> vowel</p>
@@ -436,7 +453,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0549">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0549;</div>
-    <p class="charname"><strong>U+0549</strong> <a href="/uniview/?char=0549">ARMENIAN CAPITAL LETTER CHA</a></p>
+    <p class="charname"><strong>U+0549</strong> <a href="#char0549">ARMENIAN CAPITAL LETTER CHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0549">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -450,7 +468,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char054A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x054A;</div>
-    <p class="charname"><strong>U+054A</strong> <a href="/uniview/?char=054A">ARMENIAN CAPITAL LETTER PEH</a></p>
+    <p class="charname"><strong>U+054A</strong> <a href="#char054A">ARMENIAN CAPITAL LETTER PEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=054A">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -464,7 +483,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char054B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x054B;</div>
-    <p class="charname"><strong>U+054B</strong> <a href="/uniview/?char=054B">ARMENIAN CAPITAL LETTER JHEH</a></p>
+    <p class="charname"><strong>U+054B</strong> <a href="#char054B">ARMENIAN CAPITAL LETTER JHEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=054B">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -478,7 +498,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char054C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x054C;</div>
-    <p class="charname"><strong>U+054C</strong> <a href="/uniview/?char=054C">ARMENIAN CAPITAL LETTER RA</a></p>
+    <p class="charname"><strong>U+054C</strong> <a href="#char054C">ARMENIAN CAPITAL LETTER RA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=054C">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -492,7 +513,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char054D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x054D;</div>
-    <p class="charname"><strong>U+054D</strong> <a href="/uniview/?char=054D">ARMENIAN CAPITAL LETTER SEH</a></p>
+    <p class="charname"><strong>U+054D</strong> <a href="#char054D">ARMENIAN CAPITAL LETTER SEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=054D">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -506,7 +528,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char054E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x054E;</div>
-    <p class="charname"><strong>U+054E</strong> <a href="/uniview/?char=054E">ARMENIAN CAPITAL LETTER VEW</a></p>
+    <p class="charname"><strong>U+054E</strong> <a href="#char054E">ARMENIAN CAPITAL LETTER VEW</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=054E">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -520,7 +543,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char054F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x054F;</div>
-    <p class="charname"><strong>U+054F</strong> <a href="/uniview/?char=054F">ARMENIAN CAPITAL LETTER TIWN</a></p>
+    <p class="charname"><strong>U+054F</strong> <a href="#char054F">ARMENIAN CAPITAL LETTER TIWN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=054F">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -534,7 +558,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0550">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0550;</div>
-    <p class="charname"><strong>U+0550</strong> <a href="/uniview/?char=0550">ARMENIAN CAPITAL LETTER REH</a></p>
+    <p class="charname"><strong>U+0550</strong> <a href="#char0550">ARMENIAN CAPITAL LETTER REH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0550">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -548,7 +573,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0551">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0551;</div>
-    <p class="charname"><strong>U+0551</strong> <a href="/uniview/?char=0551">ARMENIAN CAPITAL LETTER CO</a></p>
+    <p class="charname"><strong>U+0551</strong> <a href="#char0551">ARMENIAN CAPITAL LETTER CO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0551">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -562,7 +588,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0552">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0552;</div>
-    <p class="charname"><strong>U+0552</strong> <a href="/uniview/?char=0552">ARMENIAN CAPITAL LETTER YIWN</a></p>
+    <p class="charname"><strong>U+0552</strong> <a href="#char0552">ARMENIAN CAPITAL LETTER YIWN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0552">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -577,7 +604,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0553">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0553;</div>
-    <p class="charname"><strong>U+0553</strong> <a href="/uniview/?char=0553">ARMENIAN CAPITAL LETTER PIWR</a></p>
+    <p class="charname"><strong>U+0553</strong> <a href="#char0553">ARMENIAN CAPITAL LETTER PIWR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0553">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -591,7 +619,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0554">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0554;</div>
-    <p class="charname"><strong>U+0554</strong> <a href="/uniview/?char=0554">ARMENIAN CAPITAL LETTER KEH</a></p>
+    <p class="charname"><strong>U+0554</strong> <a href="#char0554">ARMENIAN CAPITAL LETTER KEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0554">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -605,7 +634,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0555">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0555;</div>
-    <p class="charname"><strong>U+0555</strong> <a href="/uniview/?char=0555">ARMENIAN CAPITAL LETTER OH</a></p>
+    <p class="charname"><strong>U+0555</strong> <a href="#char0555">ARMENIAN CAPITAL LETTER OH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0555">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -619,7 +649,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0556">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0556;</div>
-    <p class="charname"><strong>U+0556</strong> <a href="/uniview/?char=0556">ARMENIAN CAPITAL LETTER FEH</a></p>
+    <p class="charname"><strong>U+0556</strong> <a href="#char0556">ARMENIAN CAPITAL LETTER FEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0556">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -636,7 +667,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0561">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0561;</div>
-    <p class="charname"><strong>U+0561</strong> <a href="/uniview/?char=0561">ARMENIAN SMALL LETTER AYB</a></p>
+    <p class="charname"><strong>U+0561</strong> <a href="#char0561">ARMENIAN SMALL LETTER AYB</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0561">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -650,7 +682,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0562">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0562;</div>
-    <p class="charname"><strong>U+0562</strong> <a href="/uniview/?char=0562">ARMENIAN SMALL LETTER BEN</a></p>
+    <p class="charname"><strong>U+0562</strong> <a href="#char0562">ARMENIAN SMALL LETTER BEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0562">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -664,7 +697,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0563">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0563;</div>
-    <p class="charname"><strong>U+0563</strong> <a href="/uniview/?char=0563">ARMENIAN SMALL LETTER GIM</a></p>
+    <p class="charname"><strong>U+0563</strong> <a href="#char0563">ARMENIAN SMALL LETTER GIM</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0563">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -678,7 +712,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0564">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0564;</div>
-    <p class="charname"><strong>U+0564</strong> <a href="/uniview/?char=0564">ARMENIAN SMALL LETTER DA</a></p>
+    <p class="charname"><strong>U+0564</strong> <a href="#char0564">ARMENIAN SMALL LETTER DA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0564">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -692,7 +727,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0565">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0565;</div>
-    <p class="charname"><strong>U+0565</strong> <a href="/uniview/?char=0565">ARMENIAN SMALL LETTER ECH</a></p>
+    <p class="charname"><strong>U+0565</strong> <a href="#char0565">ARMENIAN SMALL LETTER ECH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0565">See in UniView</a></p>
     <div class='letter'>
       <div class="armenian">
         <p><span class="title">Armenian</span> vowel</p>
@@ -704,7 +740,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0566">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0566;</div>
-    <p class="charname"><strong>U+0566</strong> <a href="/uniview/?char=0566">ARMENIAN SMALL LETTER ZA</a></p>
+    <p class="charname"><strong>U+0566</strong> <a href="#char0566">ARMENIAN SMALL LETTER ZA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0566">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -718,7 +755,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0567">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0567;</div>
-    <p class="charname"><strong>U+0567</strong> <a href="/uniview/?char=0567">ARMENIAN SMALL LETTER EH</a></p>
+    <p class="charname"><strong>U+0567</strong> <a href="#char0567">ARMENIAN SMALL LETTER EH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0567">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -732,7 +770,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0568">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0568;</div>
-    <p class="charname"><strong>U+0568</strong> <a href="/uniview/?char=0568">ARMENIAN SMALL LETTER ET</a></p>
+    <p class="charname"><strong>U+0568</strong> <a href="#char0568">ARMENIAN SMALL LETTER ET</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0568">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -746,7 +785,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0569">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0569;</div>
-    <p class="charname"><strong>U+0569</strong> <a href="/uniview/?char=0569">ARMENIAN SMALL LETTER TO</a></p>
+    <p class="charname"><strong>U+0569</strong> <a href="#char0569">ARMENIAN SMALL LETTER TO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0569">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -760,7 +800,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char056A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x056A;</div>
-    <p class="charname"><strong>U+056A</strong> <a href="/uniview/?char=056A">ARMENIAN SMALL LETTER ZHE</a></p>
+    <p class="charname"><strong>U+056A</strong> <a href="#char056A">ARMENIAN SMALL LETTER ZHE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=056A">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -774,7 +815,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char056B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x056B;</div>
-    <p class="charname"><strong>U+056B</strong> <a href="/uniview/?char=056B">ARMENIAN SMALL LETTER INI</a></p>
+    <p class="charname"><strong>U+056B</strong> <a href="#char056B">ARMENIAN SMALL LETTER INI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=056B">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -788,7 +830,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char056C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x056C;</div>
-    <p class="charname"><strong>U+056C</strong> <a href="/uniview/?char=056C">ARMENIAN SMALL LETTER LIWN</a></p>
+    <p class="charname"><strong>U+056C</strong> <a href="#char056C">ARMENIAN SMALL LETTER LIWN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=056C">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -802,7 +845,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char056D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x056D;</div>
-    <p class="charname"><strong>U+056D</strong> <a href="/uniview/?char=056D">ARMENIAN SMALL LETTER XEH</a></p>
+    <p class="charname"><strong>U+056D</strong> <a href="#char056D">ARMENIAN SMALL LETTER XEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=056D">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -816,7 +860,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char056E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x056E;</div>
-    <p class="charname"><strong>U+056E</strong> <a href="/uniview/?char=056E">ARMENIAN SMALL LETTER CA</a></p>
+    <p class="charname"><strong>U+056E</strong> <a href="#char056E">ARMENIAN SMALL LETTER CA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=056E">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -830,7 +875,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char056F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x056F;</div>
-    <p class="charname"><strong>U+056F</strong> <a href="/uniview/?char=056F">ARMENIAN SMALL LETTER KEN</a></p>
+    <p class="charname"><strong>U+056F</strong> <a href="#char056F">ARMENIAN SMALL LETTER KEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=056F">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -844,7 +890,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0570">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0570;</div>
-    <p class="charname"><strong>U+0570</strong> <a href="/uniview/?char=0570">ARMENIAN SMALL LETTER HO</a></p>
+    <p class="charname"><strong>U+0570</strong> <a href="#char0570">ARMENIAN SMALL LETTER HO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0570">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -858,7 +905,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0571">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0571;</div>
-    <p class="charname"><strong>U+0571</strong> <a href="/uniview/?char=0571">ARMENIAN SMALL LETTER JA</a></p>
+    <p class="charname"><strong>U+0571</strong> <a href="#char0571">ARMENIAN SMALL LETTER JA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0571">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -872,7 +920,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0572">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0572;</div>
-    <p class="charname"><strong>U+0572</strong> <a href="/uniview/?char=0572">ARMENIAN SMALL LETTER GHAD</a></p>
+    <p class="charname"><strong>U+0572</strong> <a href="#char0572">ARMENIAN SMALL LETTER GHAD</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0572">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -886,7 +935,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0573">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0573;</div>
-    <p class="charname"><strong>U+0573</strong> <a href="/uniview/?char=0573">ARMENIAN SMALL LETTER CHEH</a></p>
+    <p class="charname"><strong>U+0573</strong> <a href="#char0573">ARMENIAN SMALL LETTER CHEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0573">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -900,7 +950,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0574">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0574;</div>
-    <p class="charname"><strong>U+0574</strong> <a href="/uniview/?char=0574">ARMENIAN SMALL LETTER MEN</a></p>
+    <p class="charname"><strong>U+0574</strong> <a href="#char0574">ARMENIAN SMALL LETTER MEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0574">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -914,7 +965,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0575">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0575;</div>
-    <p class="charname"><strong>U+0575</strong> <a href="/uniview/?char=0575">ARMENIAN SMALL LETTER YI</a></p>
+    <p class="charname"><strong>U+0575</strong> <a href="#char0575">ARMENIAN SMALL LETTER YI</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0575">See in UniView</a></p>
     <div class='letter'>
       <div class="armenian">
         <p><span class="title">Armenian</span> consonant</p>
@@ -926,7 +978,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0576">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0576;</div>
-    <p class="charname"><strong>U+0576</strong> <a href="/uniview/?char=0576">ARMENIAN SMALL LETTER NOW</a></p>
+    <p class="charname"><strong>U+0576</strong> <a href="#char0576">ARMENIAN SMALL LETTER NOW</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0576">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -940,7 +993,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0577">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0577;</div>
-    <p class="charname"><strong>U+0577</strong> <a href="/uniview/?char=0577">ARMENIAN SMALL LETTER SHA</a></p>
+    <p class="charname"><strong>U+0577</strong> <a href="#char0577">ARMENIAN SMALL LETTER SHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0577">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -954,7 +1008,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0578">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0578;</div>
-    <p class="charname"><strong>U+0578</strong> <a href="/uniview/?char=0578">ARMENIAN SMALL LETTER VO</a></p>
+    <p class="charname"><strong>U+0578</strong> <a href="#char0578">ARMENIAN SMALL LETTER VO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0578">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -968,7 +1023,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0579">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0579;</div>
-    <p class="charname"><strong>U+0579</strong> <a href="/uniview/?char=0579">ARMENIAN SMALL LETTER CHA</a></p>
+    <p class="charname"><strong>U+0579</strong> <a href="#char0579">ARMENIAN SMALL LETTER CHA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0579">See in UniView</a></p>
     <div class='letter'>
       <div class="armenian">
         <p><span class="title">Armenian</span> consonant</p>
@@ -980,7 +1036,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char057A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x057A;</div>
-    <p class="charname"><strong>U+057A</strong> <a href="/uniview/?char=057A">ARMENIAN SMALL LETTER PEH</a></p>
+    <p class="charname"><strong>U+057A</strong> <a href="#char057A">ARMENIAN SMALL LETTER PEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=057A">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -994,7 +1051,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char057B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x057B;</div>
-    <p class="charname"><strong>U+057B</strong> <a href="/uniview/?char=057B">ARMENIAN SMALL LETTER JHEH</a></p>
+    <p class="charname"><strong>U+057B</strong> <a href="#char057B">ARMENIAN SMALL LETTER JHEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=057B">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1008,7 +1066,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char057C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x057C;</div>
-    <p class="charname"><strong>U+057C</strong> <a href="/uniview/?char=057C">ARMENIAN SMALL LETTER RA</a></p>
+    <p class="charname"><strong>U+057C</strong> <a href="#char057C">ARMENIAN SMALL LETTER RA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=057C">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1022,7 +1081,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char057D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x057D;</div>
-    <p class="charname"><strong>U+057D</strong> <a href="/uniview/?char=057D">ARMENIAN SMALL LETTER SEH</a></p>
+    <p class="charname"><strong>U+057D</strong> <a href="#char057D">ARMENIAN SMALL LETTER SEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=057D">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1036,7 +1096,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char057E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x057E;</div>
-    <p class="charname"><strong>U+057E</strong> <a href="/uniview/?char=057E">ARMENIAN SMALL LETTER VEW</a></p>
+    <p class="charname"><strong>U+057E</strong> <a href="#char057E">ARMENIAN SMALL LETTER VEW</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=057E">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1050,7 +1111,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char057F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x057F;</div>
-    <p class="charname"><strong>U+057F</strong> <a href="/uniview/?char=057F">ARMENIAN SMALL LETTER TIWN</a></p>
+    <p class="charname"><strong>U+057F</strong> <a href="#char057F">ARMENIAN SMALL LETTER TIWN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=057F">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1064,7 +1126,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0580">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0580;</div>
-    <p class="charname"><strong>U+0580</strong> <a href="/uniview/?char=0580">ARMENIAN SMALL LETTER REH</a></p>
+    <p class="charname"><strong>U+0580</strong> <a href="#char0580">ARMENIAN SMALL LETTER REH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0580">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1078,7 +1141,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0581">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0581;</div>
-    <p class="charname"><strong>U+0581</strong> <a href="/uniview/?char=0581">ARMENIAN SMALL LETTER CO</a></p>
+    <p class="charname"><strong>U+0581</strong> <a href="#char0581">ARMENIAN SMALL LETTER CO</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0581">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1092,7 +1156,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0582">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0582;</div>
-    <p class="charname"><strong>U+0582</strong> <a href="/uniview/?char=0582">ARMENIAN SMALL LETTER YIWN</a></p>
+    <p class="charname"><strong>U+0582</strong> <a href="#char0582">ARMENIAN SMALL LETTER YIWN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0582">See in UniView</a></p>
     <div class="armenian">
       <p><span class="title">Armenian</span> consonant</p>
       <p><span class="ipa">v, w</span></p>
@@ -1103,7 +1168,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0583">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0583;</div>
-    <p class="charname"><strong>U+0583</strong> <a href="/uniview/?char=0583">ARMENIAN SMALL LETTER PIWR</a></p>
+    <p class="charname"><strong>U+0583</strong> <a href="#char0583">ARMENIAN SMALL LETTER PIWR</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0583">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1117,7 +1183,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0584">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0584;</div>
-    <p class="charname"><strong>U+0584</strong> <a href="/uniview/?char=0584">ARMENIAN SMALL LETTER KEH</a></p>
+    <p class="charname"><strong>U+0584</strong> <a href="#char0584">ARMENIAN SMALL LETTER KEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0584">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1131,7 +1198,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0585">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0585;</div>
-    <p class="charname"><strong>U+0585</strong> <a href="/uniview/?char=0585">ARMENIAN SMALL LETTER OH</a></p>
+    <p class="charname"><strong>U+0585</strong> <a href="#char0585">ARMENIAN SMALL LETTER OH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0585">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1145,7 +1213,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0586">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0586;</div>
-    <p class="charname"><strong>U+0586</strong> <a href="/uniview/?char=0586">ARMENIAN SMALL LETTER FEH</a></p>
+    <p class="charname"><strong>U+0586</strong> <a href="#char0586">ARMENIAN SMALL LETTER FEH</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0586">See in UniView</a></p>
     <div class='notes'>
       <div class='letter'>
         <div class="armenian">
@@ -1159,7 +1228,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0587">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0587;</div>
-    <p class="charname"><strong>U+0587</strong> <a href="/uniview/?char=0587">ARMENIAN SMALL LIGATURE ECH YIWN</a></p>
+    <p class="charname"><strong>U+0587</strong> <a href="#char0587">ARMENIAN SMALL LIGATURE ECH YIWN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0587">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">≈ 0565 0582</div>
   </div>
@@ -1169,7 +1239,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0559">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0559;</div>
-    <p class="charname"><strong>U+0559</strong> <a href="/uniview/?char=0559">ARMENIAN MODIFIER LETTER LEFT HALF RING</a></p>
+    <p class="charname"><strong>U+0559</strong> <a href="#char0559">ARMENIAN MODIFIER LETTER LEFT HALF RING</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0559">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">→ (modifier letter reversed comma - 02BD)<br/>
       → (modifier letter left half ring - 02BF)<br/>
@@ -1178,7 +1249,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char055A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x055A;</div>
-    <p class="charname"><strong>U+055A</strong> <a href="/uniview/?char=055A">ARMENIAN APOSTROPHE</a></p>
+    <p class="charname"><strong>U+055A</strong> <a href="#char055A">ARMENIAN APOSTROPHE</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=055A">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= armenian modifier letter right half ring (1.0)<br/>
       → (modifier letter apostrophe - 02BC)<br/>
@@ -1188,7 +1260,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char055B">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x055B;</div>
-    <p class="charname"><strong>U+055B</strong> <a href="/uniview/?char=055B">ARMENIAN EMPHASIS MARK</a></p>
+    <p class="charname"><strong>U+055B</strong> <a href="#char055B">ARMENIAN EMPHASIS MARK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=055B">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= shesht<br/>
       → (modifier letter acute accent - 02CA)</div>
@@ -1196,7 +1269,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char055C">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x055C;</div>
-    <p class="charname"><strong>U+055C</strong> <a href="/uniview/?char=055C">ARMENIAN EXCLAMATION MARK</a></p>
+    <p class="charname"><strong>U+055C</strong> <a href="#char055C">ARMENIAN EXCLAMATION MARK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=055C">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= batsaganchakan nshan<br/>
       • marks intonation on word, rather than occurring finally</div>
@@ -1204,7 +1278,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char055D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x055D;</div>
-    <p class="charname"><strong>U+055D</strong> <a href="/uniview/?char=055D">ARMENIAN COMMA</a></p>
+    <p class="charname"><strong>U+055D</strong> <a href="#char055D">ARMENIAN COMMA</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=055D">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= bowt<br/>
       → (modifier letter grave accent - 02CB)</div>
@@ -1212,7 +1287,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char055E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x055E;</div>
-    <p class="charname"><strong>U+055E</strong> <a href="/uniview/?char=055E">ARMENIAN QUESTION MARK</a></p>
+    <p class="charname"><strong>U+055E</strong> <a href="#char055E">ARMENIAN QUESTION MARK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=055E">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= hartsakan nshan<br/>
       • marks intonation on word, rather than occurring finally</div>
@@ -1220,7 +1296,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char055F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x055F;</div>
-    <p class="charname"><strong>U+055F</strong> <a href="/uniview/?char=055F">ARMENIAN ABBREVIATION MARK</a></p>
+    <p class="charname"><strong>U+055F</strong> <a href="#char055F">ARMENIAN ABBREVIATION MARK</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=055F">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= patiw</div>
     <div class='notes'>
@@ -1238,7 +1315,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char0589">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x0589;</div>
-    <p class="charname"><strong>U+0589</strong> <a href="/uniview/?char=0589">ARMENIAN FULL STOP</a></p>
+    <p class="charname"><strong>U+0589</strong> <a href="#char0589">ARMENIAN FULL STOP</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=0589">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= vertsaket<br/>
       • may also be used for historic Georgian texts<br/>
@@ -1247,7 +1325,8 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char058A">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x058A;</div>
-    <p class="charname"><strong>U+058A</strong> <a href="/uniview/?char=058A">ARMENIAN HYPHEN</a></p>
+    <p class="charname"><strong>U+058A</strong> <a href="#char058A">ARMENIAN HYPHEN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=058A">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">= yentamna</div>
   </div>
@@ -1257,12 +1336,14 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char058D">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x058D;</div>
-    <p class="charname"><strong>U+058D</strong> <a href="/uniview/?char=058D">RIGHT-FACING ARMENIAN ETERNITY SIGN</a></p>
+    <p class="charname"><strong>U+058D</strong> <a href="#char058D">RIGHT-FACING ARMENIAN ETERNITY SIGN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=058D">See in UniView</a></p>
   </div>
   <div class="character" id="char058E">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x058E;</div>
-    <p class="charname"><strong>U+058E</strong> <a href="/uniview/?char=058E">LEFT-FACING ARMENIAN ETERNITY SIGN</a></p>
+    <p class="charname"><strong>U+058E</strong> <a href="#char058E">LEFT-FACING ARMENIAN ETERNITY SIGN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=058E">See in UniView</a></p>
     <p class="subtitle">Description in the Unicode standard:</p>
     <div class="unicodenotes">• maps to AST 34.005:1997</div>
   </div>
@@ -1272,17 +1353,14 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
   <div class="character" id="char058F">
     <div class="up"><a href="#index">⇧</a></div>
     <div class="charimg">&#x058F;</div>
-    <p class="charname"><strong>U+058F</strong> <a href="/uniview/?char=058F">ARMENIAN DRAM SIGN</a></p>
+    <p class="charname"><strong>U+058F</strong> <a href="#char058F">ARMENIAN DRAM SIGN</a></p>
+    <p class="univiewLink"><a href="/uniview/?char=058F">See in UniView</a></p>
   </div>
 </section>
-
-
 <div id="panel" style="display:none"></div>
-
 <div class="smallprint"><span id="version">First published  3 Feb 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-22  6:20<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-03-11  9:00<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
-
 
 <!-- Uncomment this code to get a list of all character names for the file names-subset.js 
 <div id=charliststr></div>
@@ -1299,6 +1377,18 @@ listCharsWithNotes();
 createtoc();
 initialiseShowNames();
 highlightIndexChars()
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'char') { 
+		if (pairs[1]) { 
+			document.getElementById('includeStyles').textContent = '.character, h1, h2, #charlistsection, .sidebar, header, #status, #intro, #fontsetting, .smallprint, .univiewLink { display: none; } #char'+pairs[1]+' { display: block; }' 
+			} 
+		}
+	}
 </script>
 </body>
 </html>
