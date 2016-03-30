@@ -1,6 +1,11 @@
 ﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'mdcToUnicode') { return mdcToUnicode(str) }
+	if (direction == 'mdcToGerman') { return britishToGerman(mdcToUnicode(str)) }
+	if (direction == 'britishToMdc') { return britishToMdc(str) }
+	if (direction == 'germanToMdc') { return britishToMdc(germanToBritish(str)) }
+	if (direction == 'britishToGerman') { return britishToGerman(str) }
+	if (direction == 'germanToBritish') { return germanToBritish(str) }
 	if (direction == 'mdcToHieroglyphs') { return mdcToHieroglyphs(str) }
 	if (direction == 'hieroglyphsToMdC') { return hieroglyphsToMdC(str) }
 	}
@@ -9,8 +14,9 @@
 
 
 function mdcToUnicode (str) {
-	// convert Manuel de Codage transcription to Unicode
+	// convert Manuel de Codage transcription to British Unicode
 	
+	str = ' '+str+' '
 	str = str.replace(/A([^1234567890])/g,'ꜣ$1') 
 	str = str.replace(/i/g,'i̓') 
 	str = str.replace(/a/g,'ꜥ') 
@@ -18,13 +24,63 @@ function mdcToUnicode (str) {
 	str = str.replace(/x/g,'ḫ') 
 	str = str.replace(/X([^1234567890])/g,'ẖ$1') 
 	str = str.replace(/S([^1234567890])/g,'š$1') 
+	str = str.replace(/s/g,'ś') 
 	str = str.replace(/q/g,'ḳ') 
 	str = str.replace(/T([^1234567890])/g,'ṯ$1') 
 	str = str.replace(/D([^1234567890])/g,'ḏ$1') 
 	str = str.replace(/W([^1234567890])/g,'w$1') 
 	str = str.replace(/M([^1234567890])/g,'m$1') 
 	str = str.replace(/N([^1234567890])/g,'n$1') 
-	str = str.replace(/z/g,'s$1') 
+	str = str.replace(/z/g,'s') 
+
+	return str.trim()
+	}
+
+
+
+function britishToMdc (str) {
+	// convert British to Manuel de Codage transcription
+	
+	str = ' '+str+' '
+	str = str.replace(/ꜣ/g,'A') 
+	str = str.replace(/i̓/g,'i') 
+	str = str.replace(/ꜥ/g,'a') 
+	str = str.replace(/ḥ/g,'H') 
+	str = str.replace(/ḫ/g,'x') 
+	str = str.replace(/ẖ/g,'X') 
+	str = str.replace(/š/g,'S') 
+	str = str.replace(/ḳ/g,'q') 
+	str = str.replace(/ṯ/g,'T') 
+	str = str.replace(/ḏ/g,'D') 
+	str = str.replace(/s/g,'z') 
+	str = str.replace(/ś/g,'s') 
+
+	return str.trim()
+	}
+
+
+
+function britishToGerman (str) {
+	// convert British to German transcription
+	
+	str = ' '+str+' '
+	str = str.replace(/i̓/g,'j') 
+	str = str.replace(/s/g,'z') 
+	str = str.replace(/ś/g,'s') 
+	str = str.replace(/ḳ/g,'q') 
+
+	return str.trim()
+	}
+
+
+function germanToBritish (str) {
+	// convert German to British transcription
+	
+	str = ' '+str+' '
+	str = str.replace(/j/g,'i̓') 
+	str = str.replace(/s/g,'ś') 
+	str = str.replace(/z/g,'s') 
+	str = str.replace(/q/g,'ḳ') 
 
 	return str.trim()
 	}

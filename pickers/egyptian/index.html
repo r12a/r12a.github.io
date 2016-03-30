@@ -55,8 +55,8 @@
     <button onclick="doWikiHiero()" 
     title="Display Manuel de Codage transcriptions on WikiHiero page.">MdC to<br/>WikiHiero</button> 
 
-    <button onclick="doTranscription('mdcToUnicode')" 
-    title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Unicode</button> 
+    <button onclick="document.getElementById('translitSelector').style.display = 'block';" 
+    title="Convert one transcription to another.">Change<br/>Transliteration</button> 
         
     <button onclick="convertPhonemes()" 
     title="Look up a Latin consonant or consonant sounds.">Phonetic<br/>look up</button> 
@@ -67,6 +67,28 @@
     <button  id="makeCharLink" type="button" onclick="makeCharLink('egyptian','egy','')" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
+</div>
+
+<div id="translitSelector" style="display:none;">
+    <button onclick="doTranscription('mdcToUnicode')" 
+    title="Convert a Manuel de Codage transcription to a British Unicode transcription.">MdC to British</button> 
+
+    <button onclick="doTranscription('mdcToGerman')" 
+    title="Convert a Manuel de Codage transcription to a German Unicode transcription.">MdC to German</button> 
+
+    <button onclick="doTranscription('britishToMdc')" 
+    title="Convert a British Unicode transcription to a Manuel de Codage transcription.">British to MdC</button> 
+
+    <button onclick="doTranscription('germanToMdc')" 
+    title="Convert a German Unicode transcription to a Manuel de Codage transcription.">German to MdC</button> 
+
+    <button onclick="doTranscription('britishToGerman')" 
+    title="Convert a British Unicode transcription to a German Unicode transcription.">British to German</button> 
+
+    <button onclick="doTranscription('germanToBritish')" 
+    title="Convert a German Unicode transcription to a British Unicode transcription.">German to British</button> 
+
+	<button onclick="document.getElementById('translitSelector').style.display = 'none'">X</button>
 </div>
 
 

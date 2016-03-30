@@ -11,6 +11,14 @@
 #alphabet { display: block; }
 
 
+#translitSelector {
+	margin: 0 20px 3px 20px;
+	float:right; 
+	vertical-align:bottom; 
+	font-size: 80%;
+	}
+
+
 [lang='egy'] {
 	font-family: 'Noto Sans Egyptian Hieroglyphs WF', 'Noto Sans Egyptian Hieroglyphs', Aegyptus, serif;
 	}
