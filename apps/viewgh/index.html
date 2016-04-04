@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<title>Github lookup app</title>
+<meta name="description" content="Search the IANA language subtag registry or list subtags by category." />
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif', 'Github lookup','');</script>
+</header>
+
+
+<p>This scriptlet makes it slightly quicker to display a served page version of a commit on github (rather than the source view).</p>
+<p><input id="org" type="text" value="w3c"/> organisation</p>
+<p><select id="repo">
+	<option value="">select or type to the left</option>
+	<option value="charmod-norm">charmod-norm</option>
+	<option value="unicode-xml">unicode-xml</option>
+	<option value="i18n-drafts">i18n-drafts</option>
+	<option value="alreq">alreq</option>
+	<option value="clreq">clreq</option>
+	<option value="elreq">elreq</option>
+	<option value="ilreq">ilreq</option>
+	<option value="klreq">klreq</option>
+	<option value="tlreq">tlreq</option>
+	<option value="predefined-counter-styles">predefined-counter-styles</option>
+	<option value="bp-i18n-specdev">bp-i18n-specdev</option>
+    </select> repo name  <input id="altrepo" placeholder="non-i18n repo" type="text"/>
+</p>
+<p><input id="cnum" type="text"/> commit number</p>
+<p><input id="fname" type="text" value="index.html"/> file name</p>
+
+<p><button  onclick="var repo=document.getElementById('repo').value; if (repo=='') {repo = document.getElementById('altrepo').value; }
+var cnum=document.getElementById('cnum').value;
+var fname=document.getElementById('fname').value;
+var org=document.getElementById('org').value;
+help = window.open('http://htmlpreview.github.io/?https://github.com/'+org+'/'+repo+'/blob/'+cnum+'/'+fname, '_blank'); help.focus(); return false;">Go</button></p>
+
+
+</body>
+</html>
