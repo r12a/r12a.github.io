@@ -24,6 +24,7 @@ img {
 .fconflict { border: 3px solid orange; }
 .okdiff { border: 3px solid #6F9; }
 .chstandard { border: 3px solid #ff59fd; }
+.fvsmismatch { border: 3px solid #aaa; }
 
 #fontsetting { width: 270px; }
 #fontsetting.open { right: 0px; }
@@ -73,6 +74,7 @@ table.formtable { clear: both; }
 table td { background-color: white; }
 .formtable td { border: 1px solid #ddd; }
 .formtable td.gap { border: 0; }
+.formtable th.gap { background-color: transparent; }
 .formtable th { text-align:center; }
 table.formtable td[lang='mn'] { 
 	color: black;
@@ -93,6 +95,8 @@ td.fconflict { background-color: #F6A355; color: white; font-weight: 500; }
 td.okdiff { background-color: #6F9; color: gray; font-weight: 500; }
 td.agreed { background-color: #6F9; color: gray; font-weight: 500; }
 td.chstandard { background-color: #ff59fd; color: white; font-weight: 500; }
+td.research { background-color: #0ff; }
+td.fvsmismatch { border: 3px solid #aaa; }
 .notes ul, .notes ol { margin-right: 30px; }
 
 .rationale {  
@@ -107,4 +111,13 @@ td.chstandard { background-color: #ff59fd; color: white; font-weight: 500; }
 .syllables {
 	-webkit-writing-mode: vertical-lr;
 	writing-mode: vertical-lr;
+	}
+
+.formtable td.referencelists {
+	display: none;
+	opacity: .3;
+	}
+.formtable th.referencelists {
+	display: none;
+	opacity: .3;
 	}
