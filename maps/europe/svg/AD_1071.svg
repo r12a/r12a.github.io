@@ -7620,6 +7620,7 @@
 	<text transform="matrix(1 0 0 1 1784.1851 1629.6498)" class="st3 st51">Patzinaks</text>
 </g>
 
+
 <text font-weight="700" font-family="Myriad Pro, Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(470 454)">1071<tspan font-size="72px" x="440" y="0"> AD</tspan></text><a xlink:href="../index#ad1071"><path fill="#4D4D4F" d="M715.2,542.4l-0.2,61.1c0,5.3,4.3,8.4,12.8,9.5v5l-53.4,0.1v-4.9c4.2,0,7.4-0.8,9.7-2.3
 		c2.3-1.5,3.4-3.7,3.4-6.5v-41.7c0-5.3-4.3-8.5-13-9.5l0.1-6.2L715.2,542.4z M701.4,504.7c4,0,7.4,1.4,10.1,4.1
 		c2.7,2.7,4.1,6.1,4.1,10.2c0,3.9-1.4,7.2-4.1,10c-2.7,2.7-6,4.1-9.8,4.1c-4.2,0-7.6-1.3-10.4-3.8s-4.1-5.8-4.1-9.7
@@ -7694,5 +7695,4 @@
 		document.getElementById('text').style.display='none';
 		}
 	</script>
-
 </svg>
