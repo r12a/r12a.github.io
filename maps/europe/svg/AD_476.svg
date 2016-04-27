@@ -5378,38 +5378,43 @@
 </g>
 
 
+
+
+
 <text font-weight="700" font-family="Myriad Pro, Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(550 454)">476<tspan font-size="72px" x="321" y="0"> AD</tspan></text><a xlink:href="../index#ad476"><path fill="#4D4D4F" d="M715.2,542.4l-0.2,61.1c0,5.3,4.3,8.4,12.8,9.5v5l-53.4,0.1v-4.9c4.2,0,7.4-0.8,9.7-2.3
 		c2.3-1.5,3.4-3.7,3.4-6.5v-41.7c0-5.3-4.3-8.5-13-9.5l0.1-6.2L715.2,542.4z M701.4,504.7c4,0,7.4,1.4,10.1,4.1
 		c2.7,2.7,4.1,6.1,4.1,10.2c0,3.9-1.4,7.2-4.1,10c-2.7,2.7-6,4.1-9.8,4.1c-4.2,0-7.6-1.3-10.4-3.8s-4.1-5.8-4.1-9.7
 		c0-4.4,1.3-7.9,4-10.7C693.8,506.1,697.2,504.7,701.4,504.7z"/></a><a xlink:href="AD_451.svg"><path color="black" d="M622,506c-11.92,11.92-61.88,65-61.88,65s51.37,52.46,63.81,64.9V508"/></a><a xlink:href="AD_528.svg"><path color="black" d="M781.41,633.92c11.92-11.92,61.88-65,61.88-65s-51.37-51.46-63.81-63.9V631.94"/></a>
 <style type="text/css">
-	.dates{font-size: 20px; fill:#8B5E3C; fill:black; font-family:'MyriadPro',Helvetica,Arial,sans-serif; cursor: pointer;}
-	.dates:hover { fill:#8B5E3C; font-size: 72px; }
+	.big { fill: transparent; font-size: 72px; font-family:'MyriadPro',Helvetica,Arial,sans-serif; cursor: pointer; }
+	a:hover > .big { fill:#8B5E3C;  }
+	a:hover > .maprange { fill:yellow; }
 	.selectors { cursor:pointer; font-family:'Myriad Pro', Helvetica, Arial, sans-serif; font-size:40px; color:black; }
+	.maprange { fill:#A97C50; stroke:white; }
 </style>
-	<path style="fill:#A97C50;stroke:#A97C50;" d="M26.1,1599.5L26.1,1599.5c-3.3,0-6-2.7-6-6v-1488c0-3.3,2.7-6,6-6h0c3.3,0,6,2.7,6,6v1488
-		C32.1,1596.8,29.4,1599.5,26.1,1599.5z"/>
-	<a xlink:href="AD_362.svg"><text x="36" y="462" class="dates">&#xA0;&#xA0;&#xA0;362</text></a>
-	<a xlink:href="AD_406.svg"><text x="36" y="506" class="dates">&#xA0;&#xA0;&#xA0;406</text></a>
-	<a xlink:href="AD_420.svg"><text x="36" y="522" class="dates">&#xA0;&#xA0;&#xA0;420</text></a>
-	<a xlink:href="AD_451.svg"><text x="36" y="551" class="dates">&#xA0;&#xA0;&#xA0;451</text></a>
-	<a xlink:href="AD_476.svg"><text x="36" y="576" class="dates">&#xA0;&#xA0;&#xA0;476</text></a>
-	<a xlink:href="AD_528.svg"><text x="36" y="628" class="dates">&#xA0;&#xA0;&#xA0;528</text></a>
-	<a xlink:href="AD_565.svg"><text x="36" y="665" class="dates">&#xA0;&#xA0;&#xA0;565</text></a>
-	<a xlink:href="AD_600.svg"><text x="36" y="700" class="dates">&#xA0;&#xA0;&#xA0;600</text></a>
-	<a xlink:href="AD_626.svg"><text x="36" y="726" class="dates">&#xA0;&#xA0;&#xA0;626</text></a>
-	<a xlink:href="AD_651.svg"><text x="36" y="751" class="dates">&#xA0;&#xA0;&#xA0;651</text></a>
-	<a xlink:href="AD_737.svg"><text x="36" y="837" class="dates">&#xA0;&#xA0;&#xA0;737</text></a>
-	<a xlink:href="AD_771.svg"><text x="36" y="871" class="dates">&#xA0;&#xA0;&#xA0;771</text></a>
-	<a xlink:href="AD_830.svg"><text x="36" y="930" class="dates">&#xA0;&#xA0;&#xA0;830</text></a>
-	<a xlink:href="AD_888.svg"><text x="36" y="988" class="dates">&#xA0;&#xA0;&#xA0;888</text></a>
-	<a xlink:href="AD_925.svg"><text x="36" y="1025" class="dates">&#xA0;&#xA0;&#xA0;925</text></a>
-	<a xlink:href="AD_1000.svg"><text x="36" y="1100" class="dates">&#xA0;&#xA0;&#xA0;1000</text></a>
-	<a xlink:href="AD_1030.svg"><text x="36" y="1130" class="dates">&#xA0;&#xA0;&#xA0;1030</text></a>
-	<a xlink:href="AD_1071.svg"><text x="36" y="1171" class="dates">&#xA0;&#xA0;&#xA0;1071</text></a>
-	<a xlink:href="AD_1092.svg"><text x="36" y="1192" class="dates">&#xA0;&#xA0;&#xA0;1092</text></a>
-	<a xlink:href="AD_1100.svg"><text x="36" y="1210" class="dates">&#xA0;&#xA0;&#xA0;1100</text></a>
-	<a xlink:href="AD_1130.svg"><text x="36" y="1230" class="dates">&#xA0;&#xA0;&#xA0;1130</text></a>		<text transform="translate(2400 100)" class="selectors" onclick="
+	<a xlink:href="AD_305.svg"><path class="maprange" d="M 0,0 l 30,0 l 0,305 l -30,0 z"/><text x="30" y="305" class="big">&#xA0;&#xA0;305</text></a>
+	<a xlink:href="AD_362.svg"><path class="maprange" d="M 0,305 l 30,0 l 0,57 l -30,0 z"/><text x="30" y="362" class="big">&#xA0;&#xA0;362</text></a>
+	<a xlink:href="AD_406.svg"><path class="maprange" d="M 0,362 l 30,0 l 0,44 l -30,0 z"/><text x="30" y="406" class="big">&#xA0;&#xA0;406</text></a>
+	<a xlink:href="AD_420.svg"><path class="maprange" d="M 0,406 l 30,0 l 0,14 l -30,0 z"/><text x="30" y="420" class="big">&#xA0;&#xA0;420</text></a>
+	<a xlink:href="AD_451.svg"><path class="maprange" d="M 0,420 l 30,0 l 0,31 l -30,0 z"/><text x="30" y="451" class="big">&#xA0;&#xA0;451</text></a>
+	<a xlink:href="AD_476.svg"><path class="maprange" d="M 0,451 l 30,0 l 0,25 l -30,0 z"/><text x="30" y="476" class="big">&#xA0;&#xA0;476</text></a>
+	<a xlink:href="AD_528.svg"><path class="maprange" d="M 0,476 l 30,0 l 0,52 l -30,0 z"/><text x="30" y="528" class="big">&#xA0;&#xA0;528</text></a>
+	<a xlink:href="AD_565.svg"><path class="maprange" d="M 0,528 l 30,0 l 0,37 l -30,0 z"/><text x="30" y="565" class="big">&#xA0;&#xA0;565</text></a>
+	<a xlink:href="AD_600.svg"><path class="maprange" d="M 0,565 l 30,0 l 0,35 l -30,0 z"/><text x="30" y="600" class="big">&#xA0;&#xA0;600</text></a>
+	<a xlink:href="AD_626.svg"><path class="maprange" d="M 0,600 l 30,0 l 0,26 l -30,0 z"/><text x="30" y="626" class="big">&#xA0;&#xA0;626</text></a>
+	<a xlink:href="AD_651.svg"><path class="maprange" d="M 0,626 l 30,0 l 0,25 l -30,0 z"/><text x="30" y="651" class="big">&#xA0;&#xA0;651</text></a>
+	<a xlink:href="AD_737.svg"><path class="maprange" d="M 0,651 l 30,0 l 0,86 l -30,0 z"/><text x="30" y="737" class="big">&#xA0;&#xA0;737</text></a>
+	<a xlink:href="AD_771.svg"><path class="maprange" d="M 0,737 l 30,0 l 0,34 l -30,0 z"/><text x="30" y="771" class="big">&#xA0;&#xA0;771</text></a>
+	<a xlink:href="AD_830.svg"><path class="maprange" d="M 0,771 l 30,0 l 0,59 l -30,0 z"/><text x="30" y="830" class="big">&#xA0;&#xA0;830</text></a>
+	<a xlink:href="AD_888.svg"><path class="maprange" d="M 0,830 l 30,0 l 0,58 l -30,0 z"/><text x="30" y="888" class="big">&#xA0;&#xA0;888</text></a>
+	<a xlink:href="AD_925.svg"><path class="maprange" d="M 0,888 l 30,0 l 0,37 l -30,0 z"/><text x="30" y="925" class="big">&#xA0;&#xA0;925</text></a>
+	<a xlink:href="AD_1000.svg"><path class="maprange" d="M 0,925 l 30,0 l 0,75 l -30,0 z"/><text x="30" y="1000" class="big">&#xA0;&#xA0;1000</text></a>
+	<a xlink:href="AD_1030.svg"><path class="maprange" d="M 0,1000 l 30,0 l 0,30 l -30,0 z"/><text x="30" y="1030" class="big">&#xA0;&#xA0;1030</text></a>
+	<a xlink:href="AD_1071.svg"><path class="maprange" d="M 0,1030 l 30,0 l 0,41 l -30,0 z"/><text x="30" y="1071" class="big">&#xA0;&#xA0;1071</text></a>
+	<a xlink:href="AD_1092.svg"><path class="maprange" d="M 0,1071 l 30,0 l 0,21 l -30,0 z"/><text x="30" y="1092" class="big">&#xA0;&#xA0;1092</text></a>
+	<a xlink:href="AD_1100.svg"><path class="maprange" d="M 0,1092 l 30,0 l 0,8 l -30,0 z"/><text x="30" y="1100" class="big">&#xA0;&#xA0;1100</text></a>
+	<a xlink:href="AD_1130.svg"><path class="maprange" d="M 0,1100 l 30,0 l 0,30 l -30,0 z"/><text x="30" y="1130" class="big">&#xA0;&#xA0;1130</text></a>
+	<a xlink:href="AD_1212.svg"><path class="maprange" d="M 0,1130 l 30,0 l 0,82 l -30,0 z"/><text x="30" y="1212" class="big">&#xA0;&#xA0;1212</text></a>	<text transform="translate(2400 100)" class="selectors" onclick="
 	if(document.getElementById('bitmap').style.display!='none'){
 	document.getElementById('bitmap').style.display='none';
 	document.getElementById('rivers').style.display='none';
