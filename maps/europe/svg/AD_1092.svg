@@ -7770,6 +7770,7 @@
 </g>
 
 
+
 <text font-weight="700" font-family="Myriad Pro, Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(470 454)">1092<tspan font-size="72px" x="440" y="0"> AD</tspan></text><a xlink:href="../index#ad1092"><path fill="#4D4D4F" d="M715.2,542.4l-0.2,61.1c0,5.3,4.3,8.4,12.8,9.5v5l-53.4,0.1v-4.9c4.2,0,7.4-0.8,9.7-2.3
 		c2.3-1.5,3.4-3.7,3.4-6.5v-41.7c0-5.3-4.3-8.5-13-9.5l0.1-6.2L715.2,542.4z M701.4,504.7c4,0,7.4,1.4,10.1,4.1
 		c2.7,2.7,4.1,6.1,4.1,10.2c0,3.9-1.4,7.2-4.1,10c-2.7,2.7-6,4.1-9.8,4.1c-4.2,0-7.6-1.3-10.4-3.8s-4.1-5.8-4.1-9.7
@@ -7781,7 +7782,9 @@
 	.selectors { cursor:pointer; font-family:'Myriad Pro', Helvetica, Arial, sans-serif; font-size:40px; color:black; }
 	.maprange { fill:#A97C50; stroke:white; }
 </style>
-	<a xlink:href="AD_305.svg"><path class="maprange" d="M 0,0 l 30,0 l 0,305 l -30,0 z"/><text x="30" y="305" class="big">&#xA0;&#xA0;305</text></a>
+	<a xlink:href="AD_138.svg"><path class="maprange" d="M 0,0 l 30,0 l 0,138 l -30,0 z"/><text x="30" y="138" class="big">&#xA0;&#xA0;138</text></a>
+	<a xlink:href="AD_230.svg"><path class="maprange" d="M 0,138 l 30,0 l 0,92 l -30,0 z"/><text x="30" y="230" class="big">&#xA0;&#xA0;230</text></a>
+	<a xlink:href="AD_305.svg"><path class="maprange" d="M 0,230 l 30,0 l 0,75 l -30,0 z"/><text x="30" y="305" class="big">&#xA0;&#xA0;305</text></a>
 	<a xlink:href="AD_362.svg"><path class="maprange" d="M 0,305 l 30,0 l 0,57 l -30,0 z"/><text x="30" y="362" class="big">&#xA0;&#xA0;362</text></a>
 	<a xlink:href="AD_406.svg"><path class="maprange" d="M 0,362 l 30,0 l 0,44 l -30,0 z"/><text x="30" y="406" class="big">&#xA0;&#xA0;406</text></a>
 	<a xlink:href="AD_420.svg"><path class="maprange" d="M 0,406 l 30,0 l 0,14 l -30,0 z"/><text x="30" y="420" class="big">&#xA0;&#xA0;420</text></a>
