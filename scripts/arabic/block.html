@@ -899,10 +899,17 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
         </div>
         <div class="letter urdu">
           <p><span class="title">Urdu</span> consonant, <span class="name">nūn</span> <span class="ipa">nuːn</span></p>
-          <p><span class="ipa">n</span> </p>
-          <p>Looks like: <span dir="rtl" lang="ur">ننن ن</span></p>
-          <p>Within a word this looks exactly the same as U+06BA ARABIC LETTER NOON GHUNNA, which is used for nasalization of vowels, eg. <span class="ex" dir="rtl" lang="ur">ٹاںگ</span> <span class="ipa">ʈɑː̃g</span> (<span class="meaning">leg</span>).</p>
-          <p class="ref"><a href="/scripts/urdu/#endlinks">Refs</a>: Matthews; Delacy</p>
+          <p>Looks like: <span dir="rtl" lang="ur" class="ex">ننن ن</span></p>
+          <p><span class="ipa">n</span>, eg. <span class="ex" lang="ur" dir="rtl">انسان</span> <span class="ipa">insãːn</span> <span class="meaning">human being</span>.</p>
+          <p><span class="ipa">◌̃</span> Within a word it may signal that the preceding vowel is nasalised, rather than representing an <a class="ipa">n</a> sound, eg. <span class="ex" dir="rtl" lang="ur">ٹانگ</span> <span class="ipa">tãːg</span> <span class="meaning">leg</span>. Sometimes, <a href="/scripts/arabic/block#char0658"><span class="uname">U+0658 ARABIC MARK NOON GHUNNA</span> <span lang="ar" dir="rtl">&#x0640;&#x0658;</span></a>  is used above this letter in such cases, to clarify that its function is nasalisation. Nasalisation at the end of a word is signalled using <a href="/scripts/arabic/block#char06BA"><span class="uname">U+06BA ARABIC LETTER NOON GHUNNA</span> <span lang="ar" dir="rtl">&#x06BA;</span></a>, eg. <span class="ex" dir="rtl" lang="ur">ماں</span> <span class="ipa">mãː</span>, <span class="meaning">mother</span>, <span class="ex" dir="rtl" lang="ur">کروں</span> <span class="ipa">karũː</span>, <span class="meaning">I may do</span>. <sup>1</sup></p>
+          <p class="ref">Refs:  
+            [1] <a href="http://www.unicode.org/versions/Unicode8.0.0/ch09.pdf#page=26">[Unicode] p383</a> &nbsp;&nbsp;
+            [2] <a href="http://www.unicode.org/L2/L2012/12381-dotless-noon.pdf">[L2/12-381]</a> 
+          </p>
+          <p class="ref">Acknowledgements:
+          <a href="https://github.com/r12a/r12a.github.io/issues/1">Denis Moyogo Jacquerye</a>
+          </p>
+
         </div>
       </div>
     </div>
@@ -1316,9 +1323,16 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <div class="notes">
         <div class="letter urdu">
           <p><span class="title">Urdu</span> mark</p>
-          <p>Nasalisation of Urdu vowels is normally indicated by <a href="#char06BA">06BA ARABIC LETTER NOON GHUNNA</a> <span dir="rtl" lang="ur">ں</span>.  At the end of a word this has no dot above, but in the middle of a word it looks exactly like <a href="#char0646">0646 ARABIC LETTER NOON</a> <span dir="rtl" lang="ur">ن</span> (and some people may mix up the use of these characters). </p>
-          <p>This diacritic is used when people want to make it clear that this glyph represents nasalisation rather than the letter <span class="name">nūn</span>. </p>
-          <p>It is not used in a standard way, just when the user prefers, and is fairly uncommon, eg. <span class="ex" dir="rtl" xml:lang="ur-x-naskh" lang="ur-x-naskh">ساں٘گ</span> <span class="ed">The CRULP fonts don't appear to show the diacritic as expected</span>.</p>
+          <p>Nasalisation of Urdu vowels is normally indicated by <a href="/scripts/arabic/block#char06BA"><span class="uname">U+06BA ARABIC LETTER NOON GHUNNA</span> <span lang="ar" dir="rtl">&#x06BA;</span></a> at the end of a word (eg. <span class="ex" dir="rtl" lang="ur">کروں</span> <span class="ipa">karũː</span>, <span class="meaning">I may do</span>), and <a href="/scripts/arabic/block#char0646"><span class="uname">U+0646 ARABIC LETTER NOON</span> <span lang="ar" dir="rtl">&#x0646;</span></a> in the middle of a word (eg. <span class="ex" dir="rtl" lang="ur">ٹانگ</span> <span class="ipa">tãːg</span> <span class="meaning">leg</span>).</p>
+          <p>This diacritic is used when people want to make it clear that a <span class="uname">noon</span> character represents nasalisation rather than the sound <span class="ipa">n</span>, eg. <span class="ex" dir="rtl" lang="ur">ٹان٘گ</span> <span class="ipa">tãːg</span> <span class="meaning">leg</span>.</p>
+          <p>It is not used in a standard way, just when the user prefers, and is fairly uncommon.</p>
+          <p class="ref">Refs:  
+            [1] <a href="http://www.unicode.org/versions/Unicode8.0.0/ch09.pdf#page=26">[Unicode] p383</a> &nbsp;&nbsp;
+            [2] <a href="http://www.unicode.org/L2/L2012/12381-dotless-noon.pdf">[L2/12-381]</a> 
+          </p>
+          <p class="ref">Acknowledgements:
+          <a href="https://github.com/r12a/r12a.github.io/issues/1">Denis Moyogo Jacquerye</a>
+          </p>
         </div>
       </div>
     </div>
@@ -2110,11 +2124,19 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
         <p>Not used in Arabic.</p>
         <div class="letter urdu">
           <p><span class="title">Urdu</span> nasalisation indicator, <span class="name">nun ghunna</span> <span class="ipa">nuːn ɣunna</span>.</p>
-          <p>Looks like: <span dir="rtl" lang="ur">ںںں ں</span></p>
-          <p>Indicates that the preceding vowel is nasalised.</p>
-          <p>At the end of a word, an undotted form is used, eg. <span class="ex" dir="rtl" lang="ur">ماں</span> <span class="ipa">mãː</span>, <span class="meaning">mother</span>, <span class="ex" dir="rtl" lang="ur">کروں</span> <span class="ipa">karũː</span>, <span class="meaning">I may do</span>. </p>
-          <p>Nasalization <em>within</em> a word uses a form with a dot that looks just like the letter <a href="/scripts/arabic/block#char0646"><span class="uname">U+0646 ARABIC LETTER NOON</span> <span dir="rtl" lang="ur">ن</span></a>, eg. <span class="ex" dir="rtl" lang="ur">ٹاںگ</span> <span class="ipa">tãːg</span> <span class="meaning">leg</span>.</p>
+          <p>Looks like: <span dir="rtl" lang="ur" class="ex">ںںں ں</span></p>
+          <p><span class="ipa">◌̃</span> Indicates that the preceding vowel is nasalised. It is usually only used at the end of a word, eg. <span class="ex" dir="rtl" lang="ur">ماں</span> <span class="ipa">mãː</span>, <span class="meaning">mother</span>, <span class="ex" dir="rtl" lang="ur">کروں</span> <span class="ipa">karũː</span>, <span class="meaning">I may do</span>. Nasalization <em>within</em> a word usually uses  <a href="/scripts/arabic/block#char0646"><span class="uname">U+0646 ARABIC LETTER NOON</span> <span dir="rtl" lang="ur">ن</span></a>, eg. <span class="ex" dir="rtl" lang="ur">ٹانگ </span> <span class="ipa">tãːg</span> <span class="meaning">leg</span>.</p>
+          <p>Occasionally <span class="uname">noon ghunna</span> is found in the middle of a word where a final form is used, eg. <span class="ex" lang="ur" dir="rtl">لکھیں‌گے</span>  vs. <span class="ex" lang="ur" dir="rtl">لکھینگے</span> for <span class="trans">likhēge</span> <span class="meaning">he,they will write</span>.</p>
+          <p>It may also be used to represent the <span class="uname">noon</span> skeleton in representations of early Arabic and Quranic texts.</p>
+          <p>According to the Unicode Standard, all four forms of this character should be dotless, however when it appears initially or medially some fonts use a dotted form (eg. Scheherazade) or a dotted form with a <span class="uname">noon ghunna</span> diacritic above (eg. Noto Nastaliq Urdu).</p>
           <p>This is not counted as a regular letter of the Urdu alphabet.</p>
+          <p class="ref">Refs:  
+          [1] <a href="http://www.unicode.org/versions/Unicode8.0.0/ch09.pdf#page=26">[Unicode] p383</a> &nbsp;&nbsp;
+          [2] <a href="http://www.unicode.org/L2/L2012/12381-dotless-noon.pdf">[L2/12-381]</a> 
+          </p>
+          <p class="ref">Acknowledgements:
+          <a href="https://github.com/r12a/r12a.github.io/issues/1">Denis Moyogo Jacquerye</a>
+          </p>
         </div>
       </div>
     </div>
@@ -4001,7 +4023,7 @@ d="burushaski">
 </section>
 <div id="panel" style="display:none"></div>
 <div class="smallprint"><span id="version">First published  3 February, 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-05-26  7:45<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-05-26  10:33<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <!-- Uncomment this code to get a list of character numbers to put in scriptGroups.js
