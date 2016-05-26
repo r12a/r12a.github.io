@@ -50,3 +50,8 @@
 #fontsettingswitch { height: 150px; }
 #fontsetting p { margin-right: 20px; }
 
+.sidebar {
+	background-color: white;
+	padding-left: 2em;
+	border-bottom-left-radius: 10px;
+	}
