@@ -943,7 +943,7 @@ function dotrans (altlist) {
 			else { 
 				//if (charData[inserts[i][0]].m) { inserts[i] = defaults.ccbase+inserts[i] }
 				// check for full thing (for supp chars)
-				if (charData[inserts[i]].m) { inserts[i] = defaults.ccbase+inserts[i] }
+				if (charData[inserts[i]] && charData[inserts[i]].m) inserts[i] = defaults.ccbase+inserts[i]
 				insert += "<bdi class=c onclick='add(\""+inserts[i]+"\"); closeTranscriptionChoice();'>"+inserts[i]+"</bdi> "
 				}
 			}
@@ -997,6 +997,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 		charstr = String.fromCodePoint(chars[i])
 		if (charData[charstr]) {
 			var hex = chars[i].toString(16).toUpperCase()
+			while (hex.length < 4) hex = '0'+hex 
 			var name = charData[charstr]['n']
 			var mark = charData[charstr]['m']
 			var cbase = ''
@@ -1004,11 +1005,11 @@ function makeCharacterLink (cp, block, lang, direction) {
 			}
 	
 		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
-		out +=  '<span class="uname">U+'+hex+' '+name+'</span> (<span lang="'+lang+'"'
+		out +=  '<span class="uname">U+'+hex+' '+name+'</span> <span lang="'+lang+'"'
 		if (direction == 'rtl') { out += ' dir="rtl"' }
 		out += '>'
 		if (mark) { out += cbase }
-		out += '&#x'+hex+';</span>)'
+		out += '&#x'+hex+';</span>'
 		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
 		out += ' '
 		}
