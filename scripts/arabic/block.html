@@ -69,7 +69,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
     <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,ex2fontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
   </div>
 </aside>
-<p id="status">Updated Thu 26 May 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'urdu'">urdu</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
+<p id="status">Updated Tue 31 May 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'urdu'">urdu</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
 <div id="intro"> <a id="contentstart" tabindex="1"></a>
   <p>This page lists characters in the Unicode Arabic blocks and provides information about them.</p>
   <p>To view this page as intended, you  need Arabic naskh  and  nastaliq fonts.  The page is served with  Scheherazade and Nafees Nastaliq web fonts. You can select alternative fonts  for the descriptive text from the control to the right.</p>
@@ -971,13 +971,13 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <div class="notes">
         <div class="letter arabic">
           <p><span class="title">Arabic</span> </p>
-          <p><span class="ipa">aː</span></p>
-          <p>The long a-vowel at th end of many words is written with yeh instead of an alef. In this case the yeh is typically printed without dots, to avoid confusion, although this is not universal. Example: <span class="ex" dir="rtl" lang="ar">معنى</span> <span class="ipa">mæʕnaː</span>. This spelling only occurs with certain words, and only when the final sound is <span class="ipa">aː</span>. If any suffix is added, the spelling reverts to the normal alef, eg. <span class="ex" dir="rtl" lang="ar">معناهم</span> <span class="ipa">mæʕnaː-hum</span>. <span class="ednote">Do you still use the teh marbuta or heh? If you switch, you'll need a clever string match.</span></p>
+          <p>Looks like: <span dir="rtl" lang="ar" class="ex">ىىى ى</span>. Older fonts may not show dual joining.</p>
+          <p><span class="ipa">ɑː</span>, <span class="ex" lang="ar" dir="rtl">مستشفى</span> <span class="ipa">mustaʃfɑː</span> <span class="meaning">hospital</span>.</p>
+          <p>The long a-vowel at the end of many words is written with <span class="uname">yeh</span> instead of an <span class="uname">alef</span>. In this case the <span class="uname">yeh</span> is typically printed without dots, to avoid confusion, although this is not universal.  This spelling only occurs with certain words, and only when the final sound is <span class="ipa">aː</span>, eg. <span class="ex" dir="rtl" lang="ar">معنى</span> <span class="ipa">mæʕnaː</span>. If any suffix is added, the spelling reverts to the normal alef, eg. <span class="ex" dir="rtl" lang="ar">معناهم</span> <span class="ipa">mæʕnaː-hum</span>. </p>
           <p> </p>
-          <p>Vowelled text may miss out the short <span class="ipa">æ</span> diacritic before the teh marbuta, because the sound is always the same.</p>
-          <p>Joining forms: <span dir="rtl" lang="ar">ىىى</span>. Note that older fonts may not show dual joining.  Here is the same sequence using the Noto Naskh Arabic font, for those who have this font available: <span dir="rtl" style="Noto Naskh Arabic" lang="ar">ىىى</span></p>
+          <p>Vowelled text may omit the short <span class="ipa">æ</span> diacritic before the <span class="uname">teh marbuta</span>, because the sound is always the same.</p>
         </div>
-        <p>Not used in Persian.  See 06CC ARABIC LETTER FARSI YEH.</p>
+        <p>Not used in Persian.  See <a href="/scripts/arabic/block#char06CC"><span class="uname">U+06CC ARABIC LETTER FARSI YEH</span> <span lang="ar" dir="rtl">&#x06CC;</span></a>.</p>
         <p>Not used in Urdu.</p>
       </div>
     </div>
@@ -2344,15 +2344,14 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
         <p>Not used in Arabic.</p>
         <div class="letter urdu">
           <p><span class="title">Urdu</span> consonant / vowel, <span class="name">ye</span> <span class="ipa">je</span></p>
-          <p>The Urdu letter <span class="name">je</span> has two distinct visual forms requiring the use of two Unicode characters: this one <span dir="rtl" lang="ur">ی</span> and <span dir="rtl" lang="ur">ے</span>. For more information on the latter, see <a href="#char06D2">06D2 ARABIC LETTER YEH BARREE</a>.</p>
+          <p>Looks like <span dir="rtl" lang="ur" class="ex">ییی ی</span>. This character has two dots below it in initial and medial position, but no dots in final or independent form.</p>
           <p><span class="ipa">j</span> as a consonant (word initial or medial), <span class="ex" dir="rtl" lang="ur">یار</span> <span class="ipa">jɑːr</span> (<span class="meaning">friend</span>) and <span class="ex" dir="rtl" lang="ur">سایہ</span> <span class="ipa">sɑːjɑː</span> (<span class="meaning">shadow</span>).</p>
           <p><span class="ipa">iː</span> or <span class="ipa">e</span> or <span class="ipa">ɛ</span> as an initial or medial vowel (initially it is used after <span class="name">alif</span>, <span class="ex" dir="rtl" lang="ur">ای</span>), eg. <span class="ex" dir="rtl" lang="ur">ایک</span> <span class="ipa">ek</span> (<span class="meaning">one</span>), <span class="ex" dir="rtl" lang="ur">سینہ</span> <span class="ipa">siːnɑː</span> (<span class="meaning">breast</span>), and <span class="ex" dir="rtl" lang="ur">کیسا</span> <span class="ipa">kɛsɑː</span> (<span class="meaning">how</span>).</p>
           <p>The alternative vowel sounds can be disambiguated, when necessary, by the use of combining marks. The combining marks are rarely used in normal text. See a table of <a href="/scripts/urdu/#voweldiacritics">combining marks for vowels</a>.</p>
           <p><span class="ipa">iː</span> in word final position, eg. <span class="ex" dir="rtl" lang="ur">لڑکی </span> <span class="ipa">ləɽkiː</span> (<span class="meaning">girl</span>).</p>
-          <p>To represent the vowels <span class="ipa">e</span> or <span class="ipa">ɛ</span> in final position  or in the isolated form, 06D2 ARABIC LETTER YEH BARREE <span dir="rtl" lang="ur">ے</span> is used, eg. <span class="ex" dir="rtl" lang="ur">لڑکے</span> <span class="ipa">ləɽke</span> <span class="meaning">boys</span>.</p>
-          <p>Looks like: <span dir="rtl" lang="ur">ییی ی</span></p>
-          <p>This character has two dots below it in initial and medial position, but no dots in final or independent form.</p>
-          <p class="ref"><a href="/scripts/urdu/#endlinks">Refs</a>: Matthews; Delacy</p>
+          <p>The Urdu letter <span class="name">je</span> has another, distinct visual form,  used only finally or in isolation, to represent the sound  <span class="ipa">e</span> or <span class="ipa">ɛ</span>. For that you need to use <a href="/scripts/arabic/block#char06D2"><span class="uname">U+06D2 ARABIC LETTER YEH BARREE</span> <span lang="ur">&#x06D2;</span></a>, eg. <span class="ex" dir="rtl" lang="ur">لڑکے</span> <span class="ipa">ləɽke</span> <span class="meaning">boys</span>.</p>
+          <p class="ref">Refs:  
+            [1] <a href="http://www.unicode.org/versions/Unicode8.0.0/ch09.pdf#page=26">[Unicode] p382</a> [2] Matthews [3] Delacy.</p>
         </div>
       </div>
     </div>
@@ -2406,12 +2405,13 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
         <p>Not used in Arabic.</p>
         <div class="letter urdu">
           <p><span class="title">Urdu</span> vowel, <span class="name">baṛī ye</span> <span class="ipa">baɽiː je</span></p>
-          <p>The Urdu letter <span class="name">je</span> has two distinct visual forms requiring the use of two Unicode characters: this one <span dir="rtl" lang="ur">ے</span> and <span dir="rtl" lang="ur">ی</span>. For more information on the latter, see <a href="#char06CC">06CC ARABIC LETTER FARSI YEH</a>. The latter represents both a consonant and a vowel, but this form is used only for vowels.  This form is used only in word final or isolated position.</p>
-          <p><span class="ipa">e</span> or <span class="ipa">ɛ</span> in word-final or isolated position, eg. <span class="ex" dir="rtl" lang="ur">لڑکے</span> <span class="ipa">laɽke</span>, (<span class="meaning">boys</span>).</p>
-          <p>The alternative sounds possible in the initial combinations can be disambiguated, when necessary, by the use of combining marks. The combining marks are rarely used in normal text. See a table of <a href="/scripts/urdu/#voweltable">combining marks for vowels</a></p>
-          <p>Looks like: <span dir="rtl" lang="ur">ـے ے</span>. </p>
-          <p>This shape is also used with a hamza to represent the <span class="name">izāfat</span> <span class="ipa">ɪzɑːfat</span>. For this you should use <a href="#char06D3">06D3 ARABIC LETTER YEH BARREE WITH HAMZA ABOVE</a>.</p>
-          <p class="ref"><a href="/scripts/urdu/#endlinks">Refs</a>: Matthews; Delacy</p>
+          <p>Looks like: <span dir="rtl" lang="ur" class="ex">‍ے ے</span>. This form is used only in word final or isolated position. This shape is regarded as a stylistic variant in Arabic and Persian text, but it has a functional purpose in Urdu, to help with Urdu's larger number of vowels.</p>
+          <p><span class="ipa">e</span> or <span class="ipa">ɛ</span>, eg. <span class="ex" dir="rtl" lang="ur">لڑکے</span> <span class="ipa">laɽke</span>, (<span class="meaning">boys</span>).</p>
+          <p>The alternative sounds possible in the initial combinations can be disambiguated, when necessary, by the use of combining marks, eg. <span class="ex" dir="rtl" lang="ur-x-naskh">ہَے</span> <span class="ipa">hɛ</span> vs. <span class="ex" dir="rtl" lang="ur-x-naskh">بجے</span> <span class="ipa">baʤe</span>. The combining marks are rarely used in normal text. See a table of <a href="/scripts/urdu/#voweltable">combining marks for vowels</a>.</p>
+          <p>The Urdu letter <span class="name">je</span> has another visual form, used for sounds other than final or isolated <span class="ipa">e</span> or <span class="ipa">ɛ</span>. For that you need to use <a href="/scripts/arabic/block#char06CC"><span class="uname">U+06CC ARABIC LETTER FARSI YEH</span> <span lang="ur">&#x06CC;</span></a>, eg. <span class="ex" dir="rtl" lang="ur">لڑکی</span> <span class="ipa">ləɽkiː</span> (<span class="meaning">girl</span>).</p>
+          <p>This shape is also used with a hamza to represent the <span class="name">izāfat</span> <span class="ipa">ɪzɑːfat</span>. For this you should use <a href="/scripts/arabic/block#char06D3"><span class="uname">U+06D3 ARABIC LETTER YEH BARREE WITH HAMZA ABOVE</span> <span lang="ur">&#x06D3;</span></a>.</p>
+          <p class="ref">Refs:  
+            [1] <a href="http://www.unicode.org/versions/Unicode8.0.0/ch09.pdf#page=26">[Unicode] p382</a> [2] Matthews [3] Delacy.</p>
         </div>
       </div>
     </div>
@@ -2433,7 +2433,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
           <p>This sound is mostly represented using <span class="name">zer</span>, but can also be represented with a combining hamza in a couple of cases.</p>
           <p><span class="name">Izāfat</span> may also be shown as <span class="ex" dir="rtl" lang="ur">ے</span> with or without a combining <span class="name">hamzā</span> when the preceding word ends in a long vowel: eg. <span class="ex" dir="rtl" lang="ur">صدا ۓ بلن</span> <span class="ipa">sadɑː ɛ buland</span> <span class="meaning">a high voice</span>; <span class="ex" dir="rtl" lang="ur">روۓزمین</span> <span class="ipa">ruː ɛ zamiːn</span> <span class="meaning">the surface of the ground</span>.</p>
           <p>There are <a href="/scripts/urdu/#izafat">other ways</a> in which izafat can be formed.</p>
-          <p>See also <a href="#char06D2">06D2 ARABIC LETTER YEH BARREE</a>.</p>
+          <p>See also <a href="/scripts/arabic/block#char06D2"><span class="uname">U+06D2 ARABIC LETTER YEH BARREE</span> <span lang="ar" dir="rtl">&#x06D2;</span></a>.</p>
           <p class="ref"><a href="/scripts/urdu/#endlinks">Refs</a>: Matthews; Delacy</p>
         </div>
       </div>
@@ -4023,7 +4023,7 @@ d="burushaski">
 </section>
 <div id="panel" style="display:none"></div>
 <div class="smallprint"><span id="version">First published  3 February, 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-05-26  10:33<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-05-31  20:43<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <!-- Uncomment this code to get a list of character numbers to put in scriptGroups.js
