@@ -7,10 +7,10 @@
     font-style: normal;
 	}
 @font-face {
-    font-family: 'Nafees Nastaliq WF';
-    		src: local('Nafees'),
-			local ('Nafees Nastaleeq'),
-			url('/webfonts/NafeesNastaleeq.woff') format('woff2');
+    font-family: 'Noto Nastaliq Urdu WF';
+    		src: local('Noto Nastaliq Urdu'),
+			url('/webfonts/notonastaliqurdu-webfont.woff2') format('woff2'),
+			url('/webfonts/notonastaliqurdu-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
@@ -20,7 +20,7 @@
 	font-size: 26px; 
 	}
 [lang|='ur'] { 
-	font-family: "Nafees Nastaleeq WF", "Nafees Nastaleeq", "Noto Nastaliq Urdu Draft", "Urdu Typesetting", "Aldhabi", "Scheherazade", sans-serif; 
+	font-family: "Noto Nastaliq Urdu WF", "Nafees Nastaleeq", "Noto Nastaliq Urdu Draft", "Urdu Typesetting", "Aldhabi", "Scheherazade", sans-serif; 
 	font-size: 20px; 
 	}
 

@@ -1,7 +1,7 @@
 /*jshint multistr: true */
  var fontSelection = '<option value="0">Select...</option>\
             <optgroup label="Web fonts ">\
-            <option value="Nafees Nastaliq WF">Nafees Nastaliq WF</option>\
+            <option value="Noto Nastaliq Urdu WF">Noto Nastaliq Urdu WF</option>\
             <option value="Scheherazade WF">Scheherazade WF</option>\
             </optgroup>\
             \
@@ -30,6 +30,7 @@
             <optgroup label="Google fonts ">\
             <option value="Scheherazade">Scheherazade</option>\
             <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>\
+            <option value="Noto Nastaliq Urdu">Noto Nastaliq Urdu</option>\
             <option value="Noto Nastaliq Urdu Draft">Noto Nastaliq Urdu Draft</option>\
             </optgroup>\
             \
