@@ -72,7 +72,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
     <p onclick="newfont=prompt('Enter the font name. (Only spaces, hyphens, underlines and alphanum allowed.)', '...'); addFontToLists(newfont, 'exfontswitchfont,ex2fontswitchfont,slfontswitchfont');" style="cursor:pointer;">Add a font to these lists</p>
   </div>
 </aside>
-<p id="status">Updated Sun 5 Jun 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'urdu'">urdu</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
+<p id="status">Updated Fri 10 Jun 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'urdu'">urdu</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
 <div id="intro">
   <p>This page lists characters in the Unicode Arabic blocks and provides information about them.</p>
   <p>To view this page as intended, you  need Arabic naskh  and  nastaliq fonts.  The page is served with  Scheherazade and Nafees Nastaliq web fonts. You can select alternative fonts  for the descriptive text from the control to the right.</p>
@@ -1033,8 +1033,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
           <p>Vowelled text may omit the short <span class="ipa">æ</span> diacritic before the <span class="uname">teh marbuta</span>, because the sound is always the same.</p>
           <p><span class="leadin">Shape:</span> <span dir="rtl" lang="ar" class="ex">ىىى ى</span>. Older fonts may not show dual joining.</p>
         </div>
-        <p>Not used in Persian.  See <a href="/scripts/arabic/block#char06CC"><span class="uname">U+06CC ARABIC LETTER FARSI YEH</span> <span lang="ar" dir="rtl">&#x06CC;</span></a>.</p>
-        <p>Not used in Urdu.</p>
+        <p>Not used in Persian or Urdu.  See <a href="/scripts/arabic/block#char06CC"><span class="uname">U+06CC ARABIC LETTER FARSI YEH</span> <span lang="ar" dir="rtl">&#x06CC;</span></a>.</p>
       </div>
     </div>
     <div class="character" id="char064A">
@@ -1055,8 +1054,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
           <p>Unlike this character, <a href="#char08A8"><span class="uname">U+08A8 ARABIC LETTER YEH WITH TWO DOTS BELOW AND HAMZA ABOVE</span> <span dir="rtl" lang="ar">ࢨ</span></a> retains  the two dots in all forms, however it also represents a semantically different character.</p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ييي ي</span></p>
         </div>
-        <p>Not used in Persian.  See <a href="/scripts/arabic/block#char06CC"><span class="uname">U+06CC ARABIC LETTER FARSI YEH</span> <span lang="ar" dir="rtl">&#x06CC;</span></a>.</p>
-        <p>Not used in Urdu.</p>
+        <p>Not used in Persian or Urdu.  See <a href="/scripts/arabic/block#char06CC"><span class="uname">U+06CC ARABIC LETTER FARSI YEH</span> <span lang="ar" dir="rtl">&#x06CC;</span></a>.</p>
       </div>
     </div>
 </section>
@@ -1489,6 +1487,15 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0671">See in UniView</a></p>
       <p class="subtitle">Description in the Unicode standard:</p>
       <div class="unicodenotes">• Koranic Arabic</div>
+      <div class="notes">
+        <div class="letter arabic">
+          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="ipa">ʔ</span> (glottal stop)</p>
+          <p>Classical arabic distinguishes between 'cutting' and 'joining' <span class="name">hamza</span>. 'Cutting' means always pronounced, 'joining' means frequently elided. The sign indicating a joining <span class="name">hamza</span> is called a <span class="name">wasla</span>.</p>
+          <p>The joining <span class="name">hamza</span> is of little practical importance in modern arabic pronounced without the old case endings.        </p>
+        </div>
+        <p>Not used in Persian or Urdu.</p>
+      </div>
     </div>
     <div class="character" id="char0672">
 
@@ -4132,7 +4139,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </section>
 <div id="panel" style="display:none"></div>
 <div class="smallprint"><span id="version">First published  3 February, 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-06-10  11:58<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-06-10  12:50<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <!-- Uncomment this code to get a list of character numbers to put in scriptGroups.js
