@@ -47,6 +47,15 @@ h2 {
 	hyphens: auto; 
 	background-color: #ffffef;
 	}
+.notes section { 
+	margin-top: 2em; 
+	margin-bottom: 10px; 
+	border: 1px solid #ddd; 
+	border-radius: 10px; 
+	hyphens: auto; 
+	background-color: #ffffef;
+	clear: none;
+	}
 .letter img { 
 	vertical-align: middle; 
 	border-radius: 5px; 
@@ -226,7 +235,7 @@ section { clear: left; }
 
 .edit { text-align: right; font-size: 80%; color: teal; cursor: pointer; margin-right: 10px; }
 #input { margin-bottom: 20px; color: #999; font-size: 80%; }
-.leadin { color: #CC6600; font-style: italic; }
+.leadin { color: #CC6600; font-style: italic; margin-right: 1em; }
 #list { border: 3px solid #ffa500;  width: 100%; font-size: 120%; border-radius: 5px; } 
 .message { color: #F63; margin-top: 4em; font-size: 120%; line-height: 1.4em;  
 	background-color:#ffe; 
