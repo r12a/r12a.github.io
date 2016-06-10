@@ -1,23 +1,23 @@
 @font-face {
     font-family: 'Scheherazade WF';
     		src: local('Scheherazade'),
-			url('/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
-         	url('/webfonts/scheherazaderegotwebfont.woff') format('woff');
+			url('../../webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
+         	url('../../webfonts/scheherazaderegotwebfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Nastaliq Urdu WF';
     		src: local('Noto Nastaliq Urdu'),
-			url('/webfonts/notonastaliqurdu-webfont.woff2') format('woff2'),
-			url('/webfonts/notonastaliqurdu-webfont.woff') format('woff');
+			url('../../webfonts/notonastaliqurdu-webfont.woff2') format('woff2'),
+			url('../../webfonts/notonastaliqurdu-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 [lang|='ar'] { 
 	font-family: "Scheherazade WF", "Al Bayan", "Arabic Typesetting", "Traditional Arabic", "Noto Naskh Arabic", sans-serif; 
-	font-size: 26px; 
+	font-size: 32px; 
 	}
 [lang|='ur'] { 
 	font-family: "Noto Nastaliq Urdu WF", "Nafees Nastaleeq", "Noto Nastaliq Urdu Draft", "Urdu Typesetting", "Aldhabi", "Scheherazade", sans-serif; 
