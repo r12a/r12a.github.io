@@ -42,6 +42,13 @@ blockquote p { margin-left: 0; margin-right: 0; }
 dd p { margin-left: 0; margin-right: 0; }
 
 
+
+#top {
+	position: fixed;
+	left: 1em;
+	bottom: 1em;
+	}
+	
 /* structural code */
 
 
@@ -615,6 +622,38 @@ table.inband th {
 .collapsingList li:after { content: 'info'; color: #CCC; }
 	}
 
+
+@media (max-width: 700px) { 
+
+/* set margins */
+p, h2, h3, h4, dl, div#footer, div.example, figure { margin-left: 1em; margin-right: 1em; }
+ul, ol { margin-left: 2em; margin-right: 2em; }
+ul ul { margin-left: 2%; margin-right: 5%; }
+table { margin-left: 1em;  }
+table.inband { margin-right: 1em; }
+blockquote { margin-left: 2em; margin-right: 2em; }
+
+
+.character { margin-left:0; margin-right:0; }
+
+#index { margin-left:1em; margin-right:1em; }
+
+.sidebar {
+	float: none;
+	width: auto;
+	margin-left: 1em;
+	margin-right: 1em;
+	font-size: 90%;
+	margin-bottom: 3em;
+	}
+#site-navigation, #line {
+	display: none;
+	}
+#topbar {
+	margin-right:0;
+	}
+
+}
 
 @media print {
 
