@@ -75,7 +75,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 <p id="status">Updated Fri 10 Jun 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=arabic" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'urdu'">urdu</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a>.</p>
 <div id="intro">
   <p>This page lists characters in the Unicode Arabic blocks and provides information about them.</p>
-  <p>To view this page as intended, you  need Arabic naskh  and  nastaliq fonts.  The page is served with  Scheherazade and Nafees Nastaliq web fonts. You can select alternative fonts  for the descriptive text from the control to the right.</p>
+  <p>To view this page as intended, you  need Arabic naskh  and  nastaliq fonts.  The page is served with  Scheherazade and Noto Nastaliq web fonts. You can select alternative fonts  for the descriptive text from the control to the right.</p>
   <p>If you click on any red  example text, you will see  at the bottom right of the page a list of the characters that make up the example.</p>
   <p>To find a character by codepoint, type #char0000 at the end of the URL in the address bar, where 0000 is a four-figure, hex codepoint number, all in uppercase. Or type the hex number here:</p>
   <p>Find <input type="text" onChange="var hex=this.value;if (hex!=''){while(hex.length<4){hex='0'+hex;}document.location='#char'+hex.toUpperCase();}"/></p>
@@ -275,7 +275,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <div class="notes">
         <p>This character is equivalent to <a href="#char064A"><span class="uname">U+064A ARABIC LETTER YEH</span> <span dir="rtl" lang="ar">ي</span></a> + <a href="#char0654"><span class="uname">U+0654 ARABIC HAMZA ABOVE</span> <span dir="rtl" lang="ar">ٔ</span></a>, but since NFC produces this character it is best to use it rather than the decomposed sequence.</p>
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant <span class="trans">’</span></p>
           <p><span class="ipa">ʔɪ, ʔ</span></p>
           <p>This character represents the hamza (<span class="ex" dir="rtl" lang="ar">ء</span>) in the middle  of a word. When <span class="name">yeh</span> is used as a mid-word carrier it loses its dots.</p>
           <p>In the middle of a word the <span class="name">hamza</span> is almost always written above a carrier letter. Which one depends on the vowels preceding and following the <span class="name">hamza</span>, and the rules are complicated (and a common source of spelling errors among Arabs),  eg. <span class="ex" dir="rtl" lang="ar">نائم</span> <span class="trans">nā'im</span> (but cf. <span class="ex" dir="rtl" lang="ar">سأل</span> <span class="trans">sa'al</span>, <span class="ex" dir="rtl" lang="ar">مؤمن</span> <span class="trans">mu'min</span>). </p>
@@ -351,7 +351,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0628">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant <span class="trans">b</span></p>
           <p><span class="ipa">b</span></p>
           <p><span class="leadin">Shape:</span> <span dir="rtl" lang="ar" class="ex">ببب ب</span></p>
         </div>
@@ -376,7 +376,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0629">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant <span class="trans">h/t</span></p>
           <p>Usually no sound, sometimes <span class="ipa">t</span>.</p>
           <p>Used for historical reasons to write the feminine ending, <span class="ipa">æ</span> – the dots are borrowed from teh (<span class="ex" dir="rtl" lang="ar">ت</span>). Pronounced as <span class="ipa">t</span> in specific grammatical contexts. Example: <span class="ex" dir="rtl" lang="ar">مدرسة</span> <span class="ipa">mædræsæ</span>.</p>
           <p>This letter is only used in final position. If any suffix is added the ending is spelled with <a href="#char062A"><span class="uname">U+062A ARABIC LETTER TEH</span> <span dir="rtl" lang="ar">ت</span></a>, eg. <span class="ex" dir="rtl" lang="ar">مدرستنا</span> <span class="ipa">mædræsæt-naː</span>.</p>
@@ -396,7 +396,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=062A">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant <span class="trans">t</span></p>
           <p><span class="ipa">t</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">تتت ت</span></p>
         </div>
@@ -420,7 +420,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=062B">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant <span class="trans">th</span></p>
           <p><span class="ipa">θ</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ثثث ث</span></p>
         </div>
@@ -443,7 +443,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=062C">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant <span class="trans">j</span></p>
           <p><span class="ipa">ʒ</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ججج ج</span></p>
         </div>
@@ -467,7 +467,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=062D">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant <span class="trans">ḥ</span></p>
           <p><span class="ipa">ħ</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ححح ح</span></p>
         </div>
@@ -490,7 +490,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=062E">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">kh</span></p>
           <p><span class="ipa">x</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">خخخ خ</span></p>
         </div>
@@ -513,7 +513,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=062F">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">d</span></p>
           <p><span class="ipa">d</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ـد د<span/></p>
         </div>
@@ -537,7 +537,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0630">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">dh</span></p>
           <p><span class="ipa">ð</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ـذ ذ<span/></p>
         </div>
@@ -561,7 +561,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0631">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">r</span></p>
           <p><span class="ipa">r</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ـر ر<span/></p>
         </div>
@@ -584,7 +584,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0632">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">z</span></p>
           <p><span class="ipa">z</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ـز ز<span/></p>
         </div>
@@ -607,7 +607,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0633">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant </p>
+          <p><span class="title">Arabic</span> consonant   <span class="trans">s</span></p>
           <p><span class="ipa">s</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">سسس س</span></p>
         </div>
@@ -630,7 +630,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0634">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">sh</span></p>
           <p><span class="ipa">ʃ</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ششش ش</span></p>
         </div>
@@ -653,7 +653,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0635">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">ṣ</span></p>
           <p><span class="ipa">s̴</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">صصص ص</span></p>
         </div>
@@ -676,7 +676,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0636">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">ḍ</span></p>
           <p><span class="ipa">d̴</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ضضض ض</span></p>
         </div>
@@ -699,7 +699,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0637">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">ṭ</span></p>
           <p><span class="ipa">t̴</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ططط ط</span></p>
         </div>
@@ -722,7 +722,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0638">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">ẓ</span></p>
           <p><span class="ipa">z̴</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ظظظ ظ</span></p>
         </div>
@@ -748,7 +748,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
         → (modifier letter left half ring - 02BF)</div>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">ʻ</span></p>
           <p><span class="ipa">ʕ</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ععع ع</span></p>
         </div>
@@ -786,7 +786,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=063A">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">gh</span></p>
           <p><span class="ipa">ɣ</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">غغغ غ</span></p>
         </div>
@@ -832,7 +832,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0641">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">f</span></p>
           <p><span class="ipa">f</span></p>
           <p><span class="leadin">Shape:</span> <span dir="rtl" lang="ar" class="ex">ففف ف</span></p>
           <p>In arabic material printed in North Africa this letter sometimes has one dot <em>below</em>. There is a separate code point for that (<a href="/scripts/arabic/block#char06A2"><span class="uname">U+06A2 ARABIC LETTER FEH WITH DOT MOVED BELOW</span> <span lang="ar" dir="rtl">&#x06A2;</span></a>), but it would make more sense to use a font to make this difference than to use a different character.</p>
@@ -856,7 +856,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0642">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">q</span></p>
           <p><span class="ipa">q</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ققق ق</span></p>
           <p>In arabic material printed in North Africa this letter sometimes has only one dot above. There is a separate code point for that (<a href="/scripts/arabic/block#char06A7"><span class="uname">U+06A7 ARABIC LETTER QAF WITH DOT ABOVE</span> <span lang="ar" dir="rtl">&#x06A7;</span></a>), but it would make more sense to use a font to make this difference than to use a different character.</p>
@@ -881,7 +881,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0643">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">k</span></p>
           <p><span class="ipa">k</span></p>
           <p><span class="leadin">Shape:</span> <span dir="rtl" lang="ar" class="ex">ككك ك</span></p>
         </div>
@@ -898,7 +898,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0644">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">l</span></p>
           <p><span class="ipa">l</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">للل ل</span></p>
         </div>
@@ -927,7 +927,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0645">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">m</span></p>
           <p><span class="ipa">m</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ممم م</span></p>
         </div>
@@ -950,7 +950,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0646">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">n</span></p>
           <p><span class="ipa">n</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ننن ن</span></p>
         </div>
@@ -976,7 +976,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0647">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">h</span></p>
           <p><span class="ipa">h</span></p>
           <p><span class="leadin">Shape:</span> <span class="ex" dir="rtl" lang="ar">ههه ه</span></p>
         </div>
@@ -994,7 +994,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
       <p class="univiewLink"><a href="/uniview/?char=0648">See in UniView</a></p>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant or lengthener of u-vowel</p>
+          <p><span class="title">Arabic</span> consonant or lengthener of u-vowel  <span class="trans">w</span></p>
           <p><span class="ipa">w</span></p>
           <p>In certain foreign words, pronounced more like <span class="ipa">oː</span>, eg. <span class="ex" dir="rtl" lang="ar">بنطلون</span> <span class="ipa">bænt̴æloːn</span></p>
           <p>The male proper name <span class="ex" dir="rtl" lang="ar">عمرو</span> <span class="ipa">ʕæmr</span> is written with an unpronounced final waw to distinguish it from the name <span class="ex" dir="rtl" lang="ar">عمر</span> <span class="ipa">ʕumar</span> that would otherwise be written identically.</p>
@@ -1027,7 +1027,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
         → (arabic letter yeh with hamza above - 0626)</div>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> </p>
+          <p><span class="title">Arabic</span>   <span class="trans">ỳ</span></p>
           <p><span class="ipa">ɑː</span>, <span class="ex" lang="ar" dir="rtl">مستشفى</span> <span class="ipa">mustaʃfɑː</span> <span class="meaning">hospital</span>.</p>
           <p>The long a-vowel at the end of many words is written with <span class="uname">yeh</span> instead of an <span class="uname">alef</span>. In this case the <span class="uname">yeh</span> is typically printed without dots, to avoid confusion, although this is not universal.  This spelling only occurs with certain words, and only when the final sound is <span class="ipa">aː</span>, eg. <span class="ex" dir="rtl" lang="ar">معنى</span> <span class="ipa">mæʕnaː</span>. If any suffix is added, the spelling reverts to the normal alef, eg. <span class="ex" dir="rtl" lang="ar">معناهم</span> <span class="ipa">mæʕnaː-hum</span>.  </p>
           <p>Vowelled text may omit the short <span class="ipa">æ</span> diacritic before the <span class="uname">teh marbuta</span>, because the sound is always the same.</p>
@@ -1047,7 +1047,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
         → (arabic letter yeh with two dots below and hamza above - 08A8)</div>
       <div class="notes">
         <div class="letter arabic">
-          <p><span class="title">Arabic</span> consonant</p>
+          <p><span class="title">Arabic</span> consonant  <span class="trans">y</span></p>
           <p><span class="ipa">j</span> and <span class="ipa">iː</span></p>
           <p>In certain foreign words, pronounced more like <span class="ipa">eː</span>, eg. <span class="ex" dir="rtl" lang="ar">سكرتير</span> <span class="ipa">sɪkrɪteːr</span>.</p>
           <p><span class="leadin">Use with  hamza</span> When used with <a href="#char0654"><span class="uname">U+0654 ARABIC HAMZA ABOVE</span> <span dir="rtl" lang="ar">ٔ</span></a> the two dots are suppressed in all positions. Text in NFC actually uses <a href="#char0626"><span class="uname">U+0626 ARABIC LETTER YEH WITH HAMZA ABOVE</span> <span dir="rtl" lang="ar">ئ</span></a> rather than the decomposed sequence, so that is recommended.</p>
@@ -4139,7 +4139,7 @@ onChange="setIndexFont(document.querySelector('#slfontswitchfont').value, this.v
 </section>
 <div id="panel" style="display:none"></div>
 <div class="smallprint"><span id="version">First published  3 February, 2014.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-06-10  12:50<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-06-12  10:03<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 <!-- Uncomment this code to get a list of character numbers to put in scriptGroups.js
