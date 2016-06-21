@@ -159,7 +159,7 @@ sub { color:#C30; font-style: italic; }
 	float: left;
 	width: 48%;
 	min-width: 350px;
-	margin-bottom: 3em;
+	/*margin-bottom: 3em;*/
 	}
 .column p {
 	margin-right: 40px;

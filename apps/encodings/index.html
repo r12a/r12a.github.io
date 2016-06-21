@@ -122,6 +122,9 @@
 </div>
 
 
+<div id="customise"  style="margin-bottom:2em; clear:both; cursor: pointer; text-align:center;"  onclick="toggleCustomList()"><span class="optionTrigger">change encodings shown</span></div>
+
+
 <div id="hexdecConverter" style="clear:both; text-align:center; margin-bottom: 2em;">
 <table id="charList"><tbody>
 <tr><td>hex</td><td>char</td><td>dec</td></tr>
@@ -147,7 +150,7 @@ onclick="document.getElementById('hex').value=convertCharStr2CP( document.getEle
  </div>
 
 <div id="characterList" style="clear:both; text-align:center; margin-bottom: 2em;">
-show all the characters in this encoding: <select onChange="showEncoding(this.value)">
+show all the characters in: <select onChange="showEncoding(this.value)">
 			<option value="none">Select...</option>
     		<option value="big5">big5</option>
     		<option value="eucjp">euc-jp</option>
@@ -187,9 +190,8 @@ show all the characters in this encoding: <select onChange="showEncoding(this.va
             </select>
           	</div>
             
-<div id="showcharacters"  style="margin-left: 7.5%; clear:both; cursor: pointer;"  onclick="toggleCustomList()"><span class="optionTrigger">show characters in encodings</span></div>
+<!--div id="showcharacters"  style="margin-left: 7.5%; clear:both; cursor: pointer;"  onclick="toggleCustomList()"><span class="optionTrigger">show characters in encodings</span></div-->
 
-<div id="customise"  style="margin-left: 7.5%; clear:both; cursor: pointer;"  onclick="toggleCustomList()"><span class="optionTrigger">change encodings shown</span></div>
 
 <div id="customsettings" style="display:none">
 <div>
@@ -312,22 +314,23 @@ show all the characters in this encoding: <select onChange="showEncoding(this.va
   </div>
 </aside>
 
-<p id="status">Updated Wed 16 Dec 2015  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'encoding'">encoding</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+<p id="status">Updated Tue 21 Jun 2016  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'encoding'">encoding</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
 
 <section>
-  <p>This app allows you to see how Unicode characters are represented by bytes in various legacy encodings, and vice versa. You can customise the encodings you want to experiment with by clicking on <span class="kw">change encodings shown</span>. The default selection excludes most of the single-byte encodings.</p>
-  <p>The algorithms used are based on those described in the <a href="https://encoding.spec.whatwg.org/">Encoding specification</a>, and thus describe the behaviour you can expect from web browsers. The transforms may not be the same as for other conversion tools. (In some cases the browsers may also produce a different result than shown here. See <a href="http://www.w3.org/International/tests/repo/results/encoding-dbl-byte">the tests</a>.</p>
-  <p>Encoding algorithms convert Unicode characters to sequences of double-digit hex numbers that represent the bytes found in the target character encoding. A character that cannot be handled by an encoder will be represented as a decimal HTML character escape.</p>
-  <p>Decoding algorithms take the byte codes just mentioned and convert them to Unicode characters. The algorithm returns replacement characters where it is unable to map a given byte to the encoding.</p>
-  <p>For the decoder input you can provide a string of hex numbers separated by space or by percent signs.</p>
+  <p>This app allows you to see what bytes are used by legacy encodings to represent a particular character, or to convert a sequence of bytes into characters for a range of encodings. You can customise the encodings you want to experiment with by clicking on <span class="kw">change encodings shown</span>. The default selection excludes most of the single-byte encodings.</p>
+  <p>The algorithms used are based on those described in the <a href="https://encoding.spec.whatwg.org/">Encoding specification</a>, and thus describe the behaviour you can expect from web browsers. The transforms may not be the same as for other conversion tools. (In some cases the browsers may also produce a different result than shown here. See <a href="http://www.w3.org/International/tests/repo/results/encoding-dbl-byte">the tests</a>.)</p>
+  <p><dfn>Encoding</dfn> algorithms convert Unicode characters to sequences of double-digit hex numbers that represent the bytes found in the target character encoding. A character that cannot be handled by an encoder will be represented as a decimal HTML character escape.</p>
+  <p><dfn>Decoding</dfn> algorithms take the byte codes just mentioned and convert them to Unicode characters. The algorithm returns replacement characters where it is unable to map a given byte to the encoding.</p>
+  <p>For the decoder input you can provide a string of two-digit hex numbers separated by space or by percent signs.</p>
   <p>Green backgrounds appear behind sequences where all characters or bytes were successfully mapped to a character in the given encoding. Beware, however, that the character mapped to may not be the one you expect – especially in the single byte encodings.</p>
-  <p>To identify characters and look up information about them you will find <a href="/uniview/">UniView</a> extremely useful. You can paste Unicode characters into the UniView <code class="kw" translate="no">Edit Buffer</code> and click on the down-arrow icon below to find out what they are. (Click on the name that appears for more detailed information.)  It is particularly useful for identifying escaped characters. Copy the escape(s) to the <code class="kw" translate="no">Find</code> input area on UniView and click on <code class="kw" translate="no">Dec</code> just below.</p>
+  <p>To identify characters and look up information about them you will find <a href="/uniview/">UniView</a> extremely useful. You can paste Unicode characters into the UniView <code class="kw" translate="no">text area</code> and click on the down-arrow icon below to find out what they are. (Click on the name that appears for more detailed information.)  It is particularly useful for identifying escaped characters. Copy the escape(s) to the <code class="kw" translate="no">Find</code> input area on UniView and click on <code class="kw" translate="no">Dec</code> just below.</p>
+  <p>This app also provides a couple of extra tools below the main area. One converts between hex codepoint numbers, decimal codepoint numbers and characters. Just add one of the above and remove the focus, and the other fields will be updated. The other tool allows you to create a list of all characters in various legacy encodings.</p>
 </section>
 
 </div>
 
 <div class="smallprint"><span id="version">First published  3 Dec 2015.  This version <span id="version-info"> 
-<!-- #BeginDate format:IS1m -->2015-12-20  21:10<!-- #EndDate --> 
+<!-- #BeginDate format:IS1m -->2016-06-21  13:48<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </body>
 </html>
