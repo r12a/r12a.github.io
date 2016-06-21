@@ -1001,7 +1001,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 			var name = charData[charstr]['n']
 			var mark = charData[charstr]['m']
 			var cbase = ''
-			if (defaults.ccbase != '') cbase = '&amp;#x'+convertChar2CP(defaults.ccbase)+';'
+			if (defaults.ccbase != '') cbase = '&#x'+convertChar2CP(defaults.ccbase)+';'
 			}
 	
 		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
