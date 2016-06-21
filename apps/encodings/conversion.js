@@ -47,6 +47,7 @@ var gb18030Ranges = [[0,128],[36,165],[38,169],[45,178],[50,184],[81,216],[89,22
 
 
 function getRangePtr (cp) {
+	if (cp == 0xE7C7) return 7457
 	var offset = 128
 	var ptrOffset = 0
 	for (var i=0;i<gb18030Ranges.length;i++) {
@@ -399,6 +400,10 @@ function iso2022jpEncoder (stream) {
 			finished = true
 			break 
 			}
+		if ((encState === 'ascii'|| encState === 'roman') && (cp === 0x0E || cp === 0x0F || cp === 0x1B)) {
+			out += ' &#'+cp+';'
+			continue
+			}
 		if (encState == 'ascii' && cp >= 0x00 && cp <= 0x7F) {  
 			out +=  ' '+cp.toString(16).toUpperCase()
 			continue
@@ -738,6 +743,10 @@ function gbEncoder (stream, gbk) {
 		var cp = cps.shift()
 		if (cp >= 0x00 && cp <= 0x7F) {  // ASCII
 			out +=  ' '+cp.toString(16).toUpperCase()
+			continue
+			}
+		if (cp == 0xE5E5) { 
+			out += ' &#'+cp+';'
 			continue
 			}
 		if (gbk && cp == 0x20AC) {
