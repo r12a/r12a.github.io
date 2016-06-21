@@ -95,9 +95,10 @@ img { border-radius: 4px; }
   <area shape="rect" coords="338,55,607,132" href="#text_area" title="Text area" />
   <area shape="rect" coords="383,132,594,172" href="#text_area_controls" />
   <area shape="rect" coords="339,132,380,172" href="#destination_toggle" />
-  <area shape="rect" coords="1,190,260,711" href="#char_list_panel" title="Character list panel" />
+  <area shape="rect" coords="1,190,255,694" href="#char_list_panel" title="Character list panel" />
   <area shape="rect" coords="295,188,596,704" href="#char_detail_panel" title="Character details panel" />
-  <area shape="rect" coords="15,718,572,899" href="#notes_panel" title="Notes panel" />
+  <area shape="rect" coords="2,705,282,746" href="#tags" title="Tags" />
+  <area shape="rect" coords="15,748,572,929" href="#notes_panel" title="Notes panel" />
 </map>
 <p><img usemap="#helpSelector" alt="Help selector." src="images/help1.png"/></p>
 </section>
@@ -273,6 +274,18 @@ img { border-radius: 4px; }
 
 
 <section style="clear:both;">
+<h2 id="tags"><a href="#notes_panel">Tags</a></h2>
+
+<p style="text-align:center;"><img src="images/help/tags.png" alt=""/></p>
+<p>A basic set of links is shown for each block or range of characters to allow you to quickly highlight characters with the property <code class="kw" translate="no">letter</code>, <code class="kw" translate="no">mark</code>, <code class="kw" translate="no">number</code>, <code class="kw" translate="no">punctuation</code>, or <code class="kw" translate="no">symbol</code>. For more fine-grained property distinctions, see the <span class="onscreen">Filter</span> panel.</p>
+<p>In addition, for some blocks there are other links available that reflect tags assigned to characters. <strong>This tagging is far from exhaustive!</strong> For instance,  clicking on <span class="onscreen">sanskrit</span> will not show all characters used in Sanskrit. </p>
+<p>The tags are just intended to be an aid to help you find certain characters quickly by exposing words that appear in the character descriptions or block subsection titles. For example, if you want to find the Bengali currency symbol, click on <span class="onscreen">currency</span> and all other characters but those related to currency will be dimmed.</p>
+<p>(Since the highlight function is used for this, don't forget that, if you happen to highlight a useful subset of characters and want to work with just those, you can use the <span class="onscreen">Make list from highlights</span> command, or click on the <img border="0" src="images/tochar.png" align="bottom" alt="upwards pointing arrow" /> icon to move those characters into the text area.)</p>
+</section>
+
+
+
+<section style="clear:both;">
 <h2 id="char_detail_panel"><a href="#char_detail_panel">Character detail panel</a></h2>
 
 <img style="float: right; margin: 0 32% 2em 2em" src="images/help/details_panel.png" alt=""/>
@@ -404,8 +417,10 @@ img { border-radius: 4px; }
     <p>This control allows you to increase the size of the characters in the lower left panel (independently of text elsewhere on the page). Note: It  has no effect when viewing characters as graphics.</p>
     <p>To see all text larger, use the normal browser method for zooming (eg. Ctrl++ and Ctrl+- in browsers on Windows).</p>
   </section>
-          <section class="topic"> </section>
 </section>
+
+
+
 
 <section id="tips">
   <h2><a href="#tips">Tips and tricks</a></h2>
@@ -535,15 +550,24 @@ img { border-radius: 4px; }
           <h2><a href="#versions">Change history</a></h2>
 </section>
         
- <section id="v800a2">
-   <h3><a href="#v800a">Changes in version 9.0.0beta</a></h3>
+        
+<section id="v900">
+   <h3><a href="#v900">Changes in version 9.0.0</a></h3>
+   <p>Changes to the database and representative shapes made during the beta phase have now been integrated into UniView.</p>
+   <p>In addition, a quick filter facility was added just below the character list panel. This allows you to filter the characters according to some basic properties, and in some cases there are additional tags available, based on the words in the the character descriptions or block subsection titles. Such additional tagging is far from exhaustive or perfect, they are just intended to provide some additional help for finding certain characters.</p>
+   <p>(Since the highlight function is used for this, don't forget that, if you happen to highlight a useful subset of characters and want to work with just those, you can use the <span class="onscreen">Make list from highlights</span> command, or click on the <img border="0" src="images/tochar.png" align="bottom" alt="upwards pointing arrow" /> icon  to move those characters into the text area.) </p>
+</section>
+
+<section id="v900beta">
+  <h3><a href="#v900beta">Changes in version 9.0.0beta</a></h3>
    <p>UniView now supports the characters introduced for the beta version of Unicode 9. Any changes made during the beta period will be added when Unicode 9 is officially released. (Images are not available for the Tangut additions, but the character information is available.)</p>
    <p>It also brings in notes for individual characters where those notes exist, if <span class="onscreen">Show notes</span> is selected. These notes are not authoritative, but are provided in case they prove useful.</p>
    <p>A new icon was added below the text area to add commas between each character in the text area.</p>
    <p>Links to the help page that used to appear on mousing over a control have been removed. Instead there is a noticeable, blue link to the help page, and the help page has been reorganised and made easier to find information using image maps.  The reorganisation puts more emphasis on learning by exploration, rather than learning by reading.</p>
    <p>Various tweaks were made to the user interface.</p>
  </section>
- <section id="v800a">
+
+<section id="v800a">
   <h3><a href="#v800a">Changes in version 8.0.0a</a></h3>
       <p>Han and hangul characters now have a link <span class="onscreen">View in PDF code charts (pageXX)</span>. For Han blocks, this will open the PDF file for that block at the page that lists this character on Firefox and Chrome. (For Safari and Edge you will need to scroll to the page indicated.) The PDF is useful if there is no picture or font glyph for that character, but also allows you to see the variant forms of the character.</p>
     <p>For some Han blocks, the number of characters per page in the PDF file varies slightly. In this case you will see the text <span class="onscreen">approx</span>; you may have to look at a page adjacent to the one you are taken to for these characters.</p>
@@ -583,7 +607,7 @@ img { border-radius: 4px; }
 
 
 <div class="smallprint"> <span id="version">This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-03-19  18:18<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-06-20  10:20<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
   
 

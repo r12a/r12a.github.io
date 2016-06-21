@@ -1172,6 +1172,38 @@ function listProperties ( searchString ) {
 	}
 
 
+function highlightByTag (tag) {
+	// identifies characters that are associated with a given tag (in u.js)
+	// and highlights them
+	var nodes = []
+	
+	var leftpanel = document.getElementById('chart');
+
+	// clear previous filter
+	nodes = leftpanel.querySelectorAll(".dim")
+	for (var n=0;n<nodes.length;n++) { 
+		nodes[n].className = nodes[n].className.replace(/dim/,'')
+		}
+
+	// get a list of character nodes 
+	nodes = leftpanel.querySelectorAll(".ch") 
+
+	// build a list of characters that aren't greyed out
+	var str = ''; var found=false;
+	for (var i=0;i<nodes.length;i++) { 
+		//if (nodes[i].className.match(/dim/) === null) { 
+		//	found = true;
+			var titlefields = nodes[i].title.split(' ')
+			var dec = titlefields[3]
+			var re = "\\b"+tag+"\\b"
+			if (T[dec] && T[dec].match(re) === null) nodes[i].className += ' dim'
+			if (!T[dec]) nodes[i].className += ' dim'
+		//	}
+	    }
+	//if (! found) { alert('No characters found for that tag.'); return; }
+
+	}
+
 function nonHighlight2List () {
 	// identifies all unhighlighted characters in the left panel, and replaces the current
 	// contents of the panel with a list of these
@@ -1849,6 +1881,8 @@ function showSelection (range) {
 	//	}
 	//if (found) { 
 		drawSelection(range); 
+		displayTags(listTags())
+		
 	//	}
 	//else { 
 	//	uri = 'getrange.php?start='+rangeArray[0]+'&end='+rangeArray[1];
@@ -1857,6 +1891,50 @@ function showSelection (range) {
 	//	}
 	}
 	
+
+function displayTags (list) {
+	var out = ''
+	
+	out += '<a href="none" onclick="showProperties(\'(;Lu;|;Ll;|;Lt;|;Lm;|;Lo;)\'); return false;">letter</a> '
+	out += ' • <a href="none" onclick="showProperties(\'(;Mn;|;Mc;|;Me;)\'); return false;">mark</a> '
+	out += ' • <a href="none" onclick="showProperties(\'(;Nd;|;Nl;|;No;)\'); return false;">number</a> '
+	out += ' • <a href="none" onclick="showProperties(\'(;Pc;|;Pd;|;Ps;|;Pe;|;Pi;|;Pf;|;Po;)\'); return false;">punctuation</a> '
+	out += ' • <a href="none" onclick="showProperties(\'(;Sm;|;Sc;|;Sk;|;So;)\'); return false;">symbol</a> '
+	
+	if (list.length > 0) {
+		out += ' • <a href="none" onclick="highlightByTag(\''+list[0]+'\'); return false;">'+list[0]+'</a>'
+		for (var i=1;i<list.length;i++) {
+			out += ' • <a href="none" onclick="highlightByTag(\''+list[i]+'\'); return false;">'+list[i]+'</a> '
+			}
+		}
+	document.getElementById('tags').innerHTML = out
+	}
+
+function listTags () {
+	// get a list of tags for the displayed characters
+	
+	var out = []
+	var leftpanel = document.getElementById('chart')
+	var tagList = {}
+
+	nodes = leftpanel.querySelectorAll(".ch") 
+
+	// build a list of tags
+	for (var i=0;i<nodes.length;i++) { 
+		var titlefields = nodes[i].title.split(' ')
+		var dec = titlefields[3]
+		if (T[dec]) {
+			var tags = T[dec].split(',')
+			for (var t=0;t<tags.length;t++) {
+				if (tagList[tags[t]]==null) tagList[tags[t]] = tags[t]
+				}
+			}
+	    }
+	for (tag in tagList) { out.push(tagList[tag]) }
+	out.sort()
+	return out
+	}
+
 
 function showUnihan (codepoints, inputtype) {
 	// inputtype: one of 'hex', 'dec' or 'char', indicates the form of the incoming codepoints

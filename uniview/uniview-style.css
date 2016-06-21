@@ -80,6 +80,10 @@ img {
 /* end header */
 
 
+#tags {
+	margin: 2em 0 0 1em ;
+	}
+#tags a { color: #aaa; }
 
 div[role='main'] {
 	margin: 0 8px;
