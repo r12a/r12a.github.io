@@ -39,9 +39,7 @@ function displayResults(str, src) {
 		decCodePoints.value = convertCharStr2CP(str, preserve, true, 'dec'); 
 		}
 	if (src != 'XML') { 
-		if (document.getElementById('xmlinvisibles').checked) { showinvisibles = true; } else { showinvisibles = false; }
-		if (document.getElementById('xmlbidimarkup').checked) { bidimarkup = true; } else { bidimarkup = false; }
-		XML.value = convertCharStr2XML(str, showinvisibles, bidimarkup); 
+		XML.value = convertCharStr2XML(str, getParameters(document.getElementById('xmlOptions'))); 
 		}
 	if (src != 'UTF8') { 
 		UTF8.value = convertCharStr2UTF8( str );
@@ -50,24 +48,16 @@ function displayResults(str, src) {
 		UTF16.value = convertCharStr2UTF16( str );
 		}
 	if (src != 'hexNCRs') { 
-		preserve = 'none';
-		if (document.getElementById('hexncrlatin1').checked) { preserve = 'latin1'; }
-		else if (document.getElementById('hexncrascii').checked) { preserve = 'ascii'; } 
-		hexNCRs.value = convertCharStr2SelectiveCPs( str, preserve, true, '&#x', ';', 'hex' );
+		hexNCRs.value = convertCharStr2SelectiveCPs( str, getParameters(document.getElementById('hexNCROptions')), true, '&#x', ';', 'hex' );
 		}
 	if (src != 'decNCRs') { 
-		preserve = 'none';
-		if (document.getElementById('decncrlatin1').checked) { preserve = 'latin1'; }
-		else if (document.getElementById('decncrascii').checked) { preserve = 'ascii'; } 
-		decNCRs.value = convertCharStr2SelectiveCPs( str, preserve, false, '&#', ';', 'dec' );
+		decNCRs.value = convertCharStr2SelectiveCPs( str, getParameters(document.getElementById('decNCROptions')), false, '&#', ';', 'dec' );
 		}
 	if (src != 'pEsc') { 
 		pEsc.value = convertCharStr2pEsc( str );
 		}
 	if (src != 'jEsc') { 
-		if (document.getElementById('cstyleSC').checked) { cstyle = true; }
-		else { cstyle = false; }
-		jEsc.value = convertCharStr2jEsc( str, cstyle );
+		jEsc.value = convertCharStr2jEsc( str, getParameters(document.getElementById('jEscOptions')) );
 		}
 	if (src != 'Unicode') { 
 		preserve = 'none';
@@ -86,6 +76,19 @@ function displayResults(str, src) {
 	if (src != 'CSS') { 
 		CSS.value = convertCharStr2CSS( str );
 		}
+	}
+
+
+function getParameters (node) {
+	var par = ''
+	var checkboxes = node.querySelectorAll('input[type=checkbox]')
+	for (var c=0;c<checkboxes.length;c++) {
+		if (c>0) par += ';'
+		if (checkboxes[c].checked) par += checkboxes[c].dataset.fn
+		else par += ''
+		}
+		
+	return par
 	}
 
 
@@ -301,6 +304,12 @@ function convertjEsc2Char ( str, shortEscapes ) {
 	// str: string, the input
 	// shortEscapes: boolean, if true the function will convert \b etc to characters
 	
+	// convert ES6 escapes to characters
+	str = str.replace(/\\u\{([A-Fa-f0-9]{1,})\}/g, 
+					function(matchstr, parens) {
+						return hex2char(parens);
+						}
+						);
 	// convert \U and 6 digit escapes to characters
 	str = str.replace(/\\U([A-Fa-f0-9]{8})/g, 
 					function(matchstr, parens) {
@@ -366,7 +375,7 @@ function convertNumbers2Char ( str, type ) {
 	// type: string enum [none, hex, dec, utf8, utf16], what to treat numbers as
 	
 	if (type == 'hex') {
-		str = str.replace(/(\b[A-Fa-f0-9]{1,6}\b)/g, 
+		str = str.replace(/(\b[A-Fa-f0-9]{2,6}\b)/g, 
 					function(matchstr, parens) {
 						return hex2char(parens);
 						}
@@ -566,50 +575,89 @@ function convertXML2Char (str) {
 
 // ============================== Convert to escapes ===============================================
 
-function convertCharStr2XML ( str, convertinvisibles, bidimarkup ) {
+function convertCharStr2XML ( str, parameters ) {
 	// replaces xml/html syntax-sensitive characters in a string with entities
 	// also replaces invisible and ambiguous characters with escapes (list to be extended)
 	// str: string, the input string
 	// convertinvisibles: boolean, if true, invisible characters are converted to NCRs
-	// bidimarkup: boolean, if true, bidi rle/lre/pdf characters are converted to markup
-	str = str.replace(/&/g, '&amp;');
-	str = str.replace(/"/g, '&quot;');
-	str = str.replace(/</g, '&lt;');
-	str = str.replace(/>/g, '&gt;');
+	// bidimarkup: boolean, if true, bidi rle/lre/pdf/rli/lri/fsi/pdi characters are converted to markup
+	str = str.replace(/&/g, '&amp;')
+	str = str.replace(/"/g, '&quot;')
+	str = str.replace(/</g, '&lt;')
+	str = str.replace(/>/g, '&gt;')
 	
 	// replace invisible and ambiguous characters
-	if (convertinvisibles) {
-		str = str.replace(/\u202A/g, '&#x202A;');
-		str = str.replace(/\u202B/g, '&#x202B;');
-		str = str.replace(/\u202D/g, '&#x202D;');
-		str = str.replace(/\u202E/g, '&#x202E;');
-		str = str.replace(/\u202C/g, '&#x202C;');
-		str = str.replace(/\u200E/g, '&#x200E;');
-		str = str.replace(/\u200F/g, '&#x200F;');
-		str = str.replace(/\uAO/g, '&#xAO;');
-		//str = str.replace(/\u/g, '&#x;');
+	if (parameters.match(/convertinvisibles/)) {
+		str = str.replace(/\u2066/g, '&#x2066;')  // lri
+		str = str.replace(/\u2067/g, '&#x2067;')  // rli
+		str = str.replace(/\u2068/g, '&#x2068;')  // fsi
+		str = str.replace(/\u2069/g, '&#x2069;')  // pdi
+
+		str = str.replace(/\u202A/g, '&#x202A;') // lre
+		str = str.replace(/\u202B/g, '&#x202B;') // rle
+		str = str.replace(/\u202D/g, '&#x202D;') // lro
+		str = str.replace(/\u202E/g, '&#x202E;') // rlo
+		str = str.replace(/\u202C/g, '&#x202C;') // pdf
+		str = str.replace(/\u200E/g, '&#x200E;') // lrm
+		str = str.replace(/\u200F/g, '&#x200F;') // rlm
+		
+		str = str.replace(/\u2000/g, '&#x2000;') // en quad
+		str = str.replace(/\u2001/g, '&#x2001;') // em quad
+		str = str.replace(/\u2002/g, '&#x2002;') // en space
+		str = str.replace(/\u2003/g, '&#x2003;') // em space
+		str = str.replace(/\u2004/g, '&#x2004;') // 3 per em space
+		str = str.replace(/\u2005/g, '&#x2005;') // 4 per em space
+		str = str.replace(/\u2006/g, '&#x2006;') // 6 per em space
+		str = str.replace(/\u2007/g, '&#x2007;') // figure space
+		str = str.replace(/\u2008/g, '&#x2008;') // punctuation space
+		str = str.replace(/\u2009/g, '&#x2009;') // thin space
+		str = str.replace(/\u200A/g, '&#x200A;') // hair space
+		str = str.replace(/\u200B/g, '&#x200B;') // zwsp
+		str = str.replace(/\u205F/g, '&#x205F;') // mmsp
+		str = str.replace(/\uA0/g, '&#xA0;') // nbsp
+		str = str.replace(/\u3000/g, '&#x3000;') // ideographic sp
+		str = str.replace(/\u202F/g, '&#x202F;') // nnbsp
+
+		str = str.replace(/\u180B/g, '&#x180B;') // mfvs1
+		str = str.replace(/\u180C/g, '&#x180C;') // mfvs2
+		str = str.replace(/\u180D/g, '&#x180D;') // mfvs3
+
+		str = str.replace(/\u200C/g, '&#x200C;') // zwnj
+		str = str.replace(/\u200D/g, '&#x200D;') // zwj
+		str = str.replace(/\u2028/g, '&#x2028;') // line sep
+		str = str.replace(/\u206A/g, '&#x206A;') // iss
+		str = str.replace(/\u206B/g, '&#x206B;') // ass
+		str = str.replace(/\u206C/g, '&#x206C;') // iafs
+		str = str.replace(/\u206D/g, '&#x206D;') // aafs
+		str = str.replace(/\u206E/g, '&#x206E;') // nads
+		str = str.replace(/\u206F/g, '&#x206F;') // nods
 		}
 
-	// convert lre/rle/pdf to markup
-	if (bidimarkup) {
-		str = str.replace(/\u202A/g, '&lt;span dir="ltr"&gt;');
-		str = str.replace(/\u202B/g, '&lt;span dir="rtl"&gt;');
-		str = str.replace(/\u202C/g, '&lt;/span&gt;');
-		str = str.replace(/&#x202A;/g, '&lt;span dir="ltr"&gt;');
-		str = str.replace(/&#x202B;/g, '&lt;span dir="rtl"&gt;');
-		//str = str.replace(/\u202D/g, '&lt;bdo dir="ltr"&gt;');
-		//str = str.replace(/\u202E/g, '&lt;bdo dir="rtl"&gt;');
-		str = str.replace(/&#x202C;/g, '&lt;/span&gt;');
+	// convert lre/rle/pdf/rli/lri/fsi/pdi to markup
+	if (parameters.match(/bidimarkup/)) {
+		str = str.replace(/\u2066/g, '&lt;span dir=&quot;ltr&quot;&gt;') // lri
+		str = str.replace(/\u2067/g, '&lt;span dir=&quot;rtl&quot;&gt;') // rli
+		str = str.replace(/\u2068/g, '&lt;span dir=&quot;auto&quot;&gt;') // fsi
+		str = str.replace(/\u2069/g, '&lt;/span&gt;') // pdi
+		
+		str = str.replace(/\u202A/g, '&lt;span dir=&quot;ltr&quot;&gt;') // 
+		str = str.replace(/\u202B/g, '&lt;span dir=&quot;rtl&quot;&gt;')
+		str = str.replace(/\u202C/g, '&lt;/span&gt;')
+		str = str.replace(/&#x202A;/g, '&lt;span dir=&quot;ltr&quot;&gt;')
+		str = str.replace(/&#x202B;/g, '&lt;span dir=&quot;rtl&quot;&gt;')
+		//str = str.replace(/\u202D/g, '&lt;bdo dir=&quot;ltr&quot;&gt;')
+		//str = str.replace(/\u202E/g, '&lt;bdo dir=&quot;rtl&quot;&gt;')
+		str = str.replace(/&#x202C;/g, '&lt;/span&gt;')
 		}
 
 	return str;
 	}
 
 
-function convertCharStr2SelectiveCPs ( str, preserve, pad, before, after, base ) { 
+function convertCharStr2SelectiveCPs ( str, parameters, pad, before, after, base ) { 
 	// converts a string of characters to code points or code point based escapes
 	// str: string, the string to convert
-	// preserve: string enum [ascii, latin1], a set of characters to not convert
+	// parameters: string enum [ascii, latin1], a set of characters to not convert
 	// pad: boolean, if true, hex numbers lower than 1000 are padded with zeros
 	// before: string, any characters to include before a code point (eg. &#x for NCRs)
 	// after: string, any characters to include after (eg. ; for NCRs)
@@ -642,10 +690,10 @@ function convertCharStr2SelectiveCPs ( str, preserve, pad, before, after, base )
 			haut = b;
 			}
 		else {
-			if (preserve == 'ascii'&& b <= 127) { //  && b != 0x3E && b != 0x3C &&  b != 0x26) {
+			if (parameters.match(/ascii/) && b <= 127) { //  && b != 0x3E && b != 0x3C &&  b != 0x26) {
 				CPstring += str.charAt(i);
 				}
-			else if (b <= 255 && preserve == 'latin1') { // && b != 0x3E && b != 0x3C &&  b != 0x26) {
+			else if (b <= 255 && parameters.match(/latin1/)) { // && b != 0x3E && b != 0x3C &&  b != 0x26) {
 				CPstring += str.charAt(i);
 				}
 			else { 
@@ -758,7 +806,7 @@ function convertCharStr2UTF8 ( str ) {
 	for (var i = 0; i < str.length; i++) {
 		var cc = str.charCodeAt(i); 
 		if (cc < 0 || cc > 0xFFFF) {
-			outputString += '!Error in convertCharStr2UTF16: unexpected charCodeAt result, cc=' + cc + '!';
+			outputString += '!Error in convertCharStr2UTF8: unexpected charCodeAt result, cc=' + cc + '!';
 			}
 		if (highsurrogate != 0) {  
 			if (0xDC00 <= cc && cc <= 0xDFFF) {
@@ -768,7 +816,7 @@ function convertCharStr2UTF8 ( str ) {
 				continue;
 				}
 			else {
-				outputString += 'Error in convertCharStr2UTF16: low surrogate expected, cc=' + cc + '!';
+				outputString += 'Error in convertCharStr2UTF8: low surrogate expected, cc=' + cc + '!';
 				highsurrogate = 0;
 				}
 			}
@@ -814,21 +862,24 @@ function convertCharStr2UTF16 ( str ) {
 			highsurrogate = cc;
 			}
 		else {
-			outputString += dec2hex(cc) + ' ';
+			result = dec2hex(cc)
+			while (result.length < 4) result = '0' + result
+			outputString += result + ' '
 			}
 		}
 	return outputString.substring(0, outputString.length-1);
 	}
 
 
-
-function convertCharStr2jEsc ( str, cstyle ) { 
+function convertCharStr2jEsc ( str, parameters ) { 
 	// Converts a string of characters to JavaScript escapes
 	// str: sequence of Unicode characters
+	// parameters: a semicolon separated string showing ids for checkboxes that are turned on
 	var highsurrogate = 0;
 	var suppCP;
 	var pad;
 	var n = 0;
+	var pars = parameters.split(';')
 	var outputString = '';
 	for (var i = 0; i < str.length; i++) {
 		var cc = str.charCodeAt(i); 
@@ -838,10 +889,14 @@ function convertCharStr2jEsc ( str, cstyle ) {
 		if (highsurrogate != 0) { // this is a supp char, and cc contains the low surrogate
 			if (0xDC00 <= cc && cc <= 0xDFFF) {
 				suppCP = 0x10000 + ((highsurrogate - 0xD800) << 10) + (cc - 0xDC00); 
-				if (cstyle) {
+				if (parameters.match(/cstyleSC/)) {
 					pad = suppCP.toString(16);
 					while (pad.length < 8) { pad = '0'+pad; }
 					outputString += '\\U'+pad; 
+					}
+				else if (parameters.match(/es6styleSC/)) {
+					pad = suppCP.toString(16)
+					outputString += '\\u{'+pad+'}' 
 					}
 				else {
 					suppCP -= 0x10000; 
@@ -863,13 +918,13 @@ function convertCharStr2jEsc ( str, cstyle ) {
 			switch (cc) {
 				case 0: outputString += '\\0'; break;
 				case 8: outputString += '\\b'; break;
-				case 9: outputString += '\\t'; break;
-				case 10: outputString += '\\n'; break;
-				case 13: outputString += '\\r'; break;
+				case 9: if (parameters.match(/noCR/)) {outputString += '\\t';} else {outputString += '\t'}; break;
+				case 10: if (parameters.match(/noCR/)) {outputString += '\\n';} else {outputString += '\n'}; break;
+				case 13: if (parameters.match(/noCR/)) {outputString += '\\r';} else {outputString += '\r'}; break;
 				case 11: outputString += '\\v'; break;
 				case 12: outputString += '\\f'; break;
-				case 34: outputString += '\\\"'; break;
-				case 39: outputString += '\\\''; break;
+				case 34: if (parameters.match(/noCR/)) {outputString += '\\\"';} else {outputString += '"'}; break;
+				case 39: if (parameters.match(/noCR/)) {outputString += "\\\'";} else {outputString += '\''}; break;
 				case 92: outputString += '\\\\'; break;
 				default: 
 					if (cc > 0x1f && cc < 0x7F) { outputString += String.fromCharCode(cc); }
@@ -932,10 +987,10 @@ function convertCharStr2CSS ( str ) {
 
 
 
-function convertCharStr2CP ( textString, preserve, pad, type ) { 
+function convertCharStr2CP ( textString, parameters, pad, type ) { 
 	// converts a string of characters to code points, separated by space
 	// textString: string, the string to convert
-	// preserve: string enum [ascii, latin1], a set of characters to not convert
+	// parameters: string enum [ascii, latin1], a set of characters to not convert
 	// pad: boolean, if true, hex numbers lower than 1000 are padded with zeros
 	// type: string enum[hex, dec, unicode, zerox], whether output should be in hex or dec or unicode U+ form
 	var haut = 0;
@@ -948,8 +1003,7 @@ function convertCharStr2CP ( textString, preserve, pad, type ) {
 			CPstring += 'Error in convertChar2CP: byte out of range ' + dec2hex(b) + '!';
 			}
 		if (haut != 0) {
-			if (0xDC00 <= b && b <= 0xDFFF) { //alert('12345'.slice(-1).match(/[A-Fa-f0-9]/)+'<');
-				//if (CPstring.slice(-1).match(/[A-Za-z0-9]/) != null) { CPstring += ' '; }
+			if (0xDC00 <= b && b <= 0xDFFF) { 
 				if (afterEscape) { CPstring += ' '; }
 				if (type == 'hex') { 
 					CPstring += dec2hex(0x10000 + ((haut - 0xD800) << 10) + (b - 0xDC00)); 
@@ -976,16 +1030,15 @@ function convertCharStr2CP ( textString, preserve, pad, type ) {
 			haut = b;
 			}
 		else {
-			if (b <= 127 && preserve == 'ascii') {
+			if (b <= 127 && parameters.match(/ascii/)) {
 				CPstring += textString.charAt(i);
 				afterEscape = false;
 				}
-			else if (b <= 255 && preserve == 'latin1') {
+			else if (b <= 255 && parameters.match(/latin1/)) {
 				CPstring += textString.charAt(i);
 				afterEscape = false;
 				}
 			else { 
-				//if (CPstring.slice(-1).match(/[A-Za-z0-9]/) != null) { CPstring += ' '; }
 				if (afterEscape) { CPstring += ' '; }
 				if (type == 'hex') { 
 					cp = dec2hex(b); 
@@ -1009,7 +1062,6 @@ function convertCharStr2CP ( textString, preserve, pad, type ) {
 				}
 			}
 		}
-	//return CPstring.substring(0, CPstring.length-1);
 	return CPstring;
 	}
 	

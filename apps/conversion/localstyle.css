@@ -9,9 +9,9 @@ h1 {
 	padding-left: 0; 
 	}
 p, h2 { 
-	margin-left: 10px; 
+	margin-left: 5%; margin-bottom: 0;
 	}
-
+h3 { margin-left: 5%; margin-bottom: 0; margin-top: 2em; }
 table#converter { 
 	border:0; 
 	padding: 0; 
@@ -28,14 +28,13 @@ table#converter td {
 	}
 textarea { 
 	margin: 0; 
-	padding: 0; 
+	padding: 1em; 
 	width: 99%; 
+	height: 5em;
 	background-color: #eceff5; 
 	color:#000; 
 	border: 1px solid white;  
 	border-radius: 10px; 
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px;
 	}
 button { 
 	font-size: 80%; 
@@ -61,4 +60,9 @@ code {
 	}
 .subversion { 
 	font-size: 50%; 
+	}
+
+.warning {
+	font-size: 80%;
+	line-height: 1.2;
 	}
