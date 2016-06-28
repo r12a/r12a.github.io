@@ -236,7 +236,7 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 
 <div id="showNotes"  style="margin-left: 15px"  onclick="toggleNotes()">show notes</div>
 
-<div id="detailednotes" style="display:none">
+<div id="detailednotes" style="display:block">
   <p><strong>Notes:</strong></p> 
 
 <aside class="sidebar">
@@ -249,6 +249,8 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 </aside>
 
 <p id="status">Updated Sun 26 Jun 2016  &bull; tags <a href="http://rishida.net/blog/index.php?tag=converter" title="Show all blog posts tagged with 'converter'">converter</a>, <a href="http://rishida.net/blog/?tag=scriptnotes" title="Show all blog posts tagged with 'scriptnotes'">scriptnotes</a></p>
+
+<p>See <a href="http://rishida.net/blog/?p=1733">release notes for version 8</a>.</p>
 
   <p><b class="leadin">Standard use.</b> Most of the time you will probably want to drop the text to be converted into the <code>Mixed input</code> field, and hit the associated <code>Convert</code> button. This will convert all escapes to characters, then convert that into each of the forms listed against the boxes below. </p>
   <p>If your text contains bare numbers that you also want to convert, use one of the convert buttons to the right. (Be aware, however, that in this case something like 'ab' could be interpreted as a hex number.) </p>
@@ -274,22 +276,40 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
       <p class="warning">Note that if your text contains RLO or LRO plus PDF, the PDF will incorrectly be converted to <code>&lt;/span&gt;</code> at the moment.  I may fix this (and thereby allow RLO/LRO conversion too) at a later date.</p>
       
       
-    <h3>Percent-encoding for URIs</h3>
-      <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only percent escapes are converted.</p>
-      <p><strong> When conversion puts something here:</strong>&nbsp; Characters allowed in URI syntax are not converted.</p>
-      
-      
     <h3>Hexadecimal NCRs</h3>
       <p><strong>If you start a conversion from here:</strong> It can be a mix of text and  escapes. Only hexadecimal NCRs are converted.</p>
       <p><strong> When conversion puts something here:</strong> By default, everything except ASCII characters is converted. </p>
       <p>You can use the checkboxes to specify whether ANSI (Latin1) characters remain unchanged, or whether all characters are converted.</p>
+      
+      
       
     <h3>Decimal NCRs</h3>
       <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only decimal NCRs are converted.</p>
       <p><strong> When conversion puts something here:</strong>&nbsp; By default, everything except ASCII characters is converted. </p>
       <p>You can use the checkboxes to specify whether ANSI (Latin1) characters remain unchanged, or whether all characters are converted.</p>
       
+       
       
+    <h3>JavaScript escapes</h3>
+      <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only JavaScript escapes are converted. Accepts escapes as used in JavaScript (old style and ES6), Java and C.</p>
+      <p><strong> When conversion puts something here:</strong>&nbsp; By default, everything except ASCII characters is converted to numeric escapes, and the following escapes are substituted for ASCII characters: \0, \b, \t, \v, \f, \\.</p>
+      <p>The default output to this field is specifically JavaScript compliant, though this is valid Java code too (a small number of Java-only named escapes such as <code class="kw" translate="no">\e</code> are rendered as numeric escapes). </p>
+      <p>If <code>C-style</code> is checked, supplementary characters are rendered by a single number, eight digits long, rather than two adjacent surrogate code point numbers.</p>
+      <p>If <code>ES6-style</code> is checked, supplementary characters are also rendered as a single number but using the new format described by EcmaScript 6.</p>
+      <p>If <code>\n etc</code> is checked, line feeds and quotation marks are also escaped.</p>
+      
+      
+    <h3>CSS escapes</h3>
+      <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes.</p>
+      <p><strong> When conversion puts something here:</strong>&nbsp; It does not escape non-control ASCII  characters. Output content uses 6-digit escape forms <em>followed by a space</em> for supplementary characters, and 4-digit escapes followed by a space for all other escaped characters.</p>
+      
+      
+    <h3>Percent-encoding for URIs</h3>
+      <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only percent escapes are converted.</p>
+      <p><strong> When conversion puts something here:</strong>&nbsp; Characters allowed in URI syntax are not converted.</p>
+     
+     
+     
     <h3>Unicode U+hex notation</h3>
     <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only U+hex escapes are converted.</p>
       <p><strong> When conversion puts something here:</strong>&nbsp; By default, everything except ASCII characters is converted. </p>
@@ -330,27 +350,13 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
     <h3>UTF-16 code units</h3>
       <p><strong>If you start a conversion from here:</strong>&nbsp; It must be hexadecimal code units only, separated by spaces.</p>
       <p><strong> When conversion puts something here:</strong>&nbsp; You'll see hexadecimal numbers of 1 to 4 digits representing the UTF-16 code units for the text converted. Supplementary characters are represented by two code units.</p>
-      
-      
-    <h3>JavaScript escapes</h3>
-      <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only JavaScript escapes are converted. Accepts escapes as used in JavaScript (old style and ES6), Java and C.</p>
-      <p><strong> When conversion puts something here:</strong>&nbsp; By default, everything except ASCII characters is converted to numeric escapes, and the following escapes are substituted for ASCII characters: \0, \b, \t, \v, \f, \\.</p>
-      <p>The default output to this field is specifically JavaScript compliant, though this is valid Java code too (a small number of Java-only named escapes such as <code class="kw" translate="no">\e</code> are rendered as numeric escapes). </p>
-      <p>If <code>C-style</code> is checked, supplementary characters are rendered by a single number, eight digits long, rather than two adjacent surrogate code point numbers.</p>
-      <p>If <code>ES6-style</code> is checked, supplementary characters are also rendered as a single number but using the new format described by EcmaScript 6.</p>
-      <p>If <code>\n\'\&quot;</code> is checked, line feeds and quotation marks are also escaped.</p>
-      
-      
-    <h3>CSS escapes</h3>
-      <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes.</p>
-      <p><strong> When conversion puts something here:</strong>&nbsp; It does not escape non-control ASCII  characters. Output content uses 6-digit escape forms <em>followed by a space</em> for supplementary characters, and 4-digit escapes followed by a space for all other escaped characters.</p>
 </section>
 
 </div>
 
 
 <div class="smallprint"><span id="version">This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-06-28  17:53<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-06-28  18:04<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GPL (see source).</span></div>
 
 <script type="text/javascript">
