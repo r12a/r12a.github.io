@@ -25,6 +25,7 @@ var variant = [{type:"variant",subtag:"1606nict",description:"Late Middle French
 {type:"variant",subtag:"ekavsk",description:"Serbian with Ekavian pronunciation",prefix:"sr, sr-Latn, sr-Cyrl",added:"2013-12-02"},
 {type:"variant",subtag:"emodeng",description:"Early Modern English (1500-1700)",added:"2012-02-05",prefix:"en"},
 {type:"variant",subtag:"fonipa",description:"International Phonetic Alphabet",added:"2006-12-11"},
+{type:"variant",subtag:"fonnapa",description:"North American Phonetic Alphabet, Americanist Phonetic Notation",added:"2016-06-24"},
 {type:"variant",subtag:"fonupa",description:"Uralic Phonetic Alphabet",added:"2006-12-11"},
 {type:"variant",subtag:"fonxsamp",description:"X-SAMPA transcription",added:"2010-10-23",comments:"Indicates that the content is transcribed according to X-SAMPA"},
 {type:"variant",subtag:"hepburn",description:"Hepburn romanization",added:"2009-10-01",prefix:"ja-Latn"},
