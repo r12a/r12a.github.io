@@ -35,7 +35,7 @@ textarea { padding: 0 5px; }
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Unicode code converter','v8.0');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Unicode code converter','v8.1');</script>
 </header>
 
 
@@ -137,7 +137,7 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
   
   
   <tr>
-    <td><!--  *********** \ ESCAPES *********** --> 
+    <td><!--  *********** JAVASCRIPT ESCAPES *********** --> 
       &#xA0;<span style="color:brown;">JavaScript</span>
       <button value="Convert" 
 				onclick="displayResults(convertjEsc2Char(jEsc.value, true), jEsc.id); 
@@ -153,7 +153,23 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
                 return false;" >C-style Supp. Chars.</button--> 
       <br/>
       <textarea id="jEsc" name="jEsc" rows="3" cols="5"></textarea></td>
-    <td><!--  *********** CSS ESCAPES *********** --> 
+      
+      
+    <td><!--  *********** RUST ESCAPES *********** --> 
+      &#xA0;<span style="color:brown;">Rust</span>
+      <button value="Convert" 
+				onclick="displayResults(convertRust2Char(rust.value), rust.id); 
+                return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="rust.focus();rust.select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="rust.focus();rust.select();" />
+
+<span class="options" id="rustOptions">
+      \n etc<input class="check" type="checkbox" data-fn="noCR" id="noRustCR"  onclick="rust.value = convertCharStr2Rust(convertRust2Char(rust.value, true), getParameters(parentNode));"/>
+      </span>
+      <br/>
+      <textarea id="rust" name="rust" rows="3" cols="5"></textarea></td>
+</tr>
+
+<tr>
+    <td colspan="2"><!--  *********** CSS ESCAPES *********** --> 
       &#xA0;<span style="color:brown;">CSS</span> <button value="Convert" 
 				onclick="displayResults(convertCSS2Char(CSS.value, true), CSS.id); 
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('CSS').focus();document.getElementById('CSS').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('CSS').focus();document.getElementById('CSS').select();" />
@@ -292,11 +308,18 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
       
     <h3>JavaScript escapes</h3>
       <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only JavaScript escapes are converted. Accepts escapes as used in JavaScript (old style and ES6), Java and C.</p>
-      <p><strong> When conversion puts something here:</strong>&nbsp; By default, everything except ASCII characters is converted to numeric escapes, and the following escapes are substituted for ASCII characters: \0, \b, \t, \v, \f, \\.</p>
+      <p><strong> When conversion puts something here:</strong>&nbsp; By default, everything except visible ASCII characters is converted to numeric escapes, and the following escapes are substituted for ASCII characters: \0, \b, \t, \v, \f, \\.</p>
       <p>The default output to this field is specifically JavaScript compliant, though this is valid Java code too (a small number of Java-only named escapes such as <code class="kw" translate="no">\e</code> are rendered as numeric escapes). </p>
       <p>If <code>C-style</code> is checked, supplementary characters are rendered by a single number, eight digits long, rather than two adjacent surrogate code point numbers.</p>
       <p>If <code>ES6-style</code> is checked, supplementary characters are also rendered as a single number but using the new format described by EcmaScript 6.</p>
-      <p>If <code>\n etc</code> is checked, line feeds and quotation marks are also escaped.</p>
+      <p>If <code>\n etc</code> is checked, line feeds, tabs, and quotation marks are also escaped.</p>
+      
+       
+      
+    <h3>Rust escapes</h3>
+      <p><strong>If you start a conversion from here:</strong>&nbsp; It can be a mix of text and escapes. Only Rust escapes are converted</p>
+      <p><strong> When conversion puts something here:</strong>&nbsp; By default, everything except visible ASCII characters is converted to numeric escapes, and the following escapes are substituted for ASCII characters: \0, \b, \t, \v, \f, \\. Output for other characters in the ranges U+0001-U+001F and U+0080-U+009F (ie. invisible control characters) uses the \x.. escape format.      </p>
+      <p>If <code>\n etc</code> is checked, line feeds, tabs, and quotation marks are also escaped.</p>
       
       
     <h3>CSS escapes</h3>
@@ -356,7 +379,7 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 
 
 <div class="smallprint"><span id="version">This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-06-28  18:08<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-07-10  18:26<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GPL (see source).</span></div>
 
 <script type="text/javascript">
@@ -370,6 +393,7 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 	var decNCRs = document.getElementById('decNCRs');
 	var Unicode = document.getElementById('Unicode');
 	var pEsc = document.getElementById('pEsc');
+	var rust = document.getElementById('rust');
 	var jEsc = document.getElementById('jEsc');
 	var chars = document.getElementById('chars');
 	var CSS = document.getElementById('CSS');
