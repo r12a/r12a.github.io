@@ -956,7 +956,7 @@ function getDataFor (codepoint) {
 	else if (charType == 3) {
 		return hexcp+";["+ findScriptGroup( codepoint )+"];Lo;0;L;;;;;N;;;;;;;;;";
 		}
-	else if (charType = 5) {
+	else if (charType == 5) {
 		return hexcp+";["+ findScriptGroup( codepoint )+"];Co;0;L;;;;;N;;;;;;;;;";
 		}
 	else if (charType > 4) {
