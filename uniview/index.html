@@ -749,6 +749,7 @@ for (var p=0;p<parameters.length;p++) {
 	if (pairs[0] == 'char') { if (pairs[1]) { printProperties( parseInt(pairs[1],16) ); } }
 	if (pairs[0] == 'charlist') { if (pairs[1]) { document.getElementById("picker").value = decodeURIComponent(pairs[1]);showCharacterList(decodeURIComponent(pairs[1])); } }
 	if (pairs[0] == 'codepoints') { if (pairs[1]) { showCodepoint(pairs[1]); } }
+	if (pairs[0] == 'search') { if (pairs[1]) { findString(pairs[1]); } }
 	if (pairs[0] == 'block') { if (pairs[1]) { range=getRange(pairs[1]); firstcp=range.split(":"); infoptr = scriptInfoPointer(firstcp[0]);  showSelection( getRange(pairs[1]) ); /*if (infoptr > 0) { displayBlockData(infoptr); } */ } }
 	if (pairs[0] == 'font') { if (pairs[1]) { changeFont(pairs[1]); } }
 	}
