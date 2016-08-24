@@ -1,31 +1,197 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<head>
-<meta charset="utf-8"/>
-<title>rishida.io</title>
-<link rel="stylesheet" type="text/css" href="style/docs.css" />
-<style>
-#contactlink {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-	}
-p {
-	text-align: start;
-	}
-h1 {
-	margin-bottom: 0;
-	}
-</style>
-<link rel="shortcut icon" href="favicon.ico"/>
-</head>
 
-		<body>
-<h1>r12a.io</h1>
-<div id="sitelinks" class="noprint" style="margin-left: 6.5%;"><a href="http://rishida.net/blog/" title="Blog posts">blog</a>&nbsp; <a href="doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="applist" title="Small utilities written in xhtml and javascript">apps</a>&nbsp; <a href="photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span></div>
-<h2 style="width:40%">quick links</h2>
-<p style="width:40%; text-align: left;"><a href="scripts/links" title="Links to information about scripts &amp; writing systems.">Script&#xA0;links</a>&nbsp;• <a href="http://validator.w3.org/i18n-checker/" title="Internationalization checker.">i18n&#xA0;checker</a>&nbsp;• <a href="uniview/" title="Explore characters in Unicode.">UniView</a>&nbsp;• <a href="pickers/" title="Web-based apps for inputting Unicode characters.">Pickers</a>&nbsp;• <a href="apps/conversion/" title="Convert between characters and escapes.">Converter</a>&nbsp;• <a href="apps/subtags/" title="Find a language tag.">Language&#xA0;tags</a>&nbsp;• <a href="scripts/phrases" title="Examples of text in various scripts.">Script&nbsp;samples</a>&nbsp;• <a href="apps/archery/" title="Archery score log.">Archery</a></p>
-<p><a href="http://www.w3.org/" title="W3C site"><img src="images/w3c-small.png" alt="W3C" /></a> &#xA0; <a href="http://www.unicode.org/" title="Unicode site."><img src="images/logo_mini.gif" alt="Unicode Consortium Home" /></a> &#xA0; <a href="http://multilingualweb.eu/" title="MultilingualWeb project site."><img src="images/mlw-mini.png" alt="MultilingualWeb project site" /></a> &#xA0; <a href="http://www.w3.org/International/" title="Internationalization Activity Home."><img src="images/i18n.png" alt="Internationalization Activity Home" /></a></p>
+	<head>
+		<title>r12a.io</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="style/docs.css" />
+        <style>
+		#contactlink { position: fixed; bottom: 10px; right: 10px; }
+		p { text-align: start; }
+		h1 a, h1 a:link, h1 a:visited { color: #005A9C; }
+		.directory p { margin: 0; padding: 4px 10px; }
+		</style>
+        <link rel="shortcut icon" href="favicon.ico"/>
+
+<style>
+body {
+	background-color: #F9F9F9;
+}
+h1, #sitelinks {
+	text-align:center;
+	margin-left: 0;
+	margin-right: 0;
+}
+.link-container {
+	margin: 0 3em 0 3em;
+	text-align: center;
+	}
+.cell {
+    background-color: rgba(255,255,255,.2);
+    border-radius: 10px;
+    margin: 20px 10px 35px;
+	display: inline-block;
+    box-shadow: 0 1px 3px #c1c1c1;
+}
+table {
+	width: 250px;
+	margin:0;
+	padding: 0;
+	border-collapse: collapse;
+}
+.cell td { 
+	border: 0; 
+}
+.cell img {
+	width: 250px;
+	border-radius: 10px 10px 0 0;
+	height: 150px
+}
+.image { 
+	border-radius: 10px 10px 0 0;
+    padding: 0px;
+    line-height: 0;
+	font-size: 0;
+    transition: opacity 100ms ease-out;
+	}
+.title {
+    color: #5c5c5c;
+    padding: 0 4px;
+    border-radius: 0px 0px 10px 10px;
+    width: 290px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+	font-family: "Lucida Grande", sans-serif;
+	text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: #F2F2F2;
+}
+.cell a { 
+	color: #5c5c5c; 
+	text-decoration: none;
+	}
+.cell a:hover { 
+	color: inherit; 
+	text-decoration: none;
+	background-color: transparent;
+	}
+.title:hover {
+	background-color: black;
+	color: white;
+}
+.cell:hover {
+	box-shadow: 0 1px 5px teal;
+	color: white; 
+	}
+
+
+</style>
+
+
+	</head>
+
+	<body>
+		<h1>r12a.io</h1> 
+        
+		<div id="sitelinks" class="noprint"><span>
+			<a href="http://rishida.net/blog/" title="Blog">blog</a>&nbsp; 
+			<a href="doclist" title="Pages describing stuff">docs</a>&nbsp; 
+			<a href="applist" title="Small apps written in html and javascript">apps</a>&nbsp; 
+			<a href="photos" title="Photos">photos</a>&nbsp;&nbsp;</span></div>
+
+    
+     		    <h2 style="text-align:center; margin-left:3em; margin-right: 3em;">quick links</h2>
+    <div class="link-container">
+     		      
+  <div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="http://www.w3.org/International/" title="Internationalization Activity"><img src="images/index//i18n.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="http://www.w3.org/International/" title="Internationalization Activity">W3C i18n Activity</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="http://www.w3.org/" title="W3C"><img src="images/index//w3c.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="http://www.w3.org/" title="W3C">W3C</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="http://www.unicode.org/" title="Unicode"><img src="images/index//unicode.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="http://www.unicode.org/" title="Unicode">Unicode</a></td></tr>
+</tbody></table>
+</div>
+
+</div><!-- end of main quick links -->
+
+
+
+<div class="link-container">
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="uniview/" title="UniView"><img src="images/index//uniview.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="uniview/" title="UniView">UniView</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="pickers/" title="Character pickers"><img src="images/index//pickers.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="pickers/" title="Character pickers">Character pickers</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="apps/conversion/"><img src="images/index//converter.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="apps/conversion/">Character converter</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="http://validator.w3.org/i18n-checker/"><img src="images/index//checker.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="http://validator.w3.org/i18n-checker/">I18n checker</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="scripts/links"><img src="images/index//scriptlinks.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="scripts/links">Script links</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="scripts/phrases"><img src="images/index//scriptexamples.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="scripts/phrases">Script examples</a></td></tr>
+</tbody></table>
+</div>
+
+<div class="cell">
+<table><tbody>
+<tr><td class="image"><a href="apps/archery"><img src="images/index//archery.png" alt=""/></a></td></tr>
+<tr><td class="title"><a href="apps/archery">Archery</a></td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+
+                
+
+
+
+
 <div id="contactlink"><a href="mailto:ishida@w3.org" class="email">ishida &#x40; w3.org</a></div>
 </body>
 </html>
