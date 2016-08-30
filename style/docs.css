@@ -112,6 +112,7 @@ h3 {
 h3 a:link { 
 	color: gray; 
 	text-decoration: none; 
+	background-color: transparent;
 	}
 h3 a:visited { 
 	color: gray; 
