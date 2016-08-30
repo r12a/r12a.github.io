@@ -675,14 +675,18 @@ function makeListItem (item, searchtype) {
 	if (item['type'] == 'language') { 
 		if (sil[subtag]) { siltag = sil[subtag]; }
 		else { siltag = subtag; }					  
-		div += "<span class='sil'><a href='http://www.ethnologue.com/show_language.asp?code="+siltag+"'><img src='images/ethn.png' title='Look up in the SIL Ethnologue.' alt='Look up in the SIL Ethnologue.' /></a></span>"; 
+		div += "<span class='sil'><a target='_blank' href='http://www.ethnologue.com/show_language.asp?code="+siltag+"'><img src='images/ethn.png' title='Look up in the SIL Ethnologue.' alt='Look up in the SIL Ethnologue.' /></a></span>"; 
 		}
 	// add the link to UniView for script subtags
 	if (item['type'] == 'script') { 
 		if (scriptcodes[subtag]) { 
 			univiewtag = scriptcodes[subtag]; 
-			div += "<span class='sil'><a href='/uniview/?block="+univiewtag+"'><img src='images/univ.png' title='Look up in UniView.' alt='Look up in UniView.' /></a></span>"; 
+			div += "<span class='sil'><a target='_blank' href='/uniview/?block="+univiewtag+"'><img src='images/univ.png' title='Look up in UniView.' alt='Look up in UniView.' /></a></span>"; 
 			}
+		}
+	// add a link to Wikipedia search
+	if (item['type'] == 'language' || item['type'] == 'script') { 
+		div += "<span class='sil'><a target='_blank' href='https://en.wikipedia.org/w/index.php?search="+description+"'><img src='images/wikipedia.png' title='Look up in Wikipedia.' alt='Look up in Wikipedia.' /></a></span> &nbsp;"; 
 		}
 
 	div +=  '<span class="st">'+subtag+'</span>'+description+'</h3>';

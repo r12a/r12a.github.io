@@ -177,7 +177,7 @@ sub { color:#C30; font-style: italic; }
 
 
 
-.sil { float:right; width: 20px; text-align:right; }
+.sil { float:right; width: 20px; text-align:right; margin-left: 8px; }
 
 .bigOK { 
 	color:#FFF; 
