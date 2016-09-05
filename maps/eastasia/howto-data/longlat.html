@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Location finder</title>
+<script type="application/javascript" src="geomfunctions.js">  </script>
+<script>
+function getMeasurements (lat,lon) {
+	
+	var sqW = document.getElementById('sqW').value
+	var sqH = document.getElementById('sqH').value
+	
+	console.log('lat',_lat)
+	console.log('lat',_lat % 5)
+	lat = lat % 5
+	lon = lon % 5
+		
+	document.getElementById('W').textContent = Math.floor(sqW/50*lon*10)
+	document.getElementById('H').textContent = Math.floor(sqH/50*lat*10)
+	
+	}
+</script>
+</head>
+
+<body>
+<p><em>Finds the location of a city on the China map.</em></p>
+<p>Add gps coords from wikipedia, eg. 34°40′11″N 112°26′32″E</p>
+<p><input id=coord type="text"/></p>
+<p>Locate the lat/lon box it will be in. Make a square and tilt to run along the latitude line. Stretch the top to fit the box and note the dimensions <em>near the corner you are pulling</em>. Measure the width appoximately were gps coords are likely to place the town vertically.
+<p><img src="geom.png"/></p>
+<p>W: <input id=sqW type=number/></p>
+<p>H: <input id=sqH type=number/></p>
+<p><button value="Do it" onclick="doConversion(document.getElementById('coord').value);getMeasurements(_lat,_lon);">Do it</button></p>
+
+<p>Move the corner until you see:
+<p>W: <span id=W></span> px<br/>H: <span id=H></span> px</p>
+
+</body>
+</html>
