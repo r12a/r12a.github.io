@@ -37,7 +37,8 @@ if(isset($_GET['dates'])) {
 	$datelist = $_GET['dates'];
 	
 	$datearray = explode(',',$datelist);
-	
+	$sourcePath = '../svg_raw/';
+	$targetPath = '../svg/';
 	
 	$base = fopen('newbase.svg', "r");
 	if (!$base) { $message = 'Could not open file.  Check the spelling of the URI.'; }
@@ -49,16 +50,16 @@ if(isset($_GET['dates'])) {
 	for ($i=0;$i<count($datearray);$i++) {
 		$bcDate = false;
 		if ($datearray[$i] < 0) {
-			$filename = '../svg/BC_'.abs($datearray[$i]).'.svg';
+			$filename = 'BC_'.abs($datearray[$i]).'.svg';
 			$bcDate = true;
 			}
 		else
-			$filename = '../svg/AD_'.$datearray[$i].'.svg';
+			$filename = 'AD_'.$datearray[$i].'.svg';
 		echo 'filename: '.$filename.'<br/>';
 	
 		#chmod($filename, 0777);
 	
-		$fp = fopen($filename, "r");
+		$fp = fopen($sourcePath.$filename, "r");
 		if (!$fp) { $message = 'Could not open file.  Check the spelling of the URI.'; }
 	
 		$message = "\n".'<text font-weight="700" font-family="Myriad Pro, Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(';
@@ -195,7 +196,7 @@ eot;
 		}
 	</script>
 eot;
-		$svgtext = fread($fp,  filesize($filename));
+		$svgtext = fread($fp,  filesize($sourcePath.$filename));
 		fclose($fp);
 		
 		echo 'svgtext length '.strlen($svgtext)."<br/>";
@@ -214,7 +215,7 @@ eot;
 		
 		echo 'updated svgtext length '.strlen($newsvgtext)."<br/>";
 		
-		if (is_writable($filename)) { echo "is writeable<br/>"; }
+		if (is_writable($targetPath.$filename)) { echo "is writeable<br/>"; }
 		else { echo "NOT WRITEABLE<br/>";  exit; }
 
 		//chmod($filename,0777);
@@ -226,8 +227,8 @@ eot;
 		//	exit;
 		//	}
 
-		$numbytes = file_put_contents($filename, $newsvgtext);
-  		echo "Wrote ($numbytes) bytes to file ($filename)";
+		$numbytes = file_put_contents($targetPath.$filename, $newsvgtext);
+  		echo "Wrote ($numbytes) bytes to file ($targetPath$filename)";
 
 		//fclose($fp);
 		}
