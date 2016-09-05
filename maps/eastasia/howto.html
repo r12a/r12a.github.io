@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Instructions for Chinese svg maps</title>
+<style>
+body { font-family: "Myriad Pro", "Helvetica Neue", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif; }
+h2 { margin-top: 3em; }
+</style>
+</head>
+
+<body>
+<h1>Instructions for East Asian SVG maps</h1>
+<h2>Saving a base SVG file</h2>
+<p>A base svg file is one without any dated borders, etc.</p>
+<p>Delete all dated borders etc, and all temporary stuff.</p>
+<p><code class="kw" translate="no">File &gt; Save a Copy</code></p>
+<p>Select <code class="kw" translate="no">SVG</code> and set name to <code class="kw" translate="no">svg/base.svg</code></p>
+<p>Settings:</p>
+<p><img src="howto-data/savecopy.png" alt=""/></p>
+<p>Run <a href="http://rishida.io/maps/china/howto-data/preparebase.php">howto-data/preparebase.php</a>. This removes the top and end of the file, and the bitmap, and changes all .stxx style names to .btxx style names.</p>
+<p>It creates the file howto-data/newbase.php, which is later included into dated files.</p>
+<h2>Saving a dated SVG file</h2>
+<p>Make a backup, then deleted all base information.</p>
+<p><code class="kw" translate="no">File &gt; Save a Copy</code></p>
+<p>Select <code class="kw" translate="no">SVG</code> and set name to <code class="kw" translate="no">svg/&lt;date&gt;-fareast.svg</code></p>
+<p>Settings as for base version.</p>
+<p>Run <a href="http://rishida.io/maps/china/howto-data/preparebase.php">howto-data/adddates.php</a> with parameter ?dates=XX where XX is the year of the map. (For BC use -XX.) This adds the navigation, cleans up some styling (esp. fonts), includes the latest base data, etc.</p>
+<p>&nbsp;</p>
+<h2> Locating a spot for a city
+</h2>
+<p>Open <a href="howto-data/longlat.html">howto-data/longlat.html</a> and follow the instructions.</p>
+</body>
+</html>
