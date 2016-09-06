@@ -22,13 +22,10 @@
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Persian character picker (Draft, in devt!)','');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Persian character picker','');</script>
 </header>
-
-<p>This picker is not yet ready for use. I'm in the process of developing it, and there will be many changes yet before it is ready.  It is being evolved from the Arabic picker, so don't be surprised to see Arabic-specific features. Eventually i'll replace them with Persian specifics. There is a set of <a href="toUNTests.txt">transcription tests</a>.</p>
-
 <div id="main">
-<span id="copydelete">
+  <span id="copydelete">
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
@@ -668,7 +665,7 @@ dir="rtl">
   </div>
 </aside>     
 
-<p id="status">Updated Tue 2 Feb 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
+<p id="status">Updated Tue 6 Sep 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Persian text using the Arabic script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 
@@ -682,7 +679,7 @@ dir="rtl">
       <dt>About the chart</dt>
       <dd>Includes characters in the Unicode <a href="/uniview/?block=arabic">Arabic</a> block that are used for writing modern Standard Persian. <strong>This is an early version of the picker for Persian. It is likely to change a little in the future as the required set of characters is refined.</strong> (It currently has some characters that are not needed, and may be missing some that are.)</dd>
 <dt>Get help</dt>
-      <dd><a href="help" target="help" style="font-size:120%;">See the help file</a>, or if something is broken or missing <a href="mailto:rishida@w3.org?subject=[Persian%20picker]%20">let me know</a>.</dd>
+      <dd><a href="help" target="help" style="font-size:120%;">See the help file</a>, or if something is broken or missing <a target="_blank" style="font-size:120%;" href="https://github.com/r12a/r12a.github.io/issues/new?title=[persian%20picker]%20%20ADD%20TITLE%20HERE">let me know</a>.</dd>
       <dd>For version information see <a href="https://github.com/r12a/r12a.github.io/commits/master/pickers/persian">the Github commit list</a>.</dd>    </dl>
 </div>
 
