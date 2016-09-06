@@ -40,9 +40,9 @@ if(isset($_GET['dates'])) {
 	$sourcePath = '../svg_raw/';
 	$targetPath = '../svg/';
 	
-	$base = fopen('newbase.svg', "r");
+	$base = fopen($targetPath.'base.svg', "r");
 	if (!$base) { $message = 'Could not open file.  Check the spelling of the URI.'; }
-	$basetext = fread($base,  filesize('newbase.svg'));
+	$basetext = fread($base,  filesize($targetPath.'base.svg'));
 	fclose($base);
 
 	echo 'datearray length: '.count($datearray).'<br/>';
@@ -58,7 +58,7 @@ if(isset($_GET['dates'])) {
 		$fp = fopen($sourcePath.$filename, "r");
 		if (!$fp) { $message = 'Could not open file.  Check the spelling of the URI.'; }
 	
-		$message = "\n".'<text font-weight="700" font-family="Myriad Pro, Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(';
+		$message = "\n".'<text font-weight="700" font-family="\'Myriad Pro\', Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(';
 		if (strlen($filename) == 10) { $message .= '550'; }
 		else { $message .= '550'; }
 		$message .= ' 154)">'.abs($datearray[$i]).'<tspan font-size="72px" x="';
@@ -84,7 +84,7 @@ if(isset($_GET['dates'])) {
 
 $message .= <<<eot
 <style type="text/css">
-	.big { fill: transparent; font-size: 72px; font-family:'MyriadPro','Helvetica Neue', Helvetica,Arial,sans-serif; cursor: pointer; }
+	.big { fill: transparent; font-size: 72px; font-family:'Myriad Pro','Helvetica Neue', Helvetica,Arial,sans-serif; cursor: pointer; }
 	a:hover > .big { fill:#8B5E3C;  }
 	a:hover > .maprange { fill:yellow; }
 	.selectors { cursor:pointer; font-family:'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:40px; fill:#ccc; font-weight: normal; }
@@ -207,11 +207,13 @@ eot;
 		$svgtext = preg_replace('/\<g id="bitmap"\>[\s]+\<image style="overflow:visible;" width="1968" height="1567" xlink\:href="\.\.\/relief_map\.jpg"[\s]+transform="matrix\(1\.4757 0 0 1\.4757 1\.8006 0\)">[\s]+\<\/image\>[\s]+\<\/g\>/',$basetext,$svgtext);
 		echo 'svgtext with base '.strlen($svgtext)."<br/>";
 		
-		$svgtext = preg_replace('/<text font-weight="700" font-family="Myriad Pro, Arial,(.|\n)+<\/svg>/','</svg>',$svgtext);
+		$svgtext = preg_replace('/<text font-weight="700" font-family="\'Myriad Pro\', Arial,(.|\n)+<\/svg>/','</svg>',$svgtext);
 		echo 'svgtext length '.strlen($svgtext)."<br/>";
-		$newsvgtext = str_replace("'MyriadPro-Regular'","'MyriadPro',Helvetica,Arial,sans-serif",$svgtext);
-		$newsvgtext = str_replace("'MyriadPro-Semibold'","'MyriadPro',Helvetica,Arial,sans-serif",$newsvgtext);
-		$newsvgtext = str_replace("'MyriadPro-Bold'","'MyriadPro',Helvetica,Arial,sans-serif",$newsvgtext);
+		$newsvgtext = str_replace("'MyriadPro-Regular'","'Myriad Pro',Helvetica,Arial,sans-serif",$svgtext);
+		$newsvgtext = str_replace("'MyriadPro-Semibold'","'Myriad Pro',Helvetica,Arial,sans-serif",$newsvgtext);
+		$newsvgtext = str_replace("'MyriadPro-Bold'","'Myriad Pro',Helvetica,Arial,sans-serif",$newsvgtext);
+		$newsvgtext = str_replace("font-family:'MyriadPro-It';","font-family:'Myriad Pro',Helvetica,Arial,sans-serif; font-style: italic;",$newsvgtext);
+		$newsvgtext = str_replace("'ArialMT'","'Myriad Pro',Helvetica,Arial,sans-serif",$newsvgtext);
 		
 		$newsvgtext = str_replace('</svg>',$message,$newsvgtext)."\n".'</svg>';
 		
