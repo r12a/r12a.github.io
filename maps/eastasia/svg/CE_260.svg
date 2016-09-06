@@ -9,11 +9,11 @@
 	.st3{fill:#ED1C24;}
 	.st4{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st5{fill:#ED1C24;stroke:#1C75BC;stroke-linecap:round;stroke-miterlimit:10;}
-	.st6{font-family:'ArialMT';}
+	.st6{font-family:'Myriad Pro',Helvetica,Arial,sans-serif;}
 	.st7{font-size:21px;}
 	.st8{font-size:24px;}
 	.st9{font-size:18px;}
-	.st10{font-family:'MyriadPro',Helvetica,Arial,sans-serif;}
+	.st10{font-family:'Myriad Pro',Helvetica,Arial,sans-serif;}
 	.st11{font-size:104px;}
 	.st12{font-size:60px;}
 	.st13{font-size:36px;}
@@ -28,9 +28,9 @@
 	.bt3{display:none;}
 	.bt4{display:inline;}
 	.bt5{fill:#1C75BC;}
-	.bt6{font-family:'MyriadPro',Helvetica,Arial,sans-serif;}
+	.bt6{font-family:'Myriad Pro',Helvetica,Arial,sans-serif;}
 	.bt7{font-size:14px;}
-	.bt8{font-family:'ArialMT';}
+	.bt8{font-family:'Myriad Pro',Helvetica,Arial,sans-serif;}
 	.bt9{display:inline;fill:#1C75BC;}
 	.bt10{font-size:12px;}
 	.bt11{display:inline;fill:none;}
@@ -48,7 +48,7 @@
 	.bt23{font-size:60px;}
 	.bt24{font-size:32px;}
 	.bt25{font-size:24px;}
-	.bt26{font-family:'MyriadPro-It';}
+	.bt26{font-family:'Myriad Pro',Helvetica,Arial,sans-serif; font-style: italic;}
 	.bt27{font-family:'Arial-ItalicMT';}
 	.bt28{font-size:28px;}
 	.bt29{font-size:21px;}
@@ -3527,11 +3527,11 @@
 	<text transform="matrix(0.9999 1.704260e-02 -1.704260e-02 0.9999 1845.0962 952.7689)" class="st10 st12">Xianbei</text>
 </g>
 
-<text font-weight="700" font-family="Myriad Pro, Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(550 154)">260<tspan font-size="72px" x="321" y="0">CE</tspan></text><a xlink:href="../index#ce260"><path fill="#4D4D4F" d="M715.2,242.4l-0.2,61.1c0,5.3,4.3,8.4,12.8,9.5v5l-53.4,0.1v-4.9c4.2,0,7.4-0.8,9.7-2.3
+<text font-weight="700" font-family="'Myriad Pro', Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(550 154)">260<tspan font-size="72px" x="321" y="0">CE</tspan></text><a xlink:href="../index#ce260"><path fill="#4D4D4F" d="M715.2,242.4l-0.2,61.1c0,5.3,4.3,8.4,12.8,9.5v5l-53.4,0.1v-4.9c4.2,0,7.4-0.8,9.7-2.3
 		c2.3-1.5,3.4-3.7,3.4-6.5v-41.7c0-5.3-4.3-8.5-13-9.5l0.1-6.2L715.2,242.4z M701.4,204.7c4,0,7.4,1.4,10.1,4.1
 		c2.7,2.7,4.1,6.1,4.1,10.2c0,3.9-1.4,7.2-4.1,10c-2.7,2.7-6,4.1-9.8,4.1c-4.2,0-7.6-1.3-10.4-3.8s-4.1-5.8-4.1-9.7
 		c0-4.4,1.3-7.9,4-10.7C693.8,206.1,697.2,204.7,701.4,204.7z"/></a><a xlink:href="BCE_90.svg"><path color="black" d="M622,206c-11.92,11.92-61.88,65-61.88,65s51.37,52.46,63.81,64.9V208"/></a><style type="text/css">
-	.big { fill: transparent; font-size: 72px; font-family:'MyriadPro','Helvetica Neue', Helvetica,Arial,sans-serif; cursor: pointer; }
+	.big { fill: transparent; font-size: 72px; font-family:'Myriad Pro','Helvetica Neue', Helvetica,Arial,sans-serif; cursor: pointer; }
 	a:hover > .big { fill:#8B5E3C;  }
 	a:hover > .maprange { fill:yellow; }
 	.selectors { cursor:pointer; font-family:'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:40px; fill:#ccc; font-weight: normal; }
