@@ -4,8 +4,8 @@
 
 $yeargroup = [];
 $yeargroup[-90] = [0,260];
-$yeargroup[260] = [-90,0];
-$yeargroup[305] = [230,362];
+$yeargroup[260] = [-90,400];
+$yeargroup[400] = [260,0];
 $yeargroup[362] = [305,406];
 $yeargroup[406] = [362,420];
 $yeargroup[420] = [406,451];
@@ -33,7 +33,7 @@ $yeargroup[1230] = [1212,0];
 
 $nav = '';
 $filename = '';
-if(isset($_GET['dates'])) {
+if(isset($_GET['dates']) && $_GET['dates'] != '') {
 	$datelist = $_GET['dates'];
 	
 	$datearray = explode(',',$datelist);
@@ -93,9 +93,9 @@ $message .= <<<eot
 	.options { fill:#aa896b; stroke:white; }
 </style> // starts at 100BCE, so add 100 to each figure
 	<a xlink:href="BCE_90.svg"><path class="maprange" d="M 2875,0 l 30,0 l 0,10 l -30,0 z"/><text x="2650" y="138" class="big">&#xA0;&#xA0;90</text></a>
-	<a xlink:href="CE_260.svg"><path class="maprange" d="M 2875,10 l 30,0 l 0,330 l -30,0 z"/><text x="2650" y="360" class="big">&#xA0;&#xA0;260</text></a>
-	<!--a xlink:href="CE_305.svg"><path class="maprange" d="M 2875,230 l 30,0 l 0,75 l -30,0 z"/><text x="2650" y="305" class="big">&#xA0;&#xA0;305</text></a>
-	<a xlink:href="CE_362.svg"><path class="maprange" d="M 2875,305 l 30,0 l 0,57 l -30,0 z"/><text x="2650" y="362" class="big">&#xA0;&#xA0;362</text></a>
+	<a xlink:href="CE_260.svg"><path class="maprange" d="M 2875,10 l 30,0 l 0,360 l -30,0 z"/><text x="2650" y="360" class="big">&#xA0;&#xA0;260</text></a>
+	<a xlink:href="CE_400.svg"><path class="maprange" d="M 2875,360 l 30,0 l 0,140 l -30,0 z"/><text x="2650" y="400" class="big">&#xA0;&#xA0;400</text></a>
+	<!--a xlink:href="CE_362.svg"><path class="maprange" d="M 2875,305 l 30,0 l 0,57 l -30,0 z"/><text x="2650" y="362" class="big">&#xA0;&#xA0;362</text></a>
 	<a xlink:href="CE_406.svg"><path class="maprange" d="M 2875,362 l 30,0 l 0,44 l -30,0 z"/><text x="2650" y="406" class="big">&#xA0;&#xA0;406</text></a>
 	<a xlink:href="CE_420.svg"><path class="maprange" d="M 2875,406 l 30,0 l 0,14 l -30,0 z"/><text x="2650" y="420" class="big">&#xA0;&#xA0;420</text></a>
 	<a xlink:href="CE_451.svg"><path class="maprange" d="M 2875,420 l 30,0 l 0,31 l -30,0 z"/><text x="2650" y="451" class="big">&#xA0;&#xA0;451</text></a>
@@ -125,7 +125,7 @@ eot;
 	$message .= <<<eot
 	<path class="options" d="M 2680,1950 l 215,0 l 0,330 l -215,0 z"/>
 	<text transform="translate(2700 2000)" class="selectors" style="fill:#d8d31e;">Options:</text>
-	<text transform="translate(2700 2050)" class="selectors" onclick="
+	<text transform="translate(2700 2060)" class="selectors" onclick="
 	if(document.getElementById('bitmap').style.display!='none'){
 	document.getElementById('bitmap').style.display='none';
 	document.getElementById('coastlines').style.opacity='1';
@@ -135,34 +135,14 @@ eot;
 	document.getElementById('coastlines').style.opacity='0.3';
 	localStorage.schematic = 'no'; } 
 	">Relief map</text>
-	<text transform="translate(2700 2100)" class="selectors" onclick="
+	<text transform="translate(2700 2120)" class="selectors" onclick="
 	var modern_borders = document.getElementById('modern_borders'); 
 	if(modern_borders.style.display=='block'){modern_borders.style.display='none';
 	localStorage.modernBorders = 'no';} 
 	else {modern_borders.style.display='block';
 	localStorage.modernBorders = 'yes';}
 	">Borders</text>
-	<text transform="translate(2700 2150)" class="selectors" onclick="
-	if(document.getElementById('text').style.display=='none'){
-	document.getElementById('modern_text').style.display='none';
-	document.getElementById('text').style.display='block';
-	localStorage.modernNames = 'no';} 
-	else {
-	document.getElementById('modern_text').style.display='block';
-	document.getElementById('text').style.display='none';
-	localStorage.modernNames = 'yes';} 
-	">Names</text>
-	<text transform="translate(2700 2200)" class="selectors" onclick="
-	if(document.getElementById('cities').style.display=='none'){
-	document.getElementById('modern_cities').style.display='none';
-	document.getElementById('cities').style.display='block';
-	localStorage.modernCities = 'no';} 
-	else {
-	document.getElementById('modern_cities').style.display='block';
-	document.getElementById('cities').style.display='none';
-	localStorage.modernCities = 'yes';} 
-	">Cities</text>
-	<text transform="translate(2700 2250)" class="selectors" onclick="
+	<text transform="translate(2700 2180)" class="selectors" onclick="
 	var rivercourses = document.getElementById('rivercourses'); 
 	var rivernames = document.getElementById('rivernames'); 
 	if (rivercourses.style.display=='block'){
@@ -176,6 +156,24 @@ eot;
 		localStorage.rivers = 'yes';
 		}
 	">Rivers</text>
+	<text transform="translate(2700 2240)" class="selectors" onclick="
+	if(document.getElementById('text').style.display=='none'){
+	document.getElementById('modern_text').style.display='none';
+	document.getElementById('text').style.display='block';
+	localStorage.modernNames = 'no';} 
+	else {
+	document.getElementById('modern_text').style.display='block';
+	document.getElementById('text').style.display='none';
+	localStorage.modernNames = 'yes';} 
+	if(document.getElementById('cities').style.display=='none'){
+	document.getElementById('modern_cities').style.display='none';
+	document.getElementById('cities').style.display='block';
+	localStorage.modernCities = 'no';} 
+	else {
+	document.getElementById('modern_cities').style.display='block';
+	document.getElementById('cities').style.display='none';
+	localStorage.modernCities = 'yes';} 
+	">Names</text>
 	<script>
 	if (localStorage.schematic == 'yes') { 
 		document.getElementById('bitmap').style.display='none';
@@ -191,8 +189,6 @@ eot;
 	if (localStorage.modernNames == 'yes') { 
 		document.getElementById('modern_text').style.display='block';
 		document.getElementById('text').style.display='none';
-		}
-	if (localStorage.modernCities == 'yes') { 
 		document.getElementById('modern_cities').style.display='block';
 		document.getElementById('cities').style.display='none';
 		}
