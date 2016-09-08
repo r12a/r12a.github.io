@@ -124,3 +124,16 @@ p.siblings-bottom {
 	margin-right: 7.5%;
 	text-align: left;
 	}
+
+
+@media print {
+	
+.slide-bottom { display: none; }	
+
+h2 { page-break-before: always; }
+
+h3 { page-break-after: avoid; }
+
+.sidebar h2 { page-break-before: avoid; }
+
+	}
