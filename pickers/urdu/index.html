@@ -2,16 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Urdu character picker 17</title>
+<title>Urdu character picker 19</title>
 <link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
+<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="/code/boilerplate.js"></script>
 <script type="text/javascript" src="/scripts/arabic/urdufonts.js"> </script>
 
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
+<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
 <script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
@@ -22,18 +21,28 @@
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Urdu character picker','v17');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Urdu character picker','v19');</script>
 </header>
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  </span>
+  
+<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
     
-    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'my','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
-    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'klingon','my','ltr');" title="Create an character link.">charLink</button>
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    
+    <button  id="makeExample" onclick="makeExample('ur','')" 
+    title="Create an example.">Make<br>example</button>
+    
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic','ur','')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
 </div>
 
 
@@ -45,24 +54,64 @@
 
 
 <div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription"></div>
+<div id="transcription" contenteditable="true"></div>
 </div>
 
 
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
+
+
+
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
+
+<div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div>
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="Latin to Arabic" data-var="showLOCTrans" data-locn="loctranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="IPA to Arabic" data-var="showIPATrans" data-locn="ipatranscript" data-shorttitle="I"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">I</div>
+
+</div>
+</div>
 
 
 
 <div id="phonemelist" style="position:relative;">
  <div id="transcriptionChoice"></div>
 
-<div id=latintranscript class=transcript style="display:none;">
+<div id="latintranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('ʰ')">ʰ</span>
 <span class="t" onclick="dotrans('β')">β</span>
 <span class="t" onclick="dotrans('ḍ')">ḍ</span>
@@ -183,7 +232,7 @@
 
 
 
-<div id=ipatranscript class=transcript style="display:none;">
+<div id="ipatranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('ب')">b</span>
 <span class="t" onclick="dotrans('بھ')">bʰ</span>
 <span class="t" onclick="dotrans('و')">β</span>
@@ -256,31 +305,6 @@
 <div id="chardata"><span id="charname">Click on characters  to create text in the box, then copy &amp; paste to your content.</span></div>
 
 
-
-<div style="position:relative;">
-<div id=vertical-menu>
-<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = ''; 
-document.getElementById('shapelist').style.display = 'none'; _showShapeLookup = '';
-document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
-document.getElementById('loctranscript').style.display = 'none'; _showLOCTrans = '';
-document.getElementById('ipatranscript').style.display = 'none'; _showIPATrans = '';
- return false;">D</div>
-
-<div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
-
-<div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
-
-<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
-
-<div class="vmtab" onmouseover="this.textContent='LOC transcription'+_showLOCTrans" onmouseout="this.textContent='L'"  onclick="if (_showLOCTrans) {_showLOCTrans = ''; this.textContent ='LOC transcription'; this.style.color='white'; document.getElementById('loctranscript').style.display = 'none';} else {_showLOCTrans = ' ✓'; this.textContent='LOC transcription'+_showLOCTrans;  this.style.color='orange'; document.getElementById('loctranscript').style.display = 'block';} return false;">L</div>
-
-<div class="vmtab" onmouseover="this.textContent='IPA transcription'+_showIPATrans" onmouseout="this.textContent='I'"  onclick="if (_showIPATrans) {_showIPATrans = ''; this.textContent ='IPA transcription'; this.style.color='white'; document.getElementById('ipatranscript').style.display = 'none';} else {_showIPATrans = ' ✓'; this.textContent='IPA transcription'+_showIPATrans;  this.style.color='orange'; document.getElementById('ipatranscript').style.display = 'block';} return false;">I</div>
-
-</div>
-
-</div>
 
 
 
@@ -394,27 +418,30 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
        </tr>
      </tbody>
    </table></td>
-   <td id="vowels"><table>
+   <td id="vowels">
+   
+   
+   <table style="margin: 0 10px 10px 0; border: 1px solid #ccc; border-radius: 10px; padding: 0 15px;">
      <tbody>
        <tr>
          <td><span class="c">&#x064E;</span></td>
-         <td><span class="c">&#x064F;</span></td>
-         <td><span class="c">&#x0650;</span></td>
-         <td><span class="c">&#x0652;</span></td>
-         <td>&nbsp;</td>
-         </tr>
-       <tr>
          <td><span class="c">&#x064B;</span></td>
-         <td><span class="c">&#x064C;</span></td>
-         <td><span class="c">&#x064D;</span></td>
+         <td><span class="c">&#x0670;</span></td>
          <td><span class="c">&#x0651;</span></td>
          <td>&nbsp;</td>
          </tr>
        <tr>
-         <td><span class="c">&#x0670;</span></td>
-         <td><span class="c">&#x0656;</span></td>
+         <td><span class="c">&#x064F;</span></td>
+         <td><span class="c">&#x064C;</span></td>
          <td><span class="c">&#x0657;</span></td>
          <td><span class="c">&#x0658;</span></td>
+         <td>&nbsp;</td>
+         </tr>
+       <tr>
+         <td><span class="c">&#x0650;</span></td>
+         <td><span class="c">&#x064D;</span></td>
+         <td><span class="c">&#x0656;</span></td>
+         <td><span class="c">&#x0652;</span></td>
          <td>&nbsp;</td>
          </tr>
        <tr>
@@ -427,43 +454,61 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
      </tbody>
    </table></td>
    <td>
-<table id="numbers" style="margin: 0 10px 10px 0;">
-    <tbody>
-      <tr>
-        <td class="hint">7</td>
-        <td><span class="c">&#x06F7;</span></td>
-        <td class="hint">8</td>
-        <td><span class="c">&#x06F8;</span></td>
-        <td class="hint">9</td>
-        <td><span class="c">&#x06F9;</span></td>
-        </tr>
-      <tr>
-        <td class="hint">4</td>
-        <td><span class="c">&#x06F4;</span></td>
-        <td class="hint">5</td>
-        <td><span class="c">&#x06F5;</span></td>
-        <td class="hint">6</td>
-        <td><span class="c">&#x06F6;</span></td>
-        </tr>
-      <tr>
-        <td class="hint">1</td>
-        <td><span class="c">&#x06F1;</span></td>
-        <td class="hint">2</td>
-        <td><span class="c">&#x06F2;</span></td>
-        <td class="hint">3</td>
-        <td><span class="c">&#x06F3;</span></td>
-        </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td class="hint">0</td>
-        <td><span class="c">&#x06F0;</span></td>
-        <td></td>
-        <td>&nbsp;</td>
-        </tr>
-      </tbody>
-  </table>
+<table id="numbers" style="margin: 0 10px 10px 0; border: 1px solid #ccc; border-radius: 10px; padding: 0 .4em;">
+  <tbody>
+    <tr>
+      <td class="hint">7</td>
+      <td><span class="c">&#x06F7;</span></td>
+      <td class="hint">8</td>
+      <td><span class="c">&#x06F8;</span></td>
+      <td class="hint">9</td>
+      <td><span class="c">&#x06F9;</span></td>
+    </tr>
+    <tr>
+      <td class="hint">4</td>
+      <td><span class="c">&#x06F4;</span></td>
+      <td class="hint">5</td>
+      <td><span class="c">&#x06F5;</span></td>
+      <td class="hint">6</td>
+      <td><span class="c">&#x06F6;</span></td>
+    </tr>
+    <tr>
+      <td class="hint">1</td>
+      <td><span class="c">&#x06F1;</span></td>
+      <td class="hint">2</td>
+      <td><span class="c">&#x06F2;</span></td>
+      <td class="hint">3</td>
+      <td><span class="c">&#x06F3;</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="hint">0</td>
+      <td><span class="c">&#x06F0;</span></td>
+      <td></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
      </td>
+   <td style="padding: 0 10px; text-align:center; line-height: 1.3;">
+         <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 40px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add(' ');">SPACE</span>
+<br/>
+          <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+        <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+        <br/>
+        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2067');">RLI</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2066');">LRI</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2069');">PDI</span>
+<br/>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202B');">RLE</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; teuxt-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\202A');">LRE</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202C');">PDF</span>
+<br/>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200E');">LRM</span>
+        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200F');">RLM</span>
+
+   </td>
  </tr>
  <tr>
    <td><table id="additional">
@@ -482,59 +527,39 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
          <td><span class="c">&#x06BE;</span></td>
          <td><span class="c">&#x0647;</span></td>
          <td><span class="c" style="padding: 0 20px;">&#xFDFD;</span></td>
-       </tr>
-     </tbody>
-   </table></td>
+         </tr>
+       </tbody>
+     </table></td>
    <td colspan="2"><span class="c">&#x0600;</span><span class="c">&#x0601;</span><span class="c">&#x0602;</span><span class="c">&#x060E;</span><span class="c">&#x0603;</span><span class="c">&#x060F;</span>
-   
-   </td>
+     
+     </td>
+   <td><span class="c">&#x060C;</span> <span class="c">&#x06D4;</span> <span class="c">&#x061B;</span> <span class="c">&#x061F;</span> <span class="c">&#x066B;</span> <span class="c">&#x066C;</span> <span class="c">&#x060D;</span> <span class="c">&#x066A;</span> </td>
  </tr>
-      <tr>
-        <td colspan="2" style="text-align:center;">
-        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span>
-        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span>
-        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span>
-        <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200C');">ZWNJ</span>
-        <br/>
-        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2067');">RLI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2066');">LRI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2069');">PDI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202B');">RLE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; teuxt-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\202A');">LRE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202C');">PDF</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200E');">LRM</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200F');">RLM</span>
-        </td>
-        <td>
-        <span class="c">&#x060C;</span> <span class="c">&#x06D4;</span> <span class="c">&#x061B;</span> <span class="c">&#x061F;</span><br/><span class="c">&#x066B;</span> <span class="c">&#x066C;</span> <span class="c">&#x060D;</span> <span class="c">&#x066A;</span>
-        
-        </td>
-      </tr>
       </table>
   </div>
 
 
 
 
- <div id=shapelist style="display:none">
+ <div id="shapelist" style="display:none">
  <div>
-<img alt=" " src="images/shape1.png" onclick="findShape('0627,0622,0623,06F1','لا',true)" />
-<img alt=" " src="images/shape2.png" onclick="findShape('0637,0638','کا,گا,کل,گل',true)" />
-<img alt=" " src="images/shape3.png" onclick="findShape('0628,067E,062A,0679,062B,0641,06D2,0600,0601','',true)" />
-<img alt=" " src="images/shape4.png" onclick="findShape('062D,062E,062C,0686','',true)" />
-<img alt=" " src="images/shape5.png" onclick="findShape('06BA,0646,0644,06A9,06AF,0633,0634,0635,0636,0642,06CC','',true)" />
-<img alt=" " src="images/shape6.png" onclick="findShape('0639,063A,060F','',true)" />
-<img alt=" " src="images/shape7.png" onclick="findShape('062F,062F06BE,0688,068806BE,0631,063106BE,0691,069106BE,0632,0698,0648,0624,066C','',true)" />
-<img alt=" " src="images/shape8.png" onclick="findShape('0648,0624,0642,0641','',true)" />
-<img alt=" " src="images/shape9.png" onclick="findShape('06C1,06C3,06C2,06BE,0647,06C0','',true)" />
-<img alt=" " src="images/shape10.png" onclick="findShape('06BE,062806BE,067E06BE,062A06BE,067906BE,062C06BE,068606BE,062F06BE,068806BE,063106BE,069106BE,06A906BE,06AF06BE','',true)" />
-<img alt=" " src="images/shape11.png" onclick="findShape('0628,062806BE,062C,062C06BE','',true)" />
-<img alt=" " src="images/shape12.png" onclick="findShape('0632,062E,0636,063A,0638,0641','',true)" />
-<img alt=" " src="images/shape14.png" onclick="findShape('062A,0642,06C3,062A06BE','',true)" />
-<img alt=" " src="images/shape15.png" onclick="findShape('067E,067E06BE,0686,068606BE','',true)" />
-<img alt=" " src="images/shape16.png" onclick="findShape('062B,0698,0634','',true)" />
-<img alt=" " src="images/shape17.png" onclick="findShape('0679,067906BE,0688,068806BE,0691,069106BE','',true)" />
-<img alt=" " src="images/shape18.png" onclick="findShape('0623,06D3,0624,06C2,060D,064E,0657,0657,06AF,06AF06BE,0626','',true)" />
+<img alt=" " src="images/shape1.png" onclick="findShape('627,622,623,6F1','لا',true)" />
+<img alt=" " src="images/shape2.png" onclick="findShape('637,638','کا,گا,کل,گل',true)" />
+<img alt=" " src="images/shape3.png" onclick="findShape('628,67E,62A,679,62B,641,6D2,600,601','',true)" />
+<img alt=" " src="images/shape4.png" onclick="findShape('62D,62E,62C,686','',true)" />
+<img alt=" " src="images/shape5.png" onclick="findShape('6BA,646,644,6A9,6AF,633,634,635,636,642,6CC','',true)" />
+<img alt=" " src="images/shape6.png" onclick="findShape('639,63A,60F','',true)" />
+<img alt=" " src="images/shape7.png" onclick="findShape('62F,62F6BE,688,6886BE,631,6316BE,691,6916BE,632,698,648,624,66C','',true)" />
+<img alt=" " src="images/shape8.png" onclick="findShape('648,624,642,641','',true)" />
+<img alt=" " src="images/shape9.png" onclick="findShape('6C1,6C3,6C2,6BE,647,6C0','',true)" />
+<img alt=" " src="images/shape10.png" onclick="findShape('6BE,6286BE,67E6BE,62A6BE,6796BE,62C6BE,6866BE,62F6BE,6886BE,6316BE,6916BE,6A96BE,6AF6BE','',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('628,6286BE,62C,62C6BE','',true)" />
+<img alt=" " src="images/shape12.png" onclick="findShape('632,62E,636,63A,638,641','',true)" />
+<img alt=" " src="images/shape14.png" onclick="findShape('62A,642,6C3,62A6BE','',true)" />
+<img alt=" " src="images/shape15.png" onclick="findShape('67E,67E6BE,686,6866BE','',true)" />
+<img alt=" " src="images/shape16.png" onclick="findShape('62B,698,634','',true)" />
+<img alt=" " src="images/shape17.png" onclick="findShape('679,6796BE,688,6886BE,691,6916BE','',true)" />
+<img alt=" " src="images/shape18.png" onclick="findShape('623,6D3,624,6C2,60D,64E,657,657,6AF,6AF6BE,626','',true)" />
 </div>
 
 
@@ -548,7 +573,6 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 </div><!-- end of tables -->
 
 
-</div><!-- end of wrapper round tables and vertical menu -->
 
 
 
@@ -587,11 +611,11 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 <div id="extracontrols">
   <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
 							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
 							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
 
 
 
@@ -617,13 +641,13 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 
 <div class="control" id="uiTableDirection" style="display:none; text-align:right;">Table direction:<br />
 <select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
-<option value=rtl>RTL</option>
-<option value=ltr>LTR</option>
+<option value="rtl">RTL</option>
+<option value="ltr">LTR</option>
 </select>
 </div>
 
 
-<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+<div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
 
 </div>
 
@@ -631,7 +655,7 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 
 
 
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
+<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
