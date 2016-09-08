@@ -5,31 +5,8 @@
 $yeargroup = [];
 $yeargroup[-90] = [0,260];
 $yeargroup[260] = [-90,400];
-$yeargroup[400] = [260,0];
-$yeargroup[362] = [305,406];
-$yeargroup[406] = [362,420];
-$yeargroup[420] = [406,451];
-$yeargroup[451] = [420,476];
-$yeargroup[476] = [451,528];
-$yeargroup[528] = [476,565];
-$yeargroup[565] = [528,600];
-$yeargroup[600] = [565,626];
-$yeargroup[626] = [600,651];
-$yeargroup[651] = [626,737];
-$yeargroup[737] = [651,771];
-$yeargroup[771] = [737,830];
-$yeargroup[830] = [771,888];
-$yeargroup[888] = [830,925];
-$yeargroup[925] = [888,1000];
-$yeargroup[1000] = [925,1030];
-$yeargroup[1030] = [1000,1071];
-$yeargroup[1071] = [1030,1092];
-$yeargroup[1092] = [1071,1100];
-$yeargroup[1100] = [1092,1130];
-$yeargroup[1130] = [1100,1173];
-$yeargroup[1173] = [1130,1212];
-$yeargroup[1212] = [1173,1230];
-$yeargroup[1230] = [1212,0];
+$yeargroup[400] = [260,560];
+$yeargroup[560] = [400,0];
 
 $nav = '';
 $filename = '';
@@ -91,7 +68,21 @@ $message .= <<<eot
 	.selectors:hover { fill:#000; border-radius: 10px; }
 	.maprange { fill:#A97C50; stroke:white; }
 	.options { fill:#aa896b; stroke:white; }
-</style> // starts at 100BCE, so add 100 to each figure
+</style> 
+eot;
+
+// do timeline
+// starts at 100BCE, so add 100 to each figure
+$message .= "\n";
+foreach ($yeargroup as $year => $val) {
+	$message .= '<a xlink:href="';
+	if ($year < 0) $message .= 'BCE_';
+	else $message .= 'CE_';
+	if ($val[0] == 0) $message .= abs($year).'.svg"><path class="maprange" d="M 2875,0 l 30,0 l 0,'.(($year-$val[0])+100).' l -30,0 z"/><text x="2650" y="100" class="big">&#xA0;&#xA0;'.$year.'</text></a>'."\n";
+	else $message .= abs($year).'.svg"><path class="maprange" d="M 2875,'.($val[0]+100).' l 30,0 l 0,'.($year-$val[0]).' l -30,0 z"/><text x="2650" y="'.($year+100).'" class="big">&#xA0;&#xA0;'.$year.'</text></a>'."\n";
+	}
+
+/*
 	<a xlink:href="BCE_90.svg"><path class="maprange" d="M 2875,0 l 30,0 l 0,10 l -30,0 z"/><text x="2650" y="138" class="big">&#xA0;&#xA0;90</text></a>
 	<a xlink:href="CE_260.svg"><path class="maprange" d="M 2875,10 l 30,0 l 0,360 l -30,0 z"/><text x="2650" y="360" class="big">&#xA0;&#xA0;260</text></a>
 	<a xlink:href="CE_400.svg"><path class="maprange" d="M 2875,360 l 30,0 l 0,140 l -30,0 z"/><text x="2650" y="400" class="big">&#xA0;&#xA0;400</text></a>
@@ -119,8 +110,7 @@ $message .= <<<eot
 	<a xlink:href="CE_1173.svg"><path class="maprange" d="M 2875,1130 l 30,0 l 0,43 l -30,0 z"/><text x="2650" y="1173" class="big">&#xA0;&#xA0;1173</text></a>
 	<a xlink:href="CE_1212.svg"><path class="maprange" d="M 2875,1173 l 30,0 l 0,39 l -30,0 z"/><text x="2650" y="1212" class="big">&#xA0;&#xA0;1212</text></a>
 	<a xlink:href="CE_1230.svg"><path class="maprange" d="M 2875,1212 l 30,0 l 0,18 l -30,0 z"/><text x="2650" y="1230" class="big">&#xA0;&#xA0;1230</text></a-->
-eot;
-
+*/
 
 	$message .= <<<eot
 	<path class="options" d="M 2680,1950 l 215,0 l 0,330 l -215,0 z"/>
@@ -227,10 +217,13 @@ eot;
 		//	exit;
 		//	}
 
+
 		$numbytes = file_put_contents($targetPath.$filename, $newsvgtext);
   		echo "Wrote ($numbytes) bytes to file ($targetPath$filename)";
 
 		//fclose($fp);
+        
+       // print ($messagex);
 		}
 	}
 
