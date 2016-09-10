@@ -3,10 +3,7 @@
 # THIS IS FOR THE FAREAST MAP
 
 $yeargroup = [];
-$yeargroup[-90] = [0,0];
-$yeargroup[260] = [-90,400];
-$yeargroup[400] = [260,560];
-$yeargroup[560] = [400,0];
+$yeargroup[750] = [0,0];
 
 $nav = '';
 $filename = '';
@@ -78,8 +75,8 @@ foreach ($yeargroup as $year => $val) {
 	$message .= '<a xlink:href="';
 	if ($year < 0) $message .= 'BCE_';
 	else $message .= 'CE_';
-	if ($val[0] == 0) $message .= abs($year).'.svg"><path class="maprange" d="M 0,0 l 15,0 l 0,'.(($year-$val[0])+100).' l -15,0 z"/><text x="50" y="100" class="big">&#xA0;&#xA0;'.$year.'</text></a>'."\n";
-	else $message .= abs($year).'.svg"><path class="maprange" d="M 2875,'.($val[0]+100).' l 15,0 l 0,'.($year-$val[0]).' l -15,0 z"/><text x="50" y="'.($year+100).'" class="big">&#xA0;&#xA0;'.$year.'</text></a>'."\n";
+	if ($val[0] == 0) $message .= abs($year).'.svg"><path class="maprange" d="M 0,0 l 15,0 l 0,'.(($year-$val[0])/2).' l -15,0 z"/><text x="50" y="100" class="big">&#xA0;&#xA0;'.$year.'</text></a>'."\n";
+	else $message .= abs($year).'.svg"><path class="maprange" d="M 2875,'.($val[0]/2).' l 15,0 l 0,'.($year-$val[0]).' l -15,0 z"/><text x="50" y="'.($year/2).'" class="big">&#xA0;&#xA0;'.$year.'</text></a>'."\n";
 	}
 
 /*
