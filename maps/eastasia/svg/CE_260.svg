@@ -3917,6 +3917,7 @@
 <a xlink:href="CE_260.svg"><path class="maprange" d="M 2875,10 l 30,0 l 0,350 l -30,0 z"/><text x="2650" y="360" class="big">&#xA0;&#xA0;260</text></a>
 <a xlink:href="CE_400.svg"><path class="maprange" d="M 2875,360 l 30,0 l 0,140 l -30,0 z"/><text x="2650" y="500" class="big">&#xA0;&#xA0;400</text></a>
 <a xlink:href="CE_560.svg"><path class="maprange" d="M 2875,500 l 30,0 l 0,160 l -30,0 z"/><text x="2650" y="660" class="big">&#xA0;&#xA0;560</text></a>
+<a xlink:href="CE_750.svg"><path class="maprange" d="M 2875,660 l 30,0 l 0,190 l -30,0 z"/><text x="2650" y="850" class="big">&#xA0;&#xA0;750</text></a>
 	<path class="options" d="M 2680,1950 l 215,0 l 0,330 l -215,0 z"/>
 	<text transform="translate(2700 2000)" class="selectors" style="fill:#d8d31e;">Options:</text>
 	<text transform="translate(2700 2060)" class="selectors" onclick="

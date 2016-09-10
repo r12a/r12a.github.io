@@ -4111,7 +4111,8 @@
 <text font-weight="700" font-family="'Myriad Pro', Arial, sans-serif" fill="#231f20" font-size="200px" color="black" transform="translate(550 154)">560<tspan font-size="72px" x="321" y="0">CE</tspan></text><a xlink:href="../index#ce560"><path fill="#4D4D4F" d="M715.2,242.4l-0.2,61.1c0,5.3,4.3,8.4,12.8,9.5v5l-53.4,0.1v-4.9c4.2,0,7.4-0.8,9.7-2.3
 		c2.3-1.5,3.4-3.7,3.4-6.5v-41.7c0-5.3-4.3-8.5-13-9.5l0.1-6.2L715.2,242.4z M701.4,204.7c4,0,7.4,1.4,10.1,4.1
 		c2.7,2.7,4.1,6.1,4.1,10.2c0,3.9-1.4,7.2-4.1,10c-2.7,2.7-6,4.1-9.8,4.1c-4.2,0-7.6-1.3-10.4-3.8s-4.1-5.8-4.1-9.7
-		c0-4.4,1.3-7.9,4-10.7C693.8,206.1,697.2,204.7,701.4,204.7z"/></a><a xlink:href="CE_400.svg"><path color="black" d="M622,206c-11.92,11.92-61.88,65-61.88,65s51.37,52.46,63.81,64.9V208"/></a><style type="text/css">
+		c0-4.4,1.3-7.9,4-10.7C693.8,206.1,697.2,204.7,701.4,204.7z"/></a><a xlink:href="CE_400.svg"><path color="black" d="M622,206c-11.92,11.92-61.88,65-61.88,65s51.37,52.46,63.81,64.9V208"/></a><a xlink:href="CE_750.svg"><path color="black" d="M781.41,333.92c11.92-11.92,61.88-65,61.88-65s-51.37-51.46-63.81-63.9V331.94"/></a>
+<style type="text/css">
 	.big { fill: transparent; font-size: 72px; font-family:'Myriad Pro','Helvetica Neue', Helvetica,Arial,sans-serif; cursor: pointer; }
 	a:hover > .big { fill:#8B5E3C;  }
 	a:hover > .maprange { fill:yellow; }
@@ -4124,6 +4125,7 @@
 <a xlink:href="CE_260.svg"><path class="maprange" d="M 2875,10 l 30,0 l 0,350 l -30,0 z"/><text x="2650" y="360" class="big">&#xA0;&#xA0;260</text></a>
 <a xlink:href="CE_400.svg"><path class="maprange" d="M 2875,360 l 30,0 l 0,140 l -30,0 z"/><text x="2650" y="500" class="big">&#xA0;&#xA0;400</text></a>
 <a xlink:href="CE_560.svg"><path class="maprange" d="M 2875,500 l 30,0 l 0,160 l -30,0 z"/><text x="2650" y="660" class="big">&#xA0;&#xA0;560</text></a>
+<a xlink:href="CE_750.svg"><path class="maprange" d="M 2875,660 l 30,0 l 0,190 l -30,0 z"/><text x="2650" y="850" class="big">&#xA0;&#xA0;750</text></a>
 	<path class="options" d="M 2680,1950 l 215,0 l 0,330 l -215,0 z"/>
 	<text transform="translate(2700 2000)" class="selectors" style="fill:#d8d31e;">Options:</text>
 	<text transform="translate(2700 2060)" class="selectors" onclick="
