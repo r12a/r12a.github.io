@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Instructions for Central Asian svg maps</title>
+<style>
+body { font-family: "Myriad Pro", "Helvetica Neue", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif; }
+h2 { margin-top: 3em; }
+</style>
+</head>
+
+<body>
+<h1>Instructions for Central Asian SVG maps</h1>
+<h2>Saving a base SVG file</h2>
+<p>A base svg file is one without any dated borders, etc.</p>
+<p>Temporarily delete any dated or temporary stuff. Set all layers to non-visible, except for <code class="kw" translate="no">coastlines</code> and <code class="kw" translate="no">bitmap</code>. You should see this:</p>
+<p><img src="howto-data/baseexport.png" alt=""/></p>
+<p><code class="kw" translate="no">File &gt; Save a Copy</code></p>
+<p>Select <code class="kw" translate="no">SVG</code> and set name to <code class="kw" translate="no">svg_raw/base.svg</code></p>
+<p>Settings:</p>
+<p><img src="howto-data/savecopy.png" alt=""/></p>
+<p>Set the permissions to writeable.</p>
+<p>Run <a href="http://rishida.io/maps/centralasia/howto-data/preparebase.php" target="_blank">howto-data/preparebase.php</a>. This removes the top and end of the file, and the bitmap, and changes all .st... style names to .bt... style names.</p>
+<p>It creates the file svg/base.php, which is later included into dated files.</p>
+<h2>Saving a dated SVG file</h2>
+<p>Make a backup, then temporarily delete all base information. Set all layers to visible. You should see this:</p>
+<p><img src="howto-data/datedexport.png" alt=""/></p>
+<p><code class="kw" translate="no">File &gt; Save a Copy</code></p>
+<p>Select <code class="kw" translate="no">SVG</code> and set name to <code class="kw" translate="no">svg_raw/&lt;era&gt;_&lt;date&gt;.svg</code></p>
+<p>Settings as for base version.</p>
+<p>Set the permissions to writeable.</p>
+<p>Run <a href="http://rishida.io/maps/centralasia/howto-data/adddates.php?dates=" target="_blank">howto-data/adddates.php</a> with parameter ?dates=XX where XX is the year of the map. (For BC use -XX. Multiple, comma-separated dates are allowed.) This adds the navigation, cleans up some styling (esp. fonts), includes the latest base data, etc.</p>
+<p>&nbsp;</p>
+<h2> Locating a spot for a city
+</h2>
+<p>Open <a href="howto-data/longlat.html" target="_blank">howto-data/longlat.html</a> and follow the instructions.</p>
+</body>
+</html>

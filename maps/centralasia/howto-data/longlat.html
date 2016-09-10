@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Location finder</title>
+<script type="application/javascript" src="geomfunctions.js">  </script>
+<script>
+function getMeasurements (target,tl,br,w,h) {
+	
+	targetCoords = target.split(' ')
+	tlCoords = tl.split(' ')
+	brCoords = br.split(' ')
+	console.log(targetCoords,tlCoords,brCoords)
+	
+	boxLatDiff = tlCoords[0] - brCoords[0]
+	boxLonDiff = brCoords[1] - tlCoords[1]
+	console.log(boxLatDiff,boxLonDiff)
+	
+	oneDegLat = w/boxLatDiff
+	oneDegLon = h/boxLatDiff
+	console.log(oneDegLat,oneDegLon)
+	
+	offsetLat = tlCoords[0] - targetCoords[0]
+	offsetLon = targetCoords[1]-tlCoords[1]
+	console.log(offsetLat,offsetLon)
+		
+	document.getElementById('W').textContent = Math.floor(offsetLat*10*oneDegLat)/10
+	document.getElementById('H').textContent = Math.floor(offsetLon*10*offsetLon)/10
+	
+	}
+</script>
+</head>
+
+<body>
+<p><em>Finds the location of a city on the Central Asia map.</em></p>
+<p>Add gps coords from wikipedia of the town you want to locate, eg. 34°40′11″N 112°26′32″E</p>
+<p><input id=coord type="text"/></p>
+<p>Locate two towns and draw a box between them that covers the area you need to locate. ote the dimensions <em>near the corner you are pulling</em>. Add the dimensions here.
+<p>W: <input id=sqW type=number/></p>
+<p>H: <input id=sqH type=number/></p>
+<p>Now enter the gps coordinates for the towns you used as anchors.</p>
+<p>TL: <input id=TL type=number/></p>
+<p>BR: <input id=BR type=number/></p>
+
+<p><img src="geom.png" style="width: 50%;"/></p>
+<p><button value="Do it" onclick="
+	getMeasurements(
+    	doConversion(document.getElementById('coord').value, 'decimal'),
+    	doConversion(document.getElementById('TL').value, 'decimal'),
+    	doConversion(document.getElementById('BR').value, 'decimal'),
+    	document.getElementById('sqW').value,
+    	document.getElementById('sqH').value
+    	);
+    ">Do it</button></p>
+
+<p>Move the corner until you see:
+<p>W: <span id=W></span> px<br/>H: <span id=H></span> px</p>
+
+</body>
+</html>
