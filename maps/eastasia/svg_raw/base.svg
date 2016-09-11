@@ -543,11 +543,6 @@
 	<text transform="matrix(0.9262 -0.3769 0.3769 0.9262 2539.79 447.1429)" class="st9 st6 st7">Songhua</text>
 	<text transform="matrix(0.5385 -0.8426 0.8426 0.5385 2362.3684 903.678)" class="st9 st6 st7">Yalu</text>
 	<text transform="matrix(0.5385 -0.8426 0.8426 0.5385 2413.7131 921.3606)" class="st9 st6 st7">Amnok</text>
-	<g id="ofyhIu.tif">
-		
-			<image style="display:inline;overflow:visible;" width="986" height="855" id="Layer_0_5_" xlink:href="BE3AAAC643F784C2.png"  transform="matrix(1.1314 -0.1174 0.1174 1.1314 1402.2179 1304.7351)">
-		</image>
-	</g>
 	<text transform="matrix(0.2137 -0.9769 0.9769 0.2137 2066.0581 1638.568)" class="st9 st6 st7">Gan</text>
 	<text transform="matrix(0.9068 -0.4216 0.4216 0.9068 1921.4556 1545.2202)" class="st9 st6 st7">Han</text>
 	<text transform="matrix(0.866 0.5 -0.5 0.866 220.17 514.3958)" class="st9 st6 st7">Ili</text>
@@ -614,8 +609,8 @@
 	<text transform="matrix(0.5035 -0.864 0.864 0.5035 1802.1844 1790.1266)" class="st9 st6 st10">He</text>
 	<text transform="matrix(0.5778 -0.8162 0.8162 0.5778 1815.985 1804.7639)" class="st9 st6 st10">Daxi</text>
 	<text transform="matrix(0.866 0.5 -0.5 0.866 140.3365 541.8958)" class="st9 st6 st7">Chu</text>
-	<text transform="matrix(0.1986 0.9801 -0.9801 0.1986 75.9009 561.0052)" class="st9 st6 st7">Talas</text>
-	<text transform="matrix(0.3857 -0.9226 0.9226 0.3857 41.4241 580.3133)" class="st9 st6 st7">Assa</text>
+	<text transform="matrix(0.1986 0.9801 -0.9801 0.1986 75.8742 560.9594)" class="st9 st6 st7">Talas</text>
+	<text transform="matrix(0.3857 -0.9226 0.9226 0.3857 41.4266 580.3611)" class="st9 st6 st7">Assa</text>
 </g>
 <g id="rivercourses" class="st3">
 	<path class="st12" d="M2662.9,497.2c1,1,2.1,2.6,2.4,4c0.3,1.5-0.4,2.5,1.1,3.6c1.2,0.9,1.2,2.7,1.9,4c0.8,1.6,2.4,2.5,3.8,3.5

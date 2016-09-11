@@ -397,8 +397,8 @@
 	<text transform="matrix(1 0 0 1 777.605 1600.769)" class="st6 st7">Lhasa</text>
 	<circle class="st5" cx="2189" cy="1423.7" r="5.2"/>
 	<text transform="matrix(1 0 0 1 2164.0969 1442.713)" class="st6 st7">Nanjing</text>
-	<circle class="st5" cx="1945.6" cy="1185.5" r="5.2"/>
-	<text transform="matrix(1 0 0 1 1929.2822 1178.3872)" class="st6 st8">Ye</text>
+	<circle class="st5" cx="1993.8" cy="991" r="5.2"/>
+	<text transform="matrix(1 0 0 1 1938.0906 977.7205)" class="st6 st8">Fanyang?</text>
 	<circle class="st5" cx="995.4" cy="814.8" r="5.2"/>
 	<text transform="matrix(1 0 0 1 969.9855 837.8175)" class="st6 st7">Hami</text>
 	<circle class="st5" cx="812.5" cy="785.5" r="5.2"/>
@@ -410,6 +410,8 @@
 	<text transform="matrix(1 0 0 1 1825.7894 1324.746)" class="st6 st7">Luoyang</text>
 	<circle class="st5" cx="1968.9" cy="1982.2" r="4.9"/>
 	<text transform="matrix(1 0 0 1 1931.736 1975.7546)" class="st6 st7">Guangzhou</text>
+	<circle class="st5" cx="230.4" cy="933.1" r="5.2"/>
+	<circle class="st5" cx="195.8" cy="855.6" r="5.2"/>
 </g>
 <g id="text">
 	<text transform="matrix(1 0 0 1 2540.8169 1107.1749)" class="st9 st10">Silla</text>
