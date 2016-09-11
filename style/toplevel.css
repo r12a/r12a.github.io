@@ -1,0 +1,55 @@
+h3 a:link {
+	color: gray;
+	text-decoration: none;
+}
+h3 a:visited {
+	color: gray;
+	text-decoration: none;
+}
+div.sidenote p {
+	margin-top: 0;
+}
+body {
+	line-height: 1.5;
+}
+h1 {
+	text-align: start;
+	font-size: 200%;
+	padding: 5px 5px 5px 10px;
+	margin: 2em 20% 0px 6.5%;
+}
+h1, h2 {
+	color: #a52a2a;
+	}
+h1 a:link, h2 a:link {
+	color: #a52a2a;
+	}
+h1 a:visited, h2 a:visited {
+	color: #a52a2a;
+	}
+li {
+	font-size: 110%;
+	}
+.flexbox {
+	display:flex; 
+	flex: row wrap;
+	margin: 1em 32% 0 7.5%;
+	}
+.flexbox > div {
+    flex: 1;
+    }
+.flexbox p {
+	margin: 0 0 1em 0;
+	}
+.flexbox img {
+	margin: 0 2em 1em 0;
+	height: 250px;
+	border-radius: 7px;
+	border: 1px solid #ccc;
+	}
+.mainLink {
+	font-size: 120%;
+	}
+.sublinks {
+	font-size: 90%;
+	}
