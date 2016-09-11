@@ -27,8 +27,7 @@ function handleLocation(loc) {
 	var long = loc.coords.longitude;
 	var lat  = loc.coords.latitude;
 	
-	document.getElementById("lon").value = long;
-	document.getElementById("lat").value = lat;
+	document.getElementById("lat").value = lat+' '+long;
 	
 	//var url = "http://maps.google.com/maps?output=embed&z=16&ll=" + lat + "," + long + "&q=" + lat + "," + long + "+(You+are+here)";
 	
@@ -45,6 +44,25 @@ function findThing(thing) {
 
 
 
+function normaliseInput (gps) {
+	gps = gps.toUpperCase()
+	gps = gps.replace(/DEG/g,'°')
+	var locations
+	
+	// check whether numeric or field-based
+	if (gps.match(/[N|S|E|W]/)) {
+		// field-based
+		gps = gps.replace(/\s/g, '')	// remove all spaces
+		gps = gps.replace(/([N|E|W|S)])/g,'$1 ')
+		gps = gps.trim()
+		}
+	else {
+		// just numbers
+		gps = gps.replace(/[\s]+/g,' ')  // normalise spaces
+		gps = gps.trim()				 // remove leading trailing spaces
+		}
+	return gps
+	}
 
 
 function convert2decimal (posn) { 
@@ -149,24 +167,22 @@ function posn2flickr (posn, type) {
 
 
 
-function doConversion (lat, lon) {
+function doConversion (gps, style) {
+	// converts one format of gps coords to another
+	// gps: the input string
+	// style: str, one of, decimal, degrees, exif, flickr
 	
-	// test for both on same line
-	if (lat.indexOf('/') > -1) {
-	var locations = lat.split('/');
-	lat = locations[0];
-	lon = locations[1];
-	}
-
-	originallat = lat;
-	originallon = lon;
+	gps = normaliseInput(gps)
+	var locations = gps.split(' ')
+	var lat = locations[0];
+	var lon = locations[1];
 	
 	_lat = Number(convert2decimal(lat));
 	_lon = Number(convert2decimal(lon));
 	
-	document.getElementById('decimal').innerHTML = _lat.toFixed(6)+' &nbsp; '+_lon.toFixed(6);
-	document.getElementById('degrees').innerHTML = posn2degrees(_lat, 'lat')+' &nbsp; '+posn2degrees(_lon, 'lon');
-	document.getElementById('exif').innerHTML = posn2exif(_lat, 'lat')+' &nbsp; '+posn2exif(_lon, 'lon');
-	document.getElementById('flickr').innerHTML = posn2flickr(_lat, 'lat')+' &nbsp; '+posn2flickr(_lon, 'lon');
+	if (style === 'decimal') return _lat.toFixed(6)+' &nbsp; '+_lon.toFixed(6)
+	if (style === 'degrees') return posn2degrees(_lat, 'lat')+' &nbsp; '+posn2degrees(_lon, 'lon')
+	if (style === 'exif') return posn2exif(_lat, 'lat')+' &nbsp; '+posn2exif(_lon, 'lon')
+	if (style === 'flickr') return posn2flickr(_lat, 'lat')+' &nbsp; '+posn2flickr(_lon, 'lon')
 
 	}

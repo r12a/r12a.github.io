@@ -17,6 +17,7 @@
 	border: 1px solid #ccc;
 	padding: 5px 10px;
 	box-shadow: 7px 7px 5px #888;
+	white-space:nowrap;
 	}
 .result p {
 	margin: 0;
@@ -33,7 +34,7 @@
 	text-align:left;
 	}
 .right {
-	margin-right: 35%;
+	margin-right: 32%;
 	text-align:right;
 	}
 input {
@@ -43,6 +44,9 @@ input {
 	line-height: 1.5em;
 	padding: 5px;
 	border: 1px solid #ddd;
+	}
+#lat { 
+	width: 100%;
 	}
 input[type='submit'] {
 	background-color: #eee;
@@ -79,18 +83,21 @@ h1 {
 
 
 <div class="section">
-  <aside class="sidebar">Enter latitude and longitude  to convert between formats used in Google Earth, Flickr, Adobe Bridge and plain decimal format.</p></aside>
-  <p>Latitude*:
-    <input id="lat" name="lat" value="0.000000" />
-  </p>
-  <p>Longitude:
-    <input id="lon" name="lon" value="0.000000" />
+  <aside class="sidebar">
+    <p>Enter latitude and longitude  to convert between various formats, such as those used in Google Earth, Flickr, Adobe Bridge and plain decimal format.</p></aside>
+  <p>Put GPS coordinates here:<br/>
+    <input id="lat" name="lat" value="" />
   </p>
   <p>Alternatively:
     <input type="button" value="Use my current location" onClick="locateMe(); return false;"/>
   </p>
   <p>
-    <input type="submit" value="Convert" onClick="doConversion(document.getElementById('lat').value, document.getElementById('lon').value);"/>
+    <input type="submit" value="Convert" onClick="gps=document.getElementById('lat').value;
+    document.getElementById('decimal').innerHTML = doConversion(gps,'decimal');
+    document.getElementById('degrees').innerHTML = doConversion(gps,'degrees');
+    document.getElementById('exif').innerHTML = doConversion(gps,'exif');
+    document.getElementById('flickr').innerHTML = doConversion(gps,'flickr');
+    "/>
   </p>
 </div>
 <div class="section">
@@ -107,12 +114,11 @@ h1 {
 <div id="detailednotes" style="display:none">
   <p><strong>Notes:</strong></p> 
 
-<p id="status">Updated Thu 23 Oct 2014  &bull; tags <a href="http://rishida.net/blog/index.php?tag=gpsconverter" title="Show all blog posts tagged with 'gpsconverter'">gpsconverter</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
+<p id="status">Updated Sat 10 sep 2016  &bull; tags <a href="http://rishida.net/blog/index.php?tag=gpsconverter" title="Show all blog posts tagged with 'gpsconverter'">gpsconverter</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
 
 <section>
-    <p>In the input fields you can use any of the formats shown in the results section below. </p>
-    <p>If you use  N/S/E/W it must come last. Alternatively, you can use a minus sign before the degree value.</p>
-    <p>* You can enter both a latitude and a longitude value in the 'Latitude' field, as long as you add a slash (&#xA0;/&#xA0;) between them.</p>
+    <p>In the input field you can use any of the formats shown in the results section below. </p>
+    <p>If you use  N/S/E/W it must come last. Alternatively, you can use a minus sign before the degree value.    </p>
     <p>Alternatively, you can populate the two fields with your approximate current location using the button provided (if your browser supports geolocation). Note that (a) it takes a moment to locate you, and (b) the result is only an approximation to your current location.</p>
   </section>
 
@@ -121,7 +127,7 @@ h1 {
 
 <footer>
 <div class="smallprint"><span id="version">First published 18 Sep 2006.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2015-02-18  9:35<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-09-11  20:32<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 </footer>
 
@@ -132,10 +138,12 @@ h1 {
 		parameters[0] = parameters[0].substring(1);
 		for (var p=0;p<parameters.length;p++) {  
 			pairs = parameters[p].split('=');
-			if (pairs[0] == 'lat') { document.getElementById('lat').value = Number(pairs[1]); }
-			if (pairs[0] == 'lon') { document.getElementById('lon').value = Number(pairs[1]); }
+			document.getElementById('lat').value = '';
+			if (pairs[0] == 'gps') { document.getElementById('lat').value += Number(pairs[1]); }
+			if (pairs[0] == 'lat') { document.getElementById('lat').value += Number(pairs[1]); }
+			if (pairs[0] == 'lon') { document.getElementById('lat').value += Number(pairs[1]); }
 			}
-		doConversion(document.getElementById('lat').value, document.getElementById('lon').value);
+		if (document.getElementById('lat').value != '') doConversion(document.getElementById('lat').value);
 		}
 	</script>
 </body>
