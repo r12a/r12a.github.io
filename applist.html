@@ -4,44 +4,14 @@
 <meta charset="utf-8"/>
 <title>r12a &gt;&gt; apps</title>
 <meta name="description" content="Small web apps written in html and javascript."/>
-<link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<style type="text/css" media="all">
-h3 a:link {
-	color: gray;
-	text-decoration: none;
-}
-h3 a:visited {
-	color: gray;
-	text-decoration: none;
-}
-div.sidenote p {
-	margin-top: 0;
-}
-body {
-	line-height: 1.5;
-}
-h1 {
-	text-align: start;
-	font-size: 200%;
-	padding: 5px 5px 5px 10px;
-	margin: 2em 20% 0px 6.5%;
-}
-h1, h2 {
-	color: #a52a2a;
-	}
-h1 a:link, h2 a:link {
-	color: #a52a2a;
-	}
-h1 a:visited, h2 a:visited {
-	color: #a52a2a;
-	}
-</style>
-<script src="/code/toc_section.js" type="text/javascript"></script>
-<script type="text/javascript" src="/images/random/randomcharacters.js"></script>
+<link rel="stylesheet" type="text/css" href="style/docs.css" />
+<link rel="stylesheet" type="text/css" href="style/toplevel.css" />
+<script type="text/javascript" src="code/toc_section.js"></script>
+<script type="text/javascript" src="images/random/randomcharacters.js"></script>
 </head>
 
 <body>
-<div id="site-navigation"> <img id="level2-picture" alt=" " src="/images/random/602.png" /></div>
+<div id="site-navigation"> <img id="level2-picture" alt=" " src="images/random/602.png" /></div>
 <div class="sidebar">
   <h2 class="notoc flush"><a id="tochead" tabindex="4">On this page</a></h2>
   <div id="toc"><!-- placeholder --></div>
@@ -53,80 +23,89 @@ h1 a:visited, h2 a:visited {
   <div id="line">&nbsp;</div>
 </div>
 <h1><a href="/">r12a</a> &gt;&gt; apps</h1>
-<div id="sitelinks" class="noprint" style="margin-left: 6.5%;"><a href="http://rishida.net/blog/" title="blog">blog</a>&nbsp; <a href="/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="/applist" title="Small utilities written in html and javascript">apps</a>&nbsp; <a href="/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span></div>
+<div id="sitelinks" class="noprint" style="margin-left: 6.5%;"><a href="http://rishida.net/blog/" title="blog">blog</a>&nbsp; <a href="doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="maplist" title="Historical maps">maps</a>&nbsp; <a href="applist" title="Small utilities written in html and javascript">apps</a>&nbsp; <a href="photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</div>
 
+<p>These apps are written in HTML and JavaScript, and use Web Standards to work on all major browsers,  so you don't need to install anything.</p>
 <div class="section">
   <h2><a id="unicodestuff" href="#unicodestuff">Unicode</a></h2>
-  <ul class="collapsingList">
-    <li>
-      <p><a href="/uniview/">UniView</a></p>
-      <div class="hidden">
-        <p>Look up and see characters (using graphics or fonts) and property information, view whole character blocks or custom ranges, select characters to paste into your document, paste in and discover unknown characters,<em> </em>search for characters, do hex/dec/ncr conversions, highlight character types, etc. etc. Check out the <a href="/uniview/help">user guide</a> for instructions and new features, and have fun!</p>
-        <p>Always supports the latest version of Unicode.</p>
-        <p>It is written with Web Standards to work on all major browsers. It is based on XHTML, JavaScript, PHP and AJAX technologies, so you don't need to install anything.</p>
+
+
+  <div class="flexbox">
+  	<a href="/uniview/"><img src="images/lists/uniview.png" alt="UniView"/></a>
+    <div>
+      <p class="mainLink"><a href="/uniview/">UniView</a></p>
+      <p>Look up and see characters (using graphics or fonts) and property information, view whole character blocks or custom ranges, select characters to paste into your document, paste in and discover unknown characters,<em> </em>search for characters, do hex/dec/ncr conversions, highlight character types, etc. etc. </p>
+        <p><a href="/uniview/help">User guide</a></p>
+    </div>
+  </div>
+  
+  
+  <div class="flexbox"><a href="/pickers/"><img src="images/lists/pickers.png"/></a>
+    <div>
+      <p class="mainLink"><a href="/pickers/">Unicode character pickers</a></p>
+      <div>
+        <p>Pickers are likely to be most useful if you don't know a script well enough to use the native keyboard. The arrangement of characters also makes it much more useable than a regular character map utility, and they may include characters from more than one block. They may also include transliteration and other tools.</p>
+      <p style="font-size:90%;"><a href="/pickers/arabic/">Arabic</a> &bull; <a href="/pickers/arabicblock/">All&#xA0;Arabic</a> &bull; <a href="/pickers/armenian/">Armenian</a> &bull; <a href="/pickers/balinese/">Balinese</a> &bull; <a href="/pickers/bengali/">Bengali</a> &bull; <a href="/pickers/burmese/">Burmese</a> &bull; <a href="/pickers/devanagari/">Devanagari</a> &bull; <a href="/pickers/egyptian/">Egyptian hieroglyphs</a> &bull; <a href="/pickers/ethiopic/">Basic Ethiopic</a> &bull; <a href="http://rishida.net/scripts/pickers/gujarati/">Gujarati</a> &bull; <a href="/pickers/gurmukhi/">Gurmukhi</a> &bull; <a href="/pickers/hebrew/">Hebrew</a> &bull; <a href="/pickers/khmer/">Khmer</a> &bull; <a href="/pickers/ipa/">IPA</a> &bull; <a href="/pickers/lao/">Lao</a> &bull; <a href="/pickers/latin/">Latin&#xA0;&amp;&#xA0;diacritics</a> &bull; <a href="/pickers/lisu/">Lisu&#xA0;(Fraser&#xA0;script)</a> &bull; <a href="/pickers/malayalam/">Malayalam</a> &bull; <a href="/pickers/mongolian/">Mongolian</a> &bull; <a href="/pickers/oldenglish/">Old English</a> &bull; <a href="/pickers/oldnorse/">Old Norse</a> &bull; <a href="/pickers/persian/">Persian</a> &bull; <a href="/pickers/runic/">Runic</a> &bull; <a href="/pickers/tamil/">Tamil</a> &bull; <a href="/pickers/thai/">Thai</a> &bull; <a href="/pickers/tibetan/">Tibetan</a> &bull; <a href="/pickers/tifinagh/">Tifinagh </a> &bull; <a href="/pickers/tlicho/">Tłı̨chǫ&#xA0;(Dogrib)</a> &bull; <a href="/pickers/uighur/">Uighur</a> &bull; <a href="/pickers/urdu/">Urdu</a> &bull; <a href="/pickers/vietnamese/">Vietnamese</a></p>
       </div>
-    </li>
-    <!--li> 
-		<p><a href="/rishida/scripts/uniview/lite">UniView <em>lite</em></a></p>
-		<div class="hidden"><p>UniView with a redesigned user interface for use on mobile devices.</p>
-		</div>
-		</li-->
-    <li>
-      <p><a href="/pickers/">Unicode character pickers</a></p>
-      <p style="width: 80%; font-size: 80%;"><a href="/pickers/arabic/">Arabic</a> &bull; <a href="/pickers/arabicblock/">All&#xA0;Arabic</a> &bull; <a href="/pickers/armenian/">Armenian</a> &bull; <a href="/pickers/balinese/">Balinese</a> &bull; <a href="/pickers/bengali/">Bengali</a> &bull; <a href="/pickers/burmese/">Burmese</a> &bull; <a href="/pickers/devanagari/">Devanagari</a> &bull; <a href="/pickers/egyptian/">Egyptian hieroglyphs</a> &bull; <a href="/pickers/ethiopic/">Basic Ethiopic</a> &bull; <a href="http://rishida.net/scripts/pickers/gujarati/">Gujarati</a> &bull; <a href="/pickers/gurmukhi/">Gurmukhi</a> &bull; <a href="/pickers/hebrew/">Hebrew</a> &bull; <a href="/pickers/khmer/">Khmer</a> &bull; <a href="/pickers/ipa/">IPA</a> &bull; <a href="/pickers/lao/">Lao</a> &bull; <a href="/pickers/latin/">Latin&#xA0;&amp;&#xA0;diacritics</a> &bull; <a href="/pickers/lisu/">Lisu&#xA0;(Fraser&#xA0;script)</a> &bull; <a href="/pickers/malayalam/">Malayalam</a> &bull; <a href="/pickers/mongolian/">Mongolian</a> &bull; <a href="/pickers/oldenglish/">Old English</a> &bull; <a href="/pickers/oldnorse/">Old Norse</a> &bull; <a href="/pickers/persian/">Persian</a> &bull; <a href="/pickers/runic/">Runic</a> &bull; <a href="/pickers/tamil/">Tamil</a> &bull; <a href="/pickers/thai/">Thai</a> &bull; <a href="/pickers/tibetan/">Tibetan</a> &bull; <a href="/pickers/tifinagh/">Tifinagh </a> &bull; <a href="/pickers/tlicho/">Tłı̨chǫ&#xA0;(Dogrib)</a> &bull; <a href="/pickers/uighur/">Uighur</a> &bull; <a href="/pickers/urdu/">Urdu</a> &bull; <a href="/pickers/vietnamese/">Vietnamese</a></p>
-      <div  class="hidden">
-        <p>Each picker carefully arranges characters in a number of ways to allow you to quickly create phrases in a script. Simply click on the characters. The phrase appears at the bottom of the screen and you can easily cut and paste the result into your own document. They're written in XHTML with a small amount of JavaScript.</p>
-        <p>Pickers are likely to be most useful if you don't know a script well enough to use the native keyboard. The arrangement of characters also makes it much more useable than a regular character map utility, and they may include characters from more than one block. New pickers are being added from time to time.</p>
+    </div>
+  </div>
+  <div class="flexbox"><a href="/apps/conversion/"><img src="images/lists/conversion.png"/></a>
+    <div>
+      <p class="mainLink"><a href="/apps/conversion/">Unicode code converter</a></p>
+      <div>
+        <p>Convert between Unicode characters, Unicode code point numbers, UTF-8 and UTF-16 code units in hex, and Numeric Character References (hex and decimal), and more. Just add one type of data, click 'Convert', and see all the corresponding values.</p>
       </div>
-    </li>
-    <li>
-      <p><a href="/apps/conversion/">Code Converter</a></p>
-      <p class="hidden">Converts between Unicode characters, Unicode code point numbers, UTF-8 and UTF-16 code units in hex, and Numeric Character References (hex and decimal), and more. Just add one type of data, click 'Convert', and see all the corresponding values.</p>
-    </li>
-    <li>
-      <p><a href="/apps/encodings/">Encoding Converter</a></p>
-      <p class="hidden">Allows you to see how Unicode characters are represented by bytes in various legacy encodings, and vice versa. The algorithms used are based on those described in the Encoding specification, and thus describe the behaviour you can expect from web browsers.</p>
-    </li>
-    <li>
-      <p><a href="/apps/listcharacters/">List characters</a></p>
-      <p class="hidden">Lists what characters are used in some text that you paste into the input field, by Unicode block.</p>
-    </li>
-    <!--li>
-      <p><a href="/rishida/tools/analysestring/">String analyser</a></p>
-      <p class="hidden">Identifies Unicode characters in a string, shows a picture of each character and provides information about it. The output is also configurable, to allow for cut&amp;paste of information into your document. You can type characters in the input field to the right, or send in the URI query.</p>
-    </li>
-    <li>
-      <p><a href="/rishida/utils/bomtester/">UTF-8 BOM tester</a></p>
-      <p class="hidden">Detects whether a UTF-8 encoded file on the Web begins with a UTF-8 signature or not.</p>
-    </li>
-    <li>
-      <p><a href="/rishida/tools/normalizer/">Normalizer</a></p>
-      <p class="hidden">Converts text to Unicode normalization forms NFD and NFC.</p>
-    </li-->
-  </ul>
+    </div>
+  </div>
+  <div class="flexbox"> <img src="images/lists/encoding.png"/>
+    <div>
+      <p class="mainLink"><a href="/apps/encodings/">Encoding converter</a></p>
+      <div>
+        <p>Allows you to see what bytes are used by legacy encodings to represent a particular character, or to convert a sequence of bytes into characters for a range of encodings. You can customise the encodings you want to experiment with by clicking on change encodings shown.</p>
+      </div>
+    </div>
+  </div>
+  <div class="flexbox"> <img src="images/lists/listcharacters.png"/>
+    <div>
+      <p class="mainLink"><a href="/apps/listcharacters/">List characters</a></p>
+      <div>
+        <p>Analyses the characters in text that you paste into the large box at the top, and produces a list of what characters were used, grouped by Unicode block.</p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="section">
+
+
+
+<section>
   <h2><a id="webi18n" href="#webi18n">Web Internationalization</a></h2>
-  <ul class="collapsingList">
-    <li>
-      <p><a href="http://validator.w3.org/i18n-checker/ ">i18n checker</a></p>
-      <p class="hidden">Check an HTML page for internationalization information, such as character encoding and language declarations (both in the document and in HTTP headers), non-normalized id and class names, request headers, etc. And discover errors, warnings and other advice about the internationalization of the page's HTML code.</p>
-    </li>
-    <li>
-      <p><a href="apps/subtags/">Language subtag lookup tool</a></p>
-      <div  class="hidden">
-        <p>Want to find the subtag for language, region, script, etc? Or find out what that tag means? Or get a list of all currently available tags? You could look in the text file on the IANA site, but this is more user friendly. It will also allow you to check language tags you are using.</p>
-        <p>This Web-based tool searches the most-up-to-date version of the registry, and provides information to help you choose between the nearly 8,000 subtags.</p>
-      </div>
-    </li>
-    <li>
-      <p><a href="/apps/counterconverter/">Counter styles  converter</a></p>
-      <div  class="hidden">
-        <p>Allows you to convert ASCII numbers into other representations that can be used for ordered list counters, headings, etc. It uses the algorithms described by CSS3 Counter Styles.</p>
-      </div>
-    </li>
-  </ul>
-</div>
+  
+    <div class="flexbox"><a href="https://validator.w3.org/i18n-checker/"><img src="images/lists/i18nchecker.png" alt="i18n checker"/></a>
+    <div>
+      <p class="mainLink"><a href="https://validator.w3.org/i18n-checker/">i18n checker</a></p>
+        <p>Check an HTML page for internationalization information, such as character encoding and language declarations (both in the document and in HTTP headers), non-normalized id and class names, request headers, etc. And discover errors, warnings and other advice about the international aspects of the page's HTML code. </p>
+    </div>
+  </div>
+
+  
+    <div class="flexbox"><a href="apps/subtags/"><img src="images/lists/subtags.png" alt=" "/></a>
+    <div>
+      <p class="mainLink"><a href="apps/subtags/">Language subtag lookup tool</a></p>
+        <p>Check language tag validity, find the subtag for language, region, script, etc, find out what that tag means, or get a list of all currently available tags. This app searches the most-up-to-date version of the registry, and provides additional information to help you choose from over 8,000 subtags. </p>
+    </div>
+  </div>
+
+  
+  <div class="flexbox"><a href="apps/counterconverter/"><img src="images/lists/counterconverter.png" alt=" "/></a>
+    <div>
+      <p class="mainLink"><a href="apps/counterconverter/">Counter styles converter</a></p>
+        <p>Convert ASCII numbers into other representations that can be used for ordered list counters, headings, etc. It uses the algorithms described by CSS3 Counter Styles.</p>
+    </div>
+  </div>
+</section>
+
+
+
 <!--div class="section">
   <h2><a id="sec-language" name="sec-language" href="#sec-language">Language learning</a></h2>
   <ul class="collapsingList">
@@ -139,33 +118,42 @@ h1 a:visited, h2 a:visited {
     </li>
   </ul>
 </div-->
-<div class="section">
-  <h2><a id="geotagging" href="#geotagging">Geotagging &amp; territories</a></h2>
+<section>
+  <h2><a id="geotagging" href="#geotagging">Geodata</a></h2>
+
+  <div class="flexbox"><a href="apps/convertgps/"><img src="images/lists/convertgps.png" alt=" "/></a>
+    <div>
+      <p class="mainLink"><a href="apps/convertgps/">Convert lat/lon</a></p>
+        <p>Convert GPS coordinates between different formats for latitude and longitude data. Includes   formats such as those required for Google Earth/Maps, Flickr, Adobe Bridge and other applications. </p>
+    </div>
+  </div>
+
+  
   <ul class="collapsingList">
     <!--li>
       <p><a href="/rishida/tools/territories/">Territory finder</a></p>
       <p class="hidden">SVG-based page that helps you to locate a country or territory on a map of the world.</p>
     </li-->
-    <li>
-      <p><a href="apps/convertgps/">Convert lat/lon <!--span class="new">Updated!</span--></a></p>
-      <p class="hidden">Convert between different formats for latitude and longitude data. Allows you to convert GPS coordinates between the different formats required for Google Earth, Flickr, Adobe Bridge and other applications.</p>
-    </li>
   </ul>
-</div>
-<div class="section">
+</section>
+
+
+
+<section>
   <h2><a id="archery" href="#archery">Archery</a></h2>
-  <ul class="collapsingList">
-    <li>
-      <p><a href="apps/archery/">Archery log</a></p>
-      <p class="hidden">Take a copy to log your archery scores, with or without the visual arrow placement diagrams.</p>
-    </li>
-  </ul>
-</div>
+
+  <div class="flexbox"><a href="apps/archery/"><img src="images/lists/archery.png" alt=" "/></a>
+    <div>
+      <p class="mainLink"><a href="apps/archery/">Archery</a></p>
+        <p>Take a copy to log your archery scores, with or without the visual arrow placement diagrams</p>
+    </div>
+  </div>
+</section>
 
 
 <div class="smallprint">
   <span id="version">Last update <span id="version-info"> 
-    <!-- #BeginDate format:IS1m -->2016-09-06  18:03<!-- #EndDate --> 
+    <!-- #BeginDate format:IS1m -->2016-09-11  17:27<!-- #EndDate --> 
     </span> GMT.  &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span>
 </div>
 <script type="text/javascript">
