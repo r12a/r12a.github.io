@@ -3532,7 +3532,7 @@
 	<text transform="matrix(1 0 0 1 1936.8097 1075.9801)" class="bt4 bt34 bt32">Héběi</text>
 	<text transform="matrix(1 0 0 1 1870.6163 1355.8661)" class="bt4 bt34 bt32">Hénán</text>
 	<text transform="matrix(1 0 0 1 1983.6572 955.1738)" class="bt4 bt34 bt33">Běijīng</text>
-	<text transform="matrix(1 0 0 1 2045.629 1034.1554)" class="bt4 bt34 bt33">Tiānjīn</text>
+	<text transform="matrix(1 0 0 1 2032.629 1041.1554)" class="bt4 bt34 bt33">Tiānjīn</text>
 	<text transform="matrix(1 0 0 1 2046.8595 1177.5474)" class="bt4 bt34 bt32">Shāndōng</text>
 	<text transform="matrix(1 0 0 1 2152.7942 1317.6595)" class="bt4 bt34 bt32">Jiāngsū</text>
 	<text transform="matrix(1 0 0 1 2065.231 1443.7131)" class="bt4 bt34 bt32">Ānhuī</text>
@@ -3593,7 +3593,7 @@
 	<circle class="bt39" cx="1549.7" cy="2127.8" r="4.9"/>
 	<circle class="bt39" cx="1453.4" cy="1563" r="5.2"/>
 	<text transform="matrix(1 0 0 1 1446.259 1584.152)" class="bt4 bt8 bt37">Chengdu</text>
-	<circle class="bt39" cx="1581.6" cy="1635.8" r="5.2"/>
+	<circle class="bt39" cx="2053.8" cy="1019.8" r="5.2"/>
 	<circle class="bt39" cx="1597.2" cy="1814.4" r="5.2"/>
 	<text transform="matrix(1 0 0 1 1580.1331 1831.3938)" class="bt4 bt8 bt37">Guiyang</text>
 	<circle class="bt39" cx="1695" cy="1343.1" r="5.2"/>
@@ -3652,7 +3652,7 @@
 	<circle class="bt39" cx="229.5" cy="932.7" r="5.2"/>
 	<text transform="matrix(1 0 0 1 208.8597 951.4124)" class="bt4 bt8 bt37">Yarkant</text>
 	<circle class="bt39" cx="2011" cy="978.5" r="5.2"/>
-	<text transform="matrix(1 0 0 1 1982.9336 971.4719)" class="bt4 bt8 bt33">Beijing</text>
+	<text transform="matrix(1 0 0 1 1959.5309 998.0884)" class="bt4 bt8 bt33">Beijing</text>
 	<circle class="bt39" cx="2217.8" cy="1400" r="5.2"/>
 	<text transform="matrix(1 0 0 1 2196.4995 1421.213)" class="bt4 bt8 bt37">Yanzhou</text>
 	<circle class="bt39" cx="2440.9" cy="956.4" r="6.1"/>
@@ -3661,6 +3661,17 @@
 	<text transform="matrix(1 0 0 1 163.6771 675.8237)" class="bt4 bt8 bt38">Bishkek</text>
 	<circle class="bt39" cx="66.1" cy="605.6" r="6.1"/>
 	<text transform="matrix(1 0 0 1 71.7711 611.7137)" class="bt4 bt8 bt37">Taraz</text>
+	<circle class="bt39" cx="2274.2" cy="1516.5" r="5.2"/>
+	<text transform="matrix(1 0 0 1 2243.8682 1506.1403)" class="bt4 bt8 bt37">Hangzhou</text>
+	<text transform="matrix(1 0 0 1 2037.4023 1011.9735)" class="bt4 bt8 bt37">Tianjin</text>
+	<circle class="bt39" cx="2268" cy="1766.8" r="6.1"/>
+	<text transform="matrix(1 0 0 1 2226.9341 1755.9934)" class="bt4 bt8 bt37">Fuzhou</text>
+	<circle class="bt39" cx="1887.7" cy="1573.6" r="6.1"/>
+	<text transform="matrix(1 0 0 1 1860.0018 1565.4784)" class="bt4 bt8 bt37">Jiangling</text>
+	<circle class="bt39" cx="1849.7" cy="1117.3" r="5.2"/>
+	<text transform="matrix(1 0 0 1 1838.9564 1109.7356)" class="bt4 bt8 bt37">Taiyuan</text>
+	<circle class="bt39" cx="1249.3" cy="1858" r="6.1"/>
+	<text transform="matrix(1 0 0 1 1239.9579 1848.6396)" class="bt4 bt8 bt37">Dali</text>
 </g>
 
 
