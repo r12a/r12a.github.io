@@ -631,7 +631,7 @@ function sjisDecoder (stream) {
 			if ((byte >= 0x40 && byte <= 0x7E) || (byte >= 0x80 && byte <= 0xFC)) ptr = (lead - leadoffset) * 188 + byte - offset
 			if (ptr == null) cp = null
 			else cp = indexes.jis0208[ptr]
-			if (cp == null && ptr >= 8836 && ptr <= 10528) {
+			if (cp == null && ptr >= 8836 && ptr <= 10715) {
 				temp = 0xE000 + ptr - 8836
 				out += dec2char(temp)
 				continue
