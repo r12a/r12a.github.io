@@ -282,7 +282,10 @@ var titles = new Array(
 
 var scriptGroups = []
 for (var i=0; i<titles.length; i++) {
-	scriptGroups[i+1] = titles[i].split('¶');
-	}
+	var temp = titles[i].split('¶');
+	temp[0] = parseInt(temp[0]);
+	temp[1] = parseInt(temp[1]);
+	scriptGroups[i+1] = temp;
+}
 scriptGroups[0] = "▲";
 

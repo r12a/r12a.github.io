@@ -59,7 +59,16 @@ for (var p=0;p<parameters.length;p++) {
 	pairs = parameters[p].split('=');
 	if (pairs[0] == 'chars') { if (pairs[1]) { document.getElementById('in').value = decodeURIComponent(pairs[1]); makeList(decodeURIComponent(pairs[1])) } }
 //	if (pairs[0] == 'charlist') { if (pairs[1]) { document.getElementById("picker").value = decodeURIComponent(pairs[1]);showCharacterList(decodeURIComponent(pairs[1])); } }
-	}
+}
+function toggleNotes()
+{
+    var note = document.getElementById("detailednotes");
+    if (note.style.display == "none") {
+        note.style.display = "block";
+    } else {
+        note.style.display = "none";
+    }
+}
 </script>
 </body>
 </html>
