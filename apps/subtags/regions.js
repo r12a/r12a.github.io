@@ -59,7 +59,7 @@ var regions = [{type:"region",subtag:"AA",description:"Private use",added:"2005-
 {type:"region",subtag:"CW",description:"Curaçao",added:"2011-01-07"},
 {type:"region",subtag:"CX",description:"Christmas Island",added:"2005-10-16"},
 {type:"region",subtag:"CY",description:"Cyprus",added:"2005-10-16"},
-{type:"region",subtag:"CZ",description:"Czech Republic",added:"2005-10-16"},
+{type:"region",subtag:"CZ",description:"Czechia, Czech Republic",added:"2005-10-16"},
 {type:"region",subtag:"DD",description:"German Democratic Republic",added:"2005-10-16",deprecated:"1990-10-30",preferredvalue:"DE"},
 {type:"region",subtag:"DE",description:"Germany",added:"2005-10-16"},
 {type:"region",subtag:"DG",description:"Diego Garcia",added:"2009-07-29"},
