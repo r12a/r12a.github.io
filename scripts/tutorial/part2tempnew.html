@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>An Introduction to Writing Systems</title>
+<meta name="description"
+	  content="The tutorial will provide you with an understanding of key requirements for implementing writing systems in information technology. It will do this by examining real examples of a wide range of modern scripts to discover features that a computerized implementation must support." />
+<link rel="stylesheet" href="/style/docs.css" type="text/css" />
+<link rel="stylesheet" href="/style/slideshow.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="local.css" />
+
+<script type="text/javascript" src="/code/toc_section.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_header('/images/world.gif','docs');</script>
+</header>
+
+<h1>An Introduction to Writing Systems &amp; Unicode</h1>
+
+<aside class="sidebar">
+<nav>
+  <h2 class="notoc flush"><a id="tochead">On this page</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+    <h2 class="notoc"><a id="links">Related links</a></h2>
+    <p><a href="/scripts/summaries/">Script summaries</a></p>
+    <p><a href="/scripts/featurelist/">Script features by language</a></p>
+	<p><a href="/scripts/links">Script links</a></p>
+    <p><a href="/uniview/">UniView</a></p>
+	<p><a href="http://www.unicode.org">Unicode Consortium</a></p>
+  </div>
+  </nav>
+  </aside>
+
+
+<nav>
+<p class="short-toc"><a href="index">Introduction</a></p>
+<p class="partname">Large character sets</p>
+<p class="short-toc"><a href="part3">Complex script rendering</a></p>
+<p class="short-toc"><a href="part4">Text direction</a></p>
+<p class="short-toc"><a href="part5">Text boundaries &amp; wrapping</a></p>
+<p class="short-toc"><a href="part6">Typographic differences</a></p>
+<p class="short-toc"><a href="part7">Sorting & case conversion</a></p>
+</nav>
+
+<section id="cjk-charsets">
+  <h2><a href="#cjk-charsets">CJK character sets</a></h2>
+  <div id="chinese" class="slide">
+    <h3><a href="chinese">Chinese</a></h3>
+    <div class="slide-pic"> <img src="images/chinese1.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Initially there was only one type of Chinese – what we now call <span class="newterm">Traditional Chinese</span>. Then in the 1950s
+        Mainland China introduced a <span class="newterm">Simplified Chinese</span>. It was simplified in two ways:</p>
+      <ol>
+        <li>
+          <p>the more common character shapes were reduced in complexity,</p>
+        </li>
+        <li>
+          <p>a relatively smaller set of characters was defined for common usage than had traditionally been the case (resulting in the mapping
+            more than one character in Traditional Chinese to a single character in the Simplified Chinese set).</p>
+        </li>
+      </ol>
+      <p>This slide shows Traditional Chinese above and Simplified Chinese below.</p>
+      <p>Traditional Chinese is still used to write characters in Taiwan and Hong Kong, and much of the Chinese diaspora. Simplified Chinese is
+        used in Mainland China and Singapore. It is important to stress that people speaking many different, often mutually unintelligible, Chinese dialects
+        would use one or other of these scripts to write Chinese – ie. the characters do not necessarily represent the sounds.</p>
+      <p>There are a few local characters, such as for Cantonese in Hong Kong, that are not in widespread use. </p>
+      <p>In Chinese these ideographs are
+        called <span class="newterm">hanzi</span>. They are often referred to as <span class="newterm">Han characters</span>.</p>
+      <p>There is another script used with Traditional Chinese for annotations and transliteration during input. It is called <span
+			 class="newterm">zhuyin</span> or <span class="newterm">bopomofo</span>, and will be described in more detail later.</p>
+      <p>It is said that Chinese people typically use around 3-4,000 characters for most communication, but a reasonable word processor would need
+        to support at least 10,000. Unicode supports over 70,000 Han characters. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0070">
+    <div class="slide-pic"> <img src="images/chinese2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>This slide shows examples of contrasting shapes in Traditional and Simplified ideographs.</p>
+      <p>The paragraph on the left is in Simplified Chinese. That on the right is Traditional. The slide shows the same two characters from each paragraph so that you can see how the shape varies. In one case, just the left-hand part of the glyph is different; in the other, the right-hand side is different.</p>
+      <p>Each of the large glyphs shown above is a separate code point in Unicode. The Simplified and Traditional shapes are not unified
+        unless they are extremely similar. (Han unification will be explained in more detail later.) </p>
+    </div>
+  </div>
+  <div id="japanese" class="slide">
+    <h3><a href="japanese">Japanese</a></h3>
+    <div class="slide-pic"> <img src="images/japanese1.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Japanese uses three native scripts in addition to Latin (which is called <span class="newterm">romaji</span>), and mixes them all together.</p>
+      <p>Top cetnre on the slide is an example of ideographic characters, borrowed from Chinese, which in Japanese are called <span
+			 class="newterm">kanji</span>. Kanji characters are used principally for the roots of words.</p>
+      <p>The example at the top right of the slide is written entirely in <span class="newterm">hiragana</span>. Hiragana is a native Japanese
+        syllabic script typically used for many indigenous Japanese words (as in this case) and for grammatical particles and endings. The example at the
+        bottom of the slide shows its use to express grammatical information alongside a kanji character (the darker, initial character) that expresses the
+        root meaning of the word.</p>
+      <p>Japanese everyday usage requires around 2,000 kanji characters – although Japanese character sets include many thousands more.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0090">
+    <div class="slide-pic"> <img src="images/japanese2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>The example at the bottom left of this slide shows the <span class="newterm">katakana</span> script. This is used for foreign loan words in
+        Japanese. The example reads ‘te-ki-su-to’, ie. ‘text’.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0100">
+    <div class="slide-pic"> <img src="images/japanese3.png" alt="slide" /></div>
+    <div class="slide-pic"> <img src="images/japanese4.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>On the two slides above we see the more common characters from the hiragana (left) and katakana (right) syllabaries arranged in traditional order. A
+        character in the same location in each table is pronounced exactly the same.</p>
+      <p>With the exception of the vowels on the top line and the letter ‘n’, all of the symbols represent a consonant followed by a vowel.</p>
+      <p>The first of the two slides highlights some script features (on the right) from hiragana. The second shows the correspondences in katakana.</p>
+      <p>Voiced consonants are indicated by attaching a <span class="newterm">dakuten</span> mark (looks like a quote mark) to the unvoiced shape. The ‘p’ sound is indicated
+        by the use of a <span class="newterm">han-dakuten</span> (looks like a small circle). The slides show glyphs for ‘ha’, ‘ba’, and ‘pa’ on the top line.</p>
+      <p>A small ‘tsu’ (っ) is commonly used to lengthen a consonant sound.</p>
+      <p>Small versions of や, ゆ, and よ are used to form syllables such as ‘kya’ (きゃ), ‘kyu’ (きゅ), and ‘kyo’ (きょ) respectively.</p>
+      <p>When writing katakana the mark ー is used to indicate a lengthened vowel. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0110">
+    <div class="slide-pic"> <img src="images/japanese5.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>The lower example on the slide shows the small tsu being used in katakana to lengthen the ‘t’ sound that follows it. This can be
+        transcribed as ‘intanetto’.</p>
+      <p>The higher example shows usage of other small versions of katakana characters. The transcription is ‘konpyuutingu’. In the first case the
+        small ‘yu’ combines with the preceding ‘pi’ to produce ‘pyu’. In the second case the small ‘i’ is used with the preceding ‘te’ syllable to produce
+        ‘ti’ – a sound that is not native to Japanese. (Their equivalent would be ‘chi’.)</p>
+      <p>The higher example also shows the use of the han-dakuten and dakuten to turn ‘hi’ into ‘pi’ and ‘ku’ into ‘gu’.</p>
+      <p>There is also a lengthening mark that lengthens the ‘u’ sound before it.</p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="visual2" class="slide">
+    <div class="slide-pic"> <img src="images/ja-char-width.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Han and kana characters are usually <span class="newterm">full-width</span>, whereas latin text is <span class="newterm">half-width</span> or <span class="newterm">proportionally spaced</span>.</p>
+      <p>Half-width katakana characters do exist, and for compatibility reasons there is a Unicode block for half-width kana characters. These
+        codes should not normally be used, however. They arise from the early computing days when Japanese had to be fitted into a Western-biased
+        technology.</p>
+      <p>Similarly, it is common to find full-width Latin text, especially in tables. Again, there is a Unicode block dedicated to full width Latin
+        characters and punctuation, but a font should be used instead.</p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="korean" class="slide">
+    <h3><a href="korean">Korean</a></h3>
+    <div class="slide-pic"> <img src="images/korean.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Korean uses a unique script called <span class="newterm">hangul</span>. It is unique in that, although it is a syllabic script, the
+        individual phonemes within a syllable are represented by individual shapes. The example shows how the word ‘ta-kuk-o’ is composed of 7 <span class="newterm">jamos</span>, each expressing a single phoneme. The jamos are displayed as part of a two dimensional syllabic character.</p>
+      <p>The initial jamo in the last syllable is not pronounced in initial position and serves purely to conform to the rule that hangul
+        syllables always begin with a consonant.</p>
+      <p>It is possible to store hangul text as either jamos or syllabic characters in Unicode, although the latter is more common. Unicode enables
+        both approaches.</p>
+      <p>South Korea also mixes ideographic characters borrowed from Chinese with hangul, though on nothing like the scale of Japanese. In fact, it
+        is quite normal to find whole documents without any <span class="newterm">hanja</span>, as the ideographic characters in Korean are called.</p>
+      <p>There are about 2,300 hangul characters in everyday use, but the Unicode Standard has code points for around 11,000.</p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="radicals" class="slide">
+    <h3><a href="radicals">Radicals</a></h3>
+    <div class="slide-pic"> <img src="images/ideograph-char-components.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>A <span class="newterm">radical</span> is an ideograph or a component of an ideograph that is used for indexing dictionaries and word
+        lists, and as the basis for creating new ideographs. The 214 radicals of the KangXi dictionary are universally recognised.</p>
+      <p>The examples enlarged on the slide show the ideographic character meaning ‘word’, ‘say’ or ‘speak’ (bottom left), and three more
+        characters that use this as a radical on their left hand side. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0160">
+    <div class="slide-pic"> <img src="images/ideograph-char-components2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>The visual appearance of radicals may vary significantly.</p>
+      <p>Here the radical shown on the previous slide is seen as used in Simplified Chinese (top right). Although the shape differs somewhat it
+        still represents the same radical.</p>
+      <p>On the bottom row we see the ‘water’ radical being used in two different positions in a character, and with two different shapes. This
+        time the right-most example is found in both simplified and traditional forms. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0170">
+    <div class="slide-pic"> <img src="images/ideograph-char-components3.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Unicode dedicates two blocks to radicals. The <span class="newterm">KangXi radicals block</span> depicted here contains the base forms of the 214 radicals.</p>
+      <p>The <span class="newterm">CJK Radicals Extension</span> contains variant shapes of these radicals when they are used as parts of other characters or in simplified
+        form. These have not been unified because they often appear independently in dictionaries indices.</p>
+      <p>Characters in these blocks should never be used as ideographs. </p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+</section>
+<section id="encodings">
+  <h2><a href="#encodings">Character sets, encodings, and multi-byte characters</a></h2>
+  <div id="charset" class="slide">
+    <h3><a href="charset">Character sets &amp; encodings</a></h3>
+    <div class="slide-pic"> <img src="images/early-char-sets.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>A very early step in realizing the use of a script or set of scripts is to define the set of characters needed for its use. </p>
+      <p>The slide shows a set that was defined  for the North African Tifinagh script.  It includes characters for a number of variants of Tifinagh besides that used in Morocco, such as writing used by the Touareg.</p>
+      <p> At this stage, this is just a bag of characters with no formal structure. It is not necessarily computer-specific – it is just a list of characters needed for writing Tifinagh, one way or another.</p>
+      <p>This is called a <span class="newterm">character set</span>, or <span class="newterm">repertoire</span>. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0190b">
+    <div class="slide-pic"> <img src="images/early-char-sets2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Next the characters are ordered in a standard way and numbered.  Each unique character has a unique number, called a <span class="newterm">code point</span>.  The code point of the number circled above is 33 in hexadecimal notation (a common way to represent code points), or 52 in decimal. </p>
+      <p>A set of characters ordered and numbered in this way is called a <span class="newterm">coded character set</span>. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0190c">
+    <div class="slide-pic"><img src="images/early-char-sets3.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>In the early days of computing a byte consisted of 7 bits; allowing for a code page containing 128 code points. This was the day of <span class="newterm">ASCII</span>. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0200">
+    <div class="slide-pic"><img src="images/early-char-sets4.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>When bytes contained 8 bits they gave rise to code pages containing 256 code points. These code pages typically retain the ASCII
+        characters in the lower 128 code points and add characters for additional languages to the upper reaches. On the slide we see a <span class="newterm">Latin1</span> code page, <span class="newterm">ISO 8859-1</span>, containing code points for Western European languages. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0210">
+    <div class="slide-pic"><img src="images/early-char-sets5.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Unfortunately, 256 code points was not enough  to support the whole of Europe – not even Latin based languages such as Turkish,
+        Hungarian, etc. To support Greek characters you might see the code points re-mapped as shown on the slide (left hand side). These alternative code
+        pages forced you to maintain contextual information so that you could determine the intended character from the upper ranges of the code page. It
+        also made localization difficult since you had to keep changing code pages. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0220">
+    <div class="slide-pic"><img src="images/cjk-charset.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>East Asian computing immediately faced a much bigger problem than in Europe, as can be seen by the size of these common character sets.
+        They resorted to <span class="newterm">double-byte</span> coded character sets. Two-bytes per character sets provided 16 bits, and would theoretically allow for 2<sup>16</sup> (ie. 65,356) possible code points. In reality these character sets tended to be based on a 7-bit model, utilizing only a part of the total space
+        available.</p>
+      <p>One significant problem persisted here – these character sets and their encodings were script specific. It was still difficult to represent
+        Chinese, Korean and Japanese text simultaneously. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0230">
+    <div class="slide-pic"><img src="images/unicode-charset.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Unicode  encompasses all scripts and symbols needed for text in a single character set.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0240">
+    <div class="slide-pic"><img src="images/unicode-enc-methods.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Although the terms 'character set' and 'character encoding' are often treated as the
+        same thing, they actually mean separate things. </p>
+      <p>We have already explained that a character set or repertoire comprises the set of atomic text elements you will use for a particular purpose. We also explained that the Unicode Standard assigns a unique scalar number to every character in its character set. The resulting numbered set is referred to as
+        a <span class="newterm">coded character set</span>. Units of a coded character set are known as code points.</p>
+      <p>The <span class="newterm">character encoding</span> reflects the way these abstract characters are mapped to numbers for manipulation in a computer.</p>
+      <p>In a standard such as ISO-8859, encodings tend to use a single byte for a given character and the encoding is straightforwardly related to
+        the position of the characters in the set.</p>
+      <p>The above distinction becomes helpful when discussing Unicode because the set of characters (ie. the character set) defined by the Unicode
+        Standard can be encoded in a number of different ways. The type of encoding doesn’t change the number or nature of the characters in the Unicode set,
+        just the way they are mapped into numbers for manipulation by the computer (see the next slide).</p>
+      <p>On the Web the internal character set of an XML application or HTML browser is always Unicode. A particular XML or HTML document can be encoded using another encoding, even encodings that don’t cover the full Unicode range such as ISO 8859-1 (Latin1). Having said that, we strongly recommend that you only use the UTF-8 Unicode encoding for web pages. </p>
+      <p>If you want to know more about character encodings for web pages, read <a href="https://www.w3.org/International/tutorials/tutorial-char-enc/">Handling character encodings in HTML and CSS</a>.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0240a">
+    <div class="slide-pic"><img src="images/unicode-enc-methods2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>This slide demonstrates  a number of ways of encoding the same characters in Unicode. These encodings are UTF-8, UTF-16, and UTF-32.</p>
+      <p>UTF-8 uses 1 byte to represent characters in the old ASCII set, two bytes for characters in several more alphabetic blocks, and three
+        bytes for the rest of the BMP. Supplementary characters use 4 bytes.</p>
+      <p>UTF-16 uses 2 bytes for any character in the BMP, and 4 bytes for supplementary characters.</p>
+      <p>UTF-32 uses 4 bytes everywhere. </p>
+      <p>In the chart on the slide, the first line of numbers represents the position of the characters in the
+        Unicode coded character set. The other lines show the byte values used to represent that character in a particular character encoding.</p>
+      <p>This explanation glosses over some of the detailed nomenclature related to encoding. More detail can be found in Unicode Technical Report
+        #17, <a href="http://www.unicode.org/reports/tr17/">Unicode Character Encoding Model</a>. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0230a2">
+    <div class="slide-pic"><img src="images/unicode-bmp.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Most modern scripts and useful symbols are currently encoded in a coding space called the <span class="newterm">Basic Multilingual Plane</span> or <span class="newterm">BMP</span>.  There is room for 65,356 characters on each plane. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0230a3">
+    <div class="slide-pic"><img src="images/unicode-supp-chars.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Beyond the BMP, Unicode and ISO 10646 have defined 16 supplementary planes, each the same size as the BMP, for future expansion. Some of those
+        planes are being populated already. There are code points defined for additional alphabets and a large number of math characters in the <span class="newterm">Supplementary Multilingual Plane (SMP)</span>. Also a large number of additional ideographic characters have been added to the <span class="newterm">Supplementary Ideographic Plane (SIP)</span>.</p>
+      <p>In total there are now over one million code points available. This means that all of the above scripts and more can be represented simultaneously with ease. Localization also
+        becomes easier, since there is no need to enable new code pages or switch encodings – you simply began using the characters that are available.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0230a">
+    <div class="slide-pic"><img src="images/unicode-charset2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>In addition to the normal code point allocations, there is also space available in Unicode for privately defined character mappings. There is a <span class="newterm">Private Use Area</span> in the BMP from code points E000–F8FF (6,400 code points). There are two additional, and much larger, private use areas in the supplementary character ranges.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0240c">
+    <div class="slide-pic"><img src="images/unicode-enc-methods3.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>In UTF-32, characters in the supplementary character range are encoded in bytes that correspond directly to the code point values. For example, <span class="uname">U+10330   GOTHIC LETTER AHSA</span> is stored as the byte sequence <code>00 01 03 30</code>. In UTF-8, the character would be represented using a different 4-byte sequence, <code>F0 90 8C B0</code>.</p>
+      <p>UTF-16, however, wants to represent all characters using 16-bit (2 byte) code units, but you can't express 0x10330 (decimal 66,352) as a 16-bit value (the maximum is decimal 65,535). To get around this, UTF-16 uses instead two special, adjacent 1024-character ranges in Unicode referred to a <dfn>high surrogates</dfn> and <dfn>low surrogates</dfn>. The combination of a high surrogate followed by a low surrogate, when interpreted by the character encoding algorithm used for UTF-16, points to a specific character in a supplementary plane. For example, the Gothic AHSA is represented in UTF-16 as the byte sequence <code>D8 00 DF 30</code>, where <code>D800</code> is the code point of a high surrogate, and <code>DF30</code> is the code point of a low surrogate. </p>
+      <p>You should never encounter a single surrogate character – they should always appear as high+low combinations. Also,  pairs should not be split when wrapping or highlighting text, counting characters, displaying unknown character glyphs, and so on. You should also never normally see surrogate character code points in UTF-8 or UTF-16.</p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="unification" class="slide">
+    <h3><a href="unification">Unification</a></h3>
+    <div class="slide-pic"><img src="images/unification.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Unicode provides a superset of most character sets in use around the world, but tries not to duplicate characters unnecessarily. For
+        example, there are several ISO character sets in the 8859 range that all duplicate the ASCII characters. Unicode doesn't have as many codes for the
+        letter 'a' as there are character sets - that would make for a huge and confusing character set.</p>
+      <p>The same principal applies for Han (Chinese) characters. The initial set of sources for Han encoding in Unicode laid end to end comprised
+        121,000 characters, but there were many repeats, and the final Unicode tally for all these after elimination of duplicates was 20,902. (There are now
+        over 70,000 Han characters encoded in Unicode.)</p>
+      <p>If Han characters had different meanings or etymologies, they were not unified. Han characters, however, are highly pictorial in nature.
+        So the (dis-) unification process had to take into account the visual forms to some extent. Where there was a significant visual difference between
+        han characters that represented the same thing they were allotted to separate Unicode code points. (Unifying the Han characters is a sophisticated
+        process, carried out over a long period by many East-Asian experts.)</p>
+      <p>Factors such as those shown on this slide <em>prevent</em> unification, ie.</p>
+      <ul>
+        <li>Different number of components</li>
+        <li>Same components but different positions</li>
+        <li>Different structure in components</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide" id="Slide0260">
+    <div class="slide-pic"><img src="images/unification2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>What is left for unification are characters representing the same thing but exhibiting no visual differences, or relatively minor
+        differences such as different sequence for writing strokes, differences in stroke overshoot and protrusion, differences in contact and bend of
+        strokes, differences in accent and termination of strokes, etc. </p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="respect" class="slide">
+    <h3><a href="respect">Respecting character boundaries</a></h3>
+    <div class="slide-pic"><img src="images/char-boundaries.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p> The slide shows how a string of characters maps to byte codes in memory in UTF-8. In an encoding such as UTF-8 the
+        number of bytes actually used depends on the character in question, and only a very small number of characters are encoded using a single byte. </p>
+      <p>This means that care has to be taken to recognize and respect the integrity of
+        the character boundaries.</p>
+      <p>Applications cannot simply handle a fixed number of bytes when performing editing operations such as inserting, deleting,
+        wrapping, cursor positioning, etc. Collation for searching and sorting, pointing into strings, and all other operations similarly need to work out
+        where the boundaries of the characters lie in order to successfully process the text.</p>
+      <p>Such operations need to be based on characters, not bytes.</p>
+      <p>Similarly, string lengths should be based on characters rather than bytes.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0320">
+    <div class="slide-pic"><img src="images/char-boundaries2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>This slide illustrates how things go wrong with  technology that is not multi-byte aware. In this case the author attempted to delete a
+        Chinese character on the last line, and the application translated that to &quot;delete a single byte&quot;. This caused a misalignment of all the following bytes, and
+        produced garbage. </p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="tools" class="slide">
+    <h3><a href="tools">Tools</a></h3>
+    <div class="slide-pic"><img src="images/uniview.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p><strong><a href="https://r12a.github.io/uniview/">UniView</a></strong> is an unofficial HTML-based tool for finding Unicode characters and looking up their properties.   It also acts like a character map or character picker, allowing you to create strings of Unicode characters. You can also use it to discover the contents of a string or a sequence of codepoint values, to convert to NFC or NFD normalized forms, display ranges of characters as lists or tables, highlight properties, etc. </p>
+      <p>A significant feature of UniView is that it has images for all Unicode characters (apart from some of the more recent ideographic ones), so you don't have to wrestle with fonts (although you can turn off the images if you prefer). It is always up to date with the latest Unicode version.</p>
+      <p>The <strong><a href="http://unicode.org/unibook/">Unibook Character browser</a></strong> is a  downloadable utility for offline viewing of the character charts and character properties for The Unicode Standard, created by Asmus Freytag. It can also be used to copy&amp;paste character codes. The utility was derived from the program used to print the character code charts for the Unicode Standard and ISO/IEC 10646.</p>
+      <p>If you need to convert Unicode characters between various escaped forms, you should try the web-based <strong><a href="https://r12a.github.io/apps/conversion/">Unicode Code Converter</a></strong> tool.</p>
+      <p>There are also over 30 web-based <strong><a href="https://r12a.github.io/pickers/">Unicode Character Pickers</a></strong> available. These allow you to quickly create phrases in a script by clicking on Unicode characters arranged in a way that aids their identification.  They are likely to be most useful if you don't know a script well enough to use the native keyboard. The arrangement of characters  makes it much more useable than a regular character map utility. The more advanced pickers provide ways to select characters from semantic or phonetic arrangements, select by shape, and select by association with a transcription.</p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+</section>
+<section id="inputting">
+  <h2><a href="#inputting">Inputting ideographic characters</a></h2>
+  <div id="getting" class="slide">
+    <h3><a href="getting">Getting to the right character quickly</a></h3>
+    <div class="slide-pic"><img src="images/input.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>We have noted that East Asian character sets number their characters in the thousands. So how do you, quickly, find the one character you
+        want while typing?</p>
+      <p>In the past people have tried using extremely large keyboards, or forcing people to remember the code point numbers for the character. Not
+        surprisingly these approaches were not very popular.</p>
+      <p>The answer is to use an <span class="newterm">IME (Input Method Editor)</span>. An IME (also called a <span class="newterm">front-end
+        processor</span>) is software that uses a number of strategies to help you search for the character you want. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0350">
+    <div class="slide-pic"><img src="images/input-japanese.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>This slide summarizes the typical steps when typing in Japanese using a standard IME for Windows.</p>
+      <p>The user types Japanese in romaji transcription using a QWERTY keyboard. As they type the transcription is automatically converted to
+        hiragana or katakana. Ranges of characters are accepted by a key press as they go along. To convert a range of characters to kanji, the user presses
+        a key such as the space bar. Typically the IME will automatically insert into the text the kanji that were last selected for the transcription that
+        has been input. If this is not the desired kanji sequence, the user presses the key again and a selection list pops up, usually ordered in terms of
+        frequency of selection. The user picks the kanji characters required, and confirms their choice, then moves on.</p>
+      <p>Note that there are only a few alternatives for the sequence かいぎ. If the user had looked up かい and ぎ separately they would have been faced
+        each time with a large number of choices. The provision of a dictionary as part of the IME for lookup of longer phrases is one way of speeding up the
+        process of text entry for the user.</p>
+      <p>Ordering by frequency and memory of the last conversion are additional methods of assisting the user to find the right character more
+        quickly. </p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="chinese-input" class="slide">
+    <h3><a href="chinese-input">Chinese input methods</a></h3>
+    <div class="slide-pic"><img src="images/input-chinese.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Whereas the Japanese romaji input method predominates for Japanese, there are a number of different approaches available for Chinese.</p>
+      <p><span class="newterm">Pinyin</span> was introduced with Simplified Chinese, and is typically used in the same geographical areas, ie. Mainland China and Singapore.</p>
+      <p>It is essentially equivalent to the romaji input method. The numbers you see in the example above indicate tones. This dramatically
+        reduces the ambiguity of the sounds in Chinese.</p>
+      <p>One of the problems of pinyin is that the transcription is based on the Mandarin or Putonghua dialect of spoken Chinese. So to use this
+        method you need to be able to speak that dialect. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0370">
+    <div class="slide-pic"><img src="images/input-chinese2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>A more common input method in Taiwan uses an alphabet called <span class="newterm">zhuyin</span> or <span class="newterm">bopomofo</span>. This alphabet is only used for phonetic transcription of
+        Chinese. Essentially it is the same idea as pinyin, but with different letters. The tones in this case are indicated by spacing accent marks (shown
+        only in the top line on the slide) which in Unicode are unified with accents used in European languages.</p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0380">
+    <div class="slide-pic"><img src="images/input-chinese3.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>A very different approach allows the user to create the desired character on the basis of its visual appearance rather than the underlying
+        phonics.</p>
+      <p><span class="newterm">Changjie</span> input uses just such an approach. The keyboard provides access to primitive ideographic components which, when combined in the
+        right sequence lead to the desired ideograph.</p>
+      <p>An advantage of an approach such as changjie is that you don’t have to speak Mandarin. A drawback is the additional training required.</p>
+      <p>Note that pen-based input is another useful approach. In fact, this is particularly helpful for people who do not speak Chinese or
+        Japanese. Once you master a few simple rules about stroke order and direction, you can use something like Microsoft’s IME Pad to draw and select
+        characters without any knowledge of components or pronunciation. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0390">
+    <div class="slide-pic"><img src="images/input-chinese4.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>The examples on this slide show the keystrokes required to enter the text used in the previous slides containing pinyin and bopomofo
+        examples. </p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div id="alternatives" class="slide">
+    <h3><a href="alternatives">Alternative representations of characters</a></h3>
+    <div class="slide-pic"><img src="images/obscure-han.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>In some cases you may come across an ideograph that your font or your character set doesn’t support. Unicode provides a way of saying, “I
+        can’t represent it, but it looks like this character.”</p>
+      <p>The approach requires you to add character U+303E immediately followed by a similar looking character. This is called an <span class="newterm">ideographic variation indicator</span>. This at least gives the reader a
+        chance to guess at the character that is missing. </p>
+    </div>
+  </div>
+  <div class="slide" id="Slide0410">
+    <div class="slide-pic"><img src="images/obscure-han2.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Another way of addressing the same problem is to use the <span class="newterm">ideographic description characters</span> introduced in Unicode 3.0. As an example, the slide above uses this approach to describe a character which exists in Unicode.</p>
+      <p>This approach allows you to draw a picture showing what are the various components of the character you can’t represent, and where they
+        appear. The lower line on the slide shows how you would describe the large character near the top. Note that this is interpreted recursively.</p>
+      <p>Note also, that this should not be treated as in any way equivalent to an existing ideograph when collating strings. </p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+  <div class="slide" id="Slide">
+    <div class="slide-pic"><img src="images/obscure-han3.png" alt="slide" /></div>
+    <div class="speaker-notes">
+      <p>Wikipedia <a href="https://en.wikipedia.org/wiki/Biangbiang_noodles">describes as follows a Han character</a> that is in use but is not encoded in Unicode at the time of writing.</p>
+      <blockquote cite="https://en.wikipedia.org/wiki/Biangbiang_noodles">Biángbiáng noodles ([...] pinyin, Biángbiáng miàn), also known as (simplified Chinese: 油泼扯面; traditional Chinese: 油潑扯麵; pinyin: Yóupō chěmiàn), are a type of noodle popular in China's Shaanxi province. The noodles, touted as one of the &quot;ten strange wonders of Shaanxi&quot; (Chinese: 陕西十大怪), are described as being like a belt, owing to their thickness and length.&quot; &quot;Made up of 56 strokes, the Chinese character for &quot;biáng&quot; is one of the most complex Chinese characters in contemporary usage, although the character is not found in modern dictionaries or even in the Kangxi dictionary.&quot;</blockquote>
+      <p>The Wikipedia article uses ideographic description characters to show the composition of the character.</p>
+      <p>Another example of   this mechanism can be found at <a href="http://www.unicode.org/Public/UNIDATA/USourceData.txt">http://www.unicode.org/Public/UNIDATA/USourceData.txt</a>.</p>
+      <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
+    </div>
+  </div>
+</section>
+
+<nav>
+<p class="siblings-bottom"><a href="index">&lt;&lt;  Introduction </a> &bull; <a href="#topbar">Top of page</a> &bull; <a href="part3">Complex script rendering &gt;&gt;</a></p>
+</nav>
+
+
+
+<div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
+  <!-- #BeginDate format:IS1m -->2016-10-25  13:38<!-- #EndDate --> 
+  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
+
+
+<script type="text/javascript">
+createtoc();
+</script>
+</body>
+</html>
