@@ -308,8 +308,8 @@
     <div class="slide-pic"><img src="images/unicode-enc-methods3.png" alt="slide" /></div>
     <div class="speaker-notes">
       <p>In UTF-32, characters in the supplementary character range are encoded in bytes that correspond directly to the code point values. For example, <span class="uname">U+10330   GOTHIC LETTER AHSA</span> is stored as the byte sequence <code>00 01 03 30</code>. In UTF-8, the character would be represented using a different 4-byte sequence, <code>F0 90 8C B0</code>.</p>
-      <p>UTF-16, however, wants to represent all characters using 16-bit (2 byte) code units, but you can't express 0x10330 (decimal 66,352) as a 16-bit value (the maximum is decimal 65,535). To get around this, UTF-16 uses instead two special, adjacent 1024-character ranges in Unicode referred to a <dfn>high surrogates</dfn> and <dfn>low surrogates</dfn>. The combination of a high surrogate followed by a low surrogate, when interpreted by the character encoding algorithm used for UTF-16, points to a specific character in a supplementary plane. For example, the Gothic AHSA is represented in UTF-16 as the byte sequence <code>D8 00 DF 30</code>, where <code>D800</code> is the code point of a high surrogate, and <code>DF30</code> is the code point of a low surrogate. </p>
-      <p>You should never encounter a single surrogate character – they should always appear as high+low combinations. Also,  pairs should not be split when wrapping or highlighting text, counting characters, displaying unknown character glyphs, and so on. You should also never normally see surrogate character code points in UTF-8 or UTF-16.</p>
+      <p>UTF-16, however, wants to represent all characters using 16-bit (2 byte) code units, but you can't express 0x10330 (decimal 66,352) as a 16-bit value (the maximum is decimal 65,535). To get around this, UTF-16 uses instead two special, adjacent 1024-character ranges in Unicode referred to a <span class="newterm">high surrogates</span> and <span class="newterm">low surrogates</span>. The combination of a high surrogate followed by a low surrogate, when interpreted by the character encoding algorithm used for UTF-16, points to a specific character in a supplementary plane. For example, the Gothic AHSA is represented in UTF-16 as the byte sequence <code>D8 00 DF 30</code>, where <code>D800</code> is the code point of a high surrogate, and <code>DF30</code> is the code point of a low surrogate. </p>
+      <p>You should never encounter a single surrogate character – they should always appear as high+low <span class="newterm">surrogate pairs</span>. Also,  pairs should not be split when wrapping or highlighting text, counting characters, displaying unknown character glyphs, and so on. You should also never normally see surrogate character code points in UTF-8 or UTF-16.</p>
       <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
     </div>
   </div>
@@ -492,7 +492,7 @@
 
 
 <div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-10-25  13:38<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-10-25  13:47<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
