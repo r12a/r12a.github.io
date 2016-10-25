@@ -272,13 +272,13 @@
   <div class="slide" id="Slide0240a">
     <div class="slide-pic"><img src="images/unicode-enc-methods2.png" alt="slide" /></div>
     <div class="speaker-notes">
-      <p>This slide demonstrates  a number of ways of encoding the same characters in Unicode. These encodings are UTF-8, UTF-16, and UTF-32.</p>
+      <p>This slide demonstrates  a number of ways of encoding the same characters in Unicode. These encodings are UTF-8, UTF-16, and UTF-32. The text means &quot;Hello!&quot; in the Berber script (Tifinagh).</p>
+      <p>In the chart on the slide, the  numbers below the characters represent the code point of each character in the
+        Unicode coded character set. The other lines show the byte values used to represent that character in a particular character encoding.</p>
       <p>UTF-8 uses 1 byte to represent characters in the old ASCII set, two bytes for characters in several more alphabetic blocks, and three
         bytes for the rest of the BMP. Supplementary characters use 4 bytes.</p>
       <p>UTF-16 uses 2 bytes for any character in the BMP, and 4 bytes for supplementary characters.</p>
       <p>UTF-32 uses 4 bytes everywhere. </p>
-      <p>In the chart on the slide, the first line of numbers represents the position of the characters in the
-        Unicode coded character set. The other lines show the byte values used to represent that character in a particular character encoding.</p>
       <p>This explanation glosses over some of the detailed nomenclature related to encoding. More detail can be found in Unicode Technical Report
         #17, <a href="http://www.unicode.org/reports/tr17/">Unicode Character Encoding Model</a>. </p>
     </div>
@@ -308,7 +308,7 @@
     <div class="slide-pic"><img src="images/unicode-enc-methods3.png" alt="slide" /></div>
     <div class="speaker-notes">
       <p>In UTF-32, characters in the supplementary character range are encoded in bytes that correspond directly to the code point values. For example, <span class="uname">U+10330   GOTHIC LETTER AHSA</span> is stored as the byte sequence <code>00 01 03 30</code>. In UTF-8, the character would be represented using a different 4-byte sequence, <code>F0 90 8C B0</code>.</p>
-      <p>UTF-16, however, wants to represent all characters using 16-bit (2 byte) code units, but you can't express 0x10330 (decimal 66,352) as a 16-bit value (the maximum is decimal 65,535). To get around this, UTF-16 uses instead two special, adjacent 1024-character ranges in Unicode referred to a <span class="newterm">high surrogates</span> and <span class="newterm">low surrogates</span>. The combination of a high surrogate followed by a low surrogate, when interpreted by the character encoding algorithm used for UTF-16, points to a specific character in a supplementary plane. For example, the Gothic AHSA is represented in UTF-16 as the byte sequence <code>D8 00 DF 30</code>, where <code>D800</code> is the code point of a high surrogate, and <code>DF30</code> is the code point of a low surrogate. </p>
+      <p>UTF-16, however, wants to represent all characters using 16-bit (2 byte) code units, but you can't express 0x10330 (decimal 66,352) as a 16-bit value (the maximum is decimal 65,535). To get around this, UTF-16 uses instead two special, adjacent 1024-character ranges in Unicode referred to as <span class="newterm">high surrogates</span> and <span class="newterm">low surrogates</span>. The combination of a high surrogate followed by a low surrogate, when interpreted by the character encoding algorithm used for UTF-16, points to a specific character in a supplementary plane. For example, the Gothic AHSA is represented in UTF-16 as the byte sequence <code>D8 00 DF 30</code>, where <code>D800</code> is the code point of a high surrogate, and <code>DF30</code> is the code point of a low surrogate. </p>
       <p>You should never encounter a single surrogate character – they should always appear as high+low <span class="newterm">surrogate pairs</span>. Also,  pairs should not be split when wrapping or highlighting text, counting characters, displaying unknown character glyphs, and so on. You should also never normally see surrogate character code points in UTF-8 or UTF-16.</p>
       <p class="slide-bottom">&nbsp;<a href="#topbar">go to top of page</a></p>
     </div>
@@ -492,7 +492,7 @@
 
 
 <div class="smallprint"><span id="version">First published  Feb 2003.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2016-10-25  13:47<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2016-10-25  14:25<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
 
 
