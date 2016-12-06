@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Joseph Lakelin</title>
+<style>
+body { font: 20px/1.45 "Source Sans Pro","Helvetica Neue",Arial,sans-serif; -moz-osx-font-smoothing: grayscale; background-color: #f8f7f3; } 
+.dateAndRecord { display: flex; flex-flow: row nowrap; }
+.recordTitle { color: #648200; font-size: 20px; font-weight: 400; }
+.record { flex: 6; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; margin: 1em; padding: 1em; }
+.record p { margin: 0; padding: 0; }
+.recordDate { height: 70px; width: 70px; border-radius: 50%; background-color: #60527E; text-align:center; font-weight: bold; color: white; font-size: 1em; margin: 1em;}
+.recordDate { display: flex; flex-flow: column nowrap; align-items: center; line-height: .9; }
+.recordDate span:first-of-type { font-size: 140%; margin-top:5px; }
+.other { background-color: #F0eee9; }
+summary { font-size: 80%; text-align: end; cursor: pointer; }
+details pre { font-size: 70%; margin-bottom: 0; white-space: pre-wrap; }
+textarea { width: 90%; height: 100px; }
+.marriage { border-color: red; border-width: 2px; }
+.death { border-color: black; border-width: 2px; }
+</style>
+<script src="anc_conv.js" type="application/javascript"></script>
+</head>
+
+<body>
+<div style="position: fixed; width: 95%; top: 0;">
+<textarea id="input" placeholder="Drop data here."></textarea> 
+<button onClick="document.getElementById('everything').innerHTML = redisplay(document.getElementById('input').value)">Go</button>
+</div>
+
+<div id="everything" class="psNotesData" style="margin-top: 5em;">
+<!--
+TODO
+
+allow multiple notes, resolved as separate paragraphs
+
+add switch to reduce to pure narrative and select
+
+make this work as an html file pulling data from a text file
+
+add gps fields everywhere
+
+make a list of all locations mentioned
+
+-->
+
+  </div>
+  
+  
+ 
+<script>
+
+  console.log(document.getElementById('everything').textContent)
+//document.getElementById('everything').innerHTML = redisplay(document.getElementById('input').value)
+</script>
+</body>
+</html>
