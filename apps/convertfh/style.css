@@ -1,0 +1,18 @@
+body { font: 20px/1.45 "Source Sans Pro","Helvetica Neue",Arial,sans-serif; -moz-osx-font-smoothing: grayscale; background-color: #f8f7f3; } 
+#in { display: none; }
+.dateAndRecord { display: flex; flex-flow: row nowrap; }
+.recordTitle { color: #648200; font-size: 20px; font-weight: 400; }
+.record { flex: 6; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; margin: 1em; padding: 1em; }
+.record p { margin: 0; padding: 0; }
+.recordDate { height: 70px; width: 70px; border-radius: 50%; background-color: #60527E; text-align:center; color: white; font-size: 1em; margin: 1em;}
+.recordDate { display: flex; flex-flow: column nowrap; align-items: center; line-height: .9; }
+.recordDate span:first-of-type { font-size: 140%; margin-top:5px; }
+.other { background-color: #F0eee9; }
+summary { font-size: 80%; text-align: end; cursor: pointer; }
+details pre { font-size: 70%; margin-bottom: 0; white-space: pre-wrap; }
+textarea { width: 90%; height: 100px; }
+.marriage { border-color: red; border-width: 2px; }
+.death { border-color: black; border-width: 2px; }
+.footnotes { font-size: 80%; }
+.footnotes p { margin-top: 1em; }
+.footnotes ol { margin-top: 0; margin-bottom: 0; }
