@@ -37,7 +37,7 @@ function getAge (phrase1, eDate, eYear, bDate, bYear, phrase2) {
 
 function redisplay () {
 	var out = ''
-	var re, pron
+	var re, pron, n
 	
 	var everything = document.getElementById('input').value
 	everything = everything.replace(/<b\>/g,'')
@@ -65,7 +65,8 @@ function redisplay () {
 	
 	// display the general information
 	out += '<div class="dateAndRecord"><div><div class="recordDate"><span>	🕮</span><span style="font-size:70%;">1778-<br/>1858</span></div></div><div class="record"><p>'+text+'</p></div></div>\n'
-	
+
+
 	
 	// WORK THROUGH EACH RECORD
 	for (var i=1;i<records.length;i++) {
@@ -103,7 +104,12 @@ console.log(firstline)
 		var details = ''
 		info.children = 0
 		info.others = 0
+		info.notes = []
+		info.fnotes = []
 	
+	
+	
+		// WORK THROUGH EACH FIELD
 		for (f=1;f<fields.length;f++) {
 			// convert urls to links
 			if (fields[f].match('http://')) {
@@ -159,7 +165,8 @@ console.log(firstline)
 				 case 'burplace': info.burplace = parts[1].trim(); break
 				 case 'burdate': info.burdate = parts[1].trim(); break
 				 case 'probate': info.probate = parts[1].trim(); break
-				 case 'notes': info.notes = parts[1]; break
+				 case 'note': info.notes.push( parts[1] ); break
+				 case 'fnote': info.fnotes.push( parts[1] ); break
 				}
 //console.log(info.children, info.others)
 			}
@@ -177,7 +184,6 @@ console.log(firstline)
 					if (info.date) record+= getDatePhrase(info.date,year)
 					if (info.place) record += ' at '+info.place;
 					record += getAge(', when '+given+' was ', info.date, year, bdate, born, ' years old.')
-					// record += ' when '+given+' was '+recordAge+' years old.'; 
 					record += '</p>'
 					break
 			case 'familymarriage': record += '<p>'
@@ -217,16 +223,27 @@ console.log(firstline)
 					// record += ' when '+given+' was '+recordAge+' years old.'; 
 					if (info.cause) record += info.name+'\'s cause of death was '+info.cause+'. '
 					record += '</p>'
-					if (info.notes) record += '<p>'+info.notes+'</p>'
 					break
 			case 'Birth': record += '<p>'+fullname+' was born '+getDatePhrase(info.date,year)
 					if (info.place) record += ' at '+info.place
 					if (info.parents) record += ', to '+info.parents+'.'; 
 					record += '</p>'
+					if (info.notes.length > 0) for (n=0;n<info.notes.length;n++) record += '<p>'+info.notes[n]+'</p>'
+					if (info.fnotes.length > 0) {
+						record += '<div class="footnotes"><p>Notes</p><ol>'
+						for (n=0;n<info.fnotes.length;n++) record += '<li>'+info.fnotes[n]+'</li>'
+						record += '</ol></div>'
+						}
 					break
 			case 'Baptism': record += '<p>'+given+' was baptised '+getDatePhrase(info.date,year)
 					if (info.place) record += ' at '+info.place+'.'; 
 					record += '</p>'
+					if (info.notes.length > 0) for (n=0;n<info.notes.length;n++) record += '<p>'+info.notes[n]+'</p>'
+					if (info.fnotes.length > 0) {
+						record += '<div class="footnotes"><p>Notes</p><ol>'
+						for (n=0;n<info.fnotes.length;n++) record += '<li>'+info.fnotes[n]+'</li>'
+						record += '</ol></div>'
+						}
 					break
 			case 'Marriage': record += '<p>'+given+' married '
 					if (sex==='m') record += info.bride
@@ -296,8 +313,14 @@ console.log(firstline)
 						if (info.by) record += '<p>They were married by '+info.by+'.<p>'
 						if (info.witnesses) record += ' Witnesses were '+info.witnesses+'.<p>'
 						}
-					if (info.length) record += '<p>The marriage was to last for '+info.length+'.</p>'
-					if (info.notes) record += '<p>'+info.notes+'</p>'
+					if (info.length) record += '<p>They were married for '+info.length+'.</p>'
+					console.log(info.notes)
+					if (info.notes.length > 0) for (n=0;n<info.notes.length;n++) record += '<p>'+info.notes[n]+'</p>'
+					if (info.fnotes.length > 0) {
+						record += '<div class="footnotes"><p>Notes</p><ol>'
+						for (n=0;n<info.fnotes.length;n++) record += '<li>'+info.fnotes[n]+'</li>'
+						record += '</ol></div>'
+						}
 					break
 					
 			case 'Census': record += '<p>On '+info.date+' '+year+', '+given+' was living at '+info.place+', according to the census. The head of the household was '+info.head
@@ -309,7 +332,12 @@ console.log(firstline)
 					if (info.children && info.others) record += ' and '
 					if (info.others) record += info.others+' others'
 					record += '.</p>'
-					if (info.notes) record += '<p>'+info.notes+'</p>'
+					if (info.notes.length > 0) for (n=0;n<info.notes.length;n++) record += '<p>'+info.notes[n]+'</p>'
+					if (info.fnotes.length > 0) {
+						record += '<div class="footnotes"><p>Notes</p><ol>'
+						for (n=0;n<info.fnotes.length;n++) record += '<li>'+info.fnotes[n]+'</li>'
+						record += '</ol></div>'
+						}
 					break
 					
 			case 'Death': record += '<p>'+fullname+' died '+getDatePhrase(info.date,year)
@@ -335,7 +363,12 @@ console.log(firstline)
 						record += ' gravestone reads: "'+info.gravestone+'".</p>'
 						}
 					if (info.probate) record += '<p>The probate index says: "'+info.probate+'".</p>'
-					if (info.notes) record += '<p>'+info.notes+'</p>'
+					if (info.notes.length > 0) for (n=0;n<info.notes.length;n++) record += '<p>'+info.notes[n]+'</p>'
+					if (info.fnotes.length > 0) {
+						record += '<div class="footnotes"><p>Notes</p><ol>'
+						for (n=0;n<info.fnotes.length;n++) record += '<li>'+info.fnotes[n]+'</li>'
+						record += '</ol></div>'
+						}
 					break
 					
 			case 'Residence': record += '<p>'+info.notes+'</p>'; break
