@@ -35,11 +35,11 @@ function getAge (phrase1, eDate, eYear, bDate, bYear, phrase2) {
 
 
 
-function redisplay () {
+function redisplay (everything) {
 	var out = ''
 	var re, pron, n
 	
-	var everything = document.getElementById('input').value
+	//var everything = document.getElementById('input').textContent
 	everything = everything.replace(/<b\>/g,'')
 	everything = everything.replace(/<\/b\>/g,'')
 	
