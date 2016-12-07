@@ -1,6 +1,8 @@
 function getDatePhrase (date, year) {
 	if (!date) date = ''
-	if (date.match(/abt/)) return ' about '+date+' '+year
+	if (date.match(/abt/)) return date.replace('abt','around')+' '+year
+	if (date.match(/bef/)) return date.replace('bef','before')+' '+year
+	if (date.match(/aft/)) return date.replace('aft','after')+' '+year
 	if (date.match(/\d/)) return ' on '+date+' '+year
 	else return ' in '+date+' '+year
 	}
@@ -134,6 +136,8 @@ console.log(firstline)
 				 case 'sex': info.sex = parts[1].trim(); break
 				 case 'kind': info.kind = parts[1]; break
 				 case 'name': info.name = parts[1]; break
+				 case 'fname': info.fname = parts[1]; break
+				 case 'gname': info.gname = parts[1]; break
 				 case 'date': info.date = parts[1]; break
 				 case 'place': info.place = parts[1]; break
 				 case 'parents': info.parents = parts[1]; break
@@ -180,7 +184,7 @@ console.log(firstline)
 					break
 			case 'familybirth': record += '<p>'
 					if (sex==='m') record += 'His '; else record += 'Her '
-					record += who.toLowerCase() +' '+info.name+' was born '
+					record += who.toLowerCase() +' '+info.gname+' was born '
 					if (info.date) record+= getDatePhrase(info.date,year)
 					if (info.place) record += ' at '+info.place;
 					record += getAge(', when '+given+' was ', info.date, year, bdate, born, ' years old.')
@@ -215,7 +219,7 @@ console.log(firstline)
 					break
 			case 'familydeath': record += '<p>'
 					if (sex==='m') record += 'His '; else record += 'Her '
-					record += who.toLowerCase() +' '+info.name+' passed away '
+					record += who.toLowerCase() +' '+info.gname+' passed away '
 					if (info.date) record+= getDatePhrase(info.date,year)
 					if (info.age) record += ', aged '+info.age+', '
 					if (info.place) record += ' at '+info.place;
