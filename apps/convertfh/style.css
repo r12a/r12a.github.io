@@ -9,7 +9,7 @@ body { font: 20px/1.45 "Source Sans Pro","Helvetica Neue",Arial,sans-serif; -moz
 .recordDate span:first-of-type { font-size: 140%; margin-top:5px; }
 .other { background-color: #F0eee9; }
 summary { font-size: 80%; text-align: end; cursor: pointer; }
-details pre { font-size: 70%; margin-bottom: 0; white-space: pre-wrap; }
+details pre { font-size: 70%; white-space: pre-wrap; }
 textarea { width: 90%; height: 100px; }
 .marriage { border-color: red; border-width: 2px; }
 .death { border-color: black; border-width: 2px; }

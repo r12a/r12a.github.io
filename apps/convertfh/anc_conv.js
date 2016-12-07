@@ -122,7 +122,7 @@ console.log(firstline)
 				}
 	
 			// collect detailed information for display
-			details += fields[f]+"\n"
+			if (fields[f].trim() != '') details += fields[f]+"\n"
 	
 			// collect new info
 			var parts = fields[f].trim().split(':')
