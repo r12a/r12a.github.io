@@ -16,3 +16,4 @@ textarea { width: 90%; height: 100px; }
 .footnotes { font-size: 80%; }
 .footnotes p { margin-top: 1em; }
 .footnotes ol { margin-top: 0; margin-bottom: 0; }
+a { color: rgba(183,117,0,1.00); color: #648200; text-decoration: none; }

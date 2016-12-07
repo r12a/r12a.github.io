@@ -35,6 +35,34 @@ function getAge (phrase1, eDate, eYear, bDate, bYear, phrase2) {
 	return phrase1+age+phrase2
 	}
 
+function getName (phrase, id, part) {
+	console.log(phrase,id,part)
+	var link1, link2
+	link1 = link2 = ''
+	if (ids[id] && ids[id]['page']) { link1 = '<a href="'+id+'">'; link2 = '</a>' }
+	if (ids[id]) {
+		var out = phrase+link1
+		if (part==='given' || part==='both') out += ids[id]['gname']
+		if (part==='both') out += ' '
+		if (part==='family' || part==='both') out += ids[id]['fname']
+		out += link2
+		return out
+		}
+	else return ' '+id+' '
+	}
+
+
+function getParents (phrase, info) {
+	var flink1, flink2, mlink1, mlink2
+	flink1 = flink2 = mlink1 = mlink2 = ''
+	if (info.fid && ids[info.fid]['page']) { flink1 = '<a href="'+info.fid+'">'; flink2 = '</a>' }
+	if (info.mid && ids[info.mid]['page']) { mlink1 = '<a href="'+info.mid+'">'; mlink2 = '</a>' }
+	if (info.fid && info.mid) {
+		return phrase+mlink1+ids[info.mid]['gname']+' '+ids[info.mid]['fname']+mlink2+' &amp; '+flink1+ids[info.fid]['gname']+' '+ids[info.fid]['fname']+flink2
+		}
+	else return 'tbd'
+	}
+
 
 
 function redisplay (everything) {
@@ -124,7 +152,7 @@ console.log(firstline)
 				}
 	
 			// collect detailed information for display
-			if (fields[f].trim() != '') details += fields[f]+"\n"
+			if (fields[f].trim() !== '') details += fields[f]+"\n"
 	
 			// collect new info
 			var parts = fields[f].trim().split(':')
@@ -133,20 +161,29 @@ console.log(firstline)
 			switch (parts[0]) {
 				 case 'given': info.given = parts[1]; break
 				 case 'fullname': info.fullname = parts[1]; break
+				 case 'id': info.id = parts[1].trim(); break
 				 case 'sex': info.sex = parts[1].trim(); break
 				 case 'kind': info.kind = parts[1]; break
 				 case 'name': info.name = parts[1]; break
 				 case 'fname': info.fname = parts[1]; break
 				 case 'gname': info.gname = parts[1]; break
+				 case 'ffname': info.ffname = parts[1]; break
+				 case 'fgname': info.fgname = parts[1]; break
+				 case 'fid': info.fid = parts[1].trim(); break
+				 case 'mfname': info.mfname = parts[1]; break
+				 case 'mgname': info.mgname = parts[1]; break
+				 case 'mid': info.mid = parts[1].trim(); break
 				 case 'date': info.date = parts[1]; break
 				 case 'place': info.place = parts[1]; break
 				 case 'parents': info.parents = parts[1]; break
 				 case 'groom': info.groom = parts[1]; break
+				 case 'gid': info.gid = parts[1].trim(); break
 				 case 'gage': info.gage = parts[1]; break
 				 case 'gocc': info.gocc = parts[1]; break
 				 case 'gfather': info.gfather = parts[1]; break
 				 case 'gfocc': info.gfocc = parts[1]; break
 				 case 'bride': info.bride = parts[1]; break
+				 case 'bid': info.bid = parts[1].trim(); break
 				 case 'bage': info.bage = parts[1]; break
 				 case 'bocc': info.bocc = parts[1]; break
 				 case 'bfather': info.bfather = parts[1]; break
@@ -184,11 +221,13 @@ console.log(firstline)
 					break
 			case 'familybirth': record += '<p>'
 					if (sex==='m') record += 'His '; else record += 'Her '
-					record += who.toLowerCase() +' '+info.gname+' was born '
+					record += who.toLowerCase() +' '
+					record += getName('', info.id, 'given')
+					record += ' was born '
 					if (info.date) record+= getDatePhrase(info.date,year)
 					if (info.place) record += ' at '+info.place;
-					record += getAge(', when '+given+' was ', info.date, year, bdate, born, ' years old.')
-					record += '</p>'
+					record += getAge(', when '+given+' was ', info.date, year, bdate, born, ' years old')
+					record += '.</p>'
 					break
 			case 'familymarriage': record += '<p>'
 					if (who.toLowerCase() === 'daughter') {
@@ -219,7 +258,9 @@ console.log(firstline)
 					break
 			case 'familydeath': record += '<p>'
 					if (sex==='m') record += 'His '; else record += 'Her '
-					record += who.toLowerCase() +' '+info.gname+' passed away '
+					record += who.toLowerCase() +' '
+					record += getName('', info.id, 'given')
+					record += ' passed away '
 					if (info.date) record+= getDatePhrase(info.date,year)
 					if (info.age) record += ', aged '+info.age+', '
 					if (info.place) record += ' at '+info.place;
@@ -230,8 +271,8 @@ console.log(firstline)
 					break
 			case 'Birth': record += '<p>'+fullname+' was born '+getDatePhrase(info.date,year)
 					if (info.place) record += ' at '+info.place
-					if (info.parents) record += ', to '+info.parents+'.'; 
-					record += '</p>'
+					record += getParents(', to ', info); 
+					record += '.</p>'
 					if (info.notes.length > 0) for (n=0;n<info.notes.length;n++) record += '<p>'+info.notes[n]+'</p>'
 					if (info.fnotes.length > 0) {
 						record += '<div class="footnotes"><p>Notes</p><ol>'
@@ -250,8 +291,8 @@ console.log(firstline)
 						}
 					break
 			case 'Marriage': record += '<p>'+given+' married '
-					if (sex==='m') record += info.bride
-					else record += info.groom
+					if (sex==='m') record += getName('', info.bid, 'both')
+					else record += getName('', info.gid, 'both')
 					record += ' at '+info.place+', '
 					if (info.date) record+= getDatePhrase(info.date,year)
 					if (sex==='m') pron = 'he'; else pron = 'she'
