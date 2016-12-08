@@ -67,34 +67,75 @@ function getParents (phrase, info) {
 
 function redisplay (everything) {
 	var out = ''
-	var re, pron, n
-	
-	//var everything = document.getElementById('input').textContent
-	everything = everything.replace(/<b\>/g,'')
-	everything = everything.replace(/<\/b\>/g,'')
-	
+	var re, pron, n, c
+		
 	var records = everything.split('§')
-	var given, sex, fullname, text, born, bdate
+	var given, fullname, text, born, bdate, id, male
+	var mid = ''
+	var fid = ''
+	var sid = []
+	var cid = []
 	
 	// get the general information
 	var fields = records[0].split('\n')
 	for (var f=0;f<fields.length;f++) {
 		var tuple = fields[f].trim().split(':')
 		switch (tuple[0]) {
-			 case 'given': given = tuple[1]; break
-			 case 'sex': sex = tuple[1].trim(); break
-			 case 'name': fullname = tuple[1]; break
+			 case 'id': id = tuple[1].trim(); break
+			 case 'mid': mid = tuple[1].trim(); break
+			 case 'fid': fid = tuple[1].trim(); break
+			 case 'sid': sid.push(tuple[1].trim()); break
+			 case 'cid': cid.push(tuple[1].trim()); break
 			 case 'text': text = tuple[1]; break
-			 case 'born': born = tuple[1]; break
-			 case 'bdate': bdate = tuple[1]; break
 			}
 		}
+	
+	given = ids[id]['gname']
+	fullname = ids[id]['gname']+' '+ids[id]['fname']
+	male = ids[id]['male']
+	born = ids[id]['born']
+	bdate = ids[id]['bdate']
+	
 	
 	// set the page title
 	document.querySelector('title').textContent = fullname
 	
+	// draw top banner
+	out += '<div id="banner"><div id="pagetitle">'+fullname+'<br><span id="bannerdates">'+ids[id]['born']+'\u2013'+ids[id]['died']+'</span></div></div>'
+	
+	// list parents
+	out += '<div id="subbanner"><div>Parents: '
+	if (mid) out += getName('', mid, 'both')
+	if (mid && fid ) out += ' \u2022 '
+	if (fid) out += getName('', fid, 'both')
+	if (!mid && !fid) out += 'Unknown'
+	out += ' </div></div>'
+
+	// list spouses
+	out += '<div id="subsubbanner"><div>Spouse: '
+	if (sid.length > 0) {
+		for (c=0;c<sid.length;c++) {
+			out += getName('', sid[c], 'both')
+			if (c<sid.length-1) out += ' \u2022 '
+			}
+		}
+	else out += '-'
+	out += '</div></div>'
+
+	// list children
+	out += '<div id="subsubsubbanner"><div>Children: '
+	if (cid.length > 0) {
+		for (c=0;c<cid.length;c++) {
+			out += getName('', cid[c], 'given')
+			if (c<cid.length-1) out += ' \u2022 '
+			}
+		}
+	else out += '-'
+	out += '</div></div>'
+
 	// display the general information
-	out += '<div class="dateAndRecord"><div><div class="recordDate"><span>	🕮</span><span style="font-size:70%;">1778-<br/>1858</span></div></div><div class="record"><p>'+text+'</p></div></div>\n'
+	out += '<div class="dateAndRecord"><div><div class="recordDate"><span style="font-size: 100%; margin-top:.8em;">'+ids[id]['born']+'</span><span>'+ids[id]['died']+'</span></div></div><div class="record"><p>'+text+'</p></div></div>\n'
+	//out += '<div class="dateAndRecord"><div><div class="recordDate"><span>	🕮</span><span style="font-size:70%;">1778-<br/>1858</span></div></div><div class="record"><p>'+text+'</p></div></div>\n'
 
 
 	
@@ -118,18 +159,20 @@ console.log(firstline)
 		if (who && who.match(/brother|sister|father|mother|grandfather|grandmother/i)) background = ' other'
 		if (who && who.match(/marriage/i)) background = ' marriage'
 		if (who && who.match(/death/i)) background = ' death'
+		if (what && what.match(/death/i)) background = ' familydeath'
 
-//console.log(recordAge, year, who, what)
 
 		// make the title
 		var title = ''
 		var type = ''
-		if (what && what.toLowerCase() === 'death') { title = 'Death of '+who; type = 'familydeath'; }
-		else if (what && what.toLowerCase() === 'birth') { title = 'Birth of '+who; type = 'familybirth'; }
-		else if (what && what.toLowerCase() === 'marriage') { title = 'Marriage of '+who; type = 'familymarriage'; }
+		//if (what && what.toLowerCase() === 'death') { title = 'Death of '+who; type = 'familydeath'; }
+		//else if (what && what.toLowerCase() === 'birth') { title = 'Birth of '+who; type = 'familybirth'; }
+		//else if (what && what.toLowerCase() === 'marriage') { title = 'Marriage of '+who; type = 'familymarriage'; }
+		if (what && what.toLowerCase() === 'death') { title = who+' dies'; type = 'familydeath'; }
+		else if (what && what.toLowerCase() === 'birth') { title = 'New '+who.toLowerCase(); type = 'familybirth'; }
+		else if (what && what.toLowerCase() === 'marriage') { title = who+' marries'; type = 'familymarriage'; }
 		else { title = who; type = who; }
 
-//console.log('title',title)
 
 		var details = ''
 		info.children = 0
@@ -162,7 +205,6 @@ console.log(firstline)
 				 case 'given': info.given = parts[1]; break
 				 case 'fullname': info.fullname = parts[1]; break
 				 case 'id': info.id = parts[1].trim(); break
-				 case 'sex': info.sex = parts[1].trim(); break
 				 case 'kind': info.kind = parts[1]; break
 				 case 'name': info.name = parts[1]; break
 				 case 'fname': info.fname = parts[1]; break
@@ -180,13 +222,13 @@ console.log(firstline)
 				 case 'gid': info.gid = parts[1].trim(); break
 				 case 'gage': info.gage = parts[1]; break
 				 case 'gocc': info.gocc = parts[1]; break
-				 case 'gfather': info.gfather = parts[1]; break
+				 case 'gfather': info.gfather = parts[1].trim(); break
 				 case 'gfocc': info.gfocc = parts[1]; break
 				 case 'bride': info.bride = parts[1]; break
 				 case 'bid': info.bid = parts[1].trim(); break
 				 case 'bage': info.bage = parts[1]; break
 				 case 'bocc': info.bocc = parts[1]; break
-				 case 'bfather': info.bfather = parts[1]; break
+				 case 'bfather': info.bfather = parts[1].trim(); break
 				 case 'bfocc': info.bfocc = parts[1]; break
 				 case 'bstatus': info.bstatus = parts[1]; break
 				 case 'bparish': info.bparish = parts[1].trim(); break
@@ -220,7 +262,7 @@ console.log(firstline)
 			case 'Person': record += '<p>'+text+'</p>'
 					break
 			case 'familybirth': record += '<p>'
-					if (sex==='m') record += 'His '; else record += 'Her '
+					if (male) record += 'His '; else record += 'Her '
 					record += who.toLowerCase() +' '
 					record += getName('', info.id, 'given')
 					record += ' was born '
@@ -231,33 +273,33 @@ console.log(firstline)
 					break
 			case 'familymarriage': record += '<p>'
 					if (who.toLowerCase() === 'daughter') {
-						record += given+'\'s '+who.toLowerCase()+info.bride+' married '+info.groom+getDatePhrase(info.date,year)
+						record += given+'\'s '+who.toLowerCase()+' '+getName('', info.bid, 'given')+' married '+getName('', info.gid, 'both')+getDatePhrase(info.date,year)
 						if (info.place) record += ' at '+info.place
 						record += '. </p>'
 						}
 					if (who.toLowerCase() === 'son') {
-						record += given+'\'s '+who.toLowerCase()+info.groom+' married '+info.bride+getDatePhrase(info.date,year)
+						record += given+'\'s '+who.toLowerCase()+' '+getName('', info.gid, 'given')+' married '+getName('', info.bid, 'both')+getDatePhrase(info.date,year)
 						if (info.place) record += ' at '+info.place
 						record += '. </p>'
 						}
 			
 					if (who.toLowerCase() === 'daughter' && info.gfather) {
-						record += '<p>The father of the groom was '+info.gfather
+						record += '<p>The father of the groom was '+getName('', info.gfather, 'both')
 						if (info.gfocc) record += ', '+info.gfocc
 						record += '. '
-						if (info.bfocc) record += ' The occupation of '+info.bfather+' is '+info.bfocc+'. '
+						if (info.bfocc) record += ' The occupation of '+getName('', info.bfather, 'both')+' was '+info.bfocc+'. '
 						record += '</p>'
 						}
 					if (who.toLowerCase() === 'son' && info.bfather) {
-						record += 'The father of the bride was '+info.bfather
+						record += 'The father of the bride was '+getName('', info.bfather, 'both')
 						if (info.bfocc) record += ', '+info.bfocc
 						record += '. '
-						if (info.gfocc) record += ' The occupation of '+info.gfather+' is '+info.gfocc+'. '
+						if (info.gfocc) record += ' The occupation of '+getName('', info.gfather, 'both')+' was '+info.gfocc+'. '
 						record += '</p>'
 						}
 					break
 			case 'familydeath': record += '<p>'
-					if (sex==='m') record += 'His '; else record += 'Her '
+					if (male) record += 'His '; else record += 'Her '
 					record += who.toLowerCase() +' '
 					record += getName('', info.id, 'given')
 					record += ' passed away '
@@ -265,8 +307,7 @@ console.log(firstline)
 					if (info.age) record += ', aged '+info.age+', '
 					if (info.place) record += ' at '+info.place;
 					record += getAge(', when '+given+' was ', info.date, year, bdate, born, ' years old.')
-					// record += ' when '+given+' was '+recordAge+' years old.'; 
-					if (info.cause) record += info.name+'\'s cause of death was '+info.cause+'. '
+					if (info.cause) record += ' '+getName('', info.id, 'given')+'\'s cause of death was '+info.cause+'. '
 					record += '</p>'
 					break
 			case 'Birth': record += '<p>'+fullname+' was born '+getDatePhrase(info.date,year)
@@ -291,19 +332,16 @@ console.log(firstline)
 						}
 					break
 			case 'Marriage': record += '<p>'+given+' married '
-					if (sex==='m') record += getName('', info.bid, 'both')
+					if (male) record += getName('', info.bid, 'both')
 					else record += getName('', info.gid, 'both')
 					record += ' at '+info.place+', '
 					if (info.date) record+= getDatePhrase(info.date,year)
-					if (sex==='m') pron = 'he'; else pron = 'she'
+					if (male) pron = 'he'; else pron = 'she'
 					record += getAge(' when '+pron+' was ', info.date, year, bdate, born, ' years old')
 					record += '. '
-					//record += ' when '
-					//if (sex==='m') record += 'he'; else record += 'she'
-					//record += ' was '+recordAge+' years old.</p>'
 					
 					if (info.bage || info.bstatus || info.gocc || info.bocc || info.bparish || info.gparish) record += '<p>'
-					if (sex==='m') {
+					if (male) {
 						if (info.bage) record += 'The bride was '+info.bage+' years old'
 						if (info.bage && info.bstatus) record += ' and a '+info.bstatus
 						else if (info.bstatus) record += ' The bride was a '+info.bstatus
@@ -339,14 +377,14 @@ console.log(firstline)
 					if (info.bage || info.bstatus || info.gocc || info.bocc || info.bparish || info.gparish) record += '</p>'
 
 					if (info.bfather || info.gfather) record += '<p>'
-					if (sex==='m') {
-						if (info.bfather) record += ' The bride\'s father was '+info.bfather
+					if (male) {
+						if (info.bfather) record += ' The bride\'s father was '+getName('', info.bfather, 'both')
 						if (info.bfocc) record += ', and his occupation '+info.bfocc
 						if (info.bfather) record += '. '
 						if (info.gfocc) record += given+'\'s father\'s occupation was '+info.gfocc+'. '
 						}
 					else {
-						if (info.gfather) record += ' The groom\'s father was '+info.gfather
+						if (info.gfather) record += ' The groom\'s father was '+getName('', info.gfather, 'both')
 						if (info.gfocc) record += ', and his occupation '+info.gfocc
 						if (info.gfather) record += '. '
 						if (info.bfocc) record += given+'\'s father\'s occupation was '+info.bfocc+'. '
@@ -387,24 +425,24 @@ console.log(firstline)
 					
 			case 'Death': record += '<p>'+fullname+' died '+getDatePhrase(info.date,year)
 					if (info.place) record += ' at '+info.place
-					if (sex==='m') pron = 'he'; else pron = 'she'
+					if (male) pron = 'he'; else pron = 'she'
 					record += getAge(' when '+pron+' was ', info.date, year, bdate, born, ' years old')
 					record += '. '
 					if (info.cause) record += ' The cause was '+info.cause+'. '
 					if (info.occ) {
-						if (sex==='m') record += ' His '; else record += ' Her '
+						if (male) record += ' His '; else record += ' Her '
 						record += ' occupation at the time was listed as '+info.occ+'. '
 						}
 					record += '</p>'
 
 					if (info.burdate || info.burplace) {
-						if (sex==='m') record += '<p>He '; else record += '<p>She '
+						if (male) record += '<p>He '; else record += '<p>She '
 						record += ' was buried at '+info.burplace
 						if (info.burdate) record += getDatePhrase(info.burdate,year)
 						record += '.</p>'
 						}
 					if (info.gravestone) {
-						if (sex==='m') record += '<p>His '; else record += '<p>Her '
+						if (male) record += '<p>His '; else record += '<p>Her '
 						record += ' gravestone reads: "'+info.gravestone+'".</p>'
 						}
 					if (info.probate) record += '<p>The probate index says: "'+info.probate+'".</p>'
@@ -417,6 +455,7 @@ console.log(firstline)
 					break
 					
 			case 'Residence': record += '<p>'+info.notes+'</p>'; break
+			case 'Event': record += '<p>'+info.notes+'</p>'; break
 			}
 		out += '<div class="dateAndRecord"><div><div class="recordDate"><span>'+getAge('', info.date, year, bdate, born, '')+'</span><span>'+year+'<span></div></div><div class="record '+border+background+'">' + record
 		out += '<details'
