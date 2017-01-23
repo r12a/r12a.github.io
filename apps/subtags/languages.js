@@ -16,7 +16,7 @@ var languages = [{type:"language",subtag:"aa",description:"Afar",added:"2005-10-
 {type:"language",subtag:"bh",description:"Bihari languages",added:"2005-10-16",scope:"collection"},
 {type:"language",subtag:"bi",description:"Bislama",added:"2005-10-16"},
 {type:"language",subtag:"bm",description:"Bambara",added:"2005-10-16"},
-{type:"language",subtag:"bn",description:"Bengali",added:"2005-10-16",suppressscript:"Beng"},
+{type:"language",subtag:"bn",description:"Bengali, Bangla",added:"2005-10-16",suppressscript:"Beng"},
 {type:"language",subtag:"bo",description:"Tibetan",added:"2005-10-16"},
 {type:"language",subtag:"br",description:"Breton",added:"2005-10-16"},
 {type:"language",subtag:"bs",description:"Bosnian",added:"2005-10-16",suppressscript:"Latn",macrolanguage:"sh"},
