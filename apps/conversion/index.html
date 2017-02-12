@@ -70,7 +70,7 @@ textarea { padding: 0 5px; }
                 return false;" >UTF-16 units</button>
 
 
-      <span class="options">Convert \x<input type="checkbox" id="singleletterescapes" />
+      <span class="options"><label>Convert \x<input type="checkbox" id="singleletterescapes" /></label>
       </span><br/>
       <textarea id="escapedInput" name="escapedInput" rows="3" cols="5" style="background-color: #DFD; color:#333"></textarea></td>
   </tr>
@@ -100,8 +100,8 @@ textarea { padding: 0 5px; }
 				onclick="displayResults(convertXML2Char(XML.value), XML.id);
                 return false;" >Convert</button><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('XML').focus();document.getElementById('XML').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('XML').focus();document.getElementById('XML').select();" />
 
-<span class="options" id="xmlOptions">Escape invisible characters<input class="check" type="checkbox" id="xmlinvisibles" data-fn="convertinvisibles" checked="checked" onclick="XML.value = convertCharStr2XML(convertXML2Char(XML.value), getParameters(parentNode));" />
-      Convert bidi controls to HTML markup<input type="checkbox" id="xmlbidimarkup" data-fn="bidimarkup" onclick="XML.value = convertCharStr2XML(convertXML2Char(XML.value), getParameters(parentNode));"/>
+<span class="options" id="xmlOptions"><label>Escape invisible characters<input class="check" type="checkbox" id="xmlinvisibles" data-fn="convertinvisibles" checked="checked" onclick="XML.value = convertCharStr2XML(convertXML2Char(XML.value), getParameters(parentNode));" /></label>
+      <label>Convert bidi controls to HTML markup<input type="checkbox" id="xmlbidimarkup" data-fn="bidimarkup" onclick="XML.value = convertCharStr2XML(convertXML2Char(XML.value), getParameters(parentNode));" /></label>
       </span><br/>
       <textarea id="XML" name="XML" rows="2" cols="5"></textarea></td>
   </tr>
@@ -113,10 +113,10 @@ textarea { padding: 0 5px; }
       <button value="Convert" onclick="displayResults( convertHexNCR2Char(hexNCRs.value), hexNCRs.id ); 
 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('hexNCRs').focus();document.getElementById('hexNCRs').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('hexNCRs').focus();document.getElementById('hexNCRs').select();" />
 
-<span class="options" id="hexNCROptions">Show ascii<input class="check" type="checkbox" id="hexncrascii" checked="checked" data-fn="ascii"
-      onclick="document.getElementById('hexncrlatin1').checked = false; hexNCRs.value = convertCharStr2SelectiveCPs(convertHexNCR2Char(hexNCRs.value), getParameters(parentNode), true, '&#x', ';', 'hex');" />
+<span class="options" id="hexNCROptions"><label>Show ascii<input class="check" type="checkbox" id="hexncrascii" checked="checked" data-fn="ascii"
+      onclick="document.getElementById('hexncrlatin1').checked = false; hexNCRs.value = convertCharStr2SelectiveCPs(convertHexNCR2Char(hexNCRs.value), getParameters(parentNode), true, '&#x', ';', 'hex');" /></label><label>
       Latin1<input type="checkbox" id="hexncrlatin1" data-fn="latin1" 
-      onclick="document.getElementById('hexncrascii').checked = false; hexNCRs.value = convertCharStr2SelectiveCPs(convertHexNCR2Char(hexNCRs.value), getParameters(parentNode), true, '&#x', ';', 'hex');"/></span>
+      onclick="document.getElementById('hexncrascii').checked = false; hexNCRs.value = convertCharStr2SelectiveCPs(convertHexNCR2Char(hexNCRs.value), getParameters(parentNode), true, '&#x', ';', 'hex');" /></label></span>
       <br/>
       <textarea id="hexNCRs" name="hexNCRs" rows="3" cols="5"></textarea></td>
       
@@ -127,11 +127,10 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 				onclick="displayResults( convertDecNCR2Char(decNCRs.value), decNCRs.id ); 
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('decNCRs').focus();document.getElementById('decNCRs').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('decNCRs').focus();document.getElementById('decNCRs').select();" />
 
-<span class="options" id="decNCROptions">Show ascii<input type="checkbox" id="decncrascii" checked="checked" data-fn="ascii"
-      onclick="document.getElementById('decncrlatin1').checked = false; decNCRs.value = convertCharStr2SelectiveCPs(convertDecNCR2Char(decNCRs.value), getParameters(parentNode), true, '&#', ';', 'dec');" />
+<span class="options" id="decNCROptions"><label>Show ascii<input type="checkbox" id="decncrascii" checked="checked" data-fn="ascii"
+      onclick="document.getElementById('decncrlatin1').checked = false; decNCRs.value = convertCharStr2SelectiveCPs(convertDecNCR2Char(decNCRs.value), getParameters(parentNode), true, '&#', ';', 'dec');" /></label><label>
       Latin1<input type="checkbox" id="decncrlatin1" data-fn="latin1" 
-      onclick="document.getElementById('decncrascii').checked = false; decNCRs.value = convertCharStr2SelectiveCPs(convertDecNCR2Char(decNCRs.value), getParameters(parentNode), true, '&#', ';', 'dec');"/>
-      </span><br/>
+      onclick="document.getElementById('decncrascii').checked = false; decNCRs.value = convertCharStr2SelectiveCPs(convertDecNCR2Char(decNCRs.value), getParameters(parentNode), true, '&#', ';', 'dec');" /></label></span><br/>
       <textarea id="decNCRs" name="decNCRs" rows="3" cols="5"></textarea></td>
   </tr>
   
@@ -144,9 +143,9 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('jEsc').focus();document.getElementById('jEsc').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('jEsc').focus();document.getElementById('jEsc').select();" />
 
 <span class="options" id="jEscOptions">
-      C-style<input class="check" type="checkbox" data-fn="cstyleSC" id="cstyleSC" onclick="document.getElementById('es6styleSC').checked =false; jEsc.value = convertCharStr2jEsc(convertjEsc2Char(jEsc.value, true), getParameters(parentNode));" />
-      ES6<input class="check" type="checkbox" data-fn="es6styleSC" id="es6styleSC" onclick="document.getElementById('cstyleSC').checked =false; jEsc.value = convertCharStr2jEsc(convertjEsc2Char(jEsc.value, true), getParameters(parentNode));"/>
-      \n etc<input class="check" type="checkbox" data-fn="noCR" id="noCR"  onclick="jEsc.value = convertCharStr2jEsc(convertjEsc2Char(jEsc.value, true), getParameters(parentNode));"/>
+      <label>C-style<input class="check" type="checkbox" data-fn="cstyleSC" id="cstyleSC" onclick="document.getElementById('es6styleSC').checked =false; jEsc.value = convertCharStr2jEsc(convertjEsc2Char(jEsc.value, true), getParameters(parentNode));" /></label><label>
+      ES6<input class="check" type="checkbox" data-fn="es6styleSC" id="es6styleSC" onclick="document.getElementById('cstyleSC').checked =false; jEsc.value = convertCharStr2jEsc(convertjEsc2Char(jEsc.value, true), getParameters(parentNode));" /></label><label>
+      \n etc<input class="check" type="checkbox" data-fn="noCR" id="noCR"  onclick="jEsc.value = convertCharStr2jEsc(convertjEsc2Char(jEsc.value, true), getParameters(parentNode));" /></label>
       </span>
       <!--button value="Switch" 
 				onclick="jEsc.value = convert2C( jEsc.value ); 
@@ -162,7 +161,7 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="rust.focus();rust.select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="rust.focus();rust.select();" />
 
 <span class="options" id="rustOptions">
-      \n etc<input class="check" type="checkbox" data-fn="noCR" id="noRustCR"  onclick="rust.value = convertCharStr2Rust(convertRust2Char(rust.value, true), getParameters(parentNode));"/>
+      <label>\n etc<input class="check" type="checkbox" data-fn="noCR" id="noRustCR" onclick="rust.value = convertCharStr2Rust(convertRust2Char(rust.value, true), getParameters(parentNode));" /></label>
       </span>
       <br/>
       <textarea id="rust" name="rust" rows="3" cols="5"></textarea></td>
@@ -196,8 +195,8 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 				onclick="displayResults( convertUnicode2Char(Unicode.value), Unicode.id ); 
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('Unicode').focus();document.getElementById('Unicode').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('Unicode').focus();document.getElementById('Unicode').select();" />
 
-<span class="options">Show ascii<input class="check" type="checkbox" id="unicodeascii" checked="checked" onclick="document.getElementById('unicodelatin1').checked =false;"/>
-      Latin1<input type="checkbox" id="unicodelatin1" onclick="document.getElementById('unicodeascii').checked =false;" />
+<span class="options"><label>Show ascii<input class="check" type="checkbox" id="unicodeascii" checked="checked" onclick="document.getElementById('unicodelatin1').checked =false;" /></label><label>
+      Latin1<input type="checkbox" id="unicodelatin1" onclick="document.getElementById('unicodeascii').checked =false;" /></label>
       </span><br/>
       <textarea id="Unicode" name="Unicode" rows="3" cols="5"></textarea></td>
     <td><!--  *********** 0x... *********** --> 
@@ -205,8 +204,8 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 				onclick="displayResults( convertZeroX2Char(zeroX.value), zeroX.id ); 
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('zeroX').focus();document.getElementById('zeroX').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('zeroX').focus();document.getElementById('zeroX').select();" />
 
-<span class="options">Show ascii<input class="check" type="checkbox" id="zeroXascii" checked="checked" onclick="document.getElementById('zeroXlatin1').checked =false;" />
-      Latin1<input type="checkbox" id="zeroXlatin1" onclick="document.getElementById('zeroXascii').checked =false;" />
+<span class="options"><label>Show ascii<input class="check" type="checkbox" id="zeroXascii" checked="checked" onclick="document.getElementById('zeroXlatin1').checked =false;" /></label><label>
+      Latin1<input type="checkbox" id="zeroXlatin1" onclick="document.getElementById('zeroXascii').checked =false;" /></label>
       </span><br/>
       <textarea id="zeroX" name="zeroX" rows="3" cols="5"></textarea></td>
   </tr>
@@ -234,8 +233,8 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 				onclick="displayResults( convertNumbers2Char(codePoints.value, 'hex'), codePoints.id ); 
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('codePoints').focus();document.getElementById('codePoints').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('codePoints').focus();document.getElementById('codePoints').select();" />
 
-<span class="options" id="hexCPOptions">Show ascii<input class="check" type="checkbox" id="hexcpascii" onclick="document.getElementById('hexcplatin1').checked =false;"  />
-      Latin1<input type="checkbox" id="hexcplatin1" onclick="document.getElementById('hexcpascii').checked =false;" />
+<span class="options" id="hexCPOptions"><label>Show ascii<input class="check" type="checkbox" id="hexcpascii" onclick="document.getElementById('hexcplatin1').checked =false;" /></label><label>
+      Latin1<input type="checkbox" id="hexcplatin1" onclick="document.getElementById('hexcpascii').checked =false;" /></label>
       </span><br/>
       <textarea id="codePoints" name="codePoints" rows="3" cols="5"></textarea></td>
     <td><!--  *********** DEC CODE POINTS *********** --> 
@@ -243,8 +242,8 @@ return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.
 				onclick="displayResults( convertNumbers2Char(decCodePoints.value, 'dec'), decCodePoints.id ); 
                 return false;" >Convert</button><span style="padding-top: 20px;"><img src="copy.png" alt="Copy" title="Copy to clipboard" class="icon" onclick="document.getElementById('decCodePoints').focus();document.getElementById('decCodePoints').select();document.execCommand('copy')" /></span><img src="selectall.png" alt="Select" title="Select all text in the box" class="icon" onclick="document.getElementById('decCodePoints').focus();document.getElementById('decCodePoints').select();" />
 
-<span class="options">Show ascii<input class="check" type="checkbox" id="deccpascii" onclick="document.getElementById('deccplatin1').checked =false;"  />
-      Latin1<input type="checkbox" id="deccplatin1" onclick="document.getElementById('deccpascii').checked =false;" />
+<span class="options"><label>Show ascii<input class="check" type="checkbox" id="deccpascii" onclick="document.getElementById('deccplatin1').checked =false;" /></label><label>
+      Latin1<input type="checkbox" id="deccplatin1" onclick="document.getElementById('deccpascii').checked =false;" /></label>
       </span><br/>
       <textarea id="decCodePoints" name="decCodePoints" rows="3" cols="5"></textarea></td>
   </tr>
