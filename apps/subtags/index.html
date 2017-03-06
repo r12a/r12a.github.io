@@ -45,124 +45,15 @@ http://www.gnu.org/licenses/gpl.html
 <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif', 'Language subtag lookup','');</script>
 </header>
 
-<div class="section">
-  <div id="search">
-      <p><strong class="task">Find</strong> <br/>
-        a subtag by searching for text in the descriptions <a href="#note2" class="explanation">See note&#xA0;2.</a> <br />
-        <input type="text" name="find" id="findinput"   onChange="find(document.getElementById('findinput').value.toLowerCase()); displayResults('find');" />
-        <input  onClick="find(document.getElementById('findinput').value.toLowerCase()); displayResults('find');" type="submit" value="Find" />
-      </p>
-
-      <p><strong class="task">Look up</strong><br/>
-one or more subtags <a href="#note3" class="explanation">See note&#xA0;3.</a><br />
-        <input id="lookupinput" type="text" name="lookup" onchange="lookup(document.getElementById('lookupinput').value); displayResults('lookup');" />
-        <input onClick="lookup(document.getElementById('lookupinput').value); displayResults('lookup');" type="submit" value="Look up" />
-      </p>
-  </div>
-  <div id="check">
-      <p> <strong class="task">Check</strong> <br>
-        whether a  hyphen-separated tag is valid and well-formed <a href="#note4" class="explanation">See note&#xA0;4.</a><br />
-        <input id="checkinput" type="text" name="check" onChange="parseTag(document.getElementById('checkinput').value); displayResults('check');" />
-        <input type="submit" value="Check" onClick="parseTag(document.getElementById('checkinput').value); displayResults('check');" />
-      </p>
-    
-      <p><strong class="task">List</strong><br/>
-        all tags of the following type<br />
-        <select id="listselect" onChange="showList(document.getElementById('listselect').value); displayResults('list');">
-          <option value="0">Choose...</option>
-          <option value="language">Languages (takes a while!)</option>
-          <option value="extlang">Extlangs</option>
-          <option value="scripts">Scripts</option>
-          <option value="regions">Regions</option>
-          <option value="variant">Variants</option>
-          <option value="grandfathered">Grandfathered</option>
-        </select>
-        <input onclick="showList(document.getElementById('listselect').value); displayResults('list');" type="submit" value="List" name="submit" />
-      </p>
-  </div>
-  <br style="clear:left" />
+<div class="section"><br style="clear:left" />
 </div>
 
 <div id="errors"></div>
 
 <div id="out"></div>
-
-
-<div id="showNotes"  style="margin-left: 7.5%"  onclick="toggleNotes()">show notes</div>
-
-<div id="detailednotes" style="display:none">
-<aside class="sidebar">
-  <div class="section">
-    <h2 class="flush">Related links</h2>
-    <p><a target="_blank" href="http://www.w3.org/International/articles/language-tags/">About language subtags</a></p>
-    <p><a target="_blank" href="http://www.iana.org/assignments/language-subtag-registry">IANA subtag registry</a></p>
-    <h2>Version information</h2>
-    <p>Currently supports the IANA Subtag registry of 2016-10-12.  The tool currently reports subtags for 8,115  languages, 232 extlangs, 188 scripts, 303 regions, 80 variants, and 26 grandfathered subtags. Please report any bugs to <a href="mailto:ishida@w3.org">me</a>.</p>
-  </div>
-</aside>
-
-<p id="status">Updated Mon 23 Jan 2017  &bull; tags <a href="http://rishida.net/blog/index.php?tag=subtags" title="Show all blog posts tagged with 'subtags'">subtags</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
-
-<div class="section">
-  <p>BCP 47 language tags are built from subtags in the IANA Subtag Registry. This tool helps you find or look up subtags and check for errors in language tags.</p>
-  <p>Read <a href="http://www.w3.org/International/questions/qa-choosing-language-tags">Choosing a Language Tag</a> for step-by-step guidelines on creating language tags. This tool also provides information to guide your choices.</p>
-    <h2>Usage notes</h2>
-    <p><strong><span class="notenumber">1</span> Raw data. </strong>Click on the results with a coloured background to see the raw IANA data for a subtag.</p>
-    <p><strong><span class="notenumber" id="note2">2</span> Find.</strong> The description is  the name of the subtag, ie. the language, region, etc. You can search on any part of a description (eg. <a href="/apps/subtags/?find=eng">eng</a> gives results that include B<strong>eng</strong>ali, <strong>Eng</strong>lish and T<strong>eng</strong>war). Note that some languages may be spelled differently, eg. <a href="/apps/subtags/?find=panjabi">Panjabi</a> yields three results, but <a href="/apps/subtags/?find=punjabi">Punjabi</a> only one.</p>
-    <p><strong><span id="note3" class="notenumber">3</span> Look up. </strong> Looks up all forms of all subtags in the list, eg. it returns both a language and extlang subtag for <a href="/apps/subtags/?lookup=cmn">cmn</a>, and it returns both language and region subtags for the CA in <a href="/apps/subtags/?lookup=en-CA">en-CA</a>. Subtags can be separated by commas, semicolons, hyphens, or spaces, eg. <a href="/apps/subtags/?lookup=en%3B%20fr%2C%20ca%2C%20Bali-1901">en; fr, ca, Bali-1901</a>.<br />
-      Only exact matches of subtags are returned, ie. <a href="/apps/subtags/?lookup=ak">ak</a> doesn't match <a href="/apps/subtags/?lookup=akk">akk</a>. <br />
-      If there is no output for a tag,  it was not a valid tag in the registry.</p>
-    <p><strong><span id="note4" class="notenumber">4</span> Check.</strong> Looks up all subtags in a language tag (ie. a hyphen-separated list of subtags) and reports problems, if there are any, eg. <a href="/apps/subtags/?check=de-419-DE-alt">de-419-DE-alt</a> and <a href="/apps/subtags/?check=ms-cmn">ms-cmn</a>.<br />
-      Warnings are also displayed to guide you in language choices. Example: <a href="/apps/subtags/?check=ms-min-latn">ms-min-Latn</a>.<br />
-    </p>
-    <p><strong><span class="notenumber">5</span> &nbsp;<img src="images/ethn.png" alt="Green button with E on it" /></strong> provides a link from a language subtag entry to the SIL Ethnologue. This is useful when trying to find a language. If there is no page for a given language tag, such as <a href="/apps/subtags/?lookup=nn">nn</a>, click on the result to reveal the full record; if there is a macrolanguage specified, eg. 'no',  that will probably yield an ethnologue entry.</p>
-    <p><strong><span class="notenumber">6</span> &nbsp;<img src="images/univ.png" alt="Lilac button with U on it" /></strong> provides a link from a script subtag entry to the most relevant Unicode script block in UniView.<br />
-      In some cases, there are additional Unicode areas dedicated to the same script.  These can usually be easily found alongside the current block in UniView's pull-down control. <br />
-      Some very large blocks such as Han, Hangul and Egyptian Hieroglyphs are not linked to. Other scripts do not yet have Unicode blocks. </p>
-    <p><strong><span class="notenumber">7</span> &nbsp;<img src="images/wikipedia.png" alt="White button with W on it" /></strong> provides a link from a language or script subtag entry to search Wikipedia. It uses the description as the search key. </p>
-    <p><strong><span class="notenumber">8</span> Grandfathered tags</strong> are pre-RFC 4646 registrations of tags that cannot be completely composed 
-      from the subtags in the current registry.  If you search for a grandfathered tag it will be displayed in the results, 
-      and the subtags that are in the current registry will also be shown.</p>
-    <p><strong><span class="notenumber">9</span> Redundant tags</strong> are pre-RFC 4646 registrations of tags that can now be formed by 
-      combining separate subtags from the current registry. They do not show up in search results.</p>
-
+<div id="detailednotes" style="display:block">
+  <p>This app is now available at <a href="https://r12a.github.io/app-subtags/">https://r12a.github.io/app-subtags/</a></p>
 </div>
-</div>
-
-<div class="smallprint"><span id="version">First published 1 Apr 2007.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2017-01-23  12:54<!-- #EndDate --> 
-  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence GNU-GPL (see source code).</span></div>
-
-<script type="text/javascript">
-// check for parameters and take appropriate action
-parameters = location.search.split('&')
-parameters[0] = parameters[0].substring(1)
-for (var p=0;p<parameters.length;p++) {  
-	pairs = parameters[p].split('=')
-	if (pairs[0] == 'find' && pairs[1]) { 
-	// parseTag(document.getElementById('checkinput').value); displayResults('check');
-		document.getElementById('findinput').value = pairs[1]
-		find(document.getElementById('findinput').value.toLowerCase()) 
-		displayResults('find')
-		}
-	if (pairs[0] == 'lookup' && pairs[1]) { 
-		document.getElementById('lookupinput').value = decodeURIComponent(pairs[1])
-		lookup(document.getElementById('lookupinput').value)
-		displayResults('lookup');
-		}
-	if (pairs[0] == 'check' && pairs[1]) { 
-		document.getElementById('checkinput').value = pairs[1]
-		parseTag(document.getElementById('checkinput').value)
-		displayResults('check');
-		}
-	if (pairs[0] == 'list' && pairs[1]) { 
-		document.getElementById('listselect').value = pairs[1]
-		showList(document.getElementById('listselect').value)
-		displayResults('list');
-		}
-	}
-
-	</script>
 
 </body>
 </html>
