@@ -1032,7 +1032,6 @@ function convertCharStr2Rust ( str, parameters ) {
 						}
 					else { 
 						pad = cc.toString(16).toUpperCase();
-						while (pad.length < 4) { pad = '0'+pad; }
 						outputString += '\\u{'+pad+'}'
 						}
 				}
