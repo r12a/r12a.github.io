@@ -964,6 +964,10 @@ function convertCharStr2jEsc ( str, parameters ) {
 					if (cc > 0x1f && cc < 0x7F) { 
 						outputString += String.fromCharCode(cc)
 						}
+                                        else if (parameters.match(/es6styleSC/)) {
+						pad = cc.toString(16).toUpperCase();
+                                                outputString += '\\u{'+pad+'}'
+                                                }
 					else { 
 						pad = cc.toString(16).toUpperCase();
 						while (pad.length < 4) { pad = '0'+pad; }
