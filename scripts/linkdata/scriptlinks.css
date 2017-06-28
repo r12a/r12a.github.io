@@ -1,8 +1,0 @@
-body { font-family: Helvetica, Arial, sans-serif; }
-a:link { color: teal; text-decoration: none; }
-a:visited { color: teal; text-decoration: none; }
-td { vertical-align: top; text-align: left; padding: 10px; }
-h2 { color: #ca6528; font-weight: normal; }
-p { margin: 0 0 4px 0; }
-.charts { margin:0; }
-.charts td { padding: 2px 20px 2px 0; text-align: start; color: #777474; font-size: 90%; }
