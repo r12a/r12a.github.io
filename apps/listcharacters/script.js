@@ -71,10 +71,12 @@ function makeList (stream) {
 		}
 	if (uniqueNeeded) out += '<tr><th></th><th>Unique</th><th>Total</th><th></th></tr>'	
 	// construct a table
+	var uniqueTotal = 0
 	for (x=0;x<keys.length;x++) {
 		out += '<tr>'
 		out += '<th class="sg">'+keys[x]+'</th>'
 		var count = scriptGroups[keys[x]].unique.length/2
+		uniqueTotal += count
 		out += '<td class="count">'+count+'</td>'
 		if (uniqueNeeded && scriptGroups[keys[x]].unique.length != scriptGroups[keys[x]].all.length){
 			count = scriptGroups[keys[x]].all.length/2
@@ -88,6 +90,7 @@ function makeList (stream) {
 	out += '</tbody></table>'
 	
 	out += '<p class="total">Total characters: '+cps.length+"</p>"
+	out += '<p class="total">Total unique characters: '+uniqueTotal+"</p>"
 	out += '<p class="total">Total blocks: '+keys.length+"</p>"
 	
 	document.getElementById('out').innerHTML = out
