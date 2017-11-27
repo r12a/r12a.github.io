@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script language="javascript" src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+
+
+
+	<div id="header">
+	<div id="dotted-line">&nbsp;</div>
+	<h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+	<div id="sitelinks" class="noprint" style="margin-left: 6.5%;">
+	<span>
+		<a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; 
+		<a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; 
+		<a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; 
+		<a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; 
+		<a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span>
+		</div>
+	</div>
+
+
+  <div id="main">
+    <div id="sidebar">
+    	<div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+       <p class="pagelinks"><a href="201408">&nbsp;🠽&nbsp;</a><br/>page<br/><a href="201002">&nbsp;🠿&nbsp;</a></p>
+
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+	</div>
+	<div id="content">
+						<div class="post" id="20140731">
+				<!--p class="post-date">Thu 31 Jul 2014</p-->
+<div class="post-info">
+	<h2 class="post-title">UniView 7.0.0: Final spec version; links to detailed notes</h2>
+	<p class="entrymeta">Posted on Thu 31 Jul 2014 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=uniview">uniview</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p class="floatright"><img src="r12a_blog_files/Screen-shot-2014-07-31-at-20.png" alt="Picture of the page in action." style="border-radius:8px; border: 1px solid #ccc;  box-shadow: -15px 15px 15px #ccc;"></p>
+<p style="font-size: 150%"><a href="http://rishida.net/uniview/">&gt;&gt; Use UniView</a></p>
+<p>This version updates the app per the changes during beta phase of the
+ specification, so that it now reflects the finalised Unicode 7.0.0.</p>
+<p>The initial in-app help information displayed for new users was 
+significantly updated, and the help tab now links directly to the help 
+page.</p>
+<p>A more significant improvement was the addition of links to character
+ descriptions (on the right) where such details exist. This finally 
+reintegrates the information that was previously pulled in from a 
+database. Links are only provided where additional data actually exists.
+ To see an example, go <a href="http://rishida.net/uniview/?char=0624">here</a> and click on <span class="kw">See character notes</span> at the bottom right.</p>
+<p>Rather than pull the data into the page, the link opens a new window 
+containing the appropriate information. This has advantages for 
+comparing data, but it was also the best solution I could find without 
+using PHP (which is no longer available on the server I use). It also 
+makes it easier to edit the character notes, so the amount of such 
+detail should grow faster. In fact, some additional pages of notes were 
+added along with this upgrade.</p>
+<p>A pop-up window containing resource information used to appear when you used the query to show a block. This no longer happens.</p>
+<h3>Changes in version 7beta</h3>
+<p><em>I forgot to announce this version on my blog, so for good measure, here are the (pretty big) changes it introduced.</em></p>
+<p>This version adds the 2,834 new characters  encoded in the Unicode 
+7.0.0 beta, including characters for 23 new scripts. It also simplified 
+the user interface, and eliminated most of the bugs introduced in the 
+quick port to JavaScript that was the previous version.</p>
+<p>Some features that were available in version 6.1.0a are still not available, but they are minor.</p>
+<p>Significant changes to the UI include the removal of the ‘popout’ 
+box, and the merging of the search input box with that of the other 
+features listed under <span class="onscreen">Find</span>. </p>
+<p>In addition, the buttons that used to appear when you select a 
+Unicode block have changed. Now the block name appears near the top 
+right of the page with a <img src="r12a_blog_files/info.gif" alt="I icon">
+ icon. Clicking on the icon takes you to a page listing resources for 
+that block, rather than listing the resources in the lower right part of
+ UniView’s interface.</p>
+<p>UniView no longer uses a database to display additional notes about 
+characters. Instead, the information is being added to HTML files. </p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20140710">
+				<!--p class="post-date">Thu 10 Jul 2014</p-->
+<div class="post-info">
+	<h2 class="post-title">Typography questions for HTML &amp; CSS: Korean justification</h2>
+	<p class="entrymeta">Posted on Thu 10 Jul 2014 tagged as <a href="blog/?tag=layout">layout</a>, <a href="blog/?tag=hangul">hangul</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div class="floatright">
+<a href="http://rishida.net/blog/wp-content/uploads/2014/07/Screen-shot-2014-07-10-at-17.26.43.png"><img src="r12a_blog_files/Screen-shot-2014-07-10-at-17.png" alt="Korean justification" class="aligncenter size-medium wp-image-1112" srcset="http://rishida.net/blog/wp-content/uploads/2014/07/Screen-shot-2014-07-10-at-17.26.43-300x158.png 300w, http://rishida.net/blog/wp-content/uploads/2014/07/Screen-shot-2014-07-10-at-17.26.43.png 509w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="158"></a>
+</div>
+<p>The editors of the <a href="http://dev.w3.org/csswg/css-text-3/#text-justify-property">CSS3 Text module</a>
+ specification are currently trying to get more information about how to
+ handle Korean justification, particularly when hanja (chinese 
+ideographic characters) are mixed with Korean hangul.</p>
+<p>Should the hanja be stretched with inter-character spacing at the 
+same time as the Korean inter-word spaces are stretched?  What if only a
+ single word fits on a line, should it be stretched using 
+inter-character spacing?  Are there more sophisticated rules involving 
+choices of justification location, as there are in Japanese where you 
+adjust punctuation first and do inter-character spacing later?  What if 
+the whole text is hanja, such as for an ancient document?</p>
+<p>If you are able to provide information, take a look at what’s in the <a href="http://dev.w3.org/csswg/css-text-3/#text-justify-property">CSS3 Text module</a> and follow the thread on <a href="http://lists.w3.org/Archives/Public/public-i18n-cjk/2014JulSep/0002.html">public-i18n-cjk@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-i18n-cjk/">subscribe</a>).</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20140528">
+				<!--p class="post-date">Wed 28 May 2014</p-->
+<div class="post-info">
+	<h2 class="post-title">Universal Acceptance discussions in Oman</h2>
+	<p class="entrymeta">Posted on Wed 28 May 2014 tagged as <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=web">web</a>, <a href="blog/?tag=uri">uri</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div class="floatright" style="float:right; margin-left: 2em; width:40%; color:#9d9ca4; background-color: white;">
+<p style="font-size: 120%;">Factoids listed at the start of the <a href="http://www.eurid.eu/files/publ/insights_2013_idnreport.pdf">EURid/UNESCO World Report on IDN Deployment 2013</a></p>
+<p><span style="color:#c0ba00;font-weight:bold;">5.1 million</span> IDN domain names</p>
+<p>Only <span style="color:#c0ba00;font-weight:bold;">2%</span> of the world’s domain names <span style="color:#c0ba00;font-weight:bold;">are</span> in <span style="color:#c0ba00;font-weight:bold;">non-Latin script</span></p>
+<p>The <span style="color:#c0ba00;font-weight:bold;">5 most popular browsers</span> have strong <span style="color:#c0ba00;font-weight:bold;">support</span> for <span style="color:#c0ba00;font-weight:bold;">IDNs</span> in their latest versions</p>
+<p><span style="color:#c0ba00;font-weight:bold;">Poor support</span> for IDNs in <span style="color:#c0ba00;font-weight:bold;">mobile devices</span></p>
+<p><span style="color:#c0ba00;font-weight:bold;">92%</span> of the world’s most popular websites <span style="color:#c0ba00;font-weight:bold;">do not recognise IDNs</span> as URLs in links</p>
+<p><span style="color:#c0ba00;font-weight:bold;">0%</span> of the world’s most popular websites <span style="color:#c0ba00;font-weight:bold;">allow IDN email addresses</span> as user accounts</p>
+<p><span style="color:#c0ba00;font-weight:bold;">99% correlation</span> between <span style="color:#c0ba00;font-weight:bold;">IDN scripts</span> and <span style="color:#c0ba00;font-weight:bold;">language</span> of websites (Han, Hangkuk, Hiragana, Katakana)</p>
+</div>
+<p>About two weeks ago I attended the part of a 3-day Asia Pacific Top 
+Level Domain Association (APTLD) meeting in Oman related to ‘Universal 
+Acceptance’ of Internationalized Domain Names (IDNs), ie. domain names 
+using non-ASCII characters.  This refers to the fact that, although IDNs
+ work reasonably well in the browser context, they are problematic when 
+people try to use them in the wider world for things such as email and 
+social media ids, etc. The meeting was facilitated by Don Hollander, GM 
+of APTLD.</p>
+<p>Here’s a summary of information from the presentations and discussions.</p>
+<p>(By the way, Don Hollander and Dennis Tan Tanaka, Verisign, each gave
+ talks about this during the MultilingualWeb workshop in Madrid the week
+ before. You can find <a href="http://www.multilingualweb.eu/documents/2014-madrid-workshop/2014-madrid-program">links to their slides</a> from the event program.)</p>
+<h3>Basic proposition</h3>
+<p>International Domain Names (IDNs) provide much improved accessibility
+ to the web for local communities using non-Latin scripts, and are 
+expected to particularly smooth entry for the 3 billion people not yet 
+web-enabled. For example, in advertising (such as on the side of a bus) 
+they are easier and much faster to recognise and remember, they are also
+ easier to note down and type into a browser.</p>
+<p>The biggest collection of IDNs is under .com and .net, but there are 
+new Brand TLDs emerging as well as IDN country codes.  On the Web there 
+is a near-perfect correlation between use of IDNs and the language of a 
+web site.</p>
+<p>The problems tend to arise where IDNs are used across cultural/script
+ boundaries.  These cross-cultural boundaries are encountered not just 
+by users but by implementers/companies that create tools, such as email 
+clients, that are deployed across multilingual regions.</p>
+<p>It seems to be accepted that there is a case for IDNs, and that they 
+already work pretty well in the context of the browser, but problems in 
+widespread usage of internationalized domain names beyond the browser 
+are delaying demand, and this apparently slow demand doesn’t convince 
+implementers to make changes – it’s a chicken and egg situation.</p>
+<p>The main question asked at the meeting was how to break the vicious 
+cycle.  The general opinion seemed to lean to getting major players like
+ Google, Microsoft and Apple to provide end-to-end support for IDNs 
+throughout their produce range, to encourage adoption by others.</p>
+<h3>Problems</h3>
+<p>Domain names are used beyond the browser context. Problem areas include:</p>
+<ul>
+<li>email
+<ul>
+<li>email clients generally don’t support use of non-ascii email addresses</li>
+<li>standards don’t address the username part of email addresses as well as domain</li>
+<li>there’s an issue to do with smptutf8 not being visible in all the right places</li>
+<li>you can’t be sure that your email will get through, it may be dropped on the floor even if only one cc is IDN</li>
+</ul>
+</li>
+<li>applications that accept email IDs or IDNs
+<ul>
+<li>even Russian PayPal IDs fail for the .рф domain</li>
+<li>things to be considered include:
+<ul>
+<li>plain text detection: you currently need http or www at start in google docs to detect that something is a domain name</li>
+<li>input validation: no central validation repository of TLDs</li>
+<li>rendering: what if the user doesn’t have a font?</li>
+<li>storage &amp; normalization: ids that exist as either IDN or punycode are not unique ids</li>
+<li>security and spam controls: Google won’t launch a solution without 
+resolving phishing issues; some spam filters or anti-virus scanners 
+think IDNs are dangerous abnormalities</li>
+<li>other integrations: add contact, create mail and send mail all show different views of IDN email address</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>search: how do you search for IDNs in contacts list?
+<ul>
+<li>search in general already works pretty well on Google</li>
+<li>I wasn’t clear about how equivalent IDN and Latin domain names will be treated</li>
+</ul>
+</li>
+<li>mobile devices: surprisingly for the APTLD folks, it’s harder to 
+find the needed fonts and input mechanisms to allow typing IDNs in 
+mobile devices</li>
+<li>consistent rendering:
+<ul>
+<li>some browsers display as punycode in some circumstances – not very user friendly</li>
+<li>there are typically differences between full and hybrid (ie. partial) int. domain names</li>
+<li>IDNs typed in twitter are sent as punycode (mouse over the link in the tweet on a twitter page)</li>
+</ul>
+</li>
+</ul>
+<h3>Initiatives</h3>
+<p>Google are working on enabling IDN’s throughout their application 
+space, including Gmail but also many other applications – they pulled 
+back from fixing many small, unconnected bugs to develop a company wide 
+strategy and roll out fixes across all engineering teams.  The Microsoft
+ speaker echoed the same concerns and approaches.</p>
+<p>In my talk, I expressed the hope that Google and MS and others would 
+collaborate to develop synergies and standards wherever feasible. 
+Microsoft, also called for a standard approach rather than in-house, 
+proprietary solutions, to ensure interoperability.</p>
+<p>However, progress is slow because changes need to be made in so many places, not just the email client.</p>
+<p>Google expects to have some support for international email addresses
+ this summer. You won’t be able to sign up for Arabic/Chinese/etc email 
+addresses yet, but you will be able to use Gmail to communicate with 
+users on other providers who have internationalized addresses.  Full 
+implementation will take a little longer because there’s no real way to 
+test things without raising inappropriate user expectations if the 
+system is live.</p>
+<p>SaudiNIC has been running Arabic emails for some time, but it’s a 
+home-grown and closed system – they created their own protocols, because
+ there were no IETF protocols at the time – the addresses are actually 
+converted to punycode for transmission, but displayed as Arabic to the 
+user (<a href="http://nic.sa/">http://nic.sa</a>).</p>
+<p>Google uses system information about language preferences of the user
+ to determine whether or not to display the IDN rather than punycode in 
+Chrome’s address bar, but this could cause problems for people using a 
+shared computer, for example in an internet café, a conference laptop 
+etc. They are still worrying about users’ reactions if they can’t 
+read/display an email address in non-ASCII script. For email, currently 
+they’re leaning towards just always showing the Unicode version, with 
+the caveat that they will take a hard line on mixed script (other than 
+something mixed with ASCII) where they may just reject the mail.</p>
+<p>A trend to note is a growing number of redirects from IDN to ASCII, eg. <a href="http://%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE.%D1%80%D1%84/">http://правительство.рф</a> page shows <a href="http://government.ru/">http://government.ru</a> in the address bar when you reach the site.</p>
+<h3>Other observations</h3>
+<p>All the Arabic email addresses I saw were shown fully right to left, 
+ie. &lt;tld&gt;&lt;domain&gt;@&lt;username&gt;. I wonder whether this 
+may dislodge some of the hesitation in the IETF about the direction in 
+which web addresses should be displayed – perhaps they should therefore 
+also flow right-to-left?? (especially if people write domain names 
+without http://, which these guys seem to think they will).</p>
+<p>Many of the people in the room wanted to dispense with the http:// 
+for display of web addresses, to eliminate the ASCII altogether, also 
+get rid of www. – problem is, how to identify the string as a domain 
+name – is the dot sufficient?? We saw some examples of this, but they 
+had something like “see this link” alongside.</p>
+<p>By the way, Google is exploring the idea of showing the user, by 
+default, only the domain name of a URL in future versions of the Chrome 
+browser address bar. A Google employee at the workshop said “I think 
+URLs  are going away as far as something to be displayed to users – the 
+only thing that matters is the domain name … users don’t understand the 
+rest of the URL”. I personally don’t agree with this.</p>
+<p>One participant proposed that government mandates could be very 
+helpful in encouraging adaptation of technologies to support 
+international domain names.</p>
+<h3>My comments</h3>
+<p>I gave a talk and was on a panel.  Basically my message was:</p>
+<p>Most of the technical developments for IDN and IRIs were developed at
+ the IETF and the Unicode Consortium, but with significant support by 
+people involved in the W3C Internationalization Working Group. Although 
+the W3C hasn’t been leading this work, it is interested in understanding
+ the issues and providing support where appropriate.  We are, however, 
+also interested in wider issues surrounding the full path name of the 
+URL (not just the domain name), 3rd level domain labels, frag ids, IRI 
+vs punycode for domain name escaping, etc.  We also view domain names as
+ general resource identifiers (eg. for use in linked data), not just for
+ a web presence and marketing.</p>
+<p>I passed on a message that groups such as the Wikimedia folks I met 
+with in Madrid the week before are developing a very wide range of fonts
+ and input mechanisms that may help users input non-Latin IDs on 
+terminals, mobile devices and such like, especially when travelling 
+abroad. It’s something to look into. (For more information about 
+Wikimedia’s jQuery extensions, see <a href="https://github.com/wikimedia/jquery.webfonts">here</a> and <a href="https://github.com/wikimedia/jquery.ime">here</a>.)</p>
+<p>I mentioned the idea of bidi issues related to both the overall 
+direction of Arabic/Hebrew/etc URLs/domain names, and the more difficult
+ question about to handle mixed direction text that can make the logical
+ http://www.oman/muscat render to the user as http://www.muscat/oman 
+when ‘muscat’ and ‘oman’ are in Arabic, due to the default properties of
+ the Unicode bidi algorithm. Community guidance would be a help in 
+resolving this issue.</p>
+<p>I said that the W3C is all about getting people together to find 
+interoperable solutions via consensus, and that we could help with 
+networking to bring the right people together.  I’m not proposing that 
+we should take on ownership of the general problem of Universal 
+Acceptance, but I did suggest that if they can develop specific 
+objectives for a given aspect of the problem, and identify a natural 
+community of stakeholders for that issue, then they could use our 
+Community Groups to give some structure to and facilitate discussions.</p>
+<p>I also suggested that we all engage in grass-roots lobbying, requesting that service/tool providers allow us to use IDNs.</p>
+<h3>Conclusions</h3>
+<p>At the end of the first day, Don Hollander summed up what he had gathered from the presentations and discussions as follows:</p>
+<p>People want IDNs to work, they are out there, and they are not going 
+away.  Things don’t appear quite so dire as he had previously thought, 
+given that browser support is generally good, closed email communities 
+are developing, and search and indexing works reasonably well. Also 
+Google and Microsoft are working on it, albeit perhaps slower than 
+people would like (but that’s because of the complexity involved). There
+ are, however, still issues.</p>
+<p>The question is how to go forward from here. He asked whether APTLD 
+should coordinate all communities at a high level with a global 
+alliance.  After comments from panelists and participants, he concluded 
+that APTLD should hold regular meetings to assess and monitor the 
+situation, but should focus on advocacy.  The objective would be to 
+raise visibility of the issues and solutions.  “The greatest 
+contribution from Google and Microsoft may be to raise the awareness of 
+their thousands of geeks.”  ICANN offered to play a facilitation role 
+and to generate more publicity.</p>
+<p>One participant warned that we need a platform for forward motion, 
+rather than just endless talking. I also said that in my panel 
+contributions. I was a little disappointed (though not particularly 
+surprised) that APTLD didn’t try to grasp the nettle and set up 
+subcommittees to bring players together to take practical steps to 
+address interoperable solutions, but hopefully the advocacy will help 
+move things forward and developments by companies such as Google and 
+Microsoft will help start a ball rolling that will eventually break the 
+deadlock. </p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20140523">
+				<!--p class="post-date">Fri 23 May 2014</p-->
+<div class="post-info">
+	<h2 class="post-title">Typography questions for HTML &amp; CSS:<br>Arabic justification</h2>
+	<p class="entrymeta">Posted on Fri 23 May 2014 tagged as  <a href="blog/?tag=layout">layout</a>, <a href="blog/?tag=arabic">arabic</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>I’ve been trying to understand how web pages need to support 
+justification of Arabic text, so that there are straight lines down both
+ left and right margins.</p>
+<p>The following is an extract from a talk I gave at the MultilingualWeb workshop in Madrid at the beginning of May.  (<a href="http://www.w3.org/International/talks/1405-madrid/slides.pdf">See the whole talk</a>.)  It’s very high level, and basically just draws out some of the uncertainties that seem to surround the topic.</p>
+<p>Let’s suppose that we want to justify the following Arabic text, so 
+that there are straight lines at both left and right margins.</p>
+<figure>
+<p style="text-align:center;"><a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.08.10.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19_004.png" alt="Arabic justification #1" class="aligncenter size-medium wp-image-1061" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.08.10-300x184.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.08.10.png 438w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="184"></a></p><figcaption>Unjustified Arabic text</figcaption></figure>
+<p>Generally speaking, received wisdom says that Arabic does this by 
+stretching the baseline inside words, rather than stretching the 
+inter-word spacing (as would be the case in English text).</p>
+<p>To keep it simple, lets just focus on the top two lines.</p>
+<p>One way you may hear that this can be done is by using a special 
+baseline extension character in Unicode, U+0640 ARABIC TATWEEL. </p>
+<figure>
+<p style="text-align:center;"><a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.48.02.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19_008.png" alt="Arabic justification #2" class="aligncenter size-medium wp-image-1063" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.48.02-300x93.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.48.02.png 439w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="93"></a></p><figcaption>Justification using tatweels</figcaption></figure>
+<p>The picture above shows Arabic text from a newspaper where we have 
+justified the first two lines using tatweels in exactly the same way it 
+was done in the newspaper.</p>
+<p>Apart from the fact that this looks ugly, one of the big problems 
+with this approach is that there are complex rules for the placement of 
+baseline extensions.  These include:</p>
+<ul>
+<li>extensions can only appear between certain characters, and are forbidden around other characters</li>
+<li>the number of allowable extensions per word and per line is usually kept to a minimum</li>
+<li>words vary in appropriateness for extension, depending on word length</li>
+<li>there are rules about where in the line extensions can appear – usually not at the beginning</li>
+<li>different font styles have different rules</li>
+</ul>
+<p>An ordinary web author who is trying to add tatweels to manually justify the text may not know how to apply these rules.</p>
+<p>A fundamental problem on the Web is that when text size or font is 
+changed, or a window is stretched, etc, the tatweels will end up in the 
+wrong place and cause problems. The tatweel approach is of no use for 
+paragraphs of text that will be resized as the user stretches the window
+ of a web page.</p>
+<p>In the next picture we have simply switched to a font in the Naskh 
+style. You can see that the tatweels applied to the word that was 
+previously at the end of the first line now make the word to long to fit
+ there. The word has wrapped to the beginning of the next line, and we 
+have a large gap at the end of the first line.</p>
+<figure>
+<p style="text-align:center;"><a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.52.44.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19_007.png" alt="Arabic justification #3" class="aligncenter size-medium wp-image-1064" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.52.44-300x96.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.52.44.png 434w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="96"></a></p><figcaption>Tatweels in the wrong place due to just a font change</figcaption></figure>
+<p>To further compound the difficulties mentioned above regarding the 
+rules of placement for extensions, each different style of Arabic font 
+has different rules.  For example, the rules for where and how words are
+ elongated are different in the Nastaliq version of the same text which 
+you can see below. (All the characters are exactly the same, only the 
+font has changed.) (See a description of <a href="http://www.cle.org.pk/Publication/papers/2004/rule-based-expert-system.pdf">how to justify Urdu text in the Nastaliq style</a>.)</p>
+<figure>
+<a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.53.14.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19_005.png" alt="Arabic justification #4: Nastaliq" class="aligncenter size-medium wp-image-1065" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.53.14-300x209.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.53.14.png 436w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="209"></a><figcaption>Same text in the Nastaliq font style</figcaption></figure>
+<p>And fonts in the Ruqah style never use elongation at all. (We’ll come
+ back to how you justify text using Ruqah-style fonts in a moment.)</p>
+<figure>
+<a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.53.33.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19_003.png" alt="Arabic justification #5: Ruqah" class="aligncenter size-medium wp-image-1066" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.53.33-300x127.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.53.33.png 438w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="127"></a><figcaption>Same text in the Ruqah font style</figcaption></figure>
+<p>In the next picture we have removed all the tatweel characters, and 
+we are showing the text using a Naskh-style font.  Note that this text 
+has more ligatures on the first line, so it is able to fit in more of 
+the text on that line than the first font we saw. We’ll again focus on 
+the first two lines, and consider how to justify them.</p>
+<figure>
+<a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.54.13.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19_006.png" alt="Arabic justification #6: Naskh" class="aligncenter size-medium wp-image-1067" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.54.13-300x87.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.54.13.png 436w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="87"></a><figcaption>Same text in the Naskh font style</figcaption></figure>
+<p>High end systems have the ability to allow relevant characters to be 
+elongated by working with the font glyphs themselves, rather than 
+requiring additional baseline extension characters.  </p>
+<figure>
+<a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.54.43.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19_002.png" alt="Arabic justification #7: kashida elongation" class="aligncenter size-medium wp-image-1068" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.54.43-300x105.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.54.43.png 436w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="105"></a><figcaption>Justification using letter elongation (kashida)</figcaption></figure>
+<p>In principle, if you are going to elongate words, this is a better solution for a dynamic environment.  It means, however, that:</p>
+<ol>
+<li>the rules for applying the right-sized elongations to the right 
+characters has to be applied at runtime by the application and font 
+working together, and as the user or author stretches the window, 
+changes font size, adds text, etc, the location and size of elongations 
+needs to be reconfigured</li>
+<li>there needs to be some agreement about what those rules are, or at 
+least a workable set of rules for an off-the-shelf, one-size-fits-all 
+solution.</li>
+</ol>
+<p>The latter  is the fundamental issue we face.  There is very little, 
+high-quality information available about how to do this, and a lack of 
+consensus about, not only what the rules are, but how justification 
+should be done.</p>
+<p>Some experts will tell you that text elongation is the primary method for justifying Arabic text (<a href="http://www.tug.org/TUGboat/tb27-2/tb87benatia.pdf">for example</a>),
+ while others will tell you that inter-word and intra-word spacing 
+(where there are gaps in the letter-joins within a single word) should 
+be the primary approach, and kashida elongation may or may not be used 
+in addition where the space method is strained.</p>
+<figure>
+<p style="line-height: 1; text-align:center;"><a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.55.08.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-19.png" alt="Arabic justification #8: space based" class="aligncenter size-medium wp-image-1069" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.55.08-300x97.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-19.55.08.png 441w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="97"></a></p><figcaption>Justification using inter-word spacing</figcaption></figure>
+<p>The space-based approach, of course, makes a lot of sense if you are 
+dealing with fonts of the Ruqah style, which do not accept elongation.  
+However, the fact that the rules for justification need to change 
+according to the font that is used presents a new challenge for a 
+browser that wants to implement justification for Arabic.  How does the 
+browser know the characteristics of the font being used and apply 
+different rules as the font is changed?  Fonts don’t currently indicate 
+this information.</p>
+<p>Looking at magazines and books on a recent trip to Oman I found lots 
+of justification.  Sometimes the justification was done using spaces, 
+other times using elongations, and sometimes there was a mixture of 
+both.  In a later post I’ll show some examples.</p>
+<p>By the way, for all the complexity so far described this is all quite
+ a simplistic overview of what’s involved in Arabic justification.  For 
+example, high end systems that justify Arabic text also allow the 
+typesetter to adjust the length of a line of text by manual adjustments 
+that tweak such things as alternate letter shapes, various joining 
+styles, different lengths of elongation, and discretionary ligation 
+forms.</p>
+<p>The key messages:</p>
+<ol>
+<li>We need an Arabic Layout Requirements document to capture the script needs.</li>
+<li>Then we need to figure out how to adapt Open Web Platform technologies to implement the requirements.</li>
+<li>To start all this, we need experts to provide information and develop consensus.</li>
+</ol>
+<p>Any volunteers to create an Arabic Layout Requirements document?  The W3C would like to hear from you!</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20140523b">
+				<!--p class="post-date">Fri 23 May 2014</p-->
+<div class="post-info">
+	<h2 class="post-title">Typography questions for HTML &amp; CSS:<br>Korean line breaking rules</h2>
+	<p class="entrymeta">Posted on Fri 23 May 2014 tagged as <a href="blog/?tag=layout">layout</a>, <a href="blog/?tag=hangul">hangul</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div class="floatright">
+<a href="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-15.13.47.png"><img src="r12a_blog_files/Screen-shot-2014-05-23-at-15.png" alt=" " class="aligncenter size-medium withshadow wp-image-1055" style="border-radius:10px;" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-15.13.47-300x120.png 300w, http://rishida.net/blog/wp-content/uploads/2014/05/Screen-shot-2014-05-23-at-15.13.47.png 595w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="120"></a>
+</div>
+<p>When it comes to wrapping text at the end of a line in a web page, 
+there are some special rules that should be applied if you know the 
+language of the text is either Chinese or Japanese (ie. if the markup 
+contains a <code class="kw">lang</code> attribute to that effect). </p>
+<p>The <a href="http://dev.w3.org/csswg/css-text-3/#line-break-property">CSS3 Text module</a> attempts to describe these rules, and we have some tests to check what browsers currently do for <a href="http://www.w3.org/International/tests/repository/css3-text/line-break-jazh/results-ja">Japanese</a> and <a href="http://www.w3.org/International/tests/repository/css3-text/line-break-jazh/results-zh">Chinese</a>.</p>
+<p>There’s an open question in the editor’s draft about whether <strong>Korean</strong> has any special behaviours that need to be documented in the spec, when the markup uses <code class="kw">lang</code> to identify the content as Korean.</p>
+<p>If you want to provide information, take a look at what’s in the CSS3
+ Text module and write to www-international@w3.org and copy 
+public-i18n-cjk@w3.org.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20140523c">
+				<!--p class="post-date">Fri 23 May 2014</p-->
+<div class="post-info">
+	<h2 class="post-title">Typography questions for HTML &amp; CSS:<br>Effect of markup and styling on cursive script (eg. Arabic)</h2>
+	<p class="entrymeta">Posted on Fri 23 May 2014 tagged as <a href="blog/?tag=arabic">arabic</a>, <a href="blog/?tag=layout">layout</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>If you put a <code class="kw">span</code> tag around one or two 
+letters in an Arabic word, say to change the colour, it breaks the 
+cursiveness in WebKit and Blink browsers. You can change things like 
+colour in Mozilla and IE, but changing the font breaks the connection.  </p>
+<p>Breaking on colour change makes it hard to represent educational 
+texts and things such as the Omantel logo, which I saw all over Muscat 
+recently. (Omantel is the largest internet provider in Oman.) Note how, 
+despite the colour change, the Arabic letters in the logo below (on the 
+left) still join.</p>
+<figure>
+<div><a href="http://rishida.net/blog/wp-content/uploads/2014/05/two-tone-arabic-word.jpg"><img src="r12a_blog_files/two-tone-arabic-word-300x227.jpg" alt="Picture of the Omantel logo." class="size-medium wp-image-1036" srcset="http://rishida.net/blog/wp-content/uploads/2014/05/two-tone-arabic-word-300x227.jpg 300w, http://rishida.net/blog/wp-content/uploads/2014/05/two-tone-arabic-word.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="227"></a></div><figcaption>Multi-coloured <span style="text-style: normal; font-weight: bold;"><span style="color:#1963a4;">Oman</span><span style="color:#e04529;">tel</span></span> Arabic logo on a building in Muscat.</figcaption></figure>
+<p>Here’s <a href="http://www.dalilusa.com/arabic_course/lesson22.asp">an example of an educational page</a> that colours parts of words.  You currently have to use Firefox or IE to get the desired effect.</p>
+<p>This lead to questions about what to do if you convert block elements, such as <code class="kw">li</code>, into inline elements that sit side by side. You probably don’t want the character at the end of one <code class="kw">li</code>
+ tag to join with the next one. What if there is padding or margins 
+between them, should this cause bidi isolation as well as preventing 
+joining behaviour?</p>
+<p><a href="http://www.w3.org/Mail/flatten/index?subject=I18N-ISSUE-358&amp;list=public-i18n-core">See a related thread</a> on the W3C Internationalization and CSS lists.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20140208">
+				<!--p class="post-date">Fri 8 Feb 2013</p-->
+<div class="post-info">
+	<h2 class="post-title">Myanmar (Burmese) Picker updated (v11.1)</h2>
+	<p class="entrymeta">Posted on Fri 8 Feb 2013 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=myanmar">myanmar</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>Following up on a suggestion by Nathan Hill of SOAS, I added a 
+la-swe glyph to the default view of the picker alongside the medial 
+consonants. If you click on it, it produces U+1039 MYANMAR SIGN VIRAMA +
+ U+101C MYANMAR LETTER LA.</p>
+<p>I also rearranged the font pull-down list a little, adding 
+information about what fonts are available on your Mac OS X or Windows7 
+system, and added a placeholder, like I did recently for the Khmer 
+picker.</p>
+<p>You can find the Myanmar picker at <a href="http://rishida.net/scripts/pickers/myanmar/">http://rishida.net/scripts/pickers/myanmar/</a></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20130124">
+				<!--p class="post-date">Thu 24 Jan 2013</p-->
+<div class="post-info">
+	<h2 class="post-title">Fonts supplied with Windows and Mac OS X, by script, Updated for Windows8</h2>
+	<p class="entrymeta">Posted on Thu 24 Jan 2013 tagged as <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=6">web</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p class="floatright"><img src="r12a_blog_files/fontlist.png" alt="Picture of the page in action."></p>
+<p>This kind of list could be used to set font-family styles for CSS, if
+ you want to be reasonably sure what the user will see, or it could be 
+used just to find a font you like for a particular script. </p>
+<p>I’ve updated the page to show the fonts added in Windows8. This is the list:</p>
+<ul>
+<li>Aldhabi (Urdu Nastiliq)</li>
+<li>Urdu Typesetting (Urdu Nastiliq)</li>
+<li>Gadugi (Cherokee/Unified Canadian Aboriginal Syllabics)</li>
+<li>Myanmar Text (Myanmar)</li>
+<li>Nirmala UI (10 Indic scripts)</li>
+</ul>
+<p>There were also two additional UI fonts for Chinese, Jhenghei UI 
+(Traditional) and Yahei UI (Simplified), which I haven’t listed.  Also 
+Microsoft Uighur acquired a bold font.</p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/fontlist/">&gt;&gt; See the list</a></p>
+<p>See the <a href="blog/?p=808">blog post for the first version</a> or the page for more information.</p>
+<h3 style="color: orange;">Update, 25 Jan 2013</h3>
+<p>Patrick Andries pointed out that Tifinagh using the Windows Ebrima font was missing from the list. Not any more.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post">
+				<!--p class="post-date">Wed 23 Jan 2013</p-->
+<div class="post-info">
+	<h2 class="post-title">Khmer Picker updated (v11.1)</h2>
+	<p class="entrymeta">Posted on Wed 23 Jan 2013 tagged as <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=khmer">khmer</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>Following up on a very good suggestion by Roger Sperberg, I added 
+two webfonts to the Khmer picker and arranged the font selection list so
+ that you can see which fonts are available on your Mac OS X or Windows7
+ system.</p>
+<p>The webfonts make it possible to use the picker on an iPad or other 
+device that doesn’t have a Khmer font installed. I added two webfonts 
+because one worked on my iPad and the other didn’t, and it was vice 
+versa on my Snow Leopard Macbook.</p>
+<p>I also added an HTML5 placeholder for the output box. (I’m wishing 
+you could style that differently from the standard content – and wishing
+ that markup designers would think about this sort of thing and stop 
+using attributes for natural language text…).</p>
+<p>You can find the Khmer picker at <a href="http://rishida.net/scripts/pickers/khmer/">http://rishida.net/scripts/pickers/khmer/<br>
+</a></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20120801">
+				<!--p class="post-date">Wed 1 Aug 2012</p-->
+<div class="post-info">
+	<h2 class="post-title">UniView 6.1.0a: Links to script-related resources &amp; other UI tweaks</h2>
+	<p class="entrymeta">Posted on Wed 1 Aug 2012 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=6">web</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div class="floatright"><img src="r12a_blog_files/uniview6-1a.png" alt="Picture of the page in action." class="withshadow"></div>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use UniView</a></p>
+<p>The main addition in this version is a couple of buttons that appear when you ask UniView to display a block.</p>
+<p>Clicking on <span class="ui">Show annotated list</span> generates a list of all characters in the block, with annotations.</p>
+<p>Clicking on <span class="ui">Show script links</span> displays a list
+ of links to key sources of information about the script of the block, 
+links to relevant articles and apps on the rishida.net site, and related
+ fonts and input methods. This provides a very quick way of finding this
+ information. One particularly useful link (‘Historical documentation’, 
+which links to a Scriptsource.org page) allows you to find the proposals
+ for all additions to Unicode related to the relevant script. These 
+proposals are a mine of useful information about the individual 
+characters in a block, and SIL staff should get a medal for trawling 
+through all the relevant data to provide this.</p>
+<p>In addition, there were some changes to the user interface, including the following:</p>
+<ul>
+<li>The order of information in the lower right panel (detailed 
+character information) was slightly changed, and two alterative 
+representations of the character were added: an HTML escape, and a URI 
+escape.</li>
+<li>The search box at the top left was constrained to appear closer to the other controls when the window is stretched wide.</li>
+</ul>
+<p>Various bugs were also fixed.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20120718">
+				<!--p class="post-date">Wed 18 Jul 2012</p-->
+<div class="post-info">
+	<h2 class="post-title">New app: UnicodeData checker tool</h2>
+	<p class="entrymeta">Posted on Wed 18 Jul 2012 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=unicode">unicode</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p style="font-size: 150%"><a href="http://rishida.net/tools/unicodedata/" target="_blank">&gt;&gt; Use it</a></p>
+<p>This HTML page allows you to expand information in the lines of the <a href="http://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt file</a>, edit them and generate a new version. It also checks the data for validity in a number of areas. </p>
+<p>It can be helpful if you have the misfortune to pore over the source 
+code of the UnicodeData.txt file and find your eyes blurring as you 
+count fields. And it is particularly useful for people submitting 
+proposals for new scripts or characters to the Unicode Consortium, to 
+help them generate correct lists of unicode properties for inclusion in 
+the proposal. (You can even build the whole thing in the UI, error free,
+ by starting with a number of blank lines, such as <code>1111;NAME;;;;;;;;;;;;;</code>.)</p>
+<p>The image below shows the page in action. I dropped in a couple of 
+lines from the Ahom script proposal, and vandalised them slightly. The 
+first panel shows that the app has spotted an error. I used the column 
+to the right to edit out the error in the second panel, and regenerated 
+the lines in the box below.</p>
+<div class="center"><img class="withshadow" src="r12a_blog_files/unicodedata-small.png" alt="Picture of the page in action."></div>
+<p>Having made edits you can copy paste the output back into the top box
+ to send it through the sausage machine again, and check that there are 
+no remaining errors.</p>
+<p>You can add a whole script block at a time to the top box, or a single line – as you like.</p>
+<p>Well, it’s a bit esoteric, but hopefully it will be useful to someone somewhere.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post">
+				<!--p class="post-date">Thu 12 Jul 2012</p-->
+<div class="post-info">
+	<h2 class="post-title">Private: Flickr notifications</h2>
+	<p class="entrymeta">Posted on Thu 12 Jul 2012 tagged as <a href="blog/?tag=4">photos</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>This is a note to myself, so I remember what I did today.</p>
+<p>I’d like to let people know when I have uploaded new photos to 
+Flickr, but I’ve been relying so far on IFTTT, and the results haven’t 
+been great. The notifications don’t actually point at the Flickr site, 
+and notifications are fired off every time I upload something – which is
+ too often.</p>
+<p>It looks like I’ll need to manually fire off notifications, but I 
+don’t want to have to do it separately for Twitter, Facebook and 
+Google+. However I have set things up so that Google+ posts (public 
+ones) go to Twitter, and Twitter posts go to Facebook.</p>
+<p>Then the question was how to set up the Google+ post. Here’s the 
+sequence of events, starting with the manual bit where I create a post 
+in Google+:</p>
+<p>[1] Add a blurb to the Google+ post, add a link using the link button
+ to the set’s URI, and delete the description (leave the photo). (It 
+didn’t work to link to a photo in lightview – you just get a link to the
+ photo page.)</p>
+<p><img src="r12a_blog_files/flickr-google.png" alt="Picture of desktop google+ post."></p>
+<p>This produces a slightly different result on my iPad and HTC, with 
+two photos shown and 3 more accessible via an expansion button.</p>
+<p><img src="r12a_blog_files/flickr-google-mobile.png" alt="Picture of mobile google+ post."></p>
+<p>[2] This produces an impressive tweet on a desktop machine, if you 
+click on “Show photo”, that includes a link to a slide show. It also has
+ links to many, but not all, of the photos individually. That was a bit 
+of a surprise.</p>
+<p><img src="r12a_blog_files/flickr-twitter.png" alt="Picure of twitter post."></p>
+<p>On a mobile device, no photo is shown in the twitter stream. You just get the link (much like in [4] below).</p>
+<p>[3] Not all of that gets forwarded to Facebook. Just the principal 
+photo, and the blurb, but it also pulls the description back in from the
+ flickr site.</p>
+<p><img src="r12a_blog_files/flickr-facebook.png" alt="Picture of Facebook post."></p>
+<p>[4] And finally, this is what I see in the right column of my blog.</p>
+<p><img src="r12a_blog_files/flickr-blog.png" alt="Picture of blog page twitter listing."></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post">
+				<!--p class="post-date">Sat 10 Mar 2012</p-->
+<div class="post-info">
+	<h2 class="post-title">New: Balinese script notes</h2>
+	<p class="entrymeta">Posted on Sat 10 Mar 2012 tagged as <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=balinese">balinese</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p class="floatright" style="width: 260px;"><img src="r12a_blog_files/balinesenotes.png" alt="Characters in the Unicode Balinese block."></p>
+<p>I just uploaded an initial draft of an article <a href="http://rishida.net/scripts/balinese/">Balinese Script Notes</a>.
+ It lists the Unicode characters used to represent Balinese text, and 
+briefly describes their use. It starts with brief notes on general 
+script features and discussions about which Unicode characters are most 
+appropriate when there is a choice.</p>
+<p>The script type is abugida – consonants carry an inherent vowel. It’s
+ a complex script derived from Brahmi, and has lots of contextual 
+shaping and positioning going on. Text runs left-to-right, and words are
+ not separated by spaces.</p>
+<p>I think it’s one of the most attractive scripts in Unicode, and for 
+that reason I’ve been wanting to learn more about it for some time now.
+</p></div>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/balinese/">&gt;&gt; Read it</a></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post">
+				<!--p class="post-date">Mon 5 Mar 2012</p-->
+<div class="post-info" id="20120305">
+	<h2 class="post-title">New picker: Balinese</h2>
+	<p class="entrymeta">Posted on Mon 5 Mar 2012 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=balinese">balinese</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p class="floatright"><a href="http://rishida.net/blog/images/balinese-picker.png"><img class="withshadow" src="r12a_blog_files/balinese-picker-small.png" alt="Picture of the page in action."></a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/balinese/" target="_blank">&gt;&gt; Use it</a></p>
+<p>This picker contains characters from the Unicode Balinese block 
+needed for writing the Balinese language. Characters needed for Sasak 
+are also available in the Advanced section. Balinese musical notation 
+characters are not included.</p>
+<p><strong>About the tool:</strong> Pickers allow you to quickly create 
+phrases in a script by clicking on Unicode characters arranged in a way 
+that aids their identification. Pickers are likely to be most useful if 
+you don’t know a script well enough to use the native keyboard. The 
+arrangement of characters also makes it much more usable than a regular 
+character map utility.</p>
+<p><strong>About this picker:</strong> Characters are grouped to aid 
+input. The consonant block includes characters needed for Kawi and 
+Sanskrit as well as the native Balinese characters, all arranged 
+according to the Brahmi pronunciation grid.</p>
+<p>The picker has only a default view and a font grid view. It’s 
+difficult to put in the time for the shape-based, keyboard-based, and 
+various transcription-based views in some other pickers. In a new 
+departure, however, I have included a list of Latin characters on the 
+default view to assist in writing transcriptions alongside Balinese 
+text.</p>
+<p>There is, however, a significant issue with this picker, due to the 
+lack of support for Balinese as a script in computers. The only 
+Unicode-based Balinese font I know of is Aksara Bali, but that font 
+seems to only work as expected in Firefox on Mac OS X. Furthermore, the 
+Aksara Bali font doesn’t handle ra repa as described in the Unicode 
+Standard. The sequence &lt;consonant , adeg-adeg, ra repa&gt; produces a
+ visible adeg-adeg, rather than the post-fixed form of ra repa. The 
+sequence &lt;consonant , vowel sign ra repa&gt; produces the post-fixed 
+form of ra repa, rather than the subjoined form. You can produce the 
+post-fixed form with this font by using &lt;consonant , vowel sign ra 
+repa&gt; and the subjoined form by using &lt;consonant , adeg-adeg, ra, 
+pepet&gt;, but these sequences will produce content that cannot be 
+matched against sequences using the Unicode approach, and content that 
+may fail with other Unicode-compliant fonts in the future.</p>
+<p>Hopefully some new, fully Unicode-compliant fonts will come along 
+soon. This is one of the most beautiful scripts I have come across.</p>
+<p>(Btw, I’m working on a set of notes for Balinese characters, linked 
+from UniView, with some feature innovations to get around the font 
+issue. Look out for that later. And I’m thinking I should develop a 
+Javanese picker to go with this one. Just need a bit of time…)</p>
+<p>For the curious, here’s the first article of the Universal 
+Declaration of Human Rights, as typed in the Balinese picker. 
+Translation by Tri Ediwan (reproduced from <a href="http://www.omniglot.com/writing/balinese.htm">Omniglot</a>). </p>
+<p><img src="r12a_blog_files/balinese-udhr.png" alt=" "></p>
+</div>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20120222">
+				<!--p class="post-date">Wed 22 Feb 2012</p-->
+<div class="post-info">
+	<h2 class="post-title">HTML5 adds new translate attribute</h2>
+	<p class="entrymeta">Posted on Wed 22 Feb 2012 tagged as <a href="blog/?tag=web">web</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>A <code class="kw">translate</code> attribute was recently <a href="http://dev.w3.org/html5/spec/global-attributes.html#the-translate-attribute">added to HTML5</a>. At the three <a href="http://multilingualweb.eu/">MultilingualWeb workshops</a>
+ we have run over the past two years, the idea of this kind of 
+‘translate flag’ has constantly excited strong interest from localizers,
+ content creators, and from folks working with language technology.</p>
+<h3>How it works</h3>
+<p>Typically authors or automated script environments will put the 
+attribute in the markup of a page. You may also find that, in industrial
+ translation scenarios, localizers may add attributes during the 
+translation preparation stage, as a way of avoiding the multiplicative 
+effects of dealing with mistranslations in a large number of languages.</p>
+<p>There is no effect on the rendered page (although you could, of 
+course, style it if you found a good reason for doing so). The attribute
+ will typically be used by workflow tools when the time comes to 
+translate the text – be it by the careful craft of human translators, or
+ by quick gist-translation APIs and services in the cloud.</p>
+<p>The attribute can appear on any element, and it takes just two values: <code class="kw">yes</code> or <code class="kw">no</code>. If the value is <code class="kw">no</code>,
+ translation tools should protect the text of the element from 
+translation. The translation tool in question could be an automated 
+translation engine, like those used in the online services offered by 
+Google and Microsoft. Or it could be a human translator’s ‘workbench’ 
+tool, which would prevent the translator inadvertently changing the 
+text.</p>
+<p>Setting this translate flag on an element applies the value to all 
+contained elements and to all attribute values of those elements.</p>
+<p>You don’t have to use <code>translate="yes"</code> for this to work. If a page has no <code class="kw">translate</code> attribute, a translation system or translator should assume that all the text is to be translated.  The <code class="kw">yes</code>
+ value is likely to see little use, though it could be very useful if 
+you need to override a translate flag on a parent element and indicate 
+some bits of text that should be translated. You may want to translate 
+the natural language text in examples of source code, for example, but 
+leave the code untranslated.</p>
+<h3>Why it is needed</h3>
+<p>You come across a need for this quite frequently. There is an example
+ in the HTML5 spec about the Bee Game.  Here is a similar, but real 
+example from my days at Xerox, where the documentation being translated 
+referred to a machine with text on the hardware that wasn’t translated.</p>
+<blockquote translate="no"><p><code>&lt;p&gt;Click the Resume button on the Status Display or the<br>
+&lt;span class="panelmsg" translate="no"&gt;CONTINUE&lt;/span&gt; button<br>
+on the printer panel.&lt;/p&gt;</code></p></blockquote>
+<p>Here are a couple more (real) examples of content that could benefit from the <code class="kw">translate</code> attribute.  The first is from a book, quoting a title of a work.</p>
+<blockquote translate="no"><p><code>&lt;p&gt;The question in the title 
+&lt;cite translate="no"&gt;How Far Can You Go?&lt;/cite&gt; applies to 
+both the undermining of traditional religious belief by radical theology
+ and the undermining of literary convention by the device of "breaking 
+frame"...&lt;/p&gt;</code></p></blockquote>
+<p>The next example is from a page about French bread – the French for bread is ‘<span xml:lang="fr" translate="no" lang="fr">pain</span>‘.</p>
+<blockquote translate="no"><p><code>&lt;p&gt;Welcome to &lt;strong 
+translate="no"&gt;french pain&lt;/strong&gt; on Facebook. Join now to 
+write reviews and connect with &lt;strong translate="no"&gt;french 
+pain&lt;/strong&gt;. Help your friends discover great places to visit by
+ recommending &lt;strong translate="no"&gt;french 
+pain&lt;/strong&gt;.&lt;/p&gt;</code></p></blockquote>
+<p>So adding the translate attribute to your page can help readers 
+better understand your content when they run it through automatic 
+translation systems, and can save a significant amount of cost and 
+hassle for translation vendors with large throughput in many languages.</p>
+<h3>What about Google Translate and Microsoft Translator?</h3>
+<p>Both Google and Microsoft online translation services already 
+provided the ability to prevent translation of content by adding markup 
+to your content, although they did it in (multiple) different ways. 
+Hopefully, the new attribute will help significantly by providing a 
+standard approach.</p>
+<p>Both Google and Microsoft currently support <code>class="notranslate"</code>,
+ but replacing a class attribute value with an attribute that is a 
+formal part of the language makes this feature much more reliable, 
+especially in wider contexts. For example, a translation prep tool would
+ be able to rely on the meaning of the HTML5 <code class="kw">translate</code>
+ attribute always being what is expected. Also it becomes easier to port
+ the concept to other scenarios, such as other translation APIs or 
+localization standards such as XLIFF.</p>
+<p>As it happens, the online service of Microsoft (who actually proposed
+ a translate flag for HTML5 some time ago) already supported <code>translate="no"</code>.
+ This, of course, was a proprietary tag until now, and Google didn’t 
+support it. However, just yesterday morning I received word, by 
+coincidence, that Webkit/Chromium has just added support for the <code class="kw">translate</code>  attribute, and yesterday afternoon Google added support for <code>translate="no"</code> to its online translation service. <a href="http://www.w3.org/International/tests/html-css/translate/results-online">See the results</a> of some tests I put together this morning. (Neither yet supports the <code>translate="yes"</code> override.)</p>
+<p>In these proprietary systems, however, there are a good number of 
+other non-standard ways to express similar ideas, even just sticking 
+with Google and Microsoft.</p>
+<p>Microsoft apparently supports <code>style="notranslate"</code>.  This
+ is not one of the options Google lists for their online service, but on
+ the other hand they have things that are not available via Microsoft’s 
+service.</p>
+<p>For example, if you have an entire page that should not be translated, you can add <code>&lt;meta name="google" value="notranslate"&gt;</code> inside the <code class="kw">head</code> element of your page and Google won’t translate any of the content on that page. (However they also support <code>&lt;meta name="google" content="notranslate"&gt;</code>.)  This shouldn’t be Google specific, and a single way of doing this, ie. <code>translate="no"</code>  on the <code class="kw">html</code> tag, is far cleaner.</p>
+<p>It’s also not made clear, by the way, when dealing with either 
+translation service, how to make sub-elements translatable inside an 
+element where <code class="kw">translate</code> has been set to <code class="kw">no</code> – which may sometimes be needed.</p>
+<p>As already mentioned, the new HTML5 translate attribute provides a 
+simple and standard feature of HTML that can replace and simplify all 
+these different approaches, and will help authors develop content that 
+will work with other systems too.</p>
+<h3>Can’t we just use the lang attribute?</h3>
+<p>It was inevitable that someone would suggest this during the 
+discussions around how to implement a translate flag, however 
+overloading language tags is not the solution. For example, a language 
+tag can indicate which text is to be spellchecked against a particular 
+dictionary. This has nothing to do with whether that text is to be 
+translated or not.  They are different concepts.  In a document that has
+ <code>lang="en"</code> in the html header, if you set <code>lang="notranslate"</code>
+ lower down the page, that text will now not be spellchecked, since the 
+language is no longer English. (Nor for the matter will styling work, 
+voice browsers pronounce correctly, etc.)</p>
+<h3>Going beyond the translate attribute</h3>
+<p>The W3C’s <a href="http://www.w3.org/TR/its/">ITS (International Tag Set) Recommendation</a>
+ proposes the use of a translate flag such as the attribute just added 
+to HTML5, but also goes beyond that in describing a way to assign 
+translate flag values to particular elements or combinations of markup 
+throughout a document or set of documents. For example, you could say, 
+if it makes sense for your content, that by default, all <code class="kw">p</code> elements with a particular class name should have the translate flag set to <code class="kw">no</code> for a specific set of documents.</p>
+<p>Microsoft offers something along these lines already, although it is much less powerful than the ITS approach. If you use <code>&lt;meta name="microsoft" content="notranslateclasses myclass1 myclass2" /&gt;</code>
+ anywhere on the page (or as part of a widget snippet) it ensures that 
+any of the CSS classes listed following “notranslateclasses” should 
+behave the same as the “notranslate” class.</p>
+<p>Microsoft and Google’s translation engines also don’t translate content within <code class="kw">code</code>
+ elements.  Note, however, that you don’t seem to have any choice about 
+this – there don’t seem to be instructions about how to override this if
+ you do want your <code class="kw">code</code> element content translated.</p>
+<p>By the way, there are plans afoot to set up a new MultilingualWeb-LT 
+Working Group at the W3C in conjunction with a European Commission 
+project to further develop ideas around the ITS spec, and create 
+reference implementations. They will be looking, amongst many other 
+things, at ways  of integrating the new <code class="kw">translate</code> attribute into localization industry workflows and standards. Keep an eye out for it.</p>
+<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-14466">
+			<cite>Arle Lommel</cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-14466" title="">February 24th, 2012 at 6:46 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=14466">e</a></small>
+
+			<p>Thanks Richard for posting this explanation. I think this is good news, and not just for online MT (as you note). So much content that goes through human workflows is in HTML (or XHTML) format, and so far what to translate has, for the most part, been left up to the translator’s discretion. While translators will generally get it right (which they can do because they are able to infer a lot about texts) they do sometimes get it wrong. Having this notion of a translate directive embedded at a fundamental level into core technologies is a major coup for the translation and localization industry because it will raise awareness and simplify processes.</p>
+<p>I’m excited by the news that so many tools are already picking up on this new attribute. I’ve seen far too many instances where good ideas languish for years without adoption. I think this success vindicates the agile approach we anticipate for MultilingualWeb-LT of picking small, manageable problems and addressing them with simple solutions. While there is a place and need for mega-standards like XLIFF, TMX, TBX, etc., I think the future of standards will increasingly revolve around small standards that work together to create a whole greater than the sum of their parts. What’s fantastic about this approach is that developers will be able to implement the parts that matter to them without the overhead of implementing complex formats of limited value.</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-14477">
+			<cite><a href="http://www.multilingualblog.com/?p=1523" rel="external nofollow" class="url">HTML5 Translatability Attribute: Don’t Translate, Won’t Translate Revisited | Blogos</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-14477" title="">February 24th, 2012 at 9:07 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=14477">e</a></small>
+
+			<p>[…] attribute that allows fine-grained control over what HTML content should be translated, or not. Richard Ishida of the W3C has all the details of the attribute and its applicability, as well as some interesting insight […]</p>
+
+		</li>
+
+	
+	
+	</ol>	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post">
+				<!--p class="post-date">Sun 12 Feb 2012</p-->
+<div class="post-info">
+	<h2 class="post-title"><a href="blog/?p=808" rel="bookmark" title="Permanent Link: Fonts supplied with Windows7 and Mac OS X, by script">Fonts supplied with Windows7 and Mac OS X, by script</a></h2>
+	<p class="entrymeta">Posted on Sun 12 Feb 2012 tagged as  <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=fonts">fonts</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p class="floatright" style="width: 210px;"><img src="r12a_blog_files/fontlist.png" alt="Picture of the page in action."></p>
+<p>I’ve wanted to get around to this for years now. Here is a list of 
+fonts that come with Windows7 and Mac OS X Snow Leopard/Lion, grouped by
+ script.</p>
+<p>This kind of list could be used to set font-family styles for CSS, if
+ you want to be reasonably sure what the user will see, or it could be 
+used just to find a font you like for a particular script. I’m still 
+working on the list, and there are some caveats.</p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/fontlist/">&gt;&gt; See the list</a></p>
+<p>Some of the fonts listed above may be disabled on the user’s system. 
+I’m making an assumption that someone who reads tibetan will have the 
+Tibetan font turned on, but for my articles that explain writing systems
+ to people in English, such assumptions may not hold.</p>
+<p>The  <a href="http://www.microsoft.com/typography/fonts/product.aspx?pid=161">list I used to identify Windows fonts</a> is Windows7-specific  and fairly stable, but the   Mac font spans more than one version of Mac OS X, and I could only find an <a href="http://en.wikipedia.org/wiki/List_of_typefaces_included_with_Mac_OS_X">unofficial list of fonts for Snow Leopard</a>,
+ and there were some fonts on that list that I didn’t have on my system.
+ Where a Mac font is new with Lion (and there are a significant number) 
+it is indicated. See the <a href="http://support.apple.com/kb/HT5098">official list of fonts on Mac OS X Lion</a>.</p>
+<p>There shouldn’t be any fonts listed here for a given script that 
+aren’t supplied with Windows7 or Mac OS X Snow Leopard/Lion, but there 
+are probably supplied fonts that are not yet listed here (typically 
+these will be large fonts that cover multiple scripts). In particular, 
+note that I haven’t yet made a list of fonts that support Latin, Greek 
+and Cyrillic (mainly because there are so many of them and partly 
+because I’m wondering how useful it will be.)</p>
+<p>The text used is as much as would fit on one line of article 1 of the Universal Declaration of Human Rights, taken from <a href="http://unicode.org/udhr/index_by_name.html">this Unicode page</a>,
+ wherever I could find it. I created a few instances myself, where it 
+was missing, and occasionally I resorted to arbitrary lists of 
+characters.</p>
+<p>You can obtain a character-based version of the text used by looking 
+at the source text: look for the title attribute on the section heading.</p>
+<p>Things still to do:</p>
+<ul>
+<li>create sections for Latin, Greek and Cyrillic fonts</li>
+<li>check for fonts covering multiple Unicode blocks</li>
+<li>figure out how to tell, and how to show which is the system default</li>
+<li>work out and show what’s not available in Windows XP</li>
+<li>work out what’s new in Lion, and whether it’s worth including them</li>
+<li>figure out whether people with different locale setups see different things</li>
+<li>recapture all font images that need it at 36px, rather than varying sizes</li>
+</ul>
+<h3 style="color: orange;">Update, 19 Feb 2012</h3>
+<p>I uploaded a new version of the font list with the following main changes:</p>
+<ul>
+<li>If you click on an image you see text with that font applied (if you
+ have it on your system, of course). The text can be zoomed from 14px to
+ 100px (using a nice HTML5 slider, if you have the right browser! [try 
+Chrome, Safari or Opera]). This text includes a little Latin text so you
+ can see the relationship between that and the script.</li>
+<li>All font graphics are now standardised so that text is imaged at a 
+font size of 36px. This makes it more difficult to see some fonts 
+(unless you can use the zoom text feature), but gives a better idea of 
+how fonts vary in default size.</li>
+<li>I added a few extra fonts which contained multiple script support.</li>
+<li>I split Chinese into Simplified and Traditional sections.</li>
+<li>Various other improvements, such as adding real text for N’Ko, 
+correcting the Traditional Chinese text, flipping headers to the left 
+for RTL fonts, reordering fonts so that similar ones are near to each 
+other, etc.</li>
+</ul>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20120131">
+				<!--p class="post-date">Tue 31 Jan 2012</p-->
+<div class="post-info">
+	<h2 class="post-title">UniView 6.1:  Unicode 6.1 support, popout windows, case converter, …</h2>
+	<p class="entrymeta">Posted on Tue 31 Jan 2012 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=6">web</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p class="floatright" style="width: 310px;"><a href="http://rishida.net/blog/images/uniview61.png"><img src="r12a_blog_files/uniview61-small.png" alt="Picture of the page in action." class="withshadow"></a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use UniView</a></p>
+<p>The major change in this update is the update of the data to support <strong>Unicode version 6.1.0</strong>, which should be released today. (See the list of links to new Unicode blocks below.) </p>
+<p>There are also a number of feature and bug related changes.</p>
+<p><strong>What UniView does:</strong> Look up and see characters (using
+ graphics or fonts) and property information, view whole character 
+blocks or custom ranges, select characters to paste into your document, 
+paste in and discover unknown characters, search for characters, do 
+hex/dec/ncr conversions, highlight character types, etc. etc. Supports 
+Unicode 6.1 and written with Web Standards to work on a variety of 
+browsers. No need to install anything.</p>
+<p><strong>List of changes:</strong> </p>
+<ul>
+<li>
+<p>One significant change enables you to display information in a 
+separate window, rather than overwriting the information currently 
+displayed. This can be done by typing/pasting/dragging a set of 
+characters or character code values into the new <span class="ui">Popout</span> area and selecting the <img alt=" " src="r12a_blog_files/apply.gif" border="0" align="bottom"> icon alongside the <span class="ui">Characters</span> or <span class="ui">Copy &amp; paste</span> input fields (depending on what you put in the popout window).</p>
+</li>
+<li>
+<p>Two new icons were added to the <span class="ui">Copy &amp; paste</span> area:</p>
+<p><img alt="Analyse" src="r12a_blog_files/case-simple.png"> 
+Clicking on this will display the characters in the area in the lower 
+right part of the page with all relevant characters converted to 
+uppercase, lowercase and titlecase. Characters that had no case 
+conversion information are also listed.</p>
+<p><img alt="Analyse" src="r12a_blog_files/case-detail.png"> 
+Clicking on this produces the same kind of output as clicking on the 
+icon just above, but shows the mappings for those characters that have 
+been changed, eg. e→E.</p>
+</li>
+<li>
+<p>Where  character information displayed in the lower right panel has a
+ case or decomposition mapping, UniView now displays the characters 
+involved, rather than just giving the hex value(s), eg. Uppercase 
+mapping:	0043    C. You will need a font on your system to see the 
+characters displayed in this way, but whether or not you have a font, 
+this provides a quick and easy way to copy the case-changed character 
+(rather than having to copy the hex value and convert it first).</p>
+</li>
+<li>
+<p>There is also a new line, slightly further down, when UniView is in 
+graphic mode. This line starts with ‘As text:’, and shows the character 
+using whatever default font you have on your system. Of course, if you 
+don’t have a font that includes that character you won’t see it. This 
+has been added to make it easier to copy and paste a character into 
+text.</p>
+</li>
+<li>
+<p>There is also a new line, slightly further down, when UniView is in 
+graphic mode. This line starts with ‘As text:’, and shows the character 
+using whatever default font you have on your system. Of course, if you 
+don’t have a font that includes that character you won’t see it. This 
+has been added to make it easier to copy and paste a character into 
+text.</p>
+</li>
+<li>
+<p>Fixed some small bugs, such as problems with search when U+29DC INCOMPLETE INFINITY is returned.</p>
+</li>
+</ul>
+<p>Enjoy.</p>
+<p>Here are direct links to the new blocks added to Unicode 6.1:</p>
+<ul>
+<li><a href="http://rishida.net/scripts/uniview/?block=Arabic_Extended-A">Arabic Extended-A</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Sundanese_Supplement">Sundanese Supplement</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Meetei_Mayek_Extensions">Meetei Mayek Extensions</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Meroitic_Hieroglyphs">Meroitic Hieroglyphs</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Meroitic_Cursive">Meroitic Cursive</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Sora_Sompeng">Sora Sompeng</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Chakma">Chakma</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Sharada">Sharada</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Takri">Takri</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Miao">Miao</a></li>
+<li><a href="http://rishida.net/scripts/uniview/?block=Arabic_Mathematical_Alphabetic_Symbols">Arabic Mathematical Alphabetic Symbols</a></li>
+</ul>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post">
+				<!--p class="post-date">Sun 18 Dec 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">Using unicode-range in font-face in CSS</h2>
+	<p class="entrymeta">Posted on Sun 18 Dec 2011 tagged as <a href="blog/?tag=6">web</a>, <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=fonts">fonts</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>These are notes on using CSS @font-face to gain finer control over 
+the fonts applied to characters in particular Unicode ranges of your 
+text, without resorting to additional markup. Possibilities and 
+problems.</p>
+<h3>Changing the font used for certain characters</h3>
+<p>Most non-English fonts mix glyphs from different writing systems. 
+Usually the font contains glyphs for Latin characters plus a non-Latin 
+script, for example English+Japanese, or English+Thai, etc.</p>
+<p>Normally the font designer will take care to harmonise the Latin 
+script glyphs with the non-Latin, but there may be cases where you want 
+to change the design of the glyphs for, say, and embedded script without
+ adding markup to your page.</p>
+<p>For example, if I apply the MS-Mincho font to some content in Japanese with embedded Latin text I’m likely to see the following:</p>
+<p style="text-align: center;"><img src="r12a_blog_files/ms-mincho-only.png" alt=""></p>
+<p>Let’s suppose I’d like the English text to appear in a different, 
+proportionally-spaced font. I could put markup around the English and 
+set a class on the markup to apply the font I want, but this is very 
+time consuming and bloats your code.</p>
+<p>An alternative is to use @font-face. Here is an example:</p>
+<figure style="text-align:left">
+<pre>@font-face { 
+  font-family: myJapanesefont;
+  src: local(MS-Mincho);
+  }
+@font-face {
+  font-family: myJapanesefont;
+  src: local(Gentium);
+  unicode-range: U+41-5A, U+61-7A, U+C0-FF;
+  }
+p { 
+  font-family: myJapanesefont; 
+  }
+</pre>
+</figure>
+<p style="border: 1px solid #dfdfdf; padding: 7px; background-color: #f6f6f6; border-radius: 8px;"><strong>Note:</strong> When specifying <span class="kw">src</span> the <span class="kw">local()</span>
+ keyword indicates that font-face should look for the font on the user’s
+ system. Of course, to improve interoperability, you may want to specify
+ a number of alternatives here, or a downloadable WOFF font.  The most 
+interoperable value to use for <span class="kw">local()</span> is the Postscript name of the font. (On the Mac open Font Book, select the font, and choose <span class="ui">Preview &gt; Show Font Information</span> to find this.)</p>
+<p>The result would be:</p>
+<p style="text-align: center;"><img src="r12a_blog_files/ms-mincho-gentium.png" alt=""></p>
+<p>The first font-face declaration associates the MS-Mincho font with 
+the name ‘myJapanesefont’. The second font-face declaration associates 
+the Gentium font with the Unicode code points in the Latin-1 letter 
+range (of course, you can extend this if you use Latin characters 
+outside that range and they are covered by the font).</p>
+<p>Note how I was careful to set the unicode-range values to exclude 
+punctuation (such as the exclamation mark) that would be used by (and 
+harmonised with) the Japanese characters. </p>
+<h3>Adding support for new characters to a font</h3>
+<p>You can use the same approach for fonts that don’t have support for a particular Unicode range.  </p>
+<p>For example, the Nafees Nastaliq font has no glyphs for the Latin 
+range (other than digits), so the browser falls back to the system 
+default.</p>
+<p style="text-align: center;"><img src="r12a_blog_files/nafees-only.png" alt=""></p>
+<p>With the following code, I can produce a more pleasant font for the ‘W3C’ part:</p>
+<figure style="text-align:left">
+<pre>@font-face {; 
+  font-family: myUrduFont;
+  src: local(NafeesNastaleeq);
+  }
+@font-face {
+  font-family: myUrduFont;
+  src: local(BookAntiqua);
+  unicode-range: U+30-FF;
+  }
+div p { 
+  font-family: myUrduFont; 
+  font-size: 60px;
+  }
+</pre>
+</figure>
+<p style="text-align: center;"><img src="r12a_blog_files/nafees-bookantiqua.png" alt=""></p>
+<h3>A big fly in the ointment</h3>
+<p>If you look at the ranges in the unicode-range value, you’ll see that
+ I kept to just the letters of the alphabet in the Japanese example, and
+ the missing glyphs in the Urdu case.</p>
+<p>There are a number of characters that are used by all scripts, 
+however, and these cause problems because you can’t apply fonts based on
+ the context – even if you could work out what that context was.</p>
+<p>In the case of the Japanese example above, numbers are left to be 
+rendered by the Mincho font, but when those characters appear in the 
+Latin text, they look incorrectly sized. Look, for example, at the 3 in 
+W3C below.</p>
+<p style="text-align: center;"><img src="r12a_blog_files/mincho-gentium-digit.png" alt=""></p>
+<p>The same problem arises with spaces and punctuation marks. The 
+exclamation mark was left in the Mincho font in the Japanese example 
+because, in this case, it is part of the Japanese text. Punctuation of 
+this kind, could however be associated with the Latin text. See the 
+question mark in this example.</p>
+<p style="text-align: center;"><img src="r12a_blog_files/mincho-baskerville-question.png" alt=""></p>
+<p>Even more problematic are the spaces in that example.  They are too 
+wide in the Latin text. In Urdu text we have the opposite problem, use 
+Urdu space glyphs in Latin text and you don’t see them at all (there 
+should be a gap between W3C and i18n below).</p>
+<p style="text-align: center;"><img src="r12a_blog_files/nafees-gentium-space.png" alt=""></p>
+<p>With my W3C hat on, I start wondering whether there are any rules we 
+can use to apply different glyphs for some characters depending on the 
+script context in which they are used, but then I realise that this is 
+going to bring in all the problems we already have for bidi text when 
+dealing with punctuation or spaces between flows of text in different 
+scripts.  I’m not sure it’s a tractable problem without resorting to 
+markup to delimit the boundaries. But then, of course, we end up right 
+back where we started.</p>
+<p>So it seems, disappointingly, that the unicode-range property is 
+destined to be of only limited usefulness for me.  That’s a real shame.</p>
+<h3>Another small issue</h3>
+<p>The examples don’t show major problems, but I assume that sometimes 
+the fonts you want to bring together using font-face will have very 
+different aspect ratios, so you may need to use something like 
+font-size-adjust to balance the size of the fonts being used.</p>
+<h3>Browser support</h3>
+<p>The CSS code above worked for me in Chrome and Safari on Mac OS X 
+10.6. but didn’t work in Firefox or Opera. Nor did it work in IE9 on 
+Windows7.</p>
+<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-13165">
+			<cite>Sylvain Galineau</cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-13165" title="">January 31st, 2012 at 4:52 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=13165">e</a></small>
+
+			<p>Richard, any links to the actual testcases? I’d love to fix this! Thanks.</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-13242">
+			<cite><a href="http://rishida.net/" rel="external nofollow" class="url">r12a</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-13242" title="">February 1st, 2012 at 6:10 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=13242">e</a></small>
+
+			<p>I didn’t save the original tests, so I quickly recreated something you can use, which you can find below.</p>
+<pre>Styles
+------
+
+div.ja { font-family: "MS Mincho"; font-size: 60px; }
+div.ur { font-family: "Nafees", "Nafees Nastaleeq"; font-size: 60px; }
+
+@font-face {
+  font-family: myJapanesefont;
+  src: local(MS-Mincho);
+  }
+@font-face {
+  font-family: myJapanesefont;
+  src: local(Gentium);
+  unicode-range: U+41-5A, U+61-7A, U+C0-FF;
+  }
+div.ja p.test {
+  font-family: myJapanesefont;
+  }
+@font-face {;
+  font-family: myUrduFont;
+  src: local(NafeesNastaleeq);
+  }
+@font-face {
+  font-family: myUrduFont;
+  src: local(BookAntiqua);
+  unicode-range: U+30-FF;
+  }
+div.ur p.test {
+  font-family: myUrduFont;
+  font-size: 60px;
+  }
+
+
+
+Code
+----
+
+&lt;div class="ja"&gt;
+   &lt;p&gt;今日はAmélie!&lt;/p&gt;
+   &lt;p class="test"&gt;今日はAmélie!&lt;/p&gt;
+
+   &lt;p&gt;国際化活動 W3C&lt;/p&gt;
+   &lt;p class="test"&gt;国際化活動 W3C&lt;/p&gt;
+ 
+   &lt;p&gt;"Comment ça va?"と言いました。&lt;/p&gt;
+   &lt;p class="test"&gt;"Comment ça va?"と言いました。&lt;/p&gt;
+  &lt;/div&gt;
+
+
+&lt;div class="ur" dir="rtl"&gt;
+   &lt;p&gt;ضابطہ لسانی عدمیت ، W3C&lt;/p&gt;
+   &lt;p class="test" &gt;ضابطہ لسانی عدمیت ، W3C&lt;/p&gt;
+
+    &lt;p&gt;ضابطہ لسانی عدمیت ، W3C i18n&lt;/p&gt;
+   &lt;p class="test"&gt;ضابطہ لسانی عدمیت ، W3C i18n&lt;/p&gt;
+&lt;/div&gt;
+
+</pre>
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-90427">
+			<cite>John Daggett</cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-90427" title="">August 9th, 2013 at 7:10 am</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=90427">e</a></small>
+
+			<p>The ‘unicode-range’ descriptor for @font-face rules simply provides a mechanism for selectively downloading font data for a set of fonts that support a wide range of scripts.  It is *not* a way of stitching together fonts and making them work well together.  That’s the job of a good type designer!!  There are lots of folks these days focused on problems of how to harmonize type systems across scripts.  These sorts of designers could design a set of typefaces that would stitch together well.</p>
+<p>And if you’re trying to combine anything with MS Mincho, er, well, good luck and godspeed…</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-103788">
+			<cite><a href="http://thereisamoduleforthat.com" rel="external nofollow" class="url">Karim Ratib</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-103788" title="">October 14th, 2013 at 10:41 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=103788">e</a></small>
+
+			<p>Thanks for the explanation of unicode-range. Today (Oct 2013) FF still does not support this descriptor. I’ve written a jQuery plugin to emulate it: <a href="https://github.com/infojunkie/jquery-unicode-range" rel="nofollow">https://github.com/infojunkie/jquery-unicode-range</a>. </p>
+<p>You can also vote on the FF feature request to bump it up: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=475891" rel="nofollow">https://bugzilla.mozilla.org/show_bug.cgi?id=475891</a></p>
+<p>Cheers!</p>
+
+		</li>
+
+	
+	
+	</ol>													
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20111205">
+				<!--p class="post-date">Mon 5 Dec 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">What is XHTML5?</h2>
+	<p class="entrymeta">Posted on Mon 5 Dec 2011 tagged as <a href="blog/?tag=6">web</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>There appears to be some confusion about XHTML1.0 vs XHTML5. Here is my best shot at an explanation of what XHTML5 is.</p>
+<div class="floatright" style="float:right; margin-left: 2em; width: 30%; color:#999999;">*
+ This post is written for people with some background in MIME types and 
+html/xml formats. In case that’s not you, this may give you enough to 
+follow the idea: ‘served as’ means sent from a server to the browser 
+with a MIME type declaration in the HTTP protocol header that says that 
+the content of the page is HTML (text/html) or XML (eg. <code>application/xhtml+xml</code>). <a href="http://www.w3.org/International/articles/serving-xhtml/#mime" target="_blank">See examples and more explanations</a>.</div>
+<p>XHTML5 is an HTML5 document served as* <code>application/xhtml+xml</code> (or another XML mime type). The syntax rules for XHTML5 documents are simply those rules given by the <a href="http://www.w3.org/TR/REC-xml/" target="_blank">XML specification</a>. The vocabulary (elements and attributes) is defined by the <a href="http://dev.w3.org/html5/spec/" target="_blank">HTML5 spec</a>.</p>
+<p>Anything served as <code>text/html</code> is not XHTML5.</p>
+<p>Note that HTML5 (without the X) can be written in a style that looks 
+like XML syntax. For example, using a / in empty elements (eg. <code>&lt;br/&gt;</code>), or using quotes around attributes.  But code written this way is still HTML5, not XHTML5, if it is served as <code>text/html</code>.</p>
+<p>There are normally other differences between HTML5 and XHTML5.  For 
+example, XHTML5 documents may have an XML declaration at the start of 
+the document. HTML5 documents cannot have that.  XHTML5 documents are 
+likely to have a more complicated doctype (to facilitate XML 
+processing).  And XHTML5 documents will have an xmlns attribute on the 
+html tag.  There are a few other HTML5 features that are not compatible 
+with XML, and must be avoided.</p>
+<p>Similar differences existed between HTML 4.01 and XHTML 1.0.  
+However, moving on from XHTML 1.0 will typically involve a subtle but 
+significant shift in thinking.  You might have written XHTML 1.0 with no
+ intention of serving it as anything other than <code>text/html</code>. 
+XHTML in the XHTML 1.0 sense tended to be seen  largely as a difference 
+in syntax; it was originally designed to be served as XML, but (with 
+some customisations to suit HTML documents) could be, and usually was, 
+served with an HTML mime type. XHTML in the XHTML5 sense, means HTML5 
+documents served with an XML mime type (and appropriate customisations 
+to suit XML documents), ie. it’s the MIME type, not the syntax, that 
+makes it XHTML.</p>
+<p>Which brings us to Polyglot documents.  A polyglot document contains 
+markup that is the subset of HTML5 and XML that can be processed as 
+either HTML or XHTML, and can be served as either <code>text/html</code> or <code>application/xhtml+xml</code>, ie. as either HTML5 or XHTML5, without any errors or warnings in either case.  The <a href="http://dev.w3.org/html5/html-xhtml-author-guide/" target="_blank">polyglot spec</a>
+ defines the things which allow this compatibility (such as using no XML
+ declaration, proper casing of element names, etc.), and which things to
+ avoid.  It also mandates at least one additional extra, ie. disallowing
+ UTF-16 encoded documents. </p>
+<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-11055">
+			<cite>Ivan Herman</cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-11055" title="">December 6th, 2011 at 6:29 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=11055">e</a></small>
+
+			<p>Richard,</p>
+<p>so, if I am a client, how do I make the difference between XHTML1.1 and XHTML5? Both return application/xhtml+xml. Is there a standard way to do that?</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-12264">
+			<cite><a href="http://www.phunkei.de" rel="external nofollow" class="url">Daniel Miguel</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-12264" title="">January 7th, 2012 at 1:47 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=12264">e</a></small>
+
+			<p>The bad news on html5 is that some people think they traveled back to 1997 and write smelly markup. That is where the xml specs should be the way to go. I write regular html5 markup, but keep the xml specs in mind. The source is much more readable and just more … elegant 🙂 One more benefit of this approach is that you can port to several xml formats very quickly.</p>
+<p>Nice article.</p>
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-15188">
+			<cite>Gagan Jain</cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-15188" title="">March 5th, 2012 at 5:52 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=15188">e</a></small>
+
+			<p>Simple article but essential details are included for clarity. Makes a lot of sense to move to XHTML5 rather than HTML5.</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-22933">
+			<cite>George Walsh</cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-22933" title="">June 22nd, 2012 at 8:24 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=22933">e</a></small>
+
+			<p>Because I am not concerned with backward compatibility and happily accept the discipline of application/xhtml+xml, I was wondering whether it would be proper to amend apache’s HTTP_ACCEPT by removing ‘text/html’ and force serving everything as application/xhtml+xml. The idea is to ONLY accept that type (no fall-back) and have php notify the user agent accordingly. Failing that, I guess content negotiation is my only alternative, which means I do not understand what xhtml/xml must be defined.</p>
+<p>I am struggling for a controlled, disciplined environment at the outset. I have used xhtml1.1 in the past without problems. (X)HTML5 is definitely my goal.</p>
+<p>George</p>
+
+		</li>
+
+	
+	
+	</ol>	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20111025">
+				<!--p class="post-date">Tue 25 Oct 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">How to generate a list of Unicode characters with names and/or codepoints</h2>
+	<p class="entrymeta">Posted on Tue 25 Oct 2011 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=uniview">uniview</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>One of the more useful features of <a href="http://rishida.net/scripts/uniview/" target="_blank" style="font-size: 120%;">UniView</a>
+ is its ability to list the characters in a string with names and 
+codepoints. This is particularly useful when you can’t tell what a 
+string of characters contains because you don’t have a font, or because 
+the script is too complex, etc.</p>
+<div style="float:left; margin: 0 20px 10px 7.5%;"><img src="r12a_blog_files/ishida-nastaliq.png" alt="'ishida' in Persian in  nastaliq font style"></div>
+<p>For example, I was recently sent an email where my name was written in Persian as <span style="font-family: IranNastaliq, 'Nafees Nastaleeq', serif; font-size: 120%;">ایشی‌دا</span>. The image shows how it looks in a nastaliq font. </p>
+<p style="clear:both;">To see the component characters, drop the string into UniView’s <span class="ui">Copy &amp; Paste</span> field and click on the <img src="r12a_blog_files/apply.html" alt="downwards pointing arrow"> icon.  Here is the result:</p>
+<p><img src="r12a_blog_files/ishida-nastaliq-list.png" alt="list of characters"></p>
+<p>Note how you can now see that there’s an invisible control character 
+in the string.  Note also that you see a graphic image for each 
+character, which is a big help if the string you are investigating is 
+just a sequence of boxes on your system.</p>
+<p>Not only can you discover characters in this way, but you can create 
+lists of characters which can be pasted into another document, and 
+customise the format of those lists.</p>
+<h3>Pasting the list elsewhere</h3>
+<p>If you select this list and paste it into a document, you’ll see something like this:</p>
+<figure class="code">
+<pre>  0627  ARABIC LETTER ALEF
+  06CC  ARABIC LETTER FARSI YEH
+  0634  ARABIC LETTER SHEEN
+  06CC  ARABIC LETTER FARSI YEH
+  200C  ZERO WIDTH NON-JOINER
+  062F  ARABIC LETTER DAL
+  0627  ARABIC LETTER ALEF
+</pre>
+</figure>
+<p>You can make the characters appear by deselecting <span class="ui">Use graphics</span> on the <span class="ui">Look up</span> tab. (Of course, you need an arabic font to see the list as intended.)</p>
+<figure class="code">
+<pre>ا  ‎0627  ARABIC LETTER ALEF
+ی  ‎06CC  ARABIC LETTER FARSI YEH
+ش  ‎0634  ARABIC LETTER SHEEN
+ی  ‎06CC  ARABIC LETTER FARSI YEH
+‌  ‎200C  ZERO WIDTH NON-JOINER
+د  ‎062F  ARABIC LETTER DAL
+ا  ‎0627  ARABIC LETTER ALEF
+</pre>
+</figure>
+<h3>Customising the list format</h3>
+<p>What may be less obvious is that you can also customise the format of this list using the settings under the <span class="ui">Options</span> tab.  For example, using the <span class="ui">List format</span> settings, I can produce a list that moves the character column between the number and the name, like this:</p>
+<figure class="code">
+<pre>  0627  ا  ARABIC LETTER ALEF
+  ‎06CC  ی  ARABIC LETTER FARSI YEH
+  ‎0634  ش  ARABIC LETTER SHEEN
+  ‎06CC  ی  ARABIC LETTER FARSI YEH
+  ‎200C  ‌  ZERO WIDTH NON-JOINER
+  ‎062F  د  ARABIC LETTER DAL
+  ‎0627  ا  ARABIC LETTER ALEF
+</pre>
+</figure>
+<p>Or I can remove one or more columns from the list, such as:</p>
+<figure class="code">
+<pre>  ا  ARABIC LETTER ALEF
+  ی  ARABIC LETTER FARSI YEH
+  ش  ARABIC LETTER SHEEN
+  ی  ARABIC LETTER FARSI YEH
+  ‌  ZERO WIDTH NON-JOINER
+  د  ARABIC LETTER DAL
+  ا  ARABIC LETTER ALEF
+</pre>
+</figure>
+<p>With the option <span class="ui">Show U+ in lists</span> I can also add or remove the U+ before the codepoint value.  For example, this lets me produce the following list:</p>
+<figure class="code">
+<pre>  ‎U+0627  ARABIC LETTER ALEF
+  ‎U+06CC  ARABIC LETTER FARSI YEH
+  ‎U+0634  ARABIC LETTER SHEEN
+  ‎U+06CC  ARABIC LETTER FARSI YEH
+  ‎U+200C  ZERO WIDTH NON-JOINER
+  ‎U+062F  ARABIC LETTER DAL
+  ‎U+0627  ARABIC LETTER ALEF
+</pre>
+</figure>
+<h3>Other lists in UniView</h3>
+<p>We’ve shown how you can make a list of characters in the <span class="ui">Cut &amp; Paste</span>
+ box, but don’t forget that you can create lists for a Unicode block, 
+custom range of characters, search list results, or list of codepoint 
+values, etc.  And not only that, but you can filter lists in various 
+ways.</p>
+<p>Here is just one quick example of how you can obtain a list of numbers for the Devanagari script.  </p>
+<ol>
+<li>On the <span class="ui">Look up</span> tab, select Devanagari from the <span class="ui">Unicode block</span> pull down list.</li>
+<li>Select <span class="ui">Show range as list</span> and deselect (optional) <span class="ui">Use graphics</span>.</li>
+<li>Under the <span class="ui">Filter</span> tab, select Number from the <span class="ui">Show properties</span> pull down list.</li>
+<li>Click on <span class="ui">Make list from highlights</span></li>
+</ol>
+<p>You end up with the following list, that you can paste into your document.</p>
+<figure class="code">
+<pre>०  ‎0966  DEVANAGARI DIGIT ZERO
+१  ‎0967  DEVANAGARI DIGIT ONE
+२  ‎0968  DEVANAGARI DIGIT TWO
+३  ‎0969  DEVANAGARI DIGIT THREE
+४  ‎096A  DEVANAGARI DIGIT FOUR
+५  ‎096B  DEVANAGARI DIGIT FIVE
+६  ‎096C  DEVANAGARI DIGIT SIX
+७  ‎096D  DEVANAGARI DIGIT SEVEN
+८  ‎096E  DEVANAGARI DIGIT EIGHT
+९  ‎096F  DEVANAGARI DIGIT NINE
+</pre>
+</figure>
+<p>(Of course, you can also customise the layout of this list as described in the previous section.)</p>
+<p><a href="http://rishida.net/scripts/uniview/" target="_blank">Try it out</a>.</p>
+<h3>Reversing the process: from list to string</h3>
+<p>To complete the circle, you can also cut &amp; paste any of the lists
+ in the blog text above into UniView, to explore each character’s 
+properties or recreate the string.  </p>
+<p>Select one of the lists above and paste it into the <span class="ui">Characters</span> input field on the <span class="ui">Look up</span> tab. Hit the <img src="r12a_blog_files/apply.html" alt="downwards pointing arrow"> icon alongside, and UniView will recreate the list for you. Click on each character to view detailed information about it.</p>
+<p>If you want to recreate the string from the list, simply click on the <img src="r12a_blog_files/tochar.html" alt="upwards pointing arrow"> icon below the <span class="ui">Copy &amp; paste</span> box, and the list of characters will be reconstituted in the box as a string.</p>
+<p>Voila!</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+      <p class="pagelinks"><a href="201002">More<br/>🠿</a></p>
+	</div>
+
+
+
+	
+<p id="footer">Copyright © 2009 Richard Ishida.</p></div>
+</div>
+
+</body></html>

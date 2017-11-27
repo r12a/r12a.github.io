@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+  <div id="header">
+    <div id="dotted-line">&nbsp;</div>
+    <h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+    <div id="sitelinks" class="noprint" style="margin-left: 6.5%;"> <span> <a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; <a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; <a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; <a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span> </div>
+  </div>
+  <div id="main">
+    <div id="sidebar">
+      <div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+      <p class="pagelinks"><a href="200707">&nbsp;🠽&nbsp;</a><br/>
+        page<br/>
+        <a href="200406">&nbsp;🠿&nbsp;</a></p>
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+    </div>
+    <div id="content">
+      <div class="post" id="20070719"> 
+        <!--p class="post-date">Mon 9 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Tibetan emphasis</h2>
+          <p class="entrymeta">Posted on Mon 9 Jul 2007 tagged as <a href="/blog/?tag=layout">layout</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <div class="floatright"><a href="http://people.w3.org/rishida/blog/images/tibetan-emphasis.gif"><img src="r12a_blog_files/tibetan-emphasis.gif" alt="Picture of Tibetan emphasis."></a></div>
+          <p>Christopher Fynn of the National Library of Bhutan raised an 
+            interesting question on the W3C Style and I18n lists.  Tibetan emphasis 
+            is often achieved using one of two small marks below a Tibetan syllable,
+            a little like Japanese <a href="http://people.w3.org/rishida/scripts/tutorial/slides/Slide1400.html">wakiten</a>.  The picture shows <a href="http://people.w3.org/rishida/scripts/uniview/?char=0F35&amp;utf8=false">U+0F35: TIBETAN MARK NGAS BZUNG NYI ZLA</a> in use.  The other form is <a href="http://people.w3.org/rishida/scripts/uniview/?char=0F37&amp;utf8=false">0F37: TIBETAN MARK NGAS BZUNG SGOR RTAGS</a>.</p>
+          <p>Chris was arguing that using CSS, rather than Unicode characters, to render these marks could be useful because:</p>
+          <ul>
+            <li>the mark applies to, and is centred below a whole ‘syllable’ – not 
+              just the stack of the syllable – this may be easier to achieve with 
+              styling than font positioning where, say, a syllable has an even number 
+              of head characters (see examples to the far right in the picture)</li>
+            <li>it would make it easier to search for text if these characters were not interspersed in it</li>
+            <li>it would allow for flexibility in approaches to the visual style 
+              used for emphasis – you would be able to change between using these 
+              marks or alternatives such as use of red colour or changes in font size 
+              just by changing the CSS style sheet (as we can for English text).</li>
+          </ul>
+          <p>There are of potential issues with this approach too.  These include 
+            things like the fact that the horizontal centring of glyphs within the 
+            syllable is not trivial. The vertical placement is also particularly 
+            difficult.  You will notice from the attached image that the height 
+            depends on the depth of the text it falls below.  On the other hand, it 
+            isn’t easy to achieve this with diacritics either, given the number of 
+            possible permutations of characters in a syllable.  Such positioning is 
+            much more complicated than that of the Japanese wakiten.</p>
+          <p>A bigger issue may turn out to be that the application for this is 
+            fairly limited, and user agent developers have other priorities – at 
+            least for commercial applications.</p>
+          <p>To follow along with, and perhaps contribute to, the discussion follow the thread on the <a href="http://lists.w3.org/Archives/Public/www-style/2007Jun/0158.html">style list</a> or the <a href="http://lists.w3.org/Archives/Public/www-international/2007AprJun/0208.html">www-international list</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070709"> 
+        <!--p class="post-date">Mon 9 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Personal names around the world 1</h2>
+          <p class="entrymeta">Posted on Mon 9 Jul 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><strong>UPDATE: This post has now been updated, reviewed and released as a W3C article. See <a href="http://www.w3.org/International/questions/qa-personal-names">http://www.w3.org/International/questions/qa-personal-names</a>.</strong></p>
+          <p>People who create web forms, databases, or ontologies in 
+            English-speaking countries are often unaware how different people’s 
+            names can be in other countries. They build their forms or databases in a
+            way that assumes too much on the part of foreign users.</p>
+          <p>I’m going to explore some of the potential issues in a series of blog
+            posts.  This content will probably go through a number of changes 
+            before settling down to something like a final form.  Consider it more 
+            like a set of wiki pages than a typical blog post.</p>
+          <h3>Scenarios</h3>
+          <div style="float: right; margin-left: 1em; margin-bottom: 1em;"><img src="r12a_blog_files/name-full.gif" alt="A form that asks for your name in a single field."><br>
+            <img style="margin-bottom: 1em;" src="r12a_blog_files/name-first-last.gif" alt="A form that asks for separate first and last names."> </div>
+          <p>It seems to me that there are a couple of key scenarios to consider.</p>
+          <p><strong style="font-size: 140%;">A</strong> You are designing a form in a single language (let’s assume English) that people from around the world will be filling in.</p>
+          <p><strong style="font-size: 140%;">B</strong> You are designing a form 
+            in a one language but the form will be adapted to suit the cultural 
+            differences of a given locale when the site is translated.</p>
+          <p>In reality, you will probably not be able to localise for every 
+            different culture, so even if you rely on approach B, some people will 
+            still use a form that is not intended specifically for their culture.</p>
+          <h3>Examples of differences</h3>
+          <p>To get started, let’s look at some examples of how people’s names are different around the world.</p>
+          <h4>Given name and patronymic</h4>
+          <p>In the name <strong>Björk Guðmundsdóttir</strong> Björk is the given 
+            name. The second part of the name indicates the father’s (or sometimes 
+            the mother’s) name, followed by -sson for a male and -sdóttir for a 
+            female, and is more of a description than a family name in the Western 
+            sense. Björk’s father, Guðmundor, was the son of Gunnar, so is known as 
+            Guðmundur Gunnarsson. </p>
+          <p>Icelanders prefer to be called by their given name (Björk), or by 
+            their full name (Björk Guðmundsdóttir).  Björk wouldn’t normally expect 
+            to be called Ms. Guðmundsdóttir.  Telephone directories in Iceland are 
+            sorted by given name.</p>
+          <p>Other cultures where a person has one given name followed by a 
+            patronymic include parts of Southern India, Malaysia and Indonesia.</p>
+          <h4>Different order of parts</h4>
+          <p>In the name <strong>毛泽东</strong> [mao ze dong] the family name is 
+            Mao, ie. the first name, left to right. The given name is Dong.  The 
+            middle character, Ze, is a generational name, and is common to all his 
+            siblings (such as his brothers and sister, 毛泽民 [mao ze min],  毛泽覃 [mao 
+            ze tan], and 毛澤紅 [mao ze hong]).</p>
+          <p>Among acquaintances Mao may be referred to as 毛泽东先生 [mao ze dong xiān
+            shēng] or 毛先生 [mao xiān shēng].  Not everyone uses generational names 
+            these days, especially in Mainland China.  If you are on familiar terms 
+            with someone called 毛泽东, you would normally refer to them using 泽东 [ze 
+            dong], not just 东 [dong].</p>
+          <p>Note also that the names are not separated by spaces.</p>
+          <p>The order family name followed by given name(s) is common in other countries, such as Japan, Korea and Hungary. </p>
+          <p>Chinese people who deal with Westerners will often adopt an 
+            additional given name that is easier for Westerners to use.  For 
+            example, Yao Ming (family name Yao, given name Ming) may write his name 
+            for foreigners as Fred Yao Ming or Fred Ming Yao. </p>
+          <h4>Multiple family names</h4>
+          <p>Spanish-speaking people will commonly have two family names.  For example, <strong>Maria-Jose Carreño Quiñones</strong> may be the daughter of Antonio Carreño Rodríguez and María Quiñones Marqués.</p>
+          <p>You would refer to her as Señorita Carreño, not Señorita Quiñones.</p>
+          <h4>Variant forms</h4>
+          <p>We already saw that the patronymic in Iceland ends in -son or 
+            -dóttir, depending on whether the child is male or female.  Russians use
+            patronymics as their middle name but also use family names, in the 
+            order given-patronymic-family.  The endings of the patronymic and family
+            names will indicate whether the person in question is male or female.  
+            For example, the wife of <strong>Борис Никола́евич Ельцин</strong> (Boris Nikolayevich Yeltsin) is <strong>Наина Иосифовна Ельцина</strong> (Naina Iosifovna Yeltsina) – note how the husband’s names end in 
+            consosonants, while the wife’s names (even the patronymic from her 
+            father) end in a.</p>
+          <h4>Mixing it up</h4>
+          <p>Many cultures mix and match these differences from Western personal names, and add their own novelties. </p>
+          <p>For example, <strong>Velikkakathu Sankaran Achuthanandan </strong>is a
+            Kerala name from Southern India, usually written V. S. Achuthanandan 
+            which follows the order familyName-fathersName-givenName.  In many parts
+            of the world, parts of names are derived from titles, locations, 
+            genealogical information, caste, religious references, and so on, eg. 
+            the Arabic <strong>Abu Karim Muhammad al-Jamil ibn Nidal ibn Abdulaziz al-Filistini</strong>.</p>
+          <p>In Vietnam, names such as <strong>Nguyễn Tấn Dũng</strong> follow the
+            order family-middle-given name.  Although this seems similar to the 
+            Chinese example above, even in a formal situation this Prime Minister of
+            Vietnam is referred to using his <em>given name</em>, ie. Mr. Dung, not Mr. Nguyen. </p>
+          <h4>Further reading</h4>
+          <p>Wikipedia sports a large number of fascinating articles about how 
+            people’s names look in various cultures around the world.  I strongly 
+            recommend a perusal of the follow links.</p>
+          <p><a href="http://en.wikipedia.org/wiki/Akan_name" title="Akan name">Akan</a> • <a href="http://en.wikipedia.org/wiki/Arabic_name" title="Arabic name">Arabic</a> • <a href="http://en.wikipedia.org/wiki/Balinese_name" title="Balinese name">Balinese</a> • <a href="http://en.wikipedia.org/wiki/Bulgarian_name" title="Bulgarian name">Bulgarian</a> • <a href="http://en.wikipedia.org/wiki/Czech_names" title="Czech names">Czech</a> • <a href="http://en.wikipedia.org/wiki/Chinese_name" title="Chinese name">Chinese</a> • <a href="http://en.wikipedia.org/wiki/Dutch_name" title="Dutch name">Dutch</a> • <a href="http://en.wikipedia.org/wiki/Fijian_name" title="Fijian name">Fijian</a> • <a href="http://en.wikipedia.org/wiki/French_name" title="French name">French</a> • <a href="http://en.wikipedia.org/wiki/German_name" title="German name">German</a> • <a href="http://en.wikipedia.org/wiki/Hawaiian_name" title="Hawaiian name">Hawaiian</a> • <a href="http://en.wikipedia.org/wiki/Hebrew_name" title="Hebrew name">Hebrew</a> • <a href="http://en.wikipedia.org/wiki/Hungarian_name" title="Hungarian name">Hungarian</a> • <a href="http://en.wikipedia.org/wiki/Icelandic_name" title="Icelandic name">Icelandic</a> • <a href="http://en.wikipedia.org/wiki/Indian_name" title="Indian name">Indian</a> • <a href="http://en.wikipedia.org/wiki/Indonesian_names" title="Indonesian names">Indonesian</a> • <a href="http://en.wikipedia.org/wiki/Irish_name" title="Irish name">Irish</a> • <a href="http://en.wikipedia.org/wiki/Italian_name" title="Italian name">Italian</a> • <a href="http://en.wikipedia.org/wiki/Japanese_name" title="Japanese name">Japanese</a> • <a href="http://en.wikipedia.org/wiki/Javanese_name" title="Javanese name">Javanese</a> • <a href="http://en.wikipedia.org/wiki/Korean_name" title="Korean name">Korean</a> • <a href="http://en.wikipedia.org/wiki/Lithuanian_name" title="Lithuanian name">Lithuanian</a> • <a href="http://en.wikipedia.org/wiki/Malaysian_name" title="Malaysian name">Malaysian</a> • <a href="http://en.wikipedia.org/wiki/Mongolian_name" title="Mongolian name">Mongolian</a> • <a href="http://en.wikipedia.org/wiki/Persian_name" title="Persian name">Persian</a> • <a href="http://en.wikipedia.org/wiki/Philippine_names" title="Philippine names">Philippine</a> • <a href="http://en.wikipedia.org/wiki/Polish_name" title="Polish name">Polish</a> • <a href="http://en.wikipedia.org/wiki/Portuguese_name" title="Portuguese name">Portuguese</a> • <a href="http://en.wikipedia.org/wiki/Names_in_Russian_Empire%2C_Soviet_Union_and_CIS_countries" title="Russian and CIS country name">Russian</a> • <a href="http://en.wikipedia.org/wiki/Spanish_naming_customs" title="Spanish naming customs">Spanish</a> • <a href="http://en.wikipedia.org/wiki/Taiwanese_name" title="Taiwanese name">Taiwanese</a> • <a href="http://en.wikipedia.org/wiki/Thai_name" title="Thai name">Thai</a> • <a href="http://en.wikipedia.org/wiki/Vietnamese_name" title="Vietnamese name">Vietnamese</a></p>
+          <h3>Consequences</h3>
+          <p>If designing a form or database that will accept names from people with a variety of backgrounds, you should <strong>ask yourself whether you really need to have separate fields for given name and family name</strong>.</p>
+          <p>This will depend on what you need to do with the data, but obviously 
+            it will be simpler to just use the full name as the user provides it, 
+            where possible.</p>
+          <p>Note that if you have separate fields because you want to use the 
+            person’s given name to communicate with them, you may not only have 
+            problems due to name syntax, but there are varying expectations around 
+            the world with regards to formality also that need to be accounted for. 
+            It may be better to <strong>ask separately, when setting up a profile for example, how that person would like you to address them</strong>.</p>
+          <p>If you do still feel you need to ask for constituent parts of a name separately, <strong>try to avoid using the labels ‘first name’ and ‘last name’</strong>, since these can be confusing for people who normally write their family name followed by given names.</p>
+          <p><strong>Be careful, also, about assumptions built into algorithms that pull out the parts of a name automatically</strong>.  For example, the v-card and h-card approach of <a href="http://microformats.org/wiki/hcard#Implied_.22n.22_Optimization">implied “n” optimization</a> could have difficulties with, say, Chinese names.  You should <strong>be as clear as possible about telling people how to specify their name</strong> so that you capture the data you think you need.</p>
+          <p>If you are designing forms that will be localised on a per culture 
+            basis, don’t forget that atomised name parts may still need to be stored
+            in a central database, which therefore needs to be able to represent 
+            all the various complexities that you dealt with by relegating the form 
+            design to the localisation effort.</p>
+          <p>I’ll post some further issues and thoughts about personal names when time allows.</p>
+          <p>[See <a href="http://people.w3.org/rishida/blog/?p=105">part 2</a>.]</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070705"> 
+        <!--p class="post-date">Thu 5 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">BBC 2.0</h2>
+          <p class="entrymeta">Posted on Thu 5 Jul 2007 tagged as <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>This morning I came across an interesting <a href="http://www.tomski.com/archive/new_archive/000063.html">set of principles</a> for site design. It was developed as part of the BBC 2.0 project.</p>
+          <p>That led me to the BBC Director General’s “<a href="http://www.bbc.co.uk/pressoffice/speeches/stories/thompson_baird.shtml">BBC 2.0: why on demand changes everything</a>“.  Also a very interesting read as a case study for the web as part of a medium of mass communication.</p>
+          <p>One particular topic out of several I found of interest:</p>
+          <blockquote>
+            <p>Interestingly, on July 7th last year, which was by far 
+              the biggest day yet for the use of rich audio-visual content from our 
+              news site, the content most frequently demanded was the eyewitness user 
+              generated content (UGC) from the bomb scenes.</p>
+            <p>Shaky, blurry images uploaded by one member of the public, downloaded by hundreds of thousands of other members of the public.</p>
+            <p>It’s a harbinger of a very different, more collaborative, more involving kind of news.</p>
+            <p>Here, as at so many other points in the digital revolution, the 
+              public are moving very quickly now – at least as quickly as the 
+              broadcasters.</p>
+          </blockquote>
+          <p>I also find it interesting to see how news spreads through channels 
+            like Flickr.  Eighteen months ago we were mysteriously bounced out of 
+            bed at 6am, but there was nothing on the TV to explain what had 
+            happened.  I went up to the roof patio and took some of the first photos
+            of the Buncefield explosion, including a <a href="http://www.flickr.com/photos/ishida/72300907/">photo</a> taken just 20 minutes after the blast, and uploaded it to Flickr. A slightly <a href="http://www.flickr.com/photos/ishida/72309076/">later photo</a> hit the number one spot for interestingness for that day. And as many <a href="http://www.flickr.com/search/groups/?q=buncefield&amp;m=pool&amp;s=rec&amp;w=71603202%40N00&amp;page=24">other people’s</a> photos appeared it was possible to get a lot of information, even ahead
+            of the national news, including eye witness accounts, about what had 
+            happened.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070613"> 
+        <!--p class="post-date">Wed 13 Jun 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Graphic text &amp; translation problems</h2>
+          <p class="entrymeta">Posted on Wed 13 Jun 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>Over the past 24 hours I’ve been exploring with interest the localization of the Flickr UI.</p>
+          <p>One difference you’ll notice, if you switch to a language other than English, is that the icons above a photo <a href="http://www.flickr.com/photos/ishida/538921480/">such as on this page</a> have no text in them.</p>
+          <p>I checked with Flickr staff, and they confirmed that this is because 
+            of the difficulty of squeezing in the translated text in the space 
+            available.  A classic localization issue, and one that developers and 
+            designers should always consider when designing the UI.</p>
+          <p>For example, here’s the relevant part of the English UI:</p>
+          <p><img src="r12a_blog_files/seals-english.jpg" alt="Picture of the English version, with text embedded in graphics."></p>
+          <p>and here is what it looks like when using the Spanish (or indeed any other) UI:</p>
+          <p><img src="r12a_blog_files/seals-spanish.jpg" alt="Picture of the Spanish version with only icons, no text."></p>
+          <p>The text has been dropped in favour of just icons. Note, however, how
+            the text appears in the tooltips that pop up as you mouse over the 
+            icons.</p>
+          <p>This can be an effective way of addressing the problems of text expansion during translation, as long as the icons are <span style="text-decoration: line-through">understandable</span> memorable and free from cultural bias or offense.  Using the tooltips 
+            to clarify the meaning is useful too.  I think these icons work well, 
+            and I’d actually like the Flickr folks to make the English version look 
+            like this, too.  It detracts less from the photos, to my mind.</p>
+          <p>Here’s what it may have looked like if Flickr had done the Portuguese in the same way as the English:</p>
+          <p><img src="r12a_blog_files/seals-portuguese.jpg" alt="Picture of a hypothetical Portuguese version with text in the graphics."></p>
+          <p>There are a number of problems here.  The text is quite dense, it 
+            overshoots the width of the photo (there are actually still two letters 
+            missing on the right), and it is quite hard to see the accented 
+            characters.  The text would have to be in a much bigger font to support 
+            the complexity of the characters in Chinese and Korean (and of course 
+            many other future languages).</p>
+          <p>Of course, in many situations where text appears in graphics the 
+            available width for the text is seriously fixed, and usually within a 
+            space that just about fits the English (if that’s the source).</p>
+          <p>Text will usually expand when translating from English, in 
+            particular.  This expansion can be particularly pronounced for short 
+            pieces of text like icon labels.</p>
+          <p>So the moral of this story: Think several times before using text in 
+            graphics, and in particular icons.  If you need to localise your page 
+            later, you could have problems.  Better just avoid it from the start if 
+            you can.</p>
+          <p><script src="r12a_blog_files/linkcount.html" type="text/javascript"></script> <a href="http://technorati.com/search/http://people.w3.org/rishida/blog/?p=96" rel="linkcount">View blog reactions</a></p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <!--div class="post">
+<div class="post-info">
+	<h2 class="post-title"><a href="/blog/?p=92" rel="bookmark" title="Permanent Link: Private: Music to play at my funeral">Private: Music to play at my funeral</a></h2>
+	<p class="entrymeta">Posted on Fri 1 Jun 2007 tagged as <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>Updated, 5 September 2014</p>
+<p>There’s one piece of music I like so much I’d like it played at my 
+funeral.  I’ve not had an opportunity to tell anyone that yet, but this 
+seems as good a time as any.  </p>
+<p>It’s a piece of music I listen to regularly, and never get tired of.  </p>
+<p>In the days when I did lots of acting, I would always lie down and 
+try to completely relax immediately before my first entry onto the stage
+ as Figaro, Iago, Pauvre Bitos, Biedermann, Trissotin, Ariel – whatever 
+role.  You’d find me lying in some quiet, dark corner with my headphones
+ on, and always listening to this piece of music.  </p>
+<p>It is calming but rich, it’s exotic but deep, it mingles melody with 
+tone poem.  It would wake up my sensitivity to culture and feeling, and 
+still does, while helping me wash away the worries and concerns of the 
+day. </p>
+<p>Ok, so you want to know what it is?  Alright.  It’s one of pieces in 
+the Trittico Boticelliano (Three Boticelli Pictures) by Respighi.  
+Specifically, <a href="http://www.amazon.co.uk/Respighi-Trittico-Botticelliano-LAdorazione-Magi/dp/B003RXKNTK/ref=sr_1_2?s=dmusic&amp;ie=UTF8&amp;qid=1409904813&amp;sr=1-2&amp;keywords=Adorazione+dei+Magi+heltay">L’Adorazione dei Magi</a> (The Adoration of the Magi). I usually listen to the version by Laszlo Heltay, on the album Essential Respighi.</p>
+<p>My second favourite piece is the version of <a href="http://www.amazon.co.uk/Gloire-p%C3%A8re-Ch%C3%A2teau-suite-dorchestre/dp/B0025YYBY0/ref=sr_1_4?s=dmusic&amp;ie=UTF8&amp;qid=1409905062&amp;sr=1-4&amp;keywords=valse+d%27augustine">La Valse d’Augustine</a>,
+ from the soundtrack of Le Château de ma Mère, that is part of Vladimir 
+Cosma’s Suites Symphoniques. My appreciation of this music is greatly 
+enhanced by memory of the ending of Yves Robert’s film, which is perfect
+ down to the very last word (in French).</p>
+<p>Enjoy.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div--> 
+      <!--div class="post">
+<div class="post-info">
+	<h2 class="post-title"><a href="/blog/?p=91" rel="bookmark" title="Permanent Link: Using slides for presentations">Using slides for presentations</a></h2>
+	<p class="entrymeta">Posted on Mon 16 Apr 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>I was just pointed to an article entitled “<a href="http://www.theregister.co.uk/2007/04/16/death_by_powerpoint/">Missing the PowerPoint of public speaking</a>” by Guy Kewney (the URI ends with ‘death_by_powerpoint’).</p>
+<p>I’m sorry, but I thought that was a fairly lame article. </p>
+<p>First out, it is not about PowerPoint, but about the use of slides.  
+And you could very easily replace ‘PowerPoint’ with ‘Slidy’ [an 
+XHTML-based slide presentation tool used at the W3C] throughout the 
+article.</p>
+<p>Next, the author seems to assume that ‘visual notes’ have to be 
+written sentences of text. In his conclusion he says that his 
+‘fundamental assumption’ is </p>
+<blockquote><p>“If you engage the audience, get them to respond in some 
+way, you’ll hold their attention and get good feedback. I don’t know how
+ you’d set up a PowerPoint show that would allow that flexibility.”</p></blockquote>
+<p>While I’ll concede that a very large proportion of speakers do 
+plaster their slides with text, it’s not inevitable.  I try to use 
+slides mostly to show pictures or illustrations, which I then talk about
+ and point at, but document elsewhere in notes. (See for example my 
+presentation “<a href="http://www.w3.org/2006/Talks/fundamentos-web-ri/slides/Slide0010.html">Practical &amp; Cultural Issues in Designing International Web Sites”</a>). I find slides, <em>when used that way</em>,
+ a very powerful tool to assist communication.  A picture conveys more 
+than words, and facilitates understanding.  I also find the examples 
+used to be particularly effective in helping a listener remember things 
+that were said – particularly when they come across a similar example in
+ their work.</p>
+<p>You can also use slides to graphically help the user understand where
+ they are in the discussion and what the current topic is. That can be a
+ significant help in keeping people on board or guiding them towards 
+your conclusion (and even keeping the attention of people who know about
+ the topic addressed by part of the talk by showing them how that fits 
+in with other stuff you will say that perhaps they didn’t know, etc.)</p>
+<p>Slides can also help you in structuring your discussion, bringing it 
+in on time, and summarising key points.  Of course, they have to be 
+designed with care and used properly to do that.  </p>
+<p>I’ve seen plenty of people in conferences get a third of the way 
+through their slides and realise that they have run out of time.  What’s
+ bad there is that people are just spewing out poorly designed slide 
+content, and then not, as the author says, engaging with the audience.  </p>
+<p>But done right, creating a slide presentation can really help 
+structure (and importantly weed out, compact and bring down to an 
+appropriate size) your thoughts, even if you don’t plan to project the 
+slides.  If you have 50 text-heavy slides for a 20 minute presentation, 
+you can see, if you look, that it might be difficult to fit all your 
+points in the allotted time.  Because slides tend to make you think of a
+ presentation in terms of components, however, you are also often likely
+ to be able to see easily where slides (and therefore information) can 
+be pruned to fit the allotted time while still getting over the message.
+ </p>
+<p>For what it’s worth, in my mind, the critical part of creating an 
+effective presentation is always the process of deciding what to now 
+leave out, after you’ve decided what to put in. I usually start with my 
+intended conclusion/effect, then decide what are the major points I need
+ to make to get to that conclusion, and then use my time constaints and 
+knowledge about the audience to decide how many points I need and how 
+long I have to make each point. The argument is often more important 
+than the data. You can’t be persuasive if you disrespect your audience.</p>
+<p>By the way, if I do have a page with bullets on, I try to always use 
+builds.  This keeps the user focused on what you are currently saying, 
+reduces the stress of them trying to match text with speech, and avoids 
+them reading ahead to stuff that needs their attention during the 
+earlier points if it is to be properly understood.</p>
+<p>PowerPoint, by the way, is a very handy tool for creating and 
+organizing the types of slide I like to make. Note however that I try to
+ prepare slide notes or articles for people to rediscover the 
+information later, and make them and the slides available in a portable 
+format such as valid XHTML with CSS, or PDF</p>
+<p>Having said that, I suppose it also comes down to individual speaking
+ styles.  I can think of many occasions when I sat in conferences 
+listening to a poor speaker and thanked my lucky stars that they had 
+committed the main ideas in succinct and well-organized form to their 
+slides, because it helped me understand what they were actually trying 
+to say.</p>
+<p>Another thought about the article.  Guy says </p>
+<blockquote><p>“There are indeed a few situations – of the ‘blackboard 
+notes’ lecture type – where PowerPoint is actually useful – where you 
+want to have your audience stop and write down what you’re saying.”</p></blockquote>
+<p>I can’t think of any such occasions.  Memories come back to me of one
+ lecturer at Cambridge (and others elsewhere) who would spend lesson 
+after lesson writing notes on speech synthesis on the blackboard, which 
+we then copied to our notebooks. It seemed then, and seems now, like a 
+monumental waste of time.  I’d much rather have a copy of the notes 
+given to me.  Apart from it sparing my aching wrist, I could have 
+digested the content that way in a fraction of the time.  </p>
+<p>The value of being in the presence of the person conveying the 
+knowledge is the time that it makes available for presenter to bring the
+ topic to life by their presentation style (including possibly unwritten
+ humour or memorable anecdotes), and the opportunity for the audience to
+ ask and debate questions.  If I knew in advance that someone at a 
+conference was going to just repeat their paper or slides verbatim, I’d 
+much rather spend my time in another track.</p>
+<p>Another thought, unrelated to Guy’s article. Many of the 
+Takahashi-style presentations I’ve seen don’t always impress me. It’s 
+good to get the user away from writing long sentences on the slides.  
+And a single large word on a page can have a strong impact temporarily. 
+ But after a few slides like that, the impact begins to be lost, I begin
+ to find myself less able to distinguish words that need to convey 
+impact from those that are just fillers, and I too become lost, in terms
+ of where we are in the presentation.  I think it is more useful to 
+diagrammatically help the user see (useful) <em>relationships</em> 
+between concepts rather than just flash them up in serial fashion. Like a
+ site map, showing how ideas interconnect can help your listener better 
+assimilate the relationships between the ideas you are putting before 
+them.</p>
+<div><script src="r12a_blog_files/linkcount.html" type="text/javascript"></script> <a href="http://technorati.com/search/http://people.w3.org/rishida/blog/?p=91" rel="linkcount">View blog reactions</a></div>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div-->
+      <div class="post" id="20070401"> 
+        <!--p class="post-date">Sun 1 Apr 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">New web app: Searching for language subtags</h2>
+          <p class="entrymeta">Posted on Sun 1 Apr 2007 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=langtags">langtags</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://people.w3.org/rishida/utils/subtags/">&gt;&gt; Use it !</a></p>
+          <div style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em;"><a href="http://people.w3.org/rishida/blog/images/subtag-search.gif"><img src="r12a_blog_files/subtag-search-small.gif" alt="Picture of the page in action."></a></div>
+          <p>This tool allows you to search for subtags that have, say, ‘french’ in their description <a href="http://people.w3.org/rishida/utils/subtags/index.php?searchtext=french&amp;searchtype=2&amp;submit=Show+result">(there are currently 11)</a>, or to find out what that mysterious ‘ch’ subtag stands for <a href="http://people.w3.org/rishida/utils/subtags/index.php?searchtext=ch&amp;searchtype=1&amp;submit=Show+result">(there are 2 possibilities)</a>. </p>
+          <p><strong>Update:</strong> You can now also search for a hyphen-separated sequences of subtags, such as <a href="http://people.w3.org/rishida/utils/subtags/index.php?searchtext=sl-IT-nedis&amp;searchtype=1">sl-IT-nedis</a> and find out what each of the component subtags mean.</p>
+          <p>Alternatively, you can simply list all current language tags, or script tags, or variants, etc.</p>
+          <p>For months I’ve been wanting to write a small, Web-based tool for 
+            finding things in the subtag registry without having to work on the (for
+            many people, intimidating) raw text file on the IANA site.</p>
+          <p><a href="http://and-other-things.blogspot.com/2007/03/going-multilinugal-where-to-get-your.html">Tom Gruner</a> created an initial tool for pretty printing the IANA list, which 
+            handled enough of the basics to allow me to use the little time I have 
+            these days to add the search functionality on top.</p>
+          <p>If you have JavaScript running, you are shown just the tags and 
+            descriptions initially, but by clicking on those you can reveal all 
+            additional information in the registry for a given tag.  I also 
+            highlight tags that are deprecated, so you can see that straight away.</p>
+          <p>(PS: Some final tweaks to the code will come when I have a spare 
+            moment for things like making the expanding list more accessible, etc.)</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070329"> 
+        <!--p class="post-date">Thu 29 Mar 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Code notes: Expanding and collapsing lists</h2>
+          <p class="entrymeta">Posted on Thu 29 Mar 2007 tagged as <a href="/blog/?tag=codenotes">codenotes</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 80%; color: teal; text-align: right;"><a href="#updates">This post was updated. See bottom of post for details.</a></p>
+          <p>I developed a set of JavaScript routines (W3C DOM standard) for 
+            hiding and revealing information on a page that you should be able to 
+            plug in to a wide range of content. Please feel free to use the code 
+            (though an acknowledgement would be nice.)</p>
+          <div style="background-color: #993300; color: white; padding: 0.5em;"><strong>Files</strong> </div>
+          <div style="border: 1px solid #993300; padding: 0.5em; margin-bottom: 1em;"> JavaScript: <a href="http://people.w3.org/rishida/code/expandcollapse/expandcollapse.js">expandcollapse.js</a>
+            <p></p>
+            <p>CSS: <a href="http://people.w3.org/rishida/code/expandcollapse/expandcollapsestyle.css">expandcollapsestyle.css</a><br>
+              Original HTML: <a href="http://people.w3.org/rishida/code/expandcollapse/news.html">news.html</a><br>
+              Resulting HTML: <a href="http://people.w3.org/rishida/code/expandcollapse/newsWithJS.html">newsWithJS.html</a> </p>
+          </div>
+          <div style="float:right; width: 260px; margin-left: 1em; margin-bottom: 1em;"><a href="http://r12a.github.io/code/expandcollapse/uncollapsed.gif"><img src="r12a_blog_files/uncollapsed-small.gif" alt=""></a>
+            <p></p>
+            <p><em>The uncollapsed text. (Click to see larger version.)</em></p>
+          </div>
+          <p>We’ll illustrate how to apply this with an example.  The picture shows what it looks like initially. (<a href="http://people.w3.org/rishida/code/expandcollapse/news.html">View the HTML</a>.)
+            We’ll collapse the additional news after the first item to just the 
+            headlines, but allow you to reveal the detail by clicking or tabbing and
+            hitting return.</p>
+          <p>[I applied this to a hacked down version of someone else’s page, 
+            because I was short on time.   This is good, in that it shows that it’s 
+            easy to apply this to existing pages.  However, due to my hacking, the 
+            general markup of the page may look a little strange in parts.  Please 
+            ignore that.]</p>
+          <h3>Structuring the content</h3>
+          <p>The markup of content you want to hide and reveal may be structured in a number of ways. This approach assumes that:</p>
+          <ol>
+            <li>you will click on a block element (which we will call the trigger) to cause some  content below it to expand or contract</li>
+            <li>the content revealed/hidden by clicking on the trigger can be in any
+              number of block elements of any type. (You can also include other block
+              elements above the trigger, if you like, though they won’t be hidden.)</li>
+            <li>each trigger and its revealable content is bounded by a block element. (We will use a div, but it could be any block element.)</li>
+            <li>all the expanding and collapsing content is surrounded by another 
+              element with an id.  This allows you to work with expanding content in 
+              different areas on the same page separately. (Again we use a div, with 
+              the id <code>otherNews</code>, but the id could just as easily be on the body element, since we only have one area of affected content on this page.)</li>
+          </ol>
+          <p>The diagram below shows the arrangement used in the example file. The
+            trigger element is red.  The content to be hidden/revealed is green. 
+            You don’t have to use an h3 as the trigger.  You could even use an 
+            ordinary paragraph tag.  If you do, however, you should use a class name
+            on each trigger element, so that the trigger can be identified.</p>
+          <p>Note that the trigger element should not contain an &lt;a&gt; 
+            element, since the JavaScript will add an &lt;a&gt; element to create a 
+            clickable zone. (It doesn’t make sense, anyway.)</p>
+          <p><img src="r12a_blog_files/blockstructure.gif" alt=""></p>
+          <p><em>The structure of the content in the example.</em></p>
+          <h3>Setting up the markup</h3>
+          <p>Very little change is required to the markup.</p>
+          <div style="background-color: #993300; color: white; padding: 1em;">
+            <p><strong>What I did</strong></p>
+            <p>Add this to the document head:<br>
+              <code>&lt;script type="text/javascript" src="expandcollapse.js"&gt;&lt;/script&gt;<br>
+              &lt;link rel="stylesheet" type="text/css" href="expandcollapsestyle.css"/&gt;</code></p>
+            <p>Add this to the body element start tag:<br>
+              <code>onload="setCollapseExpand('otherNews', 'h3','');revealControl('On'); revealControl('Off');"</code></p>
+            <p>Add this next to the RSS icon, just above the expanding content:<br>
+              <code>&lt;a id="On" name="On" onclick="openAll('otherNews', 'h3','');" href="#_" class="hideIfNoJS"&gt;Open All&lt;/a&gt;<br>
+              &lt;a id="Off" name="Off" onclick="closeAll('otherNews', 'h3','');" href="#_" class="hideIfNoJS"&gt;Close All&lt;/a&gt;<br>
+              </code> </p>
+          </div>
+          <p>Notes:</p>
+          <ol>
+            <li>
+              <pre>onload="setCollapseExpand('otherNews', 'h3','');"</pre>
+              <p>After the document has loaded, this collapses the content.</p>
+              <p>The JavaScript will look through the div with id <code>otherNews </code> for all h3 elements.  It then finds the parent of the h3 element, and 
+                adds a class name to all the remaining elements after the h3 within that
+                parent (a div, in our case).  The class is associated with styling that
+                makes these elements disappear. It will also surround the contents of 
+                the h3 element with an a element. This allows keyboard users to access 
+                the functionality using tabs. Each a element is given an onclick 
+                function to enable it to toggle the hidden content on or off.</p>
+              <p>If we had wanted to use an ordinary p tag with a class name of, say, 
+                trigger rather than the h3, the onload code would look like this:</p>
+              <pre>onload="setCollapseExpand('otherNews', 'p','trigger');"</pre>
+            </li>
+            <li>
+              <p>Optional. You may want to add some buttons to expand and collapse all
+                text in one go.  If so you’ll need to add these to the markup.  In our 
+                example I added the following code alongside the RSS feed icon. I used 
+                an a element so that keyboard users can tab to it.</p>
+              <pre>&lt;a id="On" name="On" onclick="openAll('otherNews', 'h3','');" 
+   href="#_" class="hideIfNoJS"&gt;Open All&lt;/a&gt;
+&lt;a id="Off" name="Off" onclick="closeAll('otherNews', 'h3','');" 
+   href="#_" class="hideIfNoJS"&gt;Close All&lt;/a&gt;
+</pre>
+              <p>I added the class name hideIfNoJS to each a element.  We can now use CSS to hide this text unless JavaScript is detected.</p>
+              <p>We then need to add two more statements to the onload value on the body tag, one for each a element.</p>
+              <pre>revealControl('On'); revealControl('Off');</pre>
+              <p>After the document loads, the JavaScript will remove those class names, and the switches will become visible.</p>
+            </li>
+            <li>
+              <pre>&lt;link rel="stylesheet" type="text/css" href="expandcollapsestyle.css"/&gt;</pre>
+              <p>CSS will drive most of the behaviour.  The JavaScript simply changes 
+                the class names associated with the markup. This references a stylesheet
+                that will do all the hard lifting.</p>
+            </li>
+          </ol>
+          <h3>A walk through the CSS</h3>
+          <p>Let’s take a look at the CSS in the <a href="http://people.w3.org/rishida/code/expandcollapse/expandcollapsestyle.css">expandcollapsestyle.css</a> file.</p>
+          <p>First, we add some styling to the new ‘Open All’ and ‘Close All’ text
+            we added.  This will make this text look like small graphical buttons, 
+            and change the cursor to a pointing hand as we mouse over them.</p>
+          <pre>   a#On, a#Off {
+      padding: 0.1em 0.5em 0.1em 0.5em;
+      margin: 0 0.5em 0 0;
+      text-decoration: none;
+      background: #005a9c;
+      color: #fc6;
+      font-weight: bold;
+      cursor: pointer;
+      }
+</pre>
+          <p>Next, we add a rule to remove the ‘Open All’ and ‘Close All’ buttons 
+            from view initially.  The revealControl calls in the body onload 
+            attribute will remove this class if JavaScript is enabled.</p>
+          <pre>   .hideIfNoJS {
+      display: none;
+      }
+</pre>
+          <p>Now, we style the trigger text (in our case the h3 elements).</p>
+          <p>The first set of rules makes the cursor become a pointer when we 
+            mouse over the text, and adds a graphic to show whether the content is 
+            revealed or not.</p>
+          <pre>   .triggerOpen {
+	background:url(http://www.w3.org/International/icons/open-thin.gif)
+              no-repeat left 2px #fffaf0;
+	}
+
+   .triggerClosed {
+	background:url(http://www.w3.org/International/icons/close-thin.gif)
+              no-repeat left 2px #fffaf0;
+	}
+</pre>
+          <p>You can, of course, change the styling to suit yourself.  For example, you may want to use a different graphic.</p>
+          <p>We also fix the colour of the trigger text, pads the left side of the
+            text so that you can see the graphic, and make the trigger change 
+            colour as you mouse over it. (Note that the JavaScript has introduced 
+            this a element.)</p>
+          <pre>.triggerOpen a, .triggerClosed a {
+	padding-left:14px;
+	color:#000;
+	text-decoration: none;
+	cursor: pointer;
+	}
+
+.triggerOpen a:hover, .triggerClosed a:hover {
+	color:#00f;
+	}
+</pre>
+          <p>Finally, we add the styling for the content that will be 
+            hidden/revealed.  The .hiddenContent class will be attached to content 
+            by the JavaScript to hide it.</p>
+          <pre>   .hiddenContent {
+      display: none;
+      }
+</pre>
+          <p>When that content is not hidden, it gets the revealedContent class.  
+            We added some styling to pad the left side of the blocks by the same 
+            amount as the trigger text.</p>
+          <pre>   #otherNews .revealedContent {
+      padding-left: 14px;
+      }
+   #otherNews ul.revealedContent {
+      padding-left: 30px;
+      margin-left: 0;
+      }
+</pre>
+          <h3>The end result</h3>
+          <div style="float:left; width: 260px; margin-right: 1em; margin-bottom: 1em;"><a href="http://people.w3.org/rishida/code/expandcollapse/collapsed.gif"><img src="r12a_blog_files/collapsed-small.gif" alt=""></a>
+            <p></p>
+            <p><em>The collapsed text. (Click to see larger version.)</em></p>
+          </div>
+          <p>This picture shows what you will see when you open the page in a user agent that has JavaScript turned on.  (<a href="http://people.w3.org/rishida/code/expandcollapse/newsWithJS.html">See the HTML</a>.)  If JavaScript is turned off, you will see exactly what you saw before.</p>
+          <p><br clear="all">
+          </p>
+          <h3><a name="updates" id="updates">Updates to this post</a></h3>
+          <p>2007-07-01: Moved cursor:pointer from rules for .triggerOpen and 
+            .triggerClosed to the rules for ‘.triggerOpen a, .triggerClosed a’.  
+            Stops the pointer appearing to the right of the trigger text. Also added
+            note about &lt;a&gt; in trigger.</p>
+          <p>2007-06-05: Small change to CSS to ensure that the expand/collapse 
+            works when clicking on the + or – icon too.  (Moved the padding.)</p>
+          <p>2007-04-18: Largely rewrote the text to make it more readable, and to
+            take into account changes made to the JavaScript and CSS files (which 
+            incorporate the ideas from several comments below).</p>
+          <div><script src="r12a_blog_files/linkcount.html" type="text/javascript"></script> <a href="http://technorati.com/search/http://people.w3.org/rishida/blog/?p=86" rel="linkcount">View blog reactions</a></div>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070328"> 
+        <!--p class="post-date">Wed 28 Mar 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Code notes: How to insert a new element around the content of another</h2>
+          <p class="entrymeta">Posted on Wed 28 Mar 2007 tagged as <a href="/blog/?tag=codenotes">codenotes</a>, <a href="/blog/?tag=1">general</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 80%; color: teal;">(I’m making notes here so I can find these techniques again later.)</p>
+          <p>I wanted to use JavaScript (W3C DOM compliant) to wrap the content of a heading with an a element, ie. </p>
+          <p>&lt;h3&gt;This is &lt;em&gt;my&lt;/em&gt; header&lt;/h3&gt;</p>
+          <p>Needed to become</p>
+          <p>&lt;h3&gt;&lt;a href=”#mytarget”&gt;This is &lt;em&gt;my&lt;/em&gt; header&lt;/a&gt;&lt;/h3&gt;</p>
+          <p>Here’s what I came up with:</p>
+          <pre>var h = document.getElementBySomeMethod('h3'); // grab the heading
+var a = document.createElement('a');       // create an a element
+    a.setAttribute('href', '#mytarget');   // set the href
+while (h.childNodes.length &gt; 0) {          // for each child node in the h3
+    a.appendChild( content.firstChild );   // move the node to the a element
+    }
+h.appendChild(anchor);                    // stick a under the now empty h3
+</pre>
+          <p>It seems so simple now to look at.  Took me ages to figure it out. 🙁</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070313"> 
+        <!--p class="post-date">Tue 13 Mar 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">How do I say ‘this is not in any language’ in XHTML/HTML</h2>
+          <p class="entrymeta">Posted on Tue 13 Mar 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>You should always use the lang and/or xml:lang attributes in HTML or
+            XHTML to identify the human language of the content so that 
+            applications such as voice browsers, style sheets, and the like can 
+            process that text. (See <a href="http://www.w3.org/International/tutorials/language-decl/">Declaring Language in XHTML and HTML</a> for the details.) </p>
+          <p>You can override that language setting for a part of the document 
+            that is in a different language, eg. some French quotation in an English
+            document, by using the same attribute(s) around the relevant bit of 
+            text.</p>
+          <p>Suppose you have some text that is not in any language, such as type 
+            samples, part numbers, perhaps program code.  How would you say that 
+            this was no language in particular?</p>
+          <p>There are a number of possible approaches:</p>
+          <ol>
+            <li>
+              <p>A few years ago we introduced into the XML spec the idea that 
+                xml:lang=”” conveys that ‘there is no language information available’. 
+                (See <a href="http://www.w3.org/TR/REC-xml/#sec-lang-tag">2.12 Language Identification</a>)</p>
+            </li>
+            <li>
+              <p>An alternative is to use the value ‘und’, for ‘undetermined’. </p>
+            </li>
+            <li>
+              <p>In the IANA Subtag Registry there is another tag, ‘zxx’, that means 
+                ‘No linguistic content’.  Perhaps this is a better choice. It has my 
+                vote at the moment.</p>
+            </li>
+          </ol>
+          <p><strong>xml:lang=””</strong> Is ‘no language information available’ suitable to express ‘this is not a language’?  My feeling is not.</p>
+          <p>If it were appropriate, there are some other questions to be answered
+            here. With HTML an empty string value for the lang or xml:lang 
+            attribute produces a validation error. </p>
+          <p>It seems to me that the validator should not produce an error for xml:lang=””. It needs to be fixed.</p>
+          <p>I’m not clear whether the HTML DTD supports an empty string value for
+            lang. If so, the presumably the validator needs to be fixed.  If not, 
+            then this is not a viable option, since you’d really want both lang and 
+            xml:lang to have the same values.</p>
+          <p><strong>und</strong> Would the description ‘undetermined’ fit this 
+            case, given that it is not a language at all? Again, it doesn’t seem 
+            right to me, since ‘undetermined’ seems to suggest that it is a language
+            of some sort, but we’re not sure which.</p>
+          <p><strong>zxx</strong> This seems to be the right choice for me.  It 
+            would produce no validation issues.  The only issue is perhaps that it’s
+            not terrible memorable.</p>
+          <p style="font-size: 80%; color: teal;">This is an attempt to summarise and move forward some ideas in a <a href="http://lists.w3.org/Archives/Public/www-international/2005JulSep/0163.html">thread</a> on www-international@w3.org by Christophe Strobbe, Martin Duerst, 
+            Bjoern Hoermann and Tex Texin. I am sending this to that list once more.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070309"> 
+        <!--p class="post-date">Fri 9 Mar 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Spell checking and language tags in XMetal</h2>
+          <p class="entrymeta">Posted on Fri 9 Mar 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I use XMetal 4.6 for all my XHTML and XML authoring.  As someone who
+            has been advocating for some time that you should always declare the 
+            human language of your content when creating Web content, I’m finding 
+            XMetal’s spell checker both exciting and frustrating. Here are a few 
+            tips that might help others.</p>
+          <p>The exciting part is that XMetal figures out which spell checker to 
+            use based on the xml:lang language declarations. Given the following 
+            code:</p>
+          <pre>&lt;html xml:lang="en-us" lang="en-us" ... &gt; 
+...
+&lt;p&gt;behavior localization color&lt;/p&gt;
+&lt;p&gt;behaviour localisation colour&lt;/p&gt;
+&lt;p xml:lang="fr" lang="fr"&gt;ceci est français&lt;/p&gt;
+&lt;p lang="gr" xml:lang="gr"&gt;Κάνοντας τον Παγκόσμιο Ιστό πραγματικά Παγκόσμιο&lt;/p&gt;
+...
+</pre>
+          <p>The spell checker will recognize three errors (behaviour localisation
+            colour).  The en-us value in the html tag causes it to use the 
+            US-English spell check dictionary, and the fr and gr values in the last 
+            two paragraphs cause it to use a French and Greek dictionary, 
+            respectively, for the words in those elements. Great!</p>
+          <p><a href="http://people.w3.org/rishida/images/xmetalspellcheck.gif"><img style="margin: 1em; margin-left: 0; border: dotted 1px teal; padding: 4px;" src="r12a_blog_files/xmetalspellcheck.gif" alt="Picture of the spell checker in action."></a></p>
+          <p>Note that, since XMetal is an XML editor, rather than an HTML editor,
+            it is the value in the xml:lang attribute rather than the one in the 
+            lang attribute that counts here. For XHTML 1.0 content served as 
+            text/html, of course, <a href="http://www.w3.org/International/tutorials/language-decl/#Slide0160">you should use both</a>.</p>
+          <p>The following, however, are <strong>things you need to watch out for</strong>:</p>
+          <ol>
+            <li>
+              <p>If your html tag contains just xml:lang=”en” your spell checking 
+                won’t be terribly effective, since all the English dictionaries (US, UK,
+                Australia, and Canada) will be used. This means that for the code above
+                you will receive no error notifications, since each spelling occurs in 
+                at least one dictionary.</p>
+              <p>This is logical enough, though it’s something you may not think about
+                when spell checking. (Even if you go into the spell checker options and
+                set, say, the US English spell checker, the language declaration will 
+                override that manual choice.)</p>
+            </li>
+            <li>
+              <p>If you want to write British English, you would normally put en-GB in the xml:lang (because that’s what <a href="http://www.w3.org/International/articles/language-tags/">BCP 47 says you should do</a>).
+                Unfortunately this will produce no errors with our test case above! 
+                XMetal doesn’t recognise the GB subtag, and reverts to xml:lang=”en”. To
+                get the behaviour you are expecting you have to put en-UK in xml:lang. 
+                This is really bad.  It means you are marking up your content 
+                incorrectly. Presumably the same holds true for other languages.  I see 
+                CF for Canadian French, rather than CA, SD for Swiss German rather than 
+                CH, etc.</p>
+            </li>
+          </ol>
+          <p>It’s good to see that the language markup <em>is</em> being used for spell-checking. However, it’s a case of two steps forward, one step back.  Which is a shame.</p>
+          <p><span style="color:red; font-size: 130%;">UPDATE:</span> Justsystems have worked on this some more.  See my <a href="/blog/?p=330">later blog post</a> for details.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070206"> 
+        <!--p class="post-date">Tue 6 Feb 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">How I geotag my photos</h2>
+          <p class="entrymeta">Posted on Tue 6 Feb 2007 tagged as <a href="/blog/?tag=8">geotagging</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>Several times recently I’ve needed to explain how I add gps 
+            information to my photos.  I thought it would help to document it here. 
+            I’m not saying this is the best way to do things, but it seems to work 
+            reasonably well.</p>
+          <p><span class="update" style="color:brown">Update (9 jul 2008): I have updated the Python script linked to near the end of this article.</span></p>
+          <p><em>If your browser window isn’t wide enough to show the right side 
+            of the pictures, just click on the picture to see the whole thing.</em></p>
+          <div style="float: right; margin-top: 2em; margin-left: 1em;"><img src="r12a_blog_files/navigps.jpg" alt="The NaviGPS device."></div>
+          <p style="margin-top: 3em;"><strong>Plotting points while taking photos.</strong> I carry around a <a href="http://wiki.openstreetmap.org/index.php/GPS_Reviews#NaviGPS_.2F_.28B.29GT-11">GPS device (NaviGPS)</a> that plots points at intervals you can choose.  I usually opt for every 5 seconds. The device is really <a href="http://www.flickr.com/photos/ishida/201608275/">light, small</a> and waterproof.  Main problems:</p>
+          <ol>
+            <li>Finding something to carry it in.  I can’t seem to find the armband 
+              Scytex describes, and though carrying it in my trouser pocket worked 
+              reasonably well, I think it was sub-optimal.  I recently acquired a 
+              small thin bag that clips onto my backpack or camera bag.</li>
+            <li>Buildings can block the signal.  This was an issue recently in the 
+              narrow streets of Oviedo’s old town.  But it’s usually fine, and even in
+              Oviedo produced usable results.</li>
+            <li>Although the plots are usually incredibly accurate, there are 
+              occasions where parts of the track seems slightly displaced from the 
+              route you can see on Google Earth.  I don’t know whether this is because
+              Google Earth is slightly incorrect or the GPS points are slightly off. 
+              (See how I deal with that below.)</li>
+          </ol>
+          <p>I also try to remember to synchronise, as GMT, the data/time in my 
+            camera with the date/time in the GPS device before I set off (although 
+            you’ll read later that I have a way of dealing with this if I forget).</p>
+          <p style="margin-top: 4em;"><strong>Converting points to tracks.</strong> When I get back to my computer, it takes about 10 seconds to upload the
+            data from the GPS device to a folder using a USB cable.  The resulting 
+            file has a .nmea extension and contains information about latitude, 
+            longitude, elevation, etc, and a timestamp for each point plotted. (<a href="http://people.w3.org/rishida/gps/hyderabad.nmea">Example</a>.)</p>
+          <p>I use a small Python script I wrote to convert that to a .kml file 
+            that can be viewed on Google Earth or Google Maps. (The code is given 
+            below.)    The script takes about one second to run. The result is a 
+            line that joins all the ‘dots’ together, and provides timestamp 
+            information and elevation data on the left of the screen for each 
+            5-second plot that links to the the appropriate place on the map.  (See 
+            the picture below.)</p>
+          <p>The program lets me add a positive or negative offset, in seconds, if
+            I have forgotten to synch the camera and the gps device, and adjusts 
+            the times of the plots to match those on the photos.</p>
+          <p>See the example of <a href="http://people.w3.org/rishida/gps/0701-punakha-route.kml">this recent trip in Bhutan</a>.
+            The file at the end of that link is a particularly large file – 1.3Mb –
+            since it contains annotations for 5-second plots over a period of 
+            around 12 hours. Usually my files are only a fraction of this size. (I 
+            often produce the track plot without the annotations. In this case, even
+            this 12-hour file would only be <a href="http://people.w3.org/rishida/gps/0701-punakha-route-small.kml">about 248k</a>.)
+            Note: There is one long straight line in that plot – this was due to 
+            the GPS device being inadvertently turned off at one stage.</p>
+          <p style="margin-top: 4em;"><strong>Adding geo data to my photos.</strong> After adding XMP data to my photos about location, title, etc, using 
+            Adobe CS2 Bridge, I also add latitude and longitude to the exif data 
+            using Picassa and Google Earth.</p>
+          <p>The beta version of Picassa allows you to add latitude and longitude 
+            to your photo’s exif data by visually locating a point on Google Earth.</p>
+          <p><a target="_blank" href="http://people.w3.org/rishida/gps/picassa-geotag.jpg"><img src="r12a_blog_files/picassa-geotag.jpg" alt="Click to see the full picture." title="Click to see the full picture."></a></p>
+          <p><em title="Caption">Picture of the menu selection in Picassa.</em></p>
+          <p>You can assign geodata for batches of photos or individual photos.  
+            You just line up the target icon with the right place on the map and hit
+            the Geotag button. (See the picture below, showing me about to line up a
+            location with the target icon.) </p>
+          <p>In principle, to find the right place on the map, I click on the 
+            nearest timestamp to the left (see 092535 in the picture below, which 
+            was the time in GMT when I took the photo of the tree, bottom right) to 
+            identify the position, and then move the map until that position is 
+            below the target.  In practice, I can usually remember and see where I 
+            was standing relative to a given landmark or street corner, etc, and I 
+            move that under the target.  If the GE definition is not high for that 
+            area however, I use the timestamp on the photo and the plot trace on 
+            Google Earth. </p>
+          <p>Where there’s a discrepancy, I don’t know whether my gps plot or the 
+            Google Earth map is most correct, but I opt for the visual approach 
+            because when I use this data it is typically to show my location on 
+            Google Earth/Maps. So I try to sync to what I see (and cross my fingers 
+            that things won’t change when GE rephotographs that location).</p>
+          <p>If I can’t tell within a (very) few metres where I was standing, I don’t geotag my photo.</p>
+          <p><a target="_blank" href="http://people.w3.org/rishida/gps/geotag-gearth.jpg"><img src="r12a_blog_files/geotag-gearth.jpg" alt="Click to see the full picture." title="Click to see the full picture."></a></p>
+          <p><em title="Caption">Picture of Google Earth just before I position the map for a particular photo and hit the Geotag button.</em></p>
+          <p>The one fly in the ointment here is that I can’t use Picassa to tag 
+            my RAW files in this way – which is a pain, because using Adobe CS I’m 
+            able to add all the other metadata I want.  I’m hoping Picassa may do 
+            something about this soon, or (perhaps even better for me) that Adobe 
+            will add similar capabilities to Picassa for tagging photos from Adobe 
+            Bridge with Google Earth…  For now, I just get by as best I can.</p>
+          <p style="margin-top: 4em;"><strong>Uploading the geodata.</strong> When I upload a photo to <a href="http://www.flickr.com/photos/ishida/">Flickr </a>or <a href="http://www.panoramio.com/user/144501">Panoramio</a>, the exif geodata is read automatically and used to establish the location on their maps.</p>
+          <p><a target="_blank" href="http://people.w3.org/rishida/gps/flickr-map.jpg"><img src="r12a_blog_files/flickr-map.jpg" alt="Click to see the full picture." title="Click to see the full picture."></a></p>
+          <p><em title="Caption">Picture of a photo on Flickr showing how it locates the place the photo was taken on Yahoo maps.</em></p>
+          <p style="margin-top: 4em;"><strong>Using the geodata.</strong> Once I have the geodata in the photo’s metadata, I can use it in a number of ways.</p>
+          <p>I can extract it to label a photo, as in <a href="http://people.w3.org/rishida/photos/slide.php?set=0701-dochula&amp;slide=2">this example</a> (click on ‘show detail’). This has advantages such as: (a) a reader can
+            easily get at the data, eg. to cut and paste the coordinates into 
+            Google Earth or Google Maps to see where the photo was taken, (b) if the
+            copy of the photo itself no longer contains the metadata (as in this 
+            case), the data is still available. (Note: the full-sized version of the
+            photo linked from that page does contain the exif data.)</p>
+          <p>For my sets on Flickr, I also run some simple <a href="#code">Python scripts</a> to create a .kml file which shows the location of each photo on Google 
+            Earth or Google Maps.  I just upload the .kml file to a server, and you 
+            can access the information from a simple HTML link.   Try this example 
+            of photos taken at the Golconda Fort, Hyderabad, on either <a href="http://people.w3.org/rishida/gps/0701-hyderabad1.kml">Google Earth</a> or <a href="http://maps.google.com/maps?q=http://people.w3.org/rishida/gps/0701-hyderabad1.kml">Google Maps</a>.  If you click on the icons you see on the map, you can see the view I had from that position.</p>
+          <p><a target="_blank" href="http://people.w3.org/rishida/gps/gearth-set.jpg"><img src="r12a_blog_files/gearth-set.jpg" alt="Click to see the full picture." title="Click to see the full picture."></a></p>
+          <p><em title="Caption">A picture of a set of photos plotted on a map in Google Earth, showing how you can see a photo by clicking on an icon.</em></p>
+          <p style="margin-top: 4em;"><strong><a name="code" id="code">Python code.</a></strong></p>
+          <p>This is the code I use to convert the .nmea data to an annotated .kml
+            file.  Before the script runs you are asked to input the name of the 
+            file to be converted and any offset needed (in seconds) to synchronise 
+            the camera time with the time in the  gps device (this can be a positive
+            or negative number or zero).</p>
+          <p>See the <a href="http://people.w3.org/rishida/gps/hyderabad.nmea">sample input</a> (NMEA file) and <a href="http://people.w3.org/rishida/gps/hyderabad.timed.kml">sample output</a> (KML file).</p>
+          <p>See the <a target="_blank" href="http://people.w3.org/rishida/code/createannotatedkml.txt">code</a> (view the file or download and convert the extension to .py)</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <!--div class="post"> 
+        <div class="post-info">
+          <h2 class="post-title"><a href="/blog/?p=78" rel="bookmark" title="Permanent Link: Back from Bhutan">Back from Bhutan</a></h2>
+          <p class="entrymeta">Posted on Tue 30 Jan 2007 tagged as <a href="/blog/?tag=4">photos</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><br clear="all">
+          </p>
+          <div style="float: left; margin-right: 10px; margin-bottom: 10px;">
+            <p> <a href="http://www.flickr.com/photos/ishida/372564108/" title="photo sharing"><img src="r12a_blog_files/372564108_d4500969d1_m.jpg" alt="" style="border: 2px solid rgb(0, 0, 0);"></a><br>
+              <span style="font-size: 0.9em; margin-top: 0px;"><br>
+              <a href="http://www.flickr.com/photos/ishida/372564108/">DochuLa Pass</a><br>
+              <a href="http://www.flickr.com/photos/ishida/">Flickr photostream</a>.<br>
+              </span></p>
+          </div>
+          <p>I had been excited at the chance to visit <a href="http://en.wikipedia.org/wiki/Bhutan">Bhutan</a> for some months, and having just returned, I have to say that I wasn’t 
+            disappointed at all.  In fact, it was better than I dared hope.</p>
+          <p>The whole country is a photographer’s paradise.  The dzongs and 
+            monasteries are all beautiful.  But so are the people.  So calm and 
+            friendly. (And more stunningly gorgeous women per capita than anywhere 
+            else I’ve seen!)</p>
+          <p>Part of that is surely helped by the fact that the total population 
+            of Bhutan, in a country the size of Switzerland, is only around 600,000.
+            The population of the capital Thimpu is about the same as that of a 
+            small town (approx 30,000).  While this is surely a disadvantage for 
+            building infrastructure etc, I suspect it has its upside too. Every time
+            I went anywhere with Bhutanese people we bumped into others that they 
+            knew.  I’m sure this helps make the place seem safer and less 
+            isolating/depersonalising than any other capital city I’ve visited.</p>
+          <p>People you meet look you in the eye, and have a ready smile.</p>
+          <p>I was also amazed at the degree to which Bhuddism is integrated into 
+            the daily lives of the people – even when they watch Western television 
+            all the time.</p>
+          <p>The only trouble with this is that it is so hard/expensive to return.
+            I was there at the invitation of a government department for a <a href="http://www.panl10n.net/english/Activity20.htm">regional consultation on local language computing</a>,
+            but to visit as a tourist you have to be on a package tour that will 
+            cost you in the region of 240 USD per day.  This keeps the number of 
+            tourists down to around 17,000 last year, 14,000 the year before 
+            (although that figure will rise significantly this and next year).  All 
+            that, however, is probably a very good thing. I’d hate to see the place 
+            spoiled by tourism. I do hope I’ll make it back some day.</p>
+          <p>I have only just begun uploading my photos, though I started with a bang.  My first batch are of <a href="http://rishida.net/photos/sets/thumbs.php?set=0701-dochula">Dochu La</a> (Dochu Pass).  At around 3,100 metres, way above the clouds and with a 
+            thin layer of snow over the colourful chortens, I felt a bit like I was 
+            in heaven.  More to come over the next couple of weeks or so…</p>
+          <p>Here is the final set:</p>
+          <ul>
+            <li><a href="http://rishida.net/photos/sets/thumbs.php?set=0701-dochula">DochuLa Pass</a></li>
+            <li><a href="http://rishida.net/photos/sets/thumbs.php?set=0701-punakha">Punakha Dzong</a></li>
+            <li><a href="http://rishida.net/photos/sets/thumbs.php?set=0701-paro">Paro</a></li>
+            <li><a href="http://rishida.net/photos/sets/thumbs.php?set=0701-thimpu">Thimpu</a></li>
+            <li><a href="http://rishida.net/photos/sets/thumbs.php?set=0701-bhutan-other">Other</a></li>
+          </ul>
+          <div class="post-info"> </div>
+          <p><br clear="all">
+          </p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div-->
+      <div class="post" id="20061106"> 
+        <!--p class="post-date">Mon 6 Nov 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">Tibetan character picker</h2>
+          <p class="entrymeta">Posted on Mon 6 Nov 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=tibetan">tibetan</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/tibetan/">New picker</a></p>
+          <p>I finally got around to studying the Tibetan script.  To help with that I created a Tibetan picker.</p>
+          <p>This picker includes all the characters in the Unicode Tibetan block.</p>
+          <p>The default shows all characters as images due to the rarity of 
+            Tibetan fonts. Consonants are mostly in a typical articulatory 
+            arrangement, with vowels below, and digits in keypad order.</p>
+          <p>Since characters cover the whole Tibetan block, there are many 
+            characters that are used for transcriptions rather than just the 
+            characters needed for ordinary Tibetan text.  There are also many 
+            symbols, and three characters that are not in the Tibetan block itself. I
+            tried to arrange things so that the most commonly used characters for 
+            Tibetan or Dzonkha are easy to get at, but I’m open to suggestions.</p>
+          <p>Note that the <a href="http://www.thdl.org/xml/show.php?xml=/tools/tibfonts.xml&amp;l=uva10928423419921">Tibetan Machine Uni</a> font I use as a default setting is an OpenType font that requires 
+            version 1.453.3665.0 or later of the Uniscribe engine (usp10.dll). So 
+            the output is not ideal in my browser.  Works fine if you cut and paste 
+            into MS Word though. 🙁</p>
+          <p>Enjoy.</p>
+          <p><strong>Update:</strong></p>
+          <p>I installed a later version of uniscribe, and now my Tibetan text 
+            looks fine in the browser as well as in Office.  On my previous laptop I
+            just used a <a href="http://www.thdl.org/xml/showEssay.php?xml=/tools/fonts/unicode-explain-eng.xml">small tool</a> that’s downloadable from the Tibetan &amp; Himalayan Digital Library.  
+            My new laptop, however, didn’t work with that tool – I’ve no idea why.  
+            So I had to resort to using the <a href="http://www.thdl.org/xml/showEssay.php?xml=/tools/fonts/unisupport.xml&amp;l=d1e370">Windows Recovery Console</a>.</p>
+          <p>I’m already subscribed to Microsoft Volt, so I used the <a href="http://groups.msn.com/MicrosoftVOLTuserscommunity/homepage.msnw?pgmarket=en-us">latest uniscribe version</a> from there, dated 4 jan 2006.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20061031"> 
+        <!--p class="post-date">Tue 31 Oct 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title"><a href="/blog/?p=70" rel="bookmark" title="Permanent Link: Unicode 5, The Book, is here">Unicode 5, The Book, is here</a></h2>
+          <p class="entrymeta">Posted on Tue 31 Oct 2006 tagged as  <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I’ve been lucky enough to have access to a pre-publication 
+            electronic version of the new Unicode Standard 5 book, and though I’ve 
+            been terribly busy just lately, I’ve carved out a little time to read 
+            and even use some of it. And I like what I see.</p>
+          <p>I’ve always thought the Unicode book was a really useful thing to 
+            have if you need to understand the ins-and-outs of Unicode for 
+            implementation purposes, or if you are simply interested in how scripts 
+            work.  It has always been relatively easy to read, and more like a 
+            guidebook than a standard, if you know what I mean.  The good news is 
+            that that seems to be even more the case in the latest version.  There 
+            are lots of small edits that improve the clarity of the text and make it
+            more readable.</p>
+          <div>
+            <div style="float:right; color: brown; width: 30%; padding: 0 0 1em 1em;">In
+              simple terms, a grapheme cluster is a sequence of characters that need 
+              to be kept together for things like wrapping text at the end of a line, 
+              cursor movement, delete, etc.</div>
+            <p>There are, however, some more significant changes that are also very 
+              welcome.  For example, I’ve been looking at first-letter styling in CSS 
+              recently, particularly in the context of Indian scripts, but despite a 
+              lot of searching I was unable to figure out where the Standard actually 
+              told me that a default grapheme cluster didn’t cover a whole Indic 
+              syllable.   The grapheme cluster concept is really quite an important 
+              one for implementations, and it was frustrating to see it described so 
+              poorly. </p>
+          </div>
+          <p>All that has changed with extensive additions to Chapter 3.  Now 
+            section 3.6 Combination contains a substantial amount of new text that 
+            explains grapheme clusters quite clearly.  Again, don’t be put off by 
+            the dour-sounding title for Chapter 3, Conformance.  It contains lots of
+            useful definitions and explanations in the typical clear and succinct 
+            style of the book.</p>
+          <p>I have to admit to a tinge of disappointment that the Standard 
+            Annexes which are now included in the book have simply been added as 
+            appendices, rather than integrated into the text proper.  My evaluation 
+            copy didn’t actually contain this text, so I can’t comment further, 
+            however. </p>
+          <p>Also, I had decided a short while ago that I need to finally get to 
+            grips with Tibetan script, and some urgency has been added to that given
+            that I will visit Bhutan in January.  I was disappointed, therefore, to
+            find that the section on Tibetan script had not been edited at all.  
+            That section has always been substandard, to my mind, in terms of 
+            clarity and writing style. </p>
+          <p>On the other hand, I see that useful additions have been made to 
+            existing block descriptions elsewhere (such as a useful additional 
+            section on Rendering of Thai Combining Marks in the Thai description). I
+            see similar additions to block descriptions such as Lao, Gujarati and 
+            Gurmukhi, and the Bengali block description seems to have been largely 
+            rewritten.  I’m looking forward to getting my teeth into those and also 
+            the numerous, enticing new block descriptions, such as Phags-pa, N’ko, 
+            Sumer-Akkadian (cuneiform) and the like.</p>
+          <p>So would I recommend it?  Certainly.  The Unicode Standard is a mine 
+            of useful and accessible information if, as I said, you are implementing
+            Unicode-based applications or you are interested in how scripts work.  
+            And it’s worth replacing your previous version, not only because the new
+            smaller format will make it much easier to handle and keep on your 
+            bookshelf, but because of the value of the many useful additions.  I’ll 
+            be picking up my copy at the Unicode Conference in Washington next 
+            month.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20061021"> 
+        <!--p class="post-date">Sat 21 Oct 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">Unicode Code Converter v4</h2>
+          <p class="entrymeta">Posted on Sat 21 Oct 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=converter">converter</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/uniview/conversion">Start the app</a></p>
+          <p>This dynamic HTML app helps you convert between Unicode character 
+            numbers, characters, UTF-8 and UTF-16 code units in hex, percent 
+            escapes, and Numeric Character References (hex and decimal).</p>
+          <p>This new version adds some useful things:</p>
+          <ul>
+            <li>You can now convert to and from percent escaped forms. When 
+              converting to percent escapes, characters allowed in URI syntax are not 
+              converted.  When converting from percent escapes you can only use 
+              characters allowed in URIs.</li>
+            <li>You can also now convert from a <em>mixture</em> of characters and escapes in the bottom two fields.</li>
+          </ul>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20061018b"> 
+        <!--p class="post-date">Wed 18 Oct 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">I think IE7 may break language negotiation on many servers</h2>
+          <p class="entrymeta">Posted on Wed 18 Oct 2006 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <div style="float:right; color: brown; width: 30%; padding: 0 0 1em 1em;">Some
+            people have construed this as an attack on IE7. It is absolutely not. 
+            I’m trying to be helpful. Microsoft has always taken great care not to 
+            break things for their customers when releasing new browser versions.  
+            I’m just trying point out an issue I think they may have missed. The 
+            title summarises the issue.</div>
+          <p>The <a href="http://blogs.msdn.com/ie/archive/2006/10/17/accept-language-header-for-internet-explorer-7.aspx">IE7 blog</a> just announced Microsoft’s intention to change the way browser 
+            preferences for Accept-language are set up by default.  Basically your 
+            preferences will no longer, by default, be set to <code>fr</code> if you’re French, but to <code>fr-FR</code> instead, ie. your locale as determined by Windows settings.</p>
+          <p>I think this is going to cause major problems with content negotiation on the Web.</p>
+          <p>To give a practical example:<br>
+            Set your language settings to just es-MX and/or es-ES and point your browser to <a href="http://www.w3.org/International/questions/qa-lang-priorities">this article</a> on the W3C site (an article explaining how to set language preferences).</p>
+          <p>You’ll get back the English version, even though there’s a Spanish version there. Someone with <code>es</code> set in IE6, Opera or Firefox will see the Spanish version automatically – even if their preferences are <code>es-MX</code> then <code>es</code>.</p>
+          <p>This is down to the way language negotiation is done on the Apache server.</p>
+          <p>In the article linked to above we explain that “Some of the 
+            server-side language selection mechanisms require an exact match to the 
+            Accept-Language header. If a document on the server is tagged as fr 
+            (French) then a request for a document matching fr-CH (Swiss French) 
+            will fail. To ensure success you should configure your browser to 
+            request both fr-CH and fr.”</p>
+          <p>This is from the <a href="http://httpd.apache.org/docs/2.0/en/content-negotiation.html#exceptions">Apache 2 documentation</a>:</p>
+          <blockquote>
+            <p>The server will also attempt to match language-subsets 
+              when no other match can be found. For example, if a client requests 
+              documents with the language en-GB for British English, the server is not
+              normally allowed by the HTTP/1.1 standard to match that against a 
+              document that is marked as simply en. (Note that it is almost surely a 
+              configuration error to include en-GB and not en in the Accept-Language 
+              header, since it is very unlikely that a reader understands British 
+              English, but doesn’t understand English in general. Unfortunately, many 
+              current clients have default configurations that resemble this.)</p>
+          </blockquote>
+          <p>Apache 2 introduces “some exceptions … to the negotiation algorithm 
+            to allow graceful fallback when language negotiation fails to find a 
+            match”, but those using Apache 1 don’t have that luxury.</p>
+          <p>Apart from the fact that most users wouldn’t even know that they can 
+            set their browser preferences differently, not to mention knowing how to
+            do that, IE7 CR1 doesn’t even provide a preset selection for es rather 
+            than <code>es-ES</code> – you have to enter it manually.  Not likely to happen much.</p>
+          <p>It seems to me that a simple fix to this would be for IE7 to set the user’s default preferences to *also* include <code>es</code> (ie. <code>es-ES, es</code> for Spain, <code>fr-FR, fr</code> for France, etc.).  Then, when a file such as 
+            qa-lang-priorities.fr-fr.html is not found, the server will find 
+            qa-lang-priorities.fr.html and return a French file.  Those people who 
+            want to know where the user’s browser is (likely to be) physically 
+            located can still use the fr-FR information to get the locale.</p>
+          <p>I think that the result of ignoring this is that many people will be 
+            confused about why they no longer see a page in Spanish, when they did 
+            before, and a lot of hard work by content developers will go unnoticed 
+            on the Web.  In short, think Microsoft is about to introduce a serious 
+            bug into IE7.</p>
+          <p style="border: 1px solid teal; padding: 1em;">Note, in passing, that 
+            the rules for specifying the lang attribute in HTML and xml:lang in 
+            XHTML are described by BCP47.  The latest syntax and matching 
+            specifications are RFC4646 and RFC4647 – which obsolete RFC 3066 and RFC
+            1766, and which tells you to go to the IANA Language Subtag Registry at <a href="http://www.iana.org/assignments/language-subtag-registry">http://www.iana.org/assignments/language-subtag-registry</a> to find out what language codes to use, rather than the ISO code lists.  For more information, see <a href="http://www.w3.org/International/articles/language-tags/">http://www.w3.org/International/articles/language-tags/</a> )</p>
+          <p style="font-size: 80%; color: teal;">Btw, I tried posting this as a comment on the IE7 blog page, but it didn’t work (site busy) so I did it here.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20061018"> 
+        <!--p class="post-date">Wed 18 Oct 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">How useful is :lang ?</h2>
+          <p class="entrymeta">Posted on Wed 18 Oct 2006 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I got an email this morning asking for some use cases for the CSS <code>:lang</code> selector.  Here are some ideas. This should help content authors 
+            understand how using :lang can sometimes be better than other approaches
+            when selecting content for styling. Of course, not all user agents 
+            support :lang, and hopefully these use cases will also show how enabling
+            support could be useful. </p>
+          <h3>Use case 1</h3>
+          <p>One of the main cases where I want to use :lang is when I have a page
+            that includes numerous short pieces of text in a different script.  
+            Take, for example, <a href="http://people.w3.org/rishida/scripts/scriptnotes/myanmar/">my notes on the Myanmar script</a>. In such cases I want to assign a particular font and perhaps font-size, etc, to the numerous Myanmar examples.</p>
+          <p>It does my head in trying to ensure that I labelled all the myanmar 
+            text with class attributes so that I get the right font and colour 
+            applied.  And it’s frustrating, because all I’m doing is repeating 
+            information that’s there already in the <code>lang</code> attribute (and in the <code>xml:lang</code> attribute too, given that this is xhtml). </p>
+          <p>Adding <code>class="my"</code> everywhere also bulks up the document.  Even in this smallish document, it adds over 1K to the page size.</p>
+          <p>It would make life a lot easier to just include a single CSS rule:</p>
+          <blockquote>
+            <p><code>:lang(my) { font-family: myanmar1, sans-serif; color:red; font-size: 130%; }</code></p>
+          </blockquote>
+          <h3>Use case 2</h3>
+          <p>Suppose you have the following Japanese text in an English document:</p>
+          <blockquote xml:lang="ja" lang="ja">
+            <p>&lt;blockquote lang=”ja” xml:lang=”ja”&gt;ワールド・ワイド・ウェッブを&lt;em&gt;世界中&lt;/em&gt;に広げましょう&lt;/blockquote&gt;</p>
+          </blockquote>
+          <p>Now suppose you want to apply different emphasis styling to the 
+            Japanese text, since italicisation doesn’t work well for ideographic 
+            scripts in small font sizes.  Let’s suppose we wanted to add the 
+            proposed <a href="http://people.w3.org/rishida/scripts/tutorial/slides/Slide1400.html">wakiten</a> emphasis style that CSS3 describes.  How do you make that happen?</p>
+          <p>Well, ideally, you’d just add the following rule to your CSS, and all would be taken care of:</p>
+          <blockquote>
+            <p><code>em:lang(ja) { font-emphasize: dot before; font-style: normal; }</code></p>
+          </blockquote>
+          <p>(“When you encounter an <code>em</code> tag and the language is Japanese use wakiten and remove the italics.”)</p>
+          <p>If you’re dealing with IE6 <code>:lang</code> is not supported, and 
+            you’d actually have to add a special class to each and every emphasis 
+            tag embedded in Japanese text and use a rule such as </p>
+          <blockquote>
+            <p><code>em.ja { ... }</code></p>
+          </blockquote>
+          <p>How annoying is that!</p>
+          <p>IE7 CR1 supports the CSS selectors <code>lang |= </code>and l<code>ang =</code>.  Aha! you might think, problem solved.  We can use the following rule:</p>
+          <blockquote>
+            <p><code>em[lang |= 'ja'] { ... }</code></p>
+          </blockquote>
+          <p>But you’d be wrong.  This only works if the language is declared on the <code>em</code> element itself.  So you’d still have to go through and add <code>lang="ja" xml:lang="ja"</code> to each <code>em</code> element – even though you have already declared that the whole blockquote is in Japanese!</p>
+          <h3>Use case 3</h3>
+          <p>This use case is slightly less mainstream, but I think it presents a 
+            slightly different use case, but one which is increasingly common with 
+            the increase in multilingual blogs and AJAX powered pages. It applies 
+            when you include text into a page that comes from another environment, 
+            either by cut &amp; paste, or by automatic means, and you don’t have the
+            styling information that was associated with it originally. </p>
+          <p>Assuming that the text has language attributes, or that you can apply
+            those, you could have a set of default rules in your environment that, 
+            say, apply a nastaliq font with a percentage size scaling factor to all 
+            text in Urdu, so that it has some styling at least, and is a reasonable 
+            size relative to the Latin text.</p>
+          <blockquote>
+            <p> For example, if I cut and paste some Urdu text into this blog, it could make the difference between seeing this:<br>
+              <img src="r12a_blog_files/urdu1.gif" alt="Text in English and Urdu without styling."></p>
+            <p>and this:<br>
+              <img src="r12a_blog_files/urdu2.gif" alt="Text in English and Urdu with styling."> </p>
+          </blockquote>
+          <p>Adding, once, a couple of rules in your blog css that say: </p>
+          <p><code>:lang(ur) { font-family: standardMSUrdufont, standardMacUrdufont, standardUnixUrdufont, serif; font-size: 140%; }</code><br>
+            <code>em:lang(ur) { font-weight: bold; font-style: normal; }</code></p>
+          <p>would be preferable to having to add extra inline markup to the text as you add it to your blog each time.</p>
+          <p>As a similar example, I just released the latest version of the <a href="http://people.w3.org/rishida/scripts/uniview/descn.html">UniView tool</a> (a kind of web-based Character Map on steroids).  It includes a 
+            facility that allows you to write your own notes about characters in a 
+            separate document and see the relevant notes when looking up a specific 
+            character.  The information is sucked in using AJAX features. See <a href="#note1">[1]</a>. </p>
+          <p>We do not at the moment try to incorporate/recognize the other 
+            document’s style rules when the notes are displayed in UniView, however,
+            while keeping things simple, it may be useful to allow the UniView user
+            switch on or off some very general default style rules specifying fonts
+            and/or font sizing to text marked up for a particular language.</p>
+          <p>As long as the code is marked up for language, such defaults can be 
+            applied regardless of what class names or styling appeared in the 
+            original document.  Of course, :lang would be very useful in this 
+            respect.</p>
+          <div class="note">
+            <p><a name="note1" id="note1">[1]</a> To see this example<br>
+              a. open <a href="http://people.w3.org/rishida/scripts/uniview/">UniView</a><br>
+              b. where it says “Select a range to display” select Myanmar<br>
+              c. click on character 1004 and see the description on the right<br>
+              d. now click on the icon with a + sign between Notes: and Search string: fields<br>
+              e. from the menu select Myanmar block and say ok, and dismiss the pop up<br>
+              f. now click on character 1004 again, and see the notes added to the description on the right – these notes came from an <a href="http://people.w3.org/rishida/scripts/uniview/notes/myanmar.xml">XML file</a> (see the <a href="http://people.w3.org/rishida/scripts/uniview/notes/myanmar.html">same file served as xhtml</a>)</p>
+            <p>(Anyone can write such a document, stick it on a server and include 
+              its information in UniView.  The only requirement is that the notes you 
+              want to appear be surrounded by &lt;div class=”notes” 
+              id=”C[hexCodepoint]”&gt;&lt;/div&gt;. The example above is one such file
+              supplied with UniView.)</p>
+          </div>
+          <p><strong>Other useful stuff</strong></p>
+          <p>At the W3C Internationalization site you can find:</p>
+          <ol>
+            <li>an article that answers the question: “<a href="http://www.w3.org/International/questions/qa-css-lang">What
+              is the most appropriate way to associate CSS styles with text in a 
+              particular language in a multilingual XHTML/HTML document?</a>“</li>
+            <li>a set of <a href="http://www.w3.org/International/tests/sec-css-lang-1">test pages</a> relating to user agent support of :lang, lang|= and lang= and a fairly recent <a href="http://www.w3.org/International/tests/results/css-lang">summary of results</a></li>
+          </ol>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20061016"> 
+        <!--p class="post-date">Mon 16 Oct 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView upgraded to version 5.0.0</h2>
+          <p class="entrymeta">Posted on Mon 16 Oct 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/uniview/">New version</a></p>
+          <p>This is a major new release of UniView, bringing it up to date with 
+            the Unicode Standard version 5.0.0, but also improving the user 
+            interface and adding AJAX links to supplementary notes.</p>
+          <p>Changes: </p>
+          <ul>
+            <li>Updated to support Unicode 5.0.0.</li>
+            <li>Restyled the menu panels, moving some less used functions to pop up windows to save on horizontal space.</li>
+            <li>Implemented an AJAX approach for incorporating notes files.  This 
+              means that the page no longer has to be reloaded to add notes.  It is 
+              now also possible to add more than one set of notes at a time.  Note 
+              that these changes requires a small change to  the markup of notes files
+              – the div containing the notes for display has to have a class name 
+              ‘notes’ as well as the id for the character.</li>
+            <li>I added some bundled notes files – most notably myanmar. Note that these are subject to change on an ongoing basis.</li>
+          </ul>
+          <p>Most of the properties display in the character-detail panel on the 
+            right are taken from the unicodedata file at the moment.  I plan to 
+            incorporate additional property information over the coming months, but 
+            wanted to release this now so that you can get information about Unicode
+            5 characters sooner rather than later.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <!--div class="post"> 
+        <div class="post-info">
+          <h2 class="post-title"><a href="/blog/?p=64" rel="bookmark" title="Permanent Link: Private: Fundamentos Web">Private: Fundamentos Web</a></h2>
+          <p class="entrymeta">Posted on Mon 9 Oct 2006 tagged as <a href="/blog/?tag=4">photos</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><br clear="all">
+          </p>
+          <p style="float: left; margin-right: 10px; margin-bottom: 10px"> <a href="http://www.flickr.com/photos/ishida/262951408/" title="photo sharing"><img src="r12a_blog_files/262951408_c6b96f3ff2_m.jpg" style="border: 2px solid #000000"></a><br>
+            <span style="font-size: 0.9em; margin-top: 0px"><br>
+            <a href="http://www.flickr.com/photos/ishida/262951408/">Oviedo</a><br>
+            <a href="http://www.flickr.com/people/ishida/">Photostream</a>.<br>
+            </span></p>
+          <p>I just returned from the <a href="http://www.fundamentosweb.org/2006/">Fundamentos Web Conference</a> in Oviedo, Spain.  What a good experience that was, on several levels. 
+            My talk seems to have been appreciated, the audience was really nice, 
+            and it was great to finally, after 20 years, be back in Spain again.  
+            (Sorry, those of you in Barcelona, but Catalonia feels a little 
+            different from the Spain that I remember from my younger days.;-)</p>
+          <p>There were also a bunch of great talks. (I was very impressed by Vint
+            Cerf’s remote participation too.) And it was great to see the wide 
+            coverage of the event in <a href="http://www.technorati.com/tags/fundamentos%20web">blogs</a> and media.  It felt like you were really at an important nerve centre of the Spanish IT world for a couple of days.</p>
+          <p>I have posted some <a href="http://www.flickr.com/search/?q=fundamentos%20web%202006&amp;w=36887937%40N00">photos of the second day of the event</a> on Flickr already, with some photos taken <a href="http://www.flickr.com/search/?w=36887937%40N00&amp;q=oviedo&amp;m=text">around and about Oviedo</a>. (I didn’t have my camera on the first day).</p>
+          <p>Much of the time it was raining – it’s odd that the weather in the UK
+            was actually better than Spain. On Thursday, though, we had splendid, 
+            basically cloudless, weather all day and I had the very enjoyable 
+            company of Bob Regan, Chris Wilson, Dave Shea, Kevin Yank, and later 
+            David Storey, for a long walk around Oviedo taking pictures.  Oviedo 
+            sparkled. I have still to upload these photos, but I think they will be 
+            worth the wait – nearly all of them came out really well.</p>
+          <p>Later that day José Alonso and Luis Villa took us for a slap up lunch
+            and a tour of Mount Naranco that added even more wonderful views to our
+            day.  I’d like to thank all at the Spanish W3C Office and Luis for 
+            really taking exceptionally good care of the speakers all week.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"><a href="/blog/?p=64#comments">One comment</a></div>
+        </div>
+      </div-->
+      <p class="pagelinks"><a href="200406">More<br/>
+        🠿</a></p>
+    </div>
+    <p id="footer">Copyright © 2009 Richard Ishida.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+  <div id="header">
+    <div id="dotted-line">&nbsp;</div>
+    <h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+    <div id="sitelinks" class="noprint" style="margin-left: 6.5%;"> <span> <a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; <a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; <a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; <a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span> </div>
+  </div>
+  <div id="main">
+    <div id="sidebar">
+      <div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+      <p class="pagelinks"><a href="200901">&nbsp;🠽&nbsp;</a><br/>
+        page<br/>
+        <a href="200707">&nbsp;🠿&nbsp;</a></p>
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+    </div>
+    <div id="content">
+      <div class="post" id="20090114"> 
+        <!--p class="post-date">Wed 14 Jan 2009</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 5.1.0c now available</h2>
+          <p class="entrymeta">Posted on Wed 14 Jan 2009 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 110%"><a href="http://rishida.net/scripts/uniview/help">&gt;&gt; See what it can do !</a></p>
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://rishida.net/blog/images/uniview510c.png"><img src="r12a_blog_files/uniview510c-small.png" alt="Picture of the page in action."></a></p>
+          <p>The major changes in this version relate to the way searching and 
+            property-based lookup is done on characters in the lower left panel, and
+            features for refining and capturing the resulting lists.</p>
+          <p>Removed the two <span class="onscreen">Highlight</span> selection boxes. These used to highlight characters in the lower left panel with a specific property value. The <span class="onscreen">Show</span> selection box on the left (used to be <span class="onscreen">Show list</span>) now does that job if you set the <span class="onscreen">Local</span> checkbox alongside it. (Local is the default for this feature.)</p>
+          <p>As part of that move, the former <span class="onscreen">SiR</span> (search in range) checkbox that used to be alongside <span class="onscreen">Custom range</span> has been moved below the <span class="onscreen">Search for</span> input field, and renamed to <span class="onscreen">Local</span>. If <span class="onscreen">Local</span> is checked, searching can now be done on any content in the lower left 
+            panel, and the results are shown as highlighting, rather than a new 
+            list.</p>
+          <p>To complement these new highlighting capabilities, a new feature was added. If you click on the icon next to <span class="onscreen">Make list from highlights</span> the content of the lower left panel will be replaced by a list of just 
+            those items that are currently highlighted – whether the highlighting 
+            results from a search or a property listing. Note that this can also be 
+            useful to refine searches: perform an initial search, convert the result
+            to a list, then perform another search on that list, and so on.</p>
+          <p>Finally got around to putting <img src="r12a_blog_files/apply.gif" alt=" " border="0" align="bottom"> icons after the pull-down lists. This means that if you want to 
+            reapply, say, a block selection after doing something else, only one 
+            click is needed (rather than having to choose another option, then 
+            choose the original option). The effect of this on the ease of use of 
+            UniView is much greater than I expected.</p>
+          <p>Added an icon <img src="r12a_blog_files/tochar.png" alt=" " border="0" align="bottom"> to the text area. If you click on this, all the characters in the lower
+            left panel are copied into the text area. This is very useful for 
+            capturing the result of a search, or even a whole block. Note that if a 
+            list in the lower left panel contains unassigned code points, these are 
+            not copied to the text area.</p>
+          <p>As a result of the above changes, the way <span class="onscreen">Show as graphics</span> and <span class="onscreen">Show range as list</span> work internally was essential rewritten, but users shouldn’t see the difference.</p>
+          <p>Changed the label <span class="onscreen">Character area</span> to <span class="onscreen">Text area</span>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20090107"> 
+        <!--p class="post-date">Wed 7 Jan 2009</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 5.1.0b now available</h2>
+          <p class="entrymeta">Posted on Wed 7 Jan 2009 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 110%"><a href="http://rishida.net/scripts/uniview/help">&gt;&gt; See what it can do !</a></p>
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://rishida.net/blog/images/uniview510b.png"><img src="r12a_blog_files/uniview510b-small.png" alt="Picture of the page in action."></a></p>
+          <p>The main change in this version is the reworking of the former Cut 
+            &amp; paste and Code point(s) fields to make it easier to use UniView as
+            a generalised picker.</p>
+          <p>Moved the <span class="onscreen">cut&amp;paste</span> field downwards, made it larger, and changed the label to <span class="onscreen">character area</span>.
+            This should make it easier to deal with text copy/cut &amp; paste, and 
+            more obvious that that is possible with UniView. It is much clearer now 
+            that UniView provides character map/picker functionality, and not just 
+            character lookup.</p>
+          <p>Whereas previously you had to  double-click to put a character in the lower left pane into the <span class="onscreen">Cut&amp;paste</span> field, UniView now echoes characters to the <span class="onscreen">Character area</span> every time you (single) click on a character in the lower left hand 
+            pane. This can be turned off. Double-clicking will still add the 
+            codepoint of a character in the lower left panel to the <span class="onscreen">Code points</span> field.</p>
+          <p>The <span class="onscreen">Character area</span> has its own set of 
+            icons, some of which are new: ie. you can select the text, add a space, 
+            and change the font of the text in the area (as well as turn the echo on
+            and off). I also spruced up the icons on the UI in general.</p>
+          <p>Note that on most browsers you can insert characters at the point in the <span class="onscreen">Character area</span> where you set the cursor, or you can overwrite a highlight range of 
+            characters, whereas (because of the non-standard way it handles 
+            selections and ranges) Internet Explorer will always add characters to 
+            the end of the line.</p>
+          <p>The <span class="onscreen">Code points</span> field has also been enlarged, and I moved the <span class="onscreen">Show list</span> pull-down to the left and <span class="onscreen">Show as graphics</span> and <span class="onscreen">Show page as list</span> to the right. This puts all the main commands for creating lists together on the left.</p>
+          <p>When you mouse over character in the lower left pane you now see both
+            hex and decimal codepoint information. (Previously you just saw an 
+            unlabelled decimal number.) You will also find decimal code point values
+            for characters displayed in the lower right panel.</p>
+          <p>Fixed a bug in the <span class="onscreen">Code points</span> input 
+            feature so that trailing spaces no longer produce errors, but also went 
+            much further than that. You can now add random text containing 
+            codepoints or most types of hex-based escaped characters to the input 
+            field, and UniView will seek them out to create the list. For example, 
+            if you paste the following into the <span class="onscreen">Code points</span> field:</p>
+          <blockquote>
+            <p>the decomposition mapping is &lt;U+CE20, U+11B8&gt;, and not &lt;U+110E, U+1173, U+11B8&gt;.</p>
+          </blockquote>
+          <p>the result will be:</p>
+          <blockquote>
+            <p>CE20:   츠  [Hangul Syllables] <br>
+              11B8:   ᆸ  HANGUL JONGSEONG PIEUP <br>
+              110E:   ᄎ  HANGUL CHOSEONG CHIEUCH <br>
+              1173:   ᅳ  HANGUL JUNGSEONG EU <br>
+              11B8:   ᆸ  HANGUL JONGSEONG PIEUP</p>
+          </blockquote>
+          <p>Of course, UniView is not able to tell that an ordinary word like 
+            ‘Abba’ is not a hex codepoint, so you obviously need to watch out for 
+            that and a few other situations, but much of the time this should make 
+            it much easier to extract codepoint information.</p>
+          <p>I still haven’t found a way to fix the display bug in Safari and 
+            Google Chrome that causes initial content in the lower left pane to be 
+            only partially displayed.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20081221"> 
+        <!--p class="post-date">Sun 21 Dec 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Code notes: Unicode normalization data</h2>
+          <p class="entrymeta">Posted on Sun 21 Dec 2008 tagged as <a href="/blog/?tag=codenotes">codenotes</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>Here are some lists of characters that are useful for normalization.  I’ll probably add some others later.</p>
+          <p>The lists apply to Unicode version 5.1.</p>
+          <p>The files below contain declarations for JavaScript sparse arrays.  
+            They are easy enough to convert to other formats using global search and
+            replace.  The verbose version provides character names and code points.</p>
+          <h2>Combining characters with non-zero properties</h2>
+          <p>Characters with non-zero combining properties are assigned to a 
+            sparse array indexed by codepoint. The value gives the combining 
+            property value.</p>
+          <p><a href="http://rishida.net/code/normalization/nonzerocombiningchars.txt">http://rishida.net/code/normalization/nonzerocombiningchars.txt</a></p>
+          <p><a href="http://rishida.net/code/normalization/nonzerocombiningchars-verbose.txt">http://rishida.net/code/normalization/nonzerocombiningchars-verbose.txt</a></p>
+          <p>There are 498 of these.</p>
+          <h2>Canonically decomposable characters for NFD</h2>
+          <p>This list maps single characters to their decompositions. The single 
+            character is referenced by an index into the array, and the value for 
+            that index is the decomposed characters.</p>
+          <p><a href="http://rishida.net/code/normalization/canonicaldecomposables.txt">http://rishida.net/code/normalization/canonicaldecomposables.txt</a></p>
+          <p><a href="http://rishida.net/code/normalization/canonicaldecomposables-verbose.txt">http://rishida.net/code/normalization/canonicaldecomposables-verbose.txt</a></p>
+          <p>There are 2042 of these characters.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20081221b"> 
+        <!--p class="post-date">Sun 21 Dec 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Code notes: Converting Unicode codepoints to characters in PHP</h2>
+          <p class="entrymeta">Posted on Sun 21 Dec 2008 tagged as <a href="/blog/?tag=codenotes">codenotes</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>The following code converts a hex codepoint to a sequence of bytes that represent the Unicode codepoint in UTF-8.</p>
+          <p>This is useful because PHP’s chr() function only works on ASCII :((.</p>
+          <figure class="code">
+            <pre>function cp2utf8 ($hexcp) {
+	$outputString = '';
+	$n = hexdec($hexcp);
+	if ($n &lt; = 0x7F) {
+		$outputString .= chr($n);
+		}
+	else if ($n &lt;= 0x7FF) {
+		$outputString .= chr(0xC0 | (($n&gt;&gt;6) &amp; 0x1F))
+		.chr(0x80 | ($n &amp; 0x3F));
+		}
+	else if ($n &lt; = 0xFFFF) {
+		$outputString .= chr(0xE0 | (($n&gt;&gt;12) &amp; 0x0F))
+		.chr(0x80 | (($n&gt;&gt;6) &amp; 0x3F))
+		.chr(0x80 | ($n &amp; 0x3F));
+		}
+	else if ($n &lt; = 0x10FFFF) {
+		$outputString .= chr(0xF0 | (($n&gt;&gt;18) &amp; 0x07))
+		.chr(0x80 | (($n&gt;&gt;12) &amp; 0x3F)).chr(0x80 | (($n&gt;&gt;6) &amp; 0x3F))
+		.chr(0x80 | ($n &amp; 0x3F));
+		}
+	else {
+		$outputString .= 'Error: ' + $n +' not recognised!';
+		}
+	return $outputString;
+	}
+</pre>
+          </figure>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post"> 
+        <!--p class="post-date">Thu 6 Nov 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title"><a href="/blog/?p=184" rel="bookmark" title="Permanent Link: Malayalam picker upgraded &amp; sporting new picker features">Malayalam picker upgraded &amp; sporting new picker features</a></h2>
+          <p class="entrymeta">Posted on Thu 6 Nov 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=malayalam">malayalam</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/malayalam/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://rishida.net/blog/images/malayalampicker7.png"><img src="r12a_blog_files/malayalampicker7-small.png" alt="Picture of the page in action."></a></p>
+          <p>I have just upgraded the Malayalam picker to level 7, and added a 
+            bunch of new features that should show up in other pickers at level 7 as
+            I get time:</p>
+          <p><strong>Shape view</strong> The pickers are aimed particularly at 
+            people who are not familiar enough with a script to use the keyboard. 
+            However, there are many ligatures and conjuncts in Malayalam, which 
+            makes it difficult to identify the character sequences needed.  This 
+            view provides most of the shapes you’ll see in Malayalam text, grouped 
+            by shape. It’s something I’ve been wanting to add to the pickers for 
+            some time.</p>
+          <p><a href="http://rishida.net/blog/images/malayalampicker7-shape.png"><img src="r12a_blog_files/malayalampicker7-shape-small.png" alt="Picture of the page in action."></a></p>
+          <p><strong>Phonic view</strong> This has been done in other pickers, but
+            it has some new features over those. The sounds have been arranged 
+            along similar lines to a standard IPA chart, and multiple transcriptions
+            are supported. In addition, you can click on the transcription text to 
+            build up a phonemic string in IPA.  This is particularly useful for 
+            creating examples.</p>
+          <p><a href="http://rishida.net/blog/images/malayalampicker7-phonic.png"><img src="r12a_blog_files/malayalampicker7-phonic-small.png" alt="Picture of the page in action."></a></p>
+          <p><strong>Regular expressions in searches</strong> The search feature 
+            was upgraded to allow for regular expressions.  So now you can highlight
+            characters containing GA without highlighting ones containing NGA: just
+            search for <kbd>\bga\b</kbd> (or use the convenient short-cut form <kbd>.ga.</kbd>).  Of course you can do more complicated searches too.</p>
+          <p><strong>Add codepoint</strong> You can add a hex codepoint value to 
+            the box in the yellow area to insert into the text.  This is useful for 
+            things like the odd unusual character, or for just figuring out what a 
+            sequence of codepoints represents. You can input any number of 
+            codepoints (including surrogates) into the input box, separating them by
+            spaces.</p>
+          <p><strong>Chillus</strong> This version of the picker supports all 
+            Unicode 5.1 characters, including the chillu characters.  Because most 
+            Malayalam fonts support the old way of inputting chillu forms, you can 
+            specify in the yellow box area what you want the output to be when 
+            clicking on a chillu letter: the pre-5.1 sequence or the new atomic 
+            character.  (The default is the atomic character.)</p>
+          <p>The picker also comes with the usual set of level 7 features, such as
+            font grid view, graphic characters, hiding of uncommon characters, 
+            optimised ordering of characters in the alphabetic view, two-tone 
+            highlighting, etc.</p>
+          <p>You can start up directly in either of the available views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>alphabet</code>, <code>shape</code>, <code>phonic</code> or <code>fontgrid</code>.</p>
+          <p>Enjoy.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20081101"> 
+        <!--p class="post-date">Sat 1 Nov 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 5.1.0a now available</h2>
+          <p class="entrymeta">Posted on Sat 1 Nov 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 130%"><a href="http://rishida.net/scripts/uniview/help">&gt;&gt; See what it can do !</a></p>
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://rishida.net/blog/images/uniview510.gif"><img src="r12a_blog_files/uniview510-small.gif" alt="Picture of the page in action."></a></p>
+          <p>A large amount of code was rewritten to enable data to be downloaded 
+            from the server via AJAX at the point of need. This eliminates the long 
+            wait when you start to use UniView without the database information in 
+            your cache. This means that there is a slightly longer delay when you 
+            view a new block, but the code is designed so that if you have already 
+            downloaded data, you don’t have to retrieve it again from the server.</p>
+          <p>The search mechanism was also rewritten. The regular expressions used
+            must now be supported in both JavaScript and PHP (PHP is used if not 
+            searching within the current range). When ‘other’ is ticked, the search 
+            will look in the alternative name fields, but not in other property 
+            settings (so you can no longer use something like ;AL; to search for 
+            characters with a particular property. (Use ‘Show list’ instead.))</p>
+          <p>Removed several zero-width space characters from the code, which 
+            means that UniView now works with Google Chrome, except for some 
+            annoying display bugs that I’m not sure how to fix – for example, the 
+            first time you try to display any block you only seem to get the top 
+            line (although, if you click or drag the mouse, the block is actually 
+            there). This seems to be WebKit related, since it happens in Safari, 
+            too.</p>
+          <p>Please report any bugs to me, and don’t forget to refresh any UniView files in your cache before using the new version.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20081006"> 
+        <!--p class="post-date">Mon 6 Oct 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Myanmar (Burmese) script notes ready</h2>
+          <p class="entrymeta">Posted on Mon 6 Oct 2008 tagged as <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag= scriptnotes">scriptnotes</a>, <a href="/blog/?tag=myanmar">myanmar</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%;"><a href="http://rishida.net/scripts/myanmar/">&gt;&gt; Read it !</a></p>
+          <p style="float: right; margin: 1px solid teal; margin-left: 1em; margin-bottom: 1em;"><a href="http://rishida.net/blog/images/myanmarpicker7.png"><img src="r12a_blog_files/myanmarexcerpt.png" alt="Picture of the page in action."></a></p>
+          <p>I finally got to the point, after many long early morning hours, 
+            where I felt I could remove the ‘Draft’ from the heading of my Myanmar 
+            (Burmese) script notes.</p>
+          <p>This page is the result of my explorations into how the Myanmar 
+            script is used for the Burmese language in the context of the Unicode 
+            Myanmar block. It takes into account the significant changes introduced 
+            in Unicode version 5.1 in April of this year.</p>
+          <p>Btw, if you have JavaScript running you can get a list of characters 
+            in the examples by mousing over them.  If you don’t have JS, you can 
+            link to the same information.</p>
+          <p>There’s also a <a href="http://rishida.net/scripts/myanmar/myanmar.pdf">PDF version</a>, if you don’t want to install the (free) fonts pointed to for the examples.</p>
+          <p>Here is a summary of the script:</p>
+          <div style="background-color: #F0FFF0; padding: 10px; padding-bottom: 5px; margin-bottom: 10px;">
+            <p>Myanmar is a tonal language and is syllable-based. The script is an 
+              abugida, ie. consonants carry an inherent vowel sound that is overridden
+              using vowel signs.</p>
+            <p>Spaces are used to separate phrases, rather than words. Words can be separated with ZWSP to allow for easy wrapping of text.</p>
+            <p>Words are composed of syllables. These start with an consonant or 
+              initial vowel. An initial consonant may be followed by a medial 
+              consonant, which adds the sound j or w. After the vowel, a syllable may 
+              end with a nasalisation of the vowel or an unreleased glottal stop, 
+              though these final sounds can be represented by various different 
+              consonant symbols.</p>
+            <p>At the end of a syllable a final consonant usually has an ‘asat’ sign above it, to show that there is no inherent vowel.</p>
+            <p>In multisyllabic words derived from an Indian language such as Pali, 
+              where two consonants occur internally with no intervening vowel, the 
+              consonants tend to be stacked vertically, and the asat sign is not used.</p>
+            <p>Text runs from left to right.</p>
+            <p>There are a set of Myanmar numerals, which are used just like Latin digits. </p>
+          </div>
+          <p>So, what next.  I’m quite keen to get to Mongolian.  That looks 
+            really complicated. But I’ve been telling myself for a while that I 
+            ought to look at Malayalam or Tamil, so I think I’ll try Malayalam.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20081002"> 
+        <!--p class="post-date">Thu 2 Oct 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Myanmar/Burmese picker upgraded</h2>
+          <p class="entrymeta">Posted on Thu 2 Oct 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=myanmar">myanmar</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/myanmar/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://rishida.net/blog/images/myanmarpicker7.png"><img src="r12a_blog_files/myanmarpicker7-small.png" alt="Picture of the page in action."></a></p>
+          <p>I have just upgraded the Burmese picker as follows:</p>
+          <p><strong>Rearranged characters</strong> The Myanmar3 font expects 
+            multiple combining characters to be entered in the order described in 
+            the Unicode 5.1 Standard for correct display.  The panel of combining 
+            characters has been arranged so that you can easily remember what that 
+            order was.  Characters to the left precede those to the right, 
+            characters higher up precede those lower down.</p>
+          <p>In addition to that, I have rearranged all the character positions so
+            that it is easier to locate the various parts of a syllable as you 
+            type.</p>
+          <p>I also added some combinations of characters that make up multi-part vowels and the kinzi with a single click.</p>
+          <p>I have also moved some of the less common characters to an ‘advanced’
+            area to the right which can be opened and closed by clicking on the 
+            arrow-head icon.</p>
+          <p><strong>New highlighting</strong> As you mouse over a character the 
+            picker will show you other characters that are visually similar 
+            (particularly useful for those not very familiar with the script). This 
+            new version shows the more likely confusable characters with a blue 
+            outline, and other similar characters with orange. This is useful given 
+            that many Myanmar characters look quite similar.</p>
+          <p>As always, you can turn off this feature or disable it in the URI you use to call the picker.</p>
+          <p><strong>Font grid view</strong> Shows characters in Unicode order, 
+            using whatever font is specified in the Font list or Custom font input 
+            fields. This allows comparison of fonts (especially useful in IE, which 
+            shows if a glyph is missing from a font). </p>
+          <p>You can start up directly in either of the available views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>alphabet</code> or <code>fontgrid</code>.</p>
+          <p>Enjoy.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080407"> 
+        <!--p class="post-date">Mon 7 Apr 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 5.1 available</h2>
+          <p class="entrymeta">Posted on Mon 7 Apr 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 130%"><a href="http://rishida.net/scripts/uniview/help">&gt;&gt; See what it can do !</a></p>
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/uniview510.gif"><img src="r12a_blog_files/uniview510-small_002.gif" alt="Picture of the page in action."></a></p>
+          <p>Those of you who have used UniView over the last couple of days will 
+            have seen that it now supports Unicode 5.1. All Unicode 5.1 character 
+            information is available, however you will only be able to see the new 
+            characters if you have fonts that cover them.  The decodeunicode 
+            graphics for the new characters are not yet available.</p>
+          <p>Last night I also fixed a long-running bug that had meant that 
+            additional information available in my character database was not 
+            accessible in Internet Explorer (due to AJAX issues).   (See the <a href="/blog/?p=149">related post</a> if you are interested in the code).</p>
+          <p>There are no other changes at this time (though those two are pretty significant).</p>
+          <p>Please report any bugs to me, and don’t forget to refresh any UniView files in your cache before using the new version.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080406"> 
+        <!--p class="post-date">Sun 6 Apr 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Code notes: Node traversal and copy</h2>
+          <p class="entrymeta">Posted on Sun 6 Apr 2008 tagged as <a href="/blog/?tag=codenotes">codenotes</a>, &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>Some code I put together to import some XML retrieved via AJAX into a
+            document (stored here so I can find it again in the future).</p>
+          <p>IE won’t let you import a cloned nodeset into a document, so I wrote this for my <a href="http://rishida.net/scripts/uniview/">UniView</a> utility. The code starts with a node in the AJAX data and creates a 
+            copy of all elements and attributes in the current document.</p>
+          <figure class="code">
+            <pre>function copyNodes (ajaxnode, copiednode) {
+	for (var node=ajaxnode.firstChild; node != null; node = node.nextSibling) {
+		if (node.nodeType == 3){ //text
+			copiednode.appendChild(document.createTextNode(node.data));
+			}
+		if (node.nodeType == 1){ //element
+			var subnode = document.createElement(node.nodeName);
+			var attlist = node.attributes;
+			if (attlist != null) {  
+				for (var i=0; i&lt;attlist.length; i++){
+					subnode.setAttribute(attlist[i].name, attlist[i].value);
+					}
+				}
+			copiednode.appendChild(subnode);
+			copyNodes(node, subnode);
+			}
+		}
+	}
+</pre>
+          </figure>
+          <p>It doesn’t expect processing instructions, comments etc.  Just 
+            elements and attributes. (Though of course that can be added, if 
+            needed.)</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080314"> 
+        <!--p class="post-date">Fri 14 Mar 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">New picker: Lao</h2>
+          <p class="entrymeta">Posted on Fri 14 Mar 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=lao">lao</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/lao/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/laopicker.gif"><img src="r12a_blog_files/laopicker-small.gif" alt="Picture of the page in action."></a></p>
+          <p>This latest picker includes all characters in the Unicode Lao block, 
+            plus a few punctuation characters. There are several alternative views.</p>
+          <p><strong>Alphabetic</strong> By default, characters are arranged by 
+            groups, and consonants and vowels are listed in alphabetic order. Digits
+            are in keypad order. Similar characters are highlighted by default, but
+            this can be switched off using the ‘Hint’ selector.</p>
+          <p>Tone marks and combining vowels are reordered automatically so that vowels come first in the output character sequence.</p>
+          <p><strong>Phonic Characters</strong> are grouped and ordered by sound. I
+            set this up for myself to enter Lao text that I wanted to copy that was
+            accompanied by a transcription. Initial consonants are followed by 
+            tones and consonants that come second in a cluster, then vowels. 
+            Alternatives with the same sound are separated by a red dot. Consonants 
+            that have different sounds when word final are also listed under those 
+            sounds. (Dropped aspiration is not considered significant.) </p>
+          <p>Dashes representing consonants indicate which vowels are non-final or
+            occur before the consonant. Where a vowel has a part that comes before a
+            consonant, a single click should arrange the parts properly. This 
+            behaviour speeds up typing. It may not be so intuitive to people 
+            familiar with Lao, however, since it makes Lao behave like Khmer and 
+            Indic scripts. </p>
+          <p>You should add any tone mark before the vowel and the picker will 
+            automatically reorder characters as needed. If you want to wrap text 
+            around a combination of two syllable-initial characters, type the 
+            characters then click on ‘flag as cluster’ before clicking on the tone 
+            mark or vowel.</p>
+          <p>Two old vowel spellings are only displayed if you click on the grey arrow, top right. </p>
+          <p><strong>Font grid</strong> Shows characters in Unicode order, using 
+            whatever font is specified in the Font list or Custom font input fields.
+            This allows comparison of fonts (especially useful in IE, which shows 
+            if a glyph is missing from a font). </p>
+          <p>You can start up directly in one of the above views by appending the 
+            following to your URI: ?view=, followed by one of, respectively, <code>alphabet</code>, <code>phonic </code>or <code>fontgrid</code>.</p>
+          <p>Enjoy.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080309"> 
+        <!--p class="post-date">Sun 9 Mar 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 5.0.0c released</h2>
+          <p class="entrymeta">Posted on Sun 9 Mar 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 130%"><a href="http://rishida.net/scripts/uniview/help">&gt;&gt; See what it can do !</a></p>
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/uniview500c.gif"><img src="r12a_blog_files/uniview500c-small.gif" alt="Picture of the page in action."></a></p>
+          <p>While we await Unicode 5.1, here is another update to UniView that 
+            provides a bunch of additional useful features and fixes a few bugs.</p>
+          <p>Changes include:</p>
+          <ul>
+            <li>Changed the custom range input to a single field that will accept 
+              various range formats. This makes it easier to cut and paste or drag and
+              drop ranges into the input field.  The Custom range field will accept 
+              various formats. </li>
+            <li>The numbers must be in hexadecimal form and separated by a colon 
+              (the default), a hyphen, one or more spaces, or one or more periods. 
+              There must be only two numbers. The numbers can be in the following 
+              formats: 1234, &amp;#x1234;, &amp;#1234;, \u1234, U+1234. The actual 
+              number of hex digits can be between 1 and 6.</li>
+            <li>Added the ability to select whether Search looks at any combination 
+              of character names only, other parts of a record in the Unicode 
+              database, or the other character description information, and added a 
+              message to say how many characters were matched.</li>
+            <li>Added the ability to search within the range specified in the field entitled Range.</li>
+            <li>Added the ability to list characters with a given General or Bidirectional property (within a specified range or not).</li>
+            <li>Added an AJAX link to my database of information about Unicode 
+              characters. If enabled, using the DB checkbox, this automatically 
+              retrieves any available data for a character when information about that
+              character is displayed in the lower right panel. You can also specify 
+              that UniView should open with that set as the default using <code>database=on</code> in the URI used to call UniView.</li>
+            <li>Because of the previous improvement, I removed the ability to link 
+              in a file of information about characters. (The information in the files
+              was a copy of the information in the database.)</li>
+            <li>Moved the Code point(s) and Cut &amp; paste fields lower, to make them easier to use.</li>
+            <li>Fixed a bug that was preventing the Search function finding characters in the Basic Latin block.</li>
+            <li>Bugfix: a range like 0036:0067 will always show full rows now; a range with start higher than end will show alert.</li>
+            <li>Added reference to decodeunicode when graphics are displayed in left column</li>
+            <li>Bugfix: search parameter won’t break when graphics etc toggled</li>
+            <li>You can now specify windowHeight parameter at startup in the URI’s query string.</li>
+          </ul>
+          <p>Please report any bugs to me, and don’t forget to refresh any UniView files in your cache before using the new version.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080227"> 
+        <!--p class="post-date">Wed 27 Feb 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Thai picker updated</h2>
+          <p class="entrymeta">Posted on Wed 27 Feb 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=thai">thai</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/thai/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/thaipicker.gif"><img src="r12a_blog_files/thaipicker-small.gif" alt="Picture of the page in action."></a></p>
+          <p>The default arrangement for this picker is still shape-based (though 
+            with some small improvements), but I have added a new view that is 
+            arranged by sound.</p>
+          <p><span style="color:brown">Update: After some initial feedback, I 
+            decided to change the phonic view of the picker so that vowels are 
+            entered by single click. This will probably disconcert people familiar 
+            with typing Thai.  Revised description follows.</span></p>
+          <p><span style="color:brown">Another update (2008-03-03): I have added 
+            additional ways of viewing the characters, and re-architected the picker
+            as a basis for extending this to other pickers in the future. I also 
+            changed the way of dealing with initial clusters in the phonic view. I 
+            changed the text below again to reflect what’s new:</span></p>
+          <p><strong>Alphabetic view</strong> By default, characters are arranged 
+            by groups, and consonants and vowels are listed in alphabetic order. 
+            Digits are in keypad order. Obsolete and rare characters are only 
+            displayed if you click on the grey arrow, top right. Similar characters 
+            are highlighted by default, but this can be switched off using the 
+            ‘Hint’ selector.</p>
+          <p><strong>Comparison view</strong> This was the original view for the 
+            Thai picker. Characters are grouped by shape or type to enable easy 
+            identification by people who are unfamiliar with the Thai script. Vowels
+            are shown near the bottom. Digits are on the right, in keypad order.</p>
+          <p><strong>Phonic view</strong> Characters are grouped and ordered by 
+            sound. I set this up for myself, because I wanted to enter Thai text 
+            that was accompanied by a transcription. </p>
+          <p>Initial consonants are followed by tones and consonants that come 
+            second in a cluster, then vowels. Alternatives with the same sound are 
+            separated by a red dot. Consonants that have different sounds when word 
+            final are also listed under those sounds. (Dropped aspiration is not 
+            considered significant.) </p>
+          <p>Dashes representing consonants indicate which vowels are non-final or occur before the consonant. </p>
+          <p>Where a vowel has a part that comes before a consonant, a single 
+            click should arrange the parts properly. This behaviour speeds up 
+            typing. It may not be so intuitive to people familiar with Thai, 
+            however, since it makes Thai behave like Khmer and Indic scripts. You 
+            should add any tone mark before the vowel and the picker will 
+            automatically reorder characters as needed. </p>
+          <p>If you want to wrap text around a combination of two syllable-initial
+            characters, type the characters then click on ‘flag as cluster’ before 
+            clicking on the tone mark or vowel. </p>
+          <p><strong>Font grid view</strong> Shows characters in Unicode order, 
+            using whatever font is specified in the Font list or Custom font input 
+            fields. This allows comparison of fonts (especially useful in IE, which 
+            shows if a glyph is missing from a font). </p>
+          <p>You can start up directly in any one of the above views by appending the following to your URI: <code>?view=</code>, followed by one of, respectively, <code>alphabet</code>, <code>comparison</code>, <code>phonic</code> or <code>fontgrid</code>.</p>
+          <p>Enjoy.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080221"> 
+        <!--p class="post-date">Thu 21 Feb 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">New Vietnamese picker</h2>
+          <p class="entrymeta">Posted on Thu 21 Feb 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=vietnamese">vietnamese</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/vietnamese/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/vietpicker.gif"><img src="r12a_blog_files/vietpicker-small.gif" alt="Picture of the page in action."></a></p>
+          <p>This latest picker includes characters used for writing Vietnamese. Characters are taken from various Latin Unicode blocks. </p>
+          <p>Tones are separated from base characters in the selection area, but 
+            the output you create is always fully precomposed. If you copy and paste
+            text into the output area, you can normalize the Vietnamese text as NFC
+            by selecting the tab below. The Vietnamese text in the output area is 
+            also normalized when you select one of the transcription tabs.</p>
+          <p>The tabs IPA N and IPA S tabs provide a basic, mostly phonemic-level,
+            transcription of the pronunciation. N means North Vietnamese, S is for 
+            South. The sources I used for this varied a great deal, particularly in 
+            the choice of symbols to represent vowels. There are also more than two 
+            main dialects. So this is a synthesis and a rough guide. Some rare vowel
+            combinations may be missing, although I have covered quite a number.</p>
+          <p>There are a large number of UVN fonts – so many that I didn’t know 
+            which ones to pick for the font pulldown. I chose the two that show up 
+            on Alan Wood’s page. If you think certain others are so common that they
+            ought to be there, please let me know.</p>
+          <p>Enjoy.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080204"> 
+        <!--p class="post-date">Mon 4 Feb 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Be flexible when referencing Unicode!</h2>
+          <p class="entrymeta">Posted on Mon 4 Feb 2008 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=unicode">unicode</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>This post is about the dangers of tying a specification, protocol or application to a specific version of Unicode. </p>
+          <p>For example, I was in a discussion last week about XML, and the 
+            problems caused by the fact that XML 1.0 is currently tied to a specific
+            version of Unicode, and a very old version at that (2.0). This affects 
+            what characters you can use for things such as element and attribute 
+            names, enumerated lists for attribute values, and ids. Note that I’m <em>not</em> talking about the content, just those names. </p>
+          <p>I <a href="http://www.w3.org/2005/03/02-ishida-tech-plen/">spoke about this</a> at a W3C Technical Plenary some time back in terms of how this bars   
+            people from using certain aspects of XML applications in their own 
+            language if they use scripts that have been added to Unicode since 
+            version 2.0. This includes over 150 million people speaking languages 
+            written with Ethiopic, Canadian Syllabics, Khmer, Sinhala, Mongolian, 
+            Yi, Philippine, New  Tai Lue, Buginese, Cherokee, Syloti Nagri, N’Ko,  
+            Tifinagh and other scripts.</p>
+          <p>This means, for example, that if your language is written with one of
+            these scripts, and you write some XHTML that you want to be valid (so 
+            you can use it with AJAX or XSLT, etc.), you can’t use the same language
+            for an <a href="#%E1%8A%A2%E1%88%BA%E1%8B%B3" name="ኢሺዳ" id="ኢሺዳ">id attribute value</a> as for the content of your page. (Try <a href="http://validator.w3.org/check?verbose=1&amp;uri=http%3A%2F%2Frishida.net%2Fblog%2F">validating this page</a> now. The previous link used some Ethiopic for the name and id attribute values.) </p>
+          <p><strong>But there’s another issue</strong> that hasn’t received so 
+            much press – and yet I think, in it’s own way, it can be just as 
+            problematic. Scripts that were supported by Unicode 2.0 have not stood 
+            still, and additional characters are being added to such scripts with 
+            every new Unicode release. In some cases these characters will see very 
+            general use. Take for example,  the Bengali character U+09CE BENGALI 
+            LETTER KHANDA TA.</p>
+          <p>With the release of Unicode 4.1 this character was added to the 
+            standard, with a clear admonition that it should in future be used in 
+            text, rather than the workaround people had been using previously.</p>
+          <p>This is not a rarely used character. It is a common part of the alphabet. Put Bengali <a href="#%E0%A6%89%E0%A6%A4%E0%A6%B8%E0%A6%B9" name="উতসহ" id="উতসহ">in a link</a> and you’re generally ok. Include <a href="#%E0%A6%95%E0%A7%81%E0%A7%8E%E0%A6%B8%E0%A6%BF%E0%A6%A4" name="কুৎসিত" id="কুৎসিত">a khanda ta letter</a> in it, though, and you’re in trouble. It’s as if English speakers could
+            use any word in an id, as long as it didn’t have a ‘q’ in it. It’s a 
+            recipe for confusion and frustration.</p>
+          <p>Similar, but much more far reaching, changes will be introduced to 
+            the Myanmar script (used for Burmese) in the upcoming version 5.1. 
+            Unlike the khanda ta, these changes will affect almost every word. So if
+            your application or protocol froze its Unicode support to a version 
+            between 3.0 and 5.0, like IDNA, you will suddenly be disenfranchising 
+            Burmese users who had been perfectly happy until now.</p>
+          <p>Here are a few more examples (provided by Ken Whistler) of characters
+            added to Unicode after the initial script adoption that will raise 
+            eyebrows for people who speak the relevant language: </p>
+          <ul>
+            <li>01F6 LATIN SMALL LETTER N WITH GRAVE: shows up in NFC pinyin data for Chinese.</li>
+            <li>0219 LATIN SMALL LETTER S WITH COMMA BELOW:  Romanian data.</li>
+            <li>0450 CYRILLIC SMALL LETTER IE WITH GRAVE: Macedonian in  NFC.</li>
+            <li>0653..0655 Arabic combining maddah and hamza:  Implicated in  NFC normalization of common Arabic letters now.</li>
+            <li>0972 DEVANAGARI LETTER CANDRA A: Marathi.</li>
+            <li>097B DEVANAGARI LETTER GGA: Sindhi.</li>
+            <li>0B35 ORIYA LETTER VA:  Oriya.</li>
+            <li>0BB6 TAMIL LETTER SHA:  Needed to  spell sri.</li>
+            <li>0D7A..0D7F   Malayalam chillu letters:  Those will be  ubiquitous in Malayalam data, post Unicode 5.1.</li>
+            <li>and a bunch of Chinese additions. </li>
+          </ul>
+          <p>So the moral is this: decouple your application, protocol or 
+            specification from a specific version of the Unicode Standard. Allow new
+            characters to be used by people as they come along, and users all 
+            around the world will thank you.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080131"> 
+        <!--p class="post-date">Thu 31 Jan 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Should we use &lt;i&gt; and &lt;b&gt; tags?</h2>
+          <p class="entrymeta">Posted on Thu 31 Jan 2008 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>This came up again recently in a discussion on the W3C <a href="http://lists.w3.org/Archives/Public/www-international/">i18n Interest Group list</a>, and I decided to put my thoughts in this post so that I can point people to them easily.</p>
+          <p>I think HTML4 and HTML5 should continue to support &lt;b&gt; and 
+            &lt;i&gt; tags, for backwards compatability, but we should urge caution 
+            regarding their use and strongly encourage people to use &lt;em&gt; and 
+            &lt;strong&gt; or elements with class="…"  where appropriate. (I 
+            reworded this 2008-02-01)</p>
+          <p>Here are a couple of reasons I say that:</p>
+          <ol>
+            <li>
+              <p>I constantly see people misusing these tags in ways that can make localization of content difficult.</p>
+              <p>For example, just because and English document may use italicisation 
+                for emphasis, document titles and foreign words, it doesn’t hold that a 
+                Japanese translation of the document will use a single presentational 
+                convention for all three. Japanese authors may avoid both italicization 
+                and bolding, since their characters are too complicated to look good in 
+                small sizes with these effects. Japanese translators may find that the 
+                content communicates better if they use <a href="http://www.w3.org/International/articles/css3-text/#Slide0200">wakiten (boten marks)</a> for emphasis, but corner brackets for 『&nbsp;document names&nbsp;』, and
+                guillemets for 《&nbsp;foreign words&nbsp;》. These are common Japanese 
+                typographic approaches that we don’t use in English. </p>
+              <p>The problem is that, if the English author has used &lt;i&gt; tags 
+                everywhere (thinking about the presentational rendering he/she wants in 
+                English), the Japanese localizer will be unable to easily apply 
+                different styling to the different types of text.</p>
+              <p>The problem  could be avoided if semantic markup is used. If the English author had used <code>&lt;em&gt;..&lt;/em&gt;</code> and <code>&lt;span class="doctitle"&gt;...&lt;/span&gt;</code> and <code>&lt;span class="foreignword"&gt;..&lt;/span&gt;</code> to distinguish the three cases, it would allow the localizer to easily 
+                change the CSS to achieve different effects for these items, one at a 
+                time.</p>
+              <p>Of course, over time this is equally relevant to pages that are 
+                monolingual. Suppose your new corporate publishing guidelines change, 
+                and proclaim that bolding is better than italics for document names. 
+                With semantically marked up HTML, you can easily change a whole site 
+                with one tiny edit to the CSS. In the situation described above, 
+                however, you’d have to hunt through every page for relevant &lt;i&gt; 
+                tags and change them individually, so that you didn’t apply the same 
+                style change to emphasis and foreign words too. </p>
+            </li>
+            <li>
+              <p>Allowing authors to use &lt;b&gt; and &lt;i&gt; tags is also 
+                problematic, in my mind, because it keeps authors thinking in 
+                presentational terms, rather than helping them move to properly semantic
+                markup. At the very least, it blurs the ideas. To an author in a hurry,
+                it is also tempting to just slap one of these tags on the text to make 
+                it look different, rather than to stop and think about things like 
+                consistency and future-proofing. (Yes, I’ve often done it too…)</p>
+            </li>
+          </ol>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080105"> 
+        <!--p class="post-date">Sat 5 Jan 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Setting up XSL to work on XHTML files</h2>
+          <p class="entrymeta">Posted on Sat 5 Jan 2008 tagged as <a href="/blog/?tag=codenotes">codenotes</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I always forget how to get around the namespace issue when 
+            transforming XHTML files to XHTML using XSL, and it always takes ages 
+            for me to figure it out again.  So I’m going to make a note here to 
+            remind me. This seems to work:</p>
+          <p><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code></p>
+          <p><code>&lt;xsl:transform version="2.0"<br>
+            xmlns="http://www.w3.org/1999/xhtml"<br>
+            xmlns:html="http://www.w3.org/1999/xhtml" 
+            xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+            xmlns:fn="http://www.w3.org/2005/02/xpath-functions" 
+            xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes"<br>
+            xmlns:saxon="http://icl.com/saxon"<br>
+            &lt;strong&gt;exclude-result-prefixes="saxon fn xs xdt html"&lt;/strong&gt;&gt;</code>;</p>
+          <p><code>&lt;xsl:output method="xhtml" encoding="UTF-8"<br>
+            doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" indent="no" 
+            doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+            /&gt;</code></p>
+          <p>Then you need to refer to elements in the source to be converted by 
+            using the html: namespace prefix, eg. &lt;xsl :template 
+            match=”html:div”&gt;….&lt;/xsl&gt;.</p>
+          <p>I always have to look up the template that copies everything not 
+            fiddled with in the other templates, too, so here it is, for good 
+            measure:</p>
+          <pre>&lt;xsl:template match="@*|node()"&gt;
+	&lt;xsl:copy&gt;
+		&lt;xsl:apply-templates select="@*|node()"/&gt;
+		&lt;/xsl:copy&gt;
+	&lt;/xsl:template&gt;
+</pre>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080104"> 
+        <!--p class="post-date">Fri 4 Jan 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">New Urdu picker</h2>
+          <p class="entrymeta">Posted on Fri 4 Jan 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=urdu">urdu</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/urdu/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/urdupicker3.gif"><img src="r12a_blog_files/urdupicker3-small.gif" alt="Picture of the page in action."></a></p>
+          <p>Although I have a picker already for Arabic, Persian and Urdu, I have
+            developed another that is specifically for inputting Urdu.  One reason 
+            for this is to reduce the choice of characters so that the user is more 
+            likely to select the right character for Urdu (eg. heh goal rather than 
+            arabic heh). Another is to provide shortcuts for things like aspirated 
+            letters and some common combinations (like the word ‘allah’).</p>
+          <p>It includes characters used for Urdu in Unicode 5.0. Most of the characters in the Urdu standard UZT 1.01 are included.</p>
+          <p>The aspirated letters of the alphabet can be entered with a single 
+            click. Also, base characters with diacritics can be inserted into the 
+            text with a single click where NFC normalisation would produce a single 
+            precomposed character. </p>
+          <p>Letters of the alphabet are shown in alphabetic order at the top 
+            left, digits are in keypad order, and combining characters related to 
+            vowel sounds are shown along the bottom. The lower middle section 
+            contains useful but non-alphabetic characters and punctuation. To the 
+            right are various symbols. Hinting is implemented for visually similar 
+            glyphs.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20080104b"> 
+        <!--p class="post-date">Fri 4 Jan 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Bengali picker updated</h2>
+          <p class="entrymeta">Posted on Fri 4 Jan 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/bengali/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/bengalipicker3.gif"><img src="r12a_blog_files/bengalipicker3-small.gif" alt="Picture of the page in action."></a></p>
+          <p>Pickers allow you to quickly create phrases in a script by clicking 
+            on Unicode characters arranged in a way that aids their identification. 
+            Pickers are likely to be most useful if you don’t know a script well 
+            enough to use the native keyboard. The arrangement of characters also 
+            makes it much more useable than a regular character map utility.</p>
+          <p>The Bengali picker includes all the characters in the Unicode 5.0 
+            Bengali block. Note: There was an important addition to the Bengali 
+            block in version 4.1, a single character for khanda ta, that may not yet
+            be supported in fonts, but has been added to this version of the 
+            picker.</p>
+          <p>Consonants are mostly in a typical articulatory arrangement, vowels 
+            are aligned with vowel signs, and digits are in keypad order. Hinting is
+            implemented for visually similar glyphs.</p>
+          <p>A function has also been added to transliterate Bengali text to 
+            Latin, though the scheme used is not standard, and may change at short 
+            notice.  Don’t use it in anger yet.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <p class="pagelinks"><a href="200707">More<br/>
+        🠿</a></p>
+    </div>
+    <p id="footer">Copyright © 2009 Richard Ishida.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+  <div id="header">
+    <div id="dotted-line">&nbsp;</div>
+    <h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+    <div id="sitelinks" class="noprint" style="margin-left: 6.5%;"> <span> <a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; <a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; <a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; <a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span> </div>
+  </div>
+  <div id="main">
+    <div id="sidebar">
+      <div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+      <p class="pagelinks"><a href="200610">&nbsp;🠽&nbsp;</a><br/>
+        page</p>
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+    </div>
+    <div id="content">
+      <div class="post" id="20040918"> 
+        <!--p class="post-date">Mon 18 Sep 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">Geotagging: Convert lat/lon</h2>
+          <p class="entrymeta">Posted on Mon 18 Sep 2006 tagged as <a href="/blog/?tag=geotagging">geotagging</a>, <a href="/blog/?tag=miscapps">miscapps</a>, <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=maps">maps</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/gps/convertlatlon.php">New utility</a></p>
+          <p>I’ve been developing some small utilities in PHP to help me geotag my
+            photos.  First up for mention here is a tool for converting latitude 
+            and longitude to decimal format and to the tags needed for Flickr.  I 
+            think it may be of use to other people than just me.</p>
+          <p>The following input formats are acceptable:</p>
+          <p> * Any arrangement that includes at least one of the following 
+            characters ° ‘ ” or , and lists figures in the order degrees, minutes, 
+            seconds (where the last two are optional).<br>
+            * Decimal formats – useful for just formatting as flickr geotags.<br>
+            * Use of N,S,E,W (any case and any location) or minus signs.</p>
+          <p>The following decimal output formats are provided:</p>
+          <p> * latitude longitude: this is arranged in such a way that you 
+            could cut and paste the whole thing as one, eg. into, say, Google 
+            Earth’s search field to find a location quickly<br>
+            * geotags for Flickr: this provides the regular geotag, lat= and 
+            lon= tags plus a fourth combination tag in a format that enables to 
+            create tags with a single cut and paste</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20060630"> 
+        <!--p class="post-date">Fri 30 Jun 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">Gujarati character picker</h2>
+          <p class="entrymeta">Posted on Fri 30 Jun 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=gujarati">gujarati</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/gujarati/">New picker</a></p>
+          <p>Someone who uses the pickers for cataloguing the Asian language 
+            collection in a UK library asked me to provide a Gujarati picker.  Since
+            he was suitably flattering about the other pickers, I thought I ought 
+            to oblige.</p>
+          <p>This picker includes all the characters in the Unicode Gujarati block.</p>
+          <p>The default shows all characters as images due to the rarity of 
+            Gujarati fonts. Consonants are mostly in a typical articulatory 
+            arrangement, vowels are aligned with vowel signs, and digits are in 
+            keypad order. I have not implemented any highlighting of similar 
+            characters, since I put this together very quickly.</p>
+          <p>Enjoy.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20060629"> 
+        <!--p class="post-date">Thu 29 Jun 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">Hebrew picker</h2>
+          <p class="entrymeta">Posted on Thu 29 Jun 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=hebrew">hebrew</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/hebrew/index.en.html">Updated picker</a></p>
+          <p>Thanks to Gernot Katzer, I realised that during the recent styling 
+            update for the Hebrew picker I missed out a whole bunch of combining 
+            marks.</p>
+          <p>It’s now fixed.  Thanks Gernot!</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20060326"> 
+        <!--p class="post-date">Sun 26 Mar 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">Myanmar picker</h2>
+          <p class="entrymeta">Posted on Sun 26 Mar 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=myanmar">myanmar</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/myanmar/">New picker</a></p>
+          <p>This new picker includes all the characters in the Unicode Myanmar block.</p>
+          <p>The default shows all characters as images due to the rarity of 
+            Malayalam fonts. Consonants are mostly in a typical articulatory 
+            arrangement, vowels are aligned with vowel signs, and digits are in 
+            keypad order. Hinting is implemented for visually similar glyphs.</p>
+          <p>I don’t know a lot about Myanmar yet, so any suggestions for 
+            improving the layout are welcome. (Noting that this is supposed to help 
+            recognition of characters by people who are new to the script.)</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20060322"> 
+        <!--p class="post-date">Wed 22 Mar 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView version 4.1.0b available</h2>
+          <p class="entrymeta">Posted on Wed 22 Mar 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/uniview/">New version</a></p>
+          <p>Version 4.1.0b is a minor update, but adds some useful functionality.</p>
+          <p>Changes:</p>
+          <ul>
+            <li>Provided a way to start up UniView with a particular block and/or 
+              character displayed as a table in the lower 				panels. This should be 
+              particularly useful for pointing a person to a particular Unicode block 
+              or character in a URI.  For example, if you wanted to point someone to 
+              UniView so that they immediately find the Greek and Coptic block, and a 
+              description of U+0E33: THAI CHARACTER SARA AM, you could put the 
+              following link in your email or page: <a href="http://people.w3.org/rishida/scripts/uniview/?block=greek-and-coptic&amp;char=0e33">http://people.w3.org/rishida/scripts/uniview/?block=greek-and-coptic&amp;char=0e33</a></li>
+            <li>Added a link to the <a href="http://www.decodeunicode.org/">decodeUnicode wiki</a> for each character that is displayed in the right-hand panel. This is a
+              wiki where people can contribute information about Unicode blocks and 
+              characters. It is developed at the Department of Design at the 
+              University of Applied Sciences in Mainz. “The project is supported by 
+              the Federal Ministry of Education and Research (BMBF) and has the 
+              objectives of creating a basis for fundamental typographic research and 
+              facilitating a textual approach to the characters of the world for all 
+              computer users.”</li>
+            <li>Fixed a couple of minor bugs in the CSS.</li>
+          </ul>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20060317"> 
+        <!--p class="post-date">Fri 17 Mar 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">IPA Character Picker</h2>
+          <p class="entrymeta">Posted on Fri 17 Mar 2006 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=ipa">ipa</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/ipa/">New version.</a></p>
+          <p>Just produced version 2.0 with the following changes:</p>
+          <ol>
+            <li>Added some glyphs that were missing by comparing with the information at the <a href="http://www.arts.gla.ac.uk/ipa/ipachart.html">IPA home page</a>.</li>
+            <li>Added image/character switch, but changed it so that combining characters are only ever shown as images.</li>
+            <li>Combining graphics are now distinguished by a pale blue background.</li>
+            <li>Added some links and information to the bottom of the page.</li>
+          </ol>
+          <p>The French version has not been updated.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20060120"> 
+        <!--p class="post-date">Fri 20 Jan 2006</p-->
+        <div class="post-info">
+          <h2 class="post-title">Request for feedback: Usefulness of ::first-letter in non-Latin scripts</h2>
+          <p class="entrymeta">Posted on Fri 20 Jan 2006 tagged as <a href="/blog/?tag=layout">layout</a>, <a href="/blog/?tag=web">web</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <div style="padding: 12px; background-color: #e7ebde; color: #676e04; margin-bottom: 1em; margin-left: 7.5%; margin-right: 32%;">The
+            W3C i18n Working Group would like to hear from you if you have some 
+            knowledge/thoughts in this area. We would like to gather information 
+            about the usefulness, in general, of the ::first-letter pseudo-element 
+            in non-Latin scripts, and any particular issues or differences arising 
+            from the different characteristics of the scripts.Please send your 
+            comments to www-international @ w3.org<br>
+            Archive and subscription: <a href="http://lists.w3.org/Archives/Public/www-international/">http://lists.w3.org/Archives/Public/www-international/</a></div>
+          <p>The latest working draft of CSS3 Selectors proposes the ::first-letter pseudo-element.</p>
+          <p>See <a href="http://www.w3.org/TR/2005/WD-css3-selectors-20051215/#first-letter">http://www.w3.org/TR/2005/WD-css3-selectors-20051215/#first-letter</a></p>
+          <p>The ::first-letter pseudo-element represents the first letter of the 
+            first line of a block, if it is not preceded by any other content (such 
+            as images or inline tables) on its line.</p>
+          <p>It allows that first letter to be styled individually, without markup. It may be used for <a href="http://www.w3.org/TR/2005/WD-css3-selectors-20051215/#first-letter">“initial caps” and “drop caps”</a>, which are common typographical effects in text in Latin script.</p>
+          <p>We commented to the CSS Working Group that they need to define 
+            ‘letter’ more carefully, and proposed that they specify that ‘letter’ 
+            equates to ‘default grapheme cluster’, as described in the Unicode 
+            Standard Annex #29.</p>
+          <p>See <a href="http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries">http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries</a></p>
+          <p>(A rough and ready explanation of this is that base characters and any following combining characters are styled together. So</p>
+          <p>0065: e LATIN SMALL LETTER E + 0301: ́ COMBINING ACUTE ACCENT</p>
+          <p>would be handled as a single letter.)</p>
+          <p>We also suggested that implementors should then be encouraged to 
+            provide tailored algorithms on a per language basis to cope with 
+            anomolies, particularly such as may occur in non-Latin scripts.</p>
+          <p>Here are some initial questions:</p>
+          <p><strong>[1] Are there scripts that would never use this approach?</strong></p>
+          <p><strong>[2] We mention ‘initial caps’ and ‘drop caps’ above.  What 
+            other types of styling would be commonly applied in other scripts if 
+            this feature were available?</strong></p>
+          <p><strong>[3] What script features would cause difficulties, eg 
+            syllabic groupings (see the example of indic script example below), 
+            ligatures, cursive text (eg. Arabic, Urdu, etc.), and how would the 
+            script normally deal with them?</strong></p>
+          <p>Please send your comments to www-international @ w3.org<br>
+            Archive: <a href="http://lists.w3.org/Archives/Public/www-international/">http://lists.w3.org/Archives/Public/www-international/</a></p>
+          <p>————</p>
+          <p>What follows are some examples of questions that spring to mind.</p>
+          <p>SYLLABIC INDIC SCRIPTS</p>
+          <p>In the Hindi word स्थिति (‘sthiti’) the sequence of characters in the first syllable is as follows in memory:</p>
+          <p>0938:   स  DEVANAGARI LETTER SA<br>
+            094D:   ्  DEVANAGARI SIGN VIRAMA<br>
+            0925:   थ  DEVANAGARI LETTER THA<br>
+            093F:   ि  DEVANAGARI VOWEL SIGN I</p>
+          <p>The displayed text, however, is <img alt="The first syllable of the word 'sthiti' in Hindi, showing the positions of the characters after display." src="r12a_blog_files/sthiti.gif"></p>
+          <p>Note how the vowel sign appears to the left of the first character, not the third.</p>
+          <p>The default grapheme clusters here are, I believe, 0938+094D, then each of the following two characters.</p>
+          <p>Would Devanagari-based languages use special styling for initial 
+            syllables?  If so, would they actually apply the styling to the vowel 
+            sign alone, or to the whole syllable?</p>
+          <p>LIGATURES</p>
+          <p>If a script styles the ‘first letter’, but that letter is part of a 
+            ligature (ie. a single glyph representing more than one underlying 
+            character), would it be ok to split the ligature, or should the other 
+            characters that compose the ligature also be styled?</p>
+          <p>CURSIVE SCRIPTS</p>
+          <p>Since Arabic and Mongolian letters in a word are normally joined, has first letter styling been used at all in these scripts?</p>
+          <p>CHINESE, JAPANESE, KOREAN</p>
+          <p>Do languages using these scripts do first letter styling?</p>
+          <p>RUSSIAN, GREEK, ARMENIAN, etc.</p>
+          <p>Is first letter styling common practise in these scripts too?</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20051205"> 
+        <!--p class="post-date">Mon 5 Dec 2005</p-->
+        <div class="post-info">
+          <h2 class="post-title">Localisation Considerations in DTD Design</h2>
+          <p class="entrymeta">Posted on Mon 5 Dec 2005 tagged as <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://xml.coverpages.org/IshidaDTD-Paper.html">New paper</a>.</p>
+          <p>I thought this paper had been lost when Xerox erased my global design
+            site, but I just found a link to a cached copy of it at the XML Cover 
+            pages. </p>
+          <p>The paper refers to standard topics such as character encoding and 
+            language declarations, but also covers topics such as implementation of 
+            emphasis and style conventions, handling of citations, use of text in 
+            attribute values, and the need for an element like HTML’s SPAN. In 
+            addition, other topics that have traditionally been associated with 
+            translation of user interface messages become applicable due to the 
+            nature of XML documents. These include the provision of designer’s 
+            notes, identification of non-translatable text, and use of element ids 
+            for automatic translation of elements.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20050825"> 
+        <!--p class="post-date">Thu 25 Aug 2005</p-->
+        <div class="post-info">
+          <h2 class="post-title">‘UniView’ Unicode database viewer: Version 4.1.0a</h2>
+          <p class="entrymeta">Posted on Thu 25 Aug 2005 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/uniview/">New version</a></p>
+          <p>Although the difference between 4.1 and 4.1.0a doesn’t look like much, this is a substantial update.  I also updated the <a href="http://people.w3.org/rishida/scripts/uniview/help.html">help/user guide</a>.</p>
+          <p>Changes: </p>
+          <p>Added support for Unicode version 4.1.0.</p>
+          <p>Retrieves graphics from decodeunicode.org rather than the 
+            slow-loading and sparse graphics that were available from the Unicode 
+            site. Also added my own graphics where decodeunicode has gaps.</p>
+          <p>Moved the files to PHP. This enables a different approach to the 
+            inclusion of user-defined notes that now works on IE and Opera, too.</p>
+          <p>Another benefit of using PHP is that you can now prep the conversion 
+            page with data in the ‘Code point’ or ‘Cut &amp; paste’ fields. By 
+            clicking on the appropriate icon, the conversion page will now open with
+            the conversions already done for the relevant field.</p>
+          <p>Yet another benefit of PHP is that, if you really want to, you can 
+            now set various preferences related to the intial look and feel by 
+            specifying them as query parameters when you call UniView.</p>
+          <p>NOTE: If you want to be able to download UniView to your hard drive 
+            and you don’t have a server and PHP, let me know. If enough people ask 
+            for it, I will create a downloadable zipped package again that will work
+            without PHP (and without the additional notes feature). I will also 
+            post notes on how to customise various aspects of the setup.</p>
+          <p>Rearranged the top of the page to allow UniView to be used in narrower windows.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20050820"> 
+        <!--p class="post-date">Sat 20 Aug 2005</p-->
+        <div class="post-info">
+          <h2 class="post-title">Basic Ethiopic picker</h2>
+          <p class="entrymeta">Posted on Sat 20 Aug 2005 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=ethiopic">ethiopic</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/ethiopic/">New app</a></p>
+          <p>This picker includes all characters in the Unicode 4.0 Ethiopic block. It does not cover additions in Unicode version 4.1. </p>
+          <p>(Before creating a full Ethiopic picker, I need to get a font that 
+            covers all the new characters, and I need to figure out how to best fit 
+            the new characters into the current arrangement.)</p>
+          <p>Letters are arranged in the Unicode code page order, which is aligned
+            with the traditional consonant-vowel matrix.  I didn’t actually use a 
+            table, to save space.  If you have strong views on the layout, send me 
+            some suggestions.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20050819"> 
+        <!--p class="post-date">Fri 19 Aug 2005</p-->
+        <div class="post-info">
+          <h2 class="post-title">Armenian picker</h2>
+          <p class="entrymeta">Posted on Fri 19 Aug 2005 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=armenian">armenian</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/armenian/">New app</a></p>
+          <p>Includes all characters in the Unicode Armenian block. Letters are 
+            arranged in the Unicode code page order, but upper and lower case 
+            letters are side by side.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20050401"> 
+        <!--p class="post-date">Fri 1 Apr 2005</p-->
+        <div class="post-info">
+          <h2 class="post-title">Tutorial: An Introduction to Writing Systems</h2>
+          <p class="entrymeta">Posted on Fri 1 Apr 2005 tagged as  <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>[<a href="http://people.w3.org/rishida/scripts/tutorial/">new version</a>]</p>
+          <p>In preparation for my full-day tutorial at WWW2005 I’ve been creating
+            and renovating presentations.  As a result, the format of this tutorial
+            has been reworked to fit the style I have recently developed for 
+            tutorials on the <a href="http://www.w3.org/International/">W3C Internationalization</a> site.</p>
+          <p>The text remains the same, but you can now view slides as a single 
+            document (good for printing),  or as individual slides with XHTML-based 
+            notes.  The slides themselves are graphics, so you can see what I’m 
+            trying to show you, but there’s also a text only version of each slide. 
+            There’s also a new overview, to help you jump around easily.</p>
+          <p>I had wanted to also provide SVG slides, but the SVG export utility 
+            in the new version of Open Office (2.0 beta) takes control of 
+            positioning the text in a way that doesn’t support combining characters 
+            and shaping etc properly.  Since my talk is about features that need to 
+            be supported for support of complex scripts, this actually provides an 
+            interesting object lesson!  🙁  Maybe when I have more time I’ll upload 
+            them.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20041029"> 
+        <!--p class="post-date">Fri 29 Oct 2004</p-->
+        <div class="post-info">
+          <h2 class="post-title">‘UniView’ Unicode database viewer: Version 4.1</h2>
+          <p class="entrymeta">Posted on Fri 29 Oct 2004 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/uniview/">New version</a> <a href="http://people.w3.org/rishida/scripts/uniview/uniview.zip">Download zip</a> <a href="http://people.w3.org/rishida/scripts/uniview/help">Overview/Instructions</a></p>
+          <p>New features include:</p>
+          <ul>
+            <li>Support for supplementary characters</li>
+            <li>Double-clicking on a list item to the left adds the character to the Cut&amp;Paste field above</li>
+            <li>Han and Ideographic characters are shown for code points typed in the Code Point field.</li>
+          </ul>
+          <p>About UniView<br>
+            Look up characters, character blocks, paste in and discover unknown 
+            characters, store your own info about characters, search on character 
+            names, do hex/dec/ncr conversions, highlight character types, etc. etc. 
+            Check out the help file for instructions and new features, and have fun!</p>
+          <p>Supports Unicode 4.0 and rewritten with Web Standards to work on a 
+            variety of browsers. – this is still work in progress and has some known
+            bugs (esp surrogates), but I use it all the time.</p>
+          <p>Initially downloads about 1Mb of Unicode data, so you should use a 
+            fast connection. Once it’s cached you’re ok. Alternatively, download the
+            newly available zip file and run it from your PC. It’s just XHTML and 
+            Javascript – so no worries about viruses. </p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20041021"> 
+        <!--p class="post-date">Thu 21 Oct 2004</p-->
+        <div class="post-info">
+          <h2 class="post-title">Latin &amp; diacritic character picker</h2>
+          <p class="entrymeta">Posted on Thu 21 Oct 2004 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=latin">latin</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/latin/">Updated</a></p>
+          <p>I added 02BF:   MODIFIER LETTER LEFT HALF RING and 02BE:   MODIFIER LETTER RIGHT HALF RING. </p>
+          <p>This was in response to a request from someone who wants to 
+            transliterate Arabic, Persian, and several other languages during their 
+            work publishing Middle Eastern historical works.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20041004"> 
+        <!--p class="post-date">Mon 4 Oct 2004</p-->
+        <div class="post-info">
+          <h2 class="post-title">Tifinagh kbd [ma] character picker</h2>
+          <p class="entrymeta">Posted on Mon 4 Oct 2004 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers">pickers</a>, <a href="/blog/?tag=ethiopic">ethiopic</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/pickers/tifinagh/">New app</a></p>
+          <p>Includes characters needed in Morocco to represent the Berber script.
+            Unicode codes are those expected to be standardised in Unicode 4.1. 
+            Letters are arranged in approximately the same arrangement as the 
+            proposed IRCAM keyboard. Get the <a href="http://pages.infinit.net/hapax/polices/hapaxber.ttf">Hapax Berbère</a> font.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20040811"> 
+        <!--p class="post-date">Wed 11 Aug 2004</p-->
+        <div class="post-info">
+          <h2 class="post-title">Use of link element to point to translations</h2>
+          <p class="entrymeta">Posted on Wed 11 Aug 2004 tagged as <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/articles/test-link-alt">New article</a></p>
+          <p>The HTML specification suggests that the link element can be used by 
+            search engines to find alternate translations of the current page. Some 
+            browsers expose the link information on the user interface.</p>
+          <p>Andrew Cunningham and I wrote a test for this. Here is a summary of 
+            the results of some brief testing on mainstream browsers on Windows XP.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20040809"> 
+        <!--p class="post-date">Mon 9 Aug 2004</p-->
+        <div class="post-info">
+          <h2 class="post-title">Automatic font assignment for CJK text</h2>
+          <p class="entrymeta">Posted on Mon 9 Aug 2004 tagged as <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/articles/lang-and-cjk-font.html">New article</a></p>
+          <p>Some browsers apply the fonts listed in the user font preferences to 
+            the display of HTML Unicode text in Traditional Chinese, Simplified 
+            Chinese, Japanese and Korean, depending on the setting of the 
+            lang/xml:lang attribute. Here is a summary of the results of some brief 
+            testing of mainstream browsers on Windows XP. I may update this as 
+            additional information becomes available.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20040627"> 
+        <!--p class="post-date">Sun 27 Jun 2004</p-->
+        <div class="post-info">
+          <h2 class="post-title">Bengali script notes: First draft</h2>
+          <p class="entrymeta">Posted on Sun 27 Jun 2004 tagged as <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=scriptnotes">scriptnotes</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/bengali/bengali-script/" id="bengali" name="bengali">New article</a></p>
+          <p>In-progress draft of notes that list the symbols used to represent 
+            Bengali, describe their use, and relate them to appropriate characters 
+            for representation in Unicode. There is an index of shapes you can use 
+            to look up Bengali glyphs and track them down to their constituent 
+            Unicode codepoints.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20040212"> 
+        <!--p class="post-date">Thu 12 Feb 2004</p-->
+        <div class="post-info">
+          <h2 class="post-title">‘UniView’ Unicode database viewer: Version 4.0.1</h2>
+          <p class="entrymeta">Posted on Thu 12 Feb 2004 under <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a>&nbsp;</p>
+        </div>
+        <div class="post-content">
+          <p><a href="http://people.w3.org/rishida/scripts/uniview/">New version</a> &nbsp; <a href="http://people.w3.org/rishida/scripts/uniview/uniview.zip">Download zip</a></p>
+          <p>New features include:</p>
+          <ul>
+            <li><a href="http://people.w3.org/rishida/scripts/uniview/uniview.fr.html">French version</a> available, thanks to translation by	Patrick Andries</li>
+            <li>improvements to user interface, including ability to set height of 
+              visible area in left panel (useful for large screens) and tooltips to 
+              help understand the UI</li>
+            <li>disactivated display of personalised notes in IE until fix can be found</li>
+          </ul>
+          <p>About UniView:<br>
+            Look up characters, character blocks, paste in and discover unknown 
+            characters, store your own info about characters, search on character 
+            names, do hex/dec/ncr conversions, highlight character types, etc. etc. 
+            Check out the help file for instructions and new features, and have fun!</p>
+          <p>Supports Unicode 4.0 and rewritten with Web Standards to work on a 
+            variety of browsers. – this is still work in progress and has some known
+            bugs (esp surrogates), but I use it all the time.</p>
+          <p>Initially downloads about 1Mb of Unicode data, so you should use a 
+            fast connection. Once it’s cached you’re ok. Alternatively, download the
+            newly available zip file and run it from your PC. It’s just XHTML and 
+            Javascript – so no worries about viruses.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+    </div>
+    <p id="footer">Copyright © 2009 Richard Ishida.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+  <div id="header">
+    <div id="dotted-line">&nbsp;</div>
+    <h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+    <div id="sitelinks" class="noprint" style="margin-left: 6.5%;"> <span> <a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; <a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; <a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; <a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span> </div>
+  </div>
+
+
+  <div id="main">
+    <div id="sidebar">
+    	<div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+       <p class="pagelinks"><!--a href="201708">&nbsp;🠽&nbsp;</a--><br/>page<br/><a href="201512">&nbsp;🠿&nbsp;</a></p>
+
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+    </div>
+    <div id="content">
+        
+    
+    
+    
+
+    
+    
+     <div class="post" id="20171029">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20171029">New app: Character usage lookup </a></h2>
+          <p class="entrymeta">Posted on Thu 29 Oct 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=charuse">charuse</a>&nbsp; </p>
+     </div>
+        <div class="post-content">
+        <p class="mainPicture"><a href="https://r12a.github.io/app-charuse/"><img src="imgs/charuse.png" alt="Picture of the app in action."></a></p>
+        <p>A new <a class="mainLink" href="https://r12a.github.io/app-charuse/">Character usage lookup</a> web app is now available.  It draws on data sources (initially CLDR and Unicode's UDHR pages, with additional information from Wikipedia) to associate characters with a range of languages (440 at the moment). The app lets you find characters used by a particular language, or languages that use a given non-ASCII character.</p>
+<p> ASCII characters are ignored.     Only the core characters from CLDR are shown (not the auxiliary), but every character that appears in a UDHR transcription is shown. Going forward, I expect to add information from other sources. Characters shown for a language include all characters produced by applying uppercase, lowercase, NFC, and NFD to the set of characters attributed to that language by its source.          Chinese languages, Japanese, and Korean are not listed.</p>
+<p>The <samp>Native speakers</samp> column indicates the estimated number of <em>native</em> speakers for all the languages listed, in order to give a rough idea of the prevalence of that character. It doesn't represent the number of people who speak it as a second language, and often that is a multiple of the native speaker total. However, this number also represents speakers rather than literate users, so they are <em>potential</em> users of the character. Depending on the language, therefore, the figures may be low or at least conservative for speakers of many languages, and possibly high for speakers of some languages (typically small languages, or when using an alternate orthography).</p>
+          <p>The following tips may be useful:</p>
+<ul>
+  <li>Mouse over the characters displayed to see their Unicode code point value and name. The <samp>U</samp> icon will show all characters in that cell in UniView. This can be useful if you don't have fonts for that script, since UniView uses images by default.</li>
+  <li> The control <samp>Use language name</samp> works as follows: Type in a name, or part of a name, of a language. Select the language you want from the suggestions offered. This will put the BCP47 code into the control. Hit return and you'll display information for that language.<br>
+Unfortunately, this doesn't work with Safari, or (therefore)  iOS. If you need to find a BCP47 code for a language, go to <a href="https://r12a.github.io/app-subtags/">https://r12a.github.io/app-subtags/</a>.</li>
+  <li>When adding characters you want to look up to the input field, you can add Unicode code point numbers with space to either side, or escapes. For example, for આ any of the following escapes will work: <code>&amp;#x0A86; \u0A86 \u{A86} \0A86 U+0A86 0xA86</code>. No extra space is needed between escapes, and supplementary characters work too.</li>
+  <li>After you have generated a list of languages that use a given character, if you click on a language name then details for that language will be displayed above.</li>
+</ul>
+<div class="post-footer"></div>
+        </div>
+    </div>
+        
+    
+    
+    
+
+    
+    
+     <div class="post" id="20171028">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20171028">List characters app updated</a></h2>
+          <p class="entrymeta">Posted on Thu 28 Oct 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">listcharacters</a>&nbsp; </p>
+     </div>
+        <div class="post-content">
+        <p class="mainPicture"><a href="https://r12a.github.io/apps/listcharacters/"><img src="imgs/listcharacters.png" alt="Picture of the app in action."></a></p>
+        <p>The <a class="mainLink" href="https://r12a.github.io/apps/listcharacters/">List characters</a> web app lets you find out what characters are contained in some text. Simply drop the text into the large box and click <samp>Analyse the text above</samp>. The result is grouped by Unicode blocks.</p>
+<p>This update adds three new buttons: <samp>Convert to NFC</samp>, <samp>Convert to NFD</samp>, and <samp>Get all forms</samp>. The first two buttons are self-explanatory if you are familiar with Unicode Normalization forms. (If not, <a href="https://r12a.github.io/scripts/tutorial/part3#normalization">see the explanation</a> in my Unicode tutorial.)</p>
+<p>The third button makes four copies of the text, and to each applies one of the following:  (1) all lowercase, (2) all uppercase, (3) all NFC, and (4) all NFD. When you then hit the <samp>Analyse the text above</samp> button you get far more results, as shown in the picture above, which shows what the same (Vietnamese) text produces before and after using this new button.</p>
+<p>There is also a new line showing the total number of unique characters in the text.</p>
+<div class="post-footer"></div>
+        </div>
+    </div>
+        
+    
+    
+    
+
+    
+    
+     <div class="post" id="20171021">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20171021">New: Makasar character picker</a></h2>
+          <p class="entrymeta">Posted on Thu 21 Oct 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=makasar">makasar</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+        <p class="mainPicture"><a href="https://r12a.github.io/pickers/makasar/"><img src="imgs/makasar_picker_21.png" alt="Picture of the page in action."></a></p>
+        <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/makasar/">Makasar Character Picker</a> web app is now available. The Makassar script was used formerly for the Makassarese language and will be added to the Unicode Standard in version 11. The script is sometimes called Makassarese Bird Script or Old Makassarese.</p>
+<p>The picker allows you to produce or analyse 
+            runs of  text using the Makasar script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>Apart from the standard functions, the <samp>Makasar to Latin</samp> selector above the text area converts the content of the text area (or the highlighted text) to a Latin transliteration. Note that this is unable to capture geminated consonant sounds, syllable-final consonants, or missing vowel sounds, since those are not indicated by the Makasar script. It does, however, handle consonant reduplication when signalled by <i class="foreign">angka</i> or doubled vowel-signs.</p>
+<p>I was unable to make a functional webfont from MakasarGraphite, which is the only font I know of for Makasar, so you will need to <a href="https://github.com/pandey/graphite-fonts">download the font</a> for the picker to work correctly. Even then, because this is a Graphite font, it will only work on Firefox. Also note that Makasar code points are not officially assigned until Unicode 11 is released. </p>
+<p>See the <a class="mainLink" href="http://r12a.github.io/pickers/makasar/help/">help file</a> for more information.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+   
+    
+    
+    
+
+    
+    
+   <div class="post" id="20170909">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170909">New: Buginese character picker</a> &amp; notes</h2>
+          <p class="entrymeta">Posted on Thu 09 Sep 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=buginese">buginese</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/buginese/"><img src="imgs/buginese_picker_21.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/buginese/">Buginese Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of  text using the Buginese script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>Apart from the standard functions, the Buginese to Latin selector above the text area converts the content of the text area (or the highlighted text) to a Latin transliteration. (Note that it only converts characters in the Buginese text, it doesn't add invisible endings or gemination.)</p>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/buginese/help/">help file</a> for more information.</p>
+          <p>In addition there is a    <a class="mainLink" href="https://r12a.github.io/scripts/buginese/">Buginese script summary</a> and accompanying <a class="mainLink" href="https://r12a.github.io/scripts/buginese/block">individual character notes</a>.</p>
+          <p>Information about Buginese has also been added to the  <a class="mainLink" href="https://r12a.github.io/scripts/featurelist/">Script comparison chart</a>.</p>
+
+          <div class="post-footer"></div>
+        </div>
+      </div>
+        
+    
+    
+    
+
+    
+    
+    <div class="post" id="20170831">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170831">New: Sundanese character picker</a></h2>
+          <p class="entrymeta">Posted on Thu 31 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=sundanese">sundanese</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/sundanese/"><img src="imgs/sundanese_picker_21.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/sundanese/">Sundanese Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of  text using the Sundanese script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>Apart from the standard functions, the Sundanese to Latin selector above the text area converts the content of the text area (or the highlighted text) to a Latin transliteration.</p>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/sundanese/help/">help file</a> for more information.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+   
+    
+    
+    
+
+    
+    
+        <div class="post" id="20170830">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170830">New: Sundanese script notes</a></h2>
+          <p class="entrymeta">Posted on Wed 30 Aug 2017 tagged as <a href="index?tag=docs">docs</a>, <a href="index?tag=scriptnotes">scriptnotes</a>, <a href="index?tag=sundanese">sundanese</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/scripts/sundanese/"><img src="imgs/sundanese_summary.png" alt="Picture of the page in action."></a></p>
+          <p>A   <a class="mainLink" href="https://r12a.github.io/scripts/sundanese/">Sundanese script summary</a> and accompanying <a class="mainLink" href="https://r12a.github.io/scripts/sundanese/block">individual character notes</a> are now available.</p>
+          <p>There is some sample text near the top of the document. If you highlight part of it, the page shows you the Unicode characters used for that selection. Clicking on red example text also shows the Unicode characters that underlie the text.</p>
+          <p>There's also a panel on the right that summarises key features of the script, taking its information from the  <a class="mainLink" href="https://r12a.github.io/scripts/featurelist/">Script comparison chart</a>.</p>
+          <p>As always, this is not authoritative, peer-reviewed information – these are just notes I have gathered or copied from various places as I learned. But maybe it will be helpful to someone. Please <a href="https://github.com/r12a/scripts/issues/new?title=%5Bsundanese%20summary%5D%20TITLE_GOES_HERE&body=Comment%20on%20http%3A%2F%2Fr12a.github.io%2Fscripts%2Fsummaries%2Fsundanese%0A%0A">raise a github issue</a> if you want to propose some changes.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      
+    
+    
+    
+
+    
+    
+    <div class="post" id="20170829">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170829">New: Javanese character picker</a></h2>
+          <p class="entrymeta">Posted on Tue 29 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=javanese">javanese</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/javanese/"><img src="imgs/javanese_picker_21.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/javanese/">Javanese Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of  text using the Javanese script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>Apart from the standard functions, there are a few special features:</p>
+          <ul>
+            <li>Click on the <samp>SS</samp> button to replace the standard set of consonants with subjoined forms on the selection area.</li>
+            <li>The picker comes with a shape selector (click on <samp>S</samp> on the grey bar to the left). This is particularly useful for people unfamiliar with the script. The orange bar shows a set of characters, each of which begins (on the left) with a different shape. Click on one and the Javanese letters that start with the same shape are highlighted above and displayed below. Click on either to add to the text area.</li>
+            <li>The Javanese to Latin selector above the text area converts the content of the text area (or the highlighted text) to a Latin transliteration.</li>
+          </ul>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/javanese/help/">help file</a> for more information.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+   
+    
+    
+    
+
+    
+    
+        <div class="post" id="20170829a">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170829a">New: Javanese script notes</a></h2>
+          <p class="entrymeta">Posted on Tue 29 Aug 2017 tagged as <a href="index?tag=docs">docs</a>, <a href="index?tag=scriptnotes">scriptnotes</a>, <a href="index?tag=javanese">javanese</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/scripts/javanese/"><img src="imgs/javanese_summary.png" alt="Picture of the page in action."></a></p>
+          <p>A   <a class="mainLink" href="https://r12a.github.io/scripts/javanese/">Javanese script summary</a> and accompanying <a class="mainLink" href="https://r12a.github.io/scripts/javanese/block">individual character notes</a> are now available.</p>
+          <p>There is some sample text near the top of the document. If you highlight part of it, the page shows you the Unicode characters used for that selection. Clicking on red example text also shows the Unicode characters that underlie the text.</p>
+          <p>There's also a panel on the right that summarises key features of the script, taking its information from the  <a class="mainLink" href="https://r12a.github.io/scripts/featurelist/">Script comparison chart</a>.</p>
+          <p>As always, this is not authoritative, peer-reviewed information – these are just notes I have gathered or copied from various places as I learned. But maybe it will be helpful to someone. Please <a href="https://github.com/r12a/scripts/issues/new?title=%5Bjavanese%20summary%5D%20TITLE_GOES_HERE&body=Comment%20on%20http%3A%2F%2Fr12a.github.io%2Fscripts%2Fsummaries%2Fjavanese%0A%0A">raise a github issue</a> if you want to propose some changes.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+    
+    
+    
+    
+
+    
+    
+    <div class="post" id="20170816">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170816">New: Gujarati character picker</a></h2>
+          <p class="entrymeta">Posted on Wed 16 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=gujarati">gujarati</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/gujarati/"><img src="imgs/gujarati_picker_21.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/gujarati/">Gujarati Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of  text using the Gujarati script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>This picker so far only has basic functionality. Under the hood, however, it uses a new architecture for pickers, which centralises as much of the code as possible, which is why it is version 21. However, this should not be visually apparent.</p>
+          <p>I used to have a Gujarati picker, but it fell into disuse several years ago. This version, although still basic, is already a signficant improvement  on the previous one.</p>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/gujarati/help/">help file</a> for more information.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+    
+    
+    
+    
+
+    
+    
+      <div class="post" id="20170815">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170815">Picker changes: save settings; change contrast; set language</a></h2>
+          <p class="entrymeta">Posted on Tue 15 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a></p>
+        </div>
+        <div class="post-content">
+        <p>It's now possible to save any changes you make to the settings, such as font size and family, direction, language, etc, so that they are unchanged when you start your next session.</p>
+        <p>Under more controls there is a reset button, which will restore the original default settings, if you need it.</p>
+          <p class="mainPicture"><img src="imgs/picker_settings.jpg" alt="Picture of the page in action."></p>
+          <p>In the above picture you can also see a new control that allows you to change the language for examples generated using <samp>Make example</samp> or <samp>Character markup</samp> controls. You should use a BCP47 language tag here (ie. the value that will appear in the <code class="kw" translate="no">lang</code> attribute in the HTML code).</p>
+          <p>In addition, it is now possible to increase the contrast for the text on the user interface. Click on the toggle button <img src="imgs/contrast.png" alt=""/> at the top right of the page. </p>
+           <p class="mainPicture"><img src="imgs/picker_contrast.jpg" alt="Picture of the page in action."></p>
+         <p>The settings for both these new controls are remembered for your next session, if you agree to store them on your device. Setttings are only saved for the computer or device you are using. If you open the picker on a different computer or device you'll need to set things up again for that one.</p>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/">list of pickers</a>.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+     
+    
+    
+    
+
+    
+    
+      <div class="post" id="20170809">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170809">New: Cherokee character picker</a></h2>
+          <p class="entrymeta">Posted on Wed 09 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=cherokee">cherokee</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/cherokee/"><img src="imgs/cherokee_picker_20.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/cherokee/">Cherokee Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of  text using the Cherokee script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>The picker supports both uppercase and lowercase letters. Click on the <samp>Shift</samp> button to switch between them.</p>
+          <p>The default selection panel reflects the syllabic sounds of Cherokee. If you select <samp>S</samp> in the vertical grey bar, the selection panel changes to show letters  arranged based on (broad) similarity to ASCII characters. This may help people unfamiliar with the Cherokee script to find characters.</p>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/cherokee/help/">help file</a> for more information, and see <a href="#20170802">an earlier blog post</a> for new features in the version 20 pickers.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+     
+      
+      
+      
+      
+      
+      <div class="post" id="20170809b">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170809b">New: Cherokee script notes</a></h2>
+          <p class="entrymeta">Posted on Wed 09 Aug 2017 tagged as <a href="index?tag=docs">docs</a>, <a href="index?tag=scriptnotes">scriptnotes</a>, <a href="index?tag=cherokee">cherokee</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/scripts/cherokee/"><img src="imgs/cherokee_summary.png" alt="Picture of the page in action."></a></p>
+          <p>A   <a class="mainLink" href="https://r12a.github.io/scripts/cherokee/">Cherokee script summary</a> and accompanying <a class="mainLink" href="https://r12a.github.io/scripts/cherokee/block">individual character notes</a> are now available.</p>
+          <p>There is some sample text near the top of the document. If you highlight part of it, the page shows you the Unicode characters used for that selection. Clicking on red example text also shows the Unicode characters that underlie the text.</p>
+          <p>There's also a panel on the right that summarises key features of the script, taking its information from the revamped <a class="mainLink" href="https://r12a.github.io/scripts/featurelist/">Script comparison chart</a>.</p>
+          <p>As always, this is not authoritative, peer-reviewed information – these are just notes I have gathered or copied from various places as I learned. But maybe it will be helpful to someone. Please <a href="https://github.com/r12a/scripts/issues/new?title=%5Bcherokee%20summary%5D%20TITLE_GOES_HERE&body=Comment%20on%20http%3A%2F%2Fr12a.github.io%2Fscripts%2Fsummaries%2Fcherokee%0A%0A">raise a github issue</a> if you want to propose some changes.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+    
+    
+    
+    
+
+    
+    
+      <div class="post" id="20170807">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170807">New: N'Ko character picker</a></h2>
+          <p class="entrymeta">Posted on Mon 07 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=nko">nko</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/nko/"><img src="imgs/nko-picker-20.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/nko/">N'Ko Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of  text using the N'Ko script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>This is a fairly simple picker for now, with no vertical grey bar selections. There are just two things to note:</p>
+          <ul>
+            <li>Switch base direction of the text area using →︎ ↔︎ ←︎, just below the text area.</li>
+            <li>Switch the direction of the input table. (Under <samp>more controls</samp>.)</li>
+          </ul>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/nko/help/">help file</a> for more information, and see <a href="#20170802">an earlier blog post</a> for new features in the version 20 pickers.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+     
+      
+      
+      
+      
+      
+      <div class="post" id="20170807b">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170807b">New: N'Ko script notes</a></h2>
+          <p class="entrymeta">Posted on Mon 07 Aug 2017 tagged as <a href="index?tag=docs">docs</a>, <a href="index?tag=scriptnotes">scriptnotes</a>, <a href="index?tag=nko">nko</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/scripts/nko/"><img src="imgs/nko_summary.png" alt="Picture of the page in action."></a></p>
+          <p>A   <a class="mainLink" href="https://r12a.github.io/scripts/nko/">N'Ko script summary</a> and accompanying <a class="mainLink" href="https://r12a.github.io/scripts/nko/block">individual character notes</a> are now available.</p>
+          <p>There is some sample text near the top of the document. If you highlight part of it, the page shows you the Unicode characters used for that selection. Clicking on red example text also shows the Unicode characters that underlie the text.</p>
+          <p>There's also a panel on the right that summarises key features of the script, taking its information from the revamped <a class="mainLink" href="https://r12a.github.io/scripts/featurelist/">Script comparison chart</a>.</p>
+          <p>As always, this is not authoritative, peer-reviewed information – these are just notes I have gathered or copied from various places as I learned. But maybe it will be helpful to someone. Please <a href="https://github.com/r12a/scripts/issues/new?title=%5Bnko%20summary%5D%20TITLE_GOES_HERE&body=Comment%20on%20http%3A%2F%2Fr12a.github.io%2Fscripts%2Fsummaries%2Fnko%0A%0A">raise a github issue</a> if you want to propose some changes.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+    
+    
+    
+    
+
+    
+    
+      <div class="post" id="20170806">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170806">New: Thaana character picker</a></h2>
+          <p class="entrymeta">Posted on Sun 06 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=thaana">thaana</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/thaana/"><img src="imgs/thaana-picker-20.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/thaana/">Thaana Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of Dhivehi text using the Thaana script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>Highlights:</p>
+          <ul>
+            <li>Click on the M on the grey bar to display a panel that allows you to generate Thaana text from characters used for the official Maldivian Latin transcription. Click on the transcription character and the appropriate Thaana character will be produced. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area. Arabic characters are included.</li>
+            <li>Switch base direction of the text area using →︎ ↔︎ ←︎, just below the text area.</li>
+            <li>Switch the direction of the input table. (Under <samp>more controls</samp>.)</li>
+          </ul>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/thaana/help/">help file</a> for more information, and see <a href="#20170802">an earlier blog post</a> for new features in the version 20 pickers.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      <div class="post" id="20170806b">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170806b">New: Thaana script notes</a></h2>
+          <p class="entrymeta">Posted on Sun 06 Aug 2017 tagged as <a href="index?tag=docs">docs</a>, <a href="index?tag=scriptnotes">scriptnotes</a>, <a href="index?tag=thaana">thaana</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/scripts/thaana/"><img src="imgs/thaana_summary.png" alt="Picture of the page in action."></a></p>
+          <p>A   <a class="mainLink" href="https://r12a.github.io/scripts/thaana/">Thaana script summary</a> and accompanying <a class="mainLink" href="https://r12a.github.io/scripts/thaana/block">individual character notes</a> are now available.</p>
+          <p>There is some sample text near the top of the document. If you highlight part of it, the page shows you the Unicode characters used for that selection. Clicking on red example text also shows the Unicode characters that underlie the text.</p>
+          <p>There's also a panel on the right that summarises key features of the script, taking its information from the revamped <a class="mainLink" href="https://r12a.github.io/scripts/featurelist/">Script comparison chart</a>.</p>
+          <p>As always, this is not authoritative, peer-reviewed information – these are just notes I have gathered or copied from various places as I learned. But maybe it will be helpful to someone. Please <a href="https://github.com/r12a/scripts/issues/new?title=%5Bthaana%20summary%5D%20TITLE_GOES_HERE&body=Comment%20on%20http%3A%2F%2Fr12a.github.io%2Fscripts%2Fsummaries%2Fthaana%0A%0A">raise a github issue</a> if you want to propose some changes.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+      <div class="post" id="20170803">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170803">New: Aramaic character picker</a></h2>
+          <p class="entrymeta">Posted on Thu 03 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=syriac">syriac</a>, <a href="index?tag=aramaic">aramaic</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/aramaic/"><img src="r12a_blog_files/aramaic_picker.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/aramaic/">Aramaic Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of Assyrian Neo-Aramaic text using the Syriac script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>Highlights:</p>
+          <ul>
+            <li>Tailored specifically to typing Aramaic. Let me know if there are characters missing. There are some additional characters for Garshuni transcriptions hidden under a reveal.</li>
+            <li>See the cursive shapes associated with a character as you mouse over it. (Click on S in the vertical grey bar.)</li>
+            <li>Speed up transcription from transliteration characters to syriac. (Click on the bottom T in the vertical grey bar.)</li>
+            <li>Switch base direction of the text area using →︎ ↔︎ ←︎, just below the text area.</li>
+            <li>Switch the direction of the input table. (Under <samp>more controls</samp>.)</li>
+            <li>New features in the latest picker template:
+              <ul>
+                <li>Create a URL to share with others that will show what you have in the text area when they follow the link.</li>
+                <li>Add some sample text to the text area for experimentation.</li>
+                <li>Lowercase the bicameral text in the text area.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/aramaic/help/">help file</a> for more information.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      <div class="post" id="20170805">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170805">New: Syriac character picker</a></h2>
+          <p class="entrymeta">Posted on Sat 05 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a>, <a href="index?tag=syriac">syriac</a></p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/pickers/syriac/"><img src="https://r12a.github.io/pickers/syriac/help/images/selector.png" alt="Picture of the page in action."></a></p>
+          <p>A new <a class="mainLink" href="https://r12a.github.io/pickers/syriac/">Syriac Character Picker</a> web app is now available. The picker allows you to produce or analyse 
+            runs of text using the maḏnḥāyā (<span lang="syr-Syrn">ܡܲܕ݂ܢܚܵܝܵܐ</span>) (eastern), ʾesṭrangēlā (<span class="syr-Syre">ܐܣܛܪܢܓܠܐ</span>), and serṭā (<span lang="syr-Syrj">ܣܶܪܛܳܐ</span>) (western) styles of the Syriac script. Character pickers are 
+            especially useful for people who don’t know a script well, as characters
+            are arranged in ways that aid identification.</p>
+          <p>Highlights:</p>
+          <ul>
+            <li>Covers the three main styles of Syriac writing, with webfonts for each included. Let me know if there are characters missing. There are  additional characters for Garshuni, Persian and Sogdian transcriptions hidden under a reveal, and a good many extra punctuation characters and marks under another. I suspect i should pull some of the characters in the reveals up into the main area. Let me know if you think there are some clear candidates for that.</li>
+            <li>See the cursive shapes associated with a character as you mouse over it. (Click on S in the vertical grey bar.) This panel shows joining forms for all three different styles at the same time.</li>
+            <li>Switch base direction of the text area using →︎ ↔︎ ←︎, just below the text area.</li>
+            <li>Switch the direction of the input table. (Under <samp>more controls</samp>.)</li>
+            <li>New features in the latest picker template:
+              <ul>
+                <li>Create a URL to share with others that will show what you have in the text area when they follow the link.</li>
+                <li>Add some sample text to the text area for experimentation.</li>
+                <li>Lowercase the bicameral text in the text area.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>See the <a class="mainLink" href="http://r12a.github.io/pickers/syriac/help/">help file</a> for more information.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      <div class="post" id="20170804">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170804">New: Syriac script notes</a></h2>
+          <p class="entrymeta">Posted on Fri 04 Aug 2017 tagged as <a href="index?tag=docs">docs</a>, <a href="index?tag=scripts">scripts</a>, <a href="index?tag=syriac">syriac</a>, <a href="index?tag=aramaic">aramaic</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture"><a href="https://r12a.github.io/scripts/syriac/"><img src="r12a_blog_files/syriac_summary.png" alt="Picture of the page in action."></a></p>
+          <p>A   <a class="mainLink" href="https://r12a.github.io/scripts/syriac/">Syriac script summary</a> and accompanying <a class="mainLink" href="https://r12a.github.io/scripts/syriac/block">individual character notes</a> are now available. They cover maḏnḥāyā (<span lang="syr-Syrn">ܡܲܕ݂ܢܚܵܝܵܐ</span>) (eastern), ʾesṭrangēlā (<span class="syr-Syre">ܐܣܛܪܢܓܠܐ</span>), and serṭā (<span lang="syr-Syrj">ܣܶܪܛܳܐ</span>) (western) styles, with a particular emphasis on Assyrian Neo-Aramaic.</p>
+          <p>The summary uses a new approach, which has been applied to the other notes of this kind. There is some sample text near the top of the document (and if you highlight part of it, the page shows you the Unicode characters used for that selection).</p>
+          <p>There's also a panel on the right that summarises key features of the script, taking its information from the revamped <a class="mainLink" href="https://r12a.github.io/scripts/featurelist/">Script comparison chart</a>.</p>
+          <p>As always, this is not authoritative, peer-reviewed information – these are just notes I have gathered or copied from various places as I learned. But maybe it will be helpful to someone. Please <a href="https://github.com/r12a/scripts/issues/new?title=%5Bsyriac%20summary%5D%20TITLE_GOES_HERE&body=Comment%20on%20http%3A%2F%2Fr12a.github.io%2Fscripts%2Fsummaries%2Fsyriac%0A%0A">raise a github issue</a> if you want to propose some changes.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+
+
+
+      
+      
+      
+      
+      
+      
+      <div class="post" id="20170802">
+        <div class="post-info">
+          <h2 class="post-title"><a href="#20170802">Pickers, v20 refresh</a></h2>
+          <p class="entrymeta">Posted on Wed 02 Aug 2017 tagged as <a href="index?tag=apps">apps</a>, <a href="index?tag=pickers">pickers</a></p>
+        </div>
+        <div class="post-content">
+          <p class="mainPicture">&nbsp;</p>
+          <p>Version 20 is the first time all the pickers share the same template. It comes with a few new features worth mentioning.</p>
+          <p><img src="imgs/picker-topleft-icons.png" alt="Icons at the top left of the text area."/></p>
+          <p><b class="leadin">New text area icons.</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text, and delete it. The other icons on the line are new. The box with the arrow generates a URL  - if you send the URL to someone and they click on it, they will see what you see in the text box. The plus sign adds some sample text to the text area, so you can play around with the controls, or just see what the script looks like. The blue circle opens the associated help file. </p>
+          <p>The help text is in a separate location in v20, rather than under a reveal at the bottom of the page. This allows for easier reading. There's also a picture of the picker; click on a feature to jump to a description.</p>
+          <p>The small L only appears on a couple of pickers. It turns any bicameral text in the text area into uniform lowercase.</p>
+          <p><img src="imgs/picker-direction-setting.png" alt="Direction-setting icons below the text area."/></p>
+          <p><b class="leadin">Direction arrows.</b> The set of arrows immediately below the text area, on the right, appear for scripts normally written right-to-left. They allow you to set the direction of the text area to LTR, auto, and RTL, respectively.</p>
+          <p><b class="leadin">Example generator</b>. The feature that generates an example (<samp>Make example</samp>) now outputs the transliteration before IPA transcription (ie. the order is reversed). This seemed to make more sense, as it keeps the transliteration closer to the actual native text. (This may not be reflected yet in all the help files.)</p>
+          <p><b class="leadin">Smallprint.</b> The smallprint line at the very bottom of the picker page now has links to the GitHub commit list for the picker, and a link that generates a new GitHub issue for any comments you want to make.</p>
+          <p><b class="leadin">Other pickers.</b> Finally, there's a reveal at the bottom of the page to let you link to other pickers quickly.</p>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+
+      <p class="pagelinks"><a href="201512">More<br/>🠿</a></p>
+    </div>
+    <p id="footer">Copyright © 2017 Richard Ishida.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<style>
+.date { font-size: 70%; color: #aaa; margin-right: 3em; }
+li { text-align: start; display: flex; flex-direction: row; flex-wrap:no-wrap; }
+</style>
+<script>
+
+
+function setup () {
+	// check for parameters and take appropriate action
+	parameters = location.search.split('&')
+	parameters[0] = parameters[0].substring(1)
+	var found = false
+	for (var p=0;p<parameters.length;p++) {  
+		pairs = parameters[p].split('=')
+		if (pairs[0] === 'tag') { 
+			if (pairs[1]) {
+				document.getElementById('out').innerHTML = getTagLinks(decodeURI(pairs[1])) 
+				document.getElementById('intro').textContent = 'The following articles have this tag.'
+				document.getElementById('tagName').textContent = '‹ '+pairs[1]+' ›' 
+				found = true
+				}
+			}
+		}
+	if (! found) window.location = '201708.html'
+	}
+	
+function getTagLinks (tag) {
+	out = ''
+	for (i=0;i<window.articles.length;i++) {
+		if (window.articles[i].tags.includes(tag)) {
+			out += '<li><span class="date">'+window.articles[i].date+'</span><a href="'+window.articles[i].url+'.html#'+window.articles[i].date.replace(/-/g,'')+'">'+window.articles[i].title+'</a>'+'</li>\n'
+			}
+		}
+	return out
+	}
+</script>
+<script language="javascript" src="functions.js"></script>
+<script language="javascript" src="db.js"></script>
+</head>
+
+<body onload="setup();setTagList()">
+
+
+
+	<div id="header">
+	<div id="dotted-line">&nbsp;</div>
+	<h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+	<div id="sitelinks" class="noprint" style="margin-left: 6.5%;">
+	<span>
+		<a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; 
+		<a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; 
+		<a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; 
+		<a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; 
+		<a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span>
+		</div>
+	</div>
+
+
+
+	<div id="main">
+    <div id="sidebar">
+    	<div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+    </div>
+	<div id="content">
+						<div class="post">
+						  <!--p class="post-date">Fri 16 Sep 2016</p-->
+						  <div class="post-info">
+						    <h2 class="post-title" id="tagName"></h2>
+						  </div>
+						  <div class="post-content">
+						    <p id="intro"></p>
+						    <ul id="out">
+                            </ul>
+						  </div>
+                          
+						</div>
+	</div>
+
+
+
+	
+</div>
+</body></html>

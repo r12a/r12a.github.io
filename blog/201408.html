@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script language="javascript" src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+  <div id="header">
+    <div id="dotted-line">&nbsp;</div>
+    <h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+    <div id="sitelinks" class="noprint" style="margin-left: 6.5%;"> <span> <a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; <a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; <a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; <a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span> </div>
+  </div>
+
+
+
+  <div id="main">
+
+
+    <div id="sidebar">
+    	<div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+       <p class="pagelinks"><a href="201512">&nbsp;🠽&nbsp;</a><br/>page<br/><a href="201110">&nbsp;🠿&nbsp;</a></p>
+
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+    </div>
+    <div id="content">
+      <div class="post" id="20151205"> 
+        <!--p class="post-date">Sat 5 Dec 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">New app: Encoding converter</h2>
+          <p class="entrymeta">Posted on Sat 5 Dec 2015 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=encoding">encoding</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><a href="http://r12a.github.io/images/blogpics/encoding-converter.png"><img src="r12a_blog_files/encoding-converter-small.png" alt="Picture of the page in action." style="border-radius:8px; border: 1px solid #ccc;  box-shadow: -15px 15px 15px #ccc;"></a><br>
+            <span style="font-size: 150%"><a href="http://r12a.github.io/apps/encodings/">&gt;&gt; Use the app</a></span></p>
+          <p>This app allows you to see how Unicode characters are represented as 
+            bytes in various legacy encodings, and vice versa. You can customise the
+            encodings you want to experiment with by clicking on <span class="kw">change encodings shown</span>. The default selection excludes most of the single-byte encodings.</p>
+          <p>The app provides a way of detecting the likely encoding of a sequence
+            of bytes if you have no context, and also allows you to see which 
+            encodings support specific characters. The list of encodings is limited 
+            to those described for use on the Web by the <a href="https://encoding.spec.whatwg.org/">Encoding specification</a>.</p>
+          <p>The algorithms used are based on those described in the Encoding 
+            specification, and thus describe the behaviour you can expect from web 
+            browsers. The transforms may not be the same as for other conversion 
+            tools. (In some cases the browsers may also produce a different result 
+            than shown here, while the implementation of the spec proceeds. See <a href="http://www.w3.org/International/tests/repo/results/encoding-dbl-byte">the tests</a>.)</p>
+          <p><strong>Encoding algorithms</strong> convert Unicode characters to 
+            sequences of double-digit hex numbers that represent the bytes found in 
+            the target character encoding. A character that cannot be handled by an 
+            encoder will be represented as a decimal HTML character escape.</p>
+          <p><strong>Decoding algorithms</strong> take the byte codes just 
+            mentioned and convert them to Unicode characters. The algorithm returns 
+            replacement characters where it is unable to map a given byte to the 
+            encoding.</p>
+          <p>For the decoder input you can provide a string of hex numbers separated by space or by percent signs.</p>
+          <p>Green backgrounds appear behind sequences where all characters or 
+            bytes were successfully mapped to a character in the given encoding. 
+            Beware, however, that the character mapped to may not be the one you 
+            expect – especially in the single byte encodings.</p>
+          <p>To identify characters and look up information about them you will find <a href="https://r12a.github.io/uniview/">UniView</a> extremely useful. You can paste Unicode characters into the UniView <code class="kw" translate="no">Edit Buffer</code> and click on the down-arrow icon below to find out what they are. 
+            (Click on the name that appears for more detailed information.)  It is 
+            particularly useful for identifying escaped characters. Copy the 
+            escape(s) to the <code class="kw" translate="no">Find</code> input area on UniView and click on <code class="kw" translate="no">Dec</code> just below.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20151122"> 
+        <!--p class="post-date">Sun 22 Nov 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">Mongolian picker updated: standardised variants</h2>
+          <p class="entrymeta">Posted on Sun 22 Nov 2015 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=mongolian">mongolian</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><a href="http://r12a.github.io/images/blogpics/mongolian-picker-17.png"><img src="r12a_blog_files/mongolian-picker-17-small.png" alt="Picture of the page in action." style="border-radius:8px; border: 1px solid #ccc;  box-shadow: -15px 15px 15px #ccc;"></a><br>
+            <span style="font-size: 150%"><a href="http://r12a.github.io/pickers/mongolian/">&gt;&gt; Use the picker</a></span></p>
+          <p>An update to version 17 of the <a style="font-size: 120%;" href="http://r12a.github.io/pickers/mongolian/">Mongolian character picker</a> is now available.</p>
+          <p>When you hover over or select a character in the selection area, the 
+            box to the left of that area displays the alternate glyph forms that are
+            appropriate for that character. By default, this only happens when you 
+            click on a character, but you can make it happen on hover by clicking on
+            the <span class="kw">V</span> in the gray selection bar to the right.</p>
+          <p>The list includes the default positional forms as well as the forms 
+            produced by following the character with a Free Variation Selector 
+            (FVS). The latter forms have been updated, based on work which has been 
+            taking place in 2015 to standardise the forms produced by using FVS. At 
+            the moment, not all fonts will produce the expected shapes for all 
+            possible combinations. (For more information, see <a href="http://r12a.github.io/scripts/mongolian/variants">Notes on Mongolian variant forms</a>.)</p>
+          <p>An additional new feature is that when the variant list is displayed,
+            you can add an appropriate FVS character to the output area by simply 
+            clicking in the list on the shape that you want to see in the output.</p>
+          <p>This provides an easy way to check what shapes should be produced and
+            what shapes are produced by a given font. (You can specify which font 
+            the app should use for display of the output.) </p>
+          <p>Some small improvements were also made to the user interface.  The 
+            picker works best in Firefox and Edge desktop browsers, since they now 
+            have pretty good support for vertical text. It works least well in 
+            Safari (which includes the iPad browsers).</p>
+          <p>For more information about the picker, see the notes at the bottom of the picker page.</p>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150809"> 
+        <!--p class="post-date">Sun 9 Aug 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 8.0.0a: CJK features added</h2>
+          <p class="entrymeta">Posted on Sun 9 Aug 2015 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><img src="r12a_blog_files/Screen-shot-2014-07-31-at-20.png" alt="Picture of the page in action." style="border-radius:8px; border: 1px solid #ccc;  box-shadow: -15px 15px 15px #ccc;"><br>
+            <span style="font-size: 150%"><a href="https://r12a.github.io/uniview/">&gt;&gt; Use UniView</a></span></p>
+          <p>This update allows you to link to information about Han characters 
+            and Hangul syllables, and fixes some bugs related to the display of Han 
+            character blocks.</p>
+          <p>Information about Han characters displayed in the lower right area will have a link <span class="kw">View data in Unihan database</span>. As expected, this opens a new window at the page of the Unihan database corresponding to this character.</p>
+          <p>Han and hangul characters also have a link <span class="kw">View in PDF code charts (pageXX)</span>.
+            On Firefox and Chrome, this will open the PDF file for that block at 
+            the page that lists this character. (For Safari and Edge you will need 
+            to scroll to the page indicated.) The PDF is useful if there is no 
+            picture or font glyph for that character, but also allows you to see the
+            variant forms of the character.</p>
+          <p>For some Han blocks, the number of characters per page in the PDF file varies slightly. In this case you will see the text <span class="kw">approx</span>; you may have to look at a page adjacent to the one you are taken to for these characters.</p>
+          <p>Note that some of the PDF files are quite large. If the file size exceeds 3Mb, a warning is included.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150617"> 
+        <!--p class="post-date">Wed 17 Jun 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 8.0.0 available</h2>
+          <p class="entrymeta">Posted on Wed 17 Jun 2015 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><img src="r12a_blog_files/Screen-shot-2014-07-31-at-20.png" alt="Picture of the page in action." style="border-radius:8px; border: 1px solid #ccc;  box-shadow: -15px 15px 15px #ccc;"></p>
+          <p style="font-size: 150%"><a href="https://r12a.github.io/uniview/">&gt;&gt; Use UniView</a></p>
+          <p>Unicode 8.0.0 is released today. This new version of UniView adds the
+            new characters encoded in Unicode 8.0.0 (including 6 new scripts). The 
+            scripts listed in the block selection menu were also reordered to match 
+            changes to the Unicode charts page.</p>
+          <p>The URL for UniView is now <a href="https://r12a.github.io/uniview/">https://r12a.github.io/uniview/</a>. Please change your bookmarks.</p>
+          <p>The github site now holds images for all 28,000+ Unicode codepoints 
+            other than Han ideographs and Hangul syllables (in two sizes).</p>
+          <p>I also fixed the Show Age filter, and brought it up to date.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150129"> 
+        <!--p class="post-date">Thu 29 Jan 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">Bopomofo on the Web</h2>
+          <p class="entrymeta">Posted on Thu 29 Jan 2015 tagged as <a href="blog/?tag=scriptnotes">scriptnotes</a>, <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=bopomofo">bopomofo</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center; margin-bottom: 1em;"><img src="r12a_blog_files/bopomofo-3.png" alt="Three bopomofo letters with tone mark." class="withshadow"><br>
+            <br>
+            <img src="r12a_blog_files/dot-above.png" alt="Light tone mark in annotation." class="withshadow"></p>
+          <p>A key issue for handling of bopomofo (zhùyīn fúhào) is the placement 
+            of tone marks. When bopomofo text runs vertically (either on its own, or
+            as a phonetic annotation), some smarts are needed to display tone marks
+            in the right place. This may also be required (though with different 
+            rules) for bopomofo when used horizontally for <em>phonetic annotations</em> (ie. above a base character), but not in all such cases. However, when 
+            bopomofo is written horizontally in any other situation (ie. when not 
+            written above a base character), the tone mark typically follows the 
+            last bopomofo letter in the syllable, with no special handling.</p>
+          <p>From time to time questions are raised on W3C mailing lists about how
+            to implement phonetic annotations in bopomofo. Participants in these 
+            discussions need a good understanding of the various complexities of 
+            bopomofo rendering.</p>
+          <p>To help with that, I just uploaded a new Web page <a href="http://r12a.github.io/scripts/bopomofo/ontheweb" style="font-size: 120%;">Bopomofo on the Web</a>.
+            The aim is to provide background information, and carry useful ideas 
+            from one discussion to the next. I also add some personal thoughts on 
+            implementation alternatives, given current data.</p>
+          <p>I intend to update the page from time to time, as new information becomes available.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150118"> 
+        <!--p class="post-date">Sun 18 Jan 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">Bengali picker &amp; character &amp; script notes updated</h2>
+          <p class="entrymeta">Posted on Sun 18 Jan 2015 tagged as , <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=bengali">bengali</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/blog/wp-content/uploads/2015/01/Screen-Shot-2015-01-18-at-07.42.56.png"><img src="r12a_blog_files/Screen-Shot-2015-01-18-at-07.png" alt="Screen Shot 2015-01-18 at 07.42.56" class="withshadow" width="300" height="268"></a></p>
+          <p>Version 16 of the <a style="font-size: 120%;" href="http://rishida.net/scripts/pickers/bengali/">Bengali character picker</a> is now available.</p>
+          <p>Other than a small rearrangement of the selection table, and the significant <a href="blog/?p=1401">standard features that version 16 brings</a>, this version adds the following: </p>
+          <ul>
+            <li>three new buttons for automatic transcription between latin and 
+              bengali. You can use these buttons to transcribe to and from latin 
+              transcriptions using ISO 15919 or Radice approaches.</li>
+            <li>hinting to help identify similar characters.</li>
+            <li>the ability to select the base character for the display of combining characters in the selection table.</li>
+          </ul>
+          <p>For more information about the picker, see the notes at the bottom of the picker page.</p>
+          <p>In addition, I made a number of additions and changes to <a style="font-size: 120%;" href="http://rishida.net/scripts/bengali/">Bengali script notes</a> (an overview of the Bengali script), and <a style="font-size: 120%;" href="http://rishida.net/scripts/block/bengali">Bengali character notes</a> (an annotated list of characters in the Bengali script).</p>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150113"> 
+        <!--p class="post-date">Tue 13 Jan 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">Initial letter styling in CSS</h2>
+          <p class="entrymeta">Posted on Tue 13 Jan 2015 tagged as <a href="blog/?tag=layout">layout</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/blog/wp-content/uploads/2015/01/initial-letter-tibetan-01.jpg"><img src="r12a_blog_files/initial-letter-tibetan-01-282x300.jpg" alt="initial-letter-tibetan-01" class="withshadow" width="282" height="300"></a></p>
+          <p>The CSS WG needs advice on initial letter styling in non-Latin 
+            scripts, ie. enlarged letters or syllables at the start of a paragraph 
+            like those shown in the picture. Most of the current content of the 
+            recently published Working Draft, <a href="http://dev.w3.org/csswg/css-inline/">CSS Inline Layout Module Level 3</a> is about <a href="http://dev.w3.org/csswg/css-inline/#initial-letter-styling">styling of initial letters</a>, but the editors need to ensure that they have covered the needs of users of non-Latin scripts.</p>
+          <p>The spec currently describes drop, sunken and raised initial characters, and allows you to manipulate them using the <span class="kw" translate="no">initial-letter</span> and the <span translate="no" class="kw">initial-letter-align</span> properties. You can apply those properties to text selected by <span translate="no" class="kw">::first-letter</span>, or to the first child of a block (such as a <span translate="no" class="kw">span</span>).</p>
+          <p>The editors are looking for </p>
+          <blockquote style="font-style:italic">
+            <p>any examples of drop initials in non-western scripts, especially Arabic and Indic scripts.</p>
+          </blockquote>
+          <p>I have scanned <a href="https://www.flickr.com/photos/ishida/sets/72157650248400402/">some examples from newspapers</a> (so, not high quality print).</p>
+          <p>In the section about initial-letter-align the spec says:</p>
+          <blockquote style="font-style:italic">
+            <p>Input from those knowledgeable 
+              about non-Western typographic traditions would be very helpful in 
+              describing the appropriate alignments. More values may be required for 
+              this property.</p>
+          </blockquote>
+          <p>Do you have detailed information about initial letter styling in a 
+            non-Latin script that you can contribute? If so, please write to <a href="mailto:www-style@w3.org">www-style@w3.org</a> (<a href="http://www.w3.org/Mail/Request">how to subscribe</a>).</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150106"> 
+        <!--p class="post-date">Tue 6 Jan 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">The Combining Character Conundrum</h2>
+          <p class="entrymeta">Posted on Tue 6 Jan 2015 tagged as <a href="blog/?tag=layout">layout</a>, <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=unicode">unicode</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I’m struggling to show combining characters on a page in a consistent way across browsers.</p>
+          <p>For example, while laying out my <a href="http://rishida.net/scripts/pickers/">pickers</a>,
+            I want users to be able to click on a representation of a character to 
+            add it to the output field. In the past I resorted to pictures of the 
+            characters, but now that webfonts are available, I want to replace those
+            with font glyphs. (That makes for much smaller and more flexible 
+            pages.)</p>
+          <p>Take the Bengali picker that I’m currently working on.  I’d like to end up with something like this:</p>
+          <p><a href="http://rishida.net/blog/wp-content/uploads/2015/01/comchacon0.png"><img src="r12a_blog_files/comchacon0.png" alt="comchacon0" class="aligncenter size-full wp-image-1442" width="244" height="118"></a></p>
+          <p>I put a no-break space before each combining character, to give it 
+            some width, and because that’s what the Unicode Standard recommends (<a href="http://www.unicode.org/versions/Unicode7.0.0/ch02.pdf">p60, Exhibiting Nonspacing Marks in Isolation</a>). The result is close to what I was looking for in Chrome and Safari except that you can see a gap for the nbsp to the left.</p>
+          <p><a href="http://rishida.net/blog/wp-content/uploads/2015/01/comchacon1.png"><img src="r12a_blog_files/comchacon1.png" alt="comchacon1" class="aligncenter size-full wp-image-1431" width="297" height="118"></a></p>
+          <p>But in IE and Firefox I get this:</p>
+          <p><a href="http://rishida.net/blog/wp-content/uploads/2015/01/comchacon2.png"><img src="r12a_blog_files/comchacon2.png" alt="comchacon2" class="aligncenter size-full wp-image-1432" width="296" height="114"></a></p>
+          <p>This is especially problematic since it messes up the overall layout, but in some cases it also causes text to overlap.</p>
+          <p>I tried using a dotted circle Unicode character, instead of the 
+            no-break space. On Firefox this looked ok, but on Chrome it resulted in 
+            two dotted circles per combining character.</p>
+          <p>I considered using a consonant as the base character. It would work 
+            ok, but it would possibly widen the overall space needed (not ideal) and
+            would make it harder to spot a combining character by shape. I tried 
+            putting a span around the base character to grey it out, but the various
+            browsers reacted differently to the span. Vowel signs that appear on 
+            both sides of the base character no longer worked – the vowel sign 
+            appeared after. In other cases, the grey of the base character was 
+            inherited by the whole grapheme, regardless of the fact that the 
+            combining character was outside the span.  (Here are some examples <span style="color:#eee;">ক</span>ে and <span style="color:#eee;">ক</span>ো.)</p>
+          <p>In the end, I settled for no preceding base character at all. The 
+            combining character was the first thing in the table cell or span that 
+            surrounded it.  This gave the desired result for the font I had been 
+            using, albeit that I needed to tweak the occasional character with 
+            padding to move it slightly to the right.</p>
+          <p>On the other hand, this was not to be a complete solution either.  
+            Whereas most of the fonts I planned to use produce the dotted circle in 
+            these conditions, one of my favourites (SolaimanLipi) doesn’t produce 
+            it.  This leads to significant problems, since many combining characters
+            appear far to the left, and in some cases it is not possible to click 
+            on them, in others you have to locate a blank space somewhere to the 
+            right and click on that. Not at all satisfactory.</p>
+          <p><a href="http://rishida.net/blog/wp-content/uploads/2015/01/comchacon3.png"><img src="r12a_blog_files/comchacon3.png" alt="comchacon3" class="aligncenter size-full wp-image-1452" width="235" height="116"></a></p>
+          <p>I couldn’t find a better way to solve the problem, however, and since
+            there were several Bengali fonts to choose from that did produce dotted
+            circles, I settled for that as the best of a bad lot.</p>
+          <p>However, then i turned my attention to other pickers and tried the 
+            same solution.  I found that only one of the many Thai fonts I tried for
+            the Thai picker produced the dotted circles. So the approach here would
+            have to be different.  For Khmer, the main Windows font (Daunpenh) 
+            produced dotted circles only for some of the combining characters in 
+            Internet Explorer.  And on Chrome, a sequence of two combining 
+            characters, one after the other, produced two dotted circles…</p>
+          <p>I suspect that I’ll need to choose an approach for each picker based 
+            on what fonts are available, and perhaps provide an option to insert or 
+            remove base characters before combining characters when someone wants to
+            use a different font.</p>
+          <p>It would be nice to standardise behaviour here, and to do so in a way
+            that involves the no-break space, as described in the Unicode Standard,
+            or some other base character such as – why not? – the dotted circle 
+            itself.  I assume that the fix for this would have to be handled by the 
+            browser, since there are already many font cats out of the bag.</p>
+          <p>Does anyone have an alternate solution?  I thought I heard someone at
+            the last Unicode conference mention some way of controlling the 
+            behaviour of dotted circles via some script or font setting…?</p>
+          <p style="margin-top: 5em;">Update: See <a href="http://marc.durdin.net/2015/01/how-to-rendering-combining-marks-consistently-across-platforms-a-long-story/">Marc Durdin’s blog</a> for more on this topic, and his experiences while trying to design on-screen keyboards for Lao and other scripts.</p>
+          <ol class="commentlist">
+            <li class="alt" id="comment-284795"> <cite><a href="http://marc.durdin.net/" rel="external nofollow" class="url">Marc Durdin</a></cite> Says: <br>
+              <small class="commentmetadata"><a href="#comment-284795" title="">January 7th, 2015 at 12:32 am</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=284795">e</a></small>
+              <p>Richard, your post tickled my memory about a draft sitting in my list of blog posts to complete, so I sat down and completed it. My blog describes how we resolved the combining issue for a Lao keyboard; the principle should be applicable to other systems. It’s a bit wordy though…</p>
+              <p><a href="http://marc.durdin.net/2015/01/how-to-rendering-combining-marks-consistently-across-platforms-a-long-story/" rel="nofollow">http://marc.durdin.net/2015/01/how-to-rendering-combining-marks-consistently-across-platforms-a-long-story/</a></p>
+            </li>
+          </ol>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150105"> 
+        <!--p class="post-date">Mon 5 Jan 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">Khmer character picker v16</h2>
+          <p class="entrymeta">Posted on Mon 5 Jan 2015 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=khmer">khmer</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/pickers/khmer/"><img class="withshadow" src="r12a_blog_files/khmer-picker16-300x250.png" alt="khmer-picker16" width="300" height="250"></a></p>
+          <p>I have uploaded a new version of the <a style="font-size: 120%;" href="http://rishida.net/scripts/pickers/khmer/">Khmer character picker</a>.</p>
+          <p>The new version uses characters instead of images for the selection 
+            table, making it faster to load and more flexible. If you prefer, you 
+            can still access <a href="http://rishida.net/scripts/pickers/khmer14/">the previous version</a>.</p>
+          <p>Other than a small rearrangement of the default selection table to accomodate fonts rather than images, and the significant <a href="blog/?p=1401">standard features that version 16 brings</a>, there are no additional changes in this version.</p>
+          <p>For more information about the picker, see the notes at the bottom of the picker page.</p>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post"> 
+        <!--p class="post-date">Mon 5 Jan 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">Devanagari, Gurmukhi &amp; Uighur pickers available</h2>
+          <p class="entrymeta">Posted on Mon 5 Jan 2015 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=devanagari">devanagari</a>, <a href="blog/?tag=gurmukhi">gurmukhi</a>, <a href="blog/?tag=uighur">uighur</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/pickers/uighur/"><img class="withshadow" src="r12a_blog_files/uighur-picker16-300x275.png" alt="uighur-picker16" width="300" height="275"></a></p>
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/pickers/devanagari/"><img class="withshadow" src="r12a_blog_files/devanagari-picker16-300x292.png" alt="devanagari-picker16" width="300" height="292"></a></p>
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/pickers/gurmukhi/"><img class="withshadow" src="r12a_blog_files/gurmukhi-picker16-300x298.png" alt="gurmukhi-picker16" width="300" height="298"></a></p>
+          <p>I have updated the <a href="http://rishida.net/scripts/pickers/devanagari/" target="_blank" style="font-size:120%;">Devanagari picker</a>, the <a href="http://rishida.net/scripts/pickers/gurmukhi/" target="_blank" style="font-size:120%;">Gurmukhi picker</a> and the <a href="http://rishida.net/scripts/pickers/uighur/" target="_blank" style="font-size:120%;">Uighur picker</a> to version 16.</p>
+          <p>You may have spotted a previous, unannounced, version of the 
+            Devanagari and Uighur pickers on the site, but essentially these 
+            versions should be treated as new.  The Gurmukhi picker has been updated
+            from a very old version.</p>
+          <p>In addition to the <a href="blog/?p=1401" target="_blank">standard features that version 16 of the character pickers brings</a>,
+            things to note include the addition of hints for all pickers, and 
+            automated transcription from Devanagari to ISO 15919, and vice versa for
+            the Devanagari picker.</p>
+          <p>For more information about the pickers, see the notes at the bottom of the relevant picker page.</p>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20150104"> 
+        <!--p class="post-date">Sun 4 Jan 2015</p-->
+        <div class="post-info">
+          <h2 class="post-title">More picker changes: Version 16</h2>
+          <p class="entrymeta">Posted on Sun 4 Jan 2015 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers </a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>A couple of posts ago I mentioned that I had updated the Thai picker
+            to version 16. I have now updated a few more. For ease of reference, I 
+            will list here the main changes between version 16 <a href="http://rishida.net/scripts/pickers/">pickers</a> and previous versions back to version 12.</p>
+          <ul>
+            <li>
+              <p><strong>Fonts rather than graphics.</strong> The main selection table
+                in version 12 used images to represent characters. These have now gone,
+                in favour of fonts. Most pickers include a web font download to ensure 
+                that you will see the characters.  This reduces the size and download 
+                time significantly when you open a picker. Other source code changes 
+                have reduced the size of the files even further, so that the main file 
+                is typically only a small fraction of the size it was in version 14.</p>
+              <p>It is also now possible, in version 16, to change the font of the main selection table and the font size.</p>
+              <p></p>
+            </li>
+            <li>
+              <p><strong>UI.</strong> The whole look and feel of the user interface 
+                has changed from version 14 onwards, and includes useful links and 
+                explanations off the top of the normal work space.</p>
+              <p>In particular, the vertical menu, introduced in version 14, has been 
+                adjusted so that input features can be turned on and off independently, 
+                and new panels appear alongside the others, rather than toggling the 
+                view from one mode to another. So, for example, you can have hints and 
+                shape-based selectors turned on at the same time. When something is 
+                switched on, its label in the menu turns orange, and the full text of 
+                the option is followed by a check mark.</p>
+              <p></p>
+            </li>
+            <li>
+              <p><strong>Transcription panels.</strong> Some pickers had one or more 
+                transcription views in versions below 16. These enable you to construct 
+                some non-Latin text when working from a Latin transcription. In version 
+                16 these alternate views are converted to panels that can be displayed 
+                at the same time as other information. They can be shown or hidden from 
+                the vertical menu. When there is ambiguity as to which characters to 
+                use, a pop up displays alternatives. Click on one to insert it into the 
+                output. There is also a panel containing non-ASCII Latin characters, 
+                which can be used when typing Latin transcriptions directly into the 
+                main output area. This panel is now hidden by default, but can be easily
+                shown from the vertical menu.</p>
+            </li>
+            <li>
+              <p><strong>Automated transcription.</strong> Version 16 pickers carry 
+                forward, and in some cases add, automated transcription converters. In 
+                some cases these are intended to generate only an approximation to the 
+                needed transcription, in order to speed up the transcription process. In
+                other cases, they are complete. (See the notes for the picker to tell 
+                which is which.) Where there is ambiguity about how to transcribe a 
+                sequence of characters, the interface offers you a choice from 
+                alternatives. Just click on the character you want and it will replace 
+                all the options proposed. In some cases, particularly South-East Asian 
+                scripts, the text you want to transcribe has to be split into syllables 
+                first, using spaces and or hyphens. Where this is necessary, a <span class="kw">condense</span> button it provided, to quickly strip out the separators after the transcription is done.</p>
+            </li>
+            <li>
+              <p><strong>Layout</strong> The default layout of the main selection 
+                table has usually been improved, to make it easier to locate characters.
+                Rarely used, deprecated, etc, characters appear below the main table, 
+                rather than to the right.</p>
+            </li>
+            <li>
+              <p><strong>Hints</strong> Very early versions of the pickers used to 
+                automatically highlight similar and easily confusable characters when 
+                you hovered over a character in the main selection table. This feature 
+                is being reintroduced as standard for version 16 pickers. It can be 
+                turned on or off from the vertical menu.  This is very helpful for 
+                people who don’t know the script well.</p>
+            </li>
+            <li>
+              <p><strong>Shape-based selection.</strong> In previous versions the 
+                shape-based view replaced the default view. In version 16 the shape 
+                selectors appear below the main selection table and highlight the 
+                characters in that table. This arrangement has several advantages.</p>
+            </li>
+            <li>
+              <p><strong>Applying actions to ranges of text.</strong> When clicking on the <span class="kw">Codepoints</span> and <span class="kw">Escapes</span> buttons, it is possible to apply the action to a highighted range of 
+                characters, rather than all the characters in the output area. It is 
+                also possible to transcribe only highlighted text, when using one of the
+                automated transcription features.</p>
+            </li>
+            <li>
+              <p><strong>Phoneme bank.</strong> When composing text from a Latin 
+                transcription in previous versions you had to make choices about 
+                phonetics. Those choices were stored on the UI to speed up generation of
+                phonetic transcriptions in addition to the native text, but this 
+                feature somewhat complicated the development and use of the 
+                transcription feature. It has been dropped in version 16. Hopefully, the
+                transcription panels and automated transcription features will be 
+                useful enough in future.</p>
+            </li>
+            <li>
+              <p><strong>Font grid.</strong> The font grid view was removed in version 16. It is of little value when the characters are already displayed using fonts.</p>
+              <p></p>
+            </li>
+          </ul>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20141226"> 
+        <!--p class="post-date">Fri 26 Dec 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Language Subtag Lookup tool updated</h2>
+          <p class="entrymeta">Posted on Fri 26 Dec 2014 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=langtags">langtags </a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/utils/subtags/"><img class="withshadow" src="r12a_blog_files/subtag-app-300x289.png" alt="  " width="300" height="289"></a></p>
+          <p>This update to the <a style="font-size: 120%;" href="http://rishida.net/utils/subtags/" target="subtags">Language Subtag Lookup</a> tool brings back the <span class="kw">Check</span> function that had been out of action since last January.  The code had 
+            to be pretty much completely rewritten to migrate it from the original 
+            PHP. In the process, I added support for extension and private use tags,
+            and added several more checks.  I also made various changes to the way 
+            the results are displayed.</p>
+          <p>Give it a try with this rather complicated, but valid language tag: <a href="http://rishida.net/utils/subtags/?check=zh-cmn-latn-CN-pinyin-fonipa-u-co-phonebk-x-mytag-yourtag" target="subtags">zh-cmn-latn-CN-pinyin-fonipa-u-co-phonebk-x-mytag-yourtag</a></p>
+          <p>Or try this rather badly conceived language tag, to see some error messages: <a href="http://rishida.net/utils/subtags/?check=mena-fr-latn-fonipa-biske-x-mylongtag-x-shorter" target="subtags">mena-fr-latn-fonipa-biske-x-mylongtag-x-shorter</a></p>
+          <p>The IANA database information is up-to-date. The tool currently 
+            supports the IANA Subtag registry of 2014-12-17. It reports subtags for 
+            8,081 languages, 228 extlangs, 174 scripts, 301 regions, 68 variants, 
+            and 26 grandfathered subtags.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20141221"> 
+        <!--p class="post-date">Sun 21 Dec 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Thai character picker v16</h2>
+          <p class="entrymeta">Posted on Sun 21 Dec 2014 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=thai">thai</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/pickers/thai/"><img class="withshadow" src="r12a_blog_files/thai-picker-15-300x295.png" alt="  " width="300" height="295"></a></p>
+          <p>I have uploaded another new version of the <a style="font-size: 120%;" href="http://rishida.net/scripts/pickers/thai/">Thai character picker</a>.</p>
+          <p>Sorry this follows so quickly on the heels of <a href="blog/?p=1358">version 15</a>,
+            but as soon as I uploaded v15 several ideas on how to improve it popped
+            into my head. This is the result. I will hopefully bring all the 
+            pickers, one by one, up to the new version 16 format. If you prefer, you
+            can still access <a href="http://rishida.net/scripts/pickers/thai12/">version 12</a>.</p>
+          <p>The main changes include:</p>
+          <ul>
+            <li><strong>UI.</strong> Adjustment of the vertical menu, so that input 
+              features can be turned on and off independently, and new panels appear 
+              with the others, rather than toggling from one to another. So, for 
+              example, you can have hints and shape-based selectors turned on at the 
+              same time. When something is switched on, its label in the menu turns 
+              orange, and the full text of the option is followed by a check mark.</li>
+            <li>
+              <p><strong>Transcription panels.</strong> Panels have been added to 
+                enable you to construct some Thai text when working from a Latin 
+                transcription. This brings the transcription inputs of version 12 into 
+                version 16, but in a more compact and simpler way, and way that gives 
+                you continued access to the standard table for special characters.</p>
+              <p>There are currently options to transcribe from ISO 11940-2 (although 
+                there are some gaps in that), or from the transcription used by Benjawan
+                Poomsan Becker in her book, <cite>Thai for Beginners</cite>. These are 
+                both transcriptions based on phonetic renderings of the Thai, so there 
+                is often ambiguity about how to transcribe a particular Latin letter 
+                into Thai. When such an ambiguity occurs, the interface offers you a 
+                choice via a small pop-up. Just click on the character you want and it 
+                will be inserted into the main output area.</p>
+              <p>The transcription panels are useful because you can add a whole vowel
+                at a time, rather than picking the individual vowel signs that compose 
+                it. An issue arises, however, when the vowel signs that make up a given 
+                vowel contain one that appears to the left of the syllable initial 
+                consonant(s). This is easily solved by highlighting the syllable in 
+                question and clicking on the <span class="kw" translate="no">reorder</span> button. The vowel sign in question will then appear as the first item in the highlighted text.</p>
+              <p>There is also a panel containing non-ASCII Latin characters, which 
+                can be used when typing Latin transcriptions directly into the main 
+                output area. (This was available in v15 too, but has been made into a 
+                panel like the others, which can be hidden when not needed.)</p>
+            </li>
+            <li><strong>Tones for automatic IPA transcriptions.</strong> The 
+              automatic transcription to IPA now adds tone marks. These are usually 
+              correct, but, as with other aspects of the transcription, it doesn’t 
+              take into account the odd idiosyncrasy in Thai spelling, so you should 
+              always check that the output is correct. (Note that there is still an 
+              issue for some of the ambiguous transcription cases, mostly involving 
+              RA.)</li>
+          </ul>
+          <p>For more information about the picker, see the notes at the bottom of the picker page.</p>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20141218"> 
+        <!--p class="post-date">Thu 18 Dec 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Thai character picker v15</h2>
+          <p class="entrymeta">Posted on Thu 18 Dec 2014 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=thai">thai</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/pickers/thai/"><img class="withshadow" src="r12a_blog_files/thai-picker-15-300x295.png" alt="  " width="300" height="295"></a></p>
+          <p>I have uploaded a new version of the <a style="font-size: 120%;" href="http://rishida.net/scripts/pickers/thai/">Thai character picker</a>.</p>
+          <p>The new version uses characters instead of images for the selection 
+            table, making it faster to load and more flexible, and dispenses with 
+            the transcription view. If you prefer, you can still access <a href="http://rishida.net/scripts/pickers/thai12/">the previous version</a>.</p>
+          <p>Other changes include:</p>
+          <ul>
+            <li>Significant rearrangement of the default selection  table. The new 
+              arrangement makes it easy to choose the right characters if you have a 
+              Latin transcription to hand, which allows the removal of the previous 
+              transcription view, at the same time as speeding up that type of 
+              picking.</li>
+            <li>Addition of latin prompts to help locate letters (standard with v15).</li>
+            <li>Automatic transcription from Thai into ISO 11940-1, ISO 11940-2 and 
+              IPA. Note that for the last two there are some corner cases where the 
+              results are not quite correct, due to the ambiguity of the script, and 
+              note also that you need to show syllable boundaries with spaces before 
+              transcribing. (There’s a way to remove those spaces quickly afterwards.)
+              See below for more information.</li>
+            <li>Hints! When switched on and you mouse over a character, other 
+              similar characters or characters incorporating the shape you moused 
+              over, are highlighted. Particularly useful for people who don’t know the
+              script well, and may miss small differences, but also useful sometimes 
+              for finding a character if you first see something similar.</li>
+            <li>It also comes with the new v15 features that are standard, such as 
+              shape-based picking without losing context, range-selectable codepoint 
+              information, a rehabilitated escapes button, the ability to change the 
+              font of the table and the line-height of the output, and the ability to 
+              turn off autofocus on mobile devices to stop the keyboard jumping up all
+              the time, etc.</li>
+          </ul>
+          <p>For more information about the picker, see the notes at the bottom of the picker page.</p>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <p><strong>More about the transcriptions:</strong> There are three 
+            buttons that allow you to convert from Thai text to Latin 
+            transcriptions. If you highlight part of the text, only that part will 
+            be transcribed.</p>
+          <p>The <code class="kw" translate="no">toISO-1</code> button produces an
+            ISO 11940-1 transliteration, that latinises the Thai characters  
+            without changing their order. The result doesn’t normally tell you how 
+            to pronounce the Thai text, but it can be converted back to Thai as each
+            Thai character is represented by a unique sequence in Latin. This 
+            transcription should produce fully conformant output. There is no need 
+            to identify syllables boundaries first.</p>
+          <p>The <code class="kw" translate="no">toISO-2</code> and <code class="kw" translate="no">toIPA</code> buttons produce an output that is intended to <strong>approximately</strong> reflect actual pronunciation. It will work fine most of the time, but 
+            there are occasional ambiguities and idiosynchrasies in Thai which will 
+            cause the converter to render certain, less common syllables 
+            incorrectly. It also doesn’t automatically add accent marks to the 
+            phonetic version (though that may be added later). So the output of 
+            these buttons should be treated as something that gets you 90% of the 
+            way. <strong>NOTE: Before using these two buttons you need to add spaces or hyphens between each syllable of the Thai text.</strong> Syllable boundaries are important for correct interpretation of the text, and they are not detected automatically.</p>
+          <p>The <code class="kw" translate="no">condense</code> button removes the spaces from the highlighted range (or the whole output area, if nothing is highlighted).</p>
+          <p><strong>Note:</strong> For the <code class="kw" translate="no">toISO-2</code> transcription I use a macron over long vowels. This is non-standard.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20141206"> 
+        <!--p class="post-date">Sat 6 Dec 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Tibetan character picker v15</h2>
+          <p class="entrymeta">Posted on Sat 6 Dec 2014 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=tibetan">tibetan</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/pickers/tibetan/"><img class="withshadow" src="r12a_blog_files/tibetan-picker-v15b-269x300.png" alt="  " width="269" height="300"></a></p>
+          <p>I have uploaded a new version of the <a style="font-size: 120%;" href="http://rishida.net/scripts/pickers/tibetan/">Tibetan character picker</a>.</p>
+          <p>The new version dispenses with the images for the selection table. If
+            you don’t have a suitable font to display the new version of the 
+            picker, you can still access <a href="http://rishida.net/scripts/pickers/tibetan14/">the previous version</a>, which uses images.</p>
+          <p>Other changes include:</p>
+          <ul>
+            <li>Significant rearrangement of the default table, with many less 
+              common symbols moved into a location that you need to click on to 
+              reveal. This declutters the selection table.</li>
+            <li>Addition of latin prompts to help locate letters (standard with v15).</li>
+            <li>Hints (When switched on and you mouse over a character, other 
+              similar characters or characters incorporating the shape you moused 
+              over, are highlighted. Particularly useful for people who don’t know the
+              script well, and may miss small differences, but also useful sometimes 
+              for finding a character if you first see something similar.) </li>
+            <li>A new <span class="kw">Wylie</span> button that converts Tibetan 
+              text into an extended Wylie Latin transcription. There are still some 
+              uncommon characters that don’t work, but it should cover most normal 
+              needs. I used diacritics over lowercase letters rather than uppercase 
+              letters, except for the fixed form characters. I also didn’t provide 
+              conversions for many of the symbols – they will appear without change in
+              the transcription. See the notes on the page for more information.</li>
+            <li>The <span class="kw">Codepoints</span> button, which produces a list
+              of characters in the output box, now has a new feature. If you have 
+              highlighted some text in the output box, you will only see a list of the
+              highlighted characters. If there are no highlights, the contents of the
+              whole output box are listed.</li>
+            <li>Don’t forget, if you are using the picker on an iPad or mobile device, to set <span class="kw">Autofocus</span> to <span class="kw">Off</span> before tapping on characters.  This stops the device keypad popping up 
+              every time you select a character. (This is also standard for v15.)</li>
+          </ul>
+          <p><strong>About pickers:</strong> <a href="http://rishida.net/scripts/pickers/">Pickers</a> allow you to quickly create phrases in a script by clicking on Unicode 
+            characters arranged in a way that aids their identification. Pickers are
+            likely to be most useful if you don’t know a script well enough to use 
+            the native keyboard. The arrangement of characters also makes it much 
+            more usable than a regular character map utility. See the <a href="http://rishida.net/scripts/pickers/">list of available pickers</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="2014-12-06"> 
+        <!--p class="post-date">Sat 6 Dec 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Mongolian variant forms</h2>
+          <p class="entrymeta">Posted on Sat 6 Dec 2014 tagged as  <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=unicode">unicode</a>, <a href="blog/?tag=mongolian">mongolian</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/block/mongolian-variants"><img class="withshadow" src="r12a_blog_files/mongolian-variants-191x300.png" alt="  " width="191" height="300"></a></p>
+          <p>There is some confusion about which shapes should be produced by 
+            fonts for Mongolian characters. Most letters have at least one isolated,
+            initial, medial and final shape, but other shapes are produced by 
+            contextual factors, such as vowel harmony. </p>
+          <p>Unicode <strong></strong>has a <a href="http://www.unicode.org/Public/UNIDATA/StandardizedVariants.html">list of standardised variant shapes</a>,
+            dating from 27 November 2013, but that list is not complete and 
+            contains what are currently viewed by some as errors. It also doesn’t 
+            specify the expected default shapes for initial, medial and final 
+            positions.</p>
+          <p>The original list of standardised variants was based on <a href="http://www.babelstone.co.uk/Mongolian/MGWBM.html">蒙古文编码</a> by Professor Quejingzhabu in 2000.</p>
+          <p>A <a href="http://www.unicode.org/L2/L2014/14031-mong-chart-upd.pdf">new proposal</a> was published on 20 January 2014, which attempts to resolve the current
+            issues, although I think that it introduces one or two issues of its 
+            own.</p>
+          <p>The other factor in this is what the actual fonts do. Sometimes they 
+            follow the Unicode standardised variants list, other times they diverge 
+            from it. Occasionally a majority of implementations appear to diverge in
+            the same way, suggesting that the standardised list should be adapted 
+            to reality.</p>
+          <p>To help unravel this, I put together a page called <a style="font-size: 120%;" href="http://r12a.github.io/scripts/mongolian/variants">Notes on Mongolian variant forms</a> that visually shows the changes between the various proposals, and compares the results produced by various fonts.</p>
+          <p>This is still an early draft. The information only covers the basic 
+            Mongolian range – Todo, Sibe, etc still to come.  Also, I would like to 
+            add information about other fonts, if I can obtain them.</p>
+          <p style="color:brown;">Update: 16 Apr 2015, The Todo, Sibe, Manchu, 
+            Sanskrit and Tibetan characters are now all done, and font information 
+            added for them. (And the document was moved to <a href="http://r12a.github.io/scripts/mongolian/variants">github</a>.)</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="2014-11-17"> 
+        <!--p class="post-date">Mon 17 Nov 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Picker changes</h2>
+          <p class="entrymeta">Posted on Mon 17 Nov 2014 tagged as  <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>If you use my <a href="http://rishida.net/scripts/pickers/">Unicode character pickers</a>,
+            you may have noticed some changes recently. I’ve moved several pickers 
+            on to version 14.  Most of the noticeable changes are in the location 
+            and styling of elements on the UI – the features remain pretty much 
+            unchanged.</p>
+          <p>Pages have acquired a header at the top (which is typically hidden), 
+            that provides links to related pages, and integrates the style into that
+            of the rest of the site. What you don’t see is a large effort to tidy 
+            the code base and style sheets.</p>
+          <p>So far, I have changed the following: Arabic block, Armenian, 
+            Balinese, Bengali, Khmer, IPA, Lao, Mongolian, Myanmar, and Tibetan.</p>
+          <p>I will convert more as and when I get time.</p>
+          <p>However, in parallel, I have already made a start on version 15, 
+            which is a significant rewrite.  Gone are the graphics, to be replaced 
+            by characters and webfonts. This makes a huge improvement to the loading
+            time of the page. I’m also hoping to introduce more automated 
+            transcription methods, and simpler shape matching approaches.</p>
+          <p>Some of the pickers I already upgraded to version 14 have mechanisms 
+            for transcription and shape-based identification that took a huge effort
+            to create, and will take a substantial effort to upgrade to version 15.
+            So they may stay as they are for a while. However, easier to handle and
+            new pickers will move to the new format.</p>
+          <p>Actually, I already made a start with <a href="http://rishida.net/scripts/pickers/gurmukhi/">Gurmukhi v15</a>, which yanks that picker out of the stone-age and into the future.  There’s also a new <a href="http://rishida.net/scripts/pickers/uighur/">picker for the Uighur language</a> that uses v15 technology. I’ll write separate blogs about those.</p>
+          <p>&nbsp;</p>
+          <p style="font-size:80%;">[By the way, if you are viewing the pickers on
+            a mobile device such as an iPad, don’t forget to turn Autofocus off 
+            (click on ‘more controls’ to find the switch).  This will stop the 
+            onscreen keyboard popping up, annoyingly, each time you try to tap on a 
+            character.]</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="2014-10-18"> 
+        <!--p class="post-date">Sat 18 Oct 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Notes on Tibetan script</h2>
+          <p class="entrymeta">Posted on Sat 18 Oct 2014 tagged as  <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=tibetan">tibetan</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/tibetan/"><img class="withshadow" src="r12a_blog_files/tibetan-udhr-300x264.png" alt="tibetan-udhr" width="300" height="264"><br>
+            See the Tibetan Script Notes</a></p>
+          <p>Last March I pulled together some notes about <a href="http://rishida.net/scripts/tibetan/">the Tibetan script overall</a>, and <a href="http://rishida.net/scripts/block/tibetan">detailed notes about Unicode characters used in Tibetan</a>.</p>
+          <p>I am writing these pages as I explore the Tibetan script as used for 
+            the Tibetan language. They may be updated from time to time and should 
+            not be considered authoritative. Basically I am mostly simplifying, 
+            combining, streamlining and arranging the text from the sources listed 
+            at the bottom of the page.</p>
+          <p>The first half of <a href="http://rishida.net/scripts/tibetan/">the script notes page</a> describes how Unicode characters are used to write Tibetan. The second 
+            half looks at text layout in Tibetan (eg. line-breaking, justification, 
+            emphasis, punctuation, etc.)</p>
+          <p><a href="http://rishida.net/scripts/block/tibetan">The character notes page</a> lists all the characters in the Unicode Tibetan block, and provides 
+            specific usage notes for many of them per their use for writing the 
+            Tibetan language.</p>
+          <p class="floatright" style="text-align:center;"><a href="http://rishida.net/scripts/block/tibetan"><img src="r12a_blog_files/tibetan-char-notes-300x240.png" alt="tibetan-char-notes" class="withshadow" width="300" height="240"><br>
+            See the Tibetan Character Notes</a></p>
+          <p>Tibetan is an abugida, ie. consonants carry an inherent vowel sound 
+            that is overridden using vowel signs. Text runs from left to right.</p>
+          <p>There are various different Tibetan scripts, of two basic types: 
+            དབུ་ཙན་ dbu-can, pronounced /uchen/ (with a head), and དབུ་མེད་ dbu-med,
+            pronounced /ume/ (headless). This page concentrates on the former. 
+            Pronunciations are based on the central, Lhasa dialect.</p>
+          <p>The pronunciation of Tibetan words is typically much simpler than the
+            orthography, which involves patterns of consonants. These reduce 
+            ambiguity and can affect pronunciation and tone. In the notes I try to 
+            explain how that works, in an approachable way (though it’s still a 
+            little complicated, at first).</p>
+          <p>Traditional Tibetan text was written on pechas (དཔེ་ཆ་ dpe-cha), 
+            loose-leaf sheets. Some of the characters used and formatting approaches
+            are different in books and pechas. </p>
+          <p>For similar notes on other scripts, see my <a href="http://rishida.net/writing">docs list</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20140923"> 
+        <!--p class="post-date">Tue 23 Sep 2014</p-->
+        <div class="post-info">
+          <h2 class="post-title">Improving international text layout and typography on the Web and in eBooks</h2>
+          <p class="entrymeta">Posted on Tue 23 Sep 2014 tagged as <a href="blog/?tag=layout">layout</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><a href="http://rishida.net/blog/wp-content/uploads/2014/09/Screen-shot-2014-09-26-at-16.36.47.png"><img class="withshadow" src="r12a_blog_files/Screen-shot-2014-09-26-at-16.png" alt="Screen shot 2014-09-26 at 16.36.47" srcset="http://rishida.net/blog/wp-content/uploads/2014/09/Screen-shot-2014-09-26-at-16.36.47.png 194w, http://rishida.net/blog/wp-content/uploads/2014/09/Screen-shot-2014-09-26-at-16.36.47-109x300.png 109w" sizes="(max-width: 194px) 100vw, 194px"></a></p>
+          <p>The W3C needs to make sure that the typographic needs of scripts and 
+            languages around the world are built in to technologies such as HTML, 
+            CSS, SVG, etc. so that Web pages and eBooks can look and behave as 
+            expected for people around the world.</p>
+          <p>To that end we have experts in various parts of the world documenting
+            typographic requirements and gaps between what is needed and what is 
+            currently supported in browsers and ebook readers. </p>
+          <p>The flagship document is <a href="http://www.w3.org/TR/jlreq/">Requirements for Japanese Text Layout</a>.
+            The information in this document has been widely used, and the process 
+            used for creating it was extremely effective. It was developed in Japan,
+            by a task force using mailing lists and holding meetings in japanese, 
+            then converted to english for review. It was published in both 
+            languages.</p>
+          <p>We now have groups working on <a href="http://www.w3.org/International/docs/indic-layout/">Indic Layout Requirements</a> and <a href="http://www.w3.org/TR/klreq/">Requirements for Hangul Text Layout and Typography</a>,
+            and this month I was in Beijing to discuss ongoing work on Chinese 
+            layout requirements (URL coming soon), and we heard from experts in 
+            Mongolian, Tibetan, and Uyghur who are keen to also participate in the 
+            Chinese task force and produce similar documents for their part of the 
+            world.</p>
+          <p>The Internationalization (i18n) Working Group at the W3C has also 
+            been working on other aspects of the mutlilingual user experience. For 
+            example, improvements for bidirectional text support (Arabic, Hebrew, 
+            Thaana, etc) for HTML and CSS, and supporting the work on <a href="http://www.w3.org/TR/predefined-counter-styles/">counter styles</a> at CSS.</p>
+          <p>To support local relevance of Web pages and eBook formats we need 
+            local experts to participate in gathering information in these task 
+            forces, to review the task force outputs, and to lobby or support via 
+            coding the implementation of features in browsers and ereaders.  If you 
+            are one of these people, or know some, please get in touch!</p>
+          <p>We particularly need more information about how to handle typographic features of the Arabic script.</p>
+          <p>In the hope that it will help, I have put together <strong style="font-size:150%; font-weight: normal;"><a href="https://www.w3.org/International/wiki/Improving_typography_on_the_Web_and_in_eBooks">some
+            information on current areas of activity at the W3C, with pointers to 
+            useful existing requirements, specifications and tests</a>.</strong> It is not exhaustive, and I expect it to be added to and improved over time.</p>
+          <p>Look through the list and check whether your needs are being 
+            adequately covered. If not, write to www-international@w3.org (you need 
+            to <a href="http://lists.w3.org/Archives/Public/www-international/">subscribe</a> first) and make the case. If the spec does cover your needs, but the 
+            browsers don’t support your needs, raise bugs against the browsers.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post"> 
+        <!--p class="post-date">Fri 22 Aug 2014</p-->
+        <div class="post-info" id="2014-08-22">
+          <h2 class="post-title">Burmese divergence on the Web</h2>
+          <p class="entrymeta">Posted on Fri 22 Aug 2014 tagged as  <a href="blog/?tag=myanmar">myanmar</a>, <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=unicode">unicode</a>&nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>It’s disappointing to see that non-standard implementations of UTF-8 are being used by the BBC on their <a href="https://www.facebook.com/bbcburmese?fref=ts">BBC Burmese Facebook page</a>.</p>
+          <p>Take, for example, the following text.</p>
+          <p>On the actual <a href="http://www.bbc.co.uk/burmese/">BBC site</a> it looks like this <em>(click on the burmese text to see a list of the characters used)</em>:</p>
+          <p style="font-size: 150%; margin: 20px 9.5%; text-align:left;"><a href="http://rishida.net/uniview/?codepoints=1021_102D_1014_1039_1012_102D_101A_0020_1019_102D_1014_103A_1038_1019_1004_101A_103A_0020_1042_1026_1038_0020_1021_1019_103E_102F_0020_1006_1031_1038_1005_1005_103A_1001_103B_1000_103A_0020_1000_103D_1032_101C_103D_1032_1014_1031" title="Click to see a list of characters in this text." target="_blank">အိန္ဒိယ မိန်းမငယ် ၂ဦး အမှု ဆေးစစ်ချက် ကွဲလွဲနေ</a></p>
+          <p>As far as I can tell, this is conformant use of Unicode codepoints.</p>
+          <p>Look at the same title on the <a href="https://www.facebook.com/bbcburmese?fref=ts">BBC’s Facebook page</a>, however, and you see:</p>
+          <p style="font-size: 150%; margin: 20px 9.5%; text-align:left;"><a href="http://rishida.net/uniview/?codepoints=1021_102D_108F_1075_102D_101A_0020_1019_102D_1014_1039_1038_1019_1004_101A_1039_0020_1042_1026_1038_0020_1021_1019_1088_0020_1031_1006_1038_1005_1005_1039_1001_103A_1000_1039_0020_1000_103C_1032_101C_103C_1032_1031_1014" title="Click to see a list of characters in this text." target="_blank">အိႏၵိယ မိန္းမငယ္ ၂ဦး အမႈ ေဆးစစ္ခ်က္ ကြဲလြဲေန</a></p>
+          <p>Depending upon where you are reading this (as long as you have some 
+            Burmese font and rendering support), one of the two lines of Burmese 
+            text above will contain lots of garbage. For me, it’s the second 
+            (non-standard).</p>
+          <p>This non-standard approach uses visual encoding for combining 
+            characters that appear before or on both sides of the base, uses Shan or
+            Rumai Palaung codepoints for subjoining consonants, uses the wrong 
+            codepoints for medial consonants, and uses the virama instead of the 
+            asat at the end of a word.</p>
+          <p>I assume that this is because of prevalent use of the non-standard 
+            approach on mobile devices (and that the BBC is just following that 
+            trend), caused by hacks that arose when people were impatient to get on 
+            the Web but script support was lagging in applications.</p>
+          <p>However, continuing this divergence does nobody any long-term good.</p>
+          <p><em>[ <a href="http://r12a.github.io/scripts/links?script=myanmar" target="_blank">Find fonts and other resources</a> for the Myanmar script ]</em></p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <p class="pagelinks"><a href="201110">More<br/>🠿</a></p>
+    </div>
+    <p id="footer">Copyright © 2009 Richard Ishida.</p>
+  </div>
+</div>
+</body>
+</html>

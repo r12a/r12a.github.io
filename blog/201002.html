@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script language="javascript" src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+
+
+
+	<div id="header">
+	<div id="dotted-line">&nbsp;</div>
+	<h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+	<div id="sitelinks" class="noprint" style="margin-left: 6.5%;">
+	<span>
+		<a href="http://rishida.net/blog" title="Blog home page">blog</a>&nbsp; 
+		<a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; 
+		<a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; 
+		<a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; 
+		<a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span>
+		</div>
+	</div>
+
+
+  <div id="main">
+    <div id="sidebar">
+    	<div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+       <p class="pagelinks"><a href="201110">&nbsp;🠽&nbsp;</a><br/>page<br/><a href="200901">&nbsp;🠿&nbsp;</a></p>
+
+	      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+</div>
+	<div id="content">
+						<div class="post" id="2011-10-10">
+				<!--p class="post-date">Mon 10 Oct 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">Managing CSS style sheets for LTR and RTL variants of a page</h2>
+	<p class="entrymeta">Posted on Mon 10 Oct 2011 tagged as <a href="blog/?tag=web">web</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>I created a new HTML5-based template for our <a href="http://www.w3.org/International/articlelist">W3C Internationalization articles</a>
+ recently, and I’ve just received some requests to translate documents 
+into Arabic and Hebrew, so I had to get around to updating the bidi 
+style sheets. (To make it quicker to develop styles, I create the style 
+sheet for ltr pages first, and only when that is working well do I 
+create the rtl style sheet info.)</p>
+<p>Here are some thoughts about how to deal with style sheets for both right-to-left (rtl) and left-to-right (ltr) documents.</p>
+<h3>What needs changing?</h3>
+<p>Converting a style sheet is a little more involved than using a 
+global search and replace to convert left to right, and vice versa. 
+While this may catch many of the things that need changing, it won’t 
+catch all, and it could also introduce errors into the style sheet.</p>
+<p>For example, I had selectors called .topleft and .bottomright in my 
+style sheet. These, of course, shouldn’t be changed.  There may also be 
+occasional situations where you don’t want to change the direction of a 
+particular block.</p>
+<p>Another thing to look out for: I tend to use -left and -right a lot 
+when setting things like margins, but where I have set something like <code>margin: 1em 32% .5em 7.5%;</code>
+ you can’t just use search and replace, and you have to carefully scour 
+the whole of the main stylesheet to find the instances where the right 
+and left margins are not balanced.</p>
+<p>There is a web service called <a href="http://cssjanus.commoner.com/" target="_blank">CSSJanus</a>
+ that can apply a little intelligence to convert most of what you need. 
+ You still have to use with care, but it does come with a convention to 
+prevent conversion of properties where needed (you can disable CSSJanus 
+from running on an entire class or any rule within a class by prepending
+ a <code>/* @noflip */</code> comment before the rule(s) you want CSSJanus to ignore).</p>
+<p>Note also that there are other things that may need changing besides 
+the right and left values. For example, some of the graphics on our 
+template need to be flipped (such as the dog-ear icon in the top corner 
+of the page).</p>
+<p>CSS may provide a way to do this in the future, but it is still only a
+ proposal in a First Public Working Draft at the moment. (It would 
+involve writing a selector such as <code>#site-navigation:dir(rtl) { background-image: url(standards-corner-rtl.png); }</code>.</p>
+<h3>Approach 1: extracting changed properties to an auxiliary style sheet</h3>
+<p>For the old template I have a secondary, bidi style sheet that I load
+ after the main style sheet. This bidi style sheet contains a copy of 
+just the rules in the main style sheet that needed changing and 
+overwrites the styles in the main style sheet.  These changes were 
+mainly to margin, padding, and text-align properties, though there were 
+also some others, such as positioning, background and border properties.</p>
+<p>The cons of this approach were:</p>
+<ol>
+<li>it’s a pain to create and maintain a second style sheet in the first place</li>
+<li>it’s an even bigger pain to remember to copy any relevant changes in
+ the main style sheet to the bidi style sheet, not least because the 
+structure is different, and it’s a little harder to locate things</li>
+<li>everywhere that the main style sheet declared, say, a left margin 
+without declaring a value for the right margin, you have to figure out 
+what that other margin should be and add it to the bidi style sheet. For
+ example, if a figure has just margin-left: 32%, that will be converted 
+to margin-right: 32%, but because the bidi style sheet hasn’t 
+overwritten the main style sheet’s margin-left value, the Arabic page 
+will end up with both margins set to 32%, and a much thinner figure than
+ desired.  To prevent this, you need to figure out what all those 
+missing values should be, which is typically not straightforward, and 
+add them explicitly to the bidi style sheet.</li>
+<li>downloading a second style sheet and overwriting styles leads to 
+higher bandwidth consumption and more processing work for the rtl pages.</li>
+</ol>
+<h3>Approach 2: copying the whole style sheet and making changes</h3>
+<p>This is the approach that I’m trying for the moment. Rather than 
+painstakingly picking out just the lines that changed, I take a copy of 
+the whole main style sheet, and load that with the article <em>instead</em>
+ of the main style sheet.  Of course, I still have to change all the 
+lefts to rights, and vice versa, and change all the graphics, etc.  But I
+ don’t need to add additional rules in places where I previously only 
+specified one side margin, padding, etc. </p>
+<p>We’ll see how it works out.  Of course, the big problem here is that <em>any</em>
+ change I make to the main style sheet has to be copied to the bidi 
+style sheet, whether it is related to direction or not. Editing in two 
+places is definitely going to be a pain, and breaks the big advantage 
+that style sheets usually give you of applying changes with a single 
+edit. Hopefully, if I’m careful, CSSJanus will ease that pain a little.</p>
+<p>Another significant advantage should be that the page loads faster, 
+because you don’t have to download two style sheets and overwrite a good
+ proportion of the main style sheet to display the page.</p>
+<p>And finally, as long as I format things exactly the same way, by 
+running a diff program I may be able to spot where I forgot to change 
+things in a way that’s not possible with approach 1.</p>
+<h3>Approach 3: using :lang and a single file</h3>
+<p>On the face of it, this seems like a better approach. Basically you 
+have a single style sheet, but when you have a pair of rules such as <code>p { margin-right: 32%; margin-left: 7.5%;}</code> you add another line that says <code>p:lang(ar) { margin-left: 32%; margin-right: 7.5%; }</code>.</p>
+<p>For small style sheets, this would probably work fine, but in my case
+ I see some cons with this approach, which is why I didn’t take it:</p>
+<ol>
+<li>there are so many places where these extra lines need to be added 
+that it will make the style sheet much harder to read, and this is made 
+worse because the <code>p:lang(ar)</code> in the example above would actually need to be <code>p:lang(ar), p:lang(he), p:lang(ur), p:lang(fa), p:lang(dv) ...</code>,
+ which is getting very messy, but also significantly pumps up the 
+bandwidth and processing requirements compared with approach 2 (and not 
+only for rtl docs).</li>
+<li>you still have to add all those missing values we talked about in 
+approach 1 that were not declared in the part of the style sheet dealing
+ with ltr scripts</li>
+<li>the list of languages could be long, since there is no way to say 
+“make this rule work for any language with a predominantly rtl script”, 
+and obscures those rules that really are language specific, such as for 
+font settings, that I’d like to be able to find quickly when maintaining
+ the style sheet</li>
+<li>you really need to use the :lang() selector for this, and although 
+it works on all recent versions of major browsers, it doesn’t work on, 
+for example, IE6</li>
+</ol>
+<p>Having said that, I may use this approach for the few things that 
+CSSJanus can’t convert, such as flipping images. That will hopefully 
+mean that I can produce the alternative stylesheet in approach 2 just by
+ running through CSSJanus. (We’ll see if I’m right in the long run, but 
+so far so good…)</p>
+<h3>Approach 4: what I’d really like to do</h3>
+<p>The cleanest way to reduce most of these problems would be to add 
+some additional properties or values so that if you wanted to you could 
+replace </p>
+<p><code>p { margin-right: 32%; margin-left: 7.5%; text-align: left; }</code> </p>
+<p>with</p>
+<p><code>p { margin-start: 32%; margin-end: 7.5%; text-align: start; }</code></p>
+<p>Where start refers to the left for ltr documents and right for rtl docs. (And end is the converse.)</p>
+<p>This would mean that that one rule would work for both ltr and rtl pages and I wouldn’t have to worry about most of the above.  </p>
+<p>The new properties have been strongly recommended to the CSS WG 
+several times over recent years, but have been blocked mainly by people 
+who fear that a proliferation of properties or values is confusing to 
+users. There may be some issues to resolve with regards to the cascade, 
+but I’ve never really understood why it’s so hard to use start and end. 
+Nor have I met any users of RTL scripts (or vertical scripts, for that 
+matter) who find using start and end more confusing than using right and
+ left – in fact, on the contrary, the ones I have talked with are 
+actively pushing for the introduction of start and end to make their 
+life easier. But it seems we are currently still at an impasse.</p>
+<h4 style="margin-left:7.5%;">text-align</h4>
+<p>Similarly, a start and end value for text-align would be very useful.
+ In fact, such a value is in the CSS3 Text module and is already 
+recognised by latest versions of Firefox, Safari and Chrome, but 
+unfortunately not IE8 or Opera, so I can’t really use it yet.</p>
+<p>In my style sheet, due to some bad design on my part, what I actually
+ needed most of the time was a value that says “turn off justify and 
+apply the current default” – ie. align the text to left or right 
+depending on the current direction of the text. Unfortunately, I think 
+that we have to wait for full support of the start and end values to do 
+that.  Applying text-align:left to unjustify, say, p elements in a 
+particular context causes problems if some of those p elements are rtl 
+and others ltr.  This is because, unlike mirroring margins or padding, 
+text-align is more closely associated with the text itself than with 
+page geometry. (I resolved this by reworking the style sheet so that I 
+don’t need to unjustify elements, but I ought to follow <a href="http://www.w3.org/TR/2009/NOTE-i18n-html-tech-bidi-20090908/#tech-textalign">my own advice</a> more in future, and avoid using text-align unless absolutely necessary.)</p>
+<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-9371">
+			<cite><a href="http://css-class.com/" rel="external nofollow" class="url">Alan Gresley</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9371" title="">October 11th, 2011 at 1:21 am</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9371">e</a></small>
+
+			<p>Approach 4 is the most logical (no pun intended) way. It would also allowed for better styling with both LTR and RTL content together. Also *-start and *-end makes more sense in vertical writing-mode.</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-9376">
+			<cite><a href="http://lensco.be" rel="external nofollow" class="url">Lensco</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9376" title="">October 11th, 2011 at 7:56 am</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9376">e</a></small>
+
+			<p>We went for a similar approach to 3 in the past: instead of using the lang pseudo-class we added an .rtl class to the body serverside. We also had presentational class names like .left and .right (for floats) and .tar and .tal (for text-align). Not ideal but it sort of worked. I agree that just having -start and -end would be very useful.</p>
+<p>Another variation could be achieved by using a CSS preprocessor like LESS or SASS. The output would be the same as approach 3, but authoring and maintenance could be simpler?</p>
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-9380">
+			<cite><a href="http://richstyle.org/" rel="external nofollow" class="url">Anas R.</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9380" title="">October 11th, 2011 at 12:49 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9380">e</a></small>
+
+			<p>I was planning to use ‘start’ and ‘end’ values for my CSS template, but I noticed that it still not supported in Opera.<br>
+So I had to use ‘:lang’ with ALL ltr languages:<br>
+<a href="http://beta.richstyle.org/demo-web-ar.php" rel="nofollow">http://beta.richstyle.org/demo-web-ar.php</a><br>
+Also, the W3C CSS validator returned this warning:<br>
+“value start only applies to XSL”!</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-9386">
+			<cite><a href="http://web-technos.blogspot.com" rel="external nofollow" class="url">Mancko</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9386" title="">October 11th, 2011 at 6:00 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9386">e</a></small>
+
+			<p>When you can change the HTML code alongside the CSS, the more practical way is to set specific classes for each language direction, say for instance:</p>
+<p>#header-ltr {<br>
+    background:url(images/bg_top-ltr.jpg) no-repeat;<br>
+}<br>
+#header-rtl {<br>
+    background:url(images/bg_top-rtl.jpg) no-repeat;<br>
+}</p>
+<p>You end up with quite a big bidi style sheet, but with some compression the total weight of the file is not much bigger than for only one language direction.<br>
+Of course, it is way easier to start your project with language direction in mind than to change it afterwards.</p>
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-10058">
+			<cite><a href="http://blog.selfthinker.org/" rel="external nofollow" class="url">Anika</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-10058" title="">November 7th, 2011 at 11:08 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=10058">e</a></small>
+
+			<p>I personally use something similar to Approach 3, but depending on *dir* instead of *lang*. That way you only need to define one style per text direction. E.g.:</p>
+<p>[dir=rtl] th {<br>
+    text-align: right;<br>
+}<br>
+[dir=ltr] th {<br>
+    text-align: left;<br>
+}</p>
+<p>The only con with that is that [dir] makes that declaration have a higher specificity.</p>
+
+		</li>
+
+	
+	
+	</ol>	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20111004">
+				<!--p class="post-date">Tue 4 Oct 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">Notes on CSS Hyphenation</h2>
+	<p class="entrymeta">Posted on Tue 4 Oct 2011 tagged as <a href="blog/?tag=layout">layout</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>In the phrase “Zusätzlich erleichtert PLS die Eingrenzung von 
+Anwendungen, indem es Aussprachebelange von anderen Teilen der Anwendung
+ abtrennt.” (“In addition, PLS facilitates the localization of 
+applications by separating pronunciation concerns from other parts of 
+the application.”) there are many long words.  To fit these in narrow 
+columns (coming soon to the Web via CSS) or on mobile devices, it would 
+help to automatically hyphenate them.</p>
+<p>Other major browsers already supported soft-hyphens when Firefox 5 
+implemented FF support. Soft hyphens provide a manual workaround for 
+breaking long words, but more recently browsers such as Firefox, Safari 
+and Chrome have begun to support the CSS3 hyphens property, with 
+hyphenation dictionaries for a range of languages, to support (or 
+disable, if needed) automatic hyphenation.  (Note, however, that 
+Aussprachebelange is incorrectly hyphenated in the example from Safari 
+5.1 on Lion OS shown above. It is hyphenated as Aussprac- hebelange. 
+Some refinement is clearly still needed at this stage.)</p>
+<p>For hyphenation to work correctly, the text must be marked up with 
+language information, using the language tags described earlier.  This 
+is because hyphenation rules vary by language, not by script. The 
+description of the hyphens property in CSS says “Correct automatic 
+hyphenation requires a hyphenation resource appropriate to the language 
+of the text being broken. The UA is therefore only required to 
+automatically hyphenate text for which the author has declared a 
+language (e.g. via HTML lang or XML xml:lang) and for which it has an 
+appropriate hyphenation resource.”</p>
+<p>This post is a place for me to dump a few URIs related to this topic, so that i can find them again later.</p>
+<p>Hyphenation arrives in Firefox and Safari<br>
+<a href="http://blog.fontdeck.com/post/9037028497/hyphens">http://blog.fontdeck.com/post/9037028497/hyphens</a></p>
+<p>hyphens<br>
+<a href="https://developer.mozilla.org/en/CSS/hyphens#Gecko_notes">https://developer.mozilla.org/en/CSS/hyphens#Gecko_notes</a><br>
+(lists languages to be supported by FF8)</p>
+<p>Hyphenation on the web<br>
+<a href="http://www.gyford.com/phil/writing/2011/06/10/web-hyphenation.php">http://www.gyford.com/phil/writing/2011/06/10/web-hyphenation.php</a></p>
+<p>css text<br>
+http://www.gyford.com/phil/writing/2011/06/10/web-hyphenation.php<a href="http://www.gyford.com/phil/writing/2011/06/10/web-hyphenation.php"></a></p>
+<p>css generated content<br>
+<a href="http://dev.w3.org/csswg/css3-gcpm/#hyphenation">http://dev.w3.org/csswg/css3-gcpm/#hyphenation</a></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20110520">
+				<!--p class="post-date">Wed 20 Jul 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">html5’s new &lt;bdi&gt; element</h2>
+	<p class="entrymeta">Posted on Wed 20 Jul 2011 tagged as <a href="blog/?tag=web">web</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>The html5 specification contains a bunch of new features to support 
+bidirectional text in web pages.  Language written with right-to-left 
+scripts, such as Arabic, Hebrew, Persian, Thaana, Urdu, etc., commonly 
+mixes in words or phrases in English or some other language that uses a 
+left-to-right script.  The result is called bidirectional or bidi text.</p>
+<p>HTML 4.01 coupled with the Unicode Bidirectional algorithm already 
+does a pretty good job of managing bidirectional text, but there are 
+still some problems when dealing with embedded text from user input or 
+from stored data.</p>
+<h3>The problem</h3>
+<p>Here’s an example where the names of restaurants are added to a page 
+from a database. This is the code, with the Hebrew shown using ASCII:</p>
+<figure class="code">
+<pre>&lt;p&gt;Aroma - 3 reviews&lt;/p&gt;
+&lt;p&gt;PURPLE PIZZA - 5 reviews&lt;/p&gt;
+</pre>
+</figure>
+<p>And here’s what you’d expect to see, and what you’d actually see.</p>
+<div class="figure" style="width: 200px; float:left;text-align: center; display:block; margin-left:7.5%;margin-right: 10px;">
+<p><img src="r12a_blog_files/restaurant-right.png" title="AZZIP ELPRUP - 5 reviews" alt="AZZIP ELPRUP - 5 reviews"></p><figcaption>What it should look like.</figcaption></div>
+<div class="figure" style="width: 200px; float:left;text-align: center; display:block; margin-left:10px;margin-right: 10px;">
+<p><img src="r12a_blog_files/restaurant-wrong.png" title="5 - AZZIP ELPRUP reviews" alt="5 - AZZIP ELPRUP reviews"></p><figcaption>What it actually looks like.</figcaption></div>
+<p><br style="clear:both;"></p>
+<p>The problem arises because the browser thinks that the ” – 5″ is part
+ of the Hebrew text. This is what the Unicode Bidi Algorithm tells it to
+ do, and usually it is correct.  Not here though.</p>
+<p>So the question is how to fix it?</p>
+<h3><code>&lt;bdi&gt;</code> to the rescue</h3>
+<p>The trick is to use the <span class="kw">bdi</span> element around the text to isolate it from its surrounding content. (<span class="kw">bdi</span> stands for ‘bidi-isolate’.)</p>
+<figure class="code">
+<pre>&lt;p&gt;&lt;bdi&gt;Aroma&lt;/bdi&gt; - 3 reviews&lt;/p&gt;
+&lt;p&gt;&lt;bdi&gt;PURPLE PIZZA&lt;/bdi&gt; - 5 reviews&lt;/p&gt;
+</pre>
+</figure>
+<p>The bidi algorithm now treats the Hebrew and “- 5” as separate chunks
+ of content, and orders those chunks per the direction of the overall 
+context, ie. from left-to-right here.</p>
+<p>You’ll notice that the example above has bdi around the name Aroma 
+too. Of course, you don’t actually need that, but it won’t do any harm. 
+On the other hand, it means you can write a script in something like PHP
+ that says:</p>
+<figure class="code">
+<pre>foreach $restaurant echo "&lt;bdi&gt;$restaurant['name']&lt;/bdi&gt; - $restaurant['reviews'] reviews"; 
+</pre>
+</figure>
+<p>This means you can handle any name that comes out of the database, whatever script it is in.</p>
+<p><span class="kw">bdi</span> isn’t supported fully by all browsers yet, but it’s coming.</p>
+<h3>Things to avoid</h3>
+<dl>
+<dt>Using the <span class="kw">dir</span> attribute on a <span class="kw">span</span> element</dt>
+<dd>
+<p>You may think that something like this would work:</p>
+<figure class="code">
+<pre>&lt;p&gt;&lt;span dir=rtl&gt;PURPLE PIZZA&lt;/span&gt; - 5 reviews&lt;/p&gt;
+</pre>
+</figure>
+<p>But actually that won’t make any difference, because it doesn’t isolate the content of the span from what surrounds it.</p>
+</dd>
+<dt>Using Unicode control characters</dt>
+<dd>
+<p>You could actually produce the desired result in this case using U+200E LEFT-TO-RIGHT MARK just before the hyphen.</p>
+<pre>&lt;p&gt;PURPLE PIZZA &amp;lrm;- 5 reviews&lt;/p&gt;
+</pre>
+<p>For a number of reasons, however, <a href="http://www.w3.org/International/questions/qa-bidi-controls">it is better to use markup</a>.
+ Markup is part of the structure of the document, it avoids the need to 
+add logic to the application to choose between LRM and RLM, and it 
+doesn’t cause search failures like the Unicode characters sometimes do. 
+ Also, the markup can neatly deal with any unbalanced embedding controls
+ inadvertently left in the embedded text.</p>
+</dd>
+<dt>Using CSS</dt>
+<dd>
+<p>CSS has also been updated to allow you to isolate text, but you should <a href="http://www.w3.org/International/questions/qa-bidi-css-markup">always use dedicated markup for bidi rather than CSS</a>.
+  This means that the information about the directionality of the 
+document is preserved even in situations where the CSS is not available.</p>
+</dd>
+<dt>Using <span class="kw">bdo</span></dt>
+<dd>
+<p>Although it sounds similar, and it’s used for bidi text too, the <span class="kw">bdo</span> element is very different. It <a href="http://www.w3.org/International/tutorials/bidi-xhtml/#Slide0420">overrides the bidi algorithm altogether</a> for the text it contains, and doesn’t isolate its contents from the surrounding text.</p>
+</dd>
+</dl>
+<h3>Using the <span class="kw">dir</span> attribute with <span class="kw">bdi</span></h3>
+<p>The <span class="kw">dir</span> attribute can be used on the <span class="kw">bdi</span> element to set the base direction. With simple strings of text like PURPLE PIZZA you don’t really need it, however if your <span class="kw">bdi</span> element contains text that is itself bidirectional you’ll want to indicate the base direction.</p>
+<p>Until now, you could only set the <span class="kw">dir</span> attribute to <span class="kw">ltr</span> or <span class="kw">rtl</span>.
+  The problem is that in a situation such as the one described above, 
+where you are pulling strings from a database or user, you may not know 
+ which of these you need to use.</p>
+<p>That’s why html5 has provided a new <span class="kw">auto</span> value for the <span class="kw">dir</span> attribute, and <span class="kw">bdi</span> comes with that set by default. The <span class="kw">auto</span>
+ value tells the browser to look at the first strongly typed character 
+in the element and work out from that what the base direction of the 
+element should be. If it’s a Hebrew (or Arabic, etc.) character, the 
+element will get a direction of rtl.  If it’s, say, a Latin character, 
+the direction will be ltr.</p>
+<p>There are some rare corner cases where this may not give the desired 
+outcome, but in the vast majority of cases it should produce the 
+expected result.</p>
+<h3>Want another use case?</h3>
+<p>Here’s another situation where <span class="kw">bdi</span> can be 
+useful.  This time we are constructing multilingual breadcrumbs on the 
+W3C i18n site. The page titles are generated by a script, and this page 
+is in Hebrew, so the base direction is right-to-left.</p>
+<p>Again here’s what you’d expect to see, and what you’d actually see.</p>
+<div class="figure" style="width: 260px; float:left;text-align: center; margin-left: 7.5%; margin-right: 10px;">
+<p><img src="r12a_blog_files/breadcrumbs-right.png" title="Articles &lt; Resources &lt; WERBEH" alt="Articles &lt; Resources &lt; WERBEH"></p><figcaption>What it should look like.</figcaption></div>
+<div class="figure" style="width: 260px; float:left;text-align: center; margin-left: 10px; margin-right: 10px;">
+<p><img src="r12a_blog_files/breadcrumbs-wrong.png" title="Resources &lt; Articles &lt; WERBEH" alt="Resources &lt; Articles &lt; WERBEH"></p><figcaption>What it actually looks like.</figcaption></div>
+<p><br style="clear:both;"></p>
+<p>Whereas in the previous example we were dealing with a number that 
+was confused about its directionality, here we are dealing with a list 
+of same script items in a base direction of the opposite direction. </p>
+<p>If you wanted to generate markup that would produce the right 
+ordering, whatever combination of titles was thrown at it, you could 
+wrap each title in <span class="kw">bdi</span> elements.</p>
+<h3>Want more information?</h3>
+<p>The inclusion of these features has been championed by Aharon Lanin 
+of Google within the W3C Internationalization (i18n) Working Group.  He 
+is the editor of a W3C Working Draft, <cite><a href="http://www.w3.org/International/docs/html-bidi-requirements/">Additional Requirements for Bidi in HTML</a></cite>, that tracks a range of proposals made to the HTML5 Working Group, giving rationales and recording resolutions.  (The <span class="kw">bdi</span> element started out as a suggestion to include a <a href="http://www.w3.org/International/docs/html-bidi-requirements/#bidi-isolation">ubi attribute</a>.)</p>
+<p>If you like more information on handling bidi in HTML in general, try <cite><a href="http://www.w3.org/International/tutorials/bidi-xhtml/">Creating HTML Pages in Arabic, Hebrew and Other Right-to-left Scripts</a></cite></p>
+<p>And <a href="http://dev.w3.org/html5/spec/text-level-semantics.html#the-bdi-element">here’s the description of <span class="kw">bdi</span></a> in the HTML5 spec.</p>
+<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-19432">
+			<cite><a href="http://www.smashingmagazine.com/2011/11/18/html5-semantics/" rel="external nofollow" class="url">HTML5 Semantics | Smashing Coding</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-19432" title="">April 28th, 2012 at 5:18 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=19432">e</a></small>
+
+			<p>[…] more comprehensible. For a further description of the problem and to see how bdi solves it, see “HTML5’s New bdi Element” by Richard Ishida, the W3C’s internationalization activity […]</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-19729">
+			<cite><a href="http://bigdog-studio.com/html5-semantics/" rel="external nofollow" class="url">HTML5 Semantics | BigDogStudio</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-19729" title="">May 4th, 2012 at 5:25 am</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=19729">e</a></small>
+
+			<p>[…] comprehensible. For a further description of the problem and to see how&nbsp;bdi&nbsp;solves it, see “HTML5’s New&nbsp;bdi&nbsp;Element” by&nbsp;Richard Ishida, the W3C’s internationalization activity […]</p>
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-88944">
+			<cite><a href="http://www.webtuts.me/html5-semantics/" rel="external nofollow" class="url">HTML5 والويب الدلالي | مدونة دروس الويب</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-88944" title="">July 31st, 2013 at 11:23 am</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=88944">e</a></small>
+
+			<p>[…] التي يقوم العنصر bdi بحلها ألق نظرة على هذا المقال HTML5’s New bdi Element لكاتبه Richard Ishida المسؤول عن التدويل لدى […]</p>
+
+		</li>
+
+	
+	
+	</ol>	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20110718">
+				<!--p class="post-date">Mon 18 Jul 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">New version of the Internationalization Checker released</h2>
+	<p class="entrymeta">Posted on Mon 18 Jul 2011 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=web">web</a>, <a href="blog/?tag=i18n-checker">i18n-checker</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p class="floatright"><a href="http://rishida.net/blog/images/checker.png"><img class="withshadow" src="r12a_blog_files/checker-small.png" alt="Picture of the page in action."></a></p>
+<p>The ‘i18n checker’ is a free service by the W3C that provides 
+information about internationalization-related aspects of your HTML 
+page, and advice on how to improve your use of markup, where needed, to 
+support the multilingual Web.</p>
+<p>This latest release uses a new user interface and redesigned source 
+code. It also adds a number of new tests, a file upload facility, and 
+support for HTML5.</p>
+<p>This is still a ‘pre-final’ release and development continues. There 
+are already plans to add further tests and features, to translate the 
+user interface, to add support for XHTML5 and polyglot documents, to 
+integrate with the W3C Unicorn checker, and to add various other 
+features. At this stage we are particularly interested in receiving user
+ feedback.</p>
+<p><a href="http://validator.w3.org/i18n-checker/">Try the checker</a> and let us know if you find any bugs or have any suggestions.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20110304">
+				<!--p class="post-date">Fri 4 Mar 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">UniView6.0.0a: New user interface, and some feature changes</h2>
+	<p class="entrymeta">Posted on Fri 4 Mar 2011 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=uniview">uniview</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p class="floatright"><a href="http://rishida.net/blog/images/uniview600a.png"><img src="r12a_blog_files/uniview600a-small.png" alt="Picture of the page in action."></a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use UniView</a></p>
+<p><strong>About the tool:</strong> Look up and see characters (using 
+graphics or fonts) and property information, view whole character blocks
+ or custom ranges, select characters to paste into your document, paste 
+in and discover unknown characters, search for characters, do 
+hex/dec/ncr conversions, highlight character types, etc. etc. Supports 
+Unicode 6.0 and written with Web Standards to work on a variety of 
+browsers. No need to install anything.</p>
+<p><strong>Latest changes:</strong> The majority of changes in this update relate to the user interface. They include the following:</p>
+<ul>
+<li>Many controls have been grouped under three tabs: Look up, Filter, 
+and Options. Various previously dispersed controls were gathered 
+together under the Filter and Options tabs. Many of the controls have 
+been slightly renamed.</li>
+<li>The Search control has been moved to the top right of the window, where it is always visible.</li>
+<li>The old Text Area is now a Copy &amp; Paste control that has a 
+2-dimensional input box. In browser such as Safari, Chrome and Firefox 
+4, this box can be stretched by the user to whatever size is preferred.</li>
+<li>The icon that provides a toggle switch between revealing detailed 
+information for a character in a list or table, or copying that 
+character to the Copy &amp; Paste box has been redesigned. It stands 
+alone and indicates the location of the current outcome using arrows. <br>
+                It looks like this: <img src="r12a_blog_files/clicktopanel.png" alt="with the two arrows" style="height: 2em; width: 2em;"> or this <img src="r12a_blog_files/clicktocparea.png" alt="with the two arrows" style="height: 2em; width: 2em;">.</li>
+<li>Title text has been provided for all controls, describing briefly 
+what that control does. You can see this information by hovering over 
+the control with the mouse.</li>
+</ul>
+<p>Many of these changes were introduced to make it a little easier for newcomers to get to grips with UniView.</p>
+<p>There were also some feature changes:</p>
+<ul>
+<li>The ‘Codepoints’ control was converted to accept text as well as 
+code points and  renamed ‘Characters’.  By default the control expect 
+hex code point values, but this can be switched using the radio buttons.
+ For text, you would usually use the ‘Copy &amp; Paste’ control, but if 
+you want to check out some characters without disturbing the contents of
+ that control, you can now do so by setting the ‘Character’ radio button
+ on the ‘Characters’ control.</li>
+<li>The control to look up characters in the Unihan database <img src="r12a_blog_files/han.gif" alt="the icon that looks like a Japanese character">
+ was fixed, but also extended to handle multiple characters at a time, 
+opening a separate window for each character. (UniView warns you if you 
+try to open more than 5 windows.)</li>
+<li>The control to send characters to the Unicode Conversion tool <img src="r12a_blog_files/convert.png" alt="the icon with overlapping boxes">
+ was fixed and now puts the character content of the  field in the green
+ box of the Converter Tool. If you need to convert hex or decimal code 
+point  values, do that in the converter.</li>
+<li>The Show Age feature now works with lists, not just tables.</li>
+</ul>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20110226">
+				<!--p class="post-date">Sat 26 Feb 2011</p-->
+<div class="post-info">
+	<h2 class="post-title">Small update to Unicode Converter tool (v7.04)</h2>
+	<p class="entrymeta">Posted on Sat 26 Feb 2011 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=web">web</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>It has always been possible to pass a string to <a href="http://rishida.net/tools/conversion/">the converter</a> in the URI, but that was never documented.</p>
+<p>Now it is, and you can pass a string using the q parameter.  For example, <a href="http://rishida.net/tools/conversion/?q=Cr%C3%AApes">http://rishida.net/tools/conversion/?q=Crêpes</a>.
+ You can also pass a string with escapes in it, but you will need to be 
+especially careful to percent escape characters such as &amp;, + and # 
+which affect the URI syntax. For example, <a href="http://rishida.net/tools/conversion/?q=CrU%2B00EApes">http://rishida.net/tools/conversion/?q=CrU%2B00EApes</a>.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20101231">
+				<!--p class="post-date">Fri 31 Dec 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">IPA picker v11.1, with keyboard layout</h2>
+	<p class="entrymeta">Posted on Fri 31 Dec 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=ipa">ipa</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/ipa/?view=keyboard">&gt;&gt; Use it</a></p>
+<p>Inspired by some comments on John Well’s blog, I decided to add a 
+keyboard layout to the IPA picker today.  It follows the layout of Mark 
+Huckvale’s <a href="http://www.phon.ucl.ac.uk/resource/phonetics/">Unicode Phonetic Keyboard</a> (UCL) v1.01.  </p>
+<p>I can’t say I understand why many of the characters are allocated to 
+the keys they are, but I figured that if John Wells uses this keyboard 
+it would be probably worth using its layout.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20101009">
+				<!--p class="post-date">Sat 9 Oct 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">New picker: Mongolian</h2>
+	<p class="entrymeta">Posted on Sat 9 Oct 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=mongolian">mongolian</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p class="floatright"><a href="http://rishida.net/blog/images/mongolianpicker.png"><img src="r12a_blog_files/mongolianpicker-small.png" alt="Picture of the page in action."></a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/mongolian/">&gt;&gt; Use it</a></p>
+<p>This picker contains characters from the Unicode Mongolian block 
+needed for writing the Mongolian language. It doesn’t include Sibe, Todo
+ or Manchu characters. Mongolian is a complex script, and I am still 
+familiarising myself with it. This is an initial trial version of a 
+Mongolian picker, and as people use it and raise feedback I may need to 
+make changes.</p>
+<p><strong>About the tool:</strong> Pickers allow you to quickly create 
+phrases in a script by clicking on Unicode characters arranged in a way 
+that aids their identification. Pickers are likely to be most useful if 
+you don’t know a script well enough to use the native keyboard. The 
+arrangement of characters also makes it much more usable than a regular 
+character map utility.</p>
+<p><strong>About this picker:</strong> The output area for this picker 
+is set up for vertical text. However, only Internet Explorer currently 
+supports vertical text display, and only IE8 supports Mongolian’s 
+left-to-right column progression. In addition, it seems that IE doesn’t 
+support ltr columns in textarea elements. The bottom line is that, 
+although the output area is the right shape and position for vertical 
+text, mostly the output will be horizontal. You will see vertical text 
+in IE, but the column positions will look wrong. Nevertheless, in any of
+ these cases, when you cut and paste text into another document, the 
+characters will still be correctly ordered.</p>
+<p>Consonants are to the left, and in the order listed in the Wikipedia 
+article about Mongolian text. To their right are vowels, then 
+punctuation, spaces and control characters, and number digits. The 
+variation selectors are positioned just below the consonants.</p>
+<p>As you mouse over the letters, the various combining forms appear in a
+ column to the far left. This is to help identify characters, for those 
+less familiar with the alphabet.</p>
+</div>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100924">
+				<!--p class="post-date">Fri 24 Sep 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">What’s so difficult about jukugo ruby?</h2>
+	<p class="entrymeta">Posted on Fri 24 Sep 2010 tagged as <a href="blog/?tag=layout">layout</a>, <a href="blog/?tag=docs">docs</a>, <a href="blog/?tag=japanese">japanese</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>In this post I’m hoping to make clearer some of the concepts and 
+issues surrounding jukugo ruby. If you don’t know what ruby is, see the 
+article <a href="http://www.w3.org/International/questions/qa-ruby">Ruby</a> for a very quick introduction, or see <a href="http://www.w3.org/International/articles/ruby/">Ruby Markup and Styling</a> for a slightly longer introduction to how it was expected to work in XHTML and CSS.</p>
+<p>You can find an explanation of jukugo ruby in Requirements for Japanese Text Layout, sections <a href="http://www.w3.org/TR/2009/NOTE-jlreq-20090604/#en-subheading2_3">3.3 Ruby and Emphasis Dots</a> and <a href="http://www.w3.org/TR/2009/NOTE-jlreq-20090604/#en-app6">Appendix F Positioning of Jukugo-ruby</a> (you need to read both).</p>
+<h3>What is jukugo ruby?</h3>
+<p><dfn>Jukugo</dfn> refers to a Japanese compound noun, ie. a word made
+ up of more than one kanji character. We are going to be talking here 
+about how to mark up these jukugo words with ruby.</p>
+<p>There are three types of ruby behaviour. </p>
+<p><dfn>Mono ruby</dfn> is commonly used for phonetic annotation of 
+text. In mono-ruby all the ruby text for a given character is positioned
+ alongside a single base character, and doesn’t overlap adjacent base 
+characters. Jukugo are often marked up using a mono-ruby approach. You 
+can break a word that uses mono ruby at any point, and the ruby text 
+just stays with the base character.</p>
+<p><dfn>Group ruby</dfn> is often used where phonetic annotations don’t 
+map to discreet base characters, or for semantic glosses that span the 
+whole base text. You can’t split text that is annotated with group ruby.
+ It has to wrap a single unit onto the next line.</p>
+<p><dfn>Jukugo ruby</dfn> is a term that is used not to describe ruby 
+annotations over jukugo text, but rather to describe ruby with a 
+slightly different behaviour than mono or group ruby. Jukugo ruby 
+behaves like mono ruby, in that there is a strong association between 
+ruby text and individual base characters. This becomes clear when you 
+split a word at the end of a line: you’ll see that the ruby text is 
+split so that the ruby annotating a specific base character stays with 
+that character.  What’s different about jukugo ruby is that when the 
+word is NOT split at the end of the line, there can be some significant 
+amount of overlap of ruby text with adjacent base characters.</p>
+<p><img style="float:right; margin-left: 20px; margin-bottom: 20px;" src="r12a_blog_files/img2_3_4.png" alt="Example of ruby text."></p>
+<p>The image to the right shows three examples of ruby annotating jukugo words. </p>
+<p>In the top two examples, mono ruby can be used to produce the desired
+ effect, since neither of the base characters are overlapped by ruby 
+text that doesn’t relate to that character.</p>
+<p>The third example is where we see the difference that is referred to as <span class="qterm">jukugo ruby</span>.
+  The first three ruby characters are associated with the first kanji 
+character. Just the last ruby character is associated with the second 
+kanji character. And yet the ruby text has been arranged evenly across 
+both kanji characters.</p>
+<p>Note, however, that we aren’t simply spreading the ruby over the 
+whole word, as we would with group ruby.  There are rules that apply, 
+and in some cases gaps will appear.  See the following examples of 
+distribution of ruby text over jukugo words.</p>
+<p><img src="r12a_blog_files/img_a6_3.png" style="margin:auto;" alt="Various examples of jukugo ruby."></p>
+<p>In the next part of this post I will look at some of the problems encountered when trying to use HTML and CSS for jukugo ruby.</p>
+<p><small>If you want to discuss this or contribute thoughts, please do 
+so on the public-i18n-cjk@w3.org list.  You can see the archive and 
+subscribe at <a href="http://lists.w3.org/Archives/Public/public-i18n-cjk/">http://lists.w3.org/Archives/Public/public-i18n-cjk/</a></small></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100822">
+				<!--p class="post-date">Sun 22 Aug 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">String analyser and conversion apps updated</h2>
+	<p class="entrymeta">Posted on Sun 22 Aug 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=converter">converter</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>Analyser: <a href="http://rishida.net/tools/analysestring/">http://rishida.net/tools/analysestring/</a></p>
+<p>Converter: <a href="http://rishida.net/tools/conversion/">http://rishida.net/tools/conversion/</a></p>
+<p>The <b class"noticeme">string analyser tool</b> provides 
+information about the characters in a string. One difference in this 
+version is a new section “Data input as graphics”, where you see a 
+horizontal sequence of graphics for each of the characters in the string
+ you are analysing. This can be useful to get a screen snap of the 
+characters.  Of course, there is no combining or ligaturing behaviour 
+involved – just a graphic per character.</p>
+<p>You can reverse the character order for right-to-left scripts.</p>
+<p>Another difference is that you can explode example text in the notes.  Take <a href="http://rishida.net/tools/analysestring/index.php?list=%D8%A2">this example</a>:
+ if you click on the Arabic word for Koran (red word near the bottom of 
+the notes), you’ll see a pop-up window in the bottom right corner of the
+ window that lists the characters in that word.</p>
+<p>The other change is that the former “Related links” section in the 
+sidebar is now called “Do more”, and the links carry the string you are 
+analysing to the Converter or UniView apps.</p>
+<p>Oh, and the page now remembers the options you set between refreshes, which makes life much easier.</p>
+<p>The <b class="noticeme">converter</b> tool converts between 
+characters and various escaped character formats.  It was changed so 
+that the “View names” button sends the characters to the string analyser
+ tool.  This means that you’ll now see graphics for the characters, and 
+that, once on the string analyser page, you can change the amount of 
+information displayed for each character (including showing font-based 
+characters, if you need to).</p>
+<p>I also fixed a bug related to the UTF-8 and UTF-16 input.  Including spaces after the code values no longer fires off a bug.</p>
+<p><i class="footnote">PS: The string analyser tool has graphics for all
+ new Unicode 6.0 characters, however I haven’t updated the data for 
+those characters yet.  I was planning to do so with the next release of 
+UniView, which should be in October, when the final Unicode database is 
+available.</i></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100816">
+				<!--p class="post-date">Mon 16 Aug 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">An Introduction to Indic Scripts updated</h2>
+	<p class="entrymeta">Posted on Mon 16 Aug 2010 tagged as  <a href="blog/?tag=scripts">scripts</a>, <a href="blog/?tag=indic">indic</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p><a href="http://rishida.net/scripts/indic-overview/">http://rishida.net/scripts/indic-overview/</a></p>
+<p>I finally got around to refreshing this article, by converting the 
+Bengali, Malayalam and Oriya examples to Unicode text. Back when I first
+ wrote the article, it was hard to find fonts for those scripts.</p>
+<p>I also added a new feature: In the HTML version, click on any of the 
+examples in indic text and a pop-up appears at the bottom right of the 
+page, showing which characters the example is composed of.  The pop-up 
+lists the characters in order, with Unicode names, and shows the 
+characters themselves as graphics.</p>
+<p>I have not yet updated this article’s incarnation as <a href="http://www.unicode.org/notes/tn10/">Unicode Technical Note #10</a>.  The Indian Government also used this article, and made a number of small changes.  I have yet to incorporate those, too.</p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100804">
+				<!--p class="post-date">Wed 4 Aug 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">What does it take to display non-Latin HTML pages?</h2>
+	<p class="entrymeta">Posted on Wed 4 Aug 2010 tagged as <a href="blog/?tag=layout">layout</a>, <a href="blog/?tag=docs">docs</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<p>I recently came across an email thread where people were trying to 
+understand why they couldn’t see Indian content on their mobile phones. 
+ Here are some notes that may help to clarify the situation.  They are 
+not fully developed! Just rough jottings, but they may be of use.</p>
+<p>Let’s assume, for the sake of an example, that the goal is to display
+ a page in Hindi, which is written using the devanagari script. These 
+principles, however, apply to one degree or another to all languages 
+that use characters outside the ASCII range.</p>
+<p>Let’s start by reviewing some fundamental concepts: character 
+encodings and fonts.  If you are familiar with these concepts, skip to 
+the next heading.</p>
+<h4>Character encodings and fonts</h4>
+<p>Content is composed of a sequence of <em>characters</em>. Characters 
+represent letters of the alphabet, punctuation, etc. But content is 
+stored in a computer as a sequence of bytes, which are numeric values. 
+Sometimes more than one byte is used to represent a single character. 
+Like codes used in espionage, the way that the sequence of bytes is 
+converted to characters depends on what <em>key</em> was used to encode the text. In this context, that key is called a <em>character encoding</em>.</p>
+<p>There are many character encodings to choose from.</p>
+<p>The person who created the content of the page you want to read 
+should have used a character encoding that supports devanagari 
+characters, but it should also be a character encoding that is widely 
+recognised by browsers and available in editors. By far the best 
+character encoding to use (for any language in the world) is called 
+UTF-8.  </p>
+<p>UTF-8 is strongly recommended by the HTML5 draft specification.</p>
+<p>There should be a <em>character encoding declaration</em> associated 
+with the HTML code of your page to say what encoding was used.  
+Otherwise the browser may not interpret the bytes correctly. It is also 
+crucial that the text is actually <em>stored</em> in that encoding too. 
+ That means that the person creating the content must choose that 
+encoding when they save the page from their editor.  It’s not possible 
+to change the encoding of text simply by changing the character encoding
+ declaration in the HTML code, because the declaration is there just to 
+indicate to the browser what key to use to get at the already encoded 
+text.</p>
+<p>It’s one thing for the browser to know how to interpret the bytes to 
+represent your text, but the browser must also have a way to make those 
+characters stored in memory appear on the screen.</p>
+<p>A font is essential here. Fonts contain instructions for displaying a
+ character or a sequence of characters so that you can read them.  The 
+visual representation of a character is called a glyph. The font 
+converts characters to glyphs. </p>
+<p>The font has tables to map the bytes in memory to text. To do this, 
+the font needs to recognise the character encoding your page uses, and 
+have the necessary tables to convert the characters to glyphs.  It is 
+important that the font used can work with the character encoding used 
+in the page you want to view.  Most fonts these days support UTF-8 
+encoded text.</p>
+<p>Very simple fonts contain one glyph for each letter of the alphabet. 
+ This may work for English, but it wouldn’t work for a complex script 
+such as devanagari.  In these scripts the positioning and interaction of
+ characters has to be modified according to the context in which they 
+are displayed.  This means that the font needs additional information 
+about how to choose and postion glyphs depending on the context.  That 
+information may be built into the font itself, or the font may rely on 
+information on your system.</p>
+<h4>Character encoding support</h4>
+<p>The browser needs to be able to recognise the character encoding used
+ in order to correctly interpret the mapping between bytes and 
+characters.</p>
+<p>If the character encoding of the page is incorrectly declared, or not
+ declared at all, there will be problems viewing the content. Typically,
+ a browser allows the user to manually apply a particular encoding by 
+selecting the encoding from the menu bar.</p>
+<p>All browsers should support the UTF-8 character encoding.  </p>
+<p>Sometimes people use an encoding that is not designed for devanagari 
+support with a font that produces the right glyphs nevertheless.  Such 
+approaches are fraught with issues and present poor interoperability on 
+several levels. For example, the content can only be interpreted 
+correctly by applying the specifically designed font; no other font will
+ do if that font is not available. Also, the meaning of the text cannot 
+be derived by machine processing, for web searches, etc., and the data 
+cannot be easily copied or merged with other text (eg. to quote a 
+sentence in another article that doesn’t use the same encoding). This 
+practise seriously damages the openness of the Web and should be avoided
+ at all costs.</p>
+<h4>System font support</h4>
+<p>Usually, a web page will rely on the operating system to provide a 
+devanagari font.  If there isn’t one, users won’t be able to see the 
+Hindi text.  The browser doesn’t supply the font, it picks it up from 
+whatever platform the browser is running on.</p>
+<p>If browser is running on a desktop computer, there may be a font 
+already installed. If not, it should be possible to download free or 
+commercial fonts and install them. If the user is viewing the page on a 
+mobile device, it may currently be difficult to download and install 
+one.</p>
+<p>If there are several devanagari fonts on a system, the browser will 
+usually pick one by default.  However, if the web page uses CSS to apply
+ styling to the page, the CSS code may specify one or more particular 
+fonts to use for a given piece of content. If none of these are 
+available on the system, most browsers will fall back to the default, 
+however Internet Explorer will show square boxes instead.</p>
+<h4>Webfonts</h4>
+<p>Another way of getting a font onto the user’s system is to download 
+it with the page, just like images are downloaded with the page.  This 
+is done using CSS code. The CSS code to do this has been defined for 
+some years, but unfortunately most browsers  implementation of this 
+feature is still problematic.</p>
+<p>Recently a number of major browsers have begun to support download of
+ raw truetype or opentype fonts. Internet Explorer is not one of those. 
+This involves simply loading the ordinary font onto a server and 
+downloading to the browser when the page is displayed. Although the font
+ may be cached as the user moves from page to page, there may still be 
+some significant issues when dealing with complex scripts or Far Eastern
+ languages (such as Chinese, Japanese and Korean) due to the size of the
+ fonts used. The size of these fonts can often be counted in megabytes 
+rather than kilobytes.</p>
+<p>It is important to observe licencing restrictions when making fonts 
+available for download in this way. The CSS mechanism doesn’t contain 
+any restrictions related to font licences, but there are ways of 
+preparing fonts for download that take into consideration some aspects 
+of this issue – though not enough to provide a watertight restriction on
+ font usage. </p>
+<p>Microsoft makes available a program to create .eot fonts from 
+ordinary true/opentype fonts. Eot font files can apply some usage 
+restrictions and also subset the font to include only the characters 
+used on the page.  The subsetting feature is useful when only a small 
+amount of text appears in a given font, but for a whole page in, say, 
+devanagari script it is of little use – particularly if the user is to 
+input text in forms.  The biggest problem with .eot files, however, is 
+that they are only supported by Internet Explorer, and there are no 
+plans to support .eot format on other browsers.</p>
+<p>The W3C is currently working on the WOFF format. Fonts converted to 
+WOFF format can have some gentle protection with regard to use, and also
+ apply significant compression to the font being downloaded.  WOFF is 
+currently only supported by Firefox, but all other major browsers are 
+expected to provide support for the new format.</p>
+<p>For this to work well, all browsers must support the same type of font download.</p>
+<h4>Beyond fonts</h4>
+<p>Complex scripts, such as those used for Indic and South East Asian 
+languages, need to choose glyph shapes and positions and substitute 
+ligatures, etc. according to the context in which characters are used. 
+These adjustments can be acoomplished using the features of OpenType 
+fonts.  The browser must be able to implement those opentype features.</p>
+<p>Often a font will also rely on operating system support for some 
+subset of the complex script rendering.  For example, a devanagari font 
+may rely on the Windows uniscribe dll for things like positioning of 
+left-appended vowel signs, rather than encoding that behaviour into the 
+font itself.  This reduces the size and complexity of the font, but 
+exposes a problem when using that font on a variety of platforms.  
+Unless the operating system can provide the same rendering support, the 
+text will look only partially correct. Mobile devices must either 
+provide something similar to uniscribe, or fonts used on the mobile 
+device must include all needed rendering features.</p>
+<p>Browsers that do font linking must also support the necessary 
+opentype features and obtain functionality from the OS rendering support
+ where needed.</p>
+<p>If tools are developed to subset webfonts, the subsetting must not 
+remove the rendering logic needed for correct display of the text.</p>
+<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-9089">
+			<cite><a href="http://bittersmann.de" rel="external nofollow" class="url">Gunnar Bittersmann</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9089" title="">August 5th, 2010 at 9:42 am</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9089">e</a></small>
+
+			<p>“By far the best character encoding to use (for any language in the world) is called UTF-8.”</p>
+<p>This is surely true for scripts using characters with codepoints below U+0800. However, a CJK character takes 3 bytes in UTF-8, but only 2 bytes in UTF-16, so UTF-8 might not always be the best option for _any_ language.</p>
+<p>Of course, the context here is Web pages, where the markup syntax adds Basic Latin characters (1 byte in UTF-8, 2 bytes in UTF-16). This shifts the balance even for pages in Far Eastern languages towards UTF-8.</p>
+<p>BTW, there’s a typo: acoomplished</p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-9092">
+			<cite><a href="http://webfoundation.org/" rel="external nofollow" class="url">Steve Bratt</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9092" title="">August 5th, 2010 at 7:18 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9092">e</a></small>
+
+			<p>Richard …</p>
+<p>A very helpful summary of the complex language support ecosystem.  The Web Foundation is interested in raising awareness of these challenges, and doing what we can to make it easier for more people to author and read in more languages.</p>
+<p>Have you found any good references that summarize the challenges faced by, say, the worlds 500 (or whatever) most spoken or most read languages?</p>
+<p>I look forward to working with you on these issues.</p>
+<p>Steve</p>
+
+		</li>
+
+	
+	
+		<li class="alt" id="comment-9093">
+			<cite><a href="http://rishida.net/" rel="external nofollow" class="url">r12a</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9093" title="">August 5th, 2010 at 7:29 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9093">e</a></small>
+
+			<p>@Steve, I don’t know of a single, comprehensive source that describes the technical issues on the ground, such as what is/isn’t supported by what platform, though it would certainly be interesting to work on such a thing.</p>
+<p>Some information can be gleaned from Don Osborne’s new book “African Languages in a Digital Age” and the reports by the PAN Localization project in Asia.</p>
+<p>However, for a pretty good overview of the basic features of the main scripts in use around the world (which is a good starting point), come and see my tutorial at the Unicode Conference in October, or read the online text at <a href="http://rishida.net/docs/unicode-tutorial/" rel="nofollow">http://rishida.net/docs/unicode-tutorial/</a></p>
+
+		</li>
+
+	
+	
+		<li class="" id="comment-9302">
+			<cite><a href="http://rishida.net/" rel="external nofollow" class="url">r12a</a></cite> Says:
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-9302" title="">March 7th, 2011 at 5:26 pm</a> <a class="comment-edit-link" href="http://rishida.net/blog/wp-admin/comment.php?action=editcomment&amp;c=9302">e</a></small>
+
+			<p>Along those lines, people may be interested in my quick and dirty, rule-of-thumb guide to Script Features by Language at <a href="http://rishida.net/scripts/featurelist/" rel="nofollow">http://rishida.net/scripts/featurelist/</a></p>
+
+		</li>
+
+	
+	
+	</ol>	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100523">
+				<!--p class="post-date">Sun 23 May 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">New picker: Lisu (Fraser script)</h2>
+	<p class="entrymeta">Posted on Sun 23 May 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=lisu">lisu</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p class="floatright"><a href="http://rishida.net/blog/images/lisupicker10.png"><img src="r12a_blog_files/lisupicker10-small.png" alt="Picture of the page in action."></a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/lisu/">&gt;&gt; Use it</a></p>
+<p>In 1992 the Chinese government recognised the Fraser alphabet as the 
+official script for the Lisu language and has encouraged its use since 
+then. There are 630,000 Lisu people in China, mainly in the regions of 
+Nujiang, Diqing, Lijiang, Dehong, Baoshan, Kunming and Chuxiong in the 
+Yunnan Province. Another 350,000 Lisu live in Myanmar, Thailand and 
+India. Other user communities are mostly Christians from the Dulong, the
+ Nu and the Bai nationalities in China.</p>
+<p><strong>About the tool:</strong> Pickers allow you to quickly create 
+phrases in a script by clicking on Unicode characters arranged in a way 
+that aids their identification. Pickers are likely to be most useful if 
+you don’t know a script well enough to use the native keyboard. The 
+arrangement of characters also makes it much more usable than a regular 
+character map utility.</p>
+<p><strong>Latest changes:</strong> This picker is new. The default view
+ was modified from an original proposal by Benjamin Lee, and is likely 
+to be more useful to people who are somewhat familiar with the alphabet 
+and characters of Lisu. Characters are arranged to simplify entry, with 
+consonants to the left, vowels to their right, and tone marks to their 
+right.</p>
+<p>There is also a keyboard view.  Many of the positions of characters 
+are based on keyboard layouts I have seen. Those keyboards, however, 
+tended to use some ASCII characters for punctuation, when the Unicode 
+Standard recommends other characters (in particular, MODIFIER LETTER LOW
+ MACRON and MODIFIER LETTER APOSTROPHE) or omit some punctuation 
+characters mentioned in the Unicode Standard. The current version of 
+this keyboard, therefore adds some extra characters.</p>
+<p>The layout is adequate, given that pickers assume availability of a 
+QWERTY keyboard, however if a real standardised keyboard layout is to be
+ made, it should involve some further changes. For example, people 
+wanting to use syntax characters such as comma, period, semi-colon, 
+single quote, etc, while writing the text in Lisu will need direct 
+access to those characters. They are missing from this layout.</p>
+</div>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100518">
+				<!--p class="post-date">Tue 18 May 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">UniView lite available and an update to the full version</h2>
+	<p class="entrymeta">Posted on Tue 18 May 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=uniview">uniview</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p class="floatright"><a href="http://rishida.net/blog/images/univiewlite-large.jpg"><img src="r12a_blog_files/univiewlite-small.jpg" alt="Picture of the page in action."></a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/lite">&gt;&gt; Use UniView lite</a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use UniView</a></p>
+<p><strong>About the tool:</strong> Look up and see characters (using 
+graphics or fonts) and property information, view whole character blocks
+ or custom ranges, select characters to paste into your document, paste 
+in and discover unknown characters, search for characters, do 
+hex/dec/ncr conversions, highlight character types, etc. etc. Supports 
+Unicode 5.2 and written with Web Standards to work on a variety of 
+browsers. No need to install anything.</p>
+<p><strong>Latest changes:</strong> The major change in this update is 
+the addition of an alternative UniView lite interface for the tool that 
+makes it easier to use UniView in restricted screen sizes, such as on 
+mobile devices. The lite interface offers a subset of the functionality 
+provided in the full version, rearranges the user interface and sets up 
+some different defaults (eg. list view is the default, rather than the 
+matrix view). However, the underlying code is the same – only the 
+initial markup and the CSS are different.</p>
+<p>Another significant change is that when you click on a character in a
+ list or matrix that character is either added to the text area or 
+detailed information for that character is displayed, but not now both 
+at the same time. You switch between the two possibilities by clicking 
+on the <img src="r12a_blog_files/pickeroff-long.png" title="Toggle to copy characters to the character area or not"> icon. When the background is white (default) details are shown for the character. When the background is orange <img src="r12a_blog_files/pickeron-long.png" title="Toggle to copy characters to the character area or not"> the character will be added to the text area (like a character map or picker).</p>
+<p>Information from my character database is now shown by default when 
+you are shown detailed information for a character. The switch to 
+disable this has been moved to the <span class="onscreen">Options</span> panel.</p>
+<p style="">Text highlighted in red in information from the character 
+database contains examples. In case you don’t have a font for viewing 
+such examples, or in case you just want to better understand the 
+component characters, you can now click on these and the component 
+characters will be listed in a new window (using the <a href="http://rishida.net/rishida/tools/analysestring/">String Analyzer</a> tool).</p>
+<p>Access to <span class="onscreen">Settings</span> panel has been moved slightly downwards and renamed <span class="onscreen">Options</span> in the full version.</p>
+<p>The default order for items in lists is now 
+&lt;character&gt;&lt;codepoint&gt;&lt;name&gt;, rather than the previous
+ &lt;codepoint&gt;&lt;character&gt;&lt;name&gt;. This can still be 
+changed in the <span class="onscreen">Options</span> panel, or by setting query parameters.</p>
+<p>I changed the <span class="onscreen">Next</span> and <span class="onscreen">Previous</span>
+ functions in the character detail pane so that it moves one codepoint 
+at a time through the Unicode encoding space. The controls are now 
+buttons rather than images.</p>
+</div>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100308">
+				<!--p class="post-date">Mon 8 Mar 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">Tibetan picker updated</h2>
+	<p class="entrymeta">Posted on Mon 8 Mar 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=tibetan">tibetan</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p><strong>About the tool:</strong> Pickers allow you to quickly create 
+phrases in a script by clicking on Unicode characters arranged in a way 
+that aids their identification. Pickers are likely to be most useful if 
+you don’t know a script well enough to use the native keyboard. The 
+arrangement of characters also makes it much more useable than a regular
+ character map utility.</p>
+<p><strong>Latest changes:</strong> This picker has been upgraded to use
+ the version 10 look and feel, and incorporate new characters from 
+Unicode version 5.2. Characters whose use is discouraged in Unicode have
+ been moved to the advanced section – similar looking images in the main
+ section put multiple characters into the output, as per NFC 
+normalization.</p>
+</div>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/tibetan/">&gt;&gt; Use it</a></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100222">
+				<!--p class="post-date">Mon 22 Feb 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">Arabic block and Ethiopic pickers updated</h2>
+	<p class="entrymeta">Posted on Mon 22 Feb 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=arabic">arabic</a>, <a href="blog/?tag=ethiopic">ethiopic</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p><strong>About the tool:</strong> Pickers allow you to quickly create 
+phrases in a script by clicking on Unicode characters arranged in a way 
+that aids their identification. Pickers are likely to be most useful if 
+you don’t know a script well enough to use the native keyboard. The 
+arrangement of characters also makes it much more useable than a regular
+ character map utility.</p>
+<p><strong>Latest changes:</strong> Both pickers have been upgraded to use the version 10 look and feel.</p>
+<p>The Arabic block picker now includes the latest characters added to 
+the Arabic and Arabic Supplement blocks in Unicode 5.1. Characters are 
+displayed using the shape view of version 10 pickers.  This saves a lot 
+of space on-screen.</p>
+<p>The Ethiopic picker was also updated to include more recent 
+characters from the Unicode Ethiopic block (added in version 4.1), and 
+the layout was improved to make it easier to locate a character. It 
+still covers only the basic Ethiopic block.
+</p></div>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/arabic-block/">&gt;&gt; Use the Arabic Block picker</a></p>
+<p style="font-size: 150%"><a href="http://rishida.net/scripts/pickers/ethiopic/">&gt;&gt; Use the Ethiopic picker</a></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+						<div class="post" id="20100209">
+				<!--p class="post-date">Tue 9 Feb 2010</p-->
+<div class="post-info">
+	<h2 class="post-title">IPA picker updated: labiodental flap &amp; prosodic markers</h2>
+	<p class="entrymeta">Posted on Tue 9 Feb 2010 tagged as <a href="blog/?tag=apps">apps</a>, <a href="blog/?tag=pickers">pickers</a>, <a href="blog/?tag=ipa">ipa</a> &nbsp; </p>
+	</div>
+<div class="post-content">
+	<div>
+<p class="floatright"><img src="r12a_blog_files/prosodic-characters.png" alt="The new characters."></p>
+<p><strong>About the tool:</strong> Pickers allow you to quickly create 
+phrases in a script by clicking on Unicode characters arranged in a way 
+that aids their identification. Pickers are likely to be most useful if 
+you don’t know a script well enough to use the native keyboard. The 
+arrangement of characters also makes it much more useable than a regular
+ character map utility</p>
+<p><strong>Latest changes:</strong> I recently added U+2C71   LATIN 
+SMALL LETTER V WITH RIGHT HOOK (labiodental tap or flap) to the IPA 
+picker.  This was in the IPA chart for a long time, but was only added 
+to Unicode in version 5.1.</p>
+<p>Today I also added, at the request of Dan McCloy, four prosodic 
+markers: prosodic phrase, prosodic word, syllable and mora (see the 
+second line of the picture).</p>
+<p>Regular users will also notice that I recently upgraded the picker chrome to version 10, too.
+</p></div>
+<p style="float:left; font-size: 150%"><a href="http://rishida.net/scripts/pickers/ipa/">&gt;&gt; Use it</a></p>
+<p><br clear="all"></p>
+	<div class="post-info">
+													
+		</div>
+	<div class="post-footer"></div>
+	</div>							</div>
+      <p class="pagelinks"><a href="200901">More<br/>🠿</a></p>
+	</div>
+
+
+
+	
+<p id="footer">Copyright © 2009 Richard Ishida.</p></div>
+</div>
+
+</body></html>

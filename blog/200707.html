@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>r12a &gt;&gt; blog</title>
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/docs.css">
+<link rel="stylesheet" type="text/css" href="r12a_blog_files/style.css">
+<script src="functions.js"></script>
+</head>
+
+<body onLoad="setTagList()">
+<div id="rap">
+  <div id="header">
+    <div id="dotted-line">&nbsp;</div>
+    <h1><a href="http://r12a.github.io/">r12a</a> &gt;&gt; blog</h1>
+    <div id="sitelinks" class="noprint" style="margin-left: 6.5%;"> <span> <a href="/blog/?" title="Blog home page">blog</a>&nbsp; <a href="http://r12a.github.io/doclist" title="Papers, articles, notes, etc">docs</a>&nbsp; <a href="http://r12a.github.io/maplist" title="History notes in SVG map form">maps</a>&nbsp; <a href="http://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; <a href="http://r12a.github.io/photos" title="Photos and video clips">photos</a>&nbsp;&nbsp;</span> </div>
+  </div>
+  <div id="main">
+    <div id="sidebar">
+      <div id="topright"><img alt="Dochula Pass, Bhutan" title="Dochula Pass, Bhutan" src="r12a_blog_files/top-right.jpg" style="border-radius: 5px;"></div>
+      <p class="pagelinks"><a href="200801">&nbsp;🠽&nbsp;</a><br/>
+        page<br/>
+        <a href="200610">&nbsp;🠿&nbsp;</a></p>
+      <h2>General tags</h2>
+      <ul id="generalTags">
+      </ul>
+      <h2>App tags</h2>
+      <ul id="appTags">
+      </ul>
+      <h2>Script tags</h2>
+      <ul id="scriptTags">
+      </ul>
+    </div>
+    <div id="content">
+      <div class="post" id="20080104c"> 
+        <!--p class="post-date">Fri 4 Jan 2008</p-->
+        <div class="post-info">
+          <h2 class="post-title">Picker format updated</h2>
+          <p class="entrymeta">Posted on Fri 4 Jan 2008 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=pickers"> pickers </a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I’ve been wanting to improve the editing behaviour of <a href="http://rishida.net/scripts/pickers/">my pickers</a> for quite some time, so that users could interact more easily with the 
+            keyboard, and insert characters into the middle of a composition, not 
+            just at the end. In fact, the output area maintains the focus all the 
+            time, now – which makes a major improvement to the usability of the 
+            pickers.</p>
+          <p>This week I made those things happen, and created a new template with some other changes, too.</p>
+          <p>An updated Bengali picker is first out of the box, but look out for a
+            brand new Urdu-specific picker to follow close on its heels.  I will 
+            retrofit the new template to other pickers as time allows, or need 
+            dictates.</p>
+          <p>I also beefed up the font selection list with a large number of TT 
+            and OT fonts, and improved the reference material at the bottom.</p>
+          <p>I improved the mechanism that highlights similar characters, to give 
+            more fine-grained control to the associations between characters.</p>
+          <p>I also added a field just under the title that gives information 
+            about the character the user is mousing over, and added a search field 
+            to help users find characters for which they know the Unicode name or 
+            number.  I plan to extend the information associated with characters in 
+            future to include native names (eg. e-kar) and other useful search info.</p>
+          <p>I also changed the scripting and HTML so that a single click can now 
+            produce multiple characters in the composition field.  This will allow 
+            users to input ligatures like the indic ‘ksha’ or Urdu aspirated 
+            consonants, or complex sequences tied to ligatures (like the word 
+            ‘Allah’) with a simple click.</p>
+          <p>Some things have also been removed.  There is no DEL button now, 
+            since you can interact more easily with the keyboard for that.  Spaces 
+            are available from the (now rationalised) character area, rather than a 
+            button. And there is no longer an option to switch between graphics and 
+            characters for the selection.  This is partly for simplicity, and partly
+            to make it easier to represent some of the slightly more complicated 
+            selection options I want to add in future – for example, specific shapes
+            are appropriate for Urdu arabic characters, and I don’t want to leave 
+            it to chance as to whether the user’s system has the right fonts to 
+            produce the desired shapes.</p>
+          <p>Getting to this actually required a huge amount of unseen work, since
+            I had to wrap all the images in button markup and move and change 
+            attributes, etc. so that the composition box retains the focus in IE (it
+            worked fine for Firefox, Opera and Safari).  I also, of course, made 
+            significant, but probably not noticeable, changes to the Javascript and 
+            CSS.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20071220"> 
+        <!--p class="post-date">Thu 20 Dec 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title"><a href="/blog/?p=129" rel="bookmark" title="Permanent Link: Negotiating the Iron Curtain">Negotiating the Iron Curtain</a></h2>
+          <p class="entrymeta">Posted on Thu 20 Dec 2007 tagged as <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I just read a <a href="http://ivanherman.wordpress.com/2007/12/20/schengen-non%e2%80%93borders/">post by Ivan Herman</a> about how Hungary has joined the Schengen Agreement, and will soon be 
+            removing border controls on the EU side.  That put me in mind of the 
+            first time I tried to pass through the Iron Curtain.</p>
+          <p>I was travelling from Vienna to Budapest (probably about 25 years ago) and I had decided to go through <a href="http://maps.google.com/maps?q=sopron">Sopron</a>,
+            rather than Hegyeshalom, so I could see something a little more off the
+            beaten track. This was a month-long InterRail trip, so I was able to 
+            follow my whim and jump on whatever train I wanted. The train 
+            connections worked, and I found myself heading south from Vienna.</p>
+          <p>Eventually, the train passed into Hungary and stopped. I needed a 
+            visa, so I got off with a bunch of other (Hungarian looking) people, and
+            traipsed over to a small outbuilding, where I found myself at the back 
+            of a queue of people jostling bags of various sizes and dressed and 
+            coiffed in what looked to me to be a very Eastern European fashion.  
+            Looking out of the window, everything was grey. I could see rail tracks 
+            and points and small, grey buildings but also several very tall towers 
+            with machine gun nests perched on top (quite large looking machine 
+            guns). The queue moved slowly, and I was surprised at one point to see 
+            my train pulling away and disappearing.  It seemed a bit odd (and I was 
+            glad I’d brought all my stuff with me), but I figured this was probably 
+            normal, and I’d just have to catch another train.</p>
+          <p>I finally arrived at the desk and asked for a visa. The guy behind 
+            the desk started talking to me in a somewhat animated fashion, but I had
+            no idea what he was saying. I hadn’t learned German yet, and Hungarian 
+            was completely incomprehensible to me.  I kept trying to explain, 
+            politely, in English, that I needed a visa.  Finally, he gave me an 
+            exasperated look and called someone out of a nearby room.  The guy who 
+            emerged was huge, bald and intimidatingly business-like. (Some time 
+            later I saw the film Midnight Express, and realised that the prison 
+            guard and he could have been the same person.) He shouted at me “Nicht 
+            visa!”.  And I tried to explain, in English, that, yes, I had no visa, 
+            but would like to obtain one, please. This didn’t appear to get across 
+            clearly, because he simply repeated “Nicht visa!!” several times, 
+            increasing in volume.</p>
+          <p>Finally, the tension broke and gave way to action.  He motioned for 
+            me to follow him out of the building, and we started walking away across
+            a couple of sets of railway tracks.  I noticed, feeling slightly less 
+            at ease but still hopeful, that I was flanked by a soldier with a gun on
+            either side. They weren’t exactly giving me encouraging looks, and as I
+            glanced up at the machine gun towers and at the surrounding barbed 
+            wire, I began to wish I knew what was happening.</p>
+          <p>Soon we arrived at the end of a short train. The very last carriage 
+            of this train looked like something you’d expect to see in a Wild West 
+            film.  It had a kind of standing area at each end with a railing, a door
+            into the carriage and steps leading down to the ground on either side. 
+            I was ushered up one set of steps and into what turned out to be an 
+            empty carriage. The door was shut behind me, and within a minute or so, 
+            as I remember it, the train started moving off, in the same direction my
+            earlier train had disappeared. So I wasn’t just being sent back across 
+            the border. </p>
+          <p>That last realisation started to trouble me a little, since I still 
+            had no visa and no idea what was happening.  It didn’t help that there 
+            was a small round window in the door at each end of the carriage, 
+            through which I could see  guards sitting on the steps at each corner, 
+            all holding machine guns at the ready.  As the towers slid away behind 
+            us, night started to fall.</p>
+          <p>Twenty five years has dulled the memory of some of what happened 
+            next, but eventually I got off at a small station, having reached the 
+            end of the line. The guards were gone, and the station turned out to be 
+            quite modern and clean looking. I still couldn’t understand anything 
+            anyone was saying, so I still had no idea where I was, but I was able 
+            figure out that I was somehow back in Austria.  It was much later that I
+            was to realise that Sopron is on a peninsular that sticks into Austria,
+            and I had come in one side and been sent out the other.</p>
+          <p>I slept that night on the floor of the main station building, and the
+            next morning set off to find someone who spoke English and could tell 
+            me where I was – and just as importantly how to get into Hungary.  The 
+            town was quite small, maybe just a village.  In spite of that it took me
+            a while, but I eventually came across a chap in a supermarket who was 
+            able to explain to me that visas are not issued on entry into Hungary by
+            train via Sopron.  I was ahead of him there.  He also offered to drive 
+            me to the border, telling me that I would be able to get a visa at the 
+            road entry point.</p>
+          <p>It’s nice to think about that person whenever I relive this story.  
+            He really went out of his way, leaving work to assist a complete 
+            stranger, with no fuss or thought for reward.  I wonder whether he 
+            remembers me.  I doubt it. Of course, these days he may even be reading 
+            this blog post…</p>
+          <p>So it was that, eventually, I got the stamp in my passport that I 
+            needed, and somehow found my way onto another train heading for 
+            Budapest.  Well, it wasn’t quite the end of the fun.  That continued 
+            when I tried to meet up with my father in the capital.  But that, as 
+            they say, is another story…</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20071129"> 
+        <!--p class="post-date">Thu 29 Nov 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">No break space issue in Firefox</h2>
+          <p class="entrymeta">Posted on Thu 29 Nov 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>Tim Greenwood just pointed out to me a ‘bug’ in my <a href="http://rishida.net/scripts/uniview/conversion.php?codepoints=00A0&amp;origin=codepoint">converter program</a>, which I think is actually, in my mind, a bug in Firefox (although I imagine it was implemented by someone as a feature).</p>
+          <p>If you type A0 (the hex code for a non-breaking space) in the 
+            Hexadecimal code points field, then press Convert, you will get a blank 
+            space in the Characters field that should be U+00A0 NO-BREAK SPACE.  
+            Then press Convert or View Names above this Characters field and you’ll 
+            find that what was supposed to be a NBSP has changed into an ordinary 
+            space.  IE7, Opera and Safari all continue to show the character in the 
+            field as a NBSP. </p>
+          <p>(However, all four browsers substitute an ordinary space when you 
+            copy and paste the text from the Characters field into something else.)</p>
+          <p>I tried this with <a href="http://rishida.net/scripts/uniview/?codepoints=2002%202003%202006%202008%202009%20200B">a range of other types of space</a> , but had no such behaviour (<a href="http://rishida.net/scripts/uniview/conversion.php?codepoints=2002%202003%202006%202008%202009%20200B&amp;origin=codepoint">try it</a>).  They all remained themselves. </p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20071119"> 
+        <!--p class="post-date">Mon 19 Nov 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Myanmar is changing!</h2>
+          <p class="entrymeta">Posted on Mon 19 Nov 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=scripts">scripts</a>, <a href="/blog/?tag=myanmar">myanmar</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><a href="http://people.w3.org/rishida/blog/images/mandalay.gif"><img src="r12a_blog_files/mandalay.gif" alt=" "></a><br>
+            <span class="caption">The word Mandalay in Myanmar script.</span></p>
+          <p>I’ve been brushing up on the Myanmar script, since major changes are on the way with Unicode 5.1. </p>
+          <p>I upgraded my <a href="http://rishida.net/scripts/pickers/myanmar/">myanmar picker</a> to handle the new characters, and I edited <a href="http://rishida.net/scripts/scriptnotes/myanmar/">my notes on how the script works</a>.</p>
+          <p>The new characters will make a big difference to how you author text 
+            in Unicode, and people will need to update currently existing pages to 
+            bring them in line with the new approach.  The changes should make it <em>much</em> easier to create content in Burmese, in addition to addressing some 
+            niggly problems with making the script work correctly.  One reason the 
+            changes were sanctioned is that there is currently very little Burmese 
+            content out there in Unicode.</p>
+          <p>I’ll be updating my <a href="http://rishida.net/scripts/scriptnotes/myanmar/mymrchars">character by character notes</a> later too.</p>
+          <p>The only problem with all this is that existing fonts will all need 
+            to be changed to support the new world order (or myanmar order).  I 
+            found one font that is already 5.1 ready from the <a href="http://www.myanmarnlp.net.mm/opentype.htm">Myanmar Unicode &amp; NLP Research Center</a>.  So if you don’t want to download that font, you’ll need to read the <a href="http://rishida.net/scripts/scriptnotes/myanmar/myanmar.pdf">PDF version</a> of my notes on the script. </p>
+          <p>That would be a pity, however, since i had some fun adding javascript
+            to the article today, so that it displays a breakdown, character by 
+            character, of each example as you mouse over it (using images, so you 
+            see it properly).</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20071028"> 
+        <!--p class="post-date">Sun 28 Oct 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Unicode Code Converter v6</h2>
+          <p class="entrymeta">Posted on Sun 28 Oct 2007 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=converter">converter</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/conversion.php">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/conversion6.gif"><img src="r12a_blog_files/conversion6-small.gif" alt="Picture of the page in action."></a></p>
+          <p>This web-based tool helps you convert between a number of Unicode escape and code formats.</p>
+          <p>Changes in the new version:</p>
+          <ul>
+            <li>Convert from JavaScript, Java and C escape notation, and to 
+              JavaScript/Java escapes (with switch to show C-style supplementary 
+              characters)</li>
+            <li>Convert to and from CSS escape notation</li>
+            <li>Convert from HTML/XML code with escapes to code with just characters</li>
+            <li>Convert &lt; &gt; ” or &amp; in HTML/XML code to entities</li>
+            <li>Option to show ASCII characters when converting to NCRs</li>
+            <li>View a set of characters in UniView by clicking on the View in UniView button</li>
+          </ul>
+          <p style="text-decoration:line-through;">For CSS output I chose the 
+            6-figure version with no optional space, since I thought it was 
+            clearest.  I’ve had a request to change it to the shortest form (4 or 6 
+            figures) followed by space.  If other people prefer that, I may change 
+            it.</p>
+          <p><strong>Update:</strong> Markus Scherer convinced me to change the 
+            CSS output. So rather than 6-figure escapes with no space, the output 
+            now contains 6-figure escapes followed by a space for supplementary 
+            characters, and 4-figure escapes followed by a space elsewhere.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20071014"> 
+        <!--p class="post-date">Sun 14 Oct 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView 5.0.0b (a second update)</h2>
+          <p class="entrymeta">Posted on Sun 14 Oct 2007 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 130%"><a href="http://rishida.net/scripts/uniview/help">&gt;&gt; See what it can do !</a></p>
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/uniview500b.gif"><img src="r12a_blog_files/uniview500b-small.gif" alt="Picture of the page in action."></a></p>
+          <p>I found a little more time to work on UniView while flying to the US 
+            for the I18n &amp; Unicode Conference yesterday, adding a bunch of 
+            additional useful features.</p>
+          <p>Changes include:</p>
+          <ul>
+            <li>Extended the ability to open UniView with data displayed from a URI.
+              In addition to specifying a block and a character, you can now specify a
+              range, a list of codepoints, a list of characters, or a search string. 
+              This is useful for pointing people to results using URIs in links or 
+              email.</li>
+            <li>Switching between graphics or fonts for display of characters now refreshes the right panel also.</li>
+            <li>Clicking on the information about the script group of a character 
+              displayed in the right panel will cause that block to be displayed in 
+              the left panel. This is particularly useful when you find a single 
+              character and want to know what’s around it.</li>
+            <li>Replaced the use of hyphens to specify block names in URI queries 
+              with underscores or %20. This may break some existing URIs, but fixes a 
+              bug that meant that block names that actually contain hyphens were not 
+              displaying.</li>
+            <li>Added an option to the right hand panel to display the current character in the Unicode Conversion tool.</li>
+            <li>Fixed some other bugs related to specifying Basic Latin block in a URI.</li>
+            <li>Reinstated CJK Unified Ideographics and Hangul Syllables in the 
+              block selection pull-down, but added a warning and opt out if the block 
+              you are about to display contains more than 2000 characters. Also added 
+              warning and opt out if you try to specify a range of over 2000 
+              characters.</li>
+          </ul>
+          <p>Please report any bugs to me, and don’t forget to refresh any UniView files in your cache before using the new version.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20071008"> 
+        <!--p class="post-date">Mon 8 Oct 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">UniView tool v5.0.0a</h2>
+          <p class="entrymeta">Posted on Mon 8 Oct 2007 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=uniview">uniview</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 130%"><a href="http://rishida.net/scripts/uniview/help">&gt;&gt; See what it can do !</a></p>
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/uniview500a.gif"><img src="r12a_blog_files/uniview500a-small.gif" alt="Picture of the page in action."></a></p>
+          <p>In little pockets of time recently I’ve been making some significant 
+            improvements to my UniView tool, the character map on steroids.</p>
+          <p>Changes include:</p>
+          <ul>
+            <li>Substantially revised the code so that handling of ideographic and 
+              hangul characters and other characters not in the Unidata database is 
+              much improved. For example, ideographs now display in the left panel for
+              a specified range and property values are available in the right panel.</li>
+            <li>Added regular expression support to the search input field.</li>
+            <li>Changes to the user interface: moved highlighting controls to the 
+              initial screens and move others, such as the chart numbering toggle, to 
+              the submenu under “Options”; provided wider input fields for codepoint 
+              and cut&amp;paste input; replaced the graphics and list toggle icons 
+              with checkboxes; provided an icon to quickly clear the contents of the 
+              codepoint and cut&amp;paste input fields. A link to the UniHan database 
+              was added alongside the Cut &amp; paste input field: when clicked, this 
+              icon looks up the first character in either field. A link to the UniHan 
+              database was also added to the right panel when a Unified CJK character 
+              is displayed there.</li>
+            <li>The Codepoint input field now accepts more than one codepoint (separated by spaces).</li>
+            <li>When you double-click on a character in the left panel the codepoint
+              is appended to the Codepoint input field as well as adding the 
+              character to the Cut &amp; paste field.</li>
+            <li>When you click in the checkbox Show as graphics the change is 
+              immediately applied to whatever is in the left panel. It no longer 
+              redisplays the range if you are looking at, say, a list of characters 
+              generated by the Codepoint input, but redisplays the same list.</li>
+            <li>Set the default font to “Arial Unicode MS, sans-serif”.</li>
+            <li>Added a message for those who do not have JavaScript turned on, and 
+              messages to please wait while data is being downloaded on initial 
+              startup.</li>
+            <li>Fixed the icons linking to the converter tool, so that the contents 
+              of the adjacent field are passed to the converter and converted 
+              automatically.</li>
+            <li>Added links in the right panel to FileFormat pages (in addition to 
+              decodeUnicode). The FileFormat pages provide useful information for Java
+              and .Net users about a given character.</li>
+            <li>Removed the option to specify your own character notes (I’m not 
+              aware that anyone ever did, since it hasn’t worked for a while now and 
+              no-one has complained). This is because AJAX technology will not allow 
+              an XML file to be included from another domain. When that is fixed I 
+              will reinstate it.</li>
+            <li>Fixed a number of other bugs, particularly related to supplementary character support and highlighting.</li>
+          </ul>
+          <p>Please report any bugs to me, and don’t forget to refresh any UniView files in your cache before using the new version.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20071004"> 
+        <!--p class="post-date">Thu 4 Oct 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Who needs vowels, anyway?</h2>
+          <p class="entrymeta">Posted on Thu 4 Oct 2007 tagged as <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I’m at the ITS face-to-face meeting in Prague, Czech Republic and 
+            I’ve been trying to learn to read Czech words.  Jirka Kosek showed me a 
+            Czech tongue-twister last night at dinner.</p>
+          <blockquote>
+            <p><span style="font-size: 200%">Strč prst skrz krk.</span></p>
+          </blockquote>
+          <p>How amazing is that?  A whole sentence without vowels! (Means “Put 
+            your finger down your throat.” – I’m wondering whether that has 
+            something to do with the missing vowels…)</p>
+          <p>See a <a href="http://rishida.net/photos/videoviewer.php?id=5301241091010446014&amp;caption=Str%C4%8D%20prst%20skrz%20krk">video of Jirka</a> pronouncing it.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070927"> 
+        <!--p class="post-date">Thu 27 Sep 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Unicode Code Converter v5</h2>
+          <p class="entrymeta">Posted on Thu 27 Sep 2007 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://rishida.net/scripts/uniview/conversion">&gt;&gt; Use it !</a></p>
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/conversion5.gif"><img src="r12a_blog_files/conversion5-small.gif" alt="Picture of the page in action."></a></p>
+          <p>This web-based tool helps you convert between Unicode character 
+            numbers, characters, UTF-8 and UTF-16 code units in hex, percent 
+            escapes, Unicode U+hex notation, and Numeric Character References (hex 
+            and decimal).</p>
+          <p>Changes in the new version:</p>
+          <ul>
+            <li>Convert to and from Unicode U+hex notation</li>
+            <li>Get a list of Unicode names for a sequence of characters by clicking on the View Names button</li>
+            <li>You now have to click a button to start the conversion, rather than 
+              remove focus from the input area. This provides better control and a 
+              more intuitive approach.</li>
+          </ul>
+          <p>It also allows you to separate a sequence of characters by spaces. Paste the characters into the <code>Characters</code> field and click <code>Convert</code>. Then click <code>Convert</code> immediately in the <code>Unicode U+hex notation</code> field. (The latter field is the only one that changes the data after an initial conversion.)</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070903"> 
+        <!--p class="post-date">Mon 3 Sep 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">New domain name</h2>
+          <p class="entrymeta">Posted on Mon 3 Sep 2007 tagged as <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I acquired the domain name <a href="http://rishida.net/">rishida.net</a> this weekend, and I have been setting up the server so that all my 
+            content is accessible via http://rishida.net/… rather than 
+            http://people.w3.org/rishida/…</p>
+          <p>This should make it much easier for me to type in the URI and tell 
+            people over the phone what the URI is.  It should also be easier for 
+            people to remember the address for, say, my photos (<a href="http://rishida.net/photos/">rishida.net/photos</a>).</p>
+          <p>You could, of course, still type in the old address if you prefer, 
+            but I’d suggest you use the new one in your bookmarks from now on.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070824"> 
+        <!--p class="post-date">Fri 24 Aug 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Viewing non-Latin text in XMetal</h2>
+          <p class="entrymeta">Posted on Fri 24 Aug 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em"><a href="http://people.w3.org/rishida/blog/images/xmetal-fonts.gif"><img src="r12a_blog_files/xmetal-fonts-small.gif" alt=" "></a><br>
+            <span class="caption">Multiple scripts in XMetal’s tags-on view (click to enlarge).</span></p>
+          <p>I received a query from someone asking:</p>
+          <blockquote>
+            <p>I try to edit lao and thai text with XMetal 5.0, but 
+              nothing is displayed but squares. In fact, Unicode characters seems to 
+              be correctly saved in the XML file and displayed in Firefox (for 
+              example), but i can’t get a correct display in XMetal. Is it a font 
+              problem ?</p>
+          </blockquote>
+          <p>There are two places this needs to be addressed:</p>
+          <ol>
+            <li>in the plain text view</li>
+            <li>in the tags-on view</li>
+          </ol>
+          <p>For the plain text view, it is a question of setting a font that 
+            shows Lao and Thai (or whatever other language/script you need) in 
+            Tools&gt;Options&gt;Plain Text View&gt;Font.  You can only set one font 
+            at a time, so a wide ranging Unicode font like Arial Unicode MS or 
+            Code2000 may be useful for Windows users.</p>
+          <p>For the tags-on view (which is the view I use most of the time) you 
+            need to edit the CSS file that sets the editor’s styling for the DOCTYPE
+            you are working with.  This may be in one of a number of places.  The 
+            one I edit is C:\Program Files\Blast Radius\XMetaL 
+            4.6\Author\Display\xhtml1-transitional.css.</p>
+          <p>I added the following to mine.  I chose fonts I have on my PC and 
+            sets font sizes relative to the size I set for my body element.  You 
+            should, of course, choose your own fonts and sizes.</p>
+          <blockquote>
+            <pre>[lang="am"] { font-family: "Code2000", serif; font-size: 120%; }
+[lang="ar"] {font-family: "Traditional Arabic", sans-serif; font-size: 200%; }
+[lang="bn"] {font-family: SolaimanLipi, sans-serif; font-size: 200%; }
+[lang="dz"] { font-family: "Tibetan Machine Uni", serif; font-size: 140%; }
+[lang="he"] {font-family: "Arial Unicode MS", sans-serif; font-size: 120%;}
+[lang="hi"] {font-family: Mangal, sans-serif;  font-size: 120%;}
+[lang="kk"] {font-family: "Arial Unicode MS", sans-serif;  }
+[lang="iu"] {font-family: Pigiarniq, Uqammaq, sans-serif; font-size: 120%; }
+[lang="ko"] { font-family: Batang, sans-serif; font-size: 120%;}
+[lang="ne"] {font-family: Mangal, sans-serif;  font-size: 120%; }
+[lang="pa"] { font-family: Raavi, sans-serif; font-size: 120%;}
+[lang="te"] {font-family: Gautami, sans-serif; font-size: 140%;}
+[lang="my"] {font-family: Myanmar1, sans-serif; font-size: 200%;}
+[lang="th"] {font-family: "Cordia New", sans-serif; font-size: 200%; }
+[lang="ur"] { font-family: "Nafees Nastaleeq", serif; font-size: 130%;}
+[lang="ve"] { font-family: "Arial Unicode MS", sans-serif; }
+[lang="zh-Hans"] { font-family: "Simsun", sans-serif; font-size: 140%; }
+[lang="zh-Hant"] { font-family: "Mingliu", sans-serif; font-size: 140%; }</pre>
+          </blockquote>
+          <p>Note that I would have preferred to say :lang(am) { font-family… } 
+            etc, but XMetal 4.6 seems to require you to specify the attribute value 
+            as shown above.  (You also have to specify class selectors as 
+            [class=”myclass”] {…} rather than .myclass {…}.)</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070821"> 
+        <!--p class="post-date">Tue 21 Aug 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Complex scripts in Mozilla</h2>
+          <p class="entrymeta">Posted on Tue 21 Aug 2007 tagged as  <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>I see from a recent <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=75011">bugzilla report</a> and some cursory testing that a (very) long-standing bug in Mozilla related to complex scripts has now been fixed.</p>
+          <p>Complex scripts include many non-Latin scripts that use combining 
+            characters or ligatures, or that apply shaping to adjacent characters 
+            like Arabic script.</p>
+          <p>It used to be that, when you highlighted text in a complex script, as
+            you extended the edges of the highlighted area you would break apart 
+            combining characters from their base character, split ligatures and 
+            disrupt the joining behaviour of Arabic script characters.</p>
+          <p>The good news is that this no longer happens – it was fixed by the 
+            new text frame code.  The bad news is that the highlighting still 
+            happens character by character, rather than at grapheme boundaries – 
+            which can make it tricky to know whether you got the combining 
+            characters or not.</p>
+          <p style="float: right; width: 50%; margin-left: 1em; margin-bottom: 1em; color: orange">UPDATE: I hear from Kevin Brosnan that the following will be fixed in Firefox 3.  Hurrah!  And thank you Mozilla team.</p>
+          <p>What doesn’t appear to be fixed is the behaviour of asian scripts when the CSS text-align:justify is applied. 🙁</p>
+          <p>I raised a <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=393051">bug report</a> about this.  I was amazed, after hearing about this from Indians and 
+            Pakistanis too, that there didn’t seem to be a bug report already.  Come
+            on users, don’t leave this up to the W3C!</p>
+          <p>Basically, the issue is that if you apply text-align: justify to some
+            text in an Indian or Tibetan script the combining characters all get 
+            rendered alongside their base characters, ie. you go from this (showing,
+            respectively, tibetan, devanagari (hindi and nepali), punjabi, telegu 
+            and thai text):</p>
+          <p><img src="r12a_blog_files/textalignnone.gif" alt="Picture of text with no alignment."></p>
+          <p>to this:</p>
+          <p><img src="r12a_blog_files/textalignjustify.gif" alt="Picture of text with justify alignment."></p>
+          <p>Strangely the effect doesn’t seem to apply to the Thai text, nor to other text with combining characters that I’ve tried.</p>
+          <p>That’s a pretty big bug for people in the affected region because it effectively means that text-align:justify can’t be used.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070803"> 
+        <!--p class="post-date">Fri 3 Aug 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">New web app: Key events monitor</h2>
+          <p class="entrymeta">Posted on Fri 3 Aug 2007 tagged as <a href="/blog/?tag=apps">apps</a>, <a href="/blog/?tag=miscapps">miscapps</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p style="font-size: 150%"><a href="http://people.w3.org/rishida/utils/keyevents/">&gt;&gt; Use it !</a></p>
+          <div style="float: right; width: 260px; margin-left: 1em; margin-bottom: 1em;"><a href="http://people.w3.org/rishida/blog/images/keyevents.gif"><img src="r12a_blog_files/keyevents-small.gif" alt="Picture of the page in action."></a></div>
+          <p>This tool allows you to see what is assigned to event.keyCode and 
+            event.charCode in the DOM after the events keydown, keypress, and keyup 
+            are detected by the browser.  Use it across different browsers with 
+            different keyboard mappings to see how things differ.</p>
+          <p>It’s a bit esoteric, but it may be of interest to someone.  I wanted 
+            to play with this a bit to help me understand the background to the <a href="http://www.w3.org/TR/DOM-Level-3-Events/">DOM Level 3  Events Specification</a>.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070730"> 
+        <!--p class="post-date">Mon 30 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Urdu IDNs</h2>
+          <p class="entrymeta">Posted on Mon 30 Jul 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>Sarmad Hussain, at the Center for Research in Urdu Language 
+            Processing FAST National University, Pakistan, is looking at enabling 
+            Urdu IDNs based on ICANN recommendations, but this may lead to similar 
+            approaches in a number of other countries.</p>
+          <p>Sarmad writes: “We are trying to make the URL enabled in Urdu for 
+            people who are not literate in any other language (a large majority of 
+            literate population in Pakistan).  ICANN has only given specs for the 
+            Domain Name in other languages (through its RFCs).  Until they allow the
+            TLDs in Urdu, we are considering an application end solution: have a 
+            plug in for a browser for people who want to use it, which URL in Urdu, 
+            strips and maps all the TLD information to .com, .pk, etc. and converts 
+            the domain name to punycode Thus, people can type URLs in pure Urdu 
+            which are converted to the mixed English-Urdu URLs by the application 
+            layer which ICANN currently allows.”</p>
+          <p>“We are currently trying to figure out what would be the ‘academic’ 
+            requirements/solutions for a language.  To practically solve the 
+            problem, organizations like ICANN would need to come up with the 
+            solutions.”</p>
+          <p>There are some aspects to Sarmad’s proposal, arising from the nature 
+            of the Arabic script used for Urdu, that raise some interesting 
+            questions about the way IDN works for this kind of language. These have 
+            to do with the choice of characters allowed in a domain name. For 
+            example, there is a suggestion that users should be able to use certain 
+            characters when writing a URI in Urdu which are then either removed (eg.
+            vowel diacritics) or converted to other characters (eg. Arabic 
+            characters) during the conversion to punycode.</p>
+          <p>This is not something that is normally relevant for English-only 
+            URIs, because of the relative simplicity of our alphabet.  There is much
+            more potential ambiguity in Urdu for use of characters. Note, however, 
+            that the proposals Sarmad is making are <em>language</em>-specific, not 
+            script-specific, ie. Arabic or Persian (also written with the Arabic 
+            script) would need some slightly different rules.</p>
+          <p>I find myself wondering whether you could use a plug-in to strip out 
+            or convert the characters while converting to punycode. People typing 
+            IDNs in Urdu would need to be aware of the need for a plug-in, and would
+            still need to know how to type in IDNs if they found themselves using a
+            browser that didn’t have the plug-in (eg. the businessman who is 
+            visiting a corporation in the US that prevents ad hoc downloads of 
+            software).  On the one hand, I wonder whether we can expect a user who 
+            sees a URI on a hard copy brochure containing vowel diacritics to know 
+            what to do if their browser or mail client doesn’t support the plug-in. 
+            On the other hand, a person writing a clickable URI in HTML or an email
+            would not be able to guarantee that users would have access to the 
+            plug-in.  In that case, they would be unwise to use things like short 
+            vowel diacritics, since the user cannot easily change the link if they 
+            don’t have a plug-in.  Imagine a vowelled IDN coming through in a plain 
+            text email, for example: the reader may need to edit the email text to 
+            get to the resource rather than just click on it.  Not likely to be 
+            popular.</p>
+          <p>Another alternative is to do such removal and conversion of 
+            characters as part of the standard punycode conversion process.  This, I
+            suspect, would necessitate every browser to have access to standardised
+            tables of characters that should be ignored or converted for any 
+            language.  But there is an additional problem in that the language would
+            need to be determined correctly before such rules were applied – that 
+            is, the language of the original URI.  That too seems a bit difficult.</p>
+          <p>So I can see the problem, but I’m not sure what the solution would 
+            be. I’m inclined to think that creating a plug-in might create more 
+            trouble than benefit, by replacing the problems of errors and 
+            ambiguities with the problems of uninteroperable IDNs.</p>
+          <p>I have posted this to the <a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a> list for discussion.</p>
+          <p>Follow this link to see lists of characters that may be removed or converted.<br>
+            <a href="/blog/?p=109#more-109" class="more-link"><span aria-label="Continue reading Urdu IDNs">(more…)</span></a></p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070718"> 
+        <!--p class="post-date">Wed 18 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Support for ruby text in Firefox</h2>
+          <p class="entrymeta">Posted on Wed 18 Jul 2007 tagged as  <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><a href="http://people.w3.org/rishida/blog/images/ruby.gif"><img src="r12a_blog_files/ruby.gif" alt=" "></a><br>
+            <span class="caption">Ruby text above and below Japanese characters.</span></p>
+          <p>My last post mentioned an extension that takes care of Thai line breaking.  In this post I want to point to another useful <a href="https://addons.mozilla.org/en-US/firefox/addon/1935">extension that handles ruby annotation</a>.</p>
+          <p>Typically ruby is used in East Asian scripts to provide phonetic 
+            transcriptions of obscure characters, or characters that the reader is 
+            not expected to be familiar with. For example it is widely used in 
+            education materials and children’s texts. It is also occasionally used 
+            to convey information about the meaning of ideographic characters.  For 
+            more information see <a href="http://www.w3.org/International/articles/ruby/">Ruby Markup and Styling</a>.</p>
+          <p>Ruby markup (called 振り仮名 [furigana] in Japan) is described by the W3C’s <a href="http://www.w3.org/TR/ruby/">Ruby Annotation</a> spec. It comes in two flavours, simple and complex.</p>
+          <p>Ruby markup is a part of XHTML 1.1 (served as XML), but native 
+            support is not widely available. IE doesn’t support XHTML 1.1, but it 
+            does support <em>simple</em> ruby markup in HTML and XHTML 1.0.  This extension provides support in Firefox for <em>both</em> simple <em>and</em> complex ruby, in HTML, XHTML 1.0 and XHTML 1.1.</p>
+          <p>It passes all the I18n Activity <a href="http://www.w3.org/International/tests/sec-ruby-markup-0">ruby tests</a>, with the exception of one *very* minor nit related to spacing of complex ruby annotation.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070717"> 
+        <!--p class="post-date">Tue 17 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Thai line breaking in Firefox</h2>
+          <p class="entrymeta">Posted on Tue 17 Jul 2007 tagged as  <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p class="floatright"><a href="http://people.w3.org/rishida/blog/images/thai-line-breaks.gif"><img src="r12a_blog_files/thai-line-breaks.gif" alt=" "></a><br>
+            <span class="caption">Before and after applying the extension.</span></p>
+          <p>Samphan Raruenrom has produced a <a href="http://www.osdev.co.th/download/mozilla/extension/moztle-win-0.1.1.xpi">Firefox extension</a> based on ICU to handle Thai line breaking.</p>
+          <p>Thai line breaks respect word boundaries, but there are no spaces 
+            between words in written Thai. Spaces are used instead as phrase 
+            separators (like English comma and full stop). This means that 
+            dictionary-based lookup is needed to properly wrap Thai text.</p>
+          <p>The current release works on Windows and the current Firefox release,
+            2.0.0.4. The next release will also support Linux and will support 
+            future Mozilla Firefox/Thunderbird releases.</p>
+          <p>You can test this on our <a href="http://www.w3.org/2005/11/Translations/Query?lang=th&amp;i18n=i18n-tutorials">i18n  articles translated into Thai</a>.</p>
+          <p>This replaces work on a separate Thai version of Firefox.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="20070716"> 
+        <!--p class="post-date">Mon 16 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Personal names around the world 2</h2>
+          <p class="entrymeta">Posted on Mon 16 Jul 2007 tagged as <a href="/blog/?tag=web">web</a>, <a href="/blog/?tag=docs">docs</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p><strong>UPDATE: This post has now been updated, reviewed and released as part of a W3C article. See <a href="http://www.w3.org/International/questions/qa-personal-names">http://www.w3.org/International/questions/qa-personal-names</a>.</strong></p>
+          <p>Here are some more thoughts on dealing with multi-cultural names in web forms, databases, or ontologies. See <a href="http://people.w3.org/rishida/blog/?p=100">the previous post</a>.</p>
+          <h3>Script</h3>
+          <p>The first thing that English speakers must remember about other 
+            people’s names is that a large majority of them don’t use the Latin 
+            alphabet, and a majority of those that <em>do</em> use accents and 
+            characters that don’t occur in English.  It seems obvious, once I’ve 
+            said it, but it has some important consequences for designers that are 
+            often overlooked.</p>
+          <p>If you are designing an English form you need to decide whether you 
+            are expecting people to enter names in their own script or in an 
+            ASCII-only transcription.  What people will type into the form will 
+            often depend on whether the form and its page is in their language or 
+            not.  If the page is in their language, don’t be surprised to get back 
+            non-Latin or accented Latin characters.</p>
+          <p><strong>If you hope to get ASCII-only, you need to tell the user.</strong></p>
+          <p>The decision about which is most appropriate will depend to some 
+            extent on what you are collecting people’s names for, and how you intend
+            to use them.</p>
+          <ul>
+            <li>Are you collecting the person’s name just to have an identifier in 
+              your system?  If so, it may not matter whether the name is stored in 
+              ASCII-only or native script.</li>
+            <li>Or do you plan to call them by name on a welcome page or in 
+              correspondence?  If you will correspond using their name on pages 
+              written in their language, it would seem sensible to have the name in 
+              the native script.</li>
+            <li>Is it important for people in your organization who handle queries 
+              to be able to recognise and use the person’s name?  If so, you may want 
+              to ask for a transcription.</li>
+            <li>Will their name be displayed or searchable (for example Flickr 
+              optionally shows people’s names as well as their user name on their 
+              profile page)?  If so, you may want to store the name in both ASCII and 
+              native script, in which case you probably need to ask the user to submit
+              their name in both native script and ASCII-only form, using separate 
+              fields.</li>
+          </ul>
+          <p>Note that if you intend to parse a name, you may need to use country 
+            or language-specific algorithms to do so correctly (see the <a href="http://people.w3.org/rishida/blog/?p=100">previous blog</a> on personal names).</p>
+          <p><strong>If you do accept non-ASCII names, you should use UTF-8 
+            encoding in your pages, your back end databases and in all the scripts 
+            in between.</strong> This will significantly simplify your life.</p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post" id="2007-07-13"> 
+        <!--p class="post-date">Fri 13 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Icon internationalization</h2>
+          <p class="entrymeta">Posted on Fri 13 Jul 2007 tagged as <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <div class="floatright"><a href="r12a_blog_files/nutrition-icons.gif"><img src="r12a_blog_files/nutrition-icons.gif" alt=" "></a><br>
+          <span class="caption">Icons chosen by McDonalds to represent, from left to right, Calories, Protein, Fat, Carbohydrates and Salt.</span></div>
+          <p>I just read a fascinating article about how McDonalds set about 
+            testing cultural acceptability of a range of icons intended to point to 
+            nutritional information.  It talks about the process and gives examples 
+            of some of the issues.  Very nice.</p>
+          <p>Interesting, also, that they still ended up with local variants in some cases.</p>
+          <p><a href="http://www.translate.com/technology/multilingual_standard/mcdonalds_nutrition_icons_case_study.pdf">Creating a New Language for Nutrition: McDonald’s Universal Icons for 109 Countries</a></p>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <div class="post"> 
+        <!--p class="post-date">Fri 13 Jul 2007</p-->
+        <div class="post-info">
+          <h2 class="post-title">Dealing with the UTF-8 signature</h2>
+          <p class="entrymeta">Posted on Fri 13 Jul 2007 tagged as <a href="/blog/?tag=codenotes">codenotes</a>, <a href="/blog/?tag=docs">docs</a>, <a href="/blog/?tag=web">web</a> &nbsp; </p>
+        </div>
+        <div class="post-content">
+          <p>Some applications insert a <a href="http://en.wikipedia.org/wiki/Byte_Order_Mark">signature or Byte Order Mark (BOM)</a> at the beginning of UTF-8 text. For example, Notepad always adds a BOM when saving as UTF-8.</p>
+          <p>Older text editors or browsers will display the BOM as a blank line 
+            on-screen, others will display unexpected characters, such as ï»¿.  This
+            may also occur in the latest browsers if a file that starts with a BOM 
+            is included into another file by PHP.</p>
+          <p>For more information, see the article <a href="http://www.w3.org/International/questions/qa-utf8-bom.en.php">Unexpected characters or blank lines</a> and the <a href="http://www.w3.org/International/tests/sec-utf8-signature-0">test pages</a> and <a href="http://www.w3.org/International/tests/results/results-utf8-signature">results</a> on the W3C site.</p>
+          <p>If you have problems that you think might be related to this, the following may help.</p>
+          <h3>Checking for the BOM</h3>
+          <p>I created a <a href="http://people.w3.org/rishida/utils/bomtester/">small utility</a> that checks for a BOM at the beginning of a file. Just type in the URI 
+            for the file and it will take a look. (Note, if it’s a file included by 
+            PHP that you think is causing the problem, type in the URI of the <em>included </em>file.)</p>
+          <h3>Removing the BOM</h3>
+          <p>If there is a BOM, you will probably want to remove it.  One way 
+            would be to save the file using a BOM-aware editor that allows you to 
+            specify that you don’t want a BOM at the start of the file.  For 
+            example, if Dreamweaver detects a BOM the Save As dialogue box will have
+            a check mark alongside the text “Include Unicode Signature (BOM)”. Just
+            uncheck the box and save.</p>
+          <p>Another way would be to run a script on your file.  Here is some 
+            simple Perl scripting to check for a BOM and remove it if it exists 
+            (developed by Martin Dürst and tweaked a little by myself).</p>
+          <pre># program to remove a leading UTF-8 BOM from a file
+# works both STDIN -&gt; STDOUT and on the spot (with filename as argument)
+
+if ($#ARGV &gt; 0) {
+    print STDERR "Too many arguments!\n";
+    exit;
+    }
+
+my @file;   # file content
+my $lineno = 0;
+
+my $filename = @ARGV[0];
+if ($filename) {
+    open( BOMFILE, $filename ) || die "Could not open source file for reading.";
+    while (&lt;BOMFILE&gt;) {
+        if ($lineno++ == 0) {
+            if ( index( $_, '﻿' ) == 0 ) {
+                s/^\xEF\xBB\xBF//;
+                print "BOM found and removed.\n";
+                }
+            else { print "No BOM found.\n"; }
+            }
+        push @file, $_ ;
+        }
+    close (BOMFILE)  || die "Can't close source file after reading.";
+
+    open (NOBOMFILE, "&gt;$filename") || die "Could not open source file for writing.";
+    foreach $line (@file) {
+        print NOBOMFILE $line;
+        }
+    close (NOBOMFILE)  || die "Can't close source file after writing.";
+    }
+else {  # STDIN -&gt; STDOUT
+    while (&lt;&gt;) {
+    if (!$lineno++) {
+        s/^\xEF\xBB\xBF//;
+        }
+    push @file, $_ ;
+    }
+
+    foreach $line (@file) {
+        print $line;
+        }
+    }</pre>
+          <div class="post-info"> </div>
+          <div class="post-footer"></div>
+        </div>
+      </div>
+      <p class="pagelinks"><a href="200610">More<br/>
+        🠿</a></p>
+    </div>
+    <p id="footer">Copyright © 2009 Richard Ishida.</p>
+  </div>
+</div>
+</body>
+</html>
