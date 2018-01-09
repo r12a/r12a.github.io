@@ -1,0 +1,61 @@
+a#On, a#Off {
+   padding: 0.1em 0.5em 0.1em 0.5em;
+   margin:  0 0.5em 0 0;
+   text-decoration:none;
+   background:#005a9c;
+   color: #fc6;
+   font-weight:bold;
+   cursor: pointer;
+   }
+
+.hideIfNoJS {
+	display: none;
+	}
+
+
+/*
+.triggerOpen {
+	background:url(http://www.w3.org/International/icons/open-thin.gif)
+              no-repeat left 2px #fffaf0;
+	}
+
+.triggerClosed {
+	background:url(http://www.w3.org/International/icons/close-thin.gif)
+              no-repeat left 2px #fffaf0;
+	}*/
+
+.triggerOpen:before {
+	content: '▶';
+	}
+
+.triggerClosed:before {
+	content: '▼';
+	}
+
+.triggerOpen a, .triggerClosed a {
+	padding-left:14px;
+	color:#000;
+	text-decoration: none;
+	cursor: pointer;
+	}
+
+.triggerOpen a:hover, .triggerClosed a:hover {
+	color:#00f;
+	}
+
+
+
+.hiddenContent {
+   display: none;
+   }
+   
+#otherNews .revealedContent {
+   padding-left: 14px;
+   }
+#otherNews ul.revealedContent {
+   padding-left: 30px;
+   margin-left: 0;
+   }
+   
+   
+

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>WCAG Techniques finder</title>
+<meta name="description" content="Thematically grouped summaries of Web Content Accessiblity Guidelines (WCAG) techniques." />
+<link rel="stylesheet" href="/rishida/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="expandcollapsestyle.css"/>
+<script type="text/javascript" src="expandcollapse.js"></script>
+<script type="text/javascript" src="/rishida/javascript/level3-docs.js"></script>
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style type="text/css">
+h3 {
+	margin-left: 10%;
+}
+.kw {
+	color: #930;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 90%;
+	padding: 0 0.2em;
+}
+.kw1 {
+	color: #930;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 90%;
+	padding: 0 0.2em;
+}
+section { font-size: 90%; }
+section h2 { margin-top: 2em; vertical-align: bottom; }
+section h3 { margin-top: 2em; }
+</style>
+</head>
+
+<body onload="setCollapseExpand('maincontent', 'h2','');revealControl('On'); revealControl('Off');">
+<header>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_header('/rishida/i/world.gif');</script> 
+  
+  <!--div class="sidebar"> 
+			<div class="noprint"> 
+ 
+				<h2><a id="relatedlinks" tabindex="4">Related links</a></h2> 
+				<p><a href="http://www.flickr.com/photos/ishida/3781010968/sizes/l/">Sample text</a></p> 
+				</div> 
+			<div class="noprint"> 
+ 
+				<h2><a id="fonts" tabindex="4">Fonts</a></h2> 
+				<p style="line-height: 1.3em;">There are currently no fonts available for Ishidic.</p>
+				</div>
+			</div-->
+  
+  <h1>WCAG Techniques finder</h1>
+  <div id="navigation"> 
+    <!--p><a id="internal-links"></a> <a href="#intro" accesskey="n" title="Brief script introduction">Intro</a>&nbsp;- <a href="#alphabet" title="Alphabet">Alphabet</a>&nbsp;- <a href="#sample" title="Sample text">Sample text</a></p--> 
+  </div>
+</header>
+<div id="maincontent">
+  <p>This page provides succinct guidelines derived from the Techniques of WCAG 2.0, organised by theme to make it easier to find information.  Each guideline links to further information that explains the rationale or techniques in more detail.</p>
+  <p><strong>This is not an official W3C article</strong>, just something that I put together for my own benefit. It is far from complete: it only points to those <a href="http://www.w3.org/WAI/GL/WCAG20-TECHS/">techniques listed under HTML/XHTML</a>. One day I may integrate i18n recommendations too, so that when you are authoring HTML+CSS you can quickly find suggestions about what to consider for both accessibility and internationalization.</p>
+  <p>The top-level organization is based on the structure of the HTML5 spec. You are not expected to read this end-to-end, rather to dip in as needed, so guidelines are repeated in all useful places.</p>
+  <div style="text-align:right; margin-right:32%;"> <a id="On" name="On" onclick="openAll('maincontent', 'h2','');" href="#_" class="hideIfNoJS">Open All</a> <a id="Off" name="Off" onclick="closeAll('maincontent', 'h2','');" href="#_" class="hideIfNoJS">Close All</a> </div>
+  <section><a id="contentstart" tabindex="1"></a>
+    <h2 id="sec_global">The root element and global attributes</h2>
+    <section>
+      <h3>The <code class="kw" translate="no">html</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H57.html">Use the <code class="kw" translate="no">lang</code> and/or <code class="kw" translate="no">xml:lang</code> attribute on the <code class="kw" translate="no">html</code> element.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Marking up content for language</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H57.html">Use the <code class="kw" translate="no">lang</code> and/or <code class="kw1">xml:lang</code> attribute on the <code class="kw" translate="no">html</code> element.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H58.html">Use <code class="kw" translate="no">lang</code> and/or <code class="kw" translate="no">xml:lang</code> attributes to identify changes in the human language.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Bidirectional text</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H56.html">Use the <code class="kw" translate="no">dir</code> attribute on  inline elements to resolve problems with nested directional runs.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H34.html">Use Unicode right-to-left marks and left-to-right marks to override the HTML bidirectional algorithm when it produces undesirable results.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>The <code class="kw" translate="no">id</code> attribute</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H93.html">Ensure that <code class="kw" translate="no">id</code> attributes are unique on a Web page.</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_metadata">document metadata</h2>
+    <section>
+      <h3>The <code class="kw" translate="no">title</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H25.html">Define the purpose of the document in a simple phrase in the <code class="kw" translate="no">title</code> element.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Other markup in the <code class="kw" translate="no">head</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H59.html">Use the <code class="kw" translate="no">link</code> element to link to related pages.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H60.html">When terms in the content are defined on a separate glossary page, use the <code class="kw" translate="no">link</code> element with the <code class="kw" translate="no">rel</code> attribute set to "glossary" to link to it.</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_sections">Sections</h2>
+    <section>
+      <h3>Headings</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H69.html">Provide headings at the beginning of each section of content</a>.</li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H42.html">Use <code class="kw" translate="no">h1</code> to <code class="kw" translate="no">h6</code> to identify headings</a>.</li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H69.html">Nest headings hierarchically</a>.</li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_grouping">Grouping content</h2>
+    <section>
+      <h3>Defining terms</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H40.html">Provide the definitions of words or phrases by presenting them in a definition list (<code class="kw" translate="no">dl</code>), preferably in alphabetical order. The term goes in the <code class="kw" translate="no">dt</code> and the definition in the <code class="kw" translate="no">dd</code> elements.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H40.html">A <code class="kw" translate="no">title</code> attribute can be used to provide additional information about a <code class="kw" translate="no">dl</code> list.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H54.html">Use the <code class="kw" translate="no">dfn</code> element to identify the defining instance of a word (the term, not the definition)</a>.</li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H60.html">When terms in the content are defined on a separate glossary page, use the <code class="kw" translate="no">link</code> element with the <code class="kw" translate="no">rel</code> attribute set to "glossary" to link to it.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Lists</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H48.html">Use list markup for lists, and use the most appropriate type of markup from <code class="kw" translate="no">ol</code>, <code class="kw" translate="no">ul</code> and <code class="kw" translate="no">dl</code> lists</a>.</li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_inline">Inline content</h2>
+    <section>
+      <h3>Emphasized or special text</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H49.html">Use semantic markup  to mark emphasized or special text so that it can be programmatically determined. This includes the following elements: <code class="kw" translate="no">em</code>, <code class="kw" translate="no">strong</code>, <code class="kw" translate="no">cite</code>, <code class="kw" translate="no">q</code>, <code class="kw" translate="no">blockquote</code>, <code class="kw" translate="no">sub</code>, <code class="kw" translate="no">sup</code>.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Bidirectional text</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H56.html">Use the <code class="kw" translate="no">dir</code> attribute on  inline elements to resolve problems with nested directional runs.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H34.html">Use Unicode right-to-left marks and left-to-right marks to override the HTML bidirectional algorithm when it produces undesirable results.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Abbreviations</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H28.html">Provide definitions for abbreviations, acronyms and initialisms using the <code class="kw" translate="no">abbr</code> element.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Text clarity</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H86.html">Provide text alternatives for ASCII art, emoticons, and leetspeak, and possibly a link to skip them.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Helping with pronunciation</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H62.html">Use <code class="kw" translate="no">ruby</code> annotation to provide information about the pronunciation and meaning of a run of text where meaning is determined by pronunciation.</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_links">Links</h2>
+    <section>
+      <h3>The <code class="kw" translate="no">a</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H30.html">Provide link text that describes the purpose of a link, or <code class="kw" translate="no">alt</code> text if the only content is an image.</a> </li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H33.html">If you can't indicate the purpose of, or clarify a link in the link text, use CSS to hide a portion of the text. Only use the <code class="kw" translate="no">title</code> attribute   if the browser can handle it for accessibility.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H30.html">When the content of a link contains both text and one or more images, if the text  sufficiently describes the purpose of the link, the image(s) may have an empty <code class="kw" translate="no">alt</code> attribute. However, </a><a href="http://www.w3.org/TR/WCAG20-TECHS/H30.html">if the images convey information beyond the purpose of the link, they must also have appropriate <code class="kw" translate="no">alt</code> text.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H33.html">Tell the user if any information they should know before following a link.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H83.html">If you use a <code class="kw" translate="no">target</code> attribute, tell the user that the link will open in a new window.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H4.html">If, and only if, the order of elements on a page doesn't provide a useful tab order, use the <code class="kw" translate="no">tabindex</code> attribute to set a logical tab order through links, form controls, and objects.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H78.html">Use information in the surrounding paragraph to clarify the purpose of a link, preferably putting the revelant content before the link.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Grouping links</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H2.html">Combine adjacent image and text link for the same resource, and provide null <code class="kw" translate="no">alt</code> text on the image to eliminate duplication of text.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H77.html">Use contextual information provided by lists,  tables, and headings to clarify the purpose of a link.</a> <a href="http://www.w3.org/TR/WCAG20-TECHS/H79.html" title="A second WAI technique that relates to this point">[Second link].</a> <a href="http://www.w3.org/TR/WCAG20-TECHS/H80.html" title="A third WAI technique that relates to this point">[Third link].</a> <a href="http://www.w3.org/TR/WCAG20-TECHS/H81.html" title="A fourth WAI technique that relates to this point">[Fourth link].</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_tables">Tables</h2>
+    <section>
+      <h3>Using tables</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H51.html">When logical relationships exist among text, numbers, images, or other data  in two dimensions (vertical and horizontal), use the <code class="kw" translate="no">table</code> element with the child elements <code class="kw" translate="no">tr</code>, <code class="kw" translate="no">th</code>, and <code class="kw" translate="no">td</code> make these relationships perceivable. Do not use tabs to create tables.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H73.html">For tables with a complex structure, use  the <code class="kw" translate="no">summary</code> attribute of the <code class="kw" translate="no">table</code> element to give a brief explanation of how to navigate the table, or how the table is organized.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Captions</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H39.html">Where a table needs a heading or title, use a <code class="kw" translate="no">caption</code> element.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H39.html">If both are used, the <code class="kw" translate="no">caption</code> element should not duplicate information in the <code class="kw" translate="no">summary</code> attribute. The caption identifies the table, whereas the summary describes the purpose or how to navigate the table.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H39.html"><code class="kw" translate="no">caption</code> elements are not used for layout tables.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Linking to header cells</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H43.html">When data cells are associated with more than one row and/or one column header, use <code class="kw" translate="no">id</code> and <code class="kw" translate="no">headers</code> attributes to associate data cells with header cells.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H63.html">When header cells are not in the first column or row, or are not marked up using <code class="kw" translate="no">th</code>, use the <code class="kw" translate="no">scope</code> attribute to associate header and data cells.</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_forms">Forms</h2>
+    <section>
+      <h3>Describing form controls</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H36.html">For <code class="kw" translate="no">input</code> elements of type <code class="kw" translate="no">image</code> (used as submit buttons), use the <code class="kw" translate="no">alt</code> attribute of the <code class="kw" translate="no">input</code> element  to  indicate the button's function, but do not attempt to describe the image.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H36.html">Only use the <code class="kw" translate="no">alt</code> attribute on  image submit buttons, and not on any other type of <code class="kw" translate="no">input</code> element.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H44.html">Use <code class="kw" translate="no">label</code> elements to associate text labels with form controls for <code class="kw" translate="no">input</code> elements of type <code class="kw" translate="no">text</code>, <code class="kw" translate="no">checkbox</code>, <code class="kw" translate="no">radio</code>, <code class="kw" translate="no">file</code> and <code class="kw" translate="no">password</code>, and <code class="kw" translate="no">textarea</code> and <code class="kw" translate="no">select</code> elements.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H71.html">Provide a description for groups of form controls using <code class="kw" translate="no">fieldset</code> and <code class="kw" translate="no">legend</code> elements (but avoid nesting fieldsets unnecessarily) – particularly  for radio buttons and check boxes.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H71.html">The <code class="kw" translate="no">fieldset</code> and <code class="kw" translate="no">legend</code> elements are not required where the individual label associated with each particular control provides a sufficient description.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H89.html">Use the <code class="kw" translate="no">title</code> attribute to provide context-sensitive help for form fields.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H90.html">To indicate required form controls, use the <code class="kw" translate="no">label</code> or <code class="kw" translate="no">legend</code> elements or a symbol. If a symbol is used, the user should be advised of its meaning before use.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H90.html">If using an asterisk to indicate required form controls, consider putting it inside an <code class="kw" translate="no">abbr</code> element, so that it can be styled larger and given an explanation in a <code class="kw" translate="no">title</code> attribute.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Using tables</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H51.html">When logical relationships exist among text, numbers, images, or other data  in two dimensions (vertical and horizontal), use the <code class="kw" translate="no">table</code> element with the child elements <code class="kw" translate="no">tr</code>, <code class="kw" translate="no">th</code>, and <code class="kw" translate="no">td</code> make these relationships perceivable. Do not use tabs to create tables.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>The <code class="kw" translate="no">select</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H84.html">Use a button to select an item from a <code class="kw" translate="no">select</code> list, rather than making the action occur as a result of choosing a value.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H85.html">Use <code class="kw" translate="no">optgroup</code> to group <code class="kw" translate="no">option</code> elements inside a <code class="kw" translate="no">select</code>.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Changing user context</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H32.html">Provide a <code class="kw" translate="no">submit</code> button as  an explicit way to change the user's context .</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H4.html">If, and only if, the order of elements on a page doesn't provide a useful tab order, use the <code class="kw" translate="no">tabindex</code> attribute to set a logical tab order through links, form controls, and objects.</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_objects">Embedded content</h2>
+    <section>
+      <h3>Images</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H37.html">Use <code class="kw" translate="no">alt</code> attributes on <code class="kw" translate="no">img</code> elements to specify a short text alternative.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H67.html">Use <code>alt=&quot;&quot;</code> and no <code class="kw1" translate="no">title</code> attribute on <code class="kw1" translate="no">img</code> elements for images that assistive technology should ignore. Don't just omit the <code class="kw1" translate="no">alt</code> attribute!</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H37.html">The alt text should contain any words in the image that are important to understanding the content. Alt text does not necessarily describe the visual characteristics of the image itself but must convey the same meaning as the image.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H45.html">When  a short alt text does not adequately convey the function or information provided in the image, use a <code class="kw" translate="no">longdesc</code> attribute.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Image maps</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H24.html">Use the <code class="kw" translate="no">alt</code> attribute of the <code class="kw" translate="no">area</code> element to describe the purpose of each image map area.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Frames and iframes</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H70.html">As frames are often problematic for assistive technology, use other techniques where you can.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H64.html">Use the <code class="kw" translate="no">title</code> attribute of <code class="kw" translate="no">frame</code> and <code class="kw" translate="no">iframe</code> elements to describe the contents of each frame.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H70.html">If the document uses frames, use <code class="kw" translate="no">frame</code> elements to group blocks of repeated material. (But don't introduce frames to do this!)</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>The <code class="kw" translate="no">object</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H27.html">Provide a text alternative in the content of the <code class="kw" translate="no">object</code> element.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H4.html">When the default tab order does not suffice, provide a logical tab order using the <code class="kw" translate="no">tabindex</code> attribute.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H53.html">Use the body of the <code class="kw" translate="no">object</code> element  to provide a complete text alternative for the object or for additional non-text content with text alternatives.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>The <code class="kw" translate="no">applet</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H35.html">Use both the <code class="kw" translate="no">alt</code> attribute  and provide a text alternative in the body of the <code class="kw" translate="no">applet</code> element to provide a text alternative.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>The <code class="kw" translate="no">embed</code> element</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H46.html">Provide alternative content for the <code class="kw" translate="no">embed</code> element in a <code class="kw" translate="no">noembed</code> element.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H46.html">While it can be positioned anywhere on the page, it is a good idea to include a <code class="kw" translate="no">noembed</code> element as a child of <code class="kw" translate="no">embed</code>.</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_navigation">Navigation</h2>
+    <section>
+      <h3>Creating a logical tab order</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H4.html">If, and only if, the order of elements on a page doesn't provide a useful tab order, use the <code class="kw" translate="no">tabindex</code> attribute to set a logical tab order through links, form controls, and objects.</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Redirects</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H76.html">Use a server-side redirect rather than a client-side one wherever possible.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H76.html">If it is not possible to use a server-side redirect, use <code class="kw" translate="no">meta</code> with <code class="kw" translate="no">refresh</code> to create an instant client-side redirect. The <code class="kw" translate="no">content</code> attribute should be set to 0, and the page that redirects should only contain information related to the redirect.</a></li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2 id="sec_other">Other</h2>
+    <section>
+      <h3>Clean code</h3>
+      <ul>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H74.html">Ensure that opening and closing tags are used according to specification.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H75.html">Ensure that XML Web pages are well-formed.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H88.html">Use HTML according to spec.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H93.html">Ensure that <code class="kw" translate="no">id</code> attributes are unique on a Web page.</a></li>
+        <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H94.html">Ensure that elements do not contain duplicate attributes.</a></li>
+      </ul>
+    </section>
+  </section>
+</div>
+<!--maincontent-->
+
+<footer>
+  <div id="textexpansions"></div>
+  <div id="author">
+    <p>Available at: rishida.net/wcag/ </p>
+  </div>
+  <div class="smallprint">
+    <p>Content first published 2014-08-27  16:48. This version 
+      <!-- #BeginDate format:IS1m -->2014-10-22  9:41<!-- #EndDate --> 
+      GMT</p>
+    <p class="copyright">Copyright © 2014 Richard Ishida.</p>
+  </div>
+</footer>
+</body>
+</html>
