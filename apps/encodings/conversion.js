@@ -82,6 +82,11 @@ function getRangeCP (ptr) {
 			}
  	}
 
+// set up mappings for half/full width katakana
+// index is a katakana index pointer, value is Unicode codepoint (dec)
+// this is copy-pasted from the json version of the index belonging to the Encoding spec
+var iso2022jpkatakana = [12290,12300,12301,12289,12539,12530,12449,12451,12453,12455,12457,12515,12517,12519,12483,12540,12450,12452,12454,12456,12458,12459,12461,12463,12465,12467,12469,12471,12473,12475,12477,12479,12481,12484,12486,12488,12490,12491,12492,12493,12494,12495,12498,12501,12504,12507,12510,12511,12512,12513,12514,12516,12518,12520,12521,12522,12523,12524,12525,12527,12531,12443,12444]
+
 
 // 	END OF DATA INITIALISATION
 
@@ -429,6 +434,9 @@ function iso2022jpEncoder (stream) {
 			continue
 			}
 		if (cp == 0x2212) cp = 0xFF0D
+		if (cp >= 0xFF61 && cp <= 0xFF9F) {
+			cp = iso2022jpkatakana[cp-0xFF61]
+			}
 		ptr = jis0208CPs[cp]
 		if (ptr == null) {
 			out += ' &#'+cp+';'
