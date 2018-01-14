@@ -50,6 +50,7 @@ var scriptTags = [
     "lisu",
     "makasar",
     "malayalam",
+    "mandaic",
     "mongolian",
     "myanmar",
     "nko",
