@@ -205,3 +205,8 @@ html { margin-top: 0; }
 .leadin {
 	color: orange;
 	}
+    
+.update {
+    color: darkorange;
+    font-size: 120%;
+    }
