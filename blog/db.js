@@ -1,7 +1,7 @@
 var articles = [
 {"title":"Script notes updated", "url":"201708", "date":"2018-01-14", "tags":"scriptnotes"},
 {"title":"Arabic script summary updated", "url":"201708", "date":"2018-01-13", "tags":"scriptnotes,arabic"},
-{"title":"New: Mandaic character picker & notes", "url":"201708", "date":"2018-01-08", "tags":"apps,pickers,mandaic"},
+{"title":"New: Mandaic character picker & notes", "url":"201708", "date":"2018-01-08", "tags":"apps,pickers,scriptnotes,mandaic"},
 {"title":"New app: Character usage lookup ", "url":"201708", "date":"2017-10-29", "tags":"apps,charuse"},
 {"title":"List characters app updated", "url":"201708", "date":"2017-10-28", "tags":"apps,listcharacters"},
 {"title":"New: Makasar character picker", "url":"201708", "date":"2017-10-21", "tags":"apps,pickers,docs,scriptnotes,makasar"},
