@@ -62,7 +62,9 @@
           <p class="entrymeta">Posted on Mon 4 Mar 2019 tagged as <a href="index?tag=scriptnotes">scriptnotes</a></p>
      </div>
         <div class="post-content">
-        <p>I've often heard from people that there needs to be a way to represent linguistic glosses in HTML (with CSS). I also often hear the suggestion that an extension to ruby markup is needed to allow for this. I disagree. The following is, to my mind, a much more appropriate approach. This example is quite simple, but it can easily be extended to include more lines and more interesting styling options. Note also that the text wraps according to the width of the window.</p>
+        <p>I've often heard from people that there needs to be a way to represent linguistic glosses in HTML (with CSS). </p>
+<p>I also often hear the suggestion that an extension to ruby markup is needed to allow for this. I disagree. I also often hear that we need some new HTML markup for this. I don't think so.</p>
+<p>I suspect that the following approach may tick all the necessary boxes, without any additions to anything. This example is quite simple, but it can easily be extended to include more lines and more interesting styling options. Note also that the text wraps according to the width of the window.</p>
 <figure style="padding: 2em; font-size: 90%;">
 <div class="gloss">
 <div class="glossGroup"><span class="legend" lang="en">Ge'ez:</span><span class="legend">Pronunciation:</span><span class="legend">Gloss:</span></div>
@@ -88,18 +90,18 @@
 <p style="font-size: 80%; text-align: left;"><code>&lt;figure&gt;<br>
 &lt;div class=&quot;gloss&quot;&gt;<br>
 &lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;legend&quot; lang=&quot;en&quot;&gt;Ge'ez:&lt;/span&gt;&lt;span class=&quot;legend&quot;&gt;Pronunciation:&lt;/span&gt;&lt;span class=&quot;legend&quot;&gt;Gloss:&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ወሶበ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;wä-sobä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;and-when&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ሰማዐ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;sämʾä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;heard.he&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ኢሳይያሰ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;ʾIsayəyyas&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;ʾIsayəyyas&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ዘንተ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;zäntä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;this&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ነገረ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;nägärä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;statement&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;እምአፉሆሙ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;ʾəm-ʾafu-homu&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;from-mouth-their&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ለአግብርተ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;läʾägbərtä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;servants.of&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ለአግብርተ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;läʾägbərtä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;servants.of&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ሰዬጣን፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;säyṭan&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;Satan&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ቦአ§&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;boʾä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;went.he&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ኀበ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;ḫäbä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;to&lt;/span&gt;&lt;/div&gt;<br>
-&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ወይቤሎ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;wä-yəbel-o&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;and-he.said-to.him&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ወሶበ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;wä-sobä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;and-when&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ሰማዐ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;sämʾä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;heard.he&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ኢሳይያሰ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;ʾIsayəyyas&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;ʾIsayəyyas&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ዘንተ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;zäntä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;this&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ነገረ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;nägärä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;statement&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;እምአፉሆሙ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;ʾəm-ʾafu-homu&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;from-mouth-their&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ለአግብርተ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;läʾägbərtä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;servants.of&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ለአግብርተ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;läʾägbərtä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;servants.of&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ሰዬጣን፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;säyṭan&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;Satan&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ቦአ§&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;boʾä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;went.he&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ኀበ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;ḫäbä&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;to&lt;/span&gt;&lt;/div&gt;<br>
+&lt;div class=&quot;glossGroup&quot;&gt;&lt;span class=&quot;original&quot; lang=&quot;am&quot;&gt;ወይቤሎ፡&lt;/span&gt;&lt;span class=&quot;transcription&quot;&gt;wä-yəbel-o&lt;/span&gt;&lt;span class=&quot;meaning&quot;&gt;and-he.said-to.him&lt;/span&gt;&lt;/div&gt;<br>
 &lt;/div&gt;<br>
 &lt;/figure&gt;</code></p>
 <p><i class="intro">This is the CSS code.</i></p>
