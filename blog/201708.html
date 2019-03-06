@@ -29,7 +29,7 @@
     font-style: normal;
 	}
 
-.glossGroup span { text-align: left; }
+.multilineGlossedText span { text-align: left; }
 .original { min-width: 1em; }
 .legend { font-style: italic; }
 .stack {
@@ -39,16 +39,16 @@
     margin-right: .75em;
     margin-top: .5em;
 	}
-.glossGroup {
+.multilineGlossedText {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 	}
 
 
-#ottoman .glossGroup span { text-align: left; }
-#ottoman .glossGroup bdo { text-align: right; }
-#ottoman .glossGroup bdi { text-align: right; }
+#ottoman .multilineGlossedText span { text-align: left; }
+#ottoman .multilineGlossedText bdo { text-align: right; }
+#ottoman .multilineGlossedText bdi { text-align: right; }
 #ottoman .base { min-width: 1em; font-size: 1.5em; font-family: "Noto Nastaliq Urdu WF", serif;}
 #ottoman .morph { font-variant: small-caps; }
 #ottoman .ipa { font-family: 'Doulos SIL WF', serif; }
@@ -99,7 +99,7 @@
 <p>I also often hear the suggestion that an extension to ruby markup is needed to allow for this. I disagree. I also often hear that we need some new HTML markup for this. I don't think so.</p>
 <p>I suspect that the following approach may tick all the necessary boxes, without any additions to anything. This example is quite simple, but it can easily be extended to include more lines and more interesting styling options. Note also that the text wraps according to the width of the window.</p>
 <figure style="padding: 2em; font-size: 90%;">
-<div class="glossGroup">
+<div class="multilineGlossedText">
 <div class="stack"><span class="legend" lang="en">Ge'ez:</span><span class="legend">Pronunciation:</span><span class="legend">Gloss:</span></div>
 <div class="stack"><span class="base" lang="gez">ወሶበ፡</span><span class="trans">wä-sobä</span><span class="gloss">and-when</span></div>
 <div class="stack"><span class="base" lang="gez">ሰማዐ፡</span><span class="trans">sämʾä</span><span class="gloss">heard.he</span></div>
@@ -121,7 +121,7 @@
 
 <h3>The code</h3>
 <p><i class="intro">The markup uses divs and spans, which are then styled using CSS flexbox properties.</i></p>
-<p style="font-size: 80%; text-align: left;"><code>&lt;div class=&quot;glossGroup&quot;&gt;<br>
+<p style="font-size: 80%; text-align: left;"><code>&lt;div class=&quot;multilineGlossedText&quot;&gt;<br>
 &lt;div class=&quot;stack&quot;&gt;&lt;span class=&quot;legend&quot;&gt;Ge'ez:&lt;/span&gt;&lt;span class=&quot;legend&quot;&gt;Pronunciation:&lt;/span&gt;&lt;span class=&quot;legend&quot;&gt;Gloss:&lt;/span&gt;&lt;/div&gt;<br>
 &lt;div class=&quot;stack&quot;&gt;&lt;span class=&quot;base&quot; lang=&quot;gez&quot;&gt;ወሶበ፡&lt;/span&gt;&lt;span class=&quot;trans&quot;&gt;wä-sobä&lt;/span&gt;&lt;span class=&quot;gloss&quot;&gt;and-when&lt;/span&gt;&lt;/div&gt;<br>
 &lt;div class=&quot;stack&quot;&gt;&lt;span class=&quot;base&quot; lang=&quot;gez&quot;&gt;ሰማዐ፡&lt;/span&gt;&lt;span class=&quot;trans&quot;&gt;sämʾä&lt;/span&gt;&lt;span class=&quot;gloss&quot;&gt;heard.he&lt;/span&gt;&lt;/div&gt;<br>
@@ -132,7 +132,7 @@
 &lt;/div&gt;<br>
 </code></p>
 <p><i class="intro">This is the CSS code.</i></p>
-<p style="font-size: 80%; text-align: left; white-space: pre;"><code>.glossGroup {
+<p style="font-size: 80%; text-align: left; white-space: pre;"><code>.multilineGlossedText {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -152,7 +152,7 @@
 
 <p>This example annotates text that is written right-to-left. It shows transcriptions written RTL and LTR, but without actually needing to reverse the string in the source. There's a lot more  styling going on for the different types of data. It also applies small caps to a morphological identifier. In the original, the Arabic and reversed transcription were separate from the rest of the annotations, but here I bring them all together.</p>
 <figure style="padding: 2em; font-size: 90%;">
-<div class="glossGroup" dir="rtl" id="ottoman">
+<div class="multilineGlossedText" dir="rtl" id="ottoman">
 <div class="stack"><span style="line-height: 40px;" class="legend">Ottoman :</span><span class="legend">Rev. Translit :</span><span class="legend">Transliteration :</span><span class="legend">Mod.Turkish :</span><span class="legend">Transliteration :</span><span class="legend">Gloss :</span></div>
 <div class="stack"><bdi class="base" lang="ar" dir="rtl">←خواجه</bdi><bdo dir="rtl" class="trans">←ḫvach</bdo><span class="trans">ḫvach</span><span class="turk" lang="tr">Hoca</span><span class="ipa">hoʤʼɑ</span><span class="gloss">teacher</span></div>
 <div class="stack"><bdi class="base" lang="ar" dir="rtl">مركبني</bdi><bdo dir="rtl" class="trans">mrkbny</bdo><span class="trans">mrkbny</span><span class="turk" lang="tr">merkebini</span><span class="ipa">mɛrkɛbɪ'ni</span><span class="gloss">his.donkey</span></div>
