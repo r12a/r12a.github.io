@@ -1,70 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>List characters tool</title>
+<title>Encoding converter</title>
 <meta name="description" content="Tool to analyse what characters are in a string and list them by block." />
-<link rel="stylesheet" type="text/css"href="/shared/style/docs.css" />
+<link rel="stylesheet" type="text/css"href="/style/docs.css" />
 <link rel="stylesheet" type="text/css" href="style.css" />
-<script type="text/javascript" src="/shared/code/boilerplate.js"></script>
-<script src="/uniview/functions.js"></script>
-<script src="/uniview/scriptGroups.js"></script>
-<script src="script.js"></script>
+<script type="text/javascript" src="/code/boilerplate.js"></script>
+<script type="text/javascript" src="indexes.js"></script>
+<script type="text/javascript" src="basics.js"></script>
+<script type="text/javascript" src="../conversion/conversionfunctions.js"></script>
 </head>
 
-<body class="app">
-<header>
-<div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','List characters','');</script>
-</header>
+<body>
+  <p>This app is now available at <a href="https://r12a.github.io/app-listcharacters/">https://r12a.github.io/app-listcharacters/</a></p>
 
-
-<p style="margin-bottom: 0;"><textarea id="in" style="width: 80%; height: 400px;"></textarea></p>
-<div style="text-align: center;">
-<button onClick="document.getElementById('in').value = document.getElementById('in').value.normalize('NFC')">Convert to NFC</button>
-<button onClick="document.getElementById('in').value = document.getElementById('in').value.normalize('NFD')">Convert to NFD</button>
-<button onClick="document.getElementById('in').value = document.getElementById('in').value.normalize('NFC')+document.getElementById('in').value.normalize('NFD'); document.getElementById('in').value = document.getElementById('in').value.toLowerCase()+document.getElementById('in').value.toUpperCase()">Get all forms</button>
-</div>
-<p>
-<button onclick="makeList(document.getElementById('in').value)">Analyse the text above</button></p>
-<p id="out"></p>
-
-
-<details>
-<summary style="margin-left: 7.5%; cursor:pointer;"><strong>Notes</strong></summary>
-
-<aside class="sidebar">
-  <div class="section">
-    <h2 class="flush">Related links</h2>
-    <p><a target="_blank" href="/uniview/">UniView</a></p>
-    <p><a target="_blank" href="/apps/conversion/">Unicode code converter</a></p>
-  </div>
-</aside>
-
-<p id="status">Updated Fri 27 Oct 2017  &bull; tags <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'unicode'">unicode</a>, <a href="http://rishida.net/blog/index.php?tag=counterstyles" title="Show all blog posts tagged with 'encoding'">encoding</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a></p>
-
-<section>
-  <p>This app analyses the characters in text that you paste into the large box at the top, and produces a list of what characters were used, grouped by Unicode block.</p>
-  <p>To identify characters and look up information about them you will find <a href="/uniview/">UniView</a> extremely useful. You can paste Unicode characters into the UniView <code class="kw" translate="no">Edit Buffer</code> and click on the down-arrow icon below to find out what they are. (Click on the name that appears for more detailed information.)</p>
-  <p>The <img src="copy.png" alt="Copy"> icon copies the content of the field to its left to your clipboard, ready for you to paste elsewhere. Using this method to copy the characters, rather than highlighting the text and pressing Cmd/Ctrl+C, removes the zero width spaces that are used to separate characters for display. This will not work, however, on Safari or other browsers using the webkit engine.</p>
-  <p>The <samp>Get all forms</samp> button produces 4 copies of the content in the input area. The copies are, respectively, all lowercase, all uppercase, all NFC normalised, and all NFD normalised.</p>
-</section>
-
-</details>
-
-<div class="smallprint"><span id="version">First published 18 Dec 2015.  This version <span id="version-info"> 
-<!-- #BeginDate format:IS1m -->2017-10-27  12:56<!-- #EndDate --> 
-  </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span></div>
-  
- <script>
-// check for parameters and take appropriate action
-parameters = location.search.split('&');
-parameters[0] = parameters[0].substring(1);
-for (var p=0;p<parameters.length;p++) {  
-	pairs = parameters[p].split('=');
-	if (pairs[0] == 'chars') { if (pairs[1]) { document.getElementById('in').value = decodeURIComponent(pairs[1]); makeList(decodeURIComponent(pairs[1])) } }
-//	if (pairs[0] == 'charlist') { if (pairs[1]) { document.getElementById("picker").value = decodeURIComponent(pairs[1]);showCharacterList(decodeURIComponent(pairs[1])); } }
-	}
-</script>
 </body>
 </html>
