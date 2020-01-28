@@ -4,7 +4,7 @@
 	<head>
 		<title>r12a.io</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="style/docs.css" />
+		<link rel="stylesheet" type="text/css" href="/shared/style/docs.css" />
         <style>
 		#contactlink { position: fixed; bottom: 10px; right: 10px; }
 		p { text-align: start; }
@@ -19,7 +19,7 @@ body {
 }
 h1 {
 	text-align:center;
-	margin: 2em 0 0 0;
+	margin: 1em 0 0 0;
 }
 #sitelinks {
 	text-align:center;
@@ -28,8 +28,18 @@ h1 {
 .link-container {
 	margin: 0 3em 0 3em;
 	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	}
 .cell {
+    background-color: rgba(255,255,255,.2);
+    border-radius: 10px;
+    margin: 20px 10px 35px;
+	display: inline-block;
+    box-shadow: 0 1px 3px #c1c1c1;
+}
+.narrowcell {
     background-color: rgba(255,255,255,.2);
     border-radius: 10px;
     margin: 20px 10px 35px;
@@ -45,10 +55,29 @@ table {
 .cell td { 
 	border: 0; 
 }
-.cell img {
+.narrowcell td {
+	width: 100px;
+	padding: 0;
+	}
+.cell img, .narrowcell img {
 	/*width: 250px;*/
 	border-radius: 10px 10px 0 0;
 	height: 200px
+}
+.narrowcell input {
+    color: #5c5c5c;
+    padding: 0 4px;
+    border-radius: 0px 0px 10px 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	font-family: "Lucida Grande", sans-serif;
+    line-height: 30px;
+    vertical-align: middle;	
+	text-align: center;
+	font-size: 14px;
+	width: 100%;
+	border: 0;
+	background-color: #F2F2F2;
 }
 .image { 
 	border-radius: 10px 10px 0 0;
@@ -70,6 +99,12 @@ table {
     line-height: 30px;
     vertical-align: middle;
     background-color: #F2F2F2;
+	
+	text-align: center;
+font-size: 14px;
+width: 100%;
+border: 0;
+background-color: #F2F2F2;
 }
 .cell a { 
 	color: #5c5c5c; 
@@ -96,135 +131,138 @@ table {
 	</head>
 
 	<body>
-		<h1>r12a.io</h1> 
+    <h1><a href="https://r12a.github.io/">r12a.io</a></h1> 
         
 		<div id="sitelinks" class="noprint"><span>
-			<a href="blog/" title="Blog">blog</a>&nbsp; 
-			<a href="doclist" title="Pages describing stuff">docs</a>&nbsp; 
-			<a href="maplist" title="Various svg maps">maps</a>&nbsp; 
-			<a href="applist" title="Small apps written in html and javascript">apps</a>&nbsp; 
-			<a href="photos" title="Photos">photos</a>&nbsp;&nbsp;</span></div>
+			<a href="https://r12a.github.io/blog/" title="Blog">blog</a>&nbsp; 
+			<a href="https://r12a.github.io/doclist" title="Pages describing stuff">docs</a>&nbsp; 
+			<a href="https://r12a.github.io/maplist" title="Various svg maps">maps</a>&nbsp; 
+			<a href="https://r12a.github.io/applist" title="Small apps written in html and javascript">apps</a>&nbsp; 
+			<a href="https://r12a.github.io/photos" title="Photos">photos</a>&nbsp;&nbsp;</span></div>
 
     
      		    <h2 style="text-align:center; margin-left:3em; margin-right: 3em;">quick links</h2>
-    <div class="link-container">
-     		      
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="http://www.w3.org/" title="W3C"><img src="images/index//w3c.png" alt="" style="width:200px; height: 120px;"/></a></td></tr>
-<tr><td class="title"><a href="http://www.w3.org/" title="W3C">W3C</a></td></tr>
-</tbody></table>
+ 
+ 
+ 
+ 
+ 
+ 
+ <div class="link-container">
+ 
+
+<style>
+.mainlink { display:flex; flex-direction: column; width: 200px; padding: 0; border-radius: 10px; margin: 20px 10px 35px; box-shadow: 0 1px 3px #c1c1c1; line-height: 1; background-color: #F2F2F2; }
+.mainlink a { margin: 0;padding: 0; color: #666; border-radius: 10px 10px 0 0; }
+.mainlink a:visited { margin: 0;padding: 0; color: #666; border-radius: 10px 10px 0 0;}
+.mainlink form { margin:0; padding: 0; line-height: 1; }
+.mainlink input { width: 100%; margin: 0; padding: 0; border: 0; text-align: center; border-radius: 0px 0px 10px 10px; white-space: nowrap; text-overflow: ellipsis;font-family: 'Lucida Grande', sans-serif;line-height: 30px;vertical-align: middle;font-size: 14px;background-color: #F2F2F2; }
+.mainlink img { width:200px; margin:0; padding: 0; height: 100%; border-radius: 10px 10px 0 0; }
+</style>
+
+
+<div class="mainlink">
+<a href="http://www.w3.org/International/" title="W3C i18n Activity"><img src="images/index/i18n.png" alt=""/></a>
+<form onSubmit="document.location = 'http://www.w3.org/International/'+this.firstChild.value; return false;"><input placeholder="W3C i18n Activity"/></form>
 </div>
 
-  <div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="http://www.w3.org/International/" title="Internationalization Activity"><img src="images/index/i18n.png" alt="" style="width:200px; height: 120px;"/></a></td></tr>
-<tr><td class="title"><a href="http://www.w3.org/International/" title="Internationalization Activity">W3C i18n Activity</a></td></tr>
-</tbody></table>
+<div class="mainlink">
+<a href="https://www.unicode.org/main.html" title="Unicode"><img src="images/index/unicode.png" alt=""/></a>
+<form onSubmit="document.location = 'https://www.unicode.org/'+this.firstChild.value; return false;"><input placeholder="Unicode"/></form>
 </div>
 
-<div class="cell" style="border:0; margin: 0; box-shadow:none;">
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="http://www.unicode.org/" title="Unicode"><img src="images/index/unicode.png" alt="" style="width:200px; height: 120px;"/></a></td></tr>
-<tr><td class="title"><a href="http://www.unicode.org/" title="Unicode">Unicode</a></td></tr>
-</tbody></table>
+<div class="mainlink">
+<a href="https://github.com/r12a" title="GitHub"><img src="images/index/github.png" alt=""/></a>
+<form onSubmit="document.location = 'https://github.com/w3c/'+this.firstChild.value; return false;"><input placeholder="GitHub"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="https://github.com/r12a" title="GitHub"><img src="images/index/github.png" alt="" style="width:200px; height: 120px;"/></a></td></tr>
-<tr><td class="title"><a href="https://github.com/r12a" title="GitHub">GitHub</a></td></tr>
-</tbody></table>
-</div>
-</div>
 </div><!-- end of main quick links -->
 
 
 
 <div class="link-container">
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="uniview/" title="UniView"><img src="images/lists/uniview.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="uniview/" title="UniView">UniView</a></td></tr>
-</tbody></table>
+<style>
+.quicklink { display:flex; flex-direction: column; width: 150px; padding: 0; border-radius: 10px; margin: 20px 10px 35px; box-shadow: 0 1px 3px #c1c1c1; line-height: 1; background-color: #F2F2F2; }
+.quicklink a { margin: 0;padding: 0; color: #666; border-radius: 10px 10px 0 0;}
+.quicklink a:visited { margin: 0;padding: 0; color: #666; border-radius: 10px 10px 0 0;}
+.quicklink form { margin:0; padding: 0; line-height: 1; }
+.quicklink input { width: 100%; margin: 0; padding: 0; border: 0; text-align: center; border-radius: 0px 0px 10px 10px; white-space: nowrap; text-overflow: ellipsis;font-family: 'Lucida Grande', sans-serif;line-height: 30px;vertical-align: middle;font-size: 14px;background-color: #F2F2F2; }
+.quicklink img { width:150px; margin:0; padding: 0; height: 180px; border-radius: 10px 10px 0 0; }
+</style>
+
+<div class="quicklink">
+<a href="https://r12a.github.io/uniview/" title="UniView"><img src="images/lists/uniview.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/uniview/?charlist='+this.firstChild.value; return false;"><input placeholder="UniView"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="app-subtags/"><img src="images/lists/subtags.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="app-subtags/">Language subtags</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/pickers/" title="Character apps"><img src="images/lists/pickers.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/pickers/'+this.firstChild.value; return false;"><input placeholder="Character apps"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="app-conversion/"><img src="images/lists/conversion.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="app-conversion/">Character converter</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/app-conversion/" title="Character converter"><img src="images/lists/conversion.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/app-conversion/?q='+this.firstChild.value; return false;"><input placeholder="Character converter"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="http://validator.w3.org/i18n-checker/"><img src="images/lists/i18nchecker.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="http://validator.w3.org/i18n-checker/">I18n checker</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/app-listcharacters" title="List characters"><img src="images/lists/listcharacters.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/app-listcharacters?chars='+this.firstChild.value; return false;"><input placeholder="List characters"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="scripts/links"><img src="images/lists/scriptlinks.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="scripts/links">Script links</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/scripts/links" title="Script links"><img src="images/lists/scriptlinks.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/scripts/links?iso='+this.firstChild.value; return false;"><input placeholder="Script links"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="pickers/" title="Character pickers"><img src="images/lists/pickers.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="pickers/" title="Character pickers">Character pickers</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/scripts/#scriptnotes" title="Script summaries"><img src="images/lists/scriptsummary.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/scripts/'+this.firstChild.value; return false;"><input placeholder="Script summaries"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="app-charuse/"><img src="images/lists/charuse.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="app-charuse/">Character usage</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/app-charuse/" title="Character usage"><img src="images/lists/charuse.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/app-charuse/?language='+this.firstChild.value; return false;"><input placeholder="Character usage"/></form>
 </div>
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="scripts/featurelist"><img src="images/lists/featurelist.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="scripts/featurelist">Script comparison</a></td></tr>
-</tbody></table>
-</div>
-
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="scripts/#scriptnotes"><img src="images/lists/scriptsummary.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="scripts/#scriptnotes">Script summaries</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/scripts/featurelist" title="Script comparison"><img src="images/lists/featurelist.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/scripts/featurelist?dummy='+this.firstChild.value; return false;"><input placeholder="Script comparison"/></form>
 </div>
 
 
-<div class="cell">
-<table><tbody>
-<tr><td class="image"><a href="app-listcharacters"><img src="images/lists/listcharacters.png" alt=""/></a></td></tr>
-<tr><td class="title"><a href="app-listcharacters">List characters</a></td></tr>
-</tbody></table>
+<div class="quicklink">
+<a href="https://r12a.github.io/app-subtags/" title="Subtag finder"><img src="images/lists/subtags.png" alt=""/></a>
+<form onSubmit="document.location = 'https://r12a.github.io/app-subtags/?find='+this.firstChild.value; return false;"><input placeholder="Language subtags"/></form>
+</div>
+
+<div class="quicklink">
+<a href="https://validator.w3.org/i18n-checker/" title="I18n checker"><img src="images/lists/i18nchecker.png" alt=""/></a>
+<form onSubmit="document.location = 'https://validator.w3.org/i18n-checker/check?uri='+this.firstChild.value; return false;"><input placeholder="I18n checker"/></form>
+</div>
+
+<div class="quicklink">
+<a href="https://www.w3.org/International/tests/" title="i18n tests"><img src="images/lists/testsuite.png" alt=""/></a>
+<form onSubmit="document.location = 'https://www.w3.org/International/tests/#'+this.firstChild.value; return false;"><input placeholder="i18n tests"/></form>
+</div>
+
+<div class="quicklink">
+<a href="https://www.wikipedia.org/" title="Wikipedia"><img src="images/lists/wikipedia.png" alt=""/></a>
+<form onSubmit="document.location = 'https://www.wikipedia.org/wiki/'+this.firstChild.value; return false;"><input placeholder="Wikipedia"/></form>
+</div>
+
 </div>
 
 
 
 
-</div>
+
 
                 
 
 
 
-
-<div id="contactlink"><a href="mailto:ishida@w3.org" class="email">ishida &#x40; w3.org</a></div>
+<div id="contactlink"><a href="mailto:ishida@w3.org" class="email">r12a &#x40; w3.org</a></div>
 </body>
 </html>
