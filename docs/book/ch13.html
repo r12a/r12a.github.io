@@ -6,53 +6,8 @@
 <meta name="keywords" content="Unicode core specification">
 <title>TUS Experiment</title>
 <link rel="stylesheet" href="tusv2.css">
-<style>
-body { 
-    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-    line-height: 1.2; 
-    padding: 10%;
-    font-size: 1.1rem;
-    }
-.leadin { font-weight: bold; font-style: italic; }
-.xref { font-style: italic; }
-.uname { text-transform: uppercase; font-weight: normal; font-size: 70%; }
-.charName { font-style: italic; }
-.caption_num { font-weight: bold; }
-
-#toc {
-    columns: 3;
-    margin-inline: 20%;
-    }
-#toc li {
-    list-style-type: none;
-    font-style: italic;
-    font-weight: bold;
-    }
-h1 {
-    font-size: 2.5rem;
-    font-style: italic;
-    }
-h2 { 
-    font-style: normal; 
-    margin-block-start: 8rem;
-    }
-h3 { 
-    font-style: italic;
-    margin-block-start: 2rem;
-    }
-.ChapterNumber {
-    font-size: 1.4rem;
-    font-weight: normal;
-    }
-.ChapterSubtitle {
-    font-size: 1.4rem;
-    font-weight: bold;
-    }
-.SubheadingnoTOC, .Subheading, .SubheadingNoTOC {
-    font-size: 1.2rem;
-    font-style: italic;
-    }
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="functions.js"> </script>
 </head>
 <body>
 <!-- HTML generated: 2022-03-30, 17:47:12 GMT -->
@@ -64,26 +19,7 @@ h3 {
 
 <p id="G33328">This chapter describes the following other modern scripts in South and Central Asia:</p>
 
-<ul id="toc">
-<li>Thaana</li>
-<li>Sinhala</li>
-<li>Newa</li>
-<li>Tibetan</li>
-<li>Mongolian</li>
-<li>Limbu</li>
-<li>Meetei Mayek</li>
-<li>Mro</li>
-<li>Warang Citi</li>
-<li>Ol Chiki</li>
-<li>Chakma</li>
-<li>Lepcha</li>
-<li>Saurashtra</li>
-<li>Masaram Gondi</li>
-<li>Gunjala Gondi</li>
-<li>Wancho</li>
-<li>Toto</li>
-<li>Tangsa</li>
-</ul>
+<ul id="chapterTOC"></ul>
 
 <p id="G28176">The Thaana script is used to write Dhivehi, the language of the Republic of Maldives, an island nation in the middle of the Indian Ocean. </p>
 
@@ -1952,5 +1888,8 @@ h3 {
 
 </section>
 
+<script>
+buildPage()
+</script>
 </body>
 </html>

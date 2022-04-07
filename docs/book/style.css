@@ -1,0 +1,61 @@
+body { 
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    line-height: 1.2; 
+    padding: 10%;
+    font-size: 1.1rem;
+    }
+.leadin { font-weight: bold; font-style: italic; }
+.xref { font-style: italic; }
+.uname { text-transform: uppercase; font-weight: normal; font-size: 70%; }
+.charName { font-style: italic; }
+.caption_num { font-weight: bold; }
+
+
+
+/* for narrow screen */
+#chapterTOC {
+    columns: 2;
+    margin-inline: auto;
+    max-width: 700px;
+    }
+
+/* for wider screen */
+@media only screen and (min-width: 640px) {
+    #chapterTOC {
+        columns: 3;
+        }
+    }
+
+#chapterTOC li {
+    list-style-type: none;
+    font-style: italic;
+    font-weight: bold;
+    }
+
+
+
+
+h1 {
+    font-size: 2.5rem;
+    font-style: italic;
+    }
+h2 { 
+    font-style: normal; 
+    margin-block-start: 8rem;
+    }
+h3 { 
+    font-style: italic;
+    margin-block-start: 2rem;
+    }
+.ChapterNumber {
+    font-size: 1.4rem;
+    font-weight: normal;
+    }
+.ChapterSubtitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    }
+.SubheadingnoTOC, .Subheading, .SubheadingNoTOC {
+    font-size: 1.2rem;
+    font-style: italic;
+    }
