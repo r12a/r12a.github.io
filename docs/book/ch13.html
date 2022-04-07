@@ -1,0 +1,1956 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Unicode core specification">
+<meta name="keywords" content="Unicode core specification">
+<title>TUS Experiment</title>
+<link rel="stylesheet" href="tusv2.css">
+<style>
+body { 
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    line-height: 1.2; 
+    padding: 10%;
+    font-size: 1.1rem;
+    }
+.leadin { font-weight: bold; font-style: italic; }
+.xref { font-style: italic; }
+.uname { text-transform: uppercase; font-weight: normal; font-size: 70%; }
+.charName { font-style: italic; }
+.caption_num { font-weight: bold; }
+
+#toc {
+    columns: 3;
+    margin-inline: 20%;
+    }
+#toc li {
+    list-style-type: none;
+    font-style: italic;
+    font-weight: bold;
+    }
+h1 {
+    font-size: 2.5rem;
+    font-style: italic;
+    }
+h2 { 
+    font-style: normal; 
+    margin-block-start: 8rem;
+    }
+h3 { 
+    font-style: italic;
+    margin-block-start: 2rem;
+    }
+.ChapterNumber {
+    font-size: 1.4rem;
+    font-weight: normal;
+    }
+.ChapterSubtitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    }
+.SubheadingnoTOC, .Subheading, .SubheadingNoTOC {
+    font-size: 1.2rem;
+    font-style: italic;
+    }
+</style>
+</head>
+<body>
+<!-- HTML generated: 2022-03-30, 17:47:12 GMT -->
+<div class="ChapterNumber" id="G47">Chapter 13</div>
+
+<h1 class="Title" id="G26312">South and Central Asia-II</h1>
+
+<div class="ChapterSubtitle" id="G26314">Other Modern Scripts</div>
+
+<p id="G33328">This chapter describes the following other modern scripts in South and Central Asia:</p>
+
+<ul id="toc">
+<li>Thaana</li>
+<li>Sinhala</li>
+<li>Newa</li>
+<li>Tibetan</li>
+<li>Mongolian</li>
+<li>Limbu</li>
+<li>Meetei Mayek</li>
+<li>Mro</li>
+<li>Warang Citi</li>
+<li>Ol Chiki</li>
+<li>Chakma</li>
+<li>Lepcha</li>
+<li>Saurashtra</li>
+<li>Masaram Gondi</li>
+<li>Gunjala Gondi</li>
+<li>Wancho</li>
+<li>Toto</li>
+<li>Tangsa</li>
+</ul>
+
+<p id="G28176">The Thaana script is used to write Dhivehi, the language of the Republic of Maldives, an island nation in the middle of the Indian Ocean. </p>
+
+<p id="G28177">Sinhala is an official script of Sri Lanka, where it is used to write the majority language, also known as Sinhala.</p>
+
+<p id="G33232">The Newa script, also known as Nepaalalipi in Nepal and as Newar in English-speaking countries, is a Brahmi-based script that dates to the tenth century <span class="Char-Name">CE</span>. It was actively used in central Nepal until the late 18th century. Newa is presently used to write the Nepal Bhasa language, a Tibeto-Burman language spoken in the Kathmandu Valley of Nepal and in the Indian state of Sikkim. </p>
+
+<p id="G29892">The Mongolian script was developed as an adaption of the Old Uyghur alphabets around the beginning of the thirteenth century, during the reign of Genghis Khan. It is used in both China and Mongolia.</p>
+
+<p id="G28051">The Tibetan script is used for writing the Tibetan language in several countries and regions throughout the Himalayas. The approach to the encoding of Tibetan in the Unicode Standard differs from that for most Brahmi-derived scripts. Instead of using a virama-based model for consonant conjuncts, it uses a subjoined consonant model.</p>
+
+<p id="G28094">Limbu is a Brahmi-derived script primarily used to write the Limbu language, spoken mainly in eastern Nepal, Sikkim, and in the Darjeeling district of West Bengal. Its encoding follows a variant of the Tibetan model, making use of subjoined medial consonants, but also explicitly encoded syllable-final consonants.</p>
+
+<p id="G29842">Lepcha is the writing system for the Lepcha language, spoken in Sikkim and in the Darjeeling district of the West Bengal state of India. Lepcha is directly derived from the Tibetan script, but all of the letters were rotated by ninety degrees.</p>
+
+<p id="G28107">Meetei Mayek is used to write Meetei, a Tibeto-Burman language spoken primarily in Manipur, India. Like Limbu, it makes use of explicitly encoded syllable-final consonants.</p>
+
+<p id="G28138">Chakma is used to write the language of the Chakma people of southeastern Bangladesh and surrounding areas. The language, spoken by about half a million people, is related to other eastern Indo-European languages such as Bengali.</p>
+
+<p id="G28232">Saurashtra is used to write the Saurashtra language, related to Gujarati, but spoken in southern India. The Saurashtra language is most often written using the Tamil script, instead.</p>
+
+<p id="G29860">Ol Chiki is an alphabetic script invented in the 20th century to write Santali, a Munda language of India. It is used primarily for the southern dialect of Santali spoken in the state of Odisha (Orissa).</p>
+
+<p id="G29823">Mro is a Tibeto-Burman language spoken primarily in Bangladesh. The Mro script is a left-to-right alphabet used to write the Mro language. It was invented in the 1980s and is unrelated to existing scripts. </p>
+
+<p id="G29824">The Warang Citi script is a recently devised left-to-right alphabet. The script is used to write the Ho language, a North Munda language which has an emergent literary tradition. The Ho people live in eastern India. </p>
+
+<p id="G36847">The Masaram Gondi script is an abugida. The script was created in 1918 to write the Gondi language, a Dravidian language spoken in central and southeastern India. While not historically related to Brahmi, its general structure is similar to that of other Brahmi-derived Indic scripts. Presently, Masaram Gondi is used in handwritten and printed materials.</p>
+
+<p id="G44846">Gunjala Gondi is also an abugida based on the Brahmi model. It is named after the village in the Adilabad district of the southern Indian state of Telegana, where manuscripts in the script were found. The script is used to write the Adilabad dialect of the Gondi language. Gunjala Gondi is taught and appears in publications today, but the dialect is more commonly written in Telugu or Devanagari.</p>
+
+<p id="G46626">The Wancho script is an alphabet recently devised to write the Wancho language. Wancho is a Sino-Tibetan language used mainly in the southeast of Arunachal Pradesh, as well as in Assam, Nagaland, Myanmar, and Bhutan.</p>
+
+<p id="G50968">Toto is a left-to-right alphabetic script recently created to write Toto, a Sino-Tibetan language spoken in West Bengal, India. The script was designed by a member of the Toto community, and officially launched in 2015.</p>
+
+<p id="G52792">Like Warang Citi, Wancho and Toto, Tangsa is another recently created alphabetic script. Tangsa was created in 1990 to write the Tangsa languages spoken in Arunachal Pradesh, India, and the Sagaing Region of northwest Myanmar. </p>
+
+
+
+
+
+<section id="Section1"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G26451">Thaana</h2>
+
+<section id="Subsection1"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingnoTOC" id="G26453">Thaana: U+0780–U+07BF</div>
+
+<p id="G26455">The Thaana script is used to write the modern Dhivehi language of the Republic of Maldives, a group of atolls in the Indian Ocean. Like the Arabic script, Thaana is written from right to left and uses vowel signs, but it is not cursive. The basic Thaana letters have been extended by a small set of dotted letters used to transcribe Arabic. The use of modified Thaana letters to write Arabic began in the middle of the 20th century. Loan words from Arabic may be written in the Arabic script, although this custom is not very prevalent today. (See Section&nbsp;9.2, Arabic.)</p>
+
+<p id="G26459">While Thaana’s glyphs were borrowed in part from Arabic (letters haa through vaavu were based on the Arabic-Indic digits, for example), and while vowels and sukun are marked with combining characters as in Arabic, Thaana is properly considered an alphabet, rather than an abjad, because writing the vowels is obligatory.</p>
+
+<section id="Subsubsection1"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26461"><span class="leadin">Directionality.</span> The Thaana script is written from right to left. Conformant implementations of Thaana script must use the Unicode Bidirectional Algorithm (see Unicode Standard Annex #9, “Unicode Bidirectional Algorithm”).</p>
+
+</section>
+
+<section id="Subsubsection2"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26463"><span class="leadin">Vowels.</span> Consonants are always written with either a vowel sign (U+07A6..U+07AF) or the null vowel sign (U+07B0 <span class="Char-Name">THAANA SUKUN</span>). U+0787 <span class="Char-Name">THAANA LETTER ALIFU</span> with the null vowel sign denotes a glottal stop. The placement of the Thaana vowel signs is shown in Table&nbsp;13-1.</p>
+
+<table style="margin: 0 auto;" id="Table10">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G26473">Table 13-1.  Thaana Glyph Placement</caption>
+<tbody>
+  <tr>
+    <th><p class="CellHeading">Syllable</p></th>
+    <th><p class="CellHeading">Display</p></th>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tha</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">%0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>thaa</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">&amp;0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>thi</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">'0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>thee</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">(0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>thu</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">)0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>thoo</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">*0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>the</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">+0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>they</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">,0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tho</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">-0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>thoa</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">.0</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>th</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufournine'">/0</span></p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection3"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26525"><span class="leadin">Numerals.</span> Both European (U+0030..U+0039) and Arabic digits (U+0660..U+0669) are used. European numbers are used more commonly and have left-to-right display directionality in Thaana. Arabic numeric punctuation is used with digits, whether Arabic or European.</p>
+
+</section>
+
+<section id="Subsubsection4"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26527"><span class="leadin">Punctuation.</span> The Thaana script uses spaces between words. It makes use of a mixture of Arabic and European punctuation, though rules of usage are not clearly defined. Sentence-final punctuation is now generally shown with a single period (U+002E “.” <span class="Char-Name">FULL STOP</span>) but may also use a sequence of two periods (U+002E followed by U+002E). Phrases may be separated with a comma (usually U+060C <span class="Char-Name">ARABIC COMMA</span>) or with a single period (U+002E). Colons, dashes, and double quotation marks are also used in the Thaana script. In addition, Thaana makes use of U+061F <span class="Char-Name">ARABIC QUESTION MARK</span> and U+061B <span class="Char-Name">ARABIC SEMICOLON</span>.</p>
+
+</section>
+
+<section id="Subsubsection5"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26529"><span class="leadin">Character Names and Arrangement.</span> The character names are based on the names used in the Republic of Maldives. The character name at U+0794, yaa, is found in some sources as yaviyani, but the former name is more common today. Characters are listed in Thaana alphabetical order from haa to ttaa for the Thaana letters, followed by the extended characters in Arabic alphabetical order from hhaa to waavu.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section2"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G26561">Sinhala</h2>
+
+<section id="Subsection2"> <!-- Finnegan: Add scripting goop here. -->
+<div class="Subheading" id="G26562">Sinhala: U+0D80–U+0DFF</div>
+
+<p id="G26563">The Sinhala script, also known as Sinhalese or Singhalese, is used to write the Sinhala language, the majority language of Sri Lanka. It is also used to write the Pali and Sanskrit languages. The script is a descendant of Brahmi and resembles the scripts of South India in form and structure. </p>
+
+<p id="G26564">Sinhala differs from other languages of the region in that it has a series of prenasalized stops that are distinguished from the combination of a nasal followed by a stop. In other words, both forms occur and are written differently—for example, <span class="HackFont" style="font-family: 'Thisnthat'">AB</span><span class="HackFont" style="font-family: 'Thisnthat'"> </span>&lt;U+0D85, U+0DAC&gt; a<span class="HackFont" style="font-family: 'Ufournine'">8</span><span class="HackFont" style="font-family: 'Ufourfour'">}</span>a [a<span class="HackFont" style="font-family: 'Ufournine'">:;</span>a] “sound” versus <span class="HackFont" style="font-family: 'Thisnthat'">ACDE</span> &lt;U+0D85, U+0DAB, U+0DCA, U+0DA9&gt; a<span class="HackFont" style="font-family: 'Ufoursix'">V</span><span class="HackFont" style="font-family: 'Ufourfour'">}</span>a [a<span class="HackFont" style="font-family: 'Ufournine'">9;</span>a] “egg.” Sinhala also has distinct signs for both a short and a long low front vowel whose sound [æ] is similar to the initial vowel in the English word “apple.” The independent forms of these vowels are encoded at U+0D87 and U+0D88; the corresponding dependent forms are U+0DD0 and U+0DD1.</p>
+
+<section id="Subsubsection6"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26567"><span class="leadin">Vowel Letters.</span> Vowel letters are encoded atomically in Unicode, even if they can be analyzed visually as consisting of multiple parts. Table&nbsp;13-2 shows the letters that can be analyzed, the single code point that should be used to represent them in text, and the sequence of code points resulting from analysis that should not be used.</p>
+
+<table style="margin: 0 auto;" id="Table11">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G26577">Table 13-2.  Sinhala Vowel Letters</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">To Represent</p></th>
+    <th><p class="CellHeading">Use</p></th>
+    <th><p class="CellHeading">Do Not Use</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">1</span></p></td>
+    <td><p class="CellBody">0D86</p></td>
+    <td><p class="CellBody">&lt;0D85, 0DCF&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">2</span></p></td>
+    <td><p class="CellBody">0D87</p></td>
+    <td><p class="CellBody">&lt;0D85, 0DD0&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">3</span></p></td>
+    <td><p class="CellBody">0D88</p></td>
+    <td><p class="CellBody">&lt;0D85, 0DD1&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">4</span></p></td>
+    <td><p class="CellBody">0D8C</p></td>
+    <td><p class="CellBody">&lt;0D8B, 0DDF&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">5</span></p></td>
+    <td><p class="CellBody">0D8E</p></td>
+    <td><p class="CellBody">&lt;0D8D, 0DD8&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">6</span></p></td>
+    <td><p class="CellBody">0D90</p></td>
+    <td><p class="CellBody">&lt;0D8F, 0DDF&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">7</span></p></td>
+    <td><p class="CellBody">0D92</p></td>
+    <td><p class="CellBody">&lt;0D91, 0DCA&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">8</span></p></td>
+    <td><p class="CellBody">0D93</p></td>
+    <td><p class="CellBody">&lt;0D91, 0DD9&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricOne'">9</span></p></td>
+    <td><p class="CellBody">0D96</p></td>
+    <td><p class="CellBody">&lt;0D94, 0DDF&gt;</p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection7"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26643"><span class="leadin">Other Letters for Tamil.</span> The Sinhala script may also be used to write Tamil. In this case, some additional combinations may be required. Some letters, such as U+0DBB <span class="Char-Name">SINHALA LETTER RAYANNA</span> and U+0DB1 <span class="Char-Name">SINHALA LETTER DANTAJA NAYANNA</span>, may be modified by adding the equivalent of a nukta. There is, however, no nukta presently encoded in the Sinhala block.</p>
+
+</section>
+
+<section id="Subsubsection8"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G38611"><span class="leadin">Virama (al-lakuna) and Consonant Forms.</span> Rendering Sinhala is similar to other Brahmic scripts in the Unicode Standard, particularly Tamil, however, consonant forms are encoded differently. Each consonant may be represented as any of the following forms:</p>
+
+<p class="Item" id="G38799">a live consonant</p>
+
+<p class="Item" id="G38802">a dead consonant with a visible al-lakuna</p>
+
+<p class="Item" id="G53215">a reduced form</p>
+
+<p class="Item" id="G38837">a part of a ligated conjunct</p>
+
+<p class="Item" id="G38805">a part of a touching conjunct</p>
+
+<p id="G53306">Unless combined with a U+200D <span class="Char-Name">ZERO WIDTH JOINER</span>, an al-lakuna is always visible and does not join consonants to form orthographic consonant clusters. For example, between a pair of live consonants, U+0DAF <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">A</span> da and U+0DB0 <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">B</span> dha, an al-lakuna alone merely results in a dead consonant d followed by a live consonant dha, without a conjunct form:</p>
+
+<p class="ItemExample" id="G38602"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">A</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">B</span> → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">DB</span></p>
+
+<p id="G38613">The sequence &lt;al-lakuna, ZWJ&gt; joins consonants to form orthographic consonant clusters in the style of reduced forms or ligated conjuncts. The sequence &lt;ZWJ, al-lakuna&gt; joins consonants to form orthographic consonant clusters in the style of touching conjuncts. The latter style is productive and should not be implemented on a case-by-case basis.</p>
+
+<p class="ItemExample" id="G53595"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">A</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span> + ZWJ + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">E</span> → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">AF</span> d.ya (da with reduced ya)</p>
+
+<p class="ItemExample" id="G53596"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">A</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span> + ZWJ + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">B</span> → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">G</span> d.dha (da and dha ligated)</p>
+
+<p class="ItemExample" id="G53588"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">A</span>+ ZWJ + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">B</span> → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">H</span> d.dha (da and dha touching)</p>
+
+<p id="G53295">Note how the use of ZWJ in Sinhala differs from that of typical Indic scripts. The order of an al-lakuna and a ZWJ between two consonants is not related to which consonant will take a reduced form, but instead affects the style of orthographic consonant clusters.</p>
+
+</section>
+
+<section id="Subsubsection9"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G53522"><span class="leadin">Reduced Consonant Forms.</span> Three reduced forms are commonly recognized: repaya, the above-base form of ra when it is the first consonant in an orthographic consonant cluster; yansaya and rakaaraansaya, the post-base form of ya and the below-base form of ra, respectively, when they follow another consonant in an orthographic consonant cluster. These three reduced forms also have Unicode named character sequences, as shown in Table&nbsp;13-3.</p>
+
+<table style="margin: 0 auto;" id="Table29">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G54018">Table 13-3.   Sinhala Named Character Sequences</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">Reduced Form</p></th>
+    <th><p class="CellHeading">Representation</p></th>
+    <th><p class="CellHeading">Name</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">I</span> repaya</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">J</span> ra + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span> + ZWJ</p></td>
+    <td><p class="CellBody"><span class="Char-Name">SINHALA CONSONANT SIGN REPAYA</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">KF</span> yansaya</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span>+ ZWJ + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">E</span> ya</p></td>
+    <td><p class="CellBody"><span class="Char-Name">SINHALA CONSONANT SIGN YANSAYA</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">L</span> rakaaraansaya</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span> +  ZWJ + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">J</span> ra</p></td>
+    <td><p class="CellBody"><span class="Char-Name">SINHALA CONSONANT SIGN RAKAARAANSAYA</span></p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection10"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G54408"><span class="leadin">Ligated Conjuncts.</span> Table&nbsp;13-4 lists common ligated conjuncts formed by conjoining two consonants with the sequence &lt;al-lakuna, ZWJ&gt;. The conjunct j.nya is atomically encoded as U+0DA5 <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">M</span> <span class="Char-Name">SINHALA LETTER TAALUJA SANYOOGA NAAKSIKYAYA</span>.</p>
+
+<table style="margin: 0 auto;" id="Table30">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G54462">Table 13-4.  Sinhala Ligated Conjuncts</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">Conjunct</p></th>
+    <th><p class="CellHeading">Representation</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">N</span> k.va</p></td>
+    <td><p class="CellBody">0D9A ka, al-lakuna, ZWJ, 0DC0 va</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">O</span> k.ssa</p></td>
+    <td><p class="CellBody">0D9A ka, al-lakuna, ZWJ, 0DC2 ssa</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">P</span> g.dha</p></td>
+    <td><p class="CellBody">0D9C ga, al-lakuna, ZWJ, 0DB0 dha</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">Q</span> tt.ttha</p></td>
+    <td><p class="CellBody">0DA7 tta, al-lakuna, ZWJ, 0DA8 ttha</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">R</span> t.tha</p></td>
+    <td><p class="CellBody">0DAD ta, al-lakuna, ZWJ, 0DAE tha</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">S</span> t.va</p></td>
+    <td><p class="CellBody">0DAD ta, al-lakuna, ZWJ, 0DC0 va</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">G</span> d.dha</p></td>
+    <td><p class="CellBody">0DAF da, al-lakuna, ZWJ, 0DB0 dha</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">T</span> d.va</p></td>
+    <td><p class="CellBody">0DAF da, al-lakuna, ZWJ, 0DC0 va</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">U</span> n.tha</p></td>
+    <td><p class="CellBody">0DB1 na, al-lakuna, ZWJ, 0DAE tha</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">V</span> n.da</p></td>
+    <td><p class="CellBody">0DB1 na, al-lakuna, ZWJ, 0DAF da</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">W</span> n.dha</p></td>
+    <td><p class="CellBody">0DB1 na, al-lakuna, ZWJ, 0DB0 dha</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">X</span> n.va</p></td>
+    <td><p class="CellBody">0DB1 na, al-lakuna, ZWJ, 0DC0 va</p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection11"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G55467"><span class="leadin">Special Ligatures.</span> Certain combinations of a base followed by a dependent sign exhibit special interaction. Table&nbsp;13-5 shows the most irregular cases, which involve a consonant letter followed by a vowel sign.</p>
+
+<table style="margin: 0 auto;" id="Table31">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G55502">Table 13-5.  Irregular Vowel Sign Ligatures of Sinhala</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">Combination</p></th>
+    <th><p class="CellHeading">Ligature</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">J</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">Y</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">Z</span> rae</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">J</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">a</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">b</span> raae</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">J</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">c</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">d</span> ru</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">J</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">e</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">f</span> ruu</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">g</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">c</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">h</span> llu</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">g</span> + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">e</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">i</span> lluu</p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G55476">There are several other notable, more regular cases. Bases with a structure similar to <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">A</span> da lose the descending tail when a below-base sign is attached.</p>
+
+<p class="ItemExample" id="G55477"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">A</span> da + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">c</span> -u / <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">e</span> -uu / <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">L</span> rakaaraansaya → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">j</span> du, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">k</span> duu, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">l</span> d.ra</p>
+
+<p id="G55478">The vowel killer al-lakuna takes an alternative form when combined with certain bases. For example:</p>
+
+<p class="ItemExample" id="G55479"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">m</span> ca + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">C</span> al-lakuna → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">n</span> c</p>
+
+<p id="G55480">Vowel signs u and uu take alternative forms when combined with the following specific bases: <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">o</span> ka, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">p</span> ga, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">q</span> ngga, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">r</span> ta, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">s</span> bha, and <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">t</span> sha. They take another pair of alternative forms when a <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">L</span> rakaaraansaya is already present.</p>
+
+<p class="ItemExample" id="G55481"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">o</span> ka + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">c</span> -u / <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">e</span> -uu → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">u</span> ku, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">v</span> kuu</p>
+
+<p class="ItemExample" id="G55482"><span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">w</span> k.ra + <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">c</span> -u / <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">e</span> -uu → <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">x</span> k.ru, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">y</span> k.ruu</p>
+
+<p id="G55483">In particular, the alternative forms shown in the second line of this example should not be encoded using the vowel signs <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">Y</span> ae and <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">a</span> aae, which look similar, but are rendered higher: <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">z</span> k.rae, <span class="HackFont" style="font-family: 'Sinhala Hacked Encoding'">1</span>k.raae. </p>
+
+</section>
+
+<section id="Subsubsection12"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G56531"><span class="leadin">Candrabindu for Sanskrit.</span> U+0D81 <span class="Char-Name">SINHALA SIGN CANDRABINDU</span> represents the candrabindu used in some archaic Sanskrit texts. It is not for use in modern Sinhala.</p>
+
+</section>
+
+<section id="Subsubsection13"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31417"><span class="leadin">Punctuation.</span> Sinhala currently uses Western-style punctuation marks. U+0DF4 <span class="HackFont" style="font-family: 'Ufoursix'">w</span> <span class="Char-Name">SINHALA PUNCTUATION KUNDDALIYA</span> was used historically as a typographic ornament or to punctuate sentences, sections, and chapters. U+0964 <span class="Char-Name">DEVANAGARI DANDA</span> is used to represent dandas that only occasionally occur in historic Sanskrit or Pali texts written in the Sinhala script.</p>
+
+</section>
+
+<section id="Subsubsection14"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31420"><span class="leadin">Digits.</span> Modern Sinhala text uses Western digits. The set of digits in the range U+0DE6 to U+0DEF was used into the twentieth century, primarily to write horoscopes. That set of astrological digits is known as Sinhala Lith Illakkam, and includes a form for zero.</p>
+
+</section>
+
+<section id="Subsubsection15"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G56754"><span class="leadin">Standards.</span> SLS 1134, Sinhala Character Code for Information Interchange, is Sri Lanka’s national standard for encoding the Sinhala script.</p>
+
+</section>
+
+</section>
+
+<section id="Subsection3"> <!-- Finnegan: Add scripting goop here. -->
+<div class="Subheading" id="G31492">Sinhala Archaic Numbers: U+111E0–U+111FF</div>
+
+<p id="G31605">The Sinhala Archaic Numbers block contains characters used in a historic number system called Sinhala Illakkam, which was in use prior to 1815. Sinhala Illakkam was not a positional notation, and lacks a digit for zero. It is distinct from the set of Sinhala astrological digits called Sinhala Lith Illakkam (U+0DE6..U+0DEF).</p>
+
+</section>
+
+</section>
+
+<section id="Section3"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G31609">Newa</h2>
+
+<section id="Subsection4"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G31712">Newa: U+11400–U+1147F</div>
+
+<p id="G31849">The Newa script, also known as Nepaalalipi in Nepal and as Newar in English-speaking countries, is a Brahmi-based script that dates to the tenth century <span class="Char-Name">CE</span>. The script is attested in inscriptions, coins, manuscripts, books, and other publications.</p>
+
+<p id="G31850">Newa was actively used in central Nepal until the latter half of the 18th century, when the Newa dynasties were overthrown and the use of the script began to decline. In 1905 the script was banned, but the ban was lifted in 1951. Today Newa is used to write the Nepal Bhasa language, a Tibeto-Burman language spoken predominantly in the Kathmandu Valley of Nepal and in the Indian state of Sikkim. It also is used to write Sanskrit and Nepali. Historically, Newa has been used for Maithili, Bengali, and Hindi. At present, the Nepal Bhasa language is most often written in the Devanagari script.</p>
+
+<section id="Subsubsection16"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31852"><span class="leadin">Structure.</span> Like other Brahmi-derived Indic scripts, Newa is an abugida and makes use of a virama.  The script is written left-to-right.</p>
+
+</section>
+
+<section id="Subsubsection17"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31854"><span class="leadin">Vowels.</span> Vowel length is usually indicated by the dependent vowel signs. The visarga may also be used to show vowel length. Some vowels are used only for Sanskrit and are not needed for the representation of Nepal Bhasa.</p>
+
+</section>
+
+<section id="Subsubsection18"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31856"><span class="leadin">Virama and Conjuncts.</span> Conjunct forms of consonant clusters are represented with U+11442 <span class="Char-Name">NEWA SIGN VIRAMA</span>. Half-forms are used for writing horizontal conjuncts, and generally used only for consonants with right descenders. Explicit half-forms can be produced by writing U+200D <span class="Char-Name">ZERO WIDTH JOINER</span> after the virama. In particular, a cluster-initial ra is rendered in its above-base form (repha) by default, while its half-form (eyelash) needs to be explicitly requested. Vertical conjuncts are currently preferred for writing consonant clusters, but manuscripts show more variation, such as conjuncts in a horizontal or cascading shape.</p>
+
+</section>
+
+<section id="Subsubsection19"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G33169"><span class="leadin">Murmured Resonant Consonants.</span> Six consonant letters are encoded to represent murmured resonants in the Nepal Bhasa language, as shown in Table&nbsp;13-6. The murmured resonants are analyzed as individual letters in the modern orthography, and are separately encoded. Similar-appearing conjuncts involving the consonant ha in Sanskrit text should be represented as conjuncts, using a sequence of &lt;C1, virama, C2&gt;, consistent with Sanskrit practice for other Indic scripts.</p>
+
+<table style="margin: 0 auto;" id="Table23">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G33176">Table 13-6.  Murmured Resonants in Nepal Bhasa</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">Code Point</p></th>
+    <th><p class="CellHeading">Glyph</p></th>
+    <th><p class="CellHeading">Name</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody">U+11413</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickElbasanFigs'">H</span></p></td>
+    <td><p class="CellBody"><span class="Char-Name">NEWA LETTER NGHA</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody">U+11419</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickElbasanFigs'">I</span></p></td>
+    <td><p class="CellBody"><span class="Char-Name">NEWA LETTER NYHA</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody">U+11424</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickElbasanFigs'">J</span></p></td>
+    <td><p class="CellBody"><span class="Char-Name">NEWA LETTER NHA</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody">U+1142A</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickElbasanFigs'">K</span></p></td>
+    <td><p class="CellBody"><span class="Char-Name">NEWA LETTER MHA</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody">U+1142D</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickElbasanFigs'">L</span></p></td>
+    <td><p class="CellBody"><span class="Char-Name">NEWA LETTER RHA</span></p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody">U+1142F</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickElbasanFigs'">M</span></p></td>
+    <td><p class="CellBody"><span class="Char-Name">NEWA LETTER LHA</span></p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection20"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G49612"><span class="leadin">Jihvamuliya and Upadhmaniya.</span> The voiceless velar and bilabial fricatives in Newa are represented by U+11460 <span class="Char-Name">NEWA SIGN JIHVAMULIYA</span> and U+11461 <span class="Char-Name">NEWA SIGN UPADHMANIYA</span> respectively. These two characters have the Indic_Syllabic_Category value of Consonant_With_Stacker, which means that they make stacked ligatures with the next consonant without the use of a virama. Dependent vowel signs can also be added to the stack.</p>
+
+</section>
+
+<section id="Subsubsection21"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G33225"><span class="leadin">Rendering.</span> Combinations of certain consonants and vowel signs may have special rendering requirements. For example, the vowel signs ai, o, and au have two-part contextual forms when the vowels occur after the consonants ga, nya, ttha, nna, tha, dha, and sha. In addition, several consonant letters have glyphic variants. These include ga, jha, nya, ra, and sha. </p>
+
+</section>
+
+<section id="Subsubsection22"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31862"><span class="leadin">Ligatures.</span> The consonant clusters k<span class="HackFont" style="font-family: 'Ufoursix'">X</span>a and jña are represented by the sequences &lt;U+1140E <span class="Char-Name">NEWA LETTER KA</span>, U+11442 <span class="Char-Name">NEWA SIGN VIRAMA</span>, U+11432 <span class="Char-Name">NEWA LETTER SSA</span>&gt; and &lt;U+11416 <span class="Char-Name">NEWA LETTER JA</span>, U+11442 <span class="Char-Name">NEWA SIGN VIRAMA</span>, U+11423 <span class="Char-Name">NEWA LETTER NA</span>&gt;, respectively. The consonants ja and ra are also written as ligatures when combined with U+11438 <span class="Char-Name">NEWA VOWEL SIGN U</span> or U+11439 <span class="Char-Name">NEWA VOWEL SIGN UU</span>.</p>
+
+</section>
+
+<section id="Subsubsection23"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31864"><span class="leadin">Digits.</span> Newa has a full set of decimal digits located at U+11450 to U+11459.</p>
+
+</section>
+
+<section id="Subsubsection24"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31866"><span class="leadin">Punctuation.</span> Newa makes use of script-specific dandas, U+1144B <span class="Char-Name">NEWA DANDA</span> and U+1144C <span class="Char-Name">NEWA DOUBLE DANDA</span>. Other Newa punctuation marks include U+1144D <span class="Char-Name">NEWA COMMA</span> and U+1145A <span class="Char-Name">NEWA DOUBLE COMMA</span>, which are used as phrase separators, and U+1145D <span class="Char-Name">NEWA INSERTION SIGN</span>. The punctuation mark U+1144E <span class="Char-Name">NEWA GAP FILLER</span> indicates a break or fills a gap in a line at the margin. The character U+1145B <span class="Char-Name">NEWA PLACEHOLDER MARK</span> also is used to fill a gap in a line, but may be used to mark the end of text. U+1144F <span class="Char-Name">NEWA ABBREVIATION SIGN</span> is employed to indicate an abbreviation.</p>
+
+<p id="G31867">Unicode characters in other blocks may be used for other punctuation marks that occur in Newa texts . A flower mark, used to identify the end of a text section, can be represented by U+2055 <span class="Char-Name">FLOWER PUNCTUATION MARK</span>. This mark typically occurs with U+1144C <span class="Char-Name">NEWA DOUBLE DANDA</span> on either side. To indicate a deletion, U+1DFB <span class="Char-Name">COMBINING DELETION MARK</span> can be used. </p>
+
+</section>
+
+<section id="Subsubsection25"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31869"><span class="leadin">Other Signs.</span> To indicate nasalization, U+11443 <span class="Char-Name">NEWA SIGN CANDRABINDU</span> and U+11444 <span class="Char-Name">NEWA SIGN ANUSVARA</span> are used. U+11445 <span class="Char-Name">NEWA SIGN VISARGA</span> represents post-vocalic aspiration or can be used to mark vowel length. U+11446 <span class="Char-Name">NEWA SIGN NUKTA</span> is used to indicate sounds for which distinct characters in Newa do not exist, such as in loanwords. The character U+11447 <span class="Char-Name">NEWA SIGN AVAGRAHA</span> marks elision of a word-initial a in Sanskrit as the result of sandhi. U+11448 <span class="Char-Name">NEWA SIGN FINAL ANUSVARA</span> has different uses. In certain manuscripts, it indicates nasalization, whereas in other sources, it is a form of punctuation, similar to a semicolon.</p>
+
+<p id="G31871">Newa includes two invocation signs, U+11449 <span class="Char-Name">NEWA OM</span> and U+1144A <span class="Char-Name">NEWA SIDDHI</span>. The sign om may also be written using the sequence &lt;U+1140C <span class="Char-Name">NEWA LETTER O</span>, U+11443 <span class="Char-Name">NEWA SIGN CANDRABINDU</span>&gt;. The Newa sign siddhi is written at the beginning of text, often beside om. It represents siddhirastu, “may there be success.”</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section4"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G31615">Tibetan</h2>
+
+<section id="Subsection5"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G31610">Tibetan: U+0F00–U+0FFF</div>
+
+<p id="G26652">The Tibetan script is used for writing Tibetan in several countries and regions throughout the Himalayas. Aside from Tibet itself, the script is used in Ladakh, Nepal, and northern areas of India bordering Tibet where large Tibetan-speaking populations now reside. The Tibetan script is also used in Bhutan to write Dzongkha, the official language of that country. In Bhutan, as well as in some scholarly traditions, the Tibetan script is called the Bodhi script, and the particular version written in Bhutan is known as Joyi (mgyogs yig). In addition, Tibetan is used as the language of philosophy and liturgy by Buddhist traditions spread from Tibet into the Mongolian cultural area that encompasses Mongolia, Buriatia, Kalmykia, and Tuva.</p>
+
+<p id="G26655">The Tibetan scripting and grammatical systems were originally defined together in the sixth century by royal decree when the Tibetan King Songtsen Gampo sent 16 men to India to study Indian languages. One of those men, Thumi Sambhota, is credited with creating the Tibetan writing system upon his return, having studied various Indic scripts and grammars. The king’s primary purpose was to bring Buddhism from India to Tibet. The new script system was therefore designed with compatibility extensions for Indic (principally Sanskrit) transliteration so that Buddhist texts could be represented properly. Because of this origin, over the last 1,500 years the Tibetan script has been widely used to represent Indic words, a number of which have been adopted into the Tibetan language retaining their original spelling.</p>
+
+<p id="G26656">A note on Latin transliteration: Tibetan spelling is traditional and does not generally reflect modern pronunciation. Throughout this section, Tibetan words are represented in italics when transcribed as spoken, followed at first occurrence by a parenthetical transliteration; in these transliterations, the presence of the tsek (tsheg) character is expressed with a hyphen.</p>
+
+<p id="G26657">Thumi Sambhota’s original grammar treatise defined two script styles. The first, called uchen (dbu-can, “with head”), is a formal “inscriptional capitals” style said to be based on an old form of Devanagari. It is the script used in Tibetan xylograph books and the one used in the coding tables. The second style, called u-mey (dbu-med, or “headless”), is more cursive and said to be based on the Wartu script. Numerous styles of u-mey have evolved since then, including both formal calligraphic styles used in manuscripts and running handwriting styles. All Tibetan scripts follow the same lettering rules, though there is a slight difference in the way that certain compound stacks are formed in uchen and u-mey.</p>
+
+<section id="Subsubsection26"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26659"><span class="leadin">General Principles of the Tibetan Script.</span> Tibetan grammar divides letters into consonants and vowels. There are 30 consonants, and each consonant is represented by a discrete written character. There are five vowel sounds, only four of which are represented by written marks. The four vowels that are explicitly represented in writing are each represented with a single mark that is applied above or below a consonant to indicate the application of that vowel to that consonant. The absence of one of the four marks implies that the first vowel sound (like a short “ah” in English) is present and is not modified to one of the four other possibilities. Three of the four marks are written above the consonants; one is written below.</p>
+
+<p id="G26660">Each word in Tibetan has a base or root consonant. The base consonant can be written singly or it can have other consonants added above or below it to make a vertically “stacked” letter. Tibetan grammar contains a very complete set of rules regarding letter gender, and these rules dictate which letters can be written in adjacent positions. The rules therefore dictate which combinations of consonants can be joined to make stacks. Any combination not allowed by the gender rules does not occur in native Tibetan words. However, when transcribing other languages (for example, Sanskrit, Chinese) into Tibetan, these rules do not operate. In certain instances other than transliteration, any consonant may be combined with any other subjoined consonant. Implementations should therefore be prepared to accept and display any combinations.</p>
+
+<p id="G26661">For example, the syllable spyir “general,” pronounced [t<span class="HackFont" style="font-family: 'Ufourseven'">"</span>í<span class="HackFont" style="font-family: 'Ufourseven'">#</span>], is a typical example of a Tibetan syllable that includes a stack comprising a head letter, two subscript letters, and a vowel sign. Figure&nbsp;13-1 shows the characters in the order in which they appear in the backing store.</p>
+
+<table style="margin: 0 auto;" id="Table12">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G26668">Figure 13-1.  Tibetan Syllable Structure</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G26674">The model adopted to encode the Tibetan lettering set described above contains the following groups of items: Tibetan consonants, vowels, numerals, punctuation, ornamental signs and marks, and Tibetan-transliterated Sanskrit consonants and vowels. Each of these will be described in this section.</p>
+
+<p id="G26675">Both in this description and in Tibetan, the terms “subjoined” (-btags) and “head” (-mgo) are used in different senses. In the structural sense, they indicate specific slots defined in native Tibetan orthography. In spatial terms, they refer to the position in the stack; anything in the topmost position is “head,” anything not in the topmost position is “subjoined.” Unless explicitly qualified, the terms “subjoined” and “head” are used here in their spatial sense. For example, in a conjunct like “rka,” the letter in the root slot is “KA.” Because it is not the topmost letter of the stack, however, it is expressed with a subjoined character code, while “RA”, which is structurally in the head slot, is expressed with a nominal character code. In a conjunct “kra,” in which the root slot is also occupied with “KA”, the “KA” is encoded with a nominal character code because it is in the topmost position in the stack.</p>
+
+<p id="G26676">The Tibetan script has its own system of formatting, and details of that system relevant to the characters encoded in this standard are explained herein. However, an increasing number of publications in Tibetan do not strictly adhere to this original formatting system. This change is due to the partial move from publishing on long, horizontal, loose-leaf folios, to publishing in vertically oriented, bound books. The Tibetan script also has a punctuation set designed to meet needs quite different from the punctuation that has evolved for Western scripts. With the appearance of Tibetan newspapers, magazines, school textbooks, and Western-style reference books in the last 20 or 30 years, Tibetans have begun using things like columns, indented blocks of text, Western-style headings, and footnotes. Some Western punctuation marks, including brackets, parentheses, and quotation marks, are becoming commonplace in these kinds of publication. With the introduction of more sophisticated electronic publishing systems, there is also a renaissance in the publication of voluminous religious and philosophical works in the traditional horizontal, loose-leaf format—many set in digital typefaces closely conforming to the proportions of traditional hand-lettered text.</p>
+
+</section>
+
+<section id="Subsubsection27"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26678"><span class="leadin">Consonants.</span> The system described here has been devised to encode the Tibetan system of writing consonants in both single and stacked forms.</p>
+
+<p id="G26679">All of the consonants are encoded a first time from U+0F40 through U+0F69. There are the basic Tibetan consonants and, in addition, six compound consonants used to represent the Indic consonants gha, jha, d.ha, dha, bha, and ksh.a. These codes are used to represent occurrences of either a stand-alone consonant or a consonant in the head position of a vertical stack. Glyphs generated from these codes will always sit in the normal position starting at and dropping down from the design baseline. All of the consonants are then encoded a second time. These second encodings from U+0F90 through U+0FB9 represent consonants in subjoined stack position.</p>
+
+<p id="G26680">To represent a single consonant in a text stream, one of the first “nominal” set of codes is placed. To represent a stack of consonants in the text stream, a “nominal” consonant code is followed directly by one or more of the subjoined consonant codes. The stack so formed continues for as long as subjoined consonant codes are contiguously placed.</p>
+
+<p id="G26681">This encoding method was chosen over an alternative method that would have involved a virama-based encoding, such as Devanagari. There were two main reasons for this choice. First, the virama is not normally used in the Tibetan writing system to create letter combinations. There is a virama in the Tibetan script, but only because of the need to represent Devanagari; called “srog-med”, it is encoded at U+0F84 <span class="Char-Name">TIBETAN MARK HALANTA</span>. The virama is never used in writing Tibetan words and can be—but almost never is—used as a substitute for stacking in writing Sanskrit mantras in the Tibetan script. Second, there is a prevalence of stacking in native Tibetan, and the model chosen specifically results in decreased data storage requirements. Furthermore, in languages other than Tibetan, there are many cases where stacks occur that do not appear in Tibetan-language texts; it is thus imperative to have a model that allows for any consonant to be stacked with any subjoined consonant(s). Thus a model for stack building was chosen that follows the Tibetan approach to creating letter combinations, but is not limited to a specific set of the possible combinations.</p>
+
+</section>
+
+<section id="Subsubsection28"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26683"><span class="leadin">Vowels.</span> Each of the four basic Tibetan vowel marks is coded as a separate entity. These code points are U+0F72, U+0F74, U+0F7A, and U+0F7C. For compatibility, a set of several compound vowels for Sanskrit transcription is also provided in the other code points between U+0F71 and U+0F7D. Most Tibetan users do not view these compound vowels as single characters, and their use is limited to Sanskrit words. It is acceptable for users to enter these compounds as a series of simpler elements and have software render them appropriately. Canonical equivalences are specified for all of these compound vowels, with the exception of U+0F77 <span class="Char-Name">TIBETAN VOWEL SIGN VOCALIC RR</span> and U+0F79 <span class="Char-Name">TIBETAN VOWEL SIGN VOCALIC LL</span>, which for historic reasons have only compatibility equivalences specified. These last two characters are deprecated, and their use is strongly discouraged.</p>
+
+<p id="G26684">A vowel sign may be applied either to a stand-alone consonant or to a stack of consonants. The vowel sign occurs in logical order after the consonant (or stack of consonants). Each of the vowel signs is a nonspacing combining mark. The four basic vowel marks are rendered either above or below the consonant. The compound vowel marks also appear either above or below the consonant, but in some cases have one part displayed above and one part displayed below the consonant.</p>
+
+<p id="G26685">All of the symbols and punctuation marks have straightforward encodings. Further information about many of them appears later in this section.</p>
+
+</section>
+
+<section id="Subsubsection29"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26687"><span class="leadin">Coding Order.</span> In general, the correct coding order for a stream of text will be the same as the order in which Tibetans spell and in which the characters of the text would be written by hand. For example, the correct coding order for the most complex Tibetan stack would be</p>
+
+<p class="ItemExample" id="G26688">head position consonant</p>
+
+<p class="ItemExample" id="G26689">first subjoined consonant</p>
+
+<p class="ItemExample" id="G26690">... (intermediate subjoined consonants, if any)</p>
+
+<p class="ItemExample" id="G26691">last subjoined consonant</p>
+
+<p class="ItemExample" id="G26692">subjoined vowel a-chung (U+0F71)</p>
+
+<p class="ItemExample" id="G26693">standard or compound vowel sign, or virama</p>
+
+<p id="G26694">Where used, the character U+0F39 <span class="Char-Name">TIBETAN MARK TSA -PHRU</span> occurs immediately after the consonant it modifies.</p>
+
+</section>
+
+<section id="Subsubsection30"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26696"><span class="leadin">Allographical Considerations.</span> When consonants are combined to form a stack, one of them retains the status of being the principal consonant in the stack. The principal consonant always retains its stand-alone form. However, consonants placed in the “head” and “subjoined” positions to the main consonant sometimes retain their stand-alone forms and sometimes are given new, special forms. Because of this fact, certain consonants are given a further, special encoding treatment—namely, “wa” (U+0F5D), “ya” (U+0F61), and “ra” (U+0F62).</p>
+
+</section>
+
+<section id="Subsubsection31"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26698"><span class="leadin">Head Position “ra”.</span> When the consonant “ra” is written in the “head” position (ra-mgo, pronounced ra-go) at the top of a stack in the normal Tibetan-defined lettering set, the shape of the consonant can change. It can either be a full-form shape or the full-form shape but with the bottom stroke removed (looking like a short-stemmed letter “T”). This requirement of “ra” in the head position where the glyph representing it can change shape is correctly coded by using the stand-alone “ra” consonant (U+0F62) followed by the appropriate subjoined consonant(s). For example, in the normal Tibetan ra-mgo combinations, the “ra” in the head position is mostly written as the half-ra but in the case of “ra + subjoined nya” must be written as the full-form “ra”. Thus the normal Tibetan ra-mgo combinations are correctly encoded with the normal “ra” consonant (U+0F62) because it can change shape as required. It is the responsibility of the font developer to provide the correct glyphs for representing the characters where the “ra” in the head position will change shape—for example, as in “ra + subjoined nya”.</p>
+
+</section>
+
+<section id="Subsubsection32"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26700"><span class="leadin">Full-Form “ra” in Head Position.</span> Some instances of “ra” in the head position require that the consonant be represented as a full-form “ra” that never changes. This is not standard usage for the Tibetan language itself, but rather occurs in transliteration and transcription. Only in these cases should the character U+0F6A <span class="Char-Name">TIBETAN LETTER FIXED-FORM RA</span> be used instead of U+0F62 <span class="Char-Name">TIBETAN LETTER RA</span>. This “ra” will always be represented as a full-form “ra consonant” and will never change shape to the form where the lower stroke has been cut off. For example, the letter combination “ra&nbsp;+&nbsp;ya”, when appearing in transliterated Sanskrit works, is correctly written with a full-form “ra” followed by either a modified subjoined “ya” form or a full-form subjoined “ya” form. Note that the fixed-form “ra” should be used only in combinations where “ra” would normally transform into a short form but the user specifically wants to prevent that change. For example, the combination “ra + subjoined nya” never requires the use of fixed-form “ra”, because “ra” normally retains its full glyph form over “nya”. It is the responsibility of the font developer to provide the appropriate glyphs to represent the encodings. </p>
+
+</section>
+
+<section id="Subsubsection33"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26702"><span class="leadin">Subjoined Position “wa”, “ya”, and “ra”.</span> All three of these consonants can be written in subjoined position to the main consonant according to normal Tibetan grammar. In this position, all of them change to a new shape. The “wa” consonant when written in subjoined position is not a full “wa” letter any longer but is literally the bottom-right corner of the “wa” letter cut off and appended below it. For that reason, it is called a wa-zur (wa-zur or “corner of a wa”) or, less frequently but just as validly, wa-ta (wa-btags) to indicate that it is a subjoined “wa”. The consonants “ya” and “ra” when in the subjoined position are called ya-ta (ya-btags) and ra-ta (ra-btags), respectively. To encode these subjoined consonants that follow the rules of normal Tibetan grammar, the shape-changed, subjoined forms U+0FAD <span class="Char-Name">TIBETAN SUBJOINED LETTER WA</span>, U+0FB1 <span class="Char-Name">TIBETAN SUBJOINED LETTER YA</span>, and U+0FB2 <span class="Char-Name">TIBETAN SUBJOINED LETTER RA</span> should be used.</p>
+
+<p id="G26703">All three of these subjoined consonants also have full-form non-shape-changing counterparts for the needs of transliterated and transcribed text. For this purpose, the full sub-joined consonants that do not change shape (encoded at U+0FBA, U+0FBB, and U+0FBC, respectively) are used where necessary. The combinations of “ra + ya” are a good example because they include instances of “ra” taking a short (ya-btags) form and “ra” taking a full-form subjoined “ya”.</p>
+
+<p id="G26704">U+0FB0 <span class="Char-Name">TIBETAN SUBJOINED LETTER -A</span> (a-chung) should be used only in the very rare cases where a full-sized subjoined ’a-chung letter is required. The small vowel lengthening ’a-chung encoded as U+0F71<span class="Char-Name"> TIBETAN VOWEL SIGN AA</span> is far more frequently used in Tibetan text, and it is therefore recommended that implementations treat this character (rather than U+0FB0) as the normal subjoined ’a-chung.</p>
+
+</section>
+
+<section id="Subsubsection34"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26706"><span class="leadin">Halanta (Srog-Med).</span> Because two sets of consonants are encoded for Tibetan, with the second set providing explicit ligature formation, there is no need for a “dead character” in Tibetan. When a halanta (srog-med) is used in Tibetan, its purpose is to suppress the inherent vowel “a”. If anything, the halanta should prevent any vowel or consonant from forming a ligature with the consonant preceding the halanta. In Tibetan text, this character should be displayed beneath the base character as a combining glyph and not used as a (purposeless) dead character.</p>
+
+</section>
+
+<section id="Subsubsection35"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26708"><span class="leadin">Line Breaking Considerations.</span> Tibetan text separates units called natively tsek-bar (“tsheg-bar”), an inexact translation of which is “syllable.” Tsek-bar is literally the unit of text between tseks and is generally a consonant cluster with all of its prefixes, suffixes, and vowel signs. It is not a “syllable” in the English sense.</p>
+
+<p id="G26709">Tibetan script has only two break characters. The primary break character is the standard interword tsek (tsheg), which is encoded at U+0F0B. The second break character is the space. Space or tsek characters in a stream of Tibetan text are not always break characters and so need proper contextual handling.</p>
+
+<p id="G26710">The primary delimiter character in Tibetan text is the tsek (U+0F0B <span class="Char-Name">TIBETAN MARK INTERSYLLABIC TSHEG</span>). In general, automatic line breaking processes may break after any occurrence of this tsek, except where it follows a U+0F44 <span class="Char-Name">TIBETAN LETTER NGA</span> (with or without a vowel sign) and precedes a shay (U+0F0D), or where Tibetan grammatical rules do not permit a break. (Normally, tsek is not written before shay except after “nga”. This type of tsek-after-nga is called “nga-phye-tsheg” and may be expressed by U+0F0B or by the special character U+0F0C, a nonbreaking form of tsek.) The Unicode names for these two types of tsek are misnomers, retained for compatibility. The standard tsek U+0F0B <span class="Char-Name">TIBETAN MARK INTERSYLLABIC TSHEG</span> is always required to be a potentially breaking character, whereas the “nga-phye-tsheg” is always required to be a nonbreaking tsek. U+0F0C <span class="Char-Name">TIBETAN MARK DELIMITER TSHEG BSTAR</span> is specifically not a “delimiter” and is not for general use.</p>
+
+<p id="G26711">There are no other break characters in Tibetan text. Unlike English, Tibetan has no system for hyphenating or otherwise breaking a word within the group of letters making up the word. Tibetan text formatting does not allow text to be broken within a word.</p>
+
+<p id="G26712">Whitespace appears in Tibetan text, although it should be represented by U+00A0 <span class="Char-Name">NO-BREAK SPACE</span> instead of U+0020 <span class="Char-Name">SPACE</span>. Tibetan text breaks lines after tsek instead of at whitespace.</p>
+
+<p id="G26713">Complete Tibetan text formatting is best handled by a formatter in the application and not just by the code stream. If the interword and nonbreaking tseks are properly employed as breaking and nonbreaking characters, respectively, and if all spaces are nonbreaking spaces, then any application will still wrap lines correctly on that basis, even though the breaks might be sometimes inelegant.</p>
+
+</section>
+
+<section id="Subsubsection36"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26715"><span class="leadin">Tibetan Punctuation.</span> The punctuation apparatus of Tibetan is relatively limited. The principal punctuation characters are the tsek; the shay (transliterated “shad”), which is a vertical stroke used to mark the end of a section of text; the space used sparingly as a space; and two of several variant forms of the shay that are used in specialized situations requiring a shay. There are also several other marks and signs but they are sparingly used.</p>
+
+<p id="G26716">The shay at U+0F0D marks the end of a piece of text called “tshig-grub”. The mode of marking bears no commonality with English phrases or sentences and should not be described as a delimiter of phrases. In Tibetan grammatical terms, a shay is used to mark the end of an expression (“brjod-pa”) and a complete expression. Two shays are used at the end of whole topics (“don-tshan”). Because some writers use the double shay with a different spacing than would be obtained by coding two adjacent occurrences of U+0F0D, the double shay has been coded at U+0F0E with the intent that it would have a larger spacing between component shays than if two shays were simply written together. However, most writers do not use an unusual spacing between the double shay, so the application should allow the user to write two U+0F0D codes one after the other. Additionally, font designers will have to decide whether to implement these shays with a larger than normal gap.</p>
+
+<p id="G26717">The U+0F11 rin-chen-pung-shay (rin-chen-spungs-shad) is a variant shay used in a specific “new-line” situation. Its use was not defined in the original grammars but Tibetan tradition gives it a highly defined use. The drul-shay (“sbrul-shad”) is likewise not defined by the original grammars but has a highly defined use; it is used for separating sections of meaning that are equivalent to topics (“don-tshan”) and subtopics. A drul-shay is usually surrounded on both sides by the equivalent of about three spaces (though no rule is specified). Hard spaces will be needed for these instances because the drul-shay should not appear at the beginning of a new line and the whole structure of spacing-plus-shay should not be broken up, if possible.</p>
+
+<p id="G26718">Tibetan texts use a yig-go (“head mark,” yig-mgo) to indicate the beginning of the front of a folio, there being no other certain way, in the loose-leaf style of traditional Tibetan books, to tell which is the front of a page. The head mark can and does vary from text to text; there are many different ways to write it. The common type of head mark has been provided for with U+0F04 <span class="Char-Name">TIBETAN MARK INITIAL YIG MGO MDUN MA</span> and its extension U+0F05 <span class="Char-Name">TIBETAN MARK CLOSING YIG MGO SGAB MA</span>. An initial mark yig-go can be written alone or combined with as many as three closing marks following it. When the initial mark is written in combination with one or more closing marks, the individual parts of the whole must stay in proper registration with each other to appear authentic. Therefore, it is strongly recommended that font developers create precomposed ligature glyphs to represent the various combinations of these two characters. The less common head marks mainly appear in Nyingmapa and Bonpo literature. Three of these head marks have been provided for with U+0F01, U+0F02, and U+0F03; however, many others have not been encoded. Font developers will have to deal with the fact that many types of head marks in use in this literature have not been encoded, cannot be represented by a replacement that has been encoded, and will be required by some users.</p>
+
+<p id="G26719">Two characters, U+0F3C <span class="Char-Name">TIBETAN MARK ANG KHANG GYON </span>and U+0F3D <span class="Char-Name">TIBETAN MARK ANG KHANG GYAS,</span> are paired punctuation; they are typically used together to form a roof over one or more digits or words. In this case, kerning or special ligatures may be required for proper rendering. The right ang khang may also be used much as a single closing parenthesis is used in forming lists; again, special kerning may be required for proper rendering. The marks U+0F3E <span class="Char-Name">TIBETAN SIGN YAR TSHES</span> and U+0F3F <span class="Char-Name">TIBETAN SIGN MAR TSHES</span> are paired signs used to combine with digits; special glyphs or compositional metrics are required for their use.</p>
+
+<p id="G26720">A set of frequently occurring astrological and religious signs specific to Tibetan is encoded between U+0FBE and U+0FCF.</p>
+
+<p id="G26721">U+0F34, which means “et cetera” or “and so on,” is used after the first few tsek-bar of a recurring phrase. U+0FBE (often three times) indicates a refrain.</p>
+
+<p id="G26722">U+0F36 and U+0FBF are used to indicate where text should be inserted within other text or as references to footnotes or marginal notes.</p>
+
+</section>
+
+<section id="Subsubsection37"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26725"><span class="leadin">Svasti Signs.</span> The svasti signs encoded in the range U+0FD5..U+0FD8 are widely used sacred symbols associated with Hinduism, Buddhism, and Jainism. They are often printed in religious texts, marriage invitations, and decorations, and are considered symbols of good luck and well-being. In the Hindu tradition in India, the dotted forms are often used. The svasti signs are used to mark religious flags in Jainism and also appear on Buddhist temples, or as map symbols to indicate the location of Buddhist temples throughout Asia. These signs are encoded in the Tibetan block, but are intended for general use; they occur with many other scripts in Asia.</p>
+
+<p id="G26726">In the Tibetan language, the right-facing svasti sign is referred to as gyung drung nang -khor and the left-facing svasti sign as gyung drung phyi -khor. U+0FCC <span class="Char-Name">TIBETAN SYMBOL NOR BU BZHI -KHYIL</span>, or quadruple body symbol, is a Tibetan-specific version of the left-facing svasti sign.</p>
+
+<p id="G26727">The svasti signs have also been borrowed into the Han script and adapted as CJK ideographs. The CJK unified ideographs U+534D and U+5350 correspond to the left-facing and right-facing svasti signs, respectively. These CJK unified ideographs have adopted Han script-specific features and properties: they share metrics and type style characteristics with other ideographs, and are given radicals and stroke counts like those for other ideographs.</p>
+
+</section>
+
+<section id="Subsubsection38"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26729"><span class="leadin">Other Characters.</span> The Wheel of Dharma, which occurs sometimes in Tibetan texts, is encoded in the Miscellaneous Symbols block at U+2638.</p>
+
+<p id="G26730">The marks U+0F35 <span class="Char-Name">TIBETAN MARK NGAS BZUNG NYI ZLA</span> and U+0F37 <span class="Char-Name">TIBETAN MARK NGAS BZUNG SGOR RTAGS </span>conceptually attach to a tsek-bar rather than to an individual character and function more like attributes than characters—for example, as underlining to mark or emphasize text. In Tibetan interspersed commentaries, they may be used to tag the tsek-bar belonging to the root text that is being commented on. The same thing is often accomplished by setting the tsek-bar belonging to the root text in large type and the commentary in small type. Correct placement of these glyphs may be problematic. If they are treated as normal combining marks, they can be entered into the text following the vowel signs in a stack; if used, their presence will need to be accounted for by searching algorithms, among other things.</p>
+
+</section>
+
+<section id="Subsubsection39"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26732"><span class="leadin">Tibetan Half-Numbers.</span> The half-number forms (U+0F2A..U+0F33) are peculiar to Tibetan, though other scripts (for example, Bangla) have similar fractional concepts. The half-numbers are not well attested. Based on current evidence, the value of a half-number is 0.5 less than the number within which it appears. Half numbers appear as the last digit of a multidigit number. For example, the sequence of digits “U+0F24 U+0F2C” could represent the numerical value 42.5.</p>
+
+</section>
+
+<section id="Subsubsection40"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26734"><span class="leadin">Tibetan Transliteration and Transcription of Other Languages.</span> Tibetan traditions are in place for transliterating other languages. Most commonly, Sanskrit has been the language being transliterated, although Chinese has become more common in modern times. Additionally, Mongolian has a transliterated form. There are even some conventions for transliterating English. One feature of Tibetan script/grammar is that it allows for totally accurate transliteration of Sanskrit. The basic Tibetan letterforms and punctuation marks contain most of what is needed, although a few extra things are required. With these additions, Sanskrit can be transliterated perfectly into Tibetan, and the Tibetan transliteration can be rendered backward perfectly into Sanskrit with no ambiguities or difficulties.</p>
+
+<p id="G26735">The six Sanskrit retroflex letters are interleaved among the other consonants.</p>
+
+<p id="G30074">The compound Sanskrit consonants are not used in normal Tibetan. Precomposed forms of aspirate letters (and the conjunct “kssa”) are explicitly coded, along with their corresponding subjoined forms: for example, U+0F43 <span class="Char-Name">TIBETAN LETTER GHA</span>, and U+0F93 <span class="Char-Name">TIBETAN SUBJOINED LETTER GHA</span>, or U+0F69 <span class="Char-Name">TIBETAN LETTER KSSA</span>, and U+0FB9 <span class="Char-Name">TIBETAN SUBJOINED LETTER KSSA</span>. However, these characters, including the subjoined forms, decompose to stacked sequences involving subjoined “ha” (or “reversed sha”) in all Unicode normalization forms.</p>
+
+<p id="G26740">The vowel signs of Sanskrit not included in Tibetan are encoded with other vowel signs between U+0F70 and U+0F7D. U+0F7F <span class="Char-Name">TIBETAN SIGN RNAM BCAD</span> (nam chay) is the visarga, and U+0F7E <span class="Char-Name">TIBETAN SIGN RJES SU NGA RO</span> (nga-ro) is the anusvara. See Section&nbsp;12.1, Devanagari, for more information on these two characters.</p>
+
+<p id="G26744">The characters encoded in the range U+0F88..U+0F8B are used in transliterated text and are most commonly found in Kalachakra literature.</p>
+
+<p id="G26745">When the Tibetan script is used to transliterate Sanskrit, consonants are sometimes stacked in ways that are not allowed in native Tibetan stacks. Even complex forms of this stacking behavior are catered for properly by the method described earlier for coding Tibetan stacks.</p>
+
+</section>
+
+<section id="Subsubsection41"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26747"><span class="leadin">Other Signs.</span> U+0F09 <span class="Char-Name">TIBETAN MARK BSKUR YIG MGO</span> is a list enumerator used at the beginning of administrative letters in Bhutan, as is the petition honorific U+0F0A <span class="Char-Name">TIBETAN MARK BKA- SHOG YIG MGO</span>.</p>
+
+<p id="G26748">U+0F3A <span class="Char-Name">TIBETAN MARK GUG RTAGS GYON</span> and U+0F3B <span class="Char-Name">TIBETAN MARK GUG RTAGS GYAS </span>are paired punctuation marks (brackets).</p>
+
+<p id="G26749">The sign U+0F39 <span class="Char-Name">TIBETAN MARK TSA -PHRU</span> (tsa-’phru, which is a lenition mark) is the ornamental flaglike mark that is an integral part of the three consonants U+0F59 <span class="Char-Name">TIBETAN LETTER TSA</span>, U+0F5A <span class="Char-Name">TIBETAN LETTER TSHA</span>, and U+0F5B <span class="Char-Name">TIBETAN LETTER DZA</span>. Although those consonants are not decomposable, this mark has been abstracted and may by itself be applied to “pha” and other consonants to make new letters for use in transliteration and transcription of other languages. For example, in modern literary Tibetan, it is one of the ways used to transcribe the Chinese “fa” and “va” sounds not represented by the normal Tibetan consonants. Tsa-’phru is also used to represent tsa, tsha, and dza in abbreviations.</p>
+
+</section>
+
+<section id="Subsubsection42"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26751"><span class="leadin">Traditional Text Formatting and Line Justification.</span> Native Tibetan texts (“pecha”) are written and printed using a justification system that is, strictly speaking, right-ragged but with an attempt to right-justify. Each page has a margin. That margin is usually demarcated with visible border lines required of a pecha. In modern times, when Tibetan text is produced in Western-style books, the margin lines may be dropped and an invisible margin used. When writing the text within the margins, an attempt is made to have the lines of text justified up to the right margin. To do so, writers keep an eye on the overall line length as they fill lines with text and try manually to justify to the right margin. Even then, a gap at the right margin often cannot be filled. If the gap is short, it will be left as is and the line will be said to be justified enough, even though by machine-justification standards the line is not truly flush on the right. If the gap is large, the intervening space will be filled with as many tseks as are required to justify the line. Again, the justification is not done perfectly in the way that English text might be perfectly right-justified; as long as the last tsek is more or less at the right margin, that will do. The net result is that of a right-justified, blocklike look to the text, but the actual lines are always a little right-ragged.</p>
+
+<p id="G26752">Justifying tseks are nearly always used to pad the end of a line when the preceding character is a tsek—in other words, when the end of a line arrives in the middle of tshig-grub (see the previous definition under “Tibetan Punctuation”). However, it is unusual for a line that ends at the end of a tshig-grub to have justifying tseks added to the shay at the end of the tshig-grub. That is, a sequence like that shown in the first line of Figure&nbsp;13-2 is not usually padded as in the second line of Figure&nbsp;13-2, though it is allowable. In this case, instead of justifying the line with tseks, the space between shays is enlarged and/or the whitespace following the final shay is usually left as is. Padding is never applied following an actual space character. For example, given the existence of a space after a shay, a line such as the third line of Figure&nbsp;13-2 may not be written with the padding as shown because the final shay should have a space after it, and padding is never applied after spaces. The same rule applies where the final consonant of a tshig-grub that ends a line is a “ka” or “ga”. In that case, the ending shay is dropped but a space is still required after the consonant and that space must not be padded. For example, the appearance shown in the fourth line of Figure&nbsp;13-2 is not acceptable.</p>
+
+<table style="margin: 0 auto;" id="Table13">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G26768">Figure 13-2.  Justifying Tibetan Tseks</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G26774">Tibetan text has two rules for formatting text at the beginning of a new line. There are severe constraints on which characters can start a new line, and the first rule is traditionally stated as follows: A shay of any description may never start a new line. Nothing except actual words of text can start a new line, with the only exception being a yig-go (yig-mgo) at the head of a front page or a da-tshe (zla-tshe, meaning “crescent moon”—for example, U+0F05) or one of its variations, which is effectively an “in-line” yig-go (yig-mgo), on any other line. One of two or three ornamental shays is also commonly used in short pieces of prose in place of the more formal da-tshe. This also means that a space may not start a new line in the flow of text. If there is a major break in a text, a new line might be indented.</p>
+
+<p id="G26775">A syllable (tsheg-bar) that comes at the end of a tshig-grub and that starts a new line must have the shay that would normally follow it replaced by a rin-chen-spungs-shad (U+0F11). The reason for this second rule is that the presence of the rin-chen-spungs-shad makes the end of tshig-grub more visible and hence makes the text easier to read.</p>
+
+<p id="G26776">In verse, the second shay following the first rin-chen-spungs-shad is sometimes replaced by a rin-chen-spungs-shad, though the practice is formally incorrect. It is a writer’s trick done to make a particular scribing of a text more elegant. Although a moderately popular device, it does break the rule. Not only is rin-chen-spungs-shad used as the replacement for the shay but a whole class of “ornamental shays” are used for the same purpose. All are scribal variants on a rin-chen-spungs-shad, which is correctly written with three dots above it.</p>
+
+</section>
+
+<section id="Subsubsection43"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26778"><span class="leadin">Tibetan Shorthand Abbreviations (bskungs-yig) and Limitations of the Encoding.</span> A consonant functioning as the word base (ming-gzhi) is allowed to take only one vowel sign according to Tibetan grammar. The Tibetan shorthand writing technique called bskungs-yig does allow one or more words to be contracted into a single, very unusual combination of consonants and vowels. This construction frequently entails the application of more than one vowel sign to a single consonant or stack, and the composition of the stacks themselves can break the rules of normal Tibetan grammar. For this reason, vowel signs sometimes interact typographically, which accounts for their particular combining classes (see Section&nbsp;4.3, Combining Classes). </p>
+
+<p id="G27243">The Unicode Standard accounts for plain text compounds of Tibetan that contain at most one base consonant, any number of subjoined consonants, followed by any number of vowel signs. This coverage constitutes the vast majority of Tibetan text. Rarely, stacks are seen that contain more than one such consonant-vowel combination in a vertical arrangement. These stacks are highly unusual and are considered beyond the scope of plain text rendering. They may be handled by higher-level mechanisms.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section5"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G27803">Mongolian</h2>
+
+<section id="Subsection6"> <!-- Finnegan: Add scripting goop here. -->
+<div class="Subheading" id="G27804">Mongolian: U+1800–U+18AF</div>
+
+<p id="G27805">The Mongolians are key representatives of a cultural-linguistic group known as Altaic, after the Altai mountains of central Asia. In the past, these peoples have dominated the vast expanses of Asia and beyond, from the Baltic to the Sea of Japan. Echoes of Altaic languages remain from Finland, Hungary, and Turkey, across central Asia, to Korea and Japan. Today the Mongolians are represented politically in the country of Mongolia (also known as Outer Mongolia) and Inner Mongolia (formally the Inner Mongolia Autonomous Region, China), with Mongolian populations also living in other areas of China.</p>
+
+<p id="G47391">The Mongolian block unifies the traditional writing system for the Mongolian language and the three derivative writing systems Todo, Manchu, and Sibe. The traditional writing system is also known as “Hudum Mongolian,” and is explicitly referred to as “Hudum” in the following text. Each of the three derivative writing systems shares some common letters with Hudum, and these letters are encoded only once. Each derivative writing system also has a number of modified letterforms or new letters, which are encoded separately. The letters typically required by each writing system’s modern usage are encoded as shown in Table&nbsp;13-7.</p>
+
+<table style="margin: 0 auto;" id="Table28">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G47689">Table 13-7.  Letter Usage in Mongolian Writing Systems</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">Hudum</p></th>
+    <th><p class="CellHeading">Todo</p></th>
+    <th><p class="CellHeading">Manchu</p></th>
+    <th><p class="CellHeading">Sibe</p></th>
+    <th><p class="CellHeading">Note</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody">1820..1842</p></td>
+    <td><p class="CellBody">1820</p></td>
+    <td><p class="CellBody">1820</p></td>
+    <td><p class="CellBody">1820</p></td>
+    <td><p class="CellBody">Unified Mongolian letters</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"></p></td>
+    <td><p class="CellBody">1843..185A</p></td>
+    <td><p class="CellBody">185D</p></td>
+    <td><p class="CellBody">185D..1872</p></td>
+    <td><p class="CellBody">Letters specific to the derivative writing systems</p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G27808">Mongolian, Todo, and Manchu also have a number of special “Ali Gali” letters that are used for transcribing Tibetan and Sanskrit in Buddhist texts.</p>
+
+<section id="Subsubsection44"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G49917"><span class="leadin">Mongolian Code Charts.</span> The Mongolian code chart previously included glyphs for positional forms of atomic characters since Version 9.0 and standardized variation sequences since Version 7.0. As of Version 13.0, the glyphs and information about positional forms are no longer included. For a copy of the last Mongolian code chart before the Version 13.0 change, as well as the rationale behind the change, see Unicode Technical Report #54, “Unicode Mongolian 12.1 Snapshot.”</p>
+
+</section>
+
+<section id="Subsubsection45"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G45333"><span class="leadin">History.</span> The Mongolian script was created around the beginning of the thirteenth century, during the reign of Genghis Khan. It derives from the Old Uyghur script, which was in use from about the eighth to the fifteenth century. Old Uyghur itself was an adaptation of Sogdian Aramaic, a Semitic script written horizontally from right to left. Probably under the influence of the Chinese script, the Old Uyghur script became rotated ninety degrees counterclockwise so that the lines of text read vertically in columns running from left to right. The Mongolian script inherited this directionality from the Old Uyghur script.</p>
+
+<p id="G27813">The Mongolian script has remained in continuous use for writing Mongolian within the Inner Mongolia Autonomous Region of China and elsewhere in China. However, in Mongolia (Outer Mongolia), the traditional script was replaced by a Cyrillic orthography in the early 1940s. The traditional script was revived in the early 1990s, so that now both the Cyrillic and the Mongolian scripts are used. The spelling used with the traditional Mongolian script represents the literary language of the seventeenth and early eighteenth centuries, whereas the Cyrillic script is used to represent the modern, colloquial pronunciation of words. As a consequence, there is no one-to-one relationship between the traditional Mongolian orthography and Cyrillic orthography. Approximate correspondence mappings are indicated in the code charts, but are not necessarily unique in either direction. All of the Cyrillic characters needed to write Mongolian are included in the Cyrillic block of the Unicode Standard.</p>
+
+<p id="G27814">In addition to the traditional Mongolian script of Mongolia, several historical modifications and adaptations of the Mongolian script have emerged elsewhere. These adaptations are often referred to as scripts in their own right, although for the purposes of character encoding in the Unicode Standard they are treated as styles of the Mongolian script and share encoding of their basic letters.</p>
+
+<p id="G27816">The Todo script is a modified and improved version of the Mongolian script, devised in 1648 by Zaya Pandita for use by the Kalmyk Mongolians, who had migrated to Russia in the sixteenth century, and who now inhabit the Republic of Kalmykia in the Russian Federation. The name Todo means “clear” in Mongolian; it refers to the fact that the new script eliminates the ambiguities inherent in the original Mongolian script. The orthography of the Todo script also reflects the Oirat-Kalmyk dialects of Mongolian rather than literary Mongolian. In Kalmykia, the Todo script was replaced by a succession of Cyrillic and Latin orthographies from the mid-1920s and is no longer in active use. Until very recently the Todo script was still used by speakers of the Oirat and Kalmyk dialects within Xinjiang and Qinghai in China.</p>
+
+<p id="G27818">The Manchu script is an adaptation of the Mongolian script used to write Manchu, a Tungusic language that is not closely related to Mongolian. The Mongolian script was first adapted for writing Manchu in 1599 under the orders of the Manchu leader Nurhachi, but few examples of this early form of the Manchu script survive. In 1632, the Manchu scholar Dahai reformed the script by adding circles and dots to certain letters in an effort to distinguish their different sounds and by devising new letters to represent the sounds of the Chinese language. When the Manchu people conquered China to rule as the Qing dynasty (1644–1911), Manchu become the language of state. The ensuing systematic program of translation from Chinese created a large and important corpus of books written in Manchu. Over time the Manchu people became completely sinified, and as a spoken language Manchu is now almost extinct.</p>
+
+<p id="G27820">The Sibe (also spelled Sibo, Xibe, or Xibo) people are closely related to the Manchus, and their language is often classified as a dialect of Manchu. The Sibe people are widely dispersed across northwest and northeast China due to deliberate programs of ethnic dispersal during the Qing dynasty. The majority have become assimilated into the local population and no longer speak the Sibe language. However, there is a substantial Sibe population in the Sibe Autonomous County in the Ili River valley in Western Xinjiang, the descendants of border guards posted to Xinjiang in 1764, who still speak and write the Sibe language. The Sibe script is based on the Manchu script, with a few modified letters.</p>
+
+</section>
+
+<section id="Subsubsection46"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27823"><span class="leadin">Directionality.</span> The Mongolian script is written vertically from top to bottom in columns running from left to right. In modern contexts, words or phrases may be embedded in horizontal scripts. In such a case, the Mongolian text will be rotated ninety degrees counterclockwise so that it reads from left to right.</p>
+
+<p id="G27824">When rendering Mongolian text in a system that does not support vertical layout, the text should be laid out in horizontal lines running left to right. If such text is viewed sideways, the usual Mongolian column order appears reversed, but this orientation can be workable for short stretches of text. There are no bidirectional effects in such a layout because all text is horizontal left to right.</p>
+
+</section>
+
+<section id="Subsubsection47"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27826"><span class="leadin">Encoding Principles.</span> The encoding model for Mongolian is somewhat different from that for any other script within Unicode, and in many respects it is the most complicated. For this reason, only the essential features of Mongolian shaping behavior are presented here.</p>
+
+<p id="G27827">The Semitic alphabet from which the Mongolian script was ultimately derived is fundamentally inadequate for representing the sounds of the Mongolian language. As a result, many of the Mongolian letters are used to represent two different sounds, and the correct pronunciation of a letter may be known only from the context. In this respect, Mongolian orthography is similar to English spelling, in which the pronunciation of a letter such as c may be known only from the context. </p>
+
+<p id="G27828">Unlike in the Latin script, in which c /k/ and c /s/ are treated as the same letter and encoded as a single character, in the Mongolian script different phonetic values of the same glyph may be encoded as distinct characters. Modern Mongolian grammars consider the phonetic value of a letter to be its distinguishing feature, rather than its glyph shape. For example, the four Mongolian vowels o, u, ö, and ü are considered four distinct letters and are encoded as four characters (U+1823, U+1824, U+1825, and U+1826, respectively), even though o is written identically to u in all positional forms, ö is written identically to ü in all positional forms, o and u are normally distinguished from ö and ü only in the first syllable of a word. Likewise, the letters t (U+1832) and d (U+1833) are often indistinguishable. For example, pairs of Mongolian words such as urtu “long” and ordu “palace, camp, horde” or ende “here” and ada “devil” are written identically, but are represented using different sequences of Unicode characters, as shown in Figure&nbsp;13-3. There are many such examples in Mongolian, but not in Todo, Manchu, or Sibe, which have largely eliminated ambiguous letters.</p>
+
+<table style="margin: 0 auto;" id="Table16">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G27835">Figure 13-3.  Mongolian Glyph Convergence</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection48"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27843"><span class="leadin">Cursive Joining.</span> The Mongolian script is cursive, and the letters constituting a word are normally joined together. In most cases the letters join together naturally along a vertical stem, but in the case of certain “bowed” consonants (for example, U+182A <span class="Char-Name">MONGOLIAN LETTER BA</span> and the feminine form of U+182C <span class="Char-Name">MONGOLIAN LETTER QA</span>), which lack a trailing vertical stem, they may form ligatures with a following vowel. This is illustrated in Figure&nbsp;13-4, where the letter ba combines with the letter u to form a ligature in the Mongolian word abu “father.”</p>
+
+<table style="margin: 0 auto;" id="Table17">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G27850">Figure 13-4.  Mongolian Consonant Ligation</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G30239">The Joining_Type values for Mongolian characters are defined in ArabicShaping.txt in the Unicode Character Database. For a discussion of the meaning of Joining_Type values in the context of a vertically rendered script, see “Cursive Joining” in Section&nbsp;14.4, Phags-pa. Most Mongolian characters are Dual_Joining, as they may join on both top and bottom.</p>
+
+<p id="G30227">Many letters also have distinct glyph forms depending on their position within a word. These positional forms are classified as initial, medial, final, or isolate. The medial form is often the same as the initial form, but the final form is always distinct from the initial or medial form. Figure&nbsp;13-5 shows the Mongolian letters U+1823 o and U+1821 e, rendered with distinct positional forms initially and finally in the Mongolian words odo “now” and ene “this.”</p>
+
+<table style="margin: 0 auto;" id="Table18">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G27863">Figure 13-5.  Mongolian Positional Forms</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G27870">U+200C <span class="Char-Name">ZERO WIDTH NON-JOINER</span> (ZWNJ) and U+200D <span class="Char-Name">ZERO WIDTH JOINER</span> (ZWJ) may be used to select a particular positional form of a letter in isolation or to override the expected positional form within a word. Basically, they evoke the same contextual selection effects in neighboring letters as do non-joining or joining regular letters, but are themselves invisible (see Chapter 23, Special Areas and Format Characters). For example, the various positional forms of U+1820 <span class="Char-Name">MONGOLIAN LETTER A</span> may be selected by means of the following character sequences:</p>
+
+<p class="ItemExample" id="G27874">&lt;1820&gt; selects the isolate form.</p>
+
+<p class="ItemExample" id="G27875">&lt;1820 200D&gt; selects the initial form.</p>
+
+<p class="ItemExample" id="G27876">&lt;200D 1820&gt; selects the final form.</p>
+
+<p class="ItemExample" id="G27877">&lt;200D 1820 200D&gt; selects the medial form.</p>
+
+<p id="G27878">Some letters have additional variant forms that do not depend on their position within a word, but instead reflect differences between modern versus traditional orthographic practice or lexical considerations—for example, special forms used for writing foreign words. On occasion, other contextual rules may condition a variant form selection. For example, a certain variant of a letter may be required when it occurs in the first syllable of a word or when it occurs immediately after a particular letter.</p>
+
+<p id="G27879">The various positional and variant glyph forms of a letter are considered presentation forms and are not encoded separately. It is the responsibility of the rendering system to select the correct glyph form for a letter according to its context. </p>
+
+</section>
+
+<section id="Subsubsection49"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27883"><span class="leadin">Free Variation Selectors.</span> When a glyph form that cannot be predicted algorithmically is required (for example, when writing a foreign word), the user needs to append an appropriate variation selector to the letter to indicate to the rendering system which glyph form is required. The following free variation selectors are provided for use specifically with the Mongolian block:</p>
+
+<p class="ItemExample" id="G27884">U+180B <span class="Char-Name">MONGOLIAN FREE VARIATION SELECTOR ONE</span> (FVS1)</p>
+
+<p class="ItemExample" id="G27885">U+180C <span class="Char-Name">MONGOLIAN FREE VARIATION SELECTOR TWO</span> (FVS2)</p>
+
+<p class="ItemExample" id="G27886">U+180D <span class="Char-Name">MONGOLIAN FREE VARIATION SELECTOR THREE</span> (FVS3)</p>
+
+<p class="ItemExample" id="G58240">U+180F <span class="Char-Name">MONGOLIAN FREE VARIATION SELECTOR FOUR</span> (FVS4)</p>
+
+<p id="G27887">These format characters normally have no visual appearance. When required, a free variation selector immediately follows the base character it modifies. This combination of base character and variation selector is known as a standardized variant. The table of standardized variants, StandardizedVariants.txt, in the Unicode Character Database exhaustively lists all currently defined standardized variants. All combinations not listed in the table are unspecified and are reserved for future standardization; no conformant process may interpret them as standardized variants. Therefore, any free variation selector not immediately preceded by one of their defined base characters will be ignored.</p>
+
+<p id="G27893">Figure&nbsp;13-6 gives an example of how a free variation selector may be used to select a particular glyph variant. In modern orthography, the initial letter ga in the Mongolian word gal “fire” is written with two dots; in traditional orthography, the letter ga is written without any dots. By default, the dotted form of the letter ga is selected, but this behavior may be overridden by means of FVS1, so that ga plus FVS1 selects the undotted form of the letter ga.</p>
+
+<table style="margin: 0 auto;" id="Table19">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G27897">Figure 13-6.  Mongolian Free Variation Selector</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G27903">It is important to appreciate that even though a particular standardized variant may be defined for a letter, the user needs to apply the appropriate free variation selector only if the correct glyph form cannot be predicted automatically by the rendering system. In most cases, in running text, there will be few occasions when a free variation selector is required to disambiguate the glyph form.</p>
+
+<p id="G27904">Older documentation, external to the Unicode Standard, listed the action of the free variation selectors by using ZWJ to explicitly indicate the shaping environment affected by the variation selector. The relative order of the ZWJ and the free variation selector in these documents was different from the one required by Section&nbsp;23.4, Variation Selectors. Older implementations of Mongolian free variation selectors may therefore interpret a sequence such as a base character followed first by ZWJ and then by FVS1 as if it were a base character followed first by FVS1 and then by ZWJ.</p>
+
+</section>
+
+<section id="Subsubsection50"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27909"><span class="leadin">Representative Glyphs.</span> The representative glyph in the code charts is generally the isolate form for the vowels and the initial form for the consonants. Letters that share the same glyph forms are distinguished by using different positional forms for the representative glyph. For example, the representative glyph for U+1823 <span class="Char-Name">MONGOLIAN LETTER O</span> is the isolate form, whereas the representative glyph for U+1824 <span class="Char-Name">MONGOLIAN LETTER U</span> is the initial form. However, this distinction is only nominal, as the glyphs for the two characters are identical for the same positional form. Likewise, the representative glyphs for U+1863 <span class="Char-Name">MONGOLIAN LETTER SIBE KA</span> and U+1874 <span class="Char-Name">MONGOLIAN LETTER MANCHU KA</span> both take the final form, as their initial forms are identical to the representative glyph for U+182C <span class="Char-Name">MONGOLIAN LETTER QA</span> (the initial form).</p>
+
+</section>
+
+<section id="Subsubsection51"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27912"><span class="leadin">Vowel Harmony.</span> Mongolian has a system of vowel harmony, whereby the vowels in a word are either all “masculine” and “neuter” vowels (that is, back vowels plus /i/) or all “feminine” and “neuter” vowels (that is, front vowels plus /i/). Words that are written with masculine/neuter vowels are considered to be masculine, and words that are written with feminine/neuter vowels are considered to be feminine. Words with only neuter vowels behave as feminine words (for example, take feminine suffixes). Manchu and Sibe have a similar system of vowel harmony, although it is not so strict. Some words in these two scripts may include both masculine and feminine vowels, and separated suffixes with masculine or feminine vowels may be applied to a stem irrespective of its gender. </p>
+
+<p id="G27913">Vowel harmony is an important element of the encoding model, as the gender of a word determines the glyph form of the velar series of consonant letters for Mongolian, Todo, Sibe, and Manchu. In each script, the velar letters have both masculine and feminine forms. For Mongolian and Todo, the masculine and feminine forms of these letters have different pronunciations. </p>
+
+<p id="G27914">When one of the velar consonants precedes a vowel, it takes the masculine form before masculine vowels, and the feminine form before feminine or neuter vowels. In the latter case, a ligature of the consonant and vowel is required.</p>
+
+<p id="G27915">When one of these consonants precedes another consonant or is the final letter in a word, it may take either a masculine or feminine glyph form, depending on its context. The rendering system should automatically select the correct gender form for these letters based on the gender of the word (in Mongolian and Todo) or the gender of the preceding vowel (in Manchu and Sibe). This is illustrated by Figure&nbsp;13-7, where U+182D <span class="Char-Name">MONGOLIAN LETTER GA</span> takes a masculine glyph form when it occurs finally in the masculine word jarlig “order,” but takes a feminine glyph form when it occurs finally in the feminine word cherig “soldier.” In this example, the gender form of the final letter ga depends on whether the first vowel in the word is a back (masculine) vowel or a front (feminine or neuter) vowel. Where the gender is ambiguous or a form not derivable from the context is required, the user needs to specify which form is required by means of the appropriate free variation selector.</p>
+
+<table style="margin: 0 auto;" id="Table20">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G27922">Figure 13-7.  Mongolian Gender Forms</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection52"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G45704"><span class="leadin">Narrow No-Break Space.</span> In Mongolian, Todo, Manchu, and Sibe, certain grammatical suffixes are separated from the word stem or from other suffixes by a gap. Many separated suffixes exhibit shapes that are distinct from ordinary words, and thus require special shaping.</p>
+
+<p id="G45705">There are many separated suffixes in Mongolian, usually occurring in masculine and feminine pairs (for example, the dative suffixes -dur and -dür), most of which require special shaping; a stem may have multiple separated suffixes. In contrast, there are only six separated suffixes for Manchu and Sibe, only one of which (-i) requires special shaping; stems do not have more than one separated suffix at a time.</p>
+
+<p id="G45706">Because separated suffixes are usually considered an integral part of the word as a whole, a line break opportunity does not normally occur before a separated suffix. The whitespace preceding the suffix is often narrower than an ordinary space, although the width may expand during justification. U+202F <span class="Char-Name">NARROW NO-BREAK SPACE</span> (NNBSP) is used to represent this small whitespace; it not only prevents word breaking and line breaking, but also triggers special shaping for the following separated suffix. The resulting shape depends on the particular separated suffix. Note that NNBSP may be preceded by another separated suffix, and NNBSP may also appear between non-Mongolian characters and a separated suffix. </p>
+
+<p id="G45696">Normally, NNBSP does not provide a line breaking opportunity. However, in situations where a line is broken before a separated suffix, such as in narrow columns, it is important not to disable the special shaping triggered by NNBSP. This behavior may be achieved by placing the break so that the NNBSP character is at the start of the new line. At the beginning of the line, the NNBSP should affect only the shaping of the following Mongolian characters, and should display with no advance width. </p>
+
+</section>
+
+<section id="Subsubsection53"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27935"><span class="leadin">Mongolian Vowel Separator.</span> In Mongolian, the letters a (U+1820) and e (U+1821) in a word-final position may take a “forward tail” form or a “backward tail” form depending on the preceding consonant that they are attached to. In some words, a final letter a or e is disconnected from the preceding consonant, in which case the vowel always takes the “forward tail” form. U+180E <span class="Char-Name">MONGOLIAN VOWEL SEPARATOR</span> (MVS) is used to represent the break between a final letter a or e and the rest of the word. MVS is similar in function to NNBSP, as it divides a word and disconnects the two parts. Whereas NNBSP marks off a grammatical suffix, however, the a or e following MVS is not a suffix but an integral part of the word stem. </p>
+
+<p id="G31011">Whether a final letter a or e is joined or separated is purely lexical and is not a question of varying orthography. This distinction is shown in Figure&nbsp;13-8. The example on the left shows the word qana &lt;182C, 1820, 1828, 1820&gt; without a break before the final letter a, which means “the outer casing of a vein.” The example on the right shows the word qana &lt;182C, 1820, 1828, 180E, 1820&gt; with a break before the final letter a, which means “the wall of a tent.”</p>
+
+<table style="margin: 0 auto;" id="Table21">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G27942">Figure 13-8.  Mongolian Vowel Separator</caption>
+<tbody>
+  <tr>
+    <td><p class="Figure"><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G31775">The MVS has a twofold effect on shaping. On the one hand, it always selects the forward tail form of a following letter a or e. On the other hand, it may affect the form of the preceding letter. The particular form that is taken by a letter preceding an MVS depends on the particular letter and in some cases on whether traditional or modern orthography is being used. The MVS is not needed for writing Todo, Manchu, or Sibe.</p>
+
+</section>
+
+<section id="Subsubsection54"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G31776"><span class="leadin">Baluda.</span> The two Mongolian baluda characters, U+1885 <span class="Char-Name">MONGOLIAN LETTER ALI GALI BALUDA</span> and U+1886 <span class="Char-Name">MONGOLIAN LETTER ALI GALI THREE BALUDA</span>, are historically related to U+0F85 <span class="Char-Name">TIBETAN MARK PALUTA</span>. When used in Mongolian text rendered vertically, a baluda or three baluda character appears to the right side of the first character in a word. To simplify rendering implementations for Mongolian Ali Gali texts, the baluda characters have been categorized as nonspacing combining marks, rather than as letters.</p>
+
+</section>
+
+<section id="Subsubsection55"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27950"><span class="leadin">Numbers.</span> The Mongolian and Todo scripts use a set of ten digits derived from the Tibetan digits. In vertical text, numbers are traditionally written from left to right across the width of the column. In modern contexts, they are frequently rotated so that they follow the vertical flow of the text.</p>
+
+<p id="G27951">The Manchu and Sibe scripts do not use any special digits, although Chinese number ideographs may be employed—for example, for page numbering in traditional books.</p>
+
+</section>
+
+<section id="Subsubsection56"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27953"><span class="leadin">Punctuation.</span> Traditional punctuation marks used for Mongolian and Todo include the U+1800 <span class="Char-Name">MONGOLIAN BIRGA</span> (marks the start of a passage or the recto side of a folio), U+1802 <span class="Char-Name">MONGOLIAN COMMA</span>, U+1803 <span class="Char-Name">MONGOLIAN FULL STOP</span>, and U+1805 <span class="Char-Name">MONGOLIAN FOUR DOTS</span> (marks the end of a passage). The birga occurs in several different glyph forms.</p>
+
+<p id="G27954">In writing Mongolian and Todo, U+1806 <span class="Char-Name">MONGOLIAN TODO SOFT HYPHEN</span> is used at the beginning of the second line to indicate resumption of a broken word. It functions like U+2010 <span class="Char-Name">HYPHEN</span>, except that U+1806 appears at the beginning of a line rather than at the end.</p>
+
+<p id="G27955">The Manchu script normally uses only two punctuation marks: U+1808 <span class="Char-Name">MONGOLIAN MANCHU COMMA</span> and U+1809 <span class="Char-Name">MONGOLIAN MANCHU FULL STOP</span>.</p>
+
+<p id="G27956">In modern contexts, Mongolian, Todo, and Sibe may use a variety of Western punctuation marks, such as parentheses, quotation marks, question marks, and exclamation marks. U+2048 <span class="Char-Name">QUESTION EXCLAMATION MARK</span> and U+2049 <span class="Char-Name">EXCLAMATION QUESTION MARK </span>are used for side-by-side display of a question mark and an exclamation mark together in vertical text. Todo and Sibe may additionally use punctuation marks borrowed from Chinese, such as U+3001 <span class="Char-Name">IDEOGRAPHIC COMMA</span>, U+3002 <span class="Char-Name">IDEOGRAPHIC FULL STOP</span>, U+300A <span class="Char-Name">LEFT DOUBLE ANGLE BRACKET</span>, and U+300B <span class="Char-Name">RIGHT DOUBLE ANGLE BRACKET</span>.</p>
+
+</section>
+
+<section id="Subsubsection57"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27958"><span class="leadin">Nirugu.</span> U+180A <span class="Char-Name">MONGOLIAN NIRUGU</span> acts as a stem extender. In traditional Mongolian typography, it is used to physically extend the stem joining letters, so as to increase the separation between all letters in a word. This stretching behavior should preferably be carried out in the font rather than by the user manually inserting U+180A.</p>
+
+<p id="G27959">The nirugu may also be used to separate two parts of a compound word. For example, altan-agula “The Golden Mountains” may be written with the words altan, “golden,” and agula, “mountains,” joined together using the nirugu. In this usage the nirugu is similar to the use of hyphen in Latin scripts, but it is nonbreaking.</p>
+
+</section>
+
+<section id="Subsubsection58"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27961"><span class="leadin">Syllable Boundary Marker.</span> U+1807 <span class="Char-Name">MONGOLIAN SIBE SYLLABLE BOUNDARY MARKER</span> is used to disambiguate syllable boundaries within a word. It is mainly used for writing Sibe, but may also occur in Manchu texts. In native Manchu or Sibe words, syllable boundaries are never ambiguous; when transcribing Chinese proper names in the Manchu or Sibe script, however, the syllable boundary may be ambiguous. In such cases, U+1807 may be inserted into the character sequence at the syllable boundary.</p>
+
+</section>
+
+</section>
+
+<section id="Subsection7"> <!-- Finnegan: Add scripting goop here. -->
+<div class="Subheading" id="G37403">Mongolian Supplement: U+11660–U+1167F</div>
+
+<p id="G37399">The Mongolian Supplement block contains a supplemental collection of birga head mark signs of various shapes and orientations. These complement the basic U+1800 <span class="Char-Name">MONGOLIAN BIRGA</span>.</p>
+
+</section>
+
+</section>
+
+<section id="Section6"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G27263">Limbu</h2>
+
+<section id="Subsection8"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G27264">Limbu: U+1900–U+194F</div>
+
+<p id="G27265">The Limbu script is a Brahmic script primarily used to write the Limbu language. Limbu is a Tibeto-Burman language of the East Himalayish group and is spoken by about 200,000 persons mainly in eastern Nepal, but also in the neighboring Indian states of Sikkim and West Bengal (Darjeeling district). Its close relatives are the languages of the East Himalayish or “Kiranti” group in Eastern Nepal. Limbu is distantly related to the Lepcha (Róng) language of Sikkim and to Tibetan. Limbu was recognized as an official language in Sikkim in 1981.</p>
+
+<p id="G27266">The Nepali name Limbu is of uncertain origin. In Limbu, the Limbu call themselves yakthu<span class="HackFont" style="font-family: 'Ufoursix'">z</span>. Individual Limbus often take the surname “Subba,” a Nepali term of Arabic origin meaning “headman.” The Limbu script is often called “Sirijanga” after the Limbu culture-hero Sirijanga, who is credited with its invention. It is also sometimes called Kirat, kir<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>ta being a Sanskrit term probably referring to some variety of non-Aryan hill-dwellers.</p>
+
+<p id="G27267">The oldest known writings in the Limbu script, most of which are held in the India Office Library, London, were collected in Darjeeling district in the 1850s. The modern script was developed beginning in 1925 in Kalimpong (Darjeeling district) in an effort to revive writing in Limbu, which had fallen into disuse. The encoding in the Unicode Standard supports the three versions of the Limbu script: the nineteenth-century script, found in manuscript documents; the early modern script, used in a few, mainly mimeographed, publications between 1928 and the 1970s; and the current script, used in Nepal and India (especially Sikkim) since the 1970s. There are significant differences, particularly between some of the glyphs required for the nineteenth-century and modern scripts.</p>
+
+<p id="G27268">Virtually all Limbu speakers are bilingual in Nepali, and far more Limbus are literate in Nepali than in Limbu. For this reason, many Limbu publications contain material both in Nepali and in Limbu, and in some cases Limbu appears in both the Limbu script and the Devanagari script. In some publications, literary coinages are glossed in Nepali or in English.</p>
+
+<section id="Subsubsection59"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27270"><span class="leadin">Consonants.</span> Consonant letters and clusters represent syllable initial consonants and clusters followed by the inherent vowel, short open o ([<span class="HackFont" style="font-family: 'Ufourthree'">t</span>]). Subjoined consonant letters are joined to the bottom of the consonant letters, extending to the right to indicate “medials” in syllable-initial consonant clusters. There are very few of these clusters in native Limbu words. The script provides for subjoined <span class="HackFont" style="font-family: 'Ufoursix'">|</span> -ya, <span class="HackFont" style="font-family: 'Ufoursix'">}</span> -ra, and <span class="HackFont" style="font-family: 'Ufoursix'">~</span> -wa. Small letters are used to indicate syllable-final consonants. (See the following information on vowel length for further details.) The small letter consonants are found in the range U+1930..U+1938, corresponding to the syllable finals of native Limbu words. These letters are independent forms that, unlike the conjoined or half-letter forms of Indian scripts, may appear alone as word-final consonants (where Indian scripts use full consonant letters and a virama). The syllable finals are pronounced without a following vowel. </p>
+
+<p id="G27271">Limbu is a language with a well-defined syllable structure, in which syllable-initial stops are pronounced differently from finals. Syllable initials may be voiced following a vowel, whereas finals are never voiced but are pronounced unreleased with a simultaneous glottal closure, and geminated before a vowel. Therefore, the Limbu block encodes an explicit set of ten syllable-final consonants. These are called <span class="Char-Name">LIMBU SMALL LETTER KA</span>, and so on.</p>
+
+</section>
+
+<section id="Subsubsection60"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27273"><span class="leadin">Vowels.</span> The Limbu vowel system has seven phonologically distinct timbres: [i, e, <span class="HackFont" style="font-family: 'Ufourthree'">u</span>, a, <span class="HackFont" style="font-family: 'Ufourthree'">t</span>, o, u]. The vowel [<span class="HackFont" style="font-family: 'Ufourthree'">t</span>] functions as the inherent vowel in the modern Limbu script. To indicate a syllable with a vowel other than the inherent vowel, a vowel sign is added over, under, or to the right of the initial consonant letter or cluster. Although the vowel [<span class="HackFont" style="font-family: 'Ufourthree'">t</span>] is the inherent vowel, the Limbu script has a combining vowel sign <span class="HackFont" style="font-family: 'Ufourseven'">1</span> that may optionally be used to represent it. Many writers avoid using this sign because they consider it redundant. </p>
+
+<p id="G27274">Syllable-initial vowels are represented by a vowel-carrier character, U+1900 <span class="HackFont" style="font-family: 'Ufourseven'">2</span> <span class="Char-Name">LIMBU VOWEL-CARRIER LETTER</span>, together with the appropriate vowel sign. Used without a following vowel sound, the vowel-carrier letter represents syllable-initial [<span class="HackFont" style="font-family: 'Ufourthree'">t</span>], the inherent vowel. The initial consonant letters have been named ka, kha, and so on, in this encoding, although they are in fact pronounced <span class="HackFont" style="font-family: 'Ufourseven'">%</span> [k<span class="HackFont" style="font-family: 'Ufourthree'">t</span>], <span class="HackFont" style="font-family: 'Ufourseven'">3</span> [k<span class="HackFont" style="font-family: 'Ufourseven'">4</span><span class="HackFont" style="font-family: 'Ufourthree'">t</span>], and so on, and do not represent the Limbu syllables <span class="HackFont" style="font-family: 'Ufourseven'">%'</span> [ka], <span class="HackFont" style="font-family: 'Ufourseven'">3'</span> [k<span class="HackFont" style="font-family: 'Ufourseven'">4</span>a], and so on. This is in keeping with the practice of educated Limbus in writing the letter-names in Devanagari. It would have been confusing to call the vowel-carrier letter A, however, so an artificial name is used in the Unicode Standard. The native name is <span class="HackFont" style="font-family: 'Ufourseven'">25</span> [<span class="HackFont" style="font-family: 'Ufourthree'">t</span>m].</p>
+
+</section>
+
+<section id="Subsubsection61"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27276"><span class="leadin">Vowel Length.</span> Vowel length is phonologically distinctive in many contexts. Length in open syllables is indicated by writing U+193A <span class="HackFont" style="font-family: 'Ufourseven'">6</span> <span class="Char-Name">LIMBU SIGN KEMPHRENG</span>, which looks like the diaeresis sign, over the initial consonant or cluster: <span class="HackFont" style="font-family: 'Ufourseven'">7'.</span> t<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>. </p>
+
+<p id="G27277">In closed syllables, two different methods are used to indicate vowel length. In the first method, vowel length is not indicated by kemphreng. The syllable-final consonant is written as a full form (that is, like a syllable-initial consonant), marked by U+193B<span class="HackFont" style="font-family: 'Ufourseven'"> 9</span> <span class="Char-Name">LIMBU SIGN SA-I</span>: <span class="HackFont" style="font-family: 'Ufourseven'">8':=</span> p<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>n “speech.” This sign marks vowel length in addition to functioning as a virama by suppressing the inherent vowel of the syllable-final consonant. This method is widely used in Sikkim.</p>
+
+<p id="G27278">In the second method, which is in use in Nepal, vowel length is indicated by kemphreng, as for open syllables, and the syllable-final consonant appears in “small” form without sa-i: <span class="HackFont" style="font-family: 'Ufourseven'">8'./</span> p<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>n “speech.” Writers who consistently follow this practice reserve the use of sa-i for syllable-final consonants that do not have small forms, regardless of the length of the syllable vowel: <span class="HackFont" style="font-family: 'Ufourseven'">:;&lt;=&lt;;</span> nesse “it lay,” <span class="HackFont" style="font-family: 'Ufourseven'">&gt;'.?=</span> l<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>b “moon.” Because almost all of the syllable finals that normally occur in native Limbu words have small forms, sa-i is used only for consonant combinations in loan words and for some indications of rapid speech.</p>
+
+<p id="G27279">U+193B<span class="HackFont" style="font-family: 'Ufourseven'"> 9</span> <span class="Char-Name">LIMBU SIGN SA-I</span> is based on the Indic virama, but for a majority of current writers it has a different semantics because it indicates the length of the preceding vowel in addition to “killing” the inherent vowel of consonants functioning as syllable finals. It is therefore not suitable for use as a general virama as used in other Brahmic scripts in the Unicode Standard. </p>
+
+</section>
+
+<section id="Subsubsection62"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27281"><span class="leadin">Glottalization.</span> U+1939 <span class="Char-Name">LIMBU SIGN MUKPHRENG</span> represents glottalization. Mukphreng never appears as a syllable initial. Although some linguists consider that word-final nasal consonants may be glottalized, this is never indicated in the script; mukphreng is not currently written after final consonants. No other syllable-final consonant clusters occur in Limbu.</p>
+
+</section>
+
+<section id="Subsubsection63"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27283"><span class="leadin">Collating Order.</span> There is no universally accepted alphabetical order for Limbu script. One ordering is based on the Limbu dictionary edited by Bairagi Kainla, with the addition of the obsolete letters, whose positions are not problematic. In Sikkim, a somewhat different order is used: the letter <span class="HackFont" style="font-family: 'Ufourseven'">:</span> na is placed before <span class="HackFont" style="font-family: 'Ufourseven'">7</span> ta, and the letter <span class="HackFont" style="font-family: 'Ufourseven'">@</span> gha is placed at the end of the alphabet.</p>
+
+</section>
+
+<section id="Subsubsection64"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27285"><span class="leadin">Glyph Placement.</span> The glyph positions for Limbu combining characters are summarized in Table&nbsp;13-8. </p>
+
+<table style="margin: 0 auto;" id="Table15">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G27295">Table 13-8.  Positions of Limbu Combining Characters</caption>
+<tbody>
+  <tr>
+    <th><p class="CellHeading">Syllable</p></th>
+    <th><p class="CellHeading">Glyphs</p></th>
+    <th><p class="CellHeading">Code Point Sequence</p></th>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>ta</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7'</span></p></td>
+    <td><p class="CellBody">190B 1920</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>ti</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7E</span></p></td>
+    <td><p class="CellBody">190B 1921</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tu</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7F</span></p></td>
+    <td><p class="CellBody">190B 1922</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tee</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7G</span></p></td>
+    <td><p class="CellBody">190B 1923</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tai</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7H</span></p></td>
+    <td><p class="CellBody">190B 1924</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>too</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7D</span></p></td>
+    <td><p class="CellBody">190B 1925</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tau</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7I</span></p></td>
+    <td><p class="CellBody">190B 1926</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>te</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7;</span></p></td>
+    <td><p class="CellBody">190B 1927</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>to</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7J</span></p></td>
+    <td><p class="CellBody">190B 1928</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tya</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7K</span></p></td>
+    <td><p class="CellBody">190B 1929</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tra</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7L</span></p></td>
+    <td><p class="CellBody">190B 192A</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>twa</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7M</span></p></td>
+    <td><p class="CellBody">190B 192B</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tak</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7,</span></p></td>
+    <td><p class="CellBody">190B 1930</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody">ta<span class="HackFont" style="font-family: 'Ufoursix'">z</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7N</span></p></td>
+    <td><p class="CellBody">190B 1931</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>ta<span class="HackFont" style="font-family: 'Ufourseven'">Z</span></i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7O</span></p></td>
+    <td><p class="CellBody">190B 1932</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tat</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7P</span></p></td>
+    <td><p class="CellBody">190B 1933</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tan</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7/</span></p></td>
+    <td><p class="CellBody">190B 1934</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tap</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7Q</span></p></td>
+    <td><p class="CellBody">190B 1935</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tam</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">75</span></p></td>
+    <td><p class="CellBody">190B 1936</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tar</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7R</span></p></td>
+    <td><p class="CellBody">190B 1937</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>tal</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7S</span></p></td>
+    <td><p class="CellBody">190B 1938</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody">t<span class="HackFont" style="font-family: 'Ufoursix'">Z</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7'.</span></p></td>
+    <td><p class="CellBody">190B 1920 193A</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>t<span class="HackFont" style="font-family: 'Ufoursix'">\</span></i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Ufourseven'">7[</span></p></td>
+    <td><p class="CellBody">190B 1921 193A</p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection65"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27445"><span class="leadin">Punctuation.</span> The main punctuation mark used is the double vertical line, U+0965 <span class="Char-Name">DEVANAGARI DOUBLE DANDA</span>. U+1945 <span class="HackFont" style="font-family: 'Ufourseven'">A</span> <span class="Char-Name">LIMBU QUESTION MARK</span> and U+1944 <span class="HackFont" style="font-family: 'Ufourseven'">B</span> <span class="Char-Name">LIMBU EXCLAMATION MARK</span> have shapes peculiar to Limbu, especially in Sikkimese typography. They are encoded in the Unicode Standard to facilitate the use of both Limbu and Devanagari scripts in the same documents. U+1940 <span class="HackFont" style="font-family: 'Ufourseven'">C</span> <span class="Char-Name">LIMBU SIGN LOO</span> is used for the exclamatory particle lo. This particle is also often simply spelled out <span class="HackFont" style="font-family: 'Ufourseven'">&gt;D</span>.</p>
+
+</section>
+
+<section id="Subsubsection66"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27447"><span class="leadin">Digits.</span> Limbu digits have distinctive forms and are assigned code points because Limbu and Devanagari (or Limbu and Arabic-Indic) numbers are often used in the same document.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section7"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G27615">Meetei Mayek</h2>
+
+<section id="Subsection9"> <!-- Finnegan: Add scripting goop here. -->
+<div class="Subheading" id="G27616">Meetei Mayek: U+ABC0–U+ABFF</div>
+
+<p id="G27617">Meetei Mayek is a script used for Meetei, a Tibeto-Burman language spoken primarily in Manipur, India. The script originates from the Tibetan group of scripts, which in turn derive from Gupta Brahmi. The script has experienced a recent resurgence in use. The modern-day Meetei Mayek script is made up of a core repertoire of 27 letters, alongside letters and symbols for final consonants, dependent vowel signs, punctuation, and digits.</p>
+
+<p id="G27618">The name “Meetei Mayek” is used in official documentation in Manipur. The script may also appear with other spellings and names, such as “Meitei Mayek,” “Methei,” “Meetei,” or the older “Manipuri.”</p>
+
+<section id="Subsubsection67"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27620"><span class="leadin">Structure.</span> Meetei Mayek is a Brahmic script with consonants bearing the inherent vowel and vowel matras modifying it. However, unlike most other Brahmi-derived scripts, Meetei Mayek employs explicit final consonants which contain no final vowels.</p>
+
+<p id="G27622">Meetei Mayek has a killer character, U+ABED <span class="Char-Name">MEETEI MAYEK APUN IYEK</span>, which may be used to indicate the lack of an inherent vowel when no explicit consonant letter exists. In modern orthography, the killer does not cause conjunct formation and is always visible. The use of the killer is optional in spelling; for example, while <span class="HackFont" style="font-family: 'UniEricFour'">VW</span> may be read kara or kra, <span class="HackFont" style="font-family: 'UniEricFour'">X</span> must be read kra. In the medial position, the glyph of the killer usually extends below the killed letter and the following letter.</p>
+
+</section>
+
+<section id="Subsubsection68"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27624"><span class="leadin">Vowel Letters.</span> In modern use, only three vowel characters, U+ABD1 <span class="Char-Name">MEETEI MAYEK LETTER ATIYA</span>, U+ABCF <span class="Char-Name">MEETEI MAYEK LETTER I</span>, and U+ABCE <span class="Char-Name">MEETEI MAYEK LETTER UN</span> (=&nbsp;u), may appear initially or word-internally. Other vowels without independent forms are represented by vowel matras applied to U+ABD1 <span class="Char-Name">MEETEI MAYEK LETTER ATIYA</span>. In modern orthography, the seven dependent vowel signs and the anusvara, U+ABEA <span class="Char-Name">MEETEI MAYEK VOWEL SIGN NUNG</span>, located from U+ABE3..U+ABEA, are used with consonants.</p>
+
+<p id="G27625">Syllable initial combinations for vowels can occur in modern usage to represent diphthongs. </p>
+
+</section>
+
+<section id="Subsubsection69"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27627"><span class="leadin">Final Consonants.</span> There are three ways to indicate final consonants in Meetei Mayek: by the eight explicit final consonant letters, by U+ABEA <span class="Char-Name">MEETEI MAYEK VOWEL SIGN NUNG</span>, which acts as an anusvara, or by U+ABCE <span class="Char-Name">MEETEI MAYEK LETTER UN</span>, which may act as a final consonant without modification.</p>
+
+</section>
+
+<section id="Subsubsection70"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27629"><span class="leadin">Abbreviations.</span> Unusual abbreviations composed of a single consonant and more than one matra may occur in a manner similar that found in Tibetan. In such cases, the vowel matra may occur at the end of a word.</p>
+
+</section>
+
+<section id="Subsubsection71"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27631"><span class="leadin">Order.</span> The order of the first 18 Meetei letters is based upon the parts of the body. This system is discussed in a religious manuscript, the Wakoklon hilel thilel salai amailon pukok puya (commonly referred to as the Wakoklon puya), which describes the letters, and relates them to the corresponding body part. The Meetei Mayek letter kok, for example, means “head,” sam designates “hair-parting,” and lai is “forehead.” The last 9 letters, gok, jham, rai, and so forth, derive from a subset of the original 18. The ordering system employed today differs from the Brahmi-based order, which relies on the point of articulation.</p>
+
+</section>
+
+<section id="Subsubsection72"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27633"><span class="leadin">Punctuation.</span> The modern Meetei Mayek script uses two punctuation marks in addition to the killer. U+ABEB <span class="Char-Name">MEETEI MAYEK CHEIKHEI</span> functions as a double danda mark. U+ABEC <span class="Char-Name">MEETEI MAYEK LUM IYEK</span> is a heavy tone mark, used to orthographically distinguish words which would otherwise not be differentiated.</p>
+
+</section>
+
+<section id="Subsubsection73"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27635"><span class="leadin">Digits.</span> Meetei Mayek has a unique set of ten digits for zero to nine encoded in the range at U+ABF0..U+ABF9.</p>
+
+</section>
+
+</section>
+
+<section id="Subsection10"> <!-- Finnegan: Add scripting goop here. -->
+<div class="Subheading" id="G27636">Meetei Mayek Extensions: U+AAE0–U+AAF6</div>
+
+<p id="G27637">The Meetei Mayek Extensions block contains additional characters needed to represent the historical orthographies of Meetei. The block includes nine consonants, encoded in the range U+AAE2..U+AAEA, two independent vowel signs (U+AAE0 <span class="Char-Name">MEETEI MAYEK LETTER E</span> and U+AAE1 <span class="Char-Name">MEETEI MAYEK LETTER O</span>), and five dependent vowels signs in the range U+AAEB..U+AAEF.</p>
+
+<p id="G27638">U+AAF6 <span class="Char-Name">MEETEI MAYEK VIRAMA</span> should be used to represent conjuncts that may occur in historical texts. The virama is not visibly rendered, but it behaves as in other Brahmi-derived scripts. For example, the conjunct /<span class="HackFont" style="font-family: 'UniEricEight'">t</span>ha/ is represented by the sequence &lt;ABC9, AAF6, ABCD&gt;.</p>
+
+<p id="G27639">This block also includes two punctuation marks, U+AAF0 <span class="Char-Name">MEETEI MAYEK CHEIKHAN</span> and U+AAF1 <span class="Char-Name">MEETEI MAYEK AHANG KHUDAM</span>. The cheikhan is a single danda, and ahang khudam is a question mark. U+AAF2 <span class="Char-Name">MEETEI MAYEK ANJI</span> is a philosophical sign indicating auspiciousness. Finally, two repetition marks are included in the block: U+AAF3 <span class="Char-Name">MEETEI MAYEK SYLLABLE REPETITION MARK</span> and U+AAF4 <span class="Char-Name">MEETEI MAYEK WORD REPETITION MARK</span>.</p>
+
+</section>
+
+</section>
+
+<section id="Section8"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G27701">Mro</h2>
+
+<section id="Subsection11"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G28570">Mro: U+16A40–U+16A6F</div>
+
+<p id="G30406">The Mro script was invented in the 1980s. It is used to write the Mro (or Mru) language, a language of the Mruic branch of Tibeto-Burman spoken in Southeastern Bangladesh and neighboring areas of Myanmar. (This language is distinct from Mro-Khimi, a language of the Kukish branch of Tibeto-Burman spoken in Myanmar.)</p>
+
+<p id="G30408">The Mro script is unrelated to any other script. Some of the letters of the Mro alphabet have a visual similarity to letters from other alphabets, but such similarities are coincidental.</p>
+
+<section id="Subsubsection74"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G28343"><span class="leadin">Structure.</span> The Mro script is a left-to-right alphabet with no combining characters or tone marks. Some sounds are represented by more than one letter.</p>
+
+</section>
+
+<section id="Subsubsection75"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G28383"><span class="leadin">Character Names.</span> Consonant letter names are traditional, based on phonetic transcription.</p>
+
+</section>
+
+<section id="Subsubsection76"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G30719"><span class="leadin">Digits.</span> Mro has a script-specific set of digits</p>
+
+</section>
+
+<section id="Subsubsection77"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G28396"><span class="leadin">Punctuation.</span> There are two script-specific punctuation characters, U+16A6E <span class="Char-Name">MRO DANDA</span> and U+16A6F <span class="Char-Name">MRO DOUBLE DANDA</span>. Words are separated by spaces. </p>
+
+<p id="G29327">Two of the Mro letters are used as abbreviations. U+16A5E <span class="Char-Name">MRO LETTER TEK</span> can be used instead of the word “tek,” meaning “quote.” U+16A5C <span class="Char-Name">MRO LETTER HAI</span> can be used for various groups of letters.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section9"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G27702">Warang Citi</h2>
+
+<section id="Subsection12"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G29553">Warang Citi: U+118A0–U+118FF</div>
+
+<p id="G29011">The Warang Citi script is used to write the Ho language. Ho is a North Munda language. Warang Citi was devised by community leader Lako Bodra as an improvement over scripts used by Christian missionary linguists. Speakers of Ho live in the Indian states of Odisha (formerly Orissa) and Jharkhand. There are at present two publications in the script: a yearly magazine and a biweekly publication.</p>
+
+<p id="G29013">The Ho community is primarily an oral community, with an emergent literary tradition. Many Ho speakers do not write their language in any form. In some areas, Ho speakers use the Devanagari script or Warang Citi, in other locations they use the Oriya (now officially known as Odia) script or Warang Citi. There are also people who use Latin letters to write Ho on an ad-hoc basis.</p>
+
+<section id="Subsubsection78"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G29129"><span class="leadin">Structure.</span> Warang Citi is an alphabet, written from left to right. Unlike many other Indic scripts, vowels are written as full letters, with no vowel-modifiers. However, consonants may have an inherent vowel; it typically is pronounced [a] or [<span class="HackFont" style="font-family: 'UniEricTwo'">u</span>], and less often [<span class="HackFont" style="font-family: 'UniEricTwo'">s</span>], but this vowel does not occur in final position in a word. Because these inherent vowels are not written explicitly, there can be ambiguity in the reading of certain words. </p>
+
+<p id="G29470">Warang Citi has no regular system of conjuncts nor an explicit virama. However, a small number of conjunct forms are used; most of these represent doubled consonants. The choice of a conjunct form does not appear to be predictable. The recommended mechanism for representing these conjuncts is to make use of U+200D <span class="Char-Name">ZERO WIDTH JOINER</span>.</p>
+
+<p id="G29368">Warang Citi uses case distinctions, so both uppercase and lowercase letters are encoded.</p>
+
+<p id="G29136">The script does not include a diacritical mark for anusvara as in Devanagari, but rather has a separate character, U+118C0 <span class="Char-Name">WARANG CITI SMALL LETTER NGAA</span>.</p>
+
+</section>
+
+<section id="Subsubsection79"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G30878"><span class="leadin">Digits and Numbers.</span> Warang Citi has a set of digits and numbers, but the orthographic conventions for writing numbers have not yet stabilized. European digits are also used, though not consistently.</p>
+
+</section>
+
+<section id="Subsubsection80"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G29099"><span class="leadin">Punctuation.</span> Warang Citi uses Latin punctuation. There is no script-specific punctuation.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section10"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G29195">Ol Chiki</h2>
+
+<section id="Subsection13"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G29196">Ol Chiki: U+1C50–U+1C7F</div>
+
+<p id="G27645">The Ol Chiki script was invented by Pandit Raghunath Murmu in the first half of the 20th century <span class="Char-Name">CE</span> to write Santali, a Munda language of India. The script is also called Ol Cemet’, Ol Ciki, or simply Ol. Santali has also been written with the Devanagari, Bengali, and Oriya scripts, as well as the Latin alphabet.</p>
+
+<p id="G27646">Various dialects of Santali are spoken by 5.8 million people, with 25% to 50% literacy rates, mostly in India, with a few in Nepal or Bangladesh. The Ol Chiki script is used primarily for the southern dialect of Santali as spoken in the Odishan Mayurbhañj district. The script has received some official recognition by the Odishan government.</p>
+
+<p id="G27647">Ol Chiki has recently been promoted by some Santal organizations, with uncertain success, for use in writing certain other Munda languages in the Chota Nagpur area, as well as for the Dravidian Dhangar-Kudux language.</p>
+
+<section id="Subsubsection81"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27649"><span class="leadin">Structure.</span> Ol Chiki is alphabetic and has none of the structural properties of the abugidas typical for other Indic scripts. There are separate letters representing consonants and vowels. A number of modifier letters are used to indicate tone, nasalization, vowel length, and deglottalization. There are no combining characters in the script. (See Section&nbsp;15.8, Nag Mundari, for a similarly structured script.)</p>
+
+<p id="G27650">Ol Chiki is written from left to right.</p>
+
+</section>
+
+<section id="Subsubsection82"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27657"><span class="leadin">Modifier Letters.</span> The southern dialect of Santali has only six vowels, each represented by a single vowel letter. The Santal Parganas dialect, on the other hand, has eight or nine vowels. The extra vowels for Santal Parganas are represented by a sequence of one of the vowel letters U+1C5A, U+1C5F, or U+1C6E followed by the diacritic modifier letter, U+1C79 <span class="Char-Name">OL CHIKI GAAHLAA TTUDDAAG</span>, displayed as a baseline dot.</p>
+
+<p id="G27658">Nasalization is indicated by the modifier letter, U+1C78 <span class="Char-Name">OL CHIKI MU TTUDDAG</span>, displayed as a raised dot. This mark can follow any vowel, long or short.</p>
+
+<p id="G27659">When the vowel diacritic and nasalization occur together, the combination is represented by a separate modifier letter, U+1C7A <span class="Char-Name">OL CHIKI MU-GAAHLAA TTUDDAAG</span>, displayed as both a baseline and a raised dot. The combination is treated as a separate character and is entered using a separate key on Ol Chiki keyboards.</p>
+
+<p id="G27660">U+1C7B <span class="Char-Name">OL CHIKI RELAA</span> is a length mark, which can be used with any oral or nasalized vowel.</p>
+
+</section>
+
+<section id="Subsubsection83"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27662"><span class="leadin">Glottalization.</span> U+1C7D <span class="Char-Name">OL CHIKI AHAD</span> is a special letter indicating the deglottalization of an Ol Chiki consonant in final position. This unique feature of the writing system preserves the morphophonemic relationship between the glottalized (ejective) and voiced equivalents of consonants. For example, U+1C5C <span class="Char-Name">OL CHIKI LETTER AG</span> represents an ejective [k’] when written in word-final position, but voiced [g] when written word-initially. A voiced [g] in word-final position is written with the deglottalization mark as a sequence: &lt;U+1C5C <span class="Char-Name">OL CHIKI LETTER AG</span>, U+1C7D <span class="Char-Name">OL CHIKI AHAD</span>&gt;.</p>
+
+<p id="G27663">U+1C7C <span class="Char-Name">OL CHIKI PHAARKAA</span> serves the opposite function. It is a “glottal protector.” When it follows one of the four ejective consonants, it preserves the ejective sound, even in word-initial position followed by a vowel.</p>
+
+</section>
+
+<section id="Subsubsection84"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27665"><span class="leadin">Aspiration.</span> Aspirated consonants are written as digraphs, with U+1C77 <span class="Char-Name">OL CHIKI LETTER OH</span> as the second element, indicating the aspiration.</p>
+
+</section>
+
+<section id="Subsubsection85"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27667"><span class="leadin">Ligatures.</span> Ligatures are not a normal feature of printed Ol Chiki. However, in handwriting and script fonts, letters form cursive ligatures with the deglottalization mark, U+1C7D <span class="Char-Name">OL CHIKI AHAD</span>.</p>
+
+</section>
+
+<section id="Subsubsection86"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27654"><span class="leadin">Punctuation.</span> Western-style punctuation, such as the comma, exclamation mark, question mark, and quotation marks are used in Ol Chiki text. U+002E “ . ” <span class="Char-Name">FULL STOP</span> is not used, because it is visually confusable with the modifier letter U+1C79 <span class="Char-Name">OL CHIKI GAAHLAA TTUDDAAG</span>.</p>
+
+<p id="G27655">The danda, U+1C7E <span class="Char-Name">OL CHIKI PUNCTUATION MUCAAD</span>, is used as a text delimiter in prose. The danda and the double danda, U+1C7F <span class="Char-Name">OL CHIKI PUNCTUATION DOUBLE MUCAAD</span>, are both used in poetic text.</p>
+
+</section>
+
+<section id="Subsubsection87"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G58767"><span class="leadin">Digits.</span> The Ol Chiki script has its own set of digits, encoded in the Ol Chiki block in the range U+1C50..U+1C59.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section11"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G27486">Chakma</h2>
+
+<section id="Subsection14"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G29592">Chakma: U+11100–U+1114F</div>
+
+<p id="G27487">The Chakma people, who live in southeast Bangladesh near Chittagong City, as well as in parts of India such as Mizoram, Assam, Tripura, and Arunachal Pradesh, speak an Indo-European language also called Chakma. The language, spoken by about 500,000 people, is related to the Assamese, Bengali, Chittagonian, and Sylheti languages. </p>
+
+<p id="G27488">The Chakma script is Brahmi-derived, and is sometimes also called Ajh<span class="HackFont" style="font-family: 'Ufoursix'">Z</span> p<span class="HackFont" style="font-family: 'Ufoursix'">ZY</span>h or Ojhopath. There are some efforts to adapt the Chakma script to write the closely related Tanchangya language. One of the interesting features of Chakma writing is that candrabindu (c<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>naphud<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>) can be used together with anusvara (ekaphud<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>) and visarga (dviphud<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>). </p>
+
+<section id="Subsubsection88"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27491"><span class="leadin">Independent Vowels.</span> Like other Brahmi-derived scripts, Chakma uses consonant letters that contain an inherent vowel. Consonant clusters are written with conjunct characters, while a visible “vowel killer” (called the maayyaa) shows the deletion of the inherent vowel when there is no conjunct. There are four independent vowels: U+11103 <span class="Char-Name">CHAKMA LETTER AA</span> /<span class="HackFont" style="font-family: 'Ufoureleven'">#</span>/, U+11104 <span class="Char-Name">CHAKMA LETTER I</span> /i/, U+11105 <span class="Char-Name">CHAKMA LETTER U</span> /u/, and U+11106 <span class="Char-Name">CHAKMA LETTER E</span> /e/. Other vowels in the initial position are formed by adding a dependent vowel sign to the independent vowel /<span class="HackFont" style="font-family: 'Ufoureleven'">#</span>/, to form vowels such as /<span class="HackFont" style="font-family: 'UniEricFour'">S</span>/, /<span class="HackFont" style="font-family: 'UniEricFour'">T</span>/, /ai/, and /oi/. </p>
+
+</section>
+
+<section id="Subsubsection89"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27493"><span class="leadin">Vowel Killer and Virama.</span> Like the Myanmar script and the characters used to write historic Meetei Mayek, Chakma is encoded with two vowel-killing characters to conform to modern user expectations. Chakma uses the maayyaa (killer) to invoke conjoined consonants. Most letters have their vowels killed with the use of the explicit maayyaa character. In addition to the visible killer, there is an explicit conjunct-forming character (virama), permitting the user to choose between the subjoining style and the ligating style. Whether a conjunct is required or not is part of the spelling of a word.</p>
+
+<p id="G27494">In principle, nothing prevents the visible killer from appearing together with a subjoining sequence formed with virama. However, in practice, combinations of virama and maayyaa following a consonant are not meaningful, as both kill the inherent vowel.</p>
+
+<p id="G27495">In 2001, an orthographic reform was recommended in the book C<span class="HackFont" style="font-family: 'Ufoursix'">Z</span><span class="HackFont" style="font-family: 'UniEricEight'">u</span>m<span class="HackFont" style="font-family: 'Ufoursix'">Z</span> pattham p<span class="HackFont" style="font-family: 'Ufoursix'">Z</span>t, limiting the standard repertoire of conjuncts to those composed with the five letters U+11121 <span class="Char-Name">CHAKMA LETTER YAA</span> /y<span class="HackFont" style="font-family: 'Ufoureleven'">#</span>/, U+11122 <span class="Char-Name">CHAKMA LETTER RAA </span>/r<span class="HackFont" style="font-family: 'Ufoureleven'">#</span>/, U+11123 <span class="Char-Name">CHAKMA LETTER LAA</span> /l<span class="HackFont" style="font-family: 'Ufoureleven'">#</span>/, U+11124 <span class="Char-Name">CHAKMA LETTER WAA</span> /w<span class="HackFont" style="font-family: 'Ufoureleven'">#</span>/, and U+1111A <span class="Char-Name">CHAKMA LETTER NAA</span> /n<span class="HackFont" style="font-family: 'Ufoureleven'">#</span>/.</p>
+
+</section>
+
+<section id="Subsubsection90"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27497"><span class="leadin">Chakma Fonts.</span> Chakma fonts by default should display the subjoined form of letters that follow virama to ensure legibility. </p>
+
+</section>
+
+<section id="Subsubsection91"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27499"><span class="leadin">Punctuation.</span> Chakma has a single and double danda. There is also a unique question mark and a section mark, phulacihna. </p>
+
+</section>
+
+<section id="Subsubsection92"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G27501"><span class="leadin">Digits.</span> A distinct set of digits is encoded for Chakma. Bengali digits are also used with Chakma. Myanmar digits are used with the Chakma script when writing Tanchangya.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section12"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G27253">Lepcha</h2>
+
+<section id="Subsection15"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G27248">Lepcha: U+1C00–U+1C4F</div>
+
+<p id="G26788">Lepcha is a Sino-Tibetan language spoken by people in Sikkim and in the West Bengal state of India, especially in the Darjeeling district, which borders Sikkim. The Lepcha script is a writing system thought to have been invented around 1720 <span class="Char-Name">CE</span> by the Sikkim king Phyag-rdor rNam-rgyal (“Chakdor Namgyal,” born 1686). Both the language and the script are also commonly known by the term Rong.</p>
+
+<section id="Subsubsection93"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26790"><span class="leadin">Structure.</span> The Lepcha script was based directly on the Tibetan script. The letterforms are obviously related to corresponding Tibetan letters. However, the dbu-med Tibetan precursors to Lepcha were originally written in vertical columns, possibly influenced by Chinese conventions. When Lepcha was invented it changed the dbu-med text to a left-to-right, horizontal orientation. In the process, the entire script was effectively rotated ninety degrees counterclockwise, so that the letters resemble Tibetan letters turned on their sides. This reorientation resulted in some letters which are nonspacing marks in Tibetan becoming spacing letters in Lepcha. Lepcha also introduced its own innovations, such as the use of diacritical marks to represent final consonants.</p>
+
+<p id="G26791">The Lepcha script is an abugida: the consonant letters have an inherent vowel, and dependent vowels (matras) are used to modify the inherent vowel of the consonant. No virama (or vowel killer) is used to remove the inherent vowel. Instead, the script has a separate set of explicit final consonants which are used to represent a consonant with no inherent vowel.</p>
+
+</section>
+
+<section id="Subsubsection94"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26793"><span class="leadin">Vowels.</span> Initial vowels are represented by the neutral letter U+1C23 <span class="Char-Name">LEPCHA LETTER A</span>, followed by the appropriate dependent vowel. U+1C23 <span class="Char-Name">LEPCHA LETTER A</span> thus functions as a vowel carrier.</p>
+
+<p id="G26794">The dependent vowel signs in Lepcha always follow the base consonant in logical order. However, in rendering, three of these dependent vowel signs, -i, -o, and -oo, reorder to the left side of their base consonant. One of the dependent vowel signs, -e, is a nonspacing mark which renders below its base consonant.</p>
+
+</section>
+
+<section id="Subsubsection95"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26796"><span class="leadin">Medials.</span> There are three medial consonants, or glides: -ya, -ra, and -la. The first two are represented by separate characters, U+1C24 <span class="Char-Name">LEPCHA SUBJOINED LETTER YA </span>and U+1C25 <span class="Char-Name">LEPCHA SUBJOINED LETTER RA</span>. These are called “subjoined”, by analogy with the corresponding letters in Tibetan, which actually do join below a Tibetan consonant, but in Lepcha these are spacing forms which occur to the right of a consonant letter and then ligate with it. These two medials can also occur in sequence to form a composite medial, -rya. In that case both medials ligate with the preceding consonant.</p>
+
+<p id="G26797">On the other hand, Lepcha does not have a separate character to represent the medial -la. Phonological consonant clusters of the form kla, gla, pla, and so on simply have separate, atomic characters encoded for them. With few exceptions, these letters for phonological clusters with the medial -la are independent letterforms, not clearly related to the corresponding consonants without -la.</p>
+
+</section>
+
+<section id="Subsubsection96"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26799"><span class="leadin">Retroflex Consonants.</span> The Lepcha language contains three retroflex consonants: [<span class="HackFont" style="font-family: 'UniEricFour'">P</span>], [<span class="HackFont" style="font-family: 'UniEricFour'">P</span>h], and [<span class="HackFont" style="font-family: 'UniEricFour'">K</span>]. Traditionally, these retroflex consonants have been written in the Lepcha script with the syllables kra, hra, and gra, respectively. In other words, the retroflex t would be represented as &lt;U+1C00 <span class="Char-Name">LEPCHA LETTER KA</span>, U+1C25 <span class="Char-Name">LEPCHA SUBJOINED LETTER RA</span>&gt;. To distinguish such a sequence representing a retroflex t from a sequence representing the actual syllable [kra], it is common to use the nukta diacritic sign, U+1C37 <span class="Char-Name">LEPCHA SIGN NUKTA</span>. In that case, the retroflex t would be visually distinct, and would be represented by the sequence &lt;U+1C00 <span class="Char-Name">LEPCHA LETTER KA</span>, U+1C37 <span class="Char-Name">LEPCHA SIGN NUKTA</span>, U+1C25 <span class="Char-Name">LEPCHA SUBJOINED LETTER RA</span>&gt;. Recently, three newly invented letters have been added to the script to unambiguously represent the retroflex consonants: U+1C4D <span class="Char-Name">LEPCHA LETTER TTA</span>, U+1C4E <span class="Char-Name">LEPCHA LETTER TTHA</span>, and U+1C4F <span class="Char-Name">LEPCHA LETTER DDA</span>.</p>
+
+</section>
+
+<section id="Subsubsection97"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26801"><span class="leadin">Ordering of Syllable Components.</span> Dependent vowels and other signs are encoded after the consonant to which they apply. The ordering of elements is shown in more detail in Table&nbsp;13-9. </p>
+
+<table style="margin: 0 auto;" id="Table14">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G26811">Table 13-9.  Lepcha Syllabic Structure</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">Class </p></th>
+    <th><p class="CellHeading">Example</p></th>
+    <th><p class="CellHeading">Encoding</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody"><i>consonant, letter a</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricSix'">A</span></p></td>
+    <td><p class="CellBody">[U+1C00..U+1C23, U+1C4D..U+1C4F]</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>nukta</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricSix'">B</span></p></td>
+    <td><p class="CellBody">U+1C37</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>medial -ra</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricSix'">D</span></p></td>
+    <td><p class="CellBody">U+1C25</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>medial -ya</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricSix'">C</span></p></td>
+    <td><p class="CellBody">U+1C24</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>dependent vowel</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricSix'">E</span></p></td>
+    <td><p class="CellBody">[U+1C26..U+1C2C]</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>final consonant sign</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricSix'">F</span></p></td>
+    <td><p class="CellBody">[U+1C2D..U+1C35]</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><i>syllabic modifier</i></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'UniEricSix'">G</span></p></td>
+    <td><p class="CellBody">U+1C36</p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection98"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26865"><span class="leadin">Rendering.</span> Most final consonants consist of nonspacing marks rendered above the base consonant of a syllable.</p>
+
+<p id="G26866">The combining mark U+1C36 <span class="Char-Name">LEPCHA SIGN RAN</span> occurs after the inherent vowel -a or the dependent vowel -i. When it occurs together with a final consonant sign, the ran sign renders above the sign for that final consonant.</p>
+
+<p id="G26867">The two final consonants representing the velar nasal occur in complementary contexts. U+1C34 <span class="Char-Name">LEPCHA CONSONANT SIGN NYIN-DO</span> is only used when there is no dependent vowel in the syllable. U+1C35 <span class="Char-Name">LEPCHA CONSONANT SIGN KANG</span> is used instead when there is a dependent vowel. These two consonant signs are rendered to the left of the base consonant. If used with a left-side dependent vowel, the glyph for the kang is rendered to the left of the dependent vowel. This behavior is understandable because these two marks are derived from the Tibetan analogues of the Brahmic bindu and candrabindu, which normally stand above a Brahmic aksara.</p>
+
+</section>
+
+<section id="Subsubsection99"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26869"><span class="leadin">Digits.</span> The Lepcha script has its own, distinctive set of digits. </p>
+
+</section>
+
+<section id="Subsubsection100"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26871"><span class="leadin">Punctuation.</span> Currently the Lepchas use traditional punctuation marks only when copying the old books. In everyday writing they use common Western punctuation marks such as comma, full stop, and question mark.</p>
+
+<p id="G26872">The traditional punctuation marks include a script-specific danda mark, U+1C3B <span class="Char-Name">LEPCHA PUNCTUATION TA-ROL</span>, and a double danda, U+1C3C <span class="Char-Name">LEPCHA PUNCTUATION NYET THYOOM TA-ROL</span>. Depending on style and hand, the Lepcha ta-rol may have a glyph appearance more like its Tibetan analogue, U+0F0D <span class="Char-Name">TIBETAN MARK SHAD</span>.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section13"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G28198">Saurashtra</h2>
+
+<section id="Subsection16"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G28199">Saurashtra: U+A880–U+A8DF</div>
+
+<p id="G28200">Saurashtra is an Indo-European language, related to Gujarati and spoken by about 310,000 people in southern India. The Telugu, Tamil, Devanagari, and Saurashtra scripts have been used to publish books in Saurashtra since the end of the 19th century. At present, Saurashtra is most often written in the Tamil script, augmented with the use of superscript digits and a colon to indicate sounds not available in the Tamil script.</p>
+
+<p id="G28201">The Saurashtra script is of the Brahmic type. Early Saurashtra text made use of conjuncts, which can be handled with the usual Brahmic shaping rules. The modernized script, developed in the 1880s, has undergone some simplification. Modern Saurashtra does not use complex consonant clusters, but instead marks a killed vowel with a visible virama, U+A8C4 <span class="Char-Name">SAURASHTRA SIGN VIRAMA</span>. An exception to the non-occurrence of complex consonant clusters is the conjunct k<span class="HackFont" style="font-family: 'Ufoursix'">X</span>a, formed by the sequence &lt;U+A892, U+A8C4, U+200D, U+A8B0&gt;. This conjunct is sorted as a unique letter in older dictionaries. Apart from its use to form k<span class="HackFont" style="font-family: 'Ufoursix'">X</span>a, the virama is always visible by default in modern Saurashtra. If necessary, U+200D <span class="Char-Name">ZERO WIDTH JOINER</span> may be used to force conjunct behavior. </p>
+
+<p id="G28202">The Unicode encoding of the Saurashtra script supports both older and newer conventions for writing Saurashtra text.</p>
+
+<section id="Subsubsection101"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G28204"><span class="leadin">Glyph Placement.</span> The vowel signs (matras) in Saurashtra follow the consonant to which they are applied. The long and short -i vowels, however, are typographically joined to the top right corner of their consonant. Vowel signs are also applied to U+A8B4 <span class="Char-Name">SAURASHTRA CONSONANT SIGN HAARU</span>.</p>
+
+</section>
+
+<section id="Subsubsection102"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G28206"><span class="leadin">Digits.</span> The Saurashtra script has its own set of digits. These are separately encoded in the Saurashtra block.</p>
+
+</section>
+
+<section id="Subsubsection103"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G28208"><span class="leadin">Punctuation.</span> Western-style punctuation, such as comma, full stop, and the question mark are used in modern Saurashtra text. U+A8CE <span class="Char-Name">SAURASHTRA DANDA</span> is used as a text delimiter in traditional prose. U+A8CE <span class="Char-Name">SAURASHTRA DANDA</span> and U+A8CF <span class="Char-Name">SAURASHTRA DOUBLE DANDA</span> are used in poetic text.</p>
+
+</section>
+
+<section id="Subsubsection104"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G29948"><span class="leadin">Saurashtra Consonant Sign Haaru.</span> The character U+A8B4 <span class="Char-Name">SAURASHTRA CONSONANT SIGN HAARU</span>, transliterated as “H”, is unique to Saurashtra, and does not have an equivalent in the Devanagari, Tamil, or Telugu scripts. It functions in some regards like the Tamil aytam, modifying other letters to represent sounds not found in the basic Brahmic alphabet. It is a dependent consonant and is thus classified as a consonant sign in the encoding.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section14"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G33278">Masaram Gondi</h2>
+
+<section id="Subsection17"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G33307">Masaram Gondi: U+11D00–U+11D5F</div>
+
+<p id="G33527">The Masaram Gondi script was created in 1918 by Munshi Mangal Singh Masaram of Madhya Pradesh, India to write the Gondi language, a Dravidian language spoken in central and southeastern India. The Gondi language, which is typically written with the Devanagari or Telugu scripts, also has another script associated with it, Gunjala Gondi, which is unrelated to the Masaram Gondi script. Masaram Gondi is actively used today in handwritten and printed materials.</p>
+
+<section id="Subsubsection105"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G33529"><span class="leadin">Structure.</span> Masaram Gondi is an abugida, written left to right. While not historically related to Brahmi, its general structure is similar to that of other Brahmi-derived Indic scripts. Masaram Gondi uses a conjunct-forming character (virama) to invoke conjoined consonants. In addition, there is an explicit vowel-killing character (halanta).</p>
+
+</section>
+
+<section id="Subsubsection106"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G33531"><span class="leadin">Consonants.</span> Consonants have an inherent /a/ vowel, which is graphically represented by a horizontal stroke extending rightward from the right-hand edge of each consonant letter. A bare consonant (with no vowel) is represented by removing this stroke. Alternatively, consonants that appear in word-final position can be represented by the addition of U+11D44 <span class="Char-Name">MASARAM GONDI SIGN HALANTA</span>. This use of halanta is a recent innovation employed by some modern users. </p>
+
+</section>
+
+<section id="Subsubsection107"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G33533"><span class="leadin">Conjuncts.</span> Consonant clusters in Masaram Gondi are represented by the sequence &lt;C, virama, C&gt;. The consonants in a cluster appear in a linear sequence as bare forms without the horizontal stroke, except the last consonant, which retains its original form, as shown in Figure&nbsp;13-9.</p>
+
+<table style="margin: 0 auto;" id="Table25">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G38402">Figure 13-9.  Masaram Gondi Consonant Clusters</caption>
+<tbody>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka </p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Symbol'">®</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">k</span> virama + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">l</span> ta</p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Symbol'">®</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickU90-MiscTable'">nl</span> kta</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">k</span> virama + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">l</span> ta + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">k</span> virama + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">m</span> va </p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'Symbol'">®</span></p></td>
+    <td><p class="CellBody"><span class="HackFont" style="font-family: 'RickU90-MiscTable'">nom</span> ktva</p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G33533">There are a few exceptions to the consonant cluster formation rule: the conjuncts kssa, jyna, and tra are atomically encoded, whereas consonant clusters with U+11D26 <span class="Char-Name">MASARAM GONDI LETTER RA</span> have special contextual forms. When ra occurs as the first consonant in a cluster and does not mark a morphological boundary, it is generally rendered with U+11D46 <span class="Char-Name">MASARAM GONDI REPHA</span>. Repha is represented in logical order at the beginning of a cluster, and does not interact with any combining signs. When ra appears first in a cluster and marks a morphological distinction, the bare consonant appears. There is also a cluster-final form of ra, a combining sign called U+11D47 ra-kara. The ra-kara appears in logical order before any vowel sign. Neither repha nor ra-kara interact with the virama. Details are shown in Figure&nbsp;13-10. </p>
+
+<table style="margin: 0 auto;" id="Table24">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G36492">Figure 13-10.  Rendering of ra in Masaram Gondi</caption>
+<tbody>
+  <tr>
+    <td><p><span class="HackFont" style="font-family: 'RickU90-MiscTable'">p</span> repha + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka</p></td>
+    <td><p><span class="HackFont" style="font-family: 'Symbol'">®</span></p></td>
+    <td><p class="CellBody"><i><span class="HackFont" style="font-family: 'RickU90-MiscTable'">q</span></i><i>rka</i></p></td>
+  </tr>
+  <tr>
+    <td><p><span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">r</span> ra-kara </p></td>
+    <td><p><span class="HackFont" style="font-family: 'Symbol'">®</span></p></td>
+    <td><p class="CellBody"><i><span class="HackFont" style="font-family: 'RickU90-MiscTable'">s</span></i><i>kra</i></p></td>
+  </tr>
+  <tr>
+    <td><p><span class="HackFont" style="font-family: 'RickU90-MiscTable'">v</span> ra + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">k</span> virama + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka</p></td>
+    <td><p><span class="HackFont" style="font-family: 'Symbol'">®</span></p></td>
+    <td><p class="CellBody"><i><span class="HackFont" style="font-family: 'RickU90-MiscTable'">wj</span></i><i> </i><i>rka</i></p></td>
+  </tr>
+  <tr>
+    <td><p><span class="HackFont" style="font-family: 'RickU90-MiscTable'">j</span> ka + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">k</span> virama + <span class="HackFont" style="font-family: 'RickU90-MiscTable'">v</span> ra</p></td>
+    <td><p><span class="HackFont" style="font-family: 'Symbol'">®</span></p></td>
+    <td><p class="CellBody"><i><span class="HackFont" style="font-family: 'RickU90-MiscTable'">nv</span></i><i> </i><i>kra</i></p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection108"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G33537"><span class="leadin">Various Signs.</span> Masaram Gondi uses various signs, as summarized in Table&nbsp;13-10.</p>
+
+<table style="margin: 0 auto;" id="Table26">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G35762">Table 13-10.  Various Signs in Masaram Gondi</caption>
+<thead>
+  <tr>
+    <th><p class="CellHeading">Character</p></th>
+    <th><p class="CellHeading">Use</p></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><p class="CellBody"><span class="Char-Name"></span>11D40 <span class="Char-Name">MASARAM GONDI SIGN ANUSVARA</span></p></td>
+    <td><p class="CellBody">Indicates nasalization</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="Char-Name"></span>11D41 <span class="Char-Name">MASARAM GONDI SIGN VISARGA</span></p></td>
+    <td><p class="CellBody">Used to represent Sanskrit words</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="Char-Name"></span>11D42 <span class="Char-Name">MASARAM GONDI SIGN NUKTA</span></p></td>
+    <td><p class="CellBody">Used to indicate sounds for which distinct characters in Masaram Gondi do not exist, such as loanwords</p></td>
+  </tr>
+  <tr>
+    <td><p class="CellBody"><span class="Char-Name"></span>11D43 <span class="Char-Name">MASARAM GONDI SIGN CANDRA</span></p></td>
+    <td><p class="CellBody">Used to transcribe vowel sounds not native to Gondi</p></td>
+  </tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="Subsubsection109"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G33539"><span class="leadin">Digits and Punctuation.</span> Masaram Gondi has a full set of decimal digits. There are no script-specific marks of punctuation. For dandas, Masaram Gondi uses U+0964 <span class="Char-Name">DEVANAGARI DANDA</span> and U+0965 <span class="Char-Name">DEVANAGARI DOUBLE DANDA</span>.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section15"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G39306">Gunjala Gondi</h2>
+
+<section id="Subsection18"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G40374">Gunjala Gondi: U+11D60–U+11DAF</div>
+
+<p id="G39477">Gunjala Gondi is named after the village in the Adilabad district of the southern Indian state of Telegana, where manuscripts in the script were found. The script, also called Koytura Gunjala Lipi, is used to write the Adilabad dialect of the Gondi language, which is a member of the Dravidian family. Gunjala Gondi is taught today and appears in publications, but the dialect is more commonly written in Telugu or Devanagari. Although the Gunjala Gondi script is formally unrelated to Masaram Gondi and other scripts, it strongly resembles the Modi script in appearance and structure. </p>
+
+<section id="Subsubsection110"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G39479"><span class="leadin">Structure.</span> Gunjala Gondi is an abugida, structurally based on the Brahmi model. The vowel letters follow the order found in Brahmi-derived scripts, but the consonants appear in a different order: the first consonant is ya, instead of ka, for example. The script uses a virama to create conjuncts, but it does not suppress the inherent vowel. The script is written from left to right. </p>
+
+</section>
+
+<section id="Subsubsection111"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G39481"><span class="leadin">Consonants.</span> The script does not have letters for palatal na and retroflex na. U+11D7A <span class="Char-Name">GUNJALA GONDI LETTER NA</span> and U+11D95 <span class="Char-Name">GUNJALA GONDI SIGN ANUSVARA</span> are used to represent these letters. The script does not have distinct letters for palatal sa and retroflex sa, so U+11D89 <span class="Char-Name">GUNJALA GONDI LETTER SA</span> is used to represent those letters. No special forms of ra appear in Gunjala Gondi. The half-form of U+11D88 <span class="Char-Name">GUNJALA GONDI LETTER RA</span> is used in the cluster-initial position.</p>
+
+</section>
+
+<section id="Subsubsection112"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G39483"><span class="leadin">Vowels.</span> Unlike scripts used to write other Dravidian languages, Gunjala Gondi does not distinguish between long and short /e/ or /o/. U+11D67 <span class="Char-Name">GUNJALA GONDI LETTER EE</span> designates both the short and the long /e/, and U+11D6A <span class="Char-Name">GUNJALA GONDI LETTER OO </span>is used for short and long /o/. For the dependent vowel signs, the script similarly does not distinguish the long and short vowels /e/ and /o/, instead using U+11D90 <span class="Char-Name">GUNJALA GONDI VOWEL SIGN EE</span> and U+11D93 <span class="Char-Name">GUNJALA GONDI VOWEL SIGN OO</span>, respectively.</p>
+
+</section>
+
+<section id="Subsubsection113"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G39485"><span class="leadin">Consonant Conjuncts.</span> Consonant clusters are represented with a virama between the consonants in the conjunct. The initial and medial consonants in a cluster are written horizontally with half-forms, but the final consonant appears in its full form.</p>
+
+<table style="margin: 0 auto;" id="Table27">  <!-- Finnegan: Add scripting goop here. -->
+<caption id="G40296">Figure 13-11.  Gunjala Gondi Conjunct Formation</caption>
+<tbody>
+  <tr>
+    <td><p><img alt="Figure" border="0" src="whatever.jpg" width="120" height="120"></p></td>
+  </tr>
+</tbody>
+</table>
+
+<p id="G39487">Conjuncts composed of a consonant and the vowels signs -aa, -oo, and -au are usually written as ligatures with a modified form of the consonant.</p>
+
+</section>
+
+<section id="Subsubsection114"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G39489"><span class="leadin">Digits and Punctuation.</span> Gunjala Gondi has a full set of decimal digits in the range U+11DA0..U+11DA9. Gunjala Gondi uses dandas and European punctuation, such as middle dots, periods, and colons to mark word and sentence boundaries. Gunjala Gondi uses U+0964 <span class="Char-Name">DEVANAGARI DANDA</span> and U+0965 <span class="Char-Name">DEVANAGARI DOUBLE DANDA</span>.</p>
+
+</section>
+
+<section id="Subsubsection115"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G39491"><span class="leadin">Other Signs.</span> U+11D95 <span class="Char-Name">GUNJALA GONDI SIGN ANUSVARA</span> indicates nasalization. U+11D96 <span class="Char-Name">GUNJALA GONDI SIGN VISARGA</span> represents post-vocalic aspiration in words of Sanskrit origin. The om sign is encoded at U+11D98.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section16"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G46061">Wancho</h2>
+
+<section id="Subsection19"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G46160">Wancho: U+1E2C0–U+1E2FF</div>
+
+<p id="G46255">The Wancho script was devised between 2001 and 2012 by Banwang Losu, a teacher at a government middle school in his home village in Arunachal Pradesh, India; it is taught today in schools. The Wancho language is a Sino-Tibetan language that has some 50,000 speakers and is used chiefly in the southeast of Arunachal Pradesh, as well as in Assam and Nagaland, and in the countries of Myanmar and Bhutan. </p>
+
+<section id="Subsubsection116"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G46257"><span class="leadin">Structure.</span> Wancho is a simple left-to-right alphabetic script comprised of letters which represent both consonants and vowels. Diacritical marks are used on vowel letters to indicate tone.</p>
+
+</section>
+
+<section id="Subsubsection117"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G46329"><span class="leadin">Tones.</span> There are four tone marks in Wancho:</p>
+
+<p class="Item" id="G46259">U+1E2EC <span class="Char-Name">WANCHO TONE TUP</span></p>
+
+<p class="Item" id="G46260">U+1E2ED <span class="Char-Name">WANCHO TONE TUPNI</span></p>
+
+<p class="Item" id="G46261">U+1E2EE <span class="Char-Name">WANCHO TONE KOI</span></p>
+
+<p class="Item" id="G46262">U+1E2EF <span class="Char-Name">WANCHO TONE KOINI</span></p>
+
+<p id="G46263">The four tone marks are in two pairs. One pair, <span class="Char-Name">WANCHO TONE TUP </span>and <span class="Char-Name">WANCHO TONE TUPNI</span>, is used with Southern Wancho, and the second pair, <span class="Char-Name">WANCHO TONE KOI </span>and <span class="Char-Name">WANCHO TONE KOINI</span>, is used with Northern Wancho. </p>
+
+</section>
+
+<section id="Subsubsection118"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G46265"><span class="leadin">Punctuation.</span> Common Western punctuation marks such as comma, full stop, and question mark are used in Wancho. </p>
+
+</section>
+
+<section id="Subsubsection119"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G47153"><span class="leadin">Currency Sign.</span> The Wancho currency sign, U+1E2FF <span class="Char-Name">WANCHO NGUN SIGN</span>, is used to indicate rupees.</p>
+
+</section>
+
+<section id="Subsubsection120"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G46267"><span class="leadin">Digits.</span> Wancho uses decimal digits 0–9 encoded in the range U+1E2F0..U+1E2F9. Common operators are used for mathematical operations.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section17"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G50178">Toto</h2>
+
+<section id="Subsection20"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G50342">Toto: U+1E290–U+1E2BF</div>
+
+<p id="G50346">The Toto script was created to write Toto, a Sino-Tibetan language spoken in West Bengal, India, near the Bhutan border. It was designed by Dhaniram Toto, a member of the Toto community, and officially launched in 2015. The language is also written with the Bengali/Bangla and Latin scripts.</p>
+
+<section id="Subsubsection121"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G50390"><span class="leadin">Structure.</span> Toto is a left-to-right alphabetic script comprised of letters representing consonants and vowels. There are five breathy vowels, which are separately encoded. The breathy vowels display a common distinguishing mark below the letter, such as is found in U+1E2A7 <span class="HackFont" style="font-family: 'Toto-U14-BlockOnly'">X</span> <span class="Char-Name">TOTO LETTER BREATHY E</span>. The distinguishing mark is not separately encoded; these characters are all treated atomically, and do not decompose. The mark below U+1E29C <span class="HackFont" style="font-family: 'Toto-U14-BlockOnly'">M</span> <span class="Char-Name">TOTO LETTER WA</span> has a similar appearance, but does not indicate breathiness.</p>
+
+<p id="G50729">U+02BC <span class="HackFont" style="font-family: 'Toto-U14-BlockOnly'">z</span> <span class="Char-Name">MODIFIER LETTER APOSTROPHE</span> is used for the glottal stop.</p>
+
+</section>
+
+<section id="Subsubsection122"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G50396"><span class="leadin">Tone.</span> Toto has one tone mark, U+1E2AE <span class="HackFont" style="font-family: 'Toto-U14-BlockOnly'">e</span> <span class="Char-Name">TOTO SIGN RISING TONE</span>, which appears only above vowels. The similar-shaped mark which appears above U+1E297 <span class="HackFont" style="font-family: 'Toto-U14-BlockOnly'">H</span> <span class="Char-Name">TOTO LETTER NA</span> and U+1E298 <span class="HackFont" style="font-family: 'Toto-U14-BlockOnly'">I</span> <span class="Char-Name">TOTO LETTER NGA</span> is not a tone mark, and those letters do not decompose.</p>
+
+</section>
+
+<section id="Subsubsection123"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G50402"><span class="leadin">Punctuation and Digits.</span> Common Western punctuation marks are currently used in Toto. The Toto script has no script-specific digits.</p>
+
+</section>
+
+</section>
+
+</section>
+
+<section id="Section18"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G51897">Tangsa</h2>
+
+<section id="Subsection21"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingNoTOC" id="G51905">Tangsa: U+16A70–U+16ACF</div>
+
+<p id="G52069">Tangsa is an alphabetic script created by the late Lakhum Mossang in 1990 to write the Tangsa languages spoken in Arunachal Pradesh, India, and the Sagaing Region of northwest Myanmar. In January 2020 a few new characters (U+16A78..U+16A7B) were officially added to the script, including four characters for a short /a/-like sound. </p>
+
+<p id="G52498">In India the script is taught in some schools to write the local Muishvung (Mossang) variety of Tangsa. Some areas of India and Myanmar also use different Latin-based orthographies to write Tangsa languages.</p>
+
+<section id="Subsubsection124"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G52140"><span class="leadin">Structure.</span> The script is written left to right and contains 48 vowels and 31 consonants. Each vowel or diphthong contains an inherent tone, identified in the character name by an appended letter (Z, C, Q, X) used to mark tones in the Latin orthography developed by Reverend Gam Win. The tone letters indicate the tones numbered by linguists as 1, 3, 4, and 2, respectively. The Z, C, Q, X order reflects the order defined by the script’s creator for the Muishvung variety of the language.</p>
+
+</section>
+
+<section id="Subsubsection125"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G52178"><span class="leadin">Punctuation.</span> Western-style punctuation is employed in Tangsa.</p>
+
+</section>
+
+<section id="Subsubsection126"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G52495"><span class="leadin">Digits.</span> Tangsa has script-specific decimal digits encoded in the range U+16AC0..U+16AC9.</p>
+
+</section>
+
+</section>
+
+</section>
+
+</body>
+</html>
