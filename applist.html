@@ -4,10 +4,10 @@
 <meta charset="utf-8"/>
 <title>r12a &gt;&gt; apps</title>
 <meta name="description" content="Small web apps written in html and javascript."/>
-<link rel="stylesheet" type="text/css" href="style/docs.css" />
-<link rel="stylesheet" type="text/css" href="style/toplevel.css" />
-<script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="images/random/randomcharacters.js"></script>
+<link rel="stylesheet" href="style/docs.css" />
+<link rel="stylesheet" href="style/toplevel.css" />
+<script src="/shared/code/toc_2016.js"></script>
+<script src="images/random/randomcharacters.js"></script>
 </head>
 
 <body>
@@ -31,11 +31,11 @@
 
 
   <div class="flexbox">
-  	<a href="/uniview/"><img src="images/lists/uniview.png" alt=""/></a>
+  	<a href="../uniview/index.html"><img src="images/lists/uniview.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/uniview/">UniView</a></p>
+      <p class="mainLink"><a href="../uniview/index.html">UniView</a></p>
       <p>Look up and see characters (using graphics or fonts) and property information, view whole character blocks or custom ranges, select characters to paste into your document, paste in and discover unknown characters,<em> </em>search for characters, do hex/dec/ncr conversions, highlight character types, etc. etc. </p>
-        <p><a href="/uniview/help">User guide</a></p>
+        <p><a href="../uniview/help.html">User guide</a></p>
     </div>
   </div>
   
@@ -43,46 +43,46 @@
   
   
   
-  <div class="flexbox"><a href="/app-conversion/"><img src="images/lists/conversion.png" alt=""/></a>
+  <div class="flexbox"><a href="../app-conversion/index.html"><img src="images/lists/conversion.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/app-conversion/">Unicode code converter</a></p>
+      <p class="mainLink"><a href="../app-conversion/index.html">Unicode code converter</a></p>
         <p>Convert between Unicode characters, Unicode code point numbers, UTF-8 and UTF-16 code units in hex, and Numeric Character References (hex and decimal), and more. Just add one type of data, click 'Convert', and see all the corresponding values.</p>
     </div>
   </div>
   
   
-  <div class="flexbox"> <a href="/app-analysestring/"><img src="images/lists/analysestring.png" alt=""/></a>
+  <div class="flexbox"> <a href="../app-analysestring/index.html"><img src="images/lists/analysestring.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/app-analysestring/">Analyse string</a></p>
+      <p class="mainLink"><a href="../app-analysestring/index.html">Analyse string</a></p>
         <p>Lists the characters in text that you paste into the large box at the top, and produces information about each character, in sequence, with links to other information. You can pass the characters in the URL.</p>
     </div>
   </div>
   
   
-  <div class="flexbox"> <a href="/app-listcharacters/"><img src="images/lists/listcharacters.png" alt=""/></a>
+  <div class="flexbox"> <a href="../app-listcharacters/index.html"><img src="images/lists/listcharacters.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/app-listcharacters/">List characters</a></p>
+      <p class="mainLink"><a href="../app-listcharacters/index.html">List characters</a></p>
         <p>Analyses the characters in text that you paste into the large box at the top, and produces a list of what characters were used, grouped by Unicode block. See also the related tools:</p>
-<ul>
-<li><a href="../scripts/apps/listcategories/">Triage for general categories</a></li>
-<li><a href="../scripts/apps/listbidi/">Triage for bidi_class</a></li>
-<li><a href="../scripts/apps/listlinebreak/">Triage for line-breaking properties</a></li>
+<ul style="text-align: start; margin-inline: 0;">
+<li><a href="../scripts/apps/listcategories/index.html">Triage for general categories</a></li>
+<li><a href="../scripts/apps/listbidi/index.html">Triage for bidi_class</a></li>
+<li><a href="../scripts/apps/listlinebreak/index.html">Triage for line-breaking properties</a></li>
 </ul>
 </div>
   </div>
   
   
-  <div class="flexbox"> <a href="/app-charuse/"><img src="images/lists/charuse.png" alt=""/></a>
+  <div class="flexbox"> <a href="../app-charuse/index.html"><img src="images/lists/charuse.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/app-charuse/">Character usage lookup</a></p>
+      <p class="mainLink"><a href="../app-charuse/index.html">Character usage lookup</a></p>
         <p>Find characters used by a particular language, or languages that use a given non-ASCII character.</p>
     </div>
   </div>
   
   
-  <div class="flexbox"> <a href="/app-encodings/"><img src="images/lists/encoding.png" alt=""/></a>
+  <div class="flexbox"> <a href="../app-encodings/index.html"><img src="images/lists/encoding.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/app-encodings/">Encoding converter</a></p>
+      <p class="mainLink"><a href="../app-encodings/index.html">Encoding converter</a></p>
         <p>Allows you to see what bytes are used by legacy encodings to represent a particular character, or to convert a sequence of bytes into characters for a range of encodings. You can customise the encodings you want to experiment with by clicking on change encodings shown.</p>
     </div>
   </div>
@@ -93,9 +93,9 @@
   <h2><a href="#scripts">Writing systems</a></h2>
   
   
-  <div class="flexbox"><a href="/pickers/"><img src="images/lists/pickers.png" alt=""/></a>
+  <div class="flexbox"><a href="../pickers/index.html"><img src="images/lists/pickers.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/pickers/">Unicode character pickers</a></p>
+      <p class="mainLink"><a href="../pickers/index.html">Unicode character pickers</a></p>
         <p>Pickers are likely to be most useful if you don't know a script well enough to use the native keyboard. The arrangement of characters also makes it much more useable than a regular character map utility, and they may include characters from more than one block. However, pickers also provide transliteration and other tools, and can help analyse text strings.</p>
    <!--iframe id="pickerlist" src="../pickers/pickerlist.html" style="width: 100%; height: 15em;margin-left: 0; border: 0;"></iframe-->
     </div>
@@ -103,31 +103,42 @@
 
 
   
-  <div class="flexbox"><a href="../scripts/fontlist/"><img src="../shared/images/lists/fontlist.png" alt=""/></a>
+  <div class="flexbox"><a href="../scripts/fontlist/index.html"><img src="../shared/images/lists/fontlist.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="../scripts/samples/">Samples</a></p>
+      <p class="mainLink"><a href="../scripts/samples/index.html">Samples</a></p>
         <p>Text samples for most of the scripts supported in Unicode.</p>
-      <p class="mainLink"><a href="../scripts/fontlist/">Font lister</a></p>
+      <p class="mainLink"><a href="../scripts/fontlist/index.html">Font lister</a></p>
         <p>Provides a (not exhaustive) list of fonts, grouped by script, that are available via the Windows 10 and Mac OS X operating systems, as well as Google's Noto fonts and SIL fonts.</p>
     </div>
   </div>
 
 
   
-  <div class="flexbox"><a href="../scripts/apps/conjunct_generator/"><img src="../shared/images/lists/consonant_vowel.png" alt=""/></a>
+  <div class="flexbox"><a href="../scripts/apps/conjunct_generator/index.html"><img src="../shared/images/lists/consonant_vowel.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="../scripts/apps/conjunct_generator/">Conjunct generator</a></p>
+      <p class="mainLink"><a href="../scripts/apps/conjunct_generator/index.html">Conjunct generator</a></p>
         <p>Generates a matrix of conjunct forms for a given complex script. Allows you to inspect the results for a given font.</p>
-      <p class="mainLink"><a href="../scripts/apps/vowel_signs/">Consonant-vowel generator</a></p>
+      <p class="mainLink"><a href="../scripts/apps/vowel_signs/index.html">Consonant-vowel generator</a></p>
         <p>Generates a matrix of consonant+vowel pairings.</p>
     </div>
   </div>
 
 
   
-  <div class="flexbox"><a href="/app-pinyin-phonetics/"><img src="../shared/images/lists/pinyinphonetics.png" alt=""/></a>
+  <div class="flexbox"><a href="../scripts/apps/graphemes/index.html"><img src="../shared/images/lists/segmenter.png" alt=""/></a>
     <div>
-      <p class="mainLink"><a href="/app-pinyin-phonetics/">Pinyin phonetics</a></p>
+      <p class="mainLink"><a href="../scripts/apps/graphemes/index.html">Grapheme cluster segmenter </a></p>
+        <p>Parses a string and shows extended grapheme cluster boundaries (except for Korean jamo and emoji character sequences).</p>
+      <!--p class="mainLink"><a href="../scripts/apps/vowel_signs/">Consonant-vowel generator</a></p>
+        <p>Generates a matrix of consonant+vowel pairings.</p-->
+    </div>
+  </div>
+
+
+  
+  <div class="flexbox"><a href="../app-pinyin-phonetics/index.html"><img src="../shared/images/lists/pinyinphonetics.png" alt=""/></a>
+    <div>
+      <p class="mainLink"><a href="../app-pinyin-phonetics/index.html">Pinyin phonetics</a></p>
         <p>Type pinyin in the top box and see an approximate phonetic transcription appear below. See the notes for descriptions of phonetic symbols.</p>
     </div>
   </div>
@@ -145,25 +156,25 @@
   </div>
 
   
-    <div class="flexbox"><a href="../app-subtags/"><img src="images/lists/subtags.png" alt=" "/></a>
+    <div class="flexbox"><a href="../app-subtags/index.html"><img src="images/lists/subtags.png" alt=" "/></a>
     <div>
-      <p class="mainLink"><a href="../app-subtags/">Language subtag lookup tool</a></p>
+      <p class="mainLink"><a href="../app-subtags/index.html">Language subtag lookup tool</a></p>
         <p>Check language tag validity, find the subtag for language, region, script, etc, find out what that tag means, or get a list of all currently available tags. This app searches the most-up-to-date version of the registry, and provides additional information to help you choose from over 8,000 subtags. </p>
     </div>
   </div>
 
   
-  <div class="flexbox"><a href="../app-counters/"><img src="images/lists/counterconverter.png" alt=" "/></a>
+  <div class="flexbox"><a href="../app-counters/index.html"><img src="images/lists/counterconverter.png" alt=" "/></a>
     <div>
-      <p class="mainLink"><a href="../app-counters/">Counter styles converter</a></p>
+      <p class="mainLink"><a href="../app-counters/index.html">Counter styles converter</a></p>
         <p>Convert ASCII numbers into other representations that can be used for ordered list counters, headings, etc. It uses the algorithms described by CSS3 Counter Styles.</p>
     </div>
   </div>
 
   
-  <div class="flexbox"><a href="/app-keyevents/"><img src="images/lists/keyevents.png" alt=" "/></a>
+  <div class="flexbox"><a href="../app-keyevents/index.html"><img src="images/lists/keyevents.png" alt=" "/></a>
     <div>
-      <p class="mainLink"><a href="/app-keyevents/">Key event monitor</a></p>
+      <p class="mainLink"><a href="../app-keyevents/index.html">Key event monitor</a></p>
         <p>See how keyevents create assignments in the current browser.</p>
     </div>
   </div>
@@ -177,11 +188,11 @@
 <section id="vocab">
   <h2><a href="#vocab">Language learning</a></h2>
 
-  <div class="flexbox"><a href="../app-vocab/"><img src="images/lists/vocab.png" alt=" "/></a>
+  <div class="flexbox"><a href="../app-vocab/index.html"><img src="images/lists/vocab.png" alt=" "/></a>
     <div>
-      <p class="mainLink"><a href="../app-vocab/">Vocab/language-learning tests</a></p>
+      <p class="mainLink"><a href="../app-vocab/index.html">Vocab/language-learning tests</a></p>
         <p>Are you learning a language? This web app allows you to test yourself on your own vocabulary, dialogues, kanji characters, whatever. You can test in both directions, specify what information to display, and randomise the list before testing. You can also print lists for testing yourself when you don't have access to the Web.</p>
-        <p>For instructions, see the <a href="../app-vocab/help">help file</a>.</p>
+        <p>For instructions, see the <a href="../app-vocab/help.html">help file</a>.</p>
     </div>
   </div>
 
@@ -204,9 +215,9 @@
 <section id="geotagging">
   <h2><a href="#geotagging">Geodata</a></h2>
 
-  <div class="flexbox"><a href="apps/convertgps/"><img src="images/lists/convertgps.png" alt=" "/></a>
+  <div class="flexbox"><a href="apps/convertgps/index.html"><img src="images/lists/convertgps.png" alt=" "/></a>
     <div>
-      <p class="mainLink"><a href="apps/convertgps/">Convert lat/lon</a></p>
+      <p class="mainLink"><a href="apps/convertgps/index.html">Convert lat/lon</a></p>
         <p>Convert GPS coordinates between different formats for latitude and longitude data. Includes   formats such as those required for Google Earth/Maps, Flickr, Adobe Bridge and other applications. </p>
     </div>
   </div>
@@ -225,9 +236,9 @@
 <section id="archery">
   <h2><a href="#archery">Archery</a></h2>
 
-  <div class="flexbox"><a href="apps/archery/"><img src="images/lists/archery.png" alt=" "/></a>
+  <div class="flexbox"><a href="apps/archery/index.html"><img src="images/lists/archery.png" alt=" "/></a>
     <div>
-      <p class="mainLink"><a href="apps/archery/">Archery</a></p>
+      <p class="mainLink"><a href="apps/archery/index.html">Archery</a></p>
         <p>Take a copy to log your archery scores, with or without the visual arrow placement diagrams</p>
     </div>
   </div>
@@ -236,10 +247,10 @@
 
 <div class="smallprint">
   <span id="version">Last update <span id="version-info"> 
-    <!-- #BeginDate format:IS1m -->2021-04-02  17:30<!-- #EndDate --> 
+    <!-- #BeginDate format:IS1m -->2022-04-09  6:01<!-- #EndDate --> 
     </span> GMT.  &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span>
 </div>
-<script type="text/javascript">
+<script>
 chooseRandomPicture()
 createtoc()
 </script>
