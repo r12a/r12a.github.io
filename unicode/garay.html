@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Unicode core specification">
+<meta name="keywords" content="Unicode core specification">
+<title>Section proposal for Garay</title>
+<link rel="stylesheet" href="tusv2.css">
+<style>
+body { 
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    line-height: 1.2; 
+    padding: 10%;
+    font-size: 1.1rem;
+    }
+.leadin { font-weight: bold; font-style: italic; }
+.xref { font-style: italic; }
+.uname { text-transform: uppercase; font-weight: normal; font-size: 75%; }
+.charName { font-style: italic; }
+.caption_num { font-weight: bold; }
+caption { font-style: italic; }
+
+#toc {
+    columns: 3;
+    margin-inline: 20%;
+    }
+#toc li {
+    list-style-type: none;
+    font-style: italic;
+    font-weight: bold;
+    }
+h1 {
+    font-size: 2.5rem;
+    font-style: italic;
+    }
+h2 { 
+    font-style: normal; 
+    margin-block-start: 8rem;
+    }
+h3 { 
+    font-style: italic;
+    margin-block-start: 2rem;
+    }
+.ChapterNumber {
+    font-size: 1.4rem;
+    font-weight: normal;
+    }
+.ChapterSubtitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    }
+.SubheadingnoTOC, .Subheading, .SubheadingNoTOC {
+    font-size: 1.2rem;
+    font-style: italic;
+    }
+.codepoint img {
+    vertical-align: bottom;
+    }
+table {
+    margin-inline: auto;
+    margin-block: 4rem;
+    }
+</style>
+</head>
+<body>
+<!-- HTML generated: 2022-03-30, 17:47:12 GMT -->
+
+<section id="Section1"> <!-- Finnegan: Add scripting goop here. -->
+<h2  id="G26451">Garay</h2>
+
+<section id="Subsection1"> <!-- Finnegan: Add scripting goop here. -->
+<div class="SubheadingnoTOC" id="G26453">Garay: U+10D400–U+10D8F</div>
+
+<p id="G26455">The Garay script was created by Assane Faye in Senegal and published in January 1961.  The official script in Senegal for Wolof is Latin, although the Wolofal script (an Arabic-based script written in the Ajami style) is also used. The Garay script has been taught informally for more than fifty years since its invention but, although it is used by women’s groups and adult literacy for Mandinka as well as for Wolof, the user community for Garay remains small.  Faye designed Garay to be easy to learn and familiar to anyone who had learned some of the Arabic script, but gave it a simpler design. Faye has written manuscripts that include textbooks, folktales, and maps; there also exists a Quran with interlinear translations into Wolof using the Garay script.</p>
+
+
+
+<section id="Subsubsection1"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26461"><span class="leadin">Basic features.</span> Garay is an alphabet. Text runs right-to-left in horizontal lines, and words are separated by spaces.</p>
+<p>Garay has no joining behavior, but the consonant letters are bicameral.  Capital letters  are used at the beginning of sentences and for proper nouns. They are generally distinguished from lowercase letters by a swash.  Unlike consonants, Garay vowel letters do not have uppercase and lowercase forms.</p>
+<p>Tone does not need to be marked because languages in the Atlantic group of the Niger-Congo family, of which Wolof is one, are unusual in that they are not tonal.</p>
+<p>A particular feature of Garay handwriting is a swash tail which often swings back under the word-final letter, and sometimes extends the whole length of the word, but it is not obligatory and has no semantic significance.</p>
+
+</section>
+
+<section id="Subsubsection2"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26463"><span class="leadin">Consonants.</span> Garay uses 19 consonant letters, each with both uppercase and lowercase forms, but digraphs and various diacritics over letters are used to support additional consonant sounds, including four pre-nasalized stops.</p>
+<p>Consonant gemination is common and phonetically distinctive, and is written by following the consonant with 
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D6A.svg" alt="&#x10D6A;" style="height:1.4rem;"> <span class="uname">U+10D6A GARAY CONSONANT GEMINATION MARK</span></span>. 
+Another combining mark,
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D6D.svg" alt="&#x10D6D;" style="height:1.4rem;"> <span class="uname">U+10D6D GARAY CONSONANT NASALIZATION MARK</span></span>,
+can be used to nasalize sounds in foreign words.</p>
+<p>To enable digitization of older Garay manuscripts, the Garay block contains four additional code points that represent obsolete glyphs for the letters K and N.</p>
+</section>
+
+<section id="Subsubsection3"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26525"><span class="leadin">Vowels.</span> Garay uses five code points, including one combining mark, to represent nine vowel sounds. The shortfall is made up by combining the vowel code points into digraphs.</p>
+
+<p>Long vowels are indicated by following the vowel character(s) with
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D4E.svg" alt="&#10D4E;" style="height:1.4rem;"> <span class="uname">U+10D4E GARAY VOWEL LENGTH MARK</span></span>.
+</p>
+<p>Because the sign for the vowel /<span class="ipa">ɛ</span>/ is identical to the sign that indicates prenasalized stops, the combining mark
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D69.svg" alt="&#10D69;" style="height:1.4rem;"> <span class="uname">U+10D69 GARAY VOWEL SIGN E</span></span>
+is used in both cases. To represent a following /<span class="ipa">ɛ</span>/ sound for  prenasalised stops and other consonant letters with combining marks above, Garay uses
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D4D.svg" alt="&#10D4D;" style="height:1.4rem;"><span class="uname">U+10D4D GARAY VOWEL SIGN EE</span></span>,
+rather than the usual combining mark, doubling it to denote /<span class="ipa">e</span>/. This approach is also taken for the four consonants that could be pre-nasalized, even when they are not.</p>
+
+
+<table>
+<tbody>
+<tr><th></th><th></th><th></th><th></th></tr>
+<tr><td>ke /kɛ/</td><td><img src="garay/ke.svg" alt="é" style="height: 3rem;"></td><td>be /bɛ/</td><td><img src="garay/be.svg" alt="é" style="height: 3rem;"></td><td>mbe /ᵐbɛ/</td><td><img src="garay/mbe.svg" alt="é" style="height: 3rem;"></td></tr>
+<tr><td>ké /ke/</td><td><img src="garay/kee.svg" alt="é" style="height: 3rem;"></td><td>bé /be/</td><td><img src="garay/bee.svg" alt="é" style="height: 3rem;"></td><td>mbé /ᵐbe/</td><td><img src="garay/mbee.svg" alt="é" style="height: 3rem;"></td></tr>
+</tbody>
+<caption>Representing e and é in Garay.</caption>
+</table>
+
+
+<p>Words that begin with a vowel sound use a 'vowel carrier',
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D70.svg" alt="&#10D70;" style="height:1.4rem;"><span class="uname">U+10D70 GARAY SMALL LETTER A</span></span>
+or its uppercase equivalent
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D50.svg" alt="&#10D50;" style="height:1.4rem;"><span class="uname">U+10D50 GARAY CAPITAL LETTER A</span></span>,
+much like the alef in Arabic.</p>
+<p>The Garay block also contains 
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D4F.svg" alt="&#10D4F;" style="height:1.4rem;"><span class="uname">U+10D4F GARAY SUKUN</span></span>
+to indicate vowel absence, but it is now considered obsolete.</p>
+
+</section>
+
+<section id="Subsubsection4"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26527"><span class="leadin">Punctuation.</span> Basic punctuation marks for Garay include a mixture of ASCII and Arabic code points.</p>
+<p>The Garay block also includes
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D6E.svg" alt="&#10D6E;" style="height:1.4rem;"><span class="uname">U+10D6E GARAY HYPHEN</span></span>,
+used at the end of a line when a word is split during line-breaking.</p>
+
+<p>The symbol
+<span class="codepoint" translate="no"><img src="https://r12a.github.io/c/Garay/10D6F.svg" alt="&#10D6F;" style="height:1.4rem;"><span class="uname">U+10D6F GARAY REDUPLICATION MARK</span></span>,
+is used to repeat a word.</p>
+</section>
+
+<section id="Subsubsection5"> <!-- Finnegan: Add scripting goop here. -->
+<p id="G26529"><span class="leadin">Numbers.</span> A set of Garay digits is encoded in the range U+10D40..U+10D49. The block also contains Garay mathematical symbols for plus and minus signs.</p>
+
+</section>
+
+</section>
+
+</section>
+
+
+</body>
+</html>
