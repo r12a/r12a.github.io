@@ -1,0 +1,109 @@
+a.headernav {
+    font-size: 90%;
+}
+a.headernav:link {
+    color: white;
+}
+a.headernav:visited {
+    color: white;
+}
+a.headernav:active {
+    color: white;
+}
+a.headernav:hover {
+    color: #B0B0B0;
+}
+#pageheader {
+    margin-top: 0; 
+    padding: 0 .5em 0 0;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: #5555FF;
+    color: white;
+    font-family: arial, geneva, sans-serif;  
+    font-weight:bold;
+    align-items: center;
+    }
+.pageicon {
+    padding : 2px 4px 0 2px;
+    }
+.pagelogo {
+    height: 33px; width: 34px;
+    border: 0;
+    padding-bottom: 0px;
+    margin-bottom:-2px;
+    }
+.pagetitle {
+    font-size: 115%; 
+    flex-grow: 4;
+    padding-left: 1em;
+    }
+.headernav { padding-top: 0px;
+    font-weight: bold;
+    font-size: 100%;
+    color: white;  font-family: arial, geneva, sans-serif;
+    text-align:right;
+    }
+.graybar {
+    width: 100%;padding:0; 
+    font-size:50%;
+    background-color: #EEEEFE;
+    }
+.pagecontents {
+    padding-left: 3.25em; 
+    padding-right: 3.25em;
+    padding-bottom: 1.75em;
+    padding-top: 1em;
+}
+#pagebottom img
+{
+   padding-top: 2px;
+   width:216px; 
+   height:50px;
+   border: 0;
+}
+#pagebottom
+{
+   margin: auto;
+   text-align:center;
+}
+
+.pagewithnavbar {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+}
+.pagemain {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 4;
+}
+.pagenavbar {
+   min-width: 25%;
+   display: flex;
+   align-items:stretch;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   padding: .3em;
+   background-color: #EAEAFE;
+   font-family: arial, geneva, sans-serif;
+}
+.navHeader {
+   text-align: center;
+   padding: .25em;
+   background-color: #5555FF;
+   font-size: 95%;  
+   color: white; 
+   font-weight: bold; 
+   margin: .1em 0;
+}
+.navEntry {
+   font-size: 90%;
+   color: #000000;
+   padding: .25em .6em;
+   text-indent: -.6em;
+}
