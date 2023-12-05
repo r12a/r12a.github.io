@@ -3,14 +3,25 @@
 <head>
 <meta charset="utf-8">
 <title>Sunuwar chapter</title>
-<link rel="stylesheet" href="tusv2.css">
+
 <style>
+@font-face {
+    font-family: 'Sunuwar WF';
+    src: url('https://r12a.github.io/shared/webfonts/Sunuwar-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+
 body { 
     font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
     line-height: 1.5; 
     padding: 10%;
     font-size: 1.1rem;
     }
+
+[lang=suz] { font-family: 'Sunuwar WF'; }
+
+
 .leadin { font-weight: bold; font-style: italic; }
 .xref { font-style: italic; }
 .uname { text-transform: uppercase; font-weight: normal; font-size: 75%; font-family: times new roman; }
@@ -81,7 +92,7 @@ figcaption {
 <section id="Subsection1">
 <div class="SubheadingnoTOC" style="font-family: 'Times New Roman'">Sunuwar: U+11BC0–U+11BFF</div>
 
-<p>The modern form of the Sunuwar script was developed by Krishna Bahadur Jentich in 1942, to write the Sunwar language, which is spoken by around 40,000 people in Nepal and Sikkim (India). In Nepal, the use of the script is promoted by the Sunwar Welfare Society. Sunuwar has also been one of the official languages of Sikkim, where it is known as Mukhia, since 1996. The script has been used in newspapers, government records, and other publications. In 2021 the Sikkim government mandated that state-run schools should offer instruction in both the primary language of the state and in a local language. Various additions and improvements have been made to the script, particularly around the turn of the century, and further changes to the orthography were proposed as recently as the early 2020s.</p>
+<p>The modern form of this script was developed by Karna Jentich in 1942, to write the Kiranti-Kõits (Sunuwar/Mukhia) language, which is spoken by around 40,000 people in Nepal and Sikkim (India). In Nepal, the use of the script is promoted by the Sunuwar Welfare Society. It has also been one of the official languages of Sikkim since 1996. The script has been used in newspapers, government records, and other publications. In 2001 the Sikkim government mandated that state-run schools should offer instruction in both the primary language of the state and in a local language. Various additions and improvements have been made to the script, particularly around the turn of the century, and further changes to the orthography were proposed as recently as the early 2020s.</p>
 
 
 
@@ -97,7 +108,7 @@ figcaption {
 
 
 <section id="consonants">
-<p><span class="leadin">Consonants.</span> Sunuwar uses 27 consonant letters. Around the early 2000s the repertoire was augmented with new consonant letters to represent aspirated and retroflex sounds. However, use of the script is not yet fully standardised, and sometimes older ambiguous or digraph-based spellings still appear.</p>
+<p><span class="leadin">Consonants.</span> The Sunuwar block contains 27 consonant letters. Around the early 2000s the repertoire was augmented with new consonant letters to represent aspirated and retroflex sounds. However, use of the script is not yet fully standardised, and sometimes older ambiguous or digraph-based spellings still appear.</p>
 
 <p>In Nepal, consonants have no inherent vowel and consonant clusters are simply indicated by groups of consonant letters. A lone consonant is not pronounced with a following vowel.  In Sikkim, however, consonants have an inherent vowel, pronounced /ə/, and 
 <span class="codepoint" translate="no"><bdi lang="suz"><img src="https://r12a.github.io/c/Combining_Diacritical_Marks/large/0331.png" alt="̐"></bdi><span class="uname">U+0331 COMBINING MACRON BELOW</span></span>
@@ -123,7 +134,7 @@ is used for this. A colon may also be used as punctuation; if it occurs after a 
 <p>Nasalisation is indicated in Nepal using 
 <span class="codepoint" translate="no"><bdi lang="suz"><img src="https://r12a.github.io/c/Combining_Diacritical_Marks/large/0303.png" alt="̐"></bdi><span class="uname">U+0303 COMBINING TILDE</span></span>
 above a vowel letter. In Sikkim, 
-<span class="codepoint" translate="no"><bdi lang="suz"><img src="https://r12a.github.io/c/Combining_Diacritical_Marks/large/0310.png" alt="̐"></bdi><span class="uname">U+0310 COMBINING CANDRABINDU</span></span>
+<span class="codepoint" translate="no"><bdi lang="suz"><img src="img/0310.png" alt="̐"></bdi><span class="uname">U+0310 COMBINING CANDRABINDU</span></span>
 (called <span class="name">taslathenk</span>), is used, rendered as a flat line with a dot above.</p>
 
 <figure>
@@ -142,7 +153,7 @@ above a vowel letter. In Sikkim,
 <span class="codepoint" translate="no"><bdi lang="suz"><img src="https://r12a.github.io/c/Combining_Diacritical_Marks/large/0301.png" alt="̐"></bdi><span class="uname">U+0301 COMBINING ACUTE ACCENT</span></span>,
 and
 <span class="codepoint" translate="no"><bdi lang="suz"><img src="https://r12a.github.io/c/Combining_Diacritical_Marks/large/0300.png" alt="̐"></bdi><span class="uname">U+0300 COMBINING GRAVE ACCENT</span></span>.
-Over dipthongs the tone mark  typically appears above the first vowel, and the nasalisation mark over the second, avoiding the need for stacked glyphs. In Sikkim, tone marks are not used.</p>
+Over diphthongs the tone mark  typically appears above the first vowel, and the nasalisation mark over the second, avoiding the need for stacked glyphs. In Sikkim, tone marks are not used.</p>
 </section>
 
 
@@ -151,7 +162,7 @@ Over dipthongs the tone mark  typically appears above the first vowel, and the n
 <section id="symbols">
 <p><span class="leadin">Symbols.</span>
 <span class="codepoint" translate="no"><bdi lang="suz"><img src="https://r12a.github.io/c/Sunuwar/large/11BE1.png" alt="̐"></bdi><span class="uname">U+11BE1 SUNUWAR SIGN PVO</span></span>
-represents an 'auspicious syllable', which is uttered, often twice, before a formulaic phrase. The sign is written in salutations and benedictions, and its basic trident shape can vary in the details. It represents the sound /ɓ̥/ and is transcribed as <span class="name">pvo</span>.</p>
+represents an 'auspicious syllable', which is uttered, often twice, before a formulaic phrase. The sign is written in salutations and benedictions, and its basic trident shape can vary in the details. It represents the sound /ɓ/ and is transcribed as <span class="name">pvo</span>.</p>
 </section>
 
 
