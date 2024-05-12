@@ -157,7 +157,9 @@ background-color: #F2F2F2;
 .quicklink input { width: 100%; margin: 0; padding: 0; border: 0; text-align: center; border-radius: 0px 0px 10px 10px; white-space: nowrap; text-overflow: ellipsis;font-family: 'Lucida Grande', sans-serif;line-height: 30px;vertical-align: middle;font-size: 14px;background-color: #F2F2F2; }
 .quicklink img { width:150px; margin:0; padding: 0; height: 180px; border-radius: 10px 10px 0 0; }
 #mainLinks { display: flex; flex-direction: row; flex-wrap: nowrap; }
-#mainLinks .quicklink { border: 1px solid chocolate;  margin-block: 0; margin-inline: .5rem; padding: .5rem; }
+#mainLinks .quicklink { margin-block: 0; margin-inline: .5rem; 
+  padding: 10px 10px 10px 10px;
+  }
 </style>
 
 <div id="mainLinks">
@@ -194,6 +196,11 @@ background-color: #F2F2F2;
 
 
 <div class="quicklink">
+<a href="app-charuse/index.html" title="Character usage"><img src="images/lists/charuse.png" alt=""></a>
+<form onSubmit="document.location = 'app-charuse/?language='+this.firstChild.value; return false;"><input placeholder="Character usage"></form>
+</div>
+
+<div class="quicklink">
 <a href="scripts/featurelist/index.html" title="Script comparison"><img src="images/lists/featurelist.png" alt=""></a>
 <form onSubmit="document.location = 'scripts/featurelist?dummy='+this.firstChild.value; return false;"><input placeholder="Script comparison"></form>
 </div>
@@ -211,11 +218,6 @@ background-color: #F2F2F2;
 <div class="quicklink">
 <a href="app-listcharacters/index.html" title="List characters"><img src="images/lists/listcharacters.png" alt=""></a>
 <form onSubmit="document.location = 'app-listcharacters/index.html?chars='+this.firstChild.value; return false;"><input placeholder="List characters"></form>
-</div>
-
-<div class="quicklink">
-<a href="app-charuse/index.html" title="Character usage"><img src="images/lists/charuse.png" alt=""></a>
-<form onSubmit="document.location = 'app-charuse/?language='+this.firstChild.value; return false;"><input placeholder="Character usage"></form>
 </div>
 
 <div class="quicklink">
