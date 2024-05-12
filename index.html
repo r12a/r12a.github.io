@@ -156,11 +156,46 @@ background-color: #F2F2F2;
 .quicklink form { margin:0; padding: 0; line-height: 1; }
 .quicklink input { width: 100%; margin: 0; padding: 0; border: 0; text-align: center; border-radius: 0px 0px 10px 10px; white-space: nowrap; text-overflow: ellipsis;font-family: 'Lucida Grande', sans-serif;line-height: 30px;vertical-align: middle;font-size: 14px;background-color: #F2F2F2; }
 .quicklink img { width:150px; margin:0; padding: 0; height: 180px; border-radius: 10px 10px 0 0; }
+#mainLinks { display: flex; flex-direction: row; flex-wrap: nowrap; }
+#mainLinks .quicklink { border: 1px solid chocolate;  margin-block: 0; margin-inline: .5rem; padding: .5rem; }
 </style>
 
+<div id="mainLinks">
 <div class="quicklink">
 <a href="uniview/index.html" title="UniView"><img src="images/lists/uniview.png" alt=""></a>
 <form onSubmit="document.location = 'uniview/index.html?charlist='+this.firstChild.value; return false;"><input placeholder="UniView"></form>
+</div>
+
+<div class="quicklink">
+<a href="pickers/index.html" title="Character apps"><img src="images/lists/pickers.png" alt=""></a>
+<form onSubmit="document.location = 'pickers/'+this.firstChild.value; return false;"><input placeholder="Character apps"></form>
+</div>
+
+<div class="quicklink">
+<a href="scripts/index.html#scriptnotes" title="Script summaries"><img src="images/lists/scriptsummary.png" alt=""></a>
+<form onSubmit="document.location = 'scripts/'+this.firstChild.value; return false;"><input placeholder="Orthographies"></form>
+</div>
+
+<div class="quicklink">
+<a href="scripts/links.html" title="Script links"><img src="images/lists/scriptlinks.png" alt=""></a>
+<form onSubmit="document.location = 'scripts/links.html?iso='+this.firstChild.value; return false;"><input placeholder="Script links"></form>
+</div>
+</div>
+</div><!-- end of main quick links -->
+
+
+
+
+
+
+
+
+<div class="link-container">
+
+
+<div class="quicklink">
+<a href="scripts/featurelist/index.html" title="Script comparison"><img src="images/lists/featurelist.png" alt=""></a>
+<form onSubmit="document.location = 'scripts/featurelist?dummy='+this.firstChild.value; return false;"><input placeholder="Script comparison"></form>
 </div>
 
 <div class="quicklink">
@@ -177,29 +212,6 @@ background-color: #F2F2F2;
 <a href="app-listcharacters/index.html" title="List characters"><img src="images/lists/listcharacters.png" alt=""></a>
 <form onSubmit="document.location = 'app-listcharacters/index.html?chars='+this.firstChild.value; return false;"><input placeholder="List characters"></form>
 </div>
-</div><!-- end of main quick links -->
-
-
-
-
-
-<div class="link-container">
-
-
-<div class="quicklink">
-<a href="scripts/links.html" title="Script links"><img src="images/lists/scriptlinks.png" alt=""></a>
-<form onSubmit="document.location = 'scripts/links.html?iso='+this.firstChild.value; return false;"><input placeholder="Script links"></form>
-</div>
-
-<div class="quicklink">
-<a href="pickers/index.html" title="Character apps"><img src="images/lists/pickers.png" alt=""></a>
-<form onSubmit="document.location = 'pickers/'+this.firstChild.value; return false;"><input placeholder="Character apps"></form>
-</div>
-
-<div class="quicklink">
-<a href="scripts/index.html#scriptnotes" title="Script summaries"><img src="images/lists/scriptsummary.png" alt=""></a>
-<form onSubmit="document.location = 'scripts/'+this.firstChild.value; return false;"><input placeholder="Script summaries"></form>
-</div>
 
 <div class="quicklink">
 <a href="app-charuse/index.html" title="Character usage"><img src="images/lists/charuse.png" alt=""></a>
@@ -207,15 +219,52 @@ background-color: #F2F2F2;
 </div>
 
 <div class="quicklink">
-<a href="scripts/featurelist/index.html" title="Script comparison"><img src="images/lists/featurelist.png" alt=""></a>
-<form onSubmit="document.location = 'scripts/featurelist?dummy='+this.firstChild.value; return false;"><input placeholder="Script comparison"></form>
-</div>
-
-<div class="quicklink">
 <a href="scripts/fontlist/index.html" title="Font lister"><img src="images/lists/fontlist.png" alt=""></a>
 <form onSubmit="document.location = 'scripts/fontlist/?script='+this.firstChild.value; return false;"><input placeholder="Font lister"></form>
 </div>
 </div><!-- end of main quick links -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="text-align: center; justify-self: center; margin-block:0; margin-inline:0;">More: <select id="more" onChange="window.location = this.value">
+    <option value="">...</option>
+    <option value="app-analysestring/index.html">Analyse string</option>
+    <option value="scripts/samples/index.html">Text samples</option>
+    <option value="scripts/index.html#charnotes">Character notes</option>
+    <option value="scripts/index.html#termbases">Term lists</option>
+    <option value="scripts/apps/graphemes/index.html">Show grapheme clusters</option>
+    <option value="scripts/apps/listcategories/index.html">Triage by General Category</option>
+    <option value="scripts/apps/listbidi/index.html">Triage by Bidi Class</option>
+    <option value="scripts/apps/listlinebreak/index.html">Triage by Line Breaking properties</option>
+    <option value="scripts/apps/listindic/index.html">Triage by Indic Category</option>
+    <option value="scripts/apps/conjunct_generator/index.html">Conjunct generator</option>
+    <option value="scripts/apps/vowel_signs/index.html">Consonant-vowel generator</option>
+    <option value="scripts/apps/ipa_analyser/index.html">IPA analyser</option>
+    </select>
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
